@@ -1,1 +1,20 @@
 // Start importing files!
+:root{
+  --white:            #ffffff;
+  --black:            #000000;
+  --font-color:       #333333;
+  --umkc-blue:        #0066cc;
+  --umkc-dark-blue:   #04487f;
+  --umkc-light-blue:  #3f95db;
+  --umkc-yellow:      #ffd52f;
+  --umkc-white:       var(--white);
+}
+
+@each $color in ("blue", 'light-blue', 'dark-blue', 'yellow') {
+  .bg-umkc-#{$color} {
+    background-color: var(--umkc-#{$color});
+  }
+  .text-umkc-#{$color} {
+    color: var(--umkc-#{$color});
+  }
+}
