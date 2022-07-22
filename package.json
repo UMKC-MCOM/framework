@@ -11,7 +11,7 @@
   "watch:css": "onchange 'src/scss' -- npm run scss",
   "start": "npm run js & npm run scss && run-p serve watch:css watch:js"
  },
- "author": "Greg McMullen @ Xavier University",
+ "author": "Greg McMullen @ UMKC",
  "license": "ISC",
  "devDependencies": {
   "browser-sync": "^2.26.12",
