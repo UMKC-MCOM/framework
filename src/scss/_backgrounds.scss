@@ -1,0 +1,9 @@
+@use 'vars/colors';
+@each $item, $color in colors.$theme-colors{
+  .bg-#{$item} {
+    background-color: var(--#{$item});
+  }
+  .text-#{$item} {
+    color: var(--#{$item});
+  }
+}
