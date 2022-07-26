@@ -17,7 +17,6 @@ class UMKCNavigation extends HTMLElement {
       <nav class="${this.class}">
         <ul>
           ${this.links.map(function(link){
-            console.log(typeof link.href);
             let fullLink = (link.href !== "" ? '<a href="'+link.href+'">' + link.title + '</a>' : '<span>'+link.title+'</span>' );
             return '<li>'+fullLink+'</li>'
           }).join('')}
