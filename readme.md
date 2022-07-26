@@ -54,7 +54,7 @@
 
 - How do we decide how systems should function (directory, news, etc)?
 - How to simplify the CMS User Experience?
-- What to limit for the average CMS User? 
+- What to limit for the average CMS User? [Web Governance Discussion](d13)
   - Establish permission levels
   - Establish workflows
 - How to leverage external systems?
@@ -104,3 +104,5 @@ The main branch will be the current revision of the website while additional ver
 for the next version is underway.
 
 Current Version: Framework V2
+
+[d13]: https://github.com/UMKC-MCOM/framework/discussions/13
