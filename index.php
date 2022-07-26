@@ -1,15 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>University of Missouri - Kansas City</title>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-		<link rel="stylesheet" href="/assets/css/main.css">
-  </head>
+  <?php include_once("includes/head.php"); ?>
   <body>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
-		<script src="/assets/js/main.js"></script>
+		<header class="bg-umkc-blue stripes d-flex header">
+			<h1 class="site-title"><a class="text-white" href="/">University of Missouri - Kansas City</a></h1>
+			<umkc-navigation
+				class=""
+				links='[
+				{ "href"	: "https://www.umkc.edu/admissions/apply/index.html","title": "Apply"},
+				{ "href" 	: "https://www.umkc.edu/admissions/get-info.html", "title" : "Get Info"},
+				{ "href" 	: "https://securelb.imodules.com/s/1236/16/index-sub-blank.aspx?sid=1236&amp;gid=1&amp;pgid=2819&amp;cid=5282&amp;appealcode=GOONLINE", "title" : "Give"},
+				{ "href" 	: "", "title" : "|"},
+				{ "href" 	: "current-students/index.html", "title" : "Current Students"},
+				{ "href" 	: "faculty/index.html", "title" : "Faculty"},
+				{ "href" 	: "staff/index.html", "title" : "Staff"},
+				{ "href" 	: "families/index.html", "title" : "Families"}
+			]'' />
+		</header>
+		<header class="stripes--dark d-flex header--alt">
+			<h1 class="site-title"><a class="text-white" href="/">University of Missouri - Kansas City</a></h1>
+			<umkc-navigation
+				class=""
+				links='[
+				{ "href"	: "https://www.umkc.edu/admissions/apply/index.html","title": "Apply"},
+				{ "href" 	: "https://www.umkc.edu/admissions/get-info.html", "title" : "Get Info"},
+				{ "href" 	: "https://securelb.imodules.com/s/1236/16/index-sub-blank.aspx?sid=1236&amp;gid=1&amp;pgid=2819&amp;cid=5282&amp;appealcode=GOONLINE", "title" : "Give"},
+				{ "href" 	: "", "title" : "|"},
+				{ "href" 	: "current-students/index.html", "title" : "Current Students"},
+				{ "href" 	: "faculty/index.html", "title" : "Faculty"},
+				{ "href" 	: "staff/index.html", "title" : "Staff"},
+				{ "href" 	: "families/index.html", "title" : "Families"}
+			]'' />
+		</header>
+		<!-- <script src="/assets/js/main.js"></script> -->
   </body>
 </html>
