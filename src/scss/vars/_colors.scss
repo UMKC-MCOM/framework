@@ -9,8 +9,8 @@ $theme-colors: (
   "umkc-yellow":      #ffd52f
 );
 // Set the Root variables for our most basic theme settings
-@each $item, $color in $theme-colors {
-  :root {
+:root {
+  @each $item, $color in $theme-colors {
     --#{$item}: #{$color};
   }
 }
