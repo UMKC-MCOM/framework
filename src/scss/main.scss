@@ -13,6 +13,11 @@ $base-line-height: global 1.25;
 body{
   font-size: 16px; // Font Reset, 16px = 1rem
   line-height: 1.4;
+  font-family: 'Roboto', sans-serif;
+
+  > svg {
+    display: none;
+  }
 }
 
 // Setup the headings
@@ -38,29 +43,23 @@ body{
   justify-content: center;
   flex-direction: column-reverse;
   position: relative;
-
-  @include mx.for-size("tablet-landscape-up"){
-    justify-content: space-between;
-    flex-direction: row;
-  }
-
   align-items: center;
   padding: 0.75rem var(--global-padding);
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
-  h1{
+  @include mx.for-size("tablet-landscape-up"){
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .site-title{
     @include mx.font-size(18px);
     margin: 3.5rem 0 0;
     text-transform: uppercase;
     @include mx.for-size("tablet-landscape-up"){
       margin: 0;
     }
-  }
-  a{
-    text-decoration: none;
-
-    &:hover, &:focus{
-      text-decoration: underline;
+    a{
+      text-decoration: none;
     }
   }
   &__nav{
@@ -80,8 +79,13 @@ body{
       padding: unset;
       width: auto;
     }
-
+    a, span{
+      color: var(--white);
+      margin-right: 0.5rem;
+      margin-left: 0.5rem;
+    }
   }
+
   ul{
     list-style: none;
     padding: 0;
@@ -100,11 +104,6 @@ body{
           display: inline-block;
         }
       }
-
-      a, span{
-        padding: 0.5rem;
-        color: white;
-      }
     }
   }
 }
@@ -115,5 +114,76 @@ body{
 
 // Height of the "U" is approximately 60px; Padding around logo needs to be 30px
 .logo{
-  width: mx.px-to-rem(200px);
+  height: 7rem;
+}
+
+.footer{
+  padding: var(--global-padding);
+  color: var(--white);
+  font-weight: 300;
+  [class*="footer--"]{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include mx.font-size(18px);
+  }
+
+  &__nav{
+    @include mx.font-size(24px, 1.5);
+    margin-bottom: 1rem;
+    &--bold{
+      font-weight: 700;
+    }
+    &--separator{
+      border-left: mx.px-to-rem(1px) solid #3f95db;
+      padding-left: 1rem;
+    }
+    ul{
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &__curator{
+    margin-top: 1.5rem;
+    a{ color: white; }
+    ul{ margin: 0; padding: 0 }
+    li {
+      display: inline-block;
+      padding: 0 0.5rem;
+      &:not(:last-child){
+        border-right: 1px solid var(--white);
+      }
+    }
+  }
+}
+
+.footer, .header{
+  &__nav a{
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    color: var(--white);
+    position: relative;
+    text-decoration: none;
+    &:after{
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: mx.px-to-rem(2px);
+      bottom: 0;
+      left: 0;
+      background-color: #fff;
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: all 250ms ease-in-out;
+    }
+
+    &:hover, &:focus {
+      text-decoration: none;
+      &:after{
+        visibility: visible;
+        transform: scaleX(1);
+      }
+    }
+  }
 }
