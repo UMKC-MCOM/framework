@@ -78,3 +78,16 @@ $base-line-height: 1.25 !default;
   margin-bottom: $bottom;
   margin-left: $left;
 }
+
+@mixin button-colors($themeColors) {
+  @each $item, $color in $themeColors {
+    &--#{$item}{
+      --button-color: var(--#{$item});
+      @if ( lightness($color) <= 47 ){
+        --hover-color: var(--white);
+      } @else {
+        --hover-color: var(--umkc-dark-blue);
+      }
+    }
+  }
+}

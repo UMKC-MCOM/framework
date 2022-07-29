@@ -2,13 +2,19 @@ $base-font-size: global 16px;
 $base-line-height: global 1.25;
 
 @use 'reset';
-@use 'vars/colors';
+@use 'vars/colors' as color;
 @use 'vars/fonts';
 @use 'mixins' as mx;
 @use 'backgrounds';
 
 :root{
   --global-padding: #{mx.px-to-rem(30px)};
+  --logo-ratio: 2.29;
+  --logo-height: #{mx.px-to-rem(75px)};
+  --logo-color: var(--white);
+  @include mx.for-size("tablet-landscape-up"){
+    --logo-height: #{mx.px-to-rem(100px)};
+  }
 }
 body{
   font-size: 16px; // Font Reset, 16px = 1rem
@@ -19,13 +25,6 @@ body{
     display: none;
   }
 }
-
-// Setup the headings
-// @each $heading in (1,2,4,5,6){
-//   h#{$heading}{
-//     font-family: "Roboto", sans-serif;
-//   }
-// }
 
 @media ( prefers-color-scheme: dark) {
   // Set various background colors, etc. so that this would work!
@@ -39,6 +38,10 @@ body{
 }
 
 .header{
+  &--white{
+    background: var(--white);
+    --logo-color: var(--umkc-blue);
+  }
   display: flex;
   justify-content: center;
   flex-direction: column-reverse;
@@ -73,7 +76,7 @@ body{
     padding: 1rem;
 
     @include mx.for-size("tablet-landscape-up"){
-      position: static;
+      position: relative;
       background: transparent;
       text-align: right;
       padding: unset;
@@ -109,43 +112,80 @@ body{
 }
 
 .branding{
-  flex-grow: 1;
+  a{
+    display: inline-block;
+  }
 }
 
 // Height of the "U" is approximately 60px; Padding around logo needs to be 30px
 .logo{
-  height: 7rem;
+  height: var(--logo-height);
+  width: calc(var(--logo-height) * var(--logo-ratio));
+  color: var(--logo-color);
 }
 
 .footer{
-  padding: var(--global-padding);
   color: var(--white);
   font-weight: 300;
   [class*="footer--"]{
+    padding: var(--global-padding);
+    @include mx.for-size("tablet-landscape-up"){
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include mx.font-size(18px);
+    }
+  }
+
+  [class~="footer--top"]{
+    background-color: var(--white);
+    background-image: url('../images/footer-top__image.webp');
+    background-position: center bottom;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    @include mx.font-size(18px);
+    justify-content: center;
+    align-items: flex-start;
+    min-height: mx.px-to-rem(600px);
+    height: calc(100vh * 0.68);
+
+    .button{
+      display: block;
+      margin-top: 2rem;
+    }
   }
 
   &__nav{
     @include mx.font-size(24px, 1.5);
-    margin-bottom: 1rem;
+    margin: 1rem 0;
     &--bold{
       font-weight: 700;
     }
-    &--separator{
-      border-left: mx.px-to-rem(1px) solid #3f95db;
-      padding-left: 1rem;
+
+    @include mx.for-size("tablet-landscape-up"){
+      &--separator{
+        border-left: mx.px-to-rem(1px) solid #3f95db;
+        padding-left: 1rem;
+      }
     }
+
     ul{
       margin: 0;
       padding: 0;
     }
+
+    &--buttons {
+      li{
+        display: inline-block;
+        margin: 1rem 0.5rem;
+        @include mx.for-size("tablet-landscape-up"){
+          margin: 1rem;
+        }
+      }
+    }
   }
 
-  &__curator{
-    margin-top: 1.5rem;
+  [class~="footer--curator"]{
+    background: var(--umkc-blue);
+    display: block;
     a{ color: white; }
     ul{ margin: 0; padding: 0 }
     li {
@@ -154,12 +194,18 @@ body{
       &:not(:last-child){
         border-right: 1px solid var(--white);
       }
+      &:first-child{
+        padding-left: 0;
+      }
     }
   }
 }
 
 .footer, .header{
-  &__nav a{
+  a:focus{
+    outline: mx.px-to-rem(2px) dotted var(--umkc-yellow);
+  }
+  &__nav a:not([class]){
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
     color: var(--white);
@@ -187,3 +233,63 @@ body{
     }
   }
 }
+
+.skip-links{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  margin-left: 0;
+  text-align: center;
+  list-style: outside none;
+
+  ul{ margin: 0; padding: 0; }
+  li{ margin: 0; padding: 0; }
+  a{
+    position: absolute;
+    left: -100vw;
+    top: 0.5rem;
+    transition: 0.5s;
+    color: var(--umkc-dark-blue);
+    padding: 0.5rem 1rem;
+
+    &:active, &:focus, &:hover{
+      left: 0.5rem;
+      width: auto;
+      height: auto;
+      overflow: visible;
+      background: #fff;
+      font-weight: 400;
+      font-size: 14px;
+      box-shadow: 0 0 10px 0 #000;
+      z-index: 200;
+    }
+  }
+}
+
+.hero-img{
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.button{
+  --button-color: var(--white);
+  --hover-color: var(--umkc-dark-blue);
+  text-decoration: none;
+  border-radius: mx.px-to-rem(8px);
+  transition: background 500ms ease, color 500ms ease;
+  padding: 0.75rem 1rem;
+  @include mx.for-size("tablet-landscape-up"){
+    padding: 0.75rem 2rem;
+  }
+  @include mx.button-colors(color.$theme-colors);
+  color: var(--button-color);
+  border: solid mx.px-to-rem(2px) var(--button-color);
+
+
+  &:hover, &:focus, &:active{
+    background: var(--button-color);
+    color: var(--hover-color);
+  }
+}
+
