@@ -16,10 +16,11 @@ class UMKCNavigation extends HTMLElement {
 
   renderComponent() {
     this.innerHTML = `
-      <nav class="${this.class}" ${ this.label !== "" ? 'aria-label="'+this.label+'"' : ''} >
+      <nav class="${this.class}" ${ this.label && this.label !== "" ? 'aria-label="'+this.label+'"' : ''} >
         <ul>
           ${this.links.map(function(link){
-            let fullLink = (link.href !== "" ? '<a href="'+link.href+'">' + link.title + '</a>' : '<span>'+link.title+'</span>' );
+            let linkClass = ( link.linkClass && link.linkClass !== "" ? ' class="'+link.linkClass+'"' : '' );
+            let fullLink = (link.href && link.href !== "" ? '<a href="'+link.href+'"'+linkClass+'>' + link.title + '</a>' : '<span>'+link.title+'</span>' );
             return '<li>'+fullLink+'</li>'
           }).join('')}
         </ul>
