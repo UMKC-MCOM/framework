@@ -2,95 +2,11 @@
 <html lang="en">
   <?php include_once("includes/head.php"); ?>
   <body>
-		<header>
-			<div class="bg-umkc-blue stripes header">
-				<h1 class="site-title"><a class="text-white" href="/">University of Missouri - Kansas City</a></h1>
-				<umkc-navigation
-					kClass="header__nav"
-					label="Extra Navigation"
-					links='[
-					{ "href"	: "https://www.umkc.edu/admissions/apply/index.html","title": "Apply"},
-					{ "href" 	: "https://www.umkc.edu/admissions/get-info.html", "title" : "Get Info"},
-					{ "href" 	: "https://securelb.imodules.com/s/1236/16/index-sub-blank.aspx?sid=1236&amp;gid=1&amp;pgid=2819&amp;cid=5282&amp;appealcode=GOONLINE", "title" : "Give"},
-					{ "href" 	: "", "title" : "|"},
-					{ "href" 	: "current-students/index.html", "title" : "Current Students"},
-					{ "href" 	: "faculty/index.html", "title" : "Faculty"},
-					{ "href" 	: "staff/index.html", "title" : "Staff"},
-					{ "href" 	: "families/index.html", "title" : "Families"}
-				]'></umkc-navigation>
-			</div>
-			<div class="bg-umkc-blue header header--secondary">
-				<div class="branding">
-					<a href="/">
-						<svg class="logo" aria-label="University of Missouri. Kansas City." role="img"><use xlink:href="#umkc"></use></svg>
-					</a>
-				</div>
-			</div>
-		</header>
+		<!-- Load SVGs first? -->
+		<?php include_once("includes/svg-sprites.php"); ?>
+		<?php include_once("includes/a11y-skip.php"); ?>
+		<?php include_once("includes/header.php"); ?>
 
-		<footer class="bg-umkc-blue footer">
-			<div class="footer--top">
-			</div>
-			<div class="footer--mid">
-			</div>
-			<div class="footer--bottom">
-				<a href="/">
-					<svg class="logo" aria-label="University of Missouri. Kansas City." role="img"><use xlink:href="#umkc"></use></svg>
-				</a>
-				<umkc-navigation
-					kClass="footer__nav footer__nav--separator"
-					label="Campus Resources"
-					links='[
-						{ "href" : "#", "title" : "Location and Maps" },
-						{ "href" : "#", "title" : "Campus Calendar" },
-						{ "href" : "#", "title" : "A-Z Index" },
-						{ "href" : "#", "title" : "Jobs" },
-						{ "href" : "#", "title" : "Directory" }
-					]''>
-				</umkc-navigation>
-
-				<umkc-navigation
-					kClass="footer__nav footer__nav--separator"
-					label="Important Offices"
-					links='[
-						{ "href" : "#", "title" : "Diversity and Inclusion" },
-						{ "href" : "#", "title" : "Libraries" },
-						{ "href" : "#", "title" : "Help Central" },
-						{ "href" : "#", "title" : "Consumer Information" },
-						{ "href" : "#", "title" : "Accreditation" }
-					]''>
-				</umkc-navigation>
-
-				<umkc-navigation
-					kClass="footer__nav footer__nav--bold"
-					label="Quick Links"
-					links='[
-						{ "href" : "#", "title" : "Webmail" },
-						{ "href" : "#", "title" : "Pathway" },
-						{ "href" : "#", "title" : "Canvas" },
-						{ "href" : "#", "title" : "UMKC Connect" },
-						{ "href" : "https://securelb.imodules.com/s/1236/16/index-sub-blank.aspx?sid=1236&amp;gid=1&amp;pgid=2819&amp;cid=5282&amp;appealcode=GOONLINE", "title" : "Give" }
-					]''>
-				</umkc-navigation>
-			</div>
-			<umkc-navigation
-				kClass="footer__curator"
-				label="Footer Links"
-				links='[
-					{ "href" : "#", "title" : "&copy; <?= date('Y'); ?> Curators of the University of Missouri" },
-					{ "href" : "#", "title" : "Disability Resources" },
-					{ "href" : "#", "title" : "DMCA Policy" },
-					{ "href" : "#", "title" : "Issues with this website" }
-				]'></umkc-navigation>
-
-				<p class="footer__curator">UMKC is an equal opportunity/access/affirmative action/pro-disability and veteran employer and does not discriminate on the basis of sex in our education programs or activities, pursuant to Title IX and 34 CFR Part 106. For more information, visit our <a href="nondiscrimination.html">UMKC Statement of Nondiscrimination</a>.</p>
-
-		</footer>
-		<!-- <script src="/assets/js/main.js"></script> -->
-		<svg xmlns="http://www.w3.org/2000/svg">
-			<symbol id="umkc" viewBox="0 0 335.74 146.51">
-					<path fill="#FFFFFF" d="M333.01,126.72c-8.1,9-15.16,9.22-21.71,9.09-.1,0-.17,0-.21,0-13.56-.1-36.18-9.92-36.18-38.72,0-14.27,3.14-25.09,9.84-31.9,4.96-5.02,11.1-7.27,19.9-7.27s15.05,2.02,25.59,10.55c1.25,1.01,3.12,.31,3.38-1.27,.7-4.26,1.89-10.33,1.98-11.07,.08-.73,.14-1.22,.14-1.67,0-1.12-.7-2.38-2.64-2.58-1.64-.18-3.39-.57-5.23-.97-1.81-.39-3.68-.8-5.74-1.1-5.04-.72-9.14-1.24-16.14-1.24-15.37,0-26.68,4.22-35.59,13.3-11.91,12.15-13.29,27.55-13.29,33.83,0,15.45,4.71,27.85,13.99,36.89,9.64,9.32,21.89,13.65,38.55,13.65,6.65,0,15.47-.76,20.27-2.91,2.02-.91,5.06-4.33,5.37-7.65l.45-7.71c.09-1.46-1.74-2.33-2.72-1.24Z"/><path fill="#FFFFFF" d="M173.39,134.51l-7.54-66.22c-.07-.6-.42-1.14-1.01-1.46l-9.47-4.59c-.47-.26-1.02-.31-1.53-.14-.51,.17-.92,.55-1.11,1.01l-24.73,52.8-27.65-62.91c-1.38-3.07-2.29-4.44-3.99-4.44-1.55,0-2.55,1.38-2.98,4.14l-12.17,81.34c-.39,2.94-1.02,6.7-2.33,8.31-.48,.59-.57,1.37-.23,2.04,.33,.66,.97,1.08,1.74,1.04l5.73-.25c.07,0,.14,0,.21,0l6.84,.22c.77,0,1.47-.41,1.79-1.11,.31-.68,.2-1.44-.3-1.99-.42-.46-.68-1.73-.72-2.02-.03-.21-.24-1.91,.15-5.16l5.88-41.17c1.29,3.31,17.9,40.07,20.6,45.83l.36,.76c1.91,3.99,2.87,5.99,4.51,5.99,1.79,0,2.42-1.45,5.08-7.51l22.11-48.35,4.83,44.45c.39,3.25,.18,4.95,.15,5.16-.04,.29-.3,1.56-.72,2.02-.5,.55-.61,1.31-.3,1.99,.32,.7,1.02,1.12,1.79,1.11h.14l8.57-.2,7.06,.18c.73,.02,1.41-.37,1.74-1.04,.33-.67,.24-1.45-.23-2.04-1.31-1.62-1.88-4.85-2.27-7.78Z"/><path fill="#fcd60b" d="M195.06,50.12c7.15,2.92,10.95,8.69,11.63,9.81,.22,.37,.62,.59,1.05,.59,.09,0,.18,0,.28-.03,.52-.12,.9-.56,.95-1.09,.2-2.3,.83-14.13-6.89-20.64-2.39-2.02-8-4.55-15.09-7.75-15.65-7.06-39.3-17.74-38.3-28.98,.05-.61-.36-1.15-.96-1.27l-.13-.02c-.54-.07-1.06,.26-1.21,.79l-.02,.06c-2.74,9.47-2,17.94,1.95,22.62,.31,.41,8.06,10.15,46.75,25.91Z"/><path fill="#FFFFFF" d="M311.1,135.8c.07,0,.14,0,.21,0,.89,0-.52-.01-.21,0Z"/><path fill="#FFFFFF" d="M72.65,49.95s-.04,0-.06,0l-7,.21-7.25-.21c-.78-.02-1.37,.29-1.63,.99-.27,.71-.05,1.51,.54,2,.99,.81,1.43,2.2,1.58,4.94,.21,3.86,.27,43.68,.27,43.68,0,12.52-.29,20.52-5.99,26.88-4.89,5.42-10.83,6-13.17,6-4.17,0-8.61-.34-13.06-4.39-5.02-4.56-8.32-8.87-8.32-26.54,0,0,.33-41.68,.54-45.59,.14-2.76,.56-4.29,1.4-5.09,.52-.5,.67-1.25,.39-1.91-.28-.67-.8-1.01-1.51-.97l-8.65,.21c-1.4,0-3.48-.07-5.87-.15l-3.08-.06h-.05c-.73,0-1.37,.42-1.63,1.12-.26,.7-.05,1.45,.53,1.91,1.02,.81,1.47,2.2,1.61,4.96,.12,2.18-.02,46.29-.02,46.29,0,15.74,3.22,26.3,10.13,33.22,7.75,7.78,17.55,8.78,25.23,8.78,6.58,0,15.22-1.04,23.69-9.11,9.5-9.04,10.8-23.43,10.8-37.64,0,0,.15-37.42,.38-41.49,.15-2.76,.57-4.29,1.41-5.1,.52-.5,.67-1.25,.39-1.91-.27-.65-.91-1.04-1.61-1.04Z"/><path fill="#FFFFFF" d="M266.92,142.59c-5.9-3.16-15.59-11.6-20.07-16.35h0c-3.93-4.14-21.35-25.78-27.12-33.55l27.58-31.88c.34-.39,.69-.78,1.06-1.15,1.06-1.08,2.1-2.05,3.11-2.91,1.49-1.27,2.97-2.25,4.35-3.13,.79-.51,.98-1.32,.83-2.05-.14-.69-.88-1.59-1.69-1.62l-8.74,.21-9.18-.2c-.54-.04-1.07,.27-1.34,.75-.27,.49-.25,1.08,.07,1.54,.16,.24,.25,.69,.25,1.2,0,1.58-3.15,5.21-5.71,8.57,0,0-23.65,28.69-24.69,29.94-.24,.28-.41,.51-.55,.7,.89-10.75,1.42-17.3,1.43-18.04v-.03c0-.77-.24-7.61-4.36-11.71-3.76-3.7-11.47-7.31-21.24-11.88-9.54-4.46-20.35-9.52-30.24-15.99-7.77-5.09-10.34-11.72-10.95-13.63-.16-.51-.63-.85-1.17-.83-.37,.04-.6,.17-.77,.33-.24,.21-.35,.59-.35,.59-3.44,14.81,3.64,26.42,21.04,34.5,1.6,.76,29.18,14.38,30.17,14.96,.08,.05,.18,.11,.31,.19,.85,.51,2.83,1.7,2.84,3.53l-.02,.44c-.19,3.48-5.16,56.44-5.51,60.45-.03,.34-.07,.68-.13,1.02-.38,2.28-.95,4.48-1.96,5.72-.48,.59-.57,1.37-.23,2.04,.31,.62,.93,1,1.61,1.02,.03,0,.06,.01,.09,.01h.04l.7-.02,6.67-.16,7.66,.2h.05c.69,.02,1.38-.29,1.75-.87,.47-.74,.39-1.62-.17-2.23-.42-.46-.68-1.73-.72-2.02,0-.02,0-.04-.01-.07h0c-.07-.71-.07-1.4-.03-2.1,.29-5.38,1.86-25.43,3.16-41.15,.17,.29,.44,.71,.86,1.32l1.21,1.84c2.3,3.52,24.07,31.92,29,36.77,4.77,4.69,8.34,7.58,14.66,8.23,2.37,.26,4.38,.26,7.72,.26h8.1c.87,0,1.59-.76,1.45-1.72-.07-.46-.39-.83-.8-1.04Z"/>
-				</symbol>
-		</svg>
+		<?php include_once("includes/footer.php"); ?>
   </body>
 </html>
