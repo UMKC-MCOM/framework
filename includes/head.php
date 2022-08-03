@@ -4,5 +4,4 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>University of Missouri - Kansas City</title>
   <link rel="stylesheet" href="/assets/css/main.css">
-  <script src="/assets/js/main.js"></script>
 </head>
