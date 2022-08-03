@@ -26,6 +26,10 @@ body{
   }
 }
 
+p{
+  @include mx.font-size(16px, 1.25);
+}
+
 @media ( prefers-color-scheme: dark) {
   // Set various background colors, etc. so that this would work!
 }
@@ -122,6 +126,9 @@ body{
   height: var(--logo-height);
   width: calc(var(--logo-height) * var(--logo-ratio));
   color: var(--logo-color);
+  @include mx.for-size("tablet-landscape-up"){
+    padding-right: mx.px-to-rem(30px);
+  }
 }
 
 .footer{
@@ -129,11 +136,21 @@ body{
   font-weight: 300;
   [class*="footer--"]{
     padding: var(--global-padding);
-    @include mx.for-size("tablet-landscape-up"){
+    @include mx.for-size("tablet-portrait-up"){
       display: flex;
+      flex-wrap: wrap;
+      > div, > nav {
+        width: 50%;
+      }
+    }
+    @include mx.for-size("tablet-landscape-up"){
+      flex-wrap: nowrap;
       justify-content: space-between;
       align-items: center;
       @include mx.font-size(18px);
+      > div, > nav {
+        width: auto;
+      }
     }
   }
 
@@ -154,8 +171,12 @@ body{
   }
 
   &__nav{
-    @include mx.font-size(24px, 1.5);
+    @include mx.font-size(18px, 1.5);
     margin: 1rem 0;
+
+    @include mx.for-size("tablet-landscape-up"){
+      @include mx.font-size(22px, 1.5);
+    }
     &--bold{
       font-weight: 700;
     }
@@ -173,19 +194,25 @@ body{
     }
 
     &--buttons {
+      > nav{
+        width: 100%;
+      }
       li{
         display: inline-block;
-        margin: 1rem 0.5rem;
+        margin: 1rem 0.05rem;
         @include mx.for-size("tablet-landscape-up"){
           margin: 1rem;
         }
       }
     }
   }
-
   [class~="footer--curator"]{
     background: var(--umkc-blue);
     display: block;
+    nav{
+      width: 100%;
+    }
+    @include mx.font-size(16px);
     a{ color: white; }
     ul{ margin: 0; padding: 0 }
     li {
@@ -285,8 +312,7 @@ body{
   @include mx.button-colors(color.$theme-colors);
   color: var(--button-color);
   border: solid mx.px-to-rem(2px) var(--button-color);
-
-
+  // Hover states are determined by the color variables
   &:hover, &:focus, &:active{
     background: var(--button-color);
     color: var(--hover-color);
