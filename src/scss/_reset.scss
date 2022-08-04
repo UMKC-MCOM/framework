@@ -38,10 +38,10 @@
 
 html {
   cursor: default; /* 1 */
-  -moz-tab-size: 4; /* 4 */
   tab-size: 4; /* 4 */
-  -ms-text-size-adjust: 100%; /* 5 */
-  -webkit-text-size-adjust: 100%; /* 5 */
+  tab-size: 4; /* 4 */
+  text-size-adjust: 100%; /* 5 */
+  text-size-adjust: 100%; /* 5 */
   word-break: break-word; /* 6 */
 }
 
@@ -95,13 +95,13 @@ nav ul {
 pre {
   font-family:
     /* macOS 10.10+ */ Menlo,
-    /* Windows 6+ */ Consolas,
-    /* Android 4+ */ Roboto Mono,
-    /* Ubuntu 10.10+ */ Ubuntu Monospace,
-    /* KDE Plasma 5+ */ Noto Mono,
-    /* KDE Plasma 4+ */ Oxygen Mono,
-    /* Linux/OpenOffice fallback */ Liberation Mono,
-    /* fallback */ monospace; /* 1 */
+    Consolas,
+    "Roboto Mono",
+    "Ubuntu monospace",
+    "Noto Mono",
+    "Oxygen Mono",
+    "Liberation Mono",
+    monospace; /* 1 */
 
   font-size: 1em; /* 2 */
 }
@@ -146,13 +146,13 @@ kbd,
 samp {
   font-family:
     /* macOS 10.10+ */ Menlo,
-    /* Windows 6+ */ Consolas,
-    /* Android 4+ */ Roboto Mono,
-    /* Ubuntu 10.10+ */ Ubuntu Monospace,
-    /* KDE Plasma 5+ */ Noto Mono,
-    /* KDE Plasma 4+ */ Oxygen Mono,
-    /* Linux/OpenOffice fallback */ Liberation Mono,
-    /* fallback */ monospace; /* 1 */
+    Consolas,
+    "Roboto Mono",
+    "Ubuntu monospace",
+    "Noto Mono",
+    "Oxygen Mono",
+    "Liberation Mono",
+    monospace; /* 1 */
 
   font-size: 1em; /* 2 */
 }
@@ -171,7 +171,7 @@ small {
  *    in all browsers (opinionated).
  */
 
-::-moz-selection {
+::selection {
   background-color: #b3d4fc; /* 1 */
   color: #000; /* 1 */
   text-shadow: none;
@@ -230,7 +230,7 @@ img {
  */
 
 svg:not([fill]) {
-  fill: currentColor;
+  fill: currentcolor;
 }
 
 /**
@@ -296,7 +296,7 @@ button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
-  -webkit-appearance: button;
+  appearance: button;
 }
 
 /**
@@ -372,7 +372,7 @@ textarea {
  */
 
 [type="search"] {
-  -webkit-appearance: textfield; /* 1 */
+  appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
 }
 
@@ -389,7 +389,7 @@ textarea {
  * Correct the text style of placeholders in Chrome, Edge, and Safari.
  */
 
-::-webkit-input-placeholder {
+::input-placeholder {
   color: inherit;
   opacity: 0.54;
 }
@@ -399,7 +399,7 @@ textarea {
  */
 
 ::-webkit-search-decoration {
-  -webkit-appearance: none;
+  appearance: none;
 }
 
 /**
@@ -408,7 +408,7 @@ textarea {
  */
 
 ::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
+  appearance: button; /* 1 */
   font: inherit; /* 2 */
 }
 
@@ -449,16 +449,16 @@ dialog {
   border: solid;
   color: black;
   display: block;
-  height: -moz-fit-content;
-  height: -webkit-fit-content;
+  height: fit-content;
+  height: fit-content;
   height: fit-content;
   left: 0;
   margin: auto;
   padding: 1em;
   position: absolute;
   right: 0;
-  width: -moz-fit-content;
-  width: -webkit-fit-content;
+  width: fit-content;
+  width: fit-content;
   width: fit-content;
 }
 
@@ -511,7 +511,7 @@ select,
 summary,
 textarea,
 [tabindex] {
-  -ms-touch-action: manipulation; /* 1 */
+  touch-action: manipulation; /* 1 */
   touch-action: manipulation; /* 2 */
 }
 
