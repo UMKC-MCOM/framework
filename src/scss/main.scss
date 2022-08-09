@@ -37,10 +37,24 @@ p {
 }
 
 .stripes {
-  background-image: repeating-linear-gradient(145deg, rgb(0 0 0 / 0%), rgb(0 0 0 / 0%) 7px, rgb(255 255 255 / 10%) 4px, rgb(255 255 255 / 10%) 8px);
+  background-image:
+    repeating-linear-gradient(
+      145deg,
+      rgb(0 0 0 / 0%),
+      rgb(0 0 0 / 0%) 7px,
+      rgb(255 255 255 / 10%) 4px,
+      rgb(255 255 255 / 10%) 8px
+    );
 
   &--dark {
-    background-image: repeating-linear-gradient(145deg, rgb(0 0 0 / 0%), rgb(0 0 0 / 0%) 2px, rgb(0 0 0 / 10%), rgb(0 0 0 / 10%) 4px);
+    background-image:
+      repeating-linear-gradient(
+        145deg,
+        rgb(0 0 0 / 0%),
+        rgb(0 0 0 / 0%) 2px,
+        rgb(0 0 0 / 10%),
+        rgb(0 0 0 / 10%) 4px
+      );
   }
 }
 

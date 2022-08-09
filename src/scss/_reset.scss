@@ -39,8 +39,6 @@
 html {
   cursor: default; /* 1 */
   tab-size: 4; /* 4 */
-  tab-size: 4; /* 4 */
-  text-size-adjust: 100%; /* 5 */
   text-size-adjust: 100%; /* 5 */
   word-break: break-word; /* 6 */
 }
@@ -170,12 +168,6 @@ small {
  * 1. Restore the coloring undone by defining the text shadow
  *    in all browsers (opinionated).
  */
-
-::selection {
-  background-color: #b3d4fc; /* 1 */
-  color: #000; /* 1 */
-  text-shadow: none;
-}
 
 ::selection {
   background-color: #b3d4fc; /* 1 */
@@ -389,7 +381,7 @@ textarea {
  * Correct the text style of placeholders in Chrome, Edge, and Safari.
  */
 
-::input-placeholder {
+::placeholder {
   color: inherit;
   opacity: 0.54;
 }
@@ -450,15 +442,11 @@ dialog {
   color: black;
   display: block;
   height: fit-content;
-  height: fit-content;
-  height: fit-content;
   left: 0;
   margin: auto;
   padding: 1em;
   position: absolute;
   right: 0;
-  width: fit-content;
-  width: fit-content;
   width: fit-content;
 }
 
@@ -512,7 +500,6 @@ summary,
 textarea,
 [tabindex] {
   touch-action: manipulation; /* 1 */
-  touch-action: manipulation; /* 2 */
 }
 
 /**
