@@ -54,7 +54,7 @@
 
 - How do we decide how systems should function (directory, news, etc)?
 - How to simplify the CMS User Experience?
-- What to limit for the average CMS User? [Web Governance Discussion](d13)
+- What to limit for the average CMS User? [Web Governance Discussion](https://github.com/UMKC-MCOM/framework/discussions/13)
   - Establish permission levels
   - Establish workflows
 - How to leverage external systems?
@@ -76,12 +76,6 @@
 - [Lando](https://lando.dev)
   - [LEMP Stack](https://docs.lando.dev/config/lemp.html)
   - [NodeJS](https://docs.lando.dev/config/node.html#supported-versions)
-    - Dev Dependencies:
-      - Dart Sass
-      - Browserify
-      - Browsersync
-      - NPM-Run-All
-      - onchange
 
 ## Installation
 
@@ -93,6 +87,8 @@ running any of the commands below.
 lando start
 # Start browsersync and the watch functions
 lando npm start
+# Build production-level resources
+lando npm run build
 ```
 
 ## Contribution
@@ -103,6 +99,4 @@ Please begin the process by opening an issue for internal discussions.
 The main branch will be the current revision of the website while additional version branches can exist when development
 for the next version is underway.
 
-Current Version: Framework V2
-
-[d13]: https://github.com/UMKC-MCOM/framework/discussions/13
+Current Version: Framework V2.0

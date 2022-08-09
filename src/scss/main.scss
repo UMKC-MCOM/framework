@@ -1,75 +1,100 @@
 $base-font-size: global 16px;
 $base-line-height: global 1.25;
 
-@use 'reset';
-@use 'vars/colors' as color;
-@use 'vars/fonts';
-@use 'mixins' as mx;
-@use 'backgrounds';
+@use "reset";
+@use "vars/colors" as color;
+@use "vars/fonts";
+@use "mixins" as mx;
+@use "backgrounds";
 
-:root{
+:root {
   --global-padding: #{mx.px-to-rem(30px)};
   --logo-ratio: 2.29;
   --logo-height: #{mx.px-to-rem(75px)};
   --logo-color: var(--white);
-  @include mx.for-size("tablet-landscape-up"){
+
+  @include mx.for-size("tablet-landscape-up") {
     --logo-height: #{mx.px-to-rem(100px)};
   }
 }
-body{
+
+body {
   font-size: 16px; // Font Reset, 16px = 1rem
   line-height: 1.4;
-  font-family: 'Roboto', sans-serif;
+  font-family: Roboto, sans-serif;
 
   > svg {
     display: none;
   }
 }
 
-p{
+p {
   @include mx.font-size(16px, 1.25);
 }
 
-@media ( prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   // Set various background colors, etc. so that this would work!
 }
 
-.stripes{
-  background-image: repeating-linear-gradient(145deg,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0) 7px, rgba(255,255,255,0.10) 4px, rgba(255,255,255,0.10) 8px);
-  &--dark{
-    background-image: repeating-linear-gradient(145deg,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0) 2px, rgba(0,0,0,0.10), rgba(0,0,0,0.10) 4px);
+.stripes {
+  background-image:
+    repeating-linear-gradient(
+      145deg,
+      rgb(0 0 0 / 0%),
+      rgb(0 0 0 / 0%) 7px,
+      rgb(255 255 255 / 10%) 4px,
+      rgb(255 255 255 / 10%) 8px
+    );
+
+  &--dark {
+    background-image:
+      repeating-linear-gradient(
+        145deg,
+        rgb(0 0 0 / 0%),
+        rgb(0 0 0 / 0%) 2px,
+        rgb(0 0 0 / 10%),
+        rgb(0 0 0 / 10%) 4px
+      );
   }
 }
 
-.header{
-  &--white{
+.header {
+  &--white {
     background: var(--white);
+
     --logo-color: var(--umkc-blue);
   }
+
   display: flex;
   justify-content: center;
   flex-direction: column-reverse;
   position: relative;
   align-items: center;
   padding: 0.75rem var(--global-padding);
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   font-weight: 700;
-  @include mx.for-size("tablet-landscape-up"){
+
+  @include mx.for-size("tablet-landscape-up") {
     justify-content: space-between;
     flex-direction: row;
   }
-  .site-title{
+
+  .site-title {
     @include mx.font-size(18px);
+
     margin: 3.5rem 0 0;
     text-transform: uppercase;
-    @include mx.for-size("tablet-landscape-up"){
+
+    @include mx.for-size("tablet-landscape-up") {
       margin: 0;
     }
-    a{
+
+    a {
       text-decoration: none;
     }
   }
-  &__nav{
+
+  &__nav {
     background: var(--umkc-dark-blue);
     width: 100%;
     position: absolute;
@@ -79,35 +104,39 @@ p{
     text-align: center;
     padding: 1rem;
 
-    @include mx.for-size("tablet-landscape-up"){
+    @include mx.for-size("tablet-landscape-up") {
       position: relative;
       background: transparent;
       text-align: right;
       padding: unset;
       width: auto;
     }
-    a, span{
+
+    a,
+    span {
       color: var(--white);
       margin-right: 0.5rem;
       margin-left: 0.5rem;
     }
   }
 
-  ul{
+  ul {
     list-style: none;
     padding: 0;
     margin: 0;
 
-    li{
+    li {
       display: inline-block;
-      &:nth-of-type(1n+4){
+
+      &:nth-of-type(1n+4) {
         display: none;
         font-weight: 400;
       }
 
-      @include mx.for-size("tablet-landscape-up"){
+      @include mx.for-size("tablet-landscape-up") {
         display: inline-block;
-        &:nth-of-type(1n+4){
+
+        &:nth-of-type(1n+4) {
           display: inline-block;
         }
       }
@@ -115,48 +144,57 @@ p{
   }
 }
 
-.branding{
-  a{
+.branding {
+  a {
     display: inline-block;
   }
 }
 
 // Height of the "U" is approximately 60px; Padding around logo needs to be 30px
-.logo{
+.logo {
   height: var(--logo-height);
   width: calc(var(--logo-height) * var(--logo-ratio));
   color: var(--logo-color);
-  @include mx.for-size("tablet-landscape-up"){
+
+  @include mx.for-size("tablet-landscape-up") {
     padding-right: mx.px-to-rem(30px);
   }
 }
 
-.footer{
+.footer {
   color: var(--white);
   font-weight: 300;
-  [class*="footer--"]{
+
+  [class*="footer--"] {
     padding: var(--global-padding);
-    @include mx.for-size("tablet-portrait-up"){
+
+    @include mx.for-size("tablet-portrait-up") {
       display: flex;
       flex-wrap: wrap;
-      > div, > nav {
+
+      > div,
+      > nav {
         width: 50%;
       }
     }
-    @include mx.for-size("tablet-landscape-up"){
+
+    @include mx.for-size("tablet-landscape-up") {
       flex-wrap: nowrap;
       justify-content: space-between;
       align-items: center;
+
       @include mx.font-size(18px);
-      > div, > nav {
+
+      > div,
+      > nav {
         width: auto;
       }
     }
   }
 
-  [class~="footer--top"]{
+  [class~="footer--top"] {
     background-color: var(--white);
-    background-image: url('../images/footer-top__image.webp');
+    background-image: url("../images/footer-top__image.webp");
     background-position: center bottom;
     display: flex;
     justify-content: center;
@@ -164,81 +202,94 @@ p{
     min-height: mx.px-to-rem(600px);
     height: calc(100vh * 0.68);
 
-    .button{
+    .button {
       display: block;
       margin-top: 2rem;
     }
   }
 
-  &__nav{
+  &__nav {
     @include mx.font-size(18px, 1.5);
+
     margin: 1rem 0;
 
-    @include mx.for-size("tablet-landscape-up"){
+    @include mx.for-size("tablet-landscape-up") {
       @include mx.font-size(22px, 1.5);
     }
-    &--bold{
+
+    &--bold {
       font-weight: 700;
     }
 
-    @include mx.for-size("tablet-landscape-up"){
-      &--separator{
+    @include mx.for-size("tablet-landscape-up") {
+      &--separator {
         border-left: mx.px-to-rem(1px) solid #3f95db;
         padding-left: 1rem;
       }
     }
 
-    ul{
+    ul {
       margin: 0;
       padding: 0;
     }
 
     &--buttons {
-      > nav{
+      > nav {
         width: 100%;
       }
-      li{
+
+      li {
         display: inline-block;
         margin: 1rem 0.05rem;
-        @include mx.for-size("tablet-landscape-up"){
+
+        @include mx.for-size("tablet-landscape-up") {
           margin: 1rem;
         }
       }
     }
   }
-  [class~="footer--curator"]{
+
+  [class~="footer--curator"] {
     background: var(--umkc-blue);
     display: block;
-    nav{
+
+    nav {
       width: 100%;
     }
+
     @include mx.font-size(16px);
-    a{ color: white; }
-    ul{ margin: 0; padding: 0 }
+    a { color: white; }
+    ul { margin: 0; padding: 0; }
+
     li {
       display: inline-block;
       padding: 0 0.5rem;
-      &:not(:last-child){
+
+      &:not(:last-child) {
         border-right: 1px solid var(--white);
       }
-      &:first-child{
+
+      &:first-child {
         padding-left: 0;
       }
     }
   }
 }
 
-.footer, .header{
-  a:focus{
+.footer,
+.header {
+  a:focus {
     outline: mx.px-to-rem(2px) dotted var(--umkc-yellow);
   }
-  &__nav a:not([class]){
+
+  &__nav a:not([class]) {
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
     color: var(--white);
     position: relative;
     text-decoration: none;
-    &:after{
+
+    &::after {
       content: "";
       position: absolute;
       width: 100%;
@@ -251,9 +302,11 @@ p{
       transition: all 250ms ease-in-out;
     }
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       text-decoration: none;
-      &:after{
+
+      &::after {
         visibility: visible;
         transform: scaleX(1);
       }
@@ -261,7 +314,7 @@ p{
   }
 }
 
-.skip-links{
+.skip-links {
   position: absolute;
   left: 0;
   top: 0;
@@ -270,9 +323,10 @@ p{
   text-align: center;
   list-style: outside none;
 
-  ul{ margin: 0; padding: 0; }
-  li{ margin: 0; padding: 0; }
-  a{
+  ul { margin: 0; padding: 0; }
+  li { margin: 0; padding: 0; }
+
+  a {
     position: absolute;
     left: -100vw;
     top: 0.5rem;
@@ -280,7 +334,9 @@ p{
     color: var(--umkc-dark-blue);
     padding: 0.5rem 1rem;
 
-    &:active, &:focus, &:hover{
+    &:active,
+    &:focus,
+    &:hover {
       left: 0.5rem;
       width: auto;
       height: auto;
@@ -294,28 +350,34 @@ p{
   }
 }
 
-.hero-img{
+.hero-img {
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.button{
+.button {
   --button-color: var(--white);
   --hover-color: var(--umkc-dark-blue);
+
   text-decoration: none;
   border-radius: mx.px-to-rem(8px);
   transition: background 500ms ease, color 500ms ease;
   padding: 0.75rem 1rem;
-  @include mx.for-size("tablet-landscape-up"){
+
+  @include mx.for-size("tablet-landscape-up") {
     padding: 0.75rem 2rem;
   }
+
   @include mx.button-colors(color.$theme-colors);
+
   color: var(--button-color);
   border: solid mx.px-to-rem(2px) var(--button-color);
+
   // Hover states are determined by the color variables
-  &:hover, &:focus, &:active{
+  &:hover,
+  &:focus,
+  &:active {
     background: var(--button-color);
     color: var(--hover-color);
   }
 }
-
