@@ -60,12 +60,22 @@
   }
 
   &__info {
-    align-self: flex-end;
+    @include mx.for-size("tablet-portrait-up"){
+      align-self: flex-end;
+    }
   }
 
   &__title {
-    align-self: center;
-    flex-basis: 75%;
+    flex-basis: 50%;
+
+    @include mx.for-size("tablet-portrait-up"){
+      align-self: center;
+    }
+
+    @include mx.for-size("desktop-up"){
+      flex-basis: 75%;
+    }
+
   }
 
   &__nav,
@@ -102,7 +112,10 @@
     }
 
     &--social {
-      flex-basis: 25%;
+      flex-basis: 50% !important;
+      @include mx.for-size("desktop-up"){
+        flex-basis: 25% !important;
+      }
     }
 
     &--buttons {
