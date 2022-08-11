@@ -1,0 +1,41 @@
+@use "../01-abstracts/variables" as var;
+@use "../01-abstracts/mixins" as mx;
+
+.button {
+  // Setup the default button color themes
+  @include mx.button-colors(var.$theme-colors);
+
+  --button-color: var(--white);
+  --hover-color: var(--umkc-dark-blue);
+
+  border: solid mx.px-to-rem(2px) var(--button-color);
+  border-radius: mx.px-to-rem(8px);
+  color: var(--button-color);
+  display: inline-block;
+  font-family: var(--button-family, var(--condense));
+  font-size: var(--button-size, 16px);
+  font-weight: var(--button-weight, 400);
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  transition: background 500ms ease, color 500ms ease;
+
+  @include mx.for-size("tablet-landscape-up") {
+    padding: 0.75rem 2rem;
+  }
+
+  // Hover states are determined by the color variables
+  &:hover,
+  &:focus,
+  &:active {
+    background: var(--button-color);
+    color: var(--hover-color);
+  }
+
+  &--block {
+    display: block;
+  }
+
+  &--inline {
+    display: inline;
+  }
+}

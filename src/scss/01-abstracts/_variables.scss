@@ -1,0 +1,39 @@
+// Import the Functions
+@use "mixins" as mx;
+
+// Base font sizing & Line Heights
+$base-font-size: 16px;
+$base-line-height: 1.6;
+
+// Base Font Styles:
+$base-text-color: #333 !default;
+
+// Breakpoints/Boundaries -- Values should be edited based on design need
+// * Names
+//   - phone-only
+//   - tablet-portrait-up
+//   - tablet-landscape-up
+//   - desktop-up
+//   - big-desktop-up */
+$phone-upper-boundary: mx.px-to-rem(600px);
+$tablet-portrait-upper-boundary: mx.px-to-rem(900px);
+$tablet-landscape-upper-boundary: mx.px-to-rem(1360px);
+$desktop-upper-boundary: mx.px-to-rem(1800px);
+
+// Base Colors:
+$theme-colors: (
+  "white": #fff,
+  "black": #000,
+  "font-color": #333,
+  "umkc-blue": #06c,
+  "umkc-dark-blue": #04487f,
+  "umkc-light-blue": #3f95db,
+  "umkc-yellow": #ffd52f
+);
+
+// Font Names for the font family
+$font-names: (
+  "roboto": "'Roboto', sans-serif",
+  "condense": "'Roboto Condensed', sans-serif",
+  "slab" : "'Roboto Slab', sans-serif"
+);

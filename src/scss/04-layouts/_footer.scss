@@ -1,0 +1,147 @@
+@use "../01-abstracts/variables" as vars;
+@use "../01-abstracts/mixins" as mx;
+
+.footer {
+  @include mx.for-size("tablet-landscape-up") {
+    --logo-height: mx.px-to-rem(150px);
+  }
+
+  color: var(--white);
+  font-weight: 300;
+
+  a {
+    &:not([class]),
+    &[class=""] {
+      color: var(--white);
+    }
+  }
+
+  > [class*="footer__"] {
+    padding: var(--global-padding);
+    display: flex;
+  }
+
+  &__top {
+    align-items: flex-start;
+    background-image: url("../images/footer-top__image.webp");
+    background-position: center bottom;
+    height: calc(100vh * 0.6);
+    justify-content: center;
+    min-height: mx.px-to-rem(600px);
+  }
+
+  &__mid,
+  &__bottom {
+    flex-flow: column wrap;
+
+    @include mx.for-size("tablet-portrait-up") {
+      flex-flow: row wrap;
+
+      /* styleling-disable selector-class-pattern */
+      .logo,
+      .footer__nav,
+      .footer__info {
+        flex-basis: 50%;
+      }
+      /* stylelint-enable */
+    }
+
+    @include mx.for-size("tablet-landscape-up") {
+      justify-content: space-between;
+
+      /* stylelint-disable selector-class-pattern */
+      .logo,
+      .footer__nav,
+      .footer__info {
+        flex-basis: 25%;
+      }
+      /* stylelint-enable */
+    }
+  }
+
+  &__info {
+    align-self: flex-end;
+  }
+
+  &__title {
+    align-self: center;
+    flex-basis: 75%;
+  }
+
+  &__nav,
+  &__info {
+    --button-size: #{mx.px-to-rem(18px)};
+    --button-weight: 400;
+
+    @include mx.font-size(18px, 1.5);
+
+    margin: 1rem 0;
+
+    @include mx.for-size("tablet-landscape-up") {
+      --button-size: #{mx.px-to-rem(32px)};
+
+      @include mx.font-size(22px, 1.5);
+    }
+
+    &--title {
+      font-weight: bold;
+      margin-bottom: 0.675rem;
+
+      @include mx.font-size(24px);
+    }
+
+    &--bold {
+      font-weight: 700;
+    }
+
+    @include mx.for-size("tablet-landscape-up") {
+      &--separator {
+        border-left: mx.px-to-rem(1px) solid rgb(255 255 255 / 35%);
+        padding-left: 1rem;
+      }
+    }
+
+    &--social {
+      flex-basis: 25%;
+    }
+
+    &--buttons {
+      margin-top: 3rem;
+
+      li {
+        display: inline-block;
+        margin: 1rem 0.05rem;
+
+        @include mx.for-size("tablet-landscape-up") {
+          margin: 1rem;
+        }
+      }
+    }
+  }
+
+  &__curator {
+    flex-wrap: wrap;
+
+    .nav {
+      margin-bottom: 0.5rem;
+
+      li {
+        display: block;
+
+        @include mx.for-size("tablet-landscape-up") {
+          display: inline-block;
+          line-height: 1;
+          padding: 0 0.675rem 0 0.5rem;
+
+          &:not(:last-child) {
+            border-right: solid 1px var(--white);
+          }
+
+          &:first-child {
+            padding-left: 0;
+          }
+        }
+      }
+    }
+  }
+}

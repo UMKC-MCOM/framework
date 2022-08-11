@@ -1,0 +1,88 @@
+@use "../01-abstracts/variables" as vars;
+@use "../01-abstracts/mixins" as mx;
+
+.header {
+  --padding: calc(var(--global-padding) / 2);
+
+  @include mx.for-size("tablet-portrait-up") {
+    --padding: var(--global-padding);
+  }
+
+  &--white {
+    background: var(--white);
+
+    --logo-color: var(--umkc-blue);
+  }
+
+  align-items: center;
+  display: flex;
+  flex-direction: column-reverse;
+  font-family: var(--condensed);
+  font-weight: 700;
+  justify-content: center;
+  padding: 0.75rem var(--global-padding);
+  position: relative;
+
+  @include mx.for-size("tablet-landscape-up") {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  a,
+  span {
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  &__nav {
+    background: var(--umkc-dark-blue);
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 1rem;
+
+    @include mx.for-size("tablet-landscape-up") {
+      position: relative;
+      background: transparent;
+      text-align: right;
+      padding: unset;
+      width: auto;
+    }
+  }
+
+  .nav {
+    li {
+      &:nth-of-type(1n+4) {
+        display: none;
+        font-weight: 400;
+      }
+
+      @include mx.for-size("tablet-landscape-up") {
+        &:nth-of-type(1n+4) {
+          display: inline-block;
+        }
+      }
+
+      a {
+        margin: 0 0.5rem;
+      }
+    }
+  }
+}
+
+// Header site title
+.site-title {
+  @include mx.font-size(18px);
+
+  margin: 3.5rem 0 0;
+  text-transform: uppercase;
+  text-align: center;
+
+  @include mx.for-size("tablet-landscape-up") {
+    margin: 0;
+    text-align: left;
+  }
+}

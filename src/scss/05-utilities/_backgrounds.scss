@@ -1,0 +1,10 @@
+@use "../01-abstracts/variables" as vars;
+
+@each $item, $color in vars.$theme-colors {
+  .bg-#{$item} {
+    background-color: var(--#{$item});
+  }
+  .text-#{$item} {
+    color: var(--#{$item});
+  }
+}

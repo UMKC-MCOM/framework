@@ -1,0 +1,20 @@
+button > *,
+a > * {
+  pointer-events: none;
+}
+
+.social {
+  &__link {
+    color: var(--white);
+
+    &:hover,
+    &:focus {
+      color: var(--umkc-yellow);
+    }
+  }
+
+  &__icon {
+    height: 4rem;
+    width: 4rem;
+  }
+}
