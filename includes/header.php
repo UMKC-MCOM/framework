@@ -3,18 +3,19 @@
     <h1 class="site-title"><a class="text-white" href="/">University of Missouri - Kansas City</a></h1>
     <nav class="header__nav" aria-label="header__nav">
       <ul class="nav nav--inline">
-        <?php foreach (array(
-          [ "href" => "https://www.umkc.edu/admissions/apply/index.html","title" => "Apply"],
-          [ "href" => "https://www.umkc.edu/admissions/get-info.html", "title" => "Get Info"],
-          [ "href" => "https://securelb.imodules.com/s/1236/16/index-sub-blank.aspx?sid=1236&amp;gid=1&amp;pgid=2819&amp;cid=5282&amp;appealcode=GOONLINE", "title" => "Give"],
-          [ "href" => "", "title" => "|"],
-          [ "href" => "current-students/index.html", "title" => "Current Students"],
-          [ "href" => "faculty/index.html", "title" => "Faculty"],
-          [ "href" => "staff/index.html", "title" => "Staff"],
-          [ "href" => "families/index.html", "title" => "Families"]
-        ) as $link) : ?>
-          <li><a href="<?= $link['href'];?>"><?= $link['title']; ?></a></li>
-        <?php endforeach; ?>
+        <?php
+          $links = array(
+            [ "href" => "#", "title" => "Quick Links"],
+            [ "href" => "#", "title" => "To Do"],
+            [ "href" => "", "title" => "Important Stuff"],
+            [ "href" => "", "title" => "|"],
+            [ "href" => "#", "title" => "Audience"],
+            [ "href" => "#", "title" => "Gateway"],
+            [ "href" => "#", "title" => "Type"],
+            [ "href" => "#", "title" => "Links"]
+          );
+          include 'nav_links.php';
+        ?>
       </ul>
     </nav>
   </div>
@@ -25,4 +26,5 @@
       </a>
     </div>
   </div>
+  <?php include 'navigation.php'; ?>
 </header>
