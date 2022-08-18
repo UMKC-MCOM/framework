@@ -1,6 +1,8 @@
 @use "../01-abstracts/mixins" as mx;
 
 .logo {
+  margin: calc(var(--global-padding) / 2) 0;
+
   &--link {
     display: inline-block;
   }

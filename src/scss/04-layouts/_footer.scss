@@ -2,10 +2,7 @@
 @use "../01-abstracts/mixins" as mx;
 
 .footer {
-  @include mx.for-size("tablet-landscape-up") {
-    --logo-height: mx.px-to-rem(150px);
-  }
-
+  --logo-height: #{mx.px-to-rem(100px)};
   color: var(--white);
   font-weight: 300;
 
@@ -17,7 +14,8 @@
   }
 
   > [class*="footer__"] {
-    padding: var(--global-padding);
+    padding-left: var(--global-padding);
+    padding-right: var(--global-padding);
     display: flex;
   }
 
@@ -25,13 +23,15 @@
     align-items: flex-start;
     background-image: url("../images/footer-top__image.webp");
     background-position: center bottom;
-    height: calc(100vh * 0.6);
+    height: 44.5vh;
     justify-content: center;
-    min-height: mx.px-to-rem(600px);
+    // min-height: mx.px-to-rem(600px);
   }
 
   &__mid,
   &__bottom {
+    padding-bottom: 2rem;
+    padding-top: 1rem;
     flex-flow: column wrap;
 
     @include mx.for-size("tablet-portrait-up") {
@@ -73,7 +73,7 @@
     }
 
     @include mx.for-size("desktop-up"){
-      flex-basis: 75%;
+      flex-basis: 60%;
     }
 
   }
@@ -85,12 +85,12 @@
 
     @include mx.font-size(18px, 1.5);
 
-    margin: 1rem 0;
+    margin: 0.5rem 0;
 
     @include mx.for-size("tablet-landscape-up") {
       --button-size: #{mx.px-to-rem(32px)};
 
-      @include mx.font-size(22px, 1.5);
+      // @include mx.font-size(22px, 1.5);
     }
 
     &--title {
@@ -114,7 +114,7 @@
     &--social {
       flex-basis: 50% !important;
       @include mx.for-size("desktop-up"){
-        flex-basis: 25% !important;
+        flex-basis: 40% !important;
       }
     }
 
@@ -134,7 +134,7 @@
 
   &__curator {
     flex-wrap: wrap;
-
+    padding-bottom: 1.5rem;
     .nav {
       margin-bottom: 0.5rem;
 

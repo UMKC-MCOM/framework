@@ -2,16 +2,15 @@
 @use "../01-abstracts/mixins" as mx;
 
 .header {
-  --padding: calc(var(--global-padding) / 2);
-
-  @include mx.for-size("tablet-portrait-up") {
-    --padding: var(--global-padding);
-  }
-
   &--white {
     background: var(--white);
 
     --logo-color: var(--umkc-blue);
+  }
+  --padding: calc(var(--global-padding) / 2);
+
+  @include mx.for-size("tablet-portrait-up") {
+    --padding: var(--global-padding);
   }
 
   align-items: center;
