@@ -25,6 +25,10 @@
         <svg class="logo--image" aria-label="University of Missouri. Kansas City." role="img"><use xlink:href="#umkc"></use></svg>
       </a>
     </div>
+    <button class="menu o-btn main-navigation__menu" data-toggle=".main-navigation">
+      <svg class="main-navigation__icon main-navigation__icon--menu" aria-label="Open navigation menu">
+        <use xlink:href="#menu"></use>
+      </svg>
   </div>
   <?php include 'navigation.php'; ?>
 </header>
