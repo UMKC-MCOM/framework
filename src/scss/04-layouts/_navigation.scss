@@ -5,48 +5,122 @@
     --nav-background: white;
     --nav-text: var(--umkc-blue);
     --nav-border: var(--umkc-blue);
+    --logo-color: var(--umkc-blue);
   }
 
   &--blue {
     --nav-background: var(--umkc-blue);
+    --hover-color: var(--umkc-dark-blue);
   }
 
-  align-items: center;
-  background: var(--nav-background, var(--umkc-dark-blue));
-  border-top: mx.px-to-rem(10px) solid var(--umkc-yellow);
-  display: flex;
-  font-family: var(--condensed);
-  font-weight: 700;
-  justify-content: center;
-  padding: 0 var(--global-padding);
-
-  @include mx.font-size(20px, 1.5em);
-
-  ul{
+  &[aria-hidden='false']{
     display: flex;
-    flex-direction: row;
+  }
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background: var(--nav-background, var(--umkc-dark-blue));
+  width: var(--nav-width, 100%);
+  display: none;
+  flex-flow: column nowrap;
+  z-index: 1;
+
+  @include mx.for-size("desktop-up"){
+    display: flex;
+    position: static;
+    border-top: mx.px-to-rem(10px) solid var(--umkc-yellow);
+    flex-flow: row nowrap;
+    font-family: var(--condensed);
+    font-weight: 700;
+    justify-content: center;
+    padding: 0 var(--global-padding);
+
+    @include mx.font-size(20px, 1.5em);
+
+    ul {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  &__item {
+    align-self: center;
+    padding: 1rem 0;
+    margin: 0 var(--global-padding);
+    position: relative;
+    border-bottom: solid mx.px-to-rem(1px) var(--nav-border, rgb(255, 255, 255, 35%));
+    &:first-child {
+      border-top: solid mx.px-to-rem(1px) var(--nav-border, rgb(255, 255, 255, 35%));
+    }
+    &:last-child {
+      border-bottom: solid mx.px-to-rem(1px) var(--nav-border, rgb(255, 255, 255, 35%));
+    }
+
+    @include mx.tr();
+
+    @include mx.for-size("desktop-up") {
+      padding: .5rem 2rem;
+      margin: 0;
+      border-bottom: none;
+      &:not(:first-child)::before{
+        border-right: solid mx.px-to-rem(1px) var(--nav-border, rgb(255, 255, 255, 35%));
+        content: "";
+        margin-left: -2rem;
+        height: 100%;
+        position: absolute;
+        top: 0;
+      }
+    }
+
+    &:hover, &:focus {
+      background: var(--hover-color, var(--umkc-blue));
+      a{
+        color: var(--hover-text, var(--white));
+      }
+    }
   }
 
-  li {
-    align-self: center;
-    padding: .5rem 2rem;
-    position: relative;
-    &:not(:first-child)::before{
-      border-right: solid mx.px-to-rem(1px) var(--nav-border, rgb(255, 255, 255, 35%));
-      content: "";
-      margin-left: -2rem;
-      height: 100%;
-      position: absolute;
-      top: 0;
-    }
-    &:hover, &:focus{
-      background: var(--hover-color, var(--umkc-blue));
-    }
-  }
-  a {
+  &__link {
     color: var(--nav-text, white);
     display: block;
     text-decoration: none;
-    padding: .5rem 1rem;
+    padding: 0 0.5rem;
+    @include mx.tr('color');
+    @include mx.for-size("desktop-up"){
+      padding: .5rem 1rem;
+    }
+  }
+
+  &__close{
+    background: none;
+    border: none;
+    position: absolute;
+    color: var(--nav-text, var(--white));
+    top: 0;
+    right: 0;
+    padding: 0.5rem;
+    cursor: pointer;
+    display: block;
+
+    @include mx.tr("background");
+
+    &:hover, &:focus {
+      background: var(--hover-color, var(--umkc-blue));
+    }
+
+    @include mx.for-size("desktop-up") {
+      display: none;
+    }
+  }
+  &__icon {
+    height: mx.px-to-rem(50px);
+  }
+
+  &__menu {
+    color: white;
+    padding: 1rem;
+    align-self: flex-end;
+    @include mx.for-size("desktop-up"){
+      display: none;
+    }
   }
 }

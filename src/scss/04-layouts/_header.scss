@@ -33,6 +33,11 @@
     text-decoration: none;
   }
 
+  &--secondary {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+  }
   &__nav {
     background: var(--umkc-dark-blue);
     width: 100%;

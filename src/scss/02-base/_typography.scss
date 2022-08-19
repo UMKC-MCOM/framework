@@ -35,6 +35,8 @@ ol {
   padding: 0;
 }
 
-a:focus {
-  outline: mx.px-to-rem(2px) dotted var(--umkc-yellow);
+a, button{
+  &:focus {
+    outline: mx.px-to-rem(2px) dotted var(--umkc-yellow);
+  }
 }
