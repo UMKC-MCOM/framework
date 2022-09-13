@@ -22,3 +22,6 @@
   </div>
   <?php include 'navigation.php'; ?>
 </header>
+<div class="hero"">
+  <h1 class="hero__title">Health Equity Institute</h1>
+</div>
