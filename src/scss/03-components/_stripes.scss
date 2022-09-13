@@ -1,11 +1,14 @@
+@use "../01-abstracts/variables" as var;
+@use "../01-abstracts/mixins" as mx;
+
 .stripes {
   background-image:
     repeating-linear-gradient(
-      145deg,
+      125deg,
       rgb(0 0 0 / 0%),
-      rgb(0 0 0 / 0%) 7px,
-      rgb(255 255 255 / 10%) 4px,
-      rgb(255 255 255 / 10%) 8px
+      rgb(0 0 0 / 0%) #{mx.px-to-rem(16px)},
+      rgb(255 255 255 / 10%) #{mx.px-to-rem(2px)},
+      rgb(255 255 255 / 10%) #{mx.px-to-rem(18px)}
     );
 
   &--dark {
@@ -13,9 +16,9 @@
       repeating-linear-gradient(
         145deg,
         rgb(0 0 0 / 0%),
-        rgb(0 0 0 / 0%) 2px,
+        rgb(0 0 0 / 0%) #{mx.px-to-rem(2px)},
         rgb(0 0 0 / 10%),
-        rgb(0 0 0 / 10%) 4px
+        rgb(0 0 0 / 10%) #{mx.px-to-rem(4px)}
       );
   }
 }
