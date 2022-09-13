@@ -28,7 +28,7 @@
   @include mx.for-size("desktop-up"){
     display: flex;
     position: static;
-    border-top: mx.px-to-rem(10px) solid var(--umkc-yellow);
+    border-top: mx.px-to-rem(3px) solid var(--umkc-yellow);
     flex-flow: row nowrap;
     font-family: var(--condensed);
     font-weight: 700;
