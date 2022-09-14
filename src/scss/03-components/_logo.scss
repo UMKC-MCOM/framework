@@ -1,8 +1,6 @@
 @use "../01-abstracts/mixins" as mx;
 
 .logo {
-  margin: calc(var(--global-padding) / 2) 0;
-
   &--link {
     display: inline-block;
   }
@@ -14,15 +12,7 @@
     width: calc(var(--logo-height) * var(--logo-ratio));
 
     @include mx.for-size("tablet-landscape-up") {
-      padding-right: mx.px-to-rem(30px);
-    }
-  }
-
-  &--mobile-nav {
-    margin: calc(var(--global-padding) * 2) var(--global-padding) var(--global-padding);
-    align-self: center;
-    @include mx.for-size("desktop-up") {
-      display: none;
+      padding-right: var(--global-padding);
     }
   }
 }

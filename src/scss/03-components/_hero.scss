@@ -1,4 +1,32 @@
-.hero-img {
+@use '../01-abstracts/mixins' as mx;
+
+.hero {
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
+  background-color: black;
+  background-image: linear-gradient(0deg, rgb(0 0 0 / 75%) 0%, rgb(0 0 0 / 0%) 100%), url('/assets/images/hero__admissions.webp');
+  display: flex;
+  align-items: flex-end;
+  padding: var(--global-padding);
+  height: var(--hero-height, #{mx.px-to-rem(500px)});
+
+  @include mx.for-size("tablet-landscape-up"){
+    background-image: url('/assets/images/hero__admissions.webp');
+  }
+
+  &__content{
+    color: var(--white);
+  }
+
+  &__title{
+
+    text-shadow: 0.125rem 0.125rem 0.125rem rgb(0 0 0 / 25%);
+
+    // @include mx.font-size(35px, auto);
+
+    @include mx.for-size("tablet-landscape-up"){
+      @include mx.font-size(60px, auto);
+    }
+  }
 }

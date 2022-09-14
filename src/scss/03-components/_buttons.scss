@@ -2,33 +2,54 @@
 @use "../01-abstracts/mixins" as mx;
 
 .button {
-  // Setup the default button color themes
   @include mx.button-colors(var.$theme-colors);
 
-  --button-color: var(--white);
-  --hover-color: var(--umkc-dark-blue);
-
-  border: solid mx.px-to-rem(2px) var(--button-color);
-  border-radius: mx.px-to-rem(8px);
-  color: var(--button-color);
-  display: inline-block;
-  font-family: var(--button-family, var(--condense));
-  font-size: var(--button-size, 16px);
-  font-weight: var(--button-weight, 400);
-  padding: 0.75rem 1rem;
-  text-decoration: none;
-  transition: background 500ms ease, color 500ms ease;
-
-  @include mx.for-size("tablet-landscape-up") {
-    padding: 0.75rem 2rem;
+  &--outline{
+    border: solid mx.px-to-rem(1px) var(--btn-bg);
+    background: transparent;
+    color: var(--btn-bg);
   }
 
-  // Hover states are determined by the color variables
+  &--lg{
+    @include mx.font-size(22px);
+  }
+
+  &--arrow {
+    &:after {
+      background: var(--btn-bg);
+      background-size: 1rem 1rem;
+      content: " ";
+      display: inline-block;
+      height: 1rem;
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' class='w-6 h-6'%3E%3Cpath fill-rule='evenodd' d='M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z' clip-rule='evenodd' /%3E%3C/svg%3E");
+      margin-left: 0.75rem;
+      margin-bottom: -0.25rem;
+      width: 1rem;
+      @include mx.tr();
+    }
+    &:hover,
+    &:focus,
+    &:active{
+      &:after{
+       background: var(--btn-text);
+      }
+    }
+  }
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border-radius: mx.px-to-rem(8px);
+  display: inline-block;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  text-decoration: none;
+
+  @include mx.tr();
+
   &:hover,
   &:focus,
   &:active {
-    background: var(--button-color);
-    color: var(--hover-color);
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
   }
 
   &--block {

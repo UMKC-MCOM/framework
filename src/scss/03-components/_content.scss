@@ -1,0 +1,9 @@
+@use "../01-abstracts/mixins" as mx;
+
+.main-content {
+
+  p {
+    @include mx.font-size(16px, auto);
+    padding: mx.px-to-rem(8px) 0 mx.px-to-rem(16px);
+  }
+}
