@@ -15,14 +15,18 @@
     background-image: url('/assets/images/hero__admissions.webp');
   }
 
-  &__title{
+  &__content{
     color: var(--white);
+  }
+
+  &__title{
+
     text-shadow: 0.125rem 0.125rem 0.125rem rgb(0 0 0 / 25%);
 
-    @include mx.font-size(35px);
+    // @include mx.font-size(35px, auto);
 
     @include mx.for-size("tablet-landscape-up"){
-      @include mx.font-size(60px);
+      @include mx.font-size(60px, auto);
     }
   }
 }
