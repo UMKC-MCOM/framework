@@ -20,8 +20,8 @@ $base-line-height: 1.6 !default;
   @if $line-height == "auto" {
     line-height:
       math.ceil(
-        math.div($font-size, $base-line-height) * math.div($base-line-height, $font-size)
-      ) $important;
+        math.div($font-size, $base-line-height)
+      ) * math.div($base-line-height, $font-size) $important;
   } @else {
     @if type-of($line-height) == number or $line-height == inherit or $line-height == normal {
       line-height: $line-height $important;
@@ -54,25 +54,15 @@ $base-line-height: 1.6 !default;
   }
 }
 
-//Padding mixin
-@mixin padding($top, $right, $bottom, $left) {
-  padding: $top $right $bottom $left;
-}
-
-//Margin mixin
-@mixin margin($top, $right, $bottom, $left) {
-  margin: $top $right $bottom $left;
-}
-
 @mixin button-colors($themeColors) {
   @each $item, $color in $themeColors {
     &--#{$item} {
-      --button-color: var(--#{$item});
+      --btn-bg: var(--#{$item});
 
       @if lightness($color) <= 47 {
-        --hover-color: var(--white);
+        --btn-text: var(--white);
       } @else {
-        --hover-color: var(--umkc-dark-blue);
+        --btn-text: var(--umkc-dark-blue);
       }
     }
   }
