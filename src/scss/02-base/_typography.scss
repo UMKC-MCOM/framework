@@ -12,7 +12,7 @@ html {
 body {
   color: #4d4d4d;
   font-family: var(--roboto);
-  line-height: 1.6;
+  @include mx.font-size(16px, 1.6);
 }
 
 h1,
