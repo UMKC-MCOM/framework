@@ -4,39 +4,9 @@
 .button {
   @include mx.button-colors(var.$theme-colors);
 
-  &--outline{
-    border: solid mx.px-to-rem(1px) var(--btn-bg);
-    background: transparent;
-    color: var(--btn-bg);
-  }
-
-  &--lg{
-    @include mx.font-size(22px);
-  }
-
-  &--arrow {
-    &:after {
-      background: var(--btn-bg);
-      background-size: 1rem 1rem;
-      content: " ";
-      display: inline-block;
-      height: 1rem;
-      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' class='w-6 h-6'%3E%3Cpath fill-rule='evenodd' d='M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z' clip-rule='evenodd' /%3E%3C/svg%3E");
-      margin-left: 0.75rem;
-      margin-bottom: -0.25rem;
-      width: 1rem;
-      @include mx.tr();
-    }
-    &:hover,
-    &:focus,
-    &:active{
-      &:after{
-       background: var(--btn-text);
-      }
-    }
-  }
   background: var(--btn-bg);
   color: var(--btn-text);
+  border: solid mx.px-to-rem(1px) transparent;
   border-radius: mx.px-to-rem(8px);
   display: inline-block;
   font-weight: bold;
@@ -48,12 +18,60 @@
   &:hover,
   &:focus,
   &:active {
-    background-color: var(--btn-bg);
-    color: var(--btn-text);
+
+    background-color: var(--btn-hover);
+    color: var(--btn-hover-text);
+  }
+
+  &--lg{
+    @include mx.for-size("tablet-landscape-up"){
+      --arrow-size: 1.5rem;
+      @include mx.font-size(28px);
+      padding: 2rem 2.5rem;
+    }
+  }
+
+  &--arrow {
+    &:after {
+      background: var(--btn-arrow, var(--btn-text));
+      background-repeat: no-repeat;
+      background-size: var(--arrow-size, 1rem) var(--arrow-size, 1rem);
+      content: " ";
+      display: inline-block;
+      height: var(--arrow-size, 1rem);
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' class='w-6 h-6'%3E%3Cpath fill-rule='evenodd' d='M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z' clip-rule='evenodd' /%3E%3C/svg%3E");
+      margin-left: 0.75rem;
+      margin-bottom: -0.25rem;
+      width:  var(--arrow-size, 1rem);
+      @include mx.tr(background);
+    }
+    &:hover,
+    &:focus,
+    &:active{
+      &:after{
+       background: var(--btn-arrow, var(--btn-hover-text));
+      }
+    }
+  }
+
+  &--outline{
+    --btn-arrow: var(--btn-bg);
+    border-color: var(--btn-bg);
+    background: transparent;
+    color: var(--btn-bg);
+    &:hover,
+    &:focus,
+    &:active {
+      --btn-arrow: var(--btn-text);
+      border-color: var(--btn-bg);
+      background: var(--btn-bg);
+      color: var(--btn-text);
+    }
   }
 
   &--block {
     display: block;
+    text-align: center;
   }
 
   &--inline {

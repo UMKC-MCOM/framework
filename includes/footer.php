@@ -4,9 +4,9 @@
       <ul class="">
         <?php
           $links = array(
-            [ "href" => "#","title" => "Apply", "linkClass" => "button button--umkc-dark-blue"],
-            [ "href" => "#", "title" => "Visit", "linkClass" => "button button--umkc-dark-blue"],
-            [ "href" => "#", "title" => "Get Info", "linkClass" => "button button--umkc-dark-blue"]
+            [ "href" => "#","title" => "Apply", "linkClass" => "button button--umkc-dark-blue button--lg"],
+            [ "href" => "#", "title" => "Visit", "linkClass" => "button button--umkc-dark-blue button--lg"],
+            [ "href" => "#", "title" => "Get Info", "linkClass" => "button button--umkc-dark-blue button--lg"]
           );
           include 'nav_links.php';
         ?>

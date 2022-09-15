@@ -4,5 +4,6 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>University of Missouri - Kansas City</title>
   <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/print.css">
   <meta content="#0066cc" name="theme-color">
 </head>

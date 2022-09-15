@@ -15,7 +15,7 @@
 					<p><a href="#" class="button button--white button--outline button--arrow">Virtual Visit Options</a></p>
 				</div>
 			</div>
-
+			<?php include_once("includes/kitchen-sink/buttons.php"); ?>
 		</div>
 		<?php include_once("includes/footer.php"); ?>
 

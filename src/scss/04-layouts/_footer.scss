@@ -121,10 +121,10 @@
       margin-top: 3rem;
 
       li {
-        display: inline-block;
-        margin: 1rem 0.05rem;
-
+        margin: 1rem 0;
+        text-align: center;
         @include mx.for-size("tablet-landscape-up") {
+          display: inline-block;
           margin: 1rem;
         }
       }
