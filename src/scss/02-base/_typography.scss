@@ -10,9 +10,10 @@ html {
 }
 
 body {
-  color: #4d4d4d;
+  color: #333;
   font-family: var(--roboto);
-  @include mx.font-size(16px, 1.6);
+  font-weight: 300;
+  @include mx.font-size(16px);
 }
 
 h1,
