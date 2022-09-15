@@ -3,7 +3,7 @@
 .main-content {
 
   p {
-    @include mx.font-size(16px, auto);
+    @include mx.font-size(16px, 1.6);
     padding: mx.px-to-rem(8px) 0 mx.px-to-rem(16px);
   }
 }
