@@ -1,3 +1,97 @@
+@use "../01-abstracts/mixins" as mx;
+
 .content-row {
   padding: var(--global-padding);
+}
+
+h2{
+  color: var(--umkc-blue);
+  @include mx.font-size(56px);
+}
+
+h3{
+  color: var(--umkc-blue);
+  @include mx.font-size(36px);
+  margin: 1.5rem 0 0;
+}
+
+.highlight {
+  @include mx.font-size(24px);
+  color: var(--font-color);
+  font-family: var(--condensed);
+}
+
+.benefits-list{
+  $self : &;
+  display: flex;
+  flex-flow: column;
+  margin-top: 1.5rem;
+  @include mx.for-size("tablet-landscape-up"){
+    justify-content: space-around;
+    flex-flow: row nowrap;
+
+    &__image{
+      margin-right: 2rem;
+    }
+  }
+
+  &--stats{
+    @include mx.for-size("tablet-landscape-up"){
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 1.5rem;
+
+    &--stats{
+      flex-flow: column;
+      margin: 1.5rem;
+    }
+  }
+
+  &__title{
+    margin-top: 0;
+    &--light{
+      color: var(--black);
+      @include mx.font-size(24px);
+    }
+  }
+  &__icon {
+    background: var(--umkc-blue);
+    content: "";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height: mx.px-to-rem(58px);
+    width: mx.px-to-rem(58px);
+    flex-shrink: 0;
+    border-radius: 100%;
+    margin-right: 2rem;
+    @include mx.font-size(32px, 1);
+    font-family: var(--roboto);
+    font-weight: 700;
+  }
+
+  &__stats{
+    @include mx.font-size(56px);
+    font-weight: 700;
+    font-family: var(--roboto);
+    color: var(--umkc-blue);
+    margin-right: 2rem;
+  }
+
+  &--small-stats{
+    margin-top: 0;
+
+    #{$self}__item--stats{
+      align-items: center;
+      text-align: center;
+    }
+  }
 }
