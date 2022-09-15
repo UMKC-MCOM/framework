@@ -58,11 +58,14 @@ $base-line-height: 1.6 !default;
   @each $item, $color in $themeColors {
     &--#{$item} {
       --btn-bg: var(--#{$item});
-
-      @if lightness($color) <= 47 {
+      @if floor(lightness($color)) <= 55 {
         --btn-text: var(--white);
+        --btn-hover: var(--umkc-yellow);
+        --btn-hover-text: var(--umkc-dark-blue);
       } @else {
         --btn-text: var(--umkc-dark-blue);
+        --btn-hover: var(--umkc-dark-blue);
+        --btn-hover-text: var(--white);
       }
     }
   }
