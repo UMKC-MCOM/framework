@@ -4,4 +4,15 @@
   p:not([class]) {
     padding: mx.px-to-rem(8px) 0 mx.px-to-rem(16px);
   }
+
+  h2:not([class]){
+    color: var(--umkc-blue);
+    @include mx.font-size(56px);
+  }
+
+  h3:not([class]){
+    color: var(--umkc-blue);
+    @include mx.font-size(36px);
+    margin: 1.5rem 0 0;
+  }
 }

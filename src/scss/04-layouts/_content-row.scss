@@ -1,18 +1,8 @@
 @use "../01-abstracts/mixins" as mx;
 
 .content-row {
+  background-color: var(--white);
   padding: var(--global-padding);
-}
-
-h2{
-  color: var(--umkc-blue);
-  @include mx.font-size(56px);
-}
-
-h3{
-  color: var(--umkc-blue);
-  @include mx.font-size(36px);
-  margin: 1.5rem 0 0;
 }
 
 .highlight {
