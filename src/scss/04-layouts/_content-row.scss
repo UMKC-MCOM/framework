@@ -8,7 +8,9 @@
 .highlight {
   @include mx.font-size(24px);
   color: var(--font-color);
-  font-family: var(--condensed);
+  font-family: var(--roboto);
+  margin: 1rem 0 2rem;
+  font-weight: 100;
 }
 
 .benefits-list{
@@ -45,10 +47,14 @@
   }
 
   &__title{
-    margin-top: 0;
+    --heading-margin: 0;
+    line-height: 1;
+    &--heavy{
+      --heading-size: #{mx.px-to-rem(90px)};
+    }
     &--light{
-      color: var(--black);
-      @include mx.font-size(24px);
+      --heading-color: var(--black);
+      --heading-size: #{mx.px-to-rem(24px)};
     }
   }
   &__icon {
