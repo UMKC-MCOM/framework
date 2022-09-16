@@ -1,0 +1,25 @@
+.breadcrumbs{
+  padding: calc(var(--global-padding) / 2) var(--global-padding);
+  color: #8b8b8b;
+  &__list{
+  }
+  &__item{
+    &:not(:last-child)::after{
+      content: " / ";
+      display: inline-block;
+      // padding: 0 0.125rem;
+    }
+  }
+  &__link{
+    list-style: none;
+    color: #8b8b8b;
+    text-decoration: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: var(--default-hover, var(--umkc-dark-blue));
+      text-decoration: underline;
+    }
+  }
+}
