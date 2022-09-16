@@ -16,9 +16,20 @@
 				</div>
 			</div>
 
+			<div class="breadcrumbs stripes--dark">
+				<ul class="nav nav--inline breadcrumbs__list">
+					<li class="breadcrumbs__item">
+						<a class="breadcrumbs__link" href="#">Home</a>
+					</li>
+					<li class="breadcrumbs__item">
+						<a class="breadcrumbs__link" href="#">Thing</a>
+					</li>
+				</ul>
+			</div>
+
 			<div class="content-row">
 				<div class="benefits-list">
-					<img class="benefits-list__image" src="https://picsum.photos/seed/picsum/448/535" loading="lazy" />
+					<img alt="" class="benefits-list__image" src="https://picsum.photos/seed/picsum/448/535" loading="lazy" />
 					<div class="benefits-list__group">
 						<h2>Benefits List with Photo</h2>
 						<p class="highlight">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
@@ -50,7 +61,6 @@
 								</div>
 							</div>
 						</div>
-
 					</div>
 				</div>
 			</div>
@@ -83,7 +93,6 @@
 								</div>
 							</div>
 						</div>
-
 					</div>
 					<div class="benefits-list__group">
 						<div class="benefits-list__points">
@@ -118,7 +127,7 @@
 				<h2>Photo and Stats</h2>
 				<p class="highlight">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
 				<div class="benefits-list">
-					<img class="benefits-list__image" src="https://picsum.photos/seed/picsum/448/500" loading="lazy" />
+					<img alt="" class="benefits-list__image" src="https://picsum.photos/seed/picsum/448/500" loading="lazy" />
 					<div class="benefits-list__group">
 						<div class="benefits-list--stats">
 							<div class="benefits-list__item benefits-list__item--stats">
@@ -160,19 +169,25 @@
 					<div class="benefits-list__group">
 						<div class="benefits-list benefits-list--small-stats jc-evenly">
 							<div class="benefits-list__item benefits-list__item--stats">
-								<div class="benefits-list__stats">#1</div>
+								<div class="benefits-list__stats">
+									<h2 class="benefits-list__title benefits-list__title--heavy">#1</h2>
+								</div>
 								<div class="benefits-list__details">
 									<h3 class="benefits-list__title benefits-list__title--light">Point Pofdslhjs</h3>
 								</div>
 							</div>
 							<div class="benefits-list__item benefits-list__item--stats">
-								<div class="benefits-list__stats">#2</div>
+								<div class="benefits-list__stats">
+									<h2 class="benefits-list__title benefits-list__title--heavy">#2</h2>
+								</div>
 								<div class="benefits-list__details">
 									<h3 class="benefits-list__title benefits-list__title--light">Additional Content</h3>
 								</div>
 							</div>
 							<div class="benefits-list__item benefits-list__item--stats">
-								<div class="benefits-list__stats">#3</div>
+								<div class="benefits-list__stats">
+									<h2 class="benefits-list__title benefits-list__title--heavy">#3</h2>
+								</div>
 								<div class="benefits-list__details">
 									<h3 class="benefits-list__title benefits-list__title--light">Lorem ipsum dolor</h3>
 								</div>
