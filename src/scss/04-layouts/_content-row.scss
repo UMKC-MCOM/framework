@@ -76,6 +76,22 @@ h3{
     @include mx.font-size(32px, 1);
     font-family: var(--roboto);
     font-weight: 700;
+
+    &--flame{
+      color: white;
+      position: relative;
+
+      .icon{
+        // Height:Width Ratio is 1.19193
+        --width: 2.75rem;
+        --height: calc(var(--width) * 1.19193);
+        position: absolute;
+        bottom: -#{mx.px-to-rem(0.95px)};
+        right: 0;
+        height: var(--height);
+        width: var(--width);
+      }
+    }
   }
 
   &__stats{
@@ -88,10 +104,11 @@ h3{
 
   &--small-stats{
     margin-top: 0;
-
+    flex-wrap: wrap;
     #{$self}__item--stats{
       align-items: center;
       text-align: center;
+      // flex-basis: 25%;
     }
   }
 }
