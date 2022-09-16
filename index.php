@@ -32,7 +32,9 @@
 								</div>
 							</div>
 							<div class="benefits-list__item">
-								<div class="benefits-list__icon">2</div>
+								<div class="benefits-list__icon benefits-list__icon--flame">
+									<svg class="icon"><use xlink:href="#flame" /></svg>
+								</div>
 								<div class="benefits-list__details">
 									<h3 class="benefits-list__title">Point</h3>
 									<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
