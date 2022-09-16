@@ -8,6 +8,7 @@
   "js": "browserify src/js/main.js > assets/js/main.js",
   "lint:css": "stylelint \"src/**/*.scss\" -o \"stylelint.log\"; exit 0;",
   "lint:css:fix": "stylelint \"src/**/*.scss\" --quiet --fix; exit 0;",
+  "css:autoprefix": "postcss \"assets/**/*.css\" --replace --use autoprefixer",
   "serve": "browser-sync start --files 'assets, **/*.php' -p 'umkc-web.lndo.site' --no-open --port 3000",
   "watch:js": "onchange 'src/js' -- npm run js",
   "watch:css": "onchange 'src/scss' -- npm run scss",
@@ -24,5 +25,10 @@
   "sass": "^1.50.0",
   "stylelint": "^14.9.1",
   "stylelint-config-standard-scss": "^5.0.0"
+ },
+ "dependencies": {
+  "autoprefixer": "^10.4.11",
+  "postcss": "^8.4.16",
+  "postcss-cli": "^10.0.0"
  }
 }
