@@ -20,11 +20,11 @@
     <nav class="footer__nav footer__nav--social" aria-label="Social Media Links">
       <ul class="nav--inline social">
         <?php $links = array(
-          [ "href" => "#", "title" => "<svg class=\"social__icon\"> <use xlink:href=\"#facebook\"></use> </svg>", "linkClass" => "social__link"],
-          [ "href" => "#", "title" => "<svg class=\"social__icon\"> <use xlink:href=\"#twitter\"></use> </svg>", "linkClass" => "social__link"],
-          [ "href" => "#", "title" => "<svg class=\"social__icon\"> <use xlink:href=\"#instagram\"></use> </svg>", "linkClass" => "social__link"],
-          [ "href" => "#", "title" => "<svg class=\"social__icon\"> <use xlink:href=\"#youtube\"></use> </svg>", "linkClass" => "social__link"],
-          [ "href" => "#", "title" => "<svg class=\"social__icon\"> <use xlink:href=\"#linkedin\"></use> </svg>", "linkClass" => "social__link"]
+          [ "href" => "#", "title" => "<svg class=\"social__icon\"><title>UMKC on Facebook</title> <use xlink:href=\"#facebook\"></use> </svg>", "linkClass" => "social__link"],
+          [ "href" => "#", "title" => "<svg class=\"social__icon\"><title>UMKC on Twitter</title> <use xlink:href=\"#twitter\"></use> </svg>", "linkClass" => "social__link"],
+          [ "href" => "#", "title" => "<svg class=\"social__icon\"><title>UMKC on Instagram</title> <use xlink:href=\"#instagram\"></use> </svg>", "linkClass" => "social__link"],
+          [ "href" => "#", "title" => "<svg class=\"social__icon\"><title>UMKC on YouTube</title> <use xlink:href=\"#youtube\"></use> </svg>", "linkClass" => "social__link"],
+          [ "href" => "#", "title" => "<svg class=\"social__icon\"><title>UMKC on LinkedIn</title> <use xlink:href=\"#linkedin\"></use> </svg>", "linkClass" => "social__link"]
         );
         include 'nav_links.php'; ?>
       </ul>
