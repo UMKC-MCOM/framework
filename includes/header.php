@@ -14,9 +14,10 @@
       </h2>
     </div>
     <form class="search" action="https://www.umkc.edu/search.html">
-      <input name="q" />
+      <label class="sr-only search__label" for="q">Search UMKC.edu:</label>
+      <input name="q" id="q" class="search__form" />
       <button class="o-btn">
-        <svg class="icon"><use xlink:href="#search" /></svg>
+        <svg class="icon"><title>Search</title><use xlink:href="#search" /></svg>
       </button>
     </form>
   </div>
