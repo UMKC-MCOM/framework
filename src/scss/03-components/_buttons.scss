@@ -18,16 +18,22 @@
   &:hover,
   &:focus,
   &:active {
-
     background-color: var(--btn-hover);
     color: var(--btn-hover-text);
   }
 
+  &--cta{
+    --arrow-size: 1.5rem;
+    @include mx.font-size(24px);
+
+    padding: 1rem 3.75rem;
+
+  }
   &--lg{
     @include mx.for-size("tablet-landscape-up"){
       --arrow-size: 1.5rem;
-      @include mx.font-size(28px);
-      padding: 2rem 2.5rem;
+      @include mx.font-size(24px);
+      padding: 1.5rem 2rem;
     }
   }
 
