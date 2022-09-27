@@ -176,9 +176,6 @@
 				</div>
 			</div>
 		</div>
-
-
-
 <?php
 			## Buttons!
 			include_once("includes/kitchen-sink/buttons.php");
