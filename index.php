@@ -66,7 +66,117 @@
 			$count = 3;
 			$footer_scripts = "";
 			include('includes/kitchen-sink/quotes.php');
+?>
 
+		<div class="pwb bg-umkc-gray">
+			<img src="https://picsum.photos/seed/picsum/577/577" class="img--round pwb__img">
+			<div class="pwb__content">
+				<h2 class="pwb__title">Photo with Buttons (PWB)</h2>
+				<p class="highlight"><strong>Bacon ipsum dolor amet meatball</strong> jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+			<p><a href="#" class="button button--umkc-yellow button--cta">Button Text</a></p>
+			<p><a href="#" class="button button--umkc-yellow button--cta">Button Text</a></p>
+			<p><a href="#" class="button button--umkc-yellow button--cta">Button Text</a></p>
+			</div>
+		</div>
+
+		<div class="icl bg-umkc-blue icl--blue">
+			<div class="text-center">
+				<h2 class="icl__title">Heading Heading Heading</h2>
+				<p class="highlight">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+			</div>
+			<div class="icl__row">
+				<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image">
+				<div class="icl__content">
+					<h3 class="icl__title">Photo with Buttons (PWB)</h3>
+					<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+					<p><a href="#" class="button button--white button--cta">Button Text</a></p>
+				</div>
+			</div>
+
+			<div class="icl__row icl__row--reverse">
+				<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image">
+				<div class="icl__content">
+					<h3 class="icl__title">Photo with Buttons (PWB)</h3>
+					<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+					<p><a href="#" class="button button--white button--cta">Button Text</a></p>
+				</div>
+			</div>
+
+			<div class="icl__row">
+				<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image">
+				<div class="icl__content">
+					<h3 class="icl__title">Photo with Buttons (PWB)</h3>
+					<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+					<p><a href="#" class="button button--white button--cta">Button Text</a></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="icl bg-umkc-gray">
+			<div class="text-center">
+				<h2 class="icl__title">Heading Heading Heading</h2>
+				<p class="highlight">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+			</div>
+			<div class="icl__row">
+				<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image">
+				<div class="icl__content">
+					<h3 class="icl__title">Photo with Buttons (PWB)</h3>
+					<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+					<p><a href="#" class="button button--umkc-blue button--cta">Button Text</a></p>
+				</div>
+			</div>
+
+			<div class="icl__row icl__row--reverse">
+				<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image">
+				<div class="icl__content">
+					<h3 class="icl__title">Photo with Buttons (PWB)</h3>
+					<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+					<p><a href="#" class="button button--umkc-blue button--cta">Button Text</a></p>
+				</div>
+			</div>
+
+			<div class="icl__row">
+				<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image">
+				<div class="icl__content">
+					<h3 class="icl__title">Photo with Buttons (PWB)</h3>
+					<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+					<p><a href="#" class="button button--umkc-blue button--cta">Button Text</a></p>
+				</div>
+			</div>
+		</div>
+		<div class="icl">
+			<div class="text-center">
+				<h2 class="icl__title">Heading Heading Heading</h2>
+				<p class="highlight">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+			</div>
+			<div class="icl__row">
+				<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image">
+				<div class="icl__content">
+					<h3 class="icl__title">Photo with Buttons (PWB)</h3>
+					<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+					<p><a href="#" class="button button--umkc-blue button--cta">Button Text</a></p>
+				</div>
+			</div>
+
+			<div class="icl__row icl__row--reverse">
+				<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image">
+				<div class="icl__content">
+					<h3 class="icl__title">Photo with Buttons (PWB)</h3>
+					<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+					<p><a href="#" class="button button--umkc-blue button--cta">Button Text</a></p>
+				</div>
+			</div>
+
+			<div class="icl__row">
+				<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image">
+				<div class="icl__content">
+					<h3 class="icl__title">Photo with Buttons (PWB)</h3>
+					<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+					<p><a href="#" class="button button--umkc-blue button--cta">Button Text</a></p>
+				</div>
+			</div>
+		</div>
+<?php
 			## Buttons!
 			include_once("includes/kitchen-sink/buttons.php");
 		?>

@@ -19,7 +19,6 @@
     </div>
     <div class="glide__bullets" data-glide-el="controls[nav]">
       <?php for ( $i = 0; $i < $count; $i++) : ?>
-        Things <?php echo $i; ?>
       <button class="glide__bullet" data-glide-dir="=<?= $i; ?>"></button>
       <?php endfor; ?>
     </div>

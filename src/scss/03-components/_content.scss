@@ -8,6 +8,7 @@
   h2 {
     color: var(--heading-color, var(--umkc-blue));
     font-size: var(--heading-size, #{mx.px-to-rem(56px)});
+    line-height: var(--heading-line-height, 1.25);
   }
 
   h3 {
