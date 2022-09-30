@@ -1,0 +1,16 @@
+<div style="flex-basis: 30%;">
+  <h3>
+    {{#if type}}
+      {{type}}
+    {{else}}
+      solid
+    {{/if}}
+  </h3>
+  <p><strong>Note:</strong> Yellow outlined always fails on white. Light blue fails on white except CTA and Large (lg).</p>
+  <p class="bg-black" style="padding: 0.5rem;"><a href="#" class="button button--white button--{{type}}">Test</a></p>
+  <p><a href="#" class="button button--black button--{{type}}">Test</a></p>
+  <p><a href="#" class="button button--umkc-blue button--{{type}}">Test</a></p>
+  <p><a href="#" class="button button--umkc-dark-blue button--{{type}}">Test</a></p>
+  <p><a href="#" class="button button--umkc-light-blue button--{{type}}">Test</a></p>
+  <p><a href="#" class="button button--umkc-yellow button--{{type}}">Test</a></p>
+</div>
