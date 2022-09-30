@@ -1,0 +1,23 @@
+// Import the Variables
+@use "../01-abstracts/variables" as vars;
+@use "../01-abstracts/mixins" as mx;
+
+// Setup the CSS Variables, since SASS is becoming scoped
+:root {
+  --global-padding: #{mx.px-to-rem(30px)};
+  --logo-ratio: 2.29;
+  --logo-height: #{mx.px-to-rem(75px)};
+  --logo-color: var(--white);
+
+  @include mx.for-size("tablet-landscape-up") {
+    --logo-height: #{mx.px-to-rem(100px)};
+  }
+
+  @each $name, $color in vars.$theme-colors {
+    --#{$name}: #{$color};
+  }
+
+  @each $name, $font in vars.$font-names {
+    --#{$name}: #{$font};
+  }
+}

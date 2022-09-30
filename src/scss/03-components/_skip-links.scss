@@ -1,0 +1,31 @@
+.skip-links {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  margin-left: 0;
+  text-align: center;
+  list-style: outside none;
+
+  a {
+    position: absolute;
+    left: -100vw;
+    top: 0.5rem;
+    transition: 0.5s;
+    color: var(--umkc-dark-blue);
+    padding: 0.5rem 1rem;
+
+    &:active,
+    &:focus,
+    &:hover {
+      left: 0.5rem;
+      width: auto;
+      height: auto;
+      overflow: visible;
+      background: #fff;
+      font-weight: 400;
+      box-shadow: 0 0 10px 0 #000;
+      z-index: 200;
+    }
+  }
+}

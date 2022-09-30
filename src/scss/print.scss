@@ -1,0 +1,66 @@
+@charset 'utf-8';
+@use "01-abstracts/mixins" as mx;
+
+@media print {
+  .header {
+    --logo-color: var(--umkc-blue);
+
+    .search {
+      display: none;
+    }
+  }
+
+  .main-navigation {
+    display: none;
+  }
+
+  .hero {
+    height: auto;
+
+    &__title {
+      @include mx.font-size(24px);
+    }
+
+    &__content {
+      color: var(--font-color);
+      text-shadow: none;
+    }
+  }
+
+  a {
+    page-break-inside: avoid;
+
+    &:link,
+    &:visited {
+      background: transparent;
+      border: none;
+      color: #520;
+      font-weight: bold;
+      text-align: left;
+      text-decoration: underline;
+
+      @include mx.font-size(16pt);
+    }
+
+    &[href^="http"]::after {
+      content: " <" attr(href) "> ";
+    }
+
+    &[href^="#"]::after {
+      content: "";
+    }
+    /* styleling-disable selector-pseudo-class-no-unknown */
+    &:not(:local-link)::after {
+      content: " <" attr(href) "> ";
+    }
+    /* stylelint-enable */
+  }
+
+  .site-title {
+    @include mx.font-size(32px);
+
+    a {
+      color: var(--font-color);
+    }
+  }
+}

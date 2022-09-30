@@ -1,0 +1,112 @@
+@use "../01-abstracts/variables" as vars;
+@use "../01-abstracts/mixins" as mx;
+
+.header {
+  padding: 0.75rem var(--global-padding);
+
+  &--white {
+    --background: var(--white);
+    --logo-color: var(--umkc-blue);
+    --link-color: var(--umkc-blue);
+    --text-color: var(--umkc-blue);
+    --search-bg: #e5eef5;
+  }
+
+  a {
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  &--secondary {
+    background: var(--background, var(--umkc-blue));
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    padding: var(--global-padding);
+    border-bottom: solid mx.px-to-rem(3px) var(--umkc-yellow);
+
+    @include mx.for-size("tablet-landscape-up") {
+      justify-content: flex-start;
+    }
+  }
+}
+
+// Header site title
+.site-title {
+  @include mx.font-size(18px);
+
+  text-align: center;
+  text-transform: uppercase;
+
+  @include mx.for-size("tablet-landscape-up") {
+    text-align: left;
+  }
+}
+
+.dept-header {
+  display: none;
+  margin-bottom: 0.2rem;
+  padding-left: var(--global-padding);
+  border-left: solid 2px var(--text-color, var(--white));
+
+  @include mx.for-size("tablet-landscape-up") {
+    display: flex;
+    margin-top: 2.25rem;
+  }
+
+  &__title {
+    align-self: flex-end;
+    color: var(--text-color, var(--white));
+
+    @include mx.font-size(34px);
+  }
+
+  &__sub {
+    @include mx.font-size(20px, 1.15);
+
+    display: block;
+  }
+}
+
+.search {
+  margin-left: auto;
+  display: none;
+
+  @include mx.for-size("tablet-landscape-up") {
+    display: flex;
+    align-self: flex-end;
+  }
+
+  input {
+    background: var(--search-bg, rgb(255 255 255 / 15%));
+    border: none;
+    border-radius: mx.px-to-rem(7px) 0  0 mx.px-to-rem(7px);
+
+    @include mx.font-size(16px);
+
+    padding: 0.25rem 0.5rem;
+    height: 42px;
+
+    @include mx.tr;
+
+    &:focus,
+    &:active {
+      background: white;
+    }
+  }
+
+  button {
+    border-radius: 0 mx.px-to-rem(7px) mx.px-to-rem(7px) 0;
+    color: var(--umkc-blue);
+    background: var(--umkc-yellow);
+    padding: 0.5rem;
+    height: 42px;
+    margin-left: -0.5rem;
+
+    svg {
+      transform: rotate(90deg);
+      height: mx.px-to-rem(24px);
+      width: mx.px-to-rem(24px);
+    }
+  }
+}

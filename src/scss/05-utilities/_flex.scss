@@ -1,0 +1,24 @@
+.jc {
+  &-start {
+    justify-content: flex-start;
+  }
+
+  &-around {
+    justify-content: space-around;
+  }
+
+  &-center {
+    justify-content: center;
+  }
+
+  &-evenly {
+    justify-content: space-evenly;
+  }
+}
+
+.ai,
+.as, {
+  &-center {
+    align-items: center;
+  }
+}

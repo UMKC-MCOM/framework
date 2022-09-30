@@ -1,0 +1,82 @@
+$base-font-size: 16px !default;
+$base-line-height: 24px !default;
+
+@use "sass:math";
+
+// *------------------------------------*\
+//    #MIXINS
+// *------------------------------------*/
+// font-size -- Creates the font-size appropriately setting the rem and fallbacks
+@mixin font-size($font-size, $line-height: "auto", $important: false) {
+  @if $important == "important" {
+    $important: string.unquote("!important");
+  } @else {
+    $important: null;
+  }
+
+  font-size: $font-size $important;
+  font-size: math.div($font-size, $base-font-size) * 1rem $important;
+
+  @if $line-height == "auto" {
+    line-height:
+      math.ceil(
+        math.div($font-size, $base-line-height)
+      ) * math.div($base-line-height, $font-size) $important;
+  } @else {
+    @if type-of($line-height) == number or $line-height == inherit or $line-height == normal {
+      line-height: $line-height $important;
+    } @else if $line-height != none and $line-height != false {
+      @warn "D’oh! ‘#{$line-height}’ is not a valid value for `line-height`.";
+    }
+  }
+}
+
+// Simple breakpoint media query. Uses basic sizes to determin the upper limit and useful names to
+// determine the upper boundary.
+@mixin for-size($range) {
+  $phone-upper-boundary: 600px !default;
+  $tablet-portrait-upper-boundary: 900px !default;
+  $tablet-landscape-upper-boundary: 1200px !default;
+  $desktop-upper-boundary: 1800px !default;
+
+  @if $range == phone-only {
+    @media (max-width: #{$phone-upper-boundary - 1}) { @content; }
+  } @else if $range == tablet-portrait-up {
+    @media (min-width: $phone-upper-boundary) { @content; }
+  } @else if $range == tablet-landscape-up {
+    @media (min-width: $tablet-portrait-upper-boundary) { @content; }
+  } @else if $range == desktop-up {
+    @media (min-width: $tablet-landscape-upper-boundary) { @content; }
+  } @else if $range == big-desktop-up {
+    @media (min-width: $desktop-upper-boundary) { @content; }
+  } @else {
+    @warn "You selected a MQ size that doesn't exist. Try again.";
+  }
+}
+
+@mixin button-colors($themeColors) {
+  @each $item, $color in $themeColors {
+    &--#{$item} {
+      --btn-bg: var(--#{$item});
+
+      @if floor(lightness($color)) <= 55 {
+        --btn-text: var(--white);
+        --btn-hover: var(--umkc-yellow);
+        --btn-hover-text: var(--umkc-dark-blue);
+      } @else {
+        --btn-text: var(--umkc-dark-blue);
+        --btn-hover: var(--umkc-dark-blue);
+        --btn-hover-text: var(--white);
+      }
+    }
+  }
+}
+
+@mixin tr($for: all, $time-in: 250ms, $type: ease-in-out, $time-out: 0s) {
+  transition: $for $time-in $type $time-out;
+}
+
+// px-to-rem - Changes pixel sizes to REM sizes
+@function px-to-rem($size) {
+  @return #{math.div($size, $base-font-size)}rem;
+}

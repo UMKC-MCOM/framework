@@ -1,0 +1,121 @@
+@use "../01-abstracts/mixins" as mx;
+
+.main-navigation {
+  &--white {
+    --nav-background: white;
+    --nav-text: var(--umkc-blue);
+    --nav-border: var(--umkc-blue);
+    --logo-color: var(--umkc-blue);
+  }
+
+  &--blue {
+    --nav-background: var(--umkc-blue);
+    --hover-color: var(--umkc-dark-blue);
+  }
+
+  &[aria-hidden="false"] {
+    display: flex;
+  }
+
+  background: var(--nav-background, var(--umkc-dark-blue));
+  display: none;
+
+  @include mx.for-size("desktop-up") {
+    display: flex;
+    border-top: mx.px-to-rem(3px) solid var(--umkc-yellow);
+    flex-flow: row nowrap;
+    font-family: var(--condensed);
+    font-weight: 700;
+    justify-content: center;
+    padding: 0 var(--global-padding);
+
+    @include mx.font-size(20px, 1.5em);
+
+    ul {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__item {
+    align-self: center;
+    border-bottom: none;
+    margin: 0;
+    padding: 0.5rem 2rem;
+    position: relative;
+
+    @include mx.tr;
+
+    &:first-child {
+      border-top: solid mx.px-to-rem(1px) var(--nav-border, rgb(255 255 255 / 35%));
+    }
+
+    &:not(:first-child)::before {
+      border-right: solid mx.px-to-rem(1px) var(--nav-border, rgb(255 255 255 / 35%));
+      content: "";
+      margin-left: -2rem;
+      height: 100%;
+      position: absolute;
+      top: 0;
+    }
+
+    &:hover,
+    &:focus {
+      background: var(--hover-color, var(--umkc-blue));
+
+      a {
+        color: var(--hover-text, var(--white));
+      }
+    }
+  }
+
+  &__link {
+    color: var(--nav-text, white);
+    display: block;
+    text-decoration: none;
+    padding: 0 0.5rem;
+
+    @include mx.tr("color");
+
+    @include mx.for-size("desktop-up") {
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  &__close {
+    background: none;
+    border: none;
+    position: absolute;
+    color: var(--nav-text, var(--white));
+    top: 0;
+    right: 0;
+    padding: 0.5rem;
+    cursor: pointer;
+    display: block;
+
+    @include mx.tr("background");
+
+    &:hover,
+    &:focus {
+      background: var(--hover-color, var(--umkc-blue));
+    }
+
+    @include mx.for-size("desktop-up") {
+      display: none;
+    }
+  }
+
+  &__icon {
+    height: mx.px-to-rem(50px);
+  }
+
+  &__menu {
+    color: white;
+    padding: 1rem;
+    align-self: flex-end;
+
+    @include mx.for-size("desktop-up") {
+      display: none;
+    }
+  }
+}
