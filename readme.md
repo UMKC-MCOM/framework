@@ -73,22 +73,19 @@
 
 ## Developer Requirements
 
-- [Lando](https://lando.dev)
-  - [LEMP Stack](https://docs.lando.dev/config/lemp.html)
-  - [NodeJS](https://docs.lando.dev/config/node.html#supported-versions)
+- [NodeJS](https://nodejs.org/en/)
 
 ## Installation
 
-Clone this repository and rename it for your project. Make sure to update the name in the `.lando.yml` and `package.json` file before
-running any of the commands below.
+Clone or pull the repository
 
 ```bash
-# Start up lando
-lando start
-# Start browsersync and the watch functions
-lando npm start
-# Build production-level resources
-lando npm run build
+# Run the development environment
+npm run dev
+# Run for a production build
+npm run build
+# Run a production preview
+npm run preview
 ```
 
 ## Contribution
