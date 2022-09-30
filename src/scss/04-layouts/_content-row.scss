@@ -7,64 +7,74 @@
 
 .highlight {
   @include mx.font-size(24px, 1.5);
+
   color: var(--highlight-color, var(--font-color));
   font-family: var(--roboto);
   margin: 1rem 0 2rem;
 }
 
-.benefits-list{
-  $self : &;
+.benefits-list {
+  $self: &;
+
   display: flex;
   flex-flow: column;
   margin-top: 1.5rem;
-  @include mx.for-size("tablet-landscape-up"){
+
+  @include mx.for-size("tablet-landscape-up") {
     justify-content: space-around;
     flex-flow: row wrap;
 
-    &__image{
+    &__image {
       margin-right: 2rem;
       flex: 0 1;
     }
   }
 
-  &--stats{
-    @include mx.for-size("tablet-landscape-up"){
+  &--stats {
+    @include mx.for-size("tablet-landscape-up") {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
     }
   }
+
   &__group {
     @include mx.for-size("tablet-landscape-up") {
-        padding-right: 1.5rem;
-        flex: 1 0;
+      padding-right: 1.5rem;
+      flex: 1 0;
     }
   }
+
   &__item {
     display: flex;
     align-items: flex-start;
     margin-top: 1.5rem;
 
-    &--stats{
+    &--stats {
       flex-flow: column;
       margin: 1.5rem;
     }
   }
+
   &__cta {
     flex-basis: 100%;
     text-align: center;
   }
-  &__title{
+
+  &__title {
     --heading-margin: 0;
+
     line-height: 1;
-    &--heavy{
+
+    &--heavy {
       --heading-size: #{mx.px-to-rem(90px)};
     }
-    &--light{
+
+    &--light {
       --heading-color: var(--black);
       --heading-size: #{mx.px-to-rem(24px)};
     }
   }
+
   &__icon {
     background: var(--umkc-blue);
     content: "";
@@ -77,18 +87,21 @@
     flex-shrink: 0;
     border-radius: 100%;
     margin-right: 2rem;
+
     @include mx.font-size(32px, 1);
+
     font-family: var(--roboto);
     font-weight: 700;
 
-    &--flame{
+    &--flame {
       color: white;
       position: relative;
 
-      .icon{
-        // Height:Width Ratio is 1.19193
+      .icon {
+        // Height:Width Ratio is 1.1919
         --width: 2.75rem;
-        --height: calc(var(--width) * 1.19193);
+        --height: calc(var(--width) * 1.1919);
+
         position: absolute;
         bottom: -#{mx.px-to-rem(0.95px)};
         right: 0;
@@ -98,42 +111,44 @@
     }
   }
 
-  &__stats{
+  &__stats {
     @include mx.font-size(56px);
+
     font-weight: 700;
     font-family: var(--roboto);
     color: var(--umkc-blue);
     margin-right: 2rem;
   }
 
-  &--small-stats{
+  &--small-stats {
     margin-top: 0;
     flex-wrap: wrap;
-    #{$self}__item--stats{
+    #{$self}__item--stats {
       align-items: center;
       text-align: center;
     }
   }
 }
 
-.cards{
+.cards {
   $self: &;
+
   padding: 0 var(--global-padding);
-  &__group{
+
+  &__group {
     display: flex;
     flex-flow: column;
     align-items: center;
 
-    @include mx.for-size("tablet-landscape-up"){
+    @include mx.for-size("tablet-landscape-up") {
       flex-flow: row nowrap;
       justify-content: space-evenly;
       align-content: center;
     }
   }
 
-  &--has-bg{
+  &--has-bg {
     margin-top: 3rem;
-    padding-bottom: 5rem;
     padding: var(--global-padding);
     #{$self}__group {
       margin-top: -8rem;
@@ -142,35 +157,40 @@
     #{$self}__item {
       margin-top: 1rem;
       max-width: 300px;
+
       @include mx.for-size("desktop-up") {
         max-width: none;
         flex: 0 0 #{mx.px-to-rem(352px)};
       }
     }
   }
-  &__item{
-    &--centered{
+
+  &__item {
+    &--centered {
       text-align: center;
     }
-    &:not(:last-child){
-      @include mx.for-size("tablet-landscape-up"){
+
+    &:not(:last-child) {
+      @include mx.for-size("tablet-landscape-up") {
         margin-right: 2rem;
       }
     }
   }
 
-  &__content{
+  &__content {
     padding: 1rem;
     background: var(--white);
   }
-  &__title{
+
+  &__title {
     --heading-margin: 0;
     --heading-size: #{mx.px-to-rem(30px)};
   }
 
-  &__link{
+  &__link {
     font-weight: 700;
     color: var(--umkc-blue);
+
     @include mx.tr("background");
 
     &:hover,
@@ -181,17 +201,19 @@
   }
 }
 
-.quote{
+.quote {
   $self: &;
+
   padding: 4rem var(--global-padding);
   margin: 2rem 0;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-evenly;
+
   &--single {
     justify-content: center;
-    #{$self}__item{
-      @include mx.for-size("tablet-landscape-up"){
+    #{$self}__item {
+      @include mx.for-size("tablet-landscape-up") {
         flex: 0 1 #{mx.px-to-rem(777px)};
       }
     }
@@ -200,68 +222,69 @@
     }
     #{$self}__blockquote {
       @include mx.font-size(30px);
+
       margin: 1.5rem 0;
       padding: 0 1rem;
     }
   }
-  &__icon{
+
+  &__icon {
     color: var(--umkc-blue);
+
     @include mx.font-size(90px, 1);
-    font-family: 'Times';
+
+    font-family: Times, serif;
     font-weight: 700;
     display: block;
   }
-  &__blockquote{
+
+  &__blockquote {
     color: var(--font-color);
+
     @include mx.font-size(18px, 1.5);
+
     margin-top: 0;
   }
+
   &__item {
     text-align: center;
+    display: none;
+
+    @include mx.for-size("tablet-landscape-up"){
+      display: block;
+    }
   }
 
   &__title {
     --heading-size: #{mx.px-to-rem(20px)};
   }
-}
 
-.glide {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
   &__bullets {
-    @include mx.for-size("tablet-landscape-up"){
-      display: none !important;
-    }
+    text-align: center;
+    display: block;
   }
-  &__bullet{
-    height: 1rem !important;
-    width: 1rem !important;
-    background-color: #c4cace !important;
-    box-shadow: none !important;
-    &--active{
-      background-color: var(--umkc-blue) !important;
-    }
 
-    &:hover,
-    &:active,
-    &:focus {
-      border-color: var(--umkc-blue) !important;
-    }
-  }
-}
-
-.img{
-
-  &--round{
+  &__bullet {
+    background: var(--umkc-blue);
+    height: 1rem;
+    width: 1rem;
     border-radius: 100%;
   }
 }
+
+.img {
+  &--round {
+    border-radius: 100%;
+  }
+}
+
 .pwb {
-  padding: 0 var(--global-padding) calc(var(--global-padding)*2);
+  padding: 0 var(--global-padding) calc(var(--global-padding) * 2);
   margin-top: 10rem;
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
+
   @include mx.for-size("tablet-landscape-up") {
     justify-content: flex-start;
     align-items: center;
@@ -272,44 +295,56 @@
     --highlight-color: var(--white);
     --heading-color: var(--white);
   }
-  &__img{
+
+  &__img {
     margin-top: -3rem;
     padding-right: 2rem;
   }
+
   &__content {
     text-align: center;
     margin-top: 1.75rem;
+
     @include mx.for-size("tablet-landscape-up") {
       text-align: left;
     }
   }
 }
 
-.icl{
+.icl {
   $self: &;
+
   padding: var(--global-padding);
+
   --heading-color: var(--umkc-blue);
   --highlight-color: var(--umkc-dark-blue);
 
-  &--blue{
+  &--blue {
     --heading-color: var(--white);
     --highlight-color: var(--white);
+
     color: var(--white);
   }
 
-  &__image{
+  &__image {
     padding-right: 2rem;
   }
-  &__row{
+
+  &__row {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     margin: var(--global-padding);
-    &--reverse {
-      flex-flow: row-reverse;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    @include mx.for-size("tablet-landscape-up") {
+      justify-content: space-between;
+      text-align: left;
+      flex-wrap: nowrap;
+      &--reverse {
+        flex-flow: row-reverse;
 
-      #{$self}__image{
-        @include mx.for-size("tablet-landscape-up") {
+        #{$self}__image {
           padding-right: 0;
           padding-left: 2rem;
         }

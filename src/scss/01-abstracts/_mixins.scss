@@ -58,6 +58,7 @@ $base-line-height: 24px !default;
   @each $item, $color in $themeColors {
     &--#{$item} {
       --btn-bg: var(--#{$item});
+
       @if floor(lightness($color)) <= 55 {
         --btn-text: var(--white);
         --btn-hover: var(--umkc-yellow);
@@ -71,7 +72,7 @@ $base-line-height: 24px !default;
   }
 }
 
-@mixin tr($for: all, $time-in: 250ms, $type: ease-in-out, $time-out: 0s){
+@mixin tr($for: all, $time-in: 250ms, $type: ease-in-out, $time-out: 0s) {
   transition: $for $time-in $type $time-out;
 }
 

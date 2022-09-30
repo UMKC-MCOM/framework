@@ -1,75 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <?php include_once("includes/head.php"); ?>
-	<link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css" />
-	<link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
-
+  {{> head }}
   <body>
 		<!-- Load SVGs first? -->
-		<?php include_once("includes/svg-sprites.php"); ?>
-		<?php include_once("includes/a11y-skip.php"); ?>
-		<?php include_once("includes/header.php"); ?>
+		{{> svg-sprites }}
+		{{> a11y-skip }}
+		{{> header }}
 
 		<div id="content" class="main-content">
-			<div class="hero">
-				<div class="hero__content">
-					<h1 class="hero__title">Health Equity Institute</h1>
-					<p>The UMKC Conservatory is internationally recognized as a center for artistic excellence and innovation. Learn from the best.</p>
-					<p><a href="#" class="button button--white button--outline button--arrow">Virtual Visit Options</a></p>
+			{{> hero }}
+
+			{{> breadcrumbs }}
+
+			<!-- {{> ks/blp }} -->
+			<!-- {{> ks/blnp }} -->
+
+			<!-- {{> ks/sp }} -->
+			<!-- {{> ks/snp }} -->
+
+			<!-- Cards -->
+			<!-- {{> ks/cp bgColor="umkc-blue" }} -->
+			<!-- {{> ks/cnp link="true" }} -->
+			<!-- {{> ks/cnp }} -->
+
+			<!-- {{> ks/qm }} -->
+			<!-- {{> ks/qs }} -->
+
+			<div class="content-row">
+				<h2>Button Classes</h2>
+				<p>Buttons are designed with a number of available variants that are listed below. Buttons are setup to be <code>inline-block</code> by default. If a button needs to take up the full width of a container and be centered; use the <code>button--block</code> class. Large buttons are also available.</p>
+				<div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+					{{> ks/buttons }}
+					{{> ks/buttons type="outline" }}
+					{{> ks/buttons type="solid button--arrow" }}
+					{{> ks/buttons type="outline button--arrow" }}
+
+					{{> ks/buttons type="outline button--cta" }}
+					{{> ks/buttons type="outline button--lg" }}
 				</div>
 			</div>
-
-			<nav class="breadcrumbs stripes--dark">
-				<ul class="nav nav--inline breadcrumbs__list">
-					<li class="breadcrumbs__item">
-						<a class="breadcrumbs__link" href="#">Home</a>
-					</li>
-					<li class="breadcrumbs__item">
-						<a class="breadcrumbs__link" href="#">Thing</a>
-					</li>
-				</ul>
-			</nav>
-
-			<?php
-			$with_image = true;
-			include('includes/kitchen-sink/benefits-list.php');
-
-			$with_image = false;
-			include('includes/kitchen-sink/benefits-list.php');
-
-			$with_image = true;
-			include('includes/kitchen-sink/stats.php');
-
-			$with_image = false;
-			include('includes/kitchen-sink/stats.php');
-
-			$with_image = true;
-			$bg_color = "umkc-blue";
-			$link_cta = true;
-			include('includes/kitchen-sink/cards.php');
-
-			$with_image = false;
-			$bg_color = false;
-			$link_cta = false;
-			$link = true;
-			include('includes/kitchen-sink/cards.php');
-
-			$with_image = false;
-			$bg_color = false;
-			$link_cta = false;
-			$link = false;
-			include('includes/kitchen-sink/cards.php');
-
-			$count = 1;
-			include('includes/kitchen-sink/quotes.php');
-
-			$count = 3;
-			$footer_scripts = "";
-			include('includes/kitchen-sink/quotes.php');
-?>
-
 		<div class="pwb bg-umkc-gray">
-			<img src="https://picsum.photos/seed/picsum/577/577" class="img--round pwb__img">
+			<img src="https://picsum.photos/seed/picsum/577/577" class="img--round pwb__img" alt="" />
 			<div class="pwb__content">
 				<h2 class="pwb__title">Photo with Buttons (PWB)</h2>
 				<p class="highlight"><strong>Bacon ipsum dolor amet meatball</strong> jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
@@ -85,7 +56,7 @@
 				<p class="highlight">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
 			</div>
 			<div class="icl__row">
-				<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image">
+				<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
 				<div class="icl__content">
 					<h3 class="icl__title">Photo with Buttons (PWB)</h3>
 					<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
@@ -94,7 +65,7 @@
 			</div>
 
 			<div class="icl__row icl__row--reverse">
-				<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image">
+				<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
 				<div class="icl__content">
 					<h3 class="icl__title">Photo with Buttons (PWB)</h3>
 					<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
@@ -103,7 +74,7 @@
 			</div>
 
 			<div class="icl__row">
-				<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image">
+				<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
 				<div class="icl__content">
 					<h3 class="icl__title">Photo with Buttons (PWB)</h3>
 					<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
@@ -118,7 +89,7 @@
 				<p class="highlight">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
 			</div>
 			<div class="icl__row">
-				<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image">
+				<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
 				<div class="icl__content">
 					<h3 class="icl__title">Photo with Buttons (PWB)</h3>
 					<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
@@ -127,7 +98,7 @@
 			</div>
 
 			<div class="icl__row icl__row--reverse">
-				<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image">
+				<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
 				<div class="icl__content">
 					<h3 class="icl__title">Photo with Buttons (PWB)</h3>
 					<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
@@ -136,7 +107,7 @@
 			</div>
 
 			<div class="icl__row">
-				<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image">
+				<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
 				<div class="icl__content">
 					<h3 class="icl__title">Photo with Buttons (PWB)</h3>
 					<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
@@ -150,7 +121,7 @@
 				<p class="highlight">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
 			</div>
 			<div class="icl__row">
-				<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image">
+				<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
 				<div class="icl__content">
 					<h3 class="icl__title">Photo with Buttons (PWB)</h3>
 					<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
@@ -159,7 +130,7 @@
 			</div>
 
 			<div class="icl__row icl__row--reverse">
-				<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image">
+				<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
 				<div class="icl__content">
 					<h3 class="icl__title">Photo with Buttons (PWB)</h3>
 					<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
@@ -168,7 +139,7 @@
 			</div>
 
 			<div class="icl__row">
-				<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image">
+				<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
 				<div class="icl__content">
 					<h3 class="icl__title">Photo with Buttons (PWB)</h3>
 					<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
@@ -176,15 +147,11 @@
 				</div>
 			</div>
 		</div>
-<?php
-			## Buttons!
-			include_once("includes/kitchen-sink/buttons.php");
-		?>
-		</div>
-		<?php include_once("includes/footer.php"); ?>
 
-		<script src="/assets/js/main.js"></script>
-		<?php if ( $footer_scripts )
-			echo $footer_scripts; ?>
+		</div>
+		{{> footer }}
+
+		<script type="module" src="./main.js"></script>
+
   </body>
 </html>

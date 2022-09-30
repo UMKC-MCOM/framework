@@ -1,4 +1,4 @@
-@use '../01-abstracts/mixins' as mx;
+@use "../01-abstracts/mixins" as mx;
 
 .main-navigation {
   &--white {
@@ -13,13 +13,14 @@
     --hover-color: var(--umkc-dark-blue);
   }
 
-  &[aria-hidden='false']{
+  &[aria-hidden="false"] {
     display: flex;
   }
+
   background: var(--nav-background, var(--umkc-dark-blue));
   display: none;
 
-  @include mx.for-size("desktop-up"){
+  @include mx.for-size("desktop-up") {
     display: flex;
     border-top: mx.px-to-rem(3px) solid var(--umkc-yellow);
     flex-flow: row nowrap;
@@ -35,23 +36,22 @@
       flex-direction: row;
     }
   }
+
   &__item {
     align-self: center;
-    padding: 1rem 0;
-    margin: 0 var(--global-padding);
+    border-bottom: none;
+    margin: 0;
+    padding: 0.5rem 2rem;
     position: relative;
 
+    @include mx.tr;
+
     &:first-child {
-      border-top: solid mx.px-to-rem(1px) var(--nav-border, rgb(255, 255, 255, 35%));
+      border-top: solid mx.px-to-rem(1px) var(--nav-border, rgb(255 255 255 / 35%));
     }
 
-    @include mx.tr();
-
-    padding: .5rem 2rem;
-    margin: 0;
-    border-bottom: none;
-    &:not(:first-child)::before{
-      border-right: solid mx.px-to-rem(1px) var(--nav-border, rgb(255, 255, 255, 35%));
+    &:not(:first-child)::before {
+      border-right: solid mx.px-to-rem(1px) var(--nav-border, rgb(255 255 255 / 35%));
       content: "";
       margin-left: -2rem;
       height: 100%;
@@ -59,9 +59,11 @@
       top: 0;
     }
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       background: var(--hover-color, var(--umkc-blue));
-      a{
+
+      a {
         color: var(--hover-text, var(--white));
       }
     }
@@ -72,13 +74,15 @@
     display: block;
     text-decoration: none;
     padding: 0 0.5rem;
-    @include mx.tr('color');
-    @include mx.for-size("desktop-up"){
-      padding: .5rem 1rem;
+
+    @include mx.tr("color");
+
+    @include mx.for-size("desktop-up") {
+      padding: 0.5rem 1rem;
     }
   }
 
-  &__close{
+  &__close {
     background: none;
     border: none;
     position: absolute;
@@ -91,7 +95,8 @@
 
     @include mx.tr("background");
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       background: var(--hover-color, var(--umkc-blue));
     }
 
@@ -99,6 +104,7 @@
       display: none;
     }
   }
+
   &__icon {
     height: mx.px-to-rem(50px);
   }
@@ -107,7 +113,8 @@
     color: white;
     padding: 1rem;
     align-self: flex-end;
-    @include mx.for-size("desktop-up"){
+
+    @include mx.for-size("desktop-up") {
       display: none;
     }
   }
