@@ -248,38 +248,27 @@
 
   &__item {
     text-align: center;
+    display: none;
+
+    @include mx.for-size("tablet-landscape-up"){
+      display: block;
+    }
   }
 
   &__title {
     --heading-size: #{mx.px-to-rem(20px)};
   }
-}
-
-.glide {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
 
   &__bullets {
-    @include mx.for-size("tablet-landscape-up") {
-      display: none !important;
-    }
+    text-align: center;
+    display: block;
   }
 
   &__bullet {
-    height: 1rem !important;
-    width: 1rem !important;
-    background-color: #c4cace !important;
-    box-shadow: none !important;
-
-    &--active {
-      background-color: var(--umkc-blue) !important;
-    }
-
-    &:hover,
-    &:active,
-    &:focus {
-      border-color: var(--umkc-blue) !important;
-    }
+    background: var(--umkc-blue);
+    height: 1rem;
+    width: 1rem;
+    border-radius: 100%;
   }
 }
 
@@ -343,15 +332,19 @@
 
   &__row {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     margin: var(--global-padding);
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    @include mx.for-size("tablet-landscape-up") {
+      justify-content: space-between;
+      text-align: left;
+      flex-wrap: nowrap;
+      &--reverse {
+        flex-flow: row-reverse;
 
-    &--reverse {
-      flex-flow: row-reverse;
-
-      #{$self}__image {
-        @include mx.for-size("tablet-landscape-up") {
+        #{$self}__image {
           padding-right: 0;
           padding-left: 2rem;
         }
