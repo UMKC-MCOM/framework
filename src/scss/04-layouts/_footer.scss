@@ -21,7 +21,8 @@
 
   &__top {
     align-items: flex-start;
-    background-image: url("../images/footer-top__image.webp");
+    background-image: url("/src/images/footer-top__image.webp");
+    background-color: var(--black);
     background-position: center bottom;
     height: 44.5vh;
     justify-content: center;
