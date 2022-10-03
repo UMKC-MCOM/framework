@@ -1,8 +1,9 @@
-// vite.config.js
+import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import handlebars from 'vite-plugin-handlebars';
 
-export default {
+export default defineConfig({
+  base: './',
   plugins: [
     handlebars({
       compileOptions: {
@@ -11,4 +12,4 @@ export default {
       partialDirectory: resolve(__dirname, 'includes'),
     })
   ],
-};
+});
