@@ -213,6 +213,7 @@
   &--single {
     justify-content: center;
     #{$self}__item {
+      display: block;
       @include mx.for-size("tablet-landscape-up") {
         flex: 0 1 #{mx.px-to-rem(777px)};
       }
