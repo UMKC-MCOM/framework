@@ -35,8 +35,6 @@
     flex-flow: column wrap;
 
     @include mx.for-size("tablet-portrait-up") {
-      flex-flow: row wrap;
-
       /* styleling-disable selector-class-pattern */
       .logo,
       .footer__nav,
@@ -56,6 +54,16 @@
         flex-basis: 25%;
       }
       /* stylelint-enable */
+    }
+  }
+
+  @include mx.for-size("tablet-portrait-up") {
+    &__mid {
+      flex-flow: row wrap;
+    }
+
+    &__bottom {
+      flex-flow: row nowrap;
     }
   }
 
