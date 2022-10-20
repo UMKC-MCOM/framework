@@ -50,8 +50,8 @@
     margin: 0;
     padding: 0.5rem 2rem;
     position: relative;
-
-    @include mx.tr("background 500ms, color 500ms");
+    display: block;
+    @include mx.tr(background);
 
     @include mx.for-size("desktop-up") {
       &:first-child {
