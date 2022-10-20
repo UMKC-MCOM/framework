@@ -10,7 +10,7 @@
   --logo-color: var(--white);
 
   @include mx.for-size("tablet-landscape-up") {
-    --logo-height: #{mx.px-to-rem(100px)};
+    --logo-height: #{mx.px-to-rem(88px)};
   }
 
   @each $name, $color in vars.$theme-colors {
