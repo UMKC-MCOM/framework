@@ -21,13 +21,9 @@
     background: var(--background, var(--umkc-blue));
     display: flex;
     justify-content: center;
-    align-items: stretch;
+    align-items: self-end;
     padding: var(--global-padding);
     border-bottom: solid mx.px-to-rem(3px) var(--umkc-yellow);
-
-    @include mx.for-size("tablet-landscape-up") {
-      justify-content: flex-start;
-    }
   }
 }
 
@@ -45,20 +41,37 @@
 
 .dept-header {
   display: none;
-  margin-bottom: 0.2rem;
   padding-left: var(--global-padding);
-  border-left: solid 2px var(--text-color, var(--white));
 
   @include mx.for-size("tablet-landscape-up") {
     display: flex;
-    margin-top: 2.25rem;
+    position: relative;
+
+    &:before {
+      display: block;
+      align-self: stretch;
+      background: var(--text-color, var(--white));
+      content: " ";
+      width: mx.px-to-rem(2px);
+      position: absolute;
+      height: 60px;
+      left: 0;
+      bottom: mx.px-to-rem(4px);
+    }
   }
 
   &__title {
     align-self: flex-end;
     color: var(--text-color, var(--white));
-
-    @include mx.font-size(34px);
+    padding: 0;
+    margin: 0;
+    @include mx.font-size(34px, 1);
+    a {
+      display: inline-block;
+    }
+    &--sm {
+      @include mx.font-size(28px, 1);
+    }
   }
 
   &__sub {
@@ -74,7 +87,7 @@
 
   @include mx.for-size("tablet-landscape-up") {
     display: flex;
-    align-self: flex-end;
+    // align-self: flex-end;
   }
 
   input {
