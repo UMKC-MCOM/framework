@@ -1,6 +1,11 @@
 @use "../01-abstracts/mixins" as mx;
 
 .logo {
+
+  @include mx.for-size("tablet-landscape-up") {
+    margin-right: var(--global-padding);
+  }
+
   &--link {
     display: inline-block;
   }
@@ -10,9 +15,5 @@
     color: var(--logo-color);
     height: var(--logo-height);
     width: calc(var(--logo-height) * var(--logo-ratio));
-
-    @include mx.for-size("tablet-landscape-up") {
-      padding-right: var(--global-padding);
-    }
   }
 }
