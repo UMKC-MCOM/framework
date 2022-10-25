@@ -1,0 +1,49 @@
+@use "../01-abstracts/mixins" as mx;
+
+.menu {
+  align-items: center;
+  background: var(--umkc-blue);
+  border-top: solid mx.px-to-rem(4px) var(--umkc-yellow);
+  height: mx.px-to-rem(66px);
+  position: fixed;
+    bottom: 0;
+  width: 100vw;
+  z-index: 2;
+  @include mx.for-size("desktop-up") {
+    display: none;
+  }
+
+  &__list{
+    margin: 0;
+    padding: 0.5rem 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    text-align: center;
+    list-style: none;
+    align-items: center;
+    @include mx.font-size(12px);
+  }
+
+  &__link {
+    color: var(--white);
+    text-decoration: none;
+    display: block;
+    width: 4rem;
+  }
+
+  &__icon{
+    height: mx.px-to-rem(26px);
+    width: mx.px-to-rem(26px);
+    display: block;
+    margin: 0 auto;
+
+    &--search{
+      transform: rotate(90deg)
+    }
+
+    &--close{
+      display: none;
+    }
+  }
+}

@@ -6,7 +6,6 @@
 		{{> svg-sprites }}
 		{{> a11y-skip }}
 		{{> header }}
-
 		<div id="content" class="main-content">
 			{{> hero }}
 
@@ -150,7 +149,42 @@
 
 		</div>
 		{{> footer }}
-
+		<div class="menu">
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a href="#" class="menu__link" data-toggle="#main-navigation">
+						<svg class="icon menu__icon"><use xlink:href="#menu"></use></svg>
+						<svg class="icon menu__icon menu__icon--close"><use xlink:href="#close"></use></svg>
+						Menu
+					</a>
+				</li>
+				<li class="menu__item">
+					<a href="#" class="menu__link">
+						<svg class="icon menu__icon menu__icon--search"><use xlink:href="#search"></use></svg>
+						<svg class="icon menu__icon menu__icon--close"><use xlink:href="#close"></use></svg>
+						Search
+					</a>
+				</li>
+				<li class="menu__item">
+					<a href="#" class="menu__link">
+						<svg class="icon menu__icon"><use xlink:href="#pencil"></use></svg>
+						Apply
+					</a>
+				</li>
+				<li class="menu__item">
+					<a href="#" class="menu__link">
+						<svg class="icon menu__icon"><use xlink:href="#cloud-up"></use></svg>
+						Get Info
+					</a>
+				</li>
+				<li class="menu__item">
+					<a href="#" class="menu__link">
+						<svg class="icon menu__icon"><use xlink:href="#cap"></use></svg>
+						Give
+					</a>
+				</li>
+			</ul>
+		</div>
 		<script type="module" src="./main.js"></script>
 
   </body>

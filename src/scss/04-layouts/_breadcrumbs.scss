@@ -5,7 +5,6 @@
   &__item {
     &:not(:last-child)::after {
       content: " / ";
-      display: inline-block;
     }
   }
 

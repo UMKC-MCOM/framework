@@ -1,6 +1,20 @@
 @use "../01-abstracts/mixins" as mx;
 
 .main-navigation {
+  background: var(--nav-background, var(--umkc-dark-blue));
+  position: fixed;
+  bottom: mx.px-to-rem(66px);
+  width: 100%;
+  font-weight: 700;
+  box-shadow: 0 0 25px 0px #000;
+  z-index: 2;
+  padding: 1rem 0;
+  display: none;
+
+  &[aria-hidden="false"]{
+    display: flex;
+  }
+
   &--white {
     --nav-background: white;
     --nav-text: var(--umkc-blue);
@@ -13,22 +27,15 @@
     --hover-color: var(--umkc-dark-blue);
   }
 
-  &[aria-hidden="false"] {
-    display: flex;
-  }
-
-  background: var(--nav-background, var(--umkc-dark-blue));
-  display: none;
-
   @include mx.for-size("desktop-up") {
-    display: flex;
     border-top: mx.px-to-rem(3px) solid var(--umkc-yellow);
+    box-shadow: none;
+    display: flex;
     flex-flow: row nowrap;
     font-family: var(--condensed);
-    font-weight: 700;
     justify-content: center;
     padding: 0 var(--global-padding);
-
+    position: static;
     @include mx.font-size(20px, 1.5em);
 
     ul {
@@ -43,22 +50,23 @@
     margin: 0;
     padding: 0.5rem 2rem;
     position: relative;
+    display: block;
+    @include mx.tr(background);
 
-    @include mx.tr;
+    @include mx.for-size("desktop-up") {
+      &:first-child {
+        border-top: solid mx.px-to-rem(1px) var(--nav-border, rgb(255 255 255 / 35%));
+      }
 
-    &:first-child {
-      border-top: solid mx.px-to-rem(1px) var(--nav-border, rgb(255 255 255 / 35%));
+      &:not(:first-child)::before {
+        border-right: solid mx.px-to-rem(1px) var(--nav-border, rgb(255 255 255 / 35%));
+        content: "";
+        margin-left: -2rem;
+        height: 100%;
+        position: absolute;
+        top: 0;
+      }
     }
-
-    &:not(:first-child)::before {
-      border-right: solid mx.px-to-rem(1px) var(--nav-border, rgb(255 255 255 / 35%));
-      content: "";
-      margin-left: -2rem;
-      height: 100%;
-      position: absolute;
-      top: 0;
-    }
-
     &:hover,
     &:focus {
       background: var(--hover-color, var(--umkc-blue));

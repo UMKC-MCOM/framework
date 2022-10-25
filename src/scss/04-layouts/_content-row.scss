@@ -23,9 +23,10 @@
   @include mx.for-size("tablet-landscape-up") {
     justify-content: space-around;
     flex-flow: row wrap;
+    align-items: center;
 
     &__image {
-      margin-right: 2rem;
+      margin-right: 4rem;
       flex: 0 1;
     }
   }
@@ -213,6 +214,7 @@
   &--single {
     justify-content: center;
     #{$self}__item {
+      display: block;
       @include mx.for-size("tablet-landscape-up") {
         flex: 0 1 #{mx.px-to-rem(777px)};
       }
