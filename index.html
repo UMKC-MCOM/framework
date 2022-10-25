@@ -10,7 +10,7 @@
   <!-- <link rel="stylesheet" href="/assets/css/print.css" type="text/css" media="print" /> -->
   <meta content="#0066cc" name="theme-color">
   <script type="module" crossorigin src="./assets/index.1ad9a2c1.js"></script>
-  <link rel="stylesheet" href="./assets/index.26e69d1b.css">
+  <link rel="stylesheet" href="./assets/index.3ea0636f.css">
 </head>
   <body>
 		<!-- Load SVGs first? -->
@@ -47,9 +47,9 @@
           c0,1.5,0.2,3,0.2,3s0.2,1.3,0.7,1.9c0.7,0.8,1.6,0.7,2,0.8c1.4,0.1,6.1,0.2,6.1,0.2s3.8,0,6.3-0.2c0.3,0,1.1,0,1.8-0.8
           c0.5-0.6,0.7-1.9,0.7-1.9s0.2-1.5,0.2-3v-1.2v-0.3C32,20.3,31.8,18.8,31.8,18.8z"/>
     </symbol>
-    <symbol id="close" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+    <!-- <symbol id="close" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-    </symbol>
+    </symbol> -->
     <symbol id="menu" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
       <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
     </symbol>
@@ -59,6 +59,18 @@
     <symbol id="flame" viewBox="0 0 40.64 48.44">
       <path d="M12.08,1.39c.05-.61-.36-1.15-.96-1.27l-.13-.02c-.54-.07-1.06,.26-1.21,.79l-.02,.06c-2.74,9.47-2,17.94,1.95,22.62,.23,.3,4.6,5.79,22.81,15.08,3.06-3.58,5.21-7.95,6.12-12.77C26.51,19.15,11.27,10.45,12.08,1.39Z" />
       <path class="cls-1" d="M29.55,43.22c-5.2-2.66-10.45-5.58-15.47-8.86C6.3,29.27,3.73,22.64,3.13,20.73c-.16-.51-.63-.85-1.17-.83-.37,.04-.6,.17-.77,.33-.24,.21-.35,.59-.35,.59-2.53,10.88,.63,20.03,9.38,27.33,1.08,.13,2.18,.2,3.29,.2,5.98,0,11.5-1.91,16.02-5.13Z" />
+    </symbol>
+    <symbol id="cloud-up" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z" />
+    </symbol>
+    <symbol id="pencil" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
+    </symbol>
+    <symbol id="cap" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+    </symbol>
+    <symbol id="close" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
     </symbol>
 </svg>
 		<nav class="skip-links" aria-label="Skip Links">
@@ -72,7 +84,7 @@
   <div class="bg-umkc-blue stripes header">
     <h1 class="site-title"><a href="/">University of Missouri - Kansas City</a></h1>
   </div>
-  <div class="header header--secondary">
+  <div class="header header--secondary header--">
     <div class="logo">
       <a href="/" class="logo--link">
         <svg class="logo--image" aria-label="University of Missouri. Kansas City." role="img"><use xlink:href="#umkc"></use></svg>
@@ -80,7 +92,10 @@
     </div>
     <div class="dept-header">
       <h2 class="dept-header__title">
-        Office of the Chancellor
+        <a href="#">
+          <span class="dept-header__sub">Office of</span>
+          Office of the Chancellor
+        </a>
       </h2>
     </div>
     <form class="search" action="https://www.umkc.edu/search.html">
@@ -126,13 +141,18 @@
   </ul>
 </nav>
 </header>
-
 		<div id="content" class="main-content">
 			<div class="hero">
   <div class="hero__content">
     <h1 class="hero__title">Health Equity Institute</h1>
     <p>The UMKC Conservatory is internationally recognized as a center for artistic excellence and innovation. Learn from the best.</p>
     <p><a href="#" class="button button--white button--outline button--arrow">Virtual Visit Options</a></p>
+  </div>
+</div>
+
+<div class="hero hero--standard">
+  <div class="hero__content">
+    <h1 class="hero__title">Health Equity Institute</h1>
   </div>
 </div>
 
@@ -185,8 +205,8 @@
   </div>
 </div>
 			<div class="content-row">
-    <h2>Benefits List without Photo</h2>
-    <p class="highlight">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
+    <h2 class="text-center">Benefits List without Photo</h2>
+    <p class="highlight text-center">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
   <div class="benefits-list">
     <div class="benefits-list__group">
       <div class="benefits-list__points">
@@ -208,6 +228,33 @@
         </div>
         <div class="benefits-list__item">
           <div class="benefits-list__icon">3</div>
+          <div class="benefits-list__details">
+            <h3 class="benefits-list__title">Point</h3>
+            <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="benefits-list__group">
+      <div class="benefits-list__points">
+        <div class="benefits-list__item">
+          <div class="benefits-list__icon">5</div>
+          <div class="benefits-list__details">
+            <h3 class="benefits-list__title">Point</h3>
+            <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
+          </div>
+        </div>
+        <div class="benefits-list__item">
+          <div class="benefits-list__icon benefits-list__icon--flame">
+            <svg class="icon"><use xlink:href="#flame" /></svg>
+          </div>
+          <div class="benefits-list__details">
+            <h3 class="benefits-list__title">Point</h3>
+            <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
+          </div>
+        </div>
+        <div class="benefits-list__item">
+          <div class="benefits-list__icon">6</div>
           <div class="benefits-list__details">
             <h3 class="benefits-list__title">Point</h3>
             <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
@@ -858,7 +905,42 @@
     <p>UMKC is an equal opportunity/access/affirmative action/pro-disability and veteran employer and does not discriminate on the basis of sex in our education programs or activities, pursuant to Title IX and 34 CFR Part 106. For more information, visit our <a href="nondiscrimination.html">UMKC Statement of Nondiscrimination</a>.</p>
   </div>
 </footer>
-
+		<div class="menu">
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a href="#" class="menu__link" data-toggle="#main-navigation">
+						<svg class="icon menu__icon"><use xlink:href="#menu"></use></svg>
+						<svg class="icon menu__icon menu__icon--close"><use xlink:href="#close"></use></svg>
+						Menu
+					</a>
+				</li>
+				<li class="menu__item">
+					<a href="#" class="menu__link">
+						<svg class="icon menu__icon menu__icon--search"><use xlink:href="#search"></use></svg>
+						<svg class="icon menu__icon menu__icon--close"><use xlink:href="#close"></use></svg>
+						Search
+					</a>
+				</li>
+				<li class="menu__item">
+					<a href="#" class="menu__link">
+						<svg class="icon menu__icon"><use xlink:href="#pencil"></use></svg>
+						Apply
+					</a>
+				</li>
+				<li class="menu__item">
+					<a href="#" class="menu__link">
+						<svg class="icon menu__icon"><use xlink:href="#cloud-up"></use></svg>
+						Get Info
+					</a>
+				</li>
+				<li class="menu__item">
+					<a href="#" class="menu__link">
+						<svg class="icon menu__icon"><use xlink:href="#cap"></use></svg>
+						Give
+					</a>
+				</li>
+			</ul>
+		</div>
 		
 
   </body>
