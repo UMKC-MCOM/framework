@@ -16,4 +16,38 @@
     margin: var(--heading-margin, 1.5rem 0 0);
     font-size: var(--heading-size, #{mx.px-to-rem(36px)});
   }
+
+  a:not([class]){
+    --btn-arrow: var(--umkc-blue);
+    color: var(--btn-arrow);
+    @include mx.tr(color, 500ms);
+
+    &:hover, &:focus, &:active {
+      --btn-arrow: var(--umkc-dark-blue);
+    }
+  }
+
+  a[target="_blank"]::after {
+    background: var(--btn-arrow, var(--btn-text));
+    background-repeat: no-repeat;
+    background-size: var(--arrow-size, 1rem) var(--arrow-size, 1rem);
+    content: " ";
+    display: inline-block;
+    height: var(--arrow-size, 1rem);
+    // forcing Webkit to be here!
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' %3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25' /%3E%3C/svg%3E");
+    -webkit-mask-position: center;
+    -webkit-mask-mode: screen;
+    -webkit-mask-size: contain;
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' %3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25' /%3E%3C/svg%3E");
+    mask-position: center;
+    mask-mode: screen;
+    mask-size: contain;
+
+    margin-left: 0.75rem;
+    margin-bottom: -0.25rem;
+    width: var(--arrow-size, 1rem);
+
+    @include mx.tr(background);
+  }
 }
