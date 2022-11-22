@@ -28,6 +28,9 @@
     &__image {
       margin-right: 4rem;
       flex: 0 1;
+      height: #{mx.px-to-rem(535px)};
+      width: #{mx.px-to-rem(448px)};
+      object-fit: cover;
     }
   }
 
@@ -134,12 +137,12 @@
 .cards {
   $self: &;
 
-  padding: 0 var(--global-padding);
+  padding: 0 var(--content-padding);
 
   &__group {
     display: flex;
     flex-flow: column;
-    align-items: center;
+    // align-items: center;
 
     @include mx.for-size("tablet-landscape-up") {
       flex-flow: row nowrap;
@@ -150,14 +153,14 @@
 
   &--has-bg {
     margin-top: 3rem;
-    padding: var(--global-padding);
+    padding: var(--content-padding);
     #{$self}__group {
       margin-top: -8rem;
       padding-bottom: 2rem;
     }
     #{$self}__item {
       margin-top: 1rem;
-      max-width: 300px;
+      max-width: #{mx.px-to-rem(352px)};
 
       @include mx.for-size("desktop-up") {
         max-width: none;
@@ -167,8 +170,12 @@
   }
 
   &__item {
+    @include mx.for-size("tablet-landscape-up") {
+      flex-basis: calc(100% / 3);
+    }
     &--centered {
       text-align: center;
+      align-self: center;
     }
 
     &:not(:last-child) {
@@ -205,7 +212,7 @@
 .quote {
   $self: &;
 
-  padding: 4rem var(--global-padding);
+  padding: 4rem var(--content-padding);
   margin: 2rem 0;
   display: flex;
   flex-flow: row nowrap;
@@ -281,13 +288,13 @@
 }
 
 .pwb {
-  padding: 0 var(--global-padding) calc(var(--global-padding) * 2);
+  padding: 0 var(--content-padding) var(--content-padding);
   margin-top: 10rem;
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
 
-  @include mx.for-size("tablet-landscape-up") {
+  @include mx.for-size("desktop-up") {
     justify-content: flex-start;
     align-items: center;
     flex-flow: row nowrap;
@@ -301,13 +308,19 @@
   &__img {
     margin-top: -3rem;
     padding-right: 2rem;
+
+    @include mx.for-size("desktop-up") {
+      height: #{mx.px-to-rem(577px)};
+      width: #{mx.px-to-rem(577px)};
+      object-fit: cover;
+    }
   }
 
   &__content {
     text-align: center;
     margin-top: 1.75rem;
 
-    @include mx.for-size("tablet-landscape-up") {
+    @include mx.for-size("desktop-up") {
       text-align: left;
     }
   }
@@ -316,7 +329,7 @@
 .icl {
   $self: &;
 
-  padding: var(--global-padding);
+  padding: var(--content-padding);
 
   --heading-color: var(--umkc-blue);
   --highlight-color: var(--umkc-dark-blue);
@@ -335,7 +348,7 @@
   &__row {
     display: flex;
     align-items: center;
-    margin: var(--global-padding);
+    margin: var(--content-padding);
     flex-wrap: wrap;
     text-align: center;
     justify-content: center;
