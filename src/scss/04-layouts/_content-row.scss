@@ -168,6 +168,7 @@
   &__item {
     display: flex;
     flex-direction: column;
+    flex-basis: calc( 100% / 3);
     &--centered {
       text-align: center;
     }
