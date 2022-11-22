@@ -137,17 +137,15 @@
 .cards {
   $self: &;
 
-  padding: 0 var(--content-padding);
+  padding: 0 var(--content-padding) 2rem;
 
   &__group {
     display: flex;
     flex-flow: column;
-    // align-items: center;
+    justify-content: space-evenly;
 
     @include mx.for-size("tablet-landscape-up") {
       flex-flow: row nowrap;
-      justify-content: space-evenly;
-      align-content: center;
     }
   }
 
@@ -156,38 +154,33 @@
     padding: var(--content-padding);
     #{$self}__group {
       margin-top: -8rem;
-      padding-bottom: 2rem;
     }
     #{$self}__item {
+      background: var(--white);
       margin-top: 1rem;
-      max-width: #{mx.px-to-rem(352px)};
 
       @include mx.for-size("desktop-up") {
         max-width: none;
-        flex: 0 0 #{mx.px-to-rem(352px)};
       }
     }
   }
 
   &__item {
-    @include mx.for-size("tablet-landscape-up") {
-      flex-basis: calc(100% / 3);
-    }
+    display: flex;
+    flex-direction: column;
     &--centered {
       text-align: center;
-      align-self: center;
     }
 
     &:not(:last-child) {
       @include mx.for-size("tablet-landscape-up") {
-        margin-right: 2rem;
+        margin-right: 2.5rem;
       }
     }
   }
 
   &__content {
-    padding: 1rem;
-    background: var(--white);
+    padding: 1.5rem;
   }
 
   &__title {
