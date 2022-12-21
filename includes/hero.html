@@ -1,3 +1,4 @@
+{{#if video }}
 <div class="hero hero--video">
   <video id="hero-video" class="hero__video" autoplay="" muted="" loop="" playsinline="">
     <source data-src="https://www.umkc.edu/videos/Home-hero-loops/october-2022-homepage-hero-loop.mp4" type="video/mp4">
@@ -34,7 +35,13 @@
       </button>
   </div>
 </div>
-
+{{else if standard }}
+<div class="hero hero--standard">
+  <div class="hero__content">
+    <h1 class="hero__title">Health Equity Institute</h1>
+  </div>
+</div>
+{{ else }}
 <div class="hero">
   <div class="hero__content">
     <h1 class="hero__title">Health Equity Institute</h1>
@@ -42,11 +49,4 @@
     <p><a href="#" class="button button--white button--outline button--arrow">Virtual Visit Options</a></p>
   </div>
 </div>
-
-
-
-<div class="hero hero--standard">
-  <div class="hero__content">
-    <h1 class="hero__title">Health Equity Institute</h1>
-  </div>
-</div>
+{{/if}}
