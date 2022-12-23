@@ -12,8 +12,13 @@
     --search-bg: #e5eef5;
   }
 
+  &--navy {
+    --background: var(--umkc-dark-blue);
+    --logo-color: var(--white);
+  }
+
   a {
-    color: var(--white);
+    color: var(--link-color, var(--white));
     text-decoration: none;
   }
 
@@ -101,6 +106,7 @@
     display: flex;
   }
   @include mx.for-size("desktop-up") {
+    background: none;
     display: flex;
     position: static;
     box-shadow: none;
@@ -109,21 +115,15 @@
   }
 
   input {
-    background: var(--white);
+    background: var(--search-bg, var(--white));
     border: none;
     border-radius: mx.px-to-rem(7px) 0  0 mx.px-to-rem(7px);
 
     @include mx.font-size(16px);
 
+    margin: 0;
     padding: 0.25rem 0.5rem;
     height: 42px;
-
-    @include mx.tr;
-
-    &:focus,
-    &:active {
-      background: var(--white);
-    }
   }
 
   button {
@@ -132,7 +132,6 @@
     background: var(--umkc-yellow);
     padding: 0.5rem;
     height: 42px;
-    margin-left: -0.5rem;
     @include mx.tr(all);
     &:hover, &:focus, &:active {
       background: var(--umkc-dark-blue);

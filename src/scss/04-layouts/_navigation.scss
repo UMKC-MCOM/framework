@@ -10,9 +10,13 @@
   z-index: 2;
   padding: 1rem 0;
   display: none;
+  @include mx.font-size(14px, 1.5);
 
+  @include mx.for-size("tablet-portrait-up"){
+    @include mx.font-size(20px, 1.5);
+  }
   &[aria-hidden="false"]{
-    display: flex;
+    display: block;
   }
 
   &--white {
@@ -30,17 +34,18 @@
   @include mx.for-size("desktop-up") {
     border-top: mx.px-to-rem(3px) solid var(--umkc-yellow);
     box-shadow: none;
-    display: flex;
-    flex-flow: row nowrap;
+    display: block;
     font-family: var(--condensed);
-    justify-content: center;
     padding: 0 var(--global-padding);
     position: static;
-    @include mx.font-size(20px, 1.5em);
+  }
 
-    ul {
-      display: flex;
-      flex-direction: row;
+  ul {
+    display: flex;
+    flex-flow: row wrap;
+    @include mx.for-size("desktop-up"){
+      flex-wrap: nowrap;
+      justify-content: center;
     }
   }
 
@@ -50,22 +55,25 @@
     margin: 0;
     padding: 0.5rem 2rem;
     position: relative;
-    display: block;
     @include mx.tr(background);
+    flex: 0 0 50%;
 
-    @include mx.for-size("desktop-up") {
-      &:first-child {
-        border-top: solid mx.px-to-rem(1px) var(--nav-border, rgb(255 255 255 / 35%));
-      }
-
+    @include mx.for-size("desktop-up"){
+      --link-margin: 2rem;
+      flex: none;
       &:not(:first-child)::before {
         border-right: solid mx.px-to-rem(1px) var(--nav-border, rgb(255 255 255 / 35%));
         content: "";
-        margin-left: -2rem;
+        margin-left:  calc(var(--link-margin) * -1);
         height: 100%;
         position: absolute;
         top: 0;
       }
+    }
+
+    @include mx.for-size("desktop-up") {
+      --link-margin: 1.5rem;
+      padding: 0.5rem var(--link-margin);
     }
     &:hover,
     &:focus {

@@ -1,0 +1,31 @@
+@use "../01-abstracts/mixins" as mx;
+
+ul, ol {
+  padding: mx.px-to-rem(8px) mx.px-to-rem(24px);
+}
+
+ol{
+  ol{
+    list-style-type: lower-alpha;
+
+    ol{
+      list-style-type: lower-roman;
+    }
+  }
+}
+
+dl {
+
+  dt {
+    font-weight: bold;
+  }
+  dd {
+    margin:0 mx.px-to-rem(24px);
+    &:after {
+      content: "";
+      display: block;
+      margin: mx.px-to-rem(8px) calc(mx.px-to-rem(24px) * -1);
+      border-bottom: solid mx.px-to-rem(3px) var(--umkc-gray);
+    }
+  }
+}
