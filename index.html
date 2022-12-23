@@ -5,9 +5,11 @@
 		<!-- Load SVGs first? -->
 		{{> svg-sprites }}
 		{{> a11y-skip }}
-		{{> header }}
+		{{> header bgColor="navy" }}
 		<div id="content" class="main-content">
 			{{> hero standard="true" }}
+			<!-- {{> hero video="true" }} -->
+			<!-- {{> hero }} -->
 
 			{{> breadcrumbs }}
 
@@ -33,7 +35,6 @@
 					{{> ks/buttons type="outline" }}
 					{{> ks/buttons type="solid button--arrow" }}
 					{{> ks/buttons type="outline button--arrow" }}
-
 					{{> ks/buttons type="outline button--cta" }}
 					{{> ks/buttons type="outline button--lg" }}
 				</div>
@@ -43,6 +44,7 @@
 		<!-- {{> ks/icl bgColor="umkc-blue icl--blue" buttonColor="white"}} -->
 		<!-- {{> ks/icl bgColor="umkc-gray" buttonColor="umkc-blue"}} -->
 		<!-- {{> ks/icl bgColor="" buttonColor="umkc-blue"}} -->
+		{{> ks/standard }}
 
 		</div>
 		{{> footer }}
