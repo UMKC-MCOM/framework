@@ -1,0 +1,18 @@
+/*
+@TODO: Implement full flex-box mixin from https://gist.github.com/richardtorres314/26b18e12958ba418bb37993fdcbfc1bd
+*/
+
+@mixin flex-container($just,$dir) {
+	display: flex;
+    flex-direction: row;
+    justify-content: $just;
+    align-content: $dir;
+}
+@mixin flex-item {
+		order: 0;
+		flex: 0 1 auto;
+		align-self: auto;
+}
+@mixin flex-basis($n){
+	flex-basis: $n;
+}
