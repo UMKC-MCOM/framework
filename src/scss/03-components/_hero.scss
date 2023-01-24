@@ -6,10 +6,12 @@
   background-repeat: no-repeat;
   background-position: center;
   background-color: black;
+  background-image: url("/src/images/hero__admissions.webp");
   display: flex;
   align-items: flex-end;
   height: var(--hero-height, #{mx.px-to-rem(500px)});
   @include mx.for-size("tablet-landscape-up") {
+    background-image: url("/src/images/hero__admissions.webp");
     --hero-title: #{mx.px-to-rem(60px)};
   }
   &__content {
