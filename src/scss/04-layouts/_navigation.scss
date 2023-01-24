@@ -13,7 +13,7 @@
   @include mx.font-size(14px, 1.5);
 
   @include mx.for-size("tablet-portrait-up"){
-    @include mx.font-size(20px, 1.5);
+    @include mx.font-size(18px, 1.5);
   }
   &[aria-hidden="false"]{
     display: block;
@@ -40,9 +40,10 @@
     position: static;
   }
 
-  ul {
+  &__list {
     display: flex;
     flex-flow: row wrap;
+    padding: 0;
     @include mx.for-size("desktop-up"){
       flex-wrap: nowrap;
       justify-content: center;
