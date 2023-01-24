@@ -3,7 +3,6 @@ const toggles = document.querySelectorAll('[data-toggle]');
   toggle.addEventListener('click', function(e){
     e.preventDefault();
     let content = document.querySelector(toggle.dataset.toggle);
-    console.log(content.getAttribute('aria-hidden'));
     if ( content.getAttribute('aria-hidden') === "false" ) {
       toggle.setAttribute('aria-expanded', false);
       content.setAttribute('aria-hidden', true);
