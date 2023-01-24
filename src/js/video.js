@@ -1,7 +1,9 @@
 // Get the heroVideo
 const heroVideo = document.querySelector("#hero-video");
 // Get the sources for the video
-const sources   = heroVideo.querySelectorAll("source");
+if ( heroVideo !== null) {
+  const sources   = heroVideo.querySelectorAll("source");
+}
 // If there is a video, run the code!
 if ( heroVideo && sources.length != 0 ){
   if ( !/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
