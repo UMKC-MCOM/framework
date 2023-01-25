@@ -52,17 +52,17 @@
     @include mx.tr(background);
   }
 }
-.icl {
-	a {
-		text-decoration: none;
-	}
-	.flex-wrapper {
-		@include fx.flex-container(flex-start, flex-start);
-	}
-	.flex-wrapper-centered {
-		@include fx.flex-container(space-between,flex-start);
-	}
-	.flex-basis-30 {
-		@include fx.flex-basis(30%);
-	}
-}
+// .icl {
+// 	a {
+// 		text-decoration: none;
+// 	}
+// 	.flex-wrapper {
+// 		@include fx.flex-container(flex-start, flex-start);
+// 	}
+// 	.flex-wrapper-centered {
+// 		@include fx.flex-container(space-between,flex-start);
+// 	}
+// 	.flex-basis-30 {
+// 		@include fx.flex-basis(30%);
+// 	}
+// }

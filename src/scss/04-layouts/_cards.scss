@@ -24,10 +24,6 @@
     #{$self}__item {
       background: var(--white);
       margin-top: 1rem;
-
-      @include mx.for-size("desktop-up") {
-        max-width: none;
-      }
     }
   }
 

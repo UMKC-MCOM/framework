@@ -28,10 +28,11 @@
   &__row {
     display: flex;
     align-items: center;
-    // margin: var(--content-padding);
+    margin: var(--content-padding);
     flex-wrap: wrap;
     text-align: center;
     justify-content: center;
+
     @include mx.for-size("tablet-landscape-up") {
       justify-content: space-between;
       text-align: left;
@@ -46,6 +47,39 @@
           }
         }
       }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: var(--umkc-blue);
+    &:hover, &:active, &:focus{
+      color: var(--umkc-dark-blue);
+    }
+  }
+  &--stacked {
+    display: flex;
+    flex-direction: column;
+    @include mx.for-size("tablet-landscape-up") {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: flex-start;
+    }
+    > #{$self}__title {
+      flex: 1 0 100%;
+    }
+
+    #{$self}__row {
+      @include mx.for-size("tablet-landscape-up"){
+        flex-basis: calc(100% / 3 - 2rem);
+        flex-direction: column;
+        margin: 0;
+        padding: 1rem;
+      }
+    }
+    #{$self}__image {
+      padding: 0;
     }
   }
 }

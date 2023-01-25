@@ -4,14 +4,14 @@
 
 @mixin flex-container($just,$dir) {
 	display: flex;
-    flex-direction: row;
-    justify-content: $just;
-    align-content: $dir;
+  flex-direction: row;
+  justify-content: $just;
+  align-content: $dir;
 }
 @mixin flex-item {
-		order: 0;
-		flex: 0 1 auto;
-		align-self: auto;
+	order: 0;
+	flex: 0 1 auto;
+	align-self: auto;
 }
 @mixin flex-basis($n){
 	flex-basis: $n;
