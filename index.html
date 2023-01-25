@@ -5,27 +5,43 @@
 		<!-- Load SVGs first? -->
 		{{> svg-sprites }}
 		{{> a11y-skip }}
-		{{> header }}
-
-		<div id="content" class="main-content">
+		{{> header bgColor="navy" }}
+		<div id="landing-page" class="main-content">
+			<!-- {{> hero video="true" }} -->
 			{{> hero }}
-
+			<!-- Breadcrumbs -->
 			{{> breadcrumbs }}
 
-			<!-- {{> ks/blp }} -->
-			<!-- {{> ks/blnp }} -->
+			{{> ks/blp }}
+			{{> ks/blnp }}
 
-			<!-- {{> ks/sp }} -->
-			<!-- {{> ks/snp }} -->
+			{{> ks/sp }}
+			{{> ks/snp }}
 
 			<!-- Cards -->
-			<!-- {{> ks/cp bgColor="umkc-blue" }} -->
-			<!-- {{> ks/cnp link="true" }} -->
-			<!-- {{> ks/cnp }} -->
+			{{> ks/cp bgColor="umkc-blue" }}
+			{{> ks/cnp link="true" }}
+			{{> ks/cnp }}
 
-			<!-- {{> ks/qm }} -->
-			<!-- {{> ks/qs }} -->
+			{{> ks/qm }}
+			{{> ks/qs }}
 
+			{{> ks/pwb }}
+
+			{{> ks/icl bgColor="umkc-blue icl--blue" buttonColor="white"}}
+			{{> ks/icl bgColor="umkc-gray" buttonColor="umkc-blue"}}
+			{{> ks/icl bgColor="" buttonColor="umkc-blue"}}
+			{{> ks/news }}
+			{{> ks/calendar }}
+		</div>
+		<div id="standard-page" class="main-content">
+			<!-- Start of the Standard Page Layout -->
+			<div style="background: var(--umkc-blue); height: 8rem; margin: 2rem 0 0;"><h1 style="color: white; padding: var(--content-padding);">Start: Standard Page</h1></div>
+			{{> hero standard="true" }}
+			{{> breadcrumbs }}
+			{{> ks/standard }}
+
+			<div style="background: var(--umkc-blue); height: 8rem; margin: 2rem 0 0;"><h1 style="color: white; padding: var(--content-padding);">Start: Utilities</h1></div>
 			<div class="content-row">
 				<h2>Button Classes</h2>
 				<p>Buttons are designed with a number of available variants that are listed below. Buttons are setup to be <code>inline-block</code> by default. If a button needs to take up the full width of a container and be centered; use the <code>button--block</code> class. Large buttons are also available.</p>
@@ -34,186 +50,49 @@
 					{{> ks/buttons type="outline" }}
 					{{> ks/buttons type="solid button--arrow" }}
 					{{> ks/buttons type="outline button--arrow" }}
-
 					{{> ks/buttons type="outline button--cta" }}
 					{{> ks/buttons type="outline button--lg" }}
 				</div>
 			</div>
-			<div class="pwb bg-umkc-gray">
-				<img src="https://picsum.photos/seed/picsum/577/577" class="img--round pwb__img" alt="" />
-				<div class="pwb__content">
-					<h2 class="pwb__title">Photo with Buttons (PWB)</h2>
-					<p class="highlight"><strong>Bacon ipsum dolor amet meatball</strong> jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
-				<p><a href="#" class="button button--umkc-yellow button--cta">Button Text</a></p>
-				<p><a href="#" class="button button--umkc-yellow button--cta">Button Text</a></p>
-				<p><a href="#" class="button button--umkc-yellow button--cta">Button Text</a></p>
-				</div>
-			</div>
-
-			<div class="icl bg-umkc-blue icl--blue">
-				<div class="text-center">
-					<h2 class="icl__title">Heading Heading Heading</h2>
-					<p class="highlight">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
-				</div>
-				<div class="icl__row">
-					<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
-					<div class="icl__content">
-						<h3 class="icl__title">Photo with Buttons (PWB)</h3>
-						<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
-						<p><a href="#" class="button button--white button--cta">Button Text</a></p>
-					</div>
-				</div>
-
-				<div class="icl__row icl__row--reverse">
-					<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
-					<div class="icl__content">
-						<h3 class="icl__title">Photo with Buttons (PWB)</h3>
-						<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
-						<p><a href="#" class="button button--white button--cta">Button Text</a></p>
-					</div>
-				</div>
-
-				<div class="icl__row">
-					<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
-					<div class="icl__content">
-						<h3 class="icl__title">Photo with Buttons (PWB)</h3>
-						<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
-						<p><a href="#" class="button button--white button--cta">Button Text</a></p>
-					</div>
-				</div>
-			</div>
-
-			<div class="icl bg-umkc-gray">
-				<div class="text-center">
-					<h2 class="icl__title">Heading Heading Heading</h2>
-					<p class="highlight">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
-				</div>
-				<div class="icl__row">
-					<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
-					<div class="icl__content">
-						<h3 class="icl__title">Photo with Buttons (PWB)</h3>
-						<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
-						<p><a href="#" class="button button--umkc-blue button--cta">Button Text</a></p>
-					</div>
-				</div>
-
-				<div class="icl__row icl__row--reverse">
-					<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
-					<div class="icl__content">
-						<h3 class="icl__title">Photo with Buttons (PWB)</h3>
-						<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
-						<p><a href="#" class="button button--umkc-blue button--cta">Button Text</a></p>
-					</div>
-				</div>
-
-				<div class="icl__row">
-					<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
-					<div class="icl__content">
-						<h3 class="icl__title">Photo with Buttons (PWB)</h3>
-						<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
-						<p><a href="#" class="button button--umkc-blue button--cta">Button Text</a></p>
-					</div>
-				</div>
-			</div>
-			<div class="icl">
-				<div class="text-center">
-					<h2 class="icl__title">Heading Heading Heading</h2>
-					<p class="highlight">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
-				</div>
-				<div class="icl__row">
-					<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
-					<div class="icl__content">
-						<h3 class="icl__title">Photo with Buttons (PWB)</h3>
-						<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
-						<p><a href="#" class="button button--umkc-blue button--cta">Button Text</a></p>
-					</div>
-				</div>
-
-				<div class="icl__row icl__row--reverse">
-					<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
-					<div class="icl__content">
-						<h3 class="icl__title">Photo with Buttons (PWB)</h3>
-						<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
-						<p><a href="#" class="button button--umkc-blue button--cta">Button Text</a></p>
-					</div>
-				</div>
-
-				<div class="icl__row">
-					<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
-					<div class="icl__content">
-						<h3 class="icl__title">Photo with Buttons (PWB)</h3>
-						<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
-						<p><a href="#" class="button button--umkc-blue button--cta">Button Text</a></p>
-					</div>
-				</div>
-			</div>
 		</div>
-		<div class="icl bg-img-stripes">
-			<h2><a href="#" title="" class="text-font-color">News Row</a></h2>
-			<div class="flex-wrapper-centered">
-				<div class="icl__content flex-basis-30">
-					<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
-					<h3 class="icl__title" class="text-umkc-blue"><a href="#" title="">News Article Title</a></h3>
-					<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
-				</div>
-				<div class="icl__content flex-basis-30">
-					<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
-					<h3 class="icl__title" class="text-umkc-blue"><a href="#" title="">News Article Title</a></h3>
-					<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
-				</div>
-				<div class="icl__content flex-basis-30">
-					<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
-					<h3 class="icl__title" class="text-umkc-blue"><a href="#" title="">News Article Title</a></h3>
-					<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
-				</div>
-			</div>
-		</div>
-		<div class="icl calendar-date__wrapper">
-			<h2><a href="#" title="" class="text-font-color">Calendar Row</a></h2>
-			<div class="calendar-date__container">
-				<div class="icl__content">
-					<div class="calendar-date__single-container">
-						<div class="calendar-date__square text-white bg-umkc-blue">
-							<p class="calendar-date__month">Dec</p>
-							<p class="calendar-date__day">23</p>
-						</div>
-						<div class="calendar-date__info">
-							<p class="calendar-date__description"><a href="#">Bacon ipsum dolor amet meatball jowl kielbasa</a></p>
-							<p class="calendar-date__time">All Day</p>
-							<p class="calendar-date__location">UMKC School of BBQ</p>
-						</div>
-					</div>
-				</div>
-				<div class="icl__content">
-					<div class="calendar-date__single-container">
-						<div class="calendar-date__square text-white bg-umkc-blue">
-							<p class="calendar-date__month">Dec</p>
-							<p class="calendar-date__day">23</p>
-						</div>
-						<div class="calendar-date__info">
-							<p class="calendar-date__description"><a href="#">Bacon ipsum dolor amet meatball jowl kielbasa</a></p>
-							<p class="calendar-date__time">All Day</p>
-							<p class="calendar-date__location">UMKC School of BBQ</p>
-						</div>
-					</div>
-				</div>
-				<div class="icl__content">
-					<div class="calendar-date__single-container">
-						<div class="calendar-date__square text-white bg-umkc-blue">
-							<p class="calendar-date__month">Dec</p>
-							<p class="calendar-date__day">23</p>
-						</div>
-						<div class="calendar-date__info">
-							<p class="calendar-date__description"><a href="#">Bacon ipsum dolor amet meatball jowl kielbasa</a></p>
-							<p class="calendar-date__time">All Day</p>
-							<p class="calendar-date__location">UMKC School of BBQ</p>
-						</div>
-					</div>
-				</div>
-			</div>
+
+		<div class="menu">
+			<ul class="menu__list" id="menu" role="menubar" >
+				<li class="menu__item" role="menuitem" aria-haspopup="true">
+					<a href="#" class="menu__link" data-toggle="#main-navigation">
+						<svg class="icon menu__icon"><use xlink:href="#menu"></use></svg>
+						<svg class="icon menu__icon menu__icon--close"><use xlink:href="#close"></use></svg>
+						Menu
+					</a>
+				</li>
+				<li class="menu__item" role="menuitem" aria-haspopup="true">
+					<a href="#" class="menu__link" data-toggle=".search">
+						<svg class="icon menu__icon menu__icon--search"><use xlink:href="#search"></use></svg>
+						<svg class="icon menu__icon menu__icon--close"><use xlink:href="#close"></use></svg>
+						Search
+					</a>
+				</li>
+				<li class="menu__item" role="menuitem">
+					<a href="#" class="menu__link">
+						<svg class="icon menu__icon"><use xlink:href="#pencil"></use></svg>
+						Apply
+					</a>
+				</li>
+				<li class="menu__item" role="menuitem">
+					<a href="#" class="menu__link">
+						<svg class="icon menu__icon"><use xlink:href="#cloud-up"></use></svg>
+						Get Info
+					</a>
+				</li>
+				<li class="menu__item" role="menuitem">
+					<a href="#" class="menu__link">
+						<svg class="icon menu__icon"><use xlink:href="#cap"></use></svg>
+						Give
+					</a>
+				</li>
+			</ul>
 		</div>
 		{{> footer }}
-
 		<script type="module" src="./main.js"></script>
 
   </body>

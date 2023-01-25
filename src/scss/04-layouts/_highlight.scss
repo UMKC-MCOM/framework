@@ -1,10 +1,5 @@
 @use "../01-abstracts/mixins" as mx;
 
-.content-row {
-  background-color: var(--white);
-  padding: var(--content-padding);
-}
-
 .highlight {
   @include mx.font-size(24px, 1.5);
 

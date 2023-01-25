@@ -2,51 +2,47 @@
 @use "../01-abstracts/mixins" as mx;
 @use "../01-abstracts/flexbox" as fx;
 
-.calendar-date__wrapper {
-	h2 {
-		margin-bottom:1em;
-		a { text-decoration: none; }
+.calendar-date {
+	--header-color: var(--umkc-blue);
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	@include mx.for-size("tablet-landscape-up") {
+		flex-direction: row;
 	}
-	.calendar-date__container {
-		@include fx.flex-container(flex-start, flex-start);
-		
-		.icl__content {
-			@include fx.flex-basis(30%);
-		}
-	}
-}
 
-.calendar-date__single-container {
-	@include fx.flex-container(flex-start, flex-start);
-	
-	.calendar-date__square {
-		width: mx.px-to-rem(150px);
-		padding: 1rem;
-		border-radius: 0.5rem;
-		@include fx.flex-item;
-		p {
-			font-size: mx.px-to-rem(24px);
-			font-weight: 700;
-			text-align: center;
-		}
-		.calendar-date__month {}
-		.calendar-date__day {}
-	}
-	
-	.calendar-date__info {
-		margin-left: 2rem;
-		@include fx.flex-item;
-		
-		.calendar-date__description {
-			a {
-				text-decoration: none;
-				color: var(--heading-color, var(--umkc-blue));
-				
-				&:hover { text-decoration: underline; }
+	&__container {
+		display: flex;
+		justify-content: flex-start;
+		margin-top: 1rem;
+
+		@include mx.for-size("tablet-landscape-up") {
+			flex-basis: calc(100% / 3);
+			&:not(:nth-child(3n)) {
+				margin-right: 1.5rem;
 			}
 		}
-		.calendar-date__time {}
-		.calendar-date__location {}
+	}
+
+	&__square {
+		width: mx.px-to-rem(150px);
+		padding: mx.px-to-rem(16px);
+		margin-right: mx.px-to-rem(32px);
+		border-radius: 0.5rem;
+		@include fx.flex-item;
+		@include mx.font-size(24px, 1.25);
+		font-weight: 700;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+
+	&__description {
+		font-weight: 500;
+	}
+
+	&__time {
+		font-weight: 500;
 	}
 }
-

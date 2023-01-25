@@ -12,8 +12,13 @@
     --search-bg: #e5eef5;
   }
 
+  &--navy {
+    --background: var(--umkc-dark-blue);
+    --logo-color: var(--white);
+  }
+
   a {
-    color: var(--white);
+    color: var(--link-color, var(--white));
     text-decoration: none;
   }
 
@@ -24,6 +29,11 @@
     align-items: self-end;
     padding: var(--global-padding);
     border-bottom: solid mx.px-to-rem(3px) var(--umkc-yellow);
+
+    @include mx.for-size("tablet-landscape-up") {
+      justify-content: flex-start;
+    }
+
   }
 }
 
@@ -84,28 +94,38 @@
 .search {
   margin-left: auto;
   display: none;
-
-  @include mx.for-size("tablet-landscape-up") {
+  position: fixed;
+  bottom: mx.px-to-rem(66px);
+  left: 0;
+  box-shadow: 0 0 25px 0px #000;
+  z-index: 2;
+  padding: 1rem 0;
+  background: var(--umkc-blue);
+  width: 100%;
+  justify-content: center;
+  align-content: center;
+  &[aria-hidden="false"]{
     display: flex;
-    // align-self: flex-end;
+  }
+  @include mx.for-size("desktop-up") {
+    background: none;
+    display: flex;
+    position: static;
+    box-shadow: none;
+    width: auto;
+    justify-content: flex-end;
   }
 
   input {
-    background: var(--search-bg, rgb(255 255 255 / 15%));
+    background: var(--search-bg, var(--white));
     border: none;
     border-radius: mx.px-to-rem(7px) 0  0 mx.px-to-rem(7px);
 
     @include mx.font-size(16px);
 
+    margin: 0;
     padding: 0.25rem 0.5rem;
     height: 42px;
-
-    @include mx.tr;
-
-    &:focus,
-    &:active {
-      background: white;
-    }
   }
 
   button {
@@ -114,8 +134,11 @@
     background: var(--umkc-yellow);
     padding: 0.5rem;
     height: 42px;
-    margin-left: -0.5rem;
-
+    @include mx.tr(all);
+    &:hover, &:focus, &:active {
+      background: var(--umkc-dark-blue);
+      color: var(--white);
+    }
     svg {
       transform: rotate(90deg);
       height: mx.px-to-rem(24px);

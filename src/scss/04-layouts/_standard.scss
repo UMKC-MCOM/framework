@@ -1,0 +1,146 @@
+@use "../01-abstracts/mixins" as mx;
+// Standard Page!
+.standard {
+  $self: &;
+  display: flex;
+  flex-direction: column;
+
+  @include mx.for-size("tablet-landscape-up"){
+    flex-direction: row;
+  }
+
+  &--nav {
+    flex: 1;
+
+    @include mx.for-size("tablet-landscape-up"){
+      flex: 0 0 25%;
+      padding-right: 2rem;
+      border-radius: 0.5rem;
+    }
+  }
+  &--content {
+
+  }
+
+  p:has(img) {
+    > img {
+      clear: both;
+      margin: 0 1.5rem 1.5rem 0;
+      float: left;
+    }
+  }
+}
+
+.site-menu {
+  $self: &;
+  display: none;
+  width: 100%;
+
+  &[aria-hidden="false"] {
+    display: block;
+  }
+
+  @include mx.for-size("tablet-landscape-up"){
+    display: block;
+  }
+  &__toggle {
+    display: block;
+    background: var(--umkc-gray);
+    color: var(--umkc-dark-blue);
+    width: 100%;
+    padding: 1.25rem;
+    @include mx.font-size(20px);
+    margin: 0 0 0.5rem;
+
+    @include mx.for-size("tablet-landscape-up"){
+      display: none;
+    }
+  }
+  &__button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0.25rem 0.25rem;
+    background: var(--umkc-gray);
+    color: var(--umkc-blue);
+    --right: block;
+    --down: none;
+    &[aria-expanded="true"]{
+      --right: none;
+      --down: block;
+    }
+  }
+
+  &__icon {
+    height: 18px;
+    width: 18px;
+    &--large {
+      height: 26px;
+      width: 26px;
+    }
+    &--right {
+      display: var(--right);
+    }
+    &--down {
+      display: var(--down);
+    }
+  }
+  &__list {
+    --link-bg: var(--umkc-gray);
+    --link-color: var(--umkc-dark-blue);
+    padding: 0;
+    > #{$self}__item:first-child {
+      --link-bg: var(--umkc-dark-blue);
+      --link-border: var(--white);
+      --link-color: var(--white);
+      text-transform: uppercase;
+    }
+  }
+  &__sub {
+    --link-bg: #fcfcfc;
+    --link-color: var(--umkc-dark-blue);
+    --link-border: var(--umkc-gray);
+    padding: 0;
+    display: none;
+    &[aria-hidden='false']{
+      display: block;
+    }
+  }
+
+  &__item {
+    position: relative;
+    &:not(:last-child)::after{
+      content: "";
+      height: 0.25rem;
+      background-color: var(--link-border);
+      display: block;
+    }
+    &--active {
+      > #{$self}__link {
+        &::before{
+          content: "";
+          position: absolute;
+          height: 100%;
+          top: 0;
+          left: 0;
+          width: mx.px-to-rem(4px);
+          background: var(--umkc-dark-blue);
+        }
+      }
+    }
+  }
+  &__link {
+    background-color: var(--link-bg);
+    color: var(--link-color);
+    display: block;
+    position: relative;
+    padding: 0.5rem 2.25rem 0.5rem 0.75rem;
+    text-decoration: none;
+    transition: none;
+
+    &:hover, &:active, &:focus {
+      background: var(--umkc-dark-blue);
+      color: var(--white);
+    }
+  }
+}

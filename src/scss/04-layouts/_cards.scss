@@ -1,0 +1,66 @@
+@use "../01-abstracts/mixins" as mx;
+
+.cards {
+  $self: &;
+
+  padding: 0 var(--content-padding) 2rem;
+
+  &__group {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+
+    @include mx.for-size("tablet-landscape-up") {
+      flex-flow: row nowrap;
+    }
+  }
+
+  &--has-bg {
+    margin-top: 3rem;
+    padding: var(--content-padding);
+    #{$self}__group {
+      margin-top: -8rem;
+    }
+    #{$self}__item {
+      background: var(--white);
+      margin-top: 1rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    flex-basis: calc( 100% / 3);
+    &--centered {
+      text-align: center;
+    }
+
+    &:not(:last-child) {
+      @include mx.for-size("tablet-landscape-up") {
+        margin-right: 2.5rem;
+      }
+    }
+  }
+
+  &__content {
+    padding: 1.5rem;
+  }
+
+  &__title {
+    --heading-margin: 0;
+    --heading-size: #{mx.px-to-rem(30px)};
+  }
+
+  &__link {
+    font-weight: 700;
+    color: var(--umkc-blue);
+
+    @include mx.tr("background");
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--umkc-dark-blue);
+    }
+  }
+}

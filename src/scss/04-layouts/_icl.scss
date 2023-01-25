@@ -1,0 +1,85 @@
+@use "../01-abstracts/mixins" as mx;
+
+.icl {
+  $self: &;
+
+  padding: var(--content-padding);
+
+  --heading-color: var(--umkc-blue);
+  --highlight-color: var(--umkc-dark-blue);
+
+  &--blue {
+    --heading-color: var(--white);
+    --highlight-color: var(--white);
+
+    color: var(--white);
+  }
+
+  &__image {
+    width: #{mx.px-to-rem(577px)};
+    max-width: 100%;
+    @include mx.for-size("tablet-landscape-up"){
+      padding-right: 4rem;
+    }
+  }
+  &__content {
+    flex-grow: 1;
+  }
+  &__row {
+    display: flex;
+    align-items: center;
+    margin: var(--content-padding);
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+
+    @include mx.for-size("tablet-landscape-up") {
+      justify-content: space-between;
+      text-align: left;
+      flex-wrap: nowrap;
+      &--reverse {
+        flex-flow: row-reverse;
+
+        #{$self}__image {
+          @include mx.for-size("tablet-landscape-up"){
+            padding-right: 0;
+            padding-left: 4rem;
+          }
+        }
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: var(--umkc-blue);
+    &:hover, &:active, &:focus{
+      color: var(--umkc-dark-blue);
+    }
+  }
+  &--stacked {
+    display: flex;
+    flex-direction: column;
+    @include mx.for-size("tablet-landscape-up") {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: flex-start;
+    }
+    > #{$self}__title {
+      flex: 1 0 100%;
+    }
+
+    #{$self}__row {
+      @include mx.for-size("tablet-landscape-up"){
+        flex-basis: calc(100% / 3 - 2rem);
+        flex-direction: column;
+        margin: 0;
+        padding: 1rem;
+      }
+    }
+    #{$self}__image {
+      padding: 0;
+    }
+  }
+}

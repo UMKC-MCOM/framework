@@ -5,6 +5,7 @@
 // Setup the CSS Variables, since SASS is becoming scoped
 :root {
   --global-padding: #{mx.px-to-rem(30px)};
+  --content-padding: calc(var(--global-padding) * 1.5);
   --logo-ratio: 2.29;
   --logo-height: #{mx.px-to-rem(75px)};
   --logo-color: var(--white);

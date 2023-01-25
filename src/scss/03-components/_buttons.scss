@@ -3,7 +3,8 @@
 
 .button {
   @include mx.button-colors(var.$theme-colors);
-
+  --btn-arrow: var(--btn--text);
+  --arrow-margin: 0.75rem;
   background: var(--btn-bg);
   color: var(--btn-text);
   border: solid mx.px-to-rem(1px) transparent;
@@ -18,6 +19,7 @@
   &:hover,
   &:focus,
   &:active {
+    --btn-arrow: var(--btn-hover-text);
     background-color: var(--btn-hover);
     color: var(--btn-hover-text);
   }
