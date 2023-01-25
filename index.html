@@ -9,8 +9,17 @@
   <title>University of Missouri - Kansas City</title>
   <!-- <link rel="stylesheet" href="/assets/css/print.css" type="text/css" media="print" /> -->
   <meta content="#0066cc" name="theme-color">
-  <script type="module" crossorigin src="./assets/index.1ad9a2c1.js"></script>
-  <link rel="stylesheet" href="./assets/index.5e250378.css">
+  <style>
+    .hero{
+      background-image: url('./assets/kansas-city-skyline-downtown.fc66bf72.webp');
+      background-image: repeating-linear-gradient( 145deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 0.125rem, rgba(0,0,0,0.05), rgba(0,0,0,0.05) 0.25rem ), url('./assets/kansas-city-art-museum-lawn-shuttlecock-nelson-atkins-culture.9be64721.webp');
+      /* background-image: url('/src/images/kansas-city-art-museum-lawn-shuttlecock-nelson-atkins-culture.webp'); */
+      /* background-image: url('/src/images/kansas-city-art-museum-lawn-shuttlecock-nelson-atkins-culture.webp'); */
+      /* background-image: url('/src/images/kansas-city-art-museum-lawn-shuttlecock-nelson-atkins-culture.webp'); */
+    }
+  </style>
+  <script type="module" crossorigin src="./assets/index.fc0a7487.js"></script>
+  <link rel="stylesheet" href="./assets/index.afae6bd0.css">
 </head>
   <body>
 		<!-- Load SVGs first? -->
@@ -47,9 +56,9 @@
           c0,1.5,0.2,3,0.2,3s0.2,1.3,0.7,1.9c0.7,0.8,1.6,0.7,2,0.8c1.4,0.1,6.1,0.2,6.1,0.2s3.8,0,6.3-0.2c0.3,0,1.1,0,1.8-0.8
           c0.5-0.6,0.7-1.9,0.7-1.9s0.2-1.5,0.2-3v-1.2v-0.3C32,20.3,31.8,18.8,31.8,18.8z"/>
     </symbol>
-    <!-- <symbol id="close" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+    <symbol id="close" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-    </symbol> -->
+    </symbol>
     <symbol id="menu" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
       <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
     </symbol>
@@ -72,19 +81,40 @@
     <symbol id="close" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
     </symbol>
+    <symbol id="pause" viewBox="0 0 24 24" fill="currentColor">
+        <path fill-rule="evenodd" d="M6.75 5.25a.75.75 0 01.75-.75H9a.75.75 0 01.75.75v13.5a.75.75 0 01-.75.75H7.5a.75.75 0 01-.75-.75V5.25zm7.5 0A.75.75 0 0115 4.5h1.5a.75.75 0 01.75.75v13.5a.75.75 0 01-.75.75H15a.75.75 0 01-.75-.75V5.25z" clip-rule="evenodd" />
+    </symbol>
+
+    <symbol id="play" viewBox="0 0 24 24" fill="currentColor">
+        <path fill-rule="evenodd" d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z" clip-rule="evenodd" />
+    </symbol>
+
+    <symbol id="info" viewBox="0 0 6.8 18.2">
+       <path d="M0.1,16.2l1.7-0.4V7.9L0,7.5V5.4h5.2v10.3l1.6,0.4v2.1H0.1C0.1,18.2,0.1,16.2,0.1,16.2z M5.2,2.5H1.8V0h3.4V2.5z"/>
+    </symbol>
+
+    <symbol id="close-alt" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+    </symbol>
+    <symbol id="chevron-right" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+    </symbol>
+    <symbol id="chevron-down" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+    </symbol>
 </svg>
 		<nav class="skip-links" aria-label="Skip Links">
   <ul>
     <li><a href="#content">Skip to Content</a></li>
-    <li><a href="#main-navigation">Skip to Navigation</a></li>
-    <li><a href="#search">Skip to Search</a></li>
+    <li><a href="#menu">Skip to Menu</a></li>
+    <li><a href="#q">Skip to Search</a></li>
   </ul>
 </nav>
 		<header>
   <div class="bg-umkc-blue stripes header">
     <h1 class="site-title"><a href="/">University of Missouri - Kansas City</a></h1>
   </div>
-  <div class="header header--secondary header--">
+  <div class="header header--secondary header--navy">
     <div class="logo">
       <a href="/" class="logo--link">
         <svg class="logo--image" aria-label="University of Missouri. Kansas City." role="img"><use xlink:href="#umkc"></use></svg>
@@ -110,39 +140,80 @@
   <ul class="main-navigation__list">
     <li class="main-navigation__item">
       <a href="#" class="main-navigation__link">
-        Text
+        Admissions
       </a>
     </li>
     <li class="main-navigation__item">
       <a href="#" class="main-navigation__link">
-        Text
+        Academics
       </a>
     </li>
     <li class="main-navigation__item">
       <a href="#" class="main-navigation__link">
-        Text
+        Student Life
       </a>
     </li>
     <li class="main-navigation__item">
       <a href="#" class="main-navigation__link">
-        Text
+        Athletics
       </a>
     </li>
     <li class="main-navigation__item">
       <a href="#" class="main-navigation__link">
-        Text
+        Research
       </a>
     </li>
     <li class="main-navigation__item">
       <a href="#" class="main-navigation__link">
-        Text
+        Alumni and Giving
+      </a>
+    </li>
+    <li class="main-navigation__item">
+      <a href="#" class="main-navigation__link">
+        About
       </a>
     </li>
   </ul>
 </nav>
 </header>
+		<div id="landing-page" class="main-content">
+			<!-- <div class="hero hero--video">
+  <video id="hero-video" class="hero__video" autoplay="" muted="" loop="" playsinline="">
+    <source data-src="https://www.umkc.edu/videos/Home-hero-loops/october-2022-homepage-hero-loop.mp4" type="video/mp4">
+  </video>
+  <div class="hero__content">
+    <h1 class="hero__title">Health Equity Institute</h1>
+    <p>The UMKC Conservatory is internationally recognized as a center for artistic excellence and innovation. Learn from the best.</p>
+    <p><a href="#" class="button button--white button--outline button--arrow">Virtual Visit Options</a></p>
+  </div>
+  <div class="hero__description" aria-hidden="true">
+    <p>Video has no audio. Scene 1: students talking on patio at Student Union; Scene 2: Blue skies outside Student Union; Scene 3: Student with goggles on in AR/VR lab; Scene 4: Snow on top of the bronze Kangaroo statue; Scene 5: Student dentist in dental simulation lab; Scene 6: Student in cap and gown walking across the stage to receive his diploma at Commencement; Scene 7: Confetti raining down on UMKC grads at Commencement inside T-Mobile Center; Mobile static image: Snow on the bronze Roo statue on Volker Campus.</p>
+  </div>
+  <div class="hero__buttons">
+    <button class="o-btn hero__button hero__button--toggle" data-toggle=".hero__description" aria-expanded="false">
+      <span class="sr-only">Text description of the video</span>
+      <svg class="icon hero__icon hero__icon--info" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+         viewBox="0 0 6.8 18.2" xml:space="preserve">
+         <path d="M0.1,16.2l1.7-0.4V7.9L0,7.5V5.4h5.2v10.3l1.6,0.4v2.1H0.1C0.1,18.2,0.1,16.2,0.1,16.2z M5.2,2.5H1.8V0h3.4V2.5z"/>
+      </svg>
+      <svg class="icon hero__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <button class="o-btn hero__button hero__video--toggle" data-video=".hero__video" aria-controls="hero-video">
+        <span class="sr-only">Pause Video</span>
+        <svg class="icon hero__icon hero__icon--pause hero__icon--active" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+          <path fill-rule="evenodd" d="M6.75 5.25a.75.75 0 01.75-.75H9a.75.75 0 01.75.75v13.5a.75.75 0 01-.75.75H7.5a.75.75 0 01-.75-.75V5.25zm7.5 0A.75.75 0 0115 4.5h1.5a.75.75 0 01.75.75v13.5a.75.75 0 01-.75.75H15a.75.75 0 01-.75-.75V5.25z" clip-rule="evenodd" />
+      </svg>
 
-		<div id="content" class="main-content">
+      <svg class="icon hero__icon hero__icon--play" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+          <path fill-rule="evenodd" d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z" clip-rule="evenodd" />
+      </svg>
+
+      </button>
+  </div>
+</div>
+ -->
 			<div class="hero">
   <div class="hero__content">
     <h1 class="hero__title">Health Equity Institute</h1>
@@ -150,13 +221,7 @@
     <p><a href="#" class="button button--white button--outline button--arrow">Virtual Visit Options</a></p>
   </div>
 </div>
-
-<div class="hero hero--standard">
-  <div class="hero__content">
-    <h1 class="hero__title">Health Equity Institute</h1>
-  </div>
-</div>
-
+			<!-- Breadcrumbs -->
 			<nav class="breadcrumbs stripes--dark">
   <ul class="nav nav--inline breadcrumbs__list">
     <li class="breadcrumbs__item">
@@ -168,7 +233,7 @@
   </ul>
 </nav>
 
-			<!-- <div class="content-row">
+			<div class="content-row">
   <div class="benefits-list">
     <img alt="" class="benefits-list__image" src="https://picsum.photos/seed/picsum/448/535" loading="lazy" />
     <div class="benefits-list__group">
@@ -205,8 +270,7 @@
     </div>
   </div>
 </div>
- -->
-			<!-- <div class="content-row">
+			<div class="content-row">
     <h2 class="text-center">Benefits List without Photo</h2>
     <p class="highlight text-center">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
   <div class="benefits-list">
@@ -269,9 +333,8 @@
     </div>
   </div>
 </div>
- -->
 
-			<!-- <div class="content-row">
+			<div class="content-row">
   <h2>Photo and Stats</h2>
   <p class="highlight">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
   <div class="benefits-list">
@@ -325,8 +388,7 @@
     </div>
   </div>
 </div>
- -->
-			<!-- <div class="content-row bg-umkc-gray">
+			<div class="content-row bg-umkc-gray">
   <div class="benefits-list benefits-list--small-stats jc-evenly">
     <div class="benefits-list__group">
       <div class="benefits-list benefits-list--small-stats jc-evenly">
@@ -364,10 +426,9 @@
     </div>
   </div>
 </div>
- -->
 
 			<!-- Cards -->
-			<!-- <div class="content-row">
+			<div class="content-row">
   <h2 class="text-center">Cards - Photos and links</h2>
   <p class="highlight text-center">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
 </div>
@@ -378,8 +439,16 @@
         <img src="https://picsum.photos/seed/picsum/352/268" loading="lazy" />
         <div class="cards__content">
         <h3 class="cards__title">Headline Headline</h3>
-        <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
+        <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. <a href="#" target="_blank">Cow pastrami</a> burgdoggen spare ribs strip steak.</p><p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. <a href="#" target="_blank">Cow pastrami</a> burgdoggen spare ribs strip steak.</p>
         <p><a href="#" class="button button--cta button--umkc-yellow">Button Text</a></p>
+      </div>
+    </div>
+    <div class="cards__item cards__item--centered">
+        <img src="https://picsum.photos/seed/picsum/352/268" loading="lazy" />
+        <div class="cards__content">
+        <h3 class="cards__title">Headline Headline</h3>
+        <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
+        <p><a href="#" class="button button--cta button--umkc-yellow" target="_blank">Button Text</a></p>
       </div>
     </div>
     <div class="cards__item cards__item--centered">
@@ -390,25 +459,16 @@
         <p><a href="#" class="button button--cta button--umkc-yellow">Button Text</a></p>
       </div>
     </div>
-    <div class="cards__item cards__item--centered">
-        <img src="https://picsum.photos/seed/picsum/352/268" loading="lazy" />
-        <div class="cards__content">
-        <h3 class="cards__title">Headline Headline</h3>
-        <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
-        <p><a href="#" class="button button--cta button--umkc-yellow">Button Text</a></p>
-      </div>
-    </div>
   </div>
 </div>
- -->
-			<!-- <div class="content-row">
+			<div class="content-row">
   <h2>Cards</h2>
 </div>
 <div class="cards">
   <div class="cards__group">
     <div class="cards__item">
       <h3 class="cards__title">Headline Headline</h3>
-      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. <a href="#" class="cards__link">Button Text</a></p>
+      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. <a href="#" class="cards__link">Button Text</a></p>
     </div>
     <div class="cards__item">
       <h3 class="cards__title">Headline Headline</h3>
@@ -420,15 +480,14 @@
     </div>
   </div>
 </div>
- -->
-			<!-- <div class="content-row">
+			<div class="content-row">
   <h2>Cards</h2>
 </div>
 <div class="cards">
   <div class="cards__group">
     <div class="cards__item">
       <h3 class="cards__title">Headline Headline</h3>
-      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. </a></p>
+      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. </a></p>
     </div>
     <div class="cards__item">
       <h3 class="cards__title">Headline Headline</h3>
@@ -440,9 +499,8 @@
     </div>
   </div>
 </div>
- -->
 
-			<!-- <div class="content-row bg-umkc-gray">
+			<div class="content-row bg-umkc-gray">
   <div class="quote">
     <div class="quote__item is-visible" id="first">
       <span class="quote__icon">&#8220;</span>
@@ -450,12 +508,12 @@
 
       <img src="https://picsum.photos/seed/picsum/150/150" class="img--round" alt="" />
 
-      <h3 class="quote__title">Full Name</h3>
+      <h3 class="quote__title">First Name</h3>
       <p>Title or major</p>
     </div>
     <div class="quote__item" id="second">
       <span class="quote__icon">&#8220;</span>
-      <blockquote class="quote__blockquote">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</blockquote>
+      <blockquote class="quote__blockquote">Second ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</blockquote>
 
       <img src="https://picsum.photos/seed/picsum/150/150" class="img--round" alt="" />
 
@@ -464,7 +522,7 @@
     </div>
     <div class="quote__item" id="third">
       <span class="quote__icon">&#8220;</span>
-      <blockquote class="quote__blockquote">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</blockquote>
+      <blockquote class="quote__blockquote">Third ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</blockquote>
 
       <img src="https://picsum.photos/seed/picsum/150/150" class="img--round" alt="" />
 
@@ -473,13 +531,12 @@
     </div>
   </div>
   <div class="quote__bullets">
-    <button class="o-btn quote__bullet" data-toggle="#first"></button>
-    <button class="o-btn quote__bullet" data-toggle="#second"></button>
-    <button class="o-btn quote__bullet" data-toggle="#third"></button>
+    <button class="o-btn quote__bullet quote__bullet--active" data-controls="#first"></button>
+    <button class="o-btn quote__bullet" data-controls="#second"></button>
+    <button class="o-btn quote__bullet" data-controls="#third"></button>
   </div>
 </div>
- -->
-			<!-- <div class="content-row bg-umkc-gray quote quote--single">
+			<div class="content-row bg-umkc-gray quote quote--single">
   <div class="quote__item">
     <span class="quote__icon">&#8220;</span>
     <blockquote class="quote__blockquote">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</blockquote>
@@ -488,8 +545,374 @@
     <p>Title or major</p>
   </div>
 </div>
- -->
 
+			<div class="pwb bg-umkc-gray">
+  <img src="https://picsum.photos/seed/picsum/300/253" class="img--round pwb__img" alt="" />
+  <div class="pwb__content">
+    <h2 class="pwb__title">Photo with Buttons (PWB)</h2>
+    <p class="highlight"><strong>I'm content</strong> super short.</p>
+  <p><a href="#" class="button button--umkc-yellow button--cta">Button Text</a></p>
+  <p><a href="#" class="button button--umkc-yellow button--cta">Button Text</a></p>
+  <p><a href="#" class="button button--umkc-yellow button--cta">Button Text</a></p>
+  </div>
+</div>
+
+			<div class="icl bg-umkc-blue icl--blue">
+  <div class="text-center">
+    <h2 class="icl__title">Heading Heading Heading</h2>
+    <p class="highlight">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+  </div>
+  <div class="icl__row">
+    <img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
+    <div class="icl__content">
+      <h3 class="icl__title">Photo with Buttons (PWB)</h3>
+      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+      <p><a href="#" class="button button--white button--cta">Button Text</a></p>
+    </div>
+  </div>
+
+  <div class="icl__row icl__row--reverse">
+    <img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
+    <div class="icl__content">
+      <h3 class="icl__title">Photo with Buttons (PWB)</h3>
+      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+      <p><a href="#" class="button button--white button--cta">Button Text</a></p>
+    </div>
+  </div>
+
+  <div class="icl__row">
+    <img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
+    <div class="icl__content">
+      <h3 class="icl__title">Photo with Buttons (PWB)</h3>
+      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+      <p><a href="#" class="button button--white button--cta">Button Text</a></p>
+    </div>
+  </div>
+</div>
+			<div class="icl bg-umkc-gray">
+  <div class="text-center">
+    <h2 class="icl__title">Heading Heading Heading</h2>
+    <p class="highlight">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+  </div>
+  <div class="icl__row">
+    <img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
+    <div class="icl__content">
+      <h3 class="icl__title">Photo with Buttons (PWB)</h3>
+      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+      <p><a href="#" class="button button--umkc-blue button--cta">Button Text</a></p>
+    </div>
+  </div>
+
+  <div class="icl__row icl__row--reverse">
+    <img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
+    <div class="icl__content">
+      <h3 class="icl__title">Photo with Buttons (PWB)</h3>
+      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+      <p><a href="#" class="button button--umkc-blue button--cta">Button Text</a></p>
+    </div>
+  </div>
+
+  <div class="icl__row">
+    <img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
+    <div class="icl__content">
+      <h3 class="icl__title">Photo with Buttons (PWB)</h3>
+      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+      <p><a href="#" class="button button--umkc-blue button--cta">Button Text</a></p>
+    </div>
+  </div>
+</div>
+			<div class="icl bg-">
+  <div class="text-center">
+    <h2 class="icl__title">Heading Heading Heading</h2>
+    <p class="highlight">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+  </div>
+  <div class="icl__row">
+    <img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
+    <div class="icl__content">
+      <h3 class="icl__title">Photo with Buttons (PWB)</h3>
+      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+      <p><a href="#" class="button button--umkc-blue button--cta">Button Text</a></p>
+    </div>
+  </div>
+
+  <div class="icl__row icl__row--reverse">
+    <img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
+    <div class="icl__content">
+      <h3 class="icl__title">Photo with Buttons (PWB)</h3>
+      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+      <p><a href="#" class="button button--umkc-blue button--cta">Button Text</a></p>
+    </div>
+  </div>
+
+  <div class="icl__row">
+    <img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
+    <div class="icl__content">
+      <h3 class="icl__title">Photo with Buttons (PWB)</h3>
+      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+      <p><a href="#" class="button button--umkc-blue button--cta">Button Text</a></p>
+    </div>
+  </div>
+</div>
+			<div class="icl icl--stacked stripes--dark">
+  <h2 class="icl__title">Related News</h2>
+  <div class="icl__row icl__row--stacked">
+    <img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
+    <div class="icl__content">
+      <h3 class="icl__title"><a href="#" class="icl__link">News Article Title</a></h3>
+      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+    </div>
+  </div>
+  <div class="icl__row icl__row--stacked">
+    <img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
+    <div class="icl__content">
+      <h3 class="icl__title"><a href="#" class="icl__link">News Article Title</a></h3>
+      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+    </div>
+  </div>
+  <div class="icl__row icl__row--stacked">
+    <img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
+    <div class="icl__content">
+      <h3 class="icl__title"><a href="#" class="icl__link">News Article Title</a></h3>
+      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+    </div>
+  </div>
+</div>
+			<div class="content-row">
+  <h2>Calendar Row</h2>
+  <div class="calendar-date">
+    <div class="calendar-date__container">
+      <div class="calendar-date__square text-white bg-umkc-blue">
+        <p class="calendar-date__date">Dec <br />23</p>
+      </div>
+      <div class="calendar-date__info">
+        <p class="calendar-date__description"><a href="#">Bacon ipsum dolor amet meatball jowl kielbasa</a></p>
+        <p class="calendar-date__time">All Day</p>
+        <p class="calendar-date__location">UMKC School of BBQ</p>
+      </div>
+    </div>
+    <div class="calendar-date__container">
+      <div class="calendar-date__square text-white bg-umkc-blue">
+        <p class="calendar-date__date">Dec <br />23</p>
+      </div>
+      <div class="calendar-date__info">
+        <p class="calendar-date__description"><a href="#">Bacon ipsum dolor amet meatball jowl kielbasa</a></p>
+        <p class="calendar-date__time">All Day</p>
+        <p class="calendar-date__location">UMKC School of BBQ</p>
+      </div>
+    </div>
+    <div class="calendar-date__container">
+      <div class="calendar-date__square text-white bg-umkc-blue">
+        <p class="calendar-date__date">Dec <br />23</p>
+      </div>
+      <div class="calendar-date__info">
+        <p class="calendar-date__description"><a href="#">Bacon ipsum dolor amet meatball jowl kielbasa</a></p>
+        <p class="calendar-date__time">All Day</p>
+        <p class="calendar-date__location">UMKC School of BBQ</p>
+      </div>
+    </div>
+  </div>
+</div>
+		</div>
+		<div id="standard-page" class="main-content">
+			<!-- Start of the Standard Page Layout -->
+			<div style="background: var(--umkc-blue); height: 8rem; margin: 2rem 0 0;"><h1 style="color: white; padding: var(--content-padding);">Start: Standard Page</h1></div>
+			<div class="hero hero--standard">
+  <div class="hero__content">
+    <h1 class="hero__title">Health Equity Institute</h1>
+  </div>
+</div>
+			<nav class="breadcrumbs stripes--dark">
+  <ul class="nav nav--inline breadcrumbs__list">
+    <li class="breadcrumbs__item">
+      <a class="breadcrumbs__link" href="#">Home</a>
+    </li>
+    <li class="breadcrumbs__item">
+      <a class="breadcrumbs__link" href="#">Thing</a>
+    </li>
+  </ul>
+</nav>
+			<div class="content-row">
+  <div class="standard">
+    <div class="standard--nav">
+      <button class="o-btn site-menu__toggle" data-toggle="#site-menu">
+        <svg class="icon site-menu__icon site-menu__icon--large">
+          <use xlink:href="#menu" />
+        </svg>
+        Section Navigation</button>
+      <nav id="site-menu" class="site-menu">
+        <ul class="site-menu__list">
+          <li class="site-menu__item">
+            <a class="site-menu__link" href="">Test</a>
+          </li>
+          <li class="site-menu__item site-menu__item--active">
+            <a class="site-menu__link" href="">Superlong navigation item name to try and get some wrapping</a>
+            <button class="o-btn site-menu__button" data-toggle=".site-menu__sub" aria-expanded="true">
+              <svg class="icon site-menu__icon site-menu__icon--right"><use xlink:href="#chevron-right"></use></svg>
+              <svg class="icon site-menu__icon site-menu__icon--down"><use xlink:href="#chevron-down"></use></svg>
+            </button>
+            <ul class="site-menu__sub" aria-hidden="false">
+              <li class="site-menu__item site-menu__item--active"><a class="site-menu__link" href="">Test</a></li>
+              <li class="site-menu__item"><a class="site-menu__link" href="">Test</a></li>
+              <li class="site-menu__item"><a class="site-menu__link" href="">Test</a></li>
+            </ul>
+          </li>
+          <li class="site-menu__item">
+            <a class="site-menu__link" href="">Test</a>
+          </li>
+          <li class="site-menu__item">
+            <a class="site-menu__link" href="">Test</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="standard--content">
+      <h2>Standard Page Layout</h2>
+      <p class="highlight">I am a highlighted segment of content to help draw your attention.</p>
+      <p>The purpose of this HTML is to help determine what default settings are with CSS and to make sure that all possible HTML Elements are included in this HTML so as to not miss any possible Elements when designing a site.</p>
+      <hr>
+      <h1>Heading 1</h1>
+      <p>H1 is unstyled and used technically shouldn't be used within the page construct.</p>
+      <h2>Heading 2</h2>
+      <h3>Heading 3</h3>
+      <h4>Heading 4</h4>
+      <h5>Heading 5</h5>
+      <h6>Heading 6</h6>
+
+      <hr>
+      <h2 id="paragraph">Paragraph</h2>
+      <p>Lorem ipsum dolor sit amet, <a href="#" title="test link">test link</a> adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
+      <p>Lorem ipsum dolor sit amet, <em>emphasis</em> consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
+      <h3>Award Winner Name</h3>
+      <p><img alt="Katherine Myers" height="259" src="https://placehold.it/200/259" width="200">Katherine Myers has made an outstanding contribution to the profession within her first ten years of practice. She is a founding partner of Edelman, Liesen &amp; Myers, LLP where she has litigated hundreds of cases, including those involving groundbreaking civil rights issues, such as those impacting the rights of women and the LGBT community. She has achieved numerous successful results in the Missouri Court of Appeals for the western district and the Missouri Supreme Court. Ms. Myers is dedicated to the advancement of equal rights for all individuals and has created a practice steadfast in dedication to her clients the ethical practice of law, and the betterment for the community. She has been a staunch advocate for abused and neglected children as a CASA volunteer.Katherine Myers has made an outstanding contribution to the profession within her first ten years of practice. She is a founding partner of Edelman, Liesen &amp; Myers, LLP where she has litigated hundreds of cases, including those involving groundbreaking civil rights issues, such as those impacting the rights of women and the LGBT community. She has achieved numerous successful results in the Missouri Court of Appeals for the western district and the Missouri Supreme Court. Ms. Myers is dedicated to the advancement of equal rights for all individuals and has created a practice steadfast in dedication to her clients the ethical practice of law, and the betterment for the community. She has been a staunch advocate for abused and neglected children as a CASA volunteer.Katherine Myers has made an outstanding contribution to the profession within her first ten years of practice. She is a founding partner of Edelman, Liesen &amp; Myers, LLP where she has litigated hundreds of cases, including those involving groundbreaking civil rights issues, such as those impacting the rights of women and the LGBT community. She has achieved numerous successful results in the Missouri Court of Appeals for the western district and the Missouri Supreme Court. Ms. Myers is dedicated to the advancement of equal rights for all individuals and has created a practice steadfast in dedication to her clients the ethical practice of law, and the betterment for the community. She has been a staunch advocate for abused and neglected children as a CASA volunteer.</p>
+      <h3>Award Winner Name</h3>
+      <p><img alt="Katherine Myers" height="259" src="https://placehold.it/200/259" width="200">Katherine Myers has made an outstanding contribution to the profession within her first ten years of practice. She is a founding partner of Edelman, Liesen &amp; Myers, LLP where she has litigated hundreds of cases, including those involving groundbreaking civil rights issues, such as those impacting the rights of women and the LGBT community. She has achieved numerous successful results in the Missouri Court of Appeals for the western district and the Missouri Supreme Court. Ms. Myers is dedicated to the advancement of equal rights for all individuals and has created a practice steadfast in dedication to her clients the ethical practice of law, and the betterment for the community. She has been a staunch advocate for abused and neglected children as a CASA volunteer.</p>
+      <p>Katherine Myers has made an outstanding contribution to the profession within her first ten years of practice. She is a founding partner of Edelman, Liesen &amp; Myers, LLP where she has litigated hundreds of cases, including those involving groundbreaking civil rights issues, such as those impacting the rights of women and the LGBT community. She has achieved numerous successful results in the Missouri Court of Appeals for the western district and the Missouri Supreme Court. Ms. Myers is dedicated to the advancement of equal rights for all individuals and has created a practice steadfast in dedication to her clients the ethical practice of law, and the betterment for the community. She has been a staunch advocate for abused and neglected children as a CASA volunteer.</p>
+      <hr>
+      <h2 id="list_types">List Types</h2>
+      <h3>Definition List</h3>
+      <dl>
+        <dt>Definition List Title</dt>
+        <dt>Definition List Title</dt>
+        <dt>Definition List Title</dt>
+        <dd>This is a definition list division.</dd>
+        <dt>Definition List Title</dt>
+        <dd>This is a definition list division.</dd>
+        <dt>Definition List Title</dt>
+        <dd>This is a definition list division.</dd>
+        <dt>Definition List Title</dt>
+        <dd>This is a definition list division.</dd>
+      </dl>
+
+      <h3>Ordered List</h3>
+      <ol>
+      <li>List Item 1
+        <ol>
+          <li>Sub item 1
+            <ol>
+              <li>Sub item 1</li>
+              <li>Sub item 2</li>
+            </ol>
+          </li>
+          <li>Sub item 2</li>
+        </ol>
+      </li>
+      <li>List Item 2</li>
+      <li>List Item 3</li>
+      </ol>
+      <h3>Unordered List</h3>
+      <ul>
+      <li>List Item 1
+        <ul>
+          <li>Sub item 1
+            <ul>
+              <li>Sub item 1</li>
+              <li>Sub item 2</li>
+            </ul>
+          </li>
+          <li>Sub item 2</li>
+        </ul>
+      </li>
+      <li>List Item 2</li>
+      <li>List Item 3</li>
+      </ul>
+
+      <hr>
+      <h2 id="form_elements">Forms</h2>
+      <fieldset>
+      <legend>Legend</legend>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus.</p>
+      <form>
+      <h2>Form Element</h2>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui.</p>
+      <p><label for="text_field">Text Field:</label><br>
+      <input type="text" id="text_field"></p>
+      <p><label for="text_area">Text Area:</label><br>
+      <textarea id="text_area"></textarea></p>
+      <p><label for="select_element">Select Element:</label><br>
+      <select name="select_element" id="select_element">
+            <optgroup label="Option Group 1"><option value="1">Option 1</option><option value="2">Option 2</option><option value="3">Option 3</option></optgroup>
+            <optgroup label="Option Group 2"><option value="1">Option 1</option><option value="2">Option 2</option><option value="3">Option 3</option></optgroup>
+      </select></p>
+      <p><label for="radio_buttons">Radio Buttons:</label></p>
+      <p><input type="radio" class="radio" name="radio_button" value="radio_1"> Radio 1<br>
+      <input type="radio" class="radio" name="radio_button" value="radio_2"> Radio 2<br>
+      <input type="radio" class="radio" name="radio_button" value="radio_3"> Radio 3</p>
+      <p><label for="checkboxes">Checkboxes:</label></p>
+      <p><input type="checkbox" class="checkbox" name="checkboxes" value="check_1"> Radio 1<br>
+      <input type="checkbox" class="checkbox" name="checkboxes" value="check_2"> Radio 2<br>
+      <input type="checkbox" class="checkbox" name="checkboxes" value="check_3"> Radio 3</p>
+      <p><label for="password">Password:</label></p>
+      <p><input id="password" type="password" class="password" name="password"></p>
+      <p><label for="file">File Input:</label><br>
+      <input id="file" type="file" class="file" name="file"></p>
+      <p><input class="button" type="reset" value="Clear"> <input class="button" type="submit" value="Submit"></p>
+      </form>
+      </fieldset>
+
+      <hr>
+      <h2 id="tables">Tables</h2>
+      <table>
+        <caption>I am a caption</caption>
+        <thead>
+          <tr>
+            <th>Table Header 1</th>
+            <th>Table Header 2</th>
+            <th>Table Header 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Division 1</td>
+            <td>Division 2</td>
+            <td>Division 3</td>
+          </tr>
+          <tr class="even">
+            <td>Division 1</td>
+            <td>Division 2</td>
+            <td>Division 3</td>
+          </tr>
+          <tr>
+            <td>Division 1</td>
+            <td>Division 2</td>
+            <td>Division 3</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr>
+      <h2 id="misc">Misc Stuff – abbr, acronym, pre, code, sub, sup, etc.</h2>
+      <p>Lorem <sup>superscript</sup> dolor <sub>subscript</sub> amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. <cite>cite</cite>. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. <abbr title="National Basketball Association">NBA</abbr> Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.  <abbr title="Avenue">AVE</abbr></p>
+      <pre>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. <abbr title="National Basketball Association">NBA</abbr> Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
+      <abbr title="Avenue">AVE</abbr>
+      </pre>
+      <blockquote>
+        “This stylesheet is going to help so freaking much.”<br>
+      -Blockquote</blockquote>
+    </div>
+  </div>
+</div>
+
+			<div style="background: var(--umkc-blue); height: 8rem; margin: 2rem 0 0;"><h1 style="color: white; padding: var(--content-padding);">Start: Utilities</h1></div>
 			<div class="content-row">
 				<h2>Button Classes</h2>
 				<p>Buttons are designed with a number of available variants that are listed below. Buttons are setup to be <code>inline-block</code> by default. If a button needs to take up the full width of a container and be centered; use the <code>button--block</code> class. Large buttons are also available.</p>
@@ -542,7 +965,6 @@
   <p><a href="#" class="button button--umkc-light-blue button--outline button--arrow">Test</a></p>
   <p><a href="#" class="button button--umkc-yellow button--outline button--arrow">Test</a></p>
 </div>
-
 					<div style="flex-basis: 30%;">
   <h3>
       outline button--cta
@@ -569,178 +991,43 @@
 </div>
 				</div>
 			</div>
-			<div class="pwb bg-umkc-gray">
-				<img src="https://picsum.photos/seed/picsum/577/577" class="img--round pwb__img" alt="" />
-				<div class="pwb__content">
-					<h2 class="pwb__title">Photo with Buttons (PWB)</h2>
-					<p class="highlight"><strong>Bacon ipsum dolor amet meatball</strong> jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
-				<p><a href="#" class="button button--umkc-yellow button--cta">Button Text</a></p>
-				<p><a href="#" class="button button--umkc-yellow button--cta">Button Text</a></p>
-				<p><a href="#" class="button button--umkc-yellow button--cta">Button Text</a></p>
-				</div>
-			</div>
-
-			<div class="icl bg-umkc-blue icl--blue">
-				<div class="text-center">
-					<h2 class="icl__title">Heading Heading Heading</h2>
-					<p class="highlight">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
-				</div>
-				<div class="icl__row">
-					<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
-					<div class="icl__content">
-						<h3 class="icl__title">Photo with Buttons (PWB)</h3>
-						<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
-						<p><a href="#" class="button button--white button--cta">Button Text</a></p>
-					</div>
-				</div>
-
-				<div class="icl__row icl__row--reverse">
-					<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
-					<div class="icl__content">
-						<h3 class="icl__title">Photo with Buttons (PWB)</h3>
-						<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
-						<p><a href="#" class="button button--white button--cta">Button Text</a></p>
-					</div>
-				</div>
-
-				<div class="icl__row">
-					<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
-					<div class="icl__content">
-						<h3 class="icl__title">Photo with Buttons (PWB)</h3>
-						<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
-						<p><a href="#" class="button button--white button--cta">Button Text</a></p>
-					</div>
-				</div>
-			</div>
-
-			<div class="icl bg-umkc-gray">
-				<div class="text-center">
-					<h2 class="icl__title">Heading Heading Heading</h2>
-					<p class="highlight">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
-				</div>
-				<div class="icl__row">
-					<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
-					<div class="icl__content">
-						<h3 class="icl__title">Photo with Buttons (PWB)</h3>
-						<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
-						<p><a href="#" class="button button--umkc-blue button--cta">Button Text</a></p>
-					</div>
-				</div>
-
-				<div class="icl__row icl__row--reverse">
-					<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
-					<div class="icl__content">
-						<h3 class="icl__title">Photo with Buttons (PWB)</h3>
-						<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
-						<p><a href="#" class="button button--umkc-blue button--cta">Button Text</a></p>
-					</div>
-				</div>
-
-				<div class="icl__row">
-					<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
-					<div class="icl__content">
-						<h3 class="icl__title">Photo with Buttons (PWB)</h3>
-						<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
-						<p><a href="#" class="button button--umkc-blue button--cta">Button Text</a></p>
-					</div>
-				</div>
-			</div>
-			<div class="icl">
-				<div class="text-center">
-					<h2 class="icl__title">Heading Heading Heading</h2>
-					<p class="highlight">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
-				</div>
-				<div class="icl__row">
-					<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
-					<div class="icl__content">
-						<h3 class="icl__title">Photo with Buttons (PWB)</h3>
-						<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
-						<p><a href="#" class="button button--umkc-blue button--cta">Button Text</a></p>
-					</div>
-				</div>
-
-				<div class="icl__row icl__row--reverse">
-					<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
-					<div class="icl__content">
-						<h3 class="icl__title">Photo with Buttons (PWB)</h3>
-						<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
-						<p><a href="#" class="button button--umkc-blue button--cta">Button Text</a></p>
-					</div>
-				</div>
-
-				<div class="icl__row">
-					<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
-					<div class="icl__content">
-						<h3 class="icl__title">Photo with Buttons (PWB)</h3>
-						<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
-						<p><a href="#" class="button button--umkc-blue button--cta">Button Text</a></p>
-					</div>
-				</div>
-			</div>
 		</div>
-		<div class="icl bg-img-stripes">
-			<h2><a href="#" title="" class="text-font-color">News Row</a></h2>
-			<div class="flex-wrapper-centered">
-				<div class="icl__content flex-basis-30">
-					<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
-					<h3 class="icl__title" class="text-umkc-blue"><a href="#" title="">News Article Title</a></h3>
-					<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
-				</div>
-				<div class="icl__content flex-basis-30">
-					<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
-					<h3 class="icl__title" class="text-umkc-blue"><a href="#" title="">News Article Title</a></h3>
-					<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
-				</div>
-				<div class="icl__content flex-basis-30">
-					<img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
-					<h3 class="icl__title" class="text-umkc-blue"><a href="#" title="">News Article Title</a></h3>
-					<p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
-				</div>
-			</div>
-		</div>
-		<div class="icl calendar-date__wrapper">
-			<h2><a href="#" title="" class="text-font-color">Calendar Row</a></h2>
-			<div class="calendar-date__container">
-				<div class="icl__content">
-					<div class="calendar-date__single-container">
-						<div class="calendar-date__square text-white bg-umkc-blue">
-							<p class="calendar-date__month">Dec</p>
-							<p class="calendar-date__day">23</p>
-						</div>
-						<div class="calendar-date__info">
-							<p class="calendar-date__description"><a href="#">Bacon ipsum dolor amet meatball jowl kielbasa</a></p>
-							<p class="calendar-date__time">All Day</p>
-							<p class="calendar-date__location">UMKC School of BBQ</p>
-						</div>
-					</div>
-				</div>
-				<div class="icl__content">
-					<div class="calendar-date__single-container">
-						<div class="calendar-date__square text-white bg-umkc-blue">
-							<p class="calendar-date__month">Dec</p>
-							<p class="calendar-date__day">23</p>
-						</div>
-						<div class="calendar-date__info">
-							<p class="calendar-date__description"><a href="#">Bacon ipsum dolor amet meatball jowl kielbasa</a></p>
-							<p class="calendar-date__time">All Day</p>
-							<p class="calendar-date__location">UMKC School of BBQ</p>
-						</div>
-					</div>
-				</div>
-				<div class="icl__content">
-					<div class="calendar-date__single-container">
-						<div class="calendar-date__square text-white bg-umkc-blue">
-							<p class="calendar-date__month">Dec</p>
-							<p class="calendar-date__day">23</p>
-						</div>
-						<div class="calendar-date__info">
-							<p class="calendar-date__description"><a href="#">Bacon ipsum dolor amet meatball jowl kielbasa</a></p>
-							<p class="calendar-date__time">All Day</p>
-							<p class="calendar-date__location">UMKC School of BBQ</p>
-						</div>
-					</div>
-				</div>
-			</div>
+
+		<div class="menu">
+			<ul class="menu__list" id="menu" role="menubar" >
+				<li class="menu__item" role="menuitem" aria-haspopup="true">
+					<a href="#" class="menu__link" data-toggle="#main-navigation">
+						<svg class="icon menu__icon"><use xlink:href="#menu"></use></svg>
+						<svg class="icon menu__icon menu__icon--close"><use xlink:href="#close"></use></svg>
+						Menu
+					</a>
+				</li>
+				<li class="menu__item" role="menuitem" aria-haspopup="true">
+					<a href="#" class="menu__link" data-toggle=".search">
+						<svg class="icon menu__icon menu__icon--search"><use xlink:href="#search"></use></svg>
+						<svg class="icon menu__icon menu__icon--close"><use xlink:href="#close"></use></svg>
+						Search
+					</a>
+				</li>
+				<li class="menu__item" role="menuitem">
+					<a href="#" class="menu__link">
+						<svg class="icon menu__icon"><use xlink:href="#pencil"></use></svg>
+						Apply
+					</a>
+				</li>
+				<li class="menu__item" role="menuitem">
+					<a href="#" class="menu__link">
+						<svg class="icon menu__icon"><use xlink:href="#cloud-up"></use></svg>
+						Get Info
+					</a>
+				</li>
+				<li class="menu__item" role="menuitem">
+					<a href="#" class="menu__link">
+						<svg class="icon menu__icon"><use xlink:href="#cap"></use></svg>
+						Give
+					</a>
+				</li>
+			</ul>
 		</div>
 		<footer class="footer">
   <div class="hero-img footer__top">
@@ -978,7 +1265,6 @@
     <p>UMKC is an equal opportunity/access/affirmative action/pro-disability and veteran employer and does not discriminate on the basis of sex in our education programs or activities, pursuant to Title IX and 34 CFR Part 106. For more information, visit our <a href="nondiscrimination.html">UMKC Statement of Nondiscrimination</a>.</p>
   </div>
 </footer>
-
 		
 
   </body>
