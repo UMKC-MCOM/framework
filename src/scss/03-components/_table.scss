@@ -2,8 +2,7 @@
 
 table {
   border-collapse: collapse;
-  margin: mx.px-to-rem(50px) auto;
-  width: 100%;
+  margin: mx.px-to-rem(24px) 0;
 
   caption {
     caption-side: top;
@@ -18,14 +17,25 @@ table {
     text-align: left;
   }
   th, td{
-    border: solid mx.px-to-rem(2px) rgba(0,0,0,0.05);
     text-align: left;
     padding: 0.675rem;
+    border: solid mx.px-to-rem(1.5px) #e8e8e8;
   }
   td {
+    // border: solid mx.px-to-rem(2px) #f0f0f0;
   }
 
   tr:nth-of-type(odd){
-    background: #f3f3f3;
+    background: var(--umkc-gray);
+  }
+}
+
+// For better responsive tables
+.resp-table {
+  overflow-x: scroll;
+  white-space: nowrap;
+  @include mx.for-size("tablet-landscape-up"){
+    overflow-x: unset;
+    white-space: normal;
   }
 }

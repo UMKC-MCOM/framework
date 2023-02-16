@@ -1,6 +1,47 @@
 @use "../01-abstracts/mixins" as mx;
 // Standard Page!
 .standard {
+  h2{
+    --heading-size: #{mx.px-to-rem(32px)};
+    @include mx.for-size("tablet-landscape-up")
+    {
+      --heading-size: #{mx.px-to-rem(36px)};
+    }
+  }
+
+  h3 {
+    --heading-size: #{mx.px-to-rem(28px)};
+    @include mx.for-size("tablet-landscape-up")
+    {
+      --heading-size: #{mx.px-to-rem(34px)};
+    }
+  }
+
+  h4 {
+    --heading-size: #{mx.px-to-rem(26px)};
+    @include mx.for-size("tablet-landscape-up")
+    {
+      --heading-size: #{mx.px-to-rem(28px)};
+    }
+  }
+
+  h5 {
+    --heading-size: #{mx.px-to-rem(22px)};
+    @include mx.for-size("tablet-landscape-up")
+    {
+      --heading-size: #{mx.px-to-rem(24px)};
+    }
+  }
+
+  h6 {
+    --heading-size: #{mx.px-to-rem(18px)};
+    @include mx.for-size("tablet-landscape-up")
+    {
+      --heading-size: #{mx.px-to-rem(20px)};
+    }
+  }
+
+
   $self: &;
   display: flex;
   flex-direction: column;

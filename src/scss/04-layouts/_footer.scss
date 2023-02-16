@@ -5,7 +5,11 @@
   --logo-height: #{mx.px-to-rem(100px)};
   color: var(--white);
   font-weight: 300;
-
+  nav {
+    ul {
+      padding: 0;
+    }
+  }
   a {
     &:not([class]),
     &[class=""] {
@@ -20,7 +24,12 @@
   }
 
   &__top {
-    align-items: flex-start;
+    align-items: center;
+
+    @include mx.for-size("tablet-landscape-up"){
+      align-items: flex-start;
+    }
+
     background-image: url("/src/images/footer-top__image.webp");
     background-color: var(--black);
     background-position: center bottom;
@@ -97,8 +106,6 @@
 
     @include mx.for-size("tablet-landscape-up") {
       --button-size: #{mx.px-to-rem(32px)};
-
-      // @include mx.font-size(22px, 1.5);
     }
 
     &--title {
@@ -127,7 +134,9 @@
     }
 
     &--buttons {
-      margin-top: 3rem;
+      @include mx.for-size("tablet-landscape-up"){
+        margin-top: 3rem;
+      }
 
       li {
         margin: 1rem 0;
@@ -142,7 +151,11 @@
 
   &__curator {
     flex-wrap: wrap;
-    padding-bottom: 1.5rem;
+    padding-bottom: 6rem;
+
+    @include mx.for-size("tablet-landscape-up") {
+      padding-bottom: 2rem;
+    }
     .nav {
       margin-bottom: 0.5rem;
 

@@ -297,7 +297,8 @@ button,
  */
 
 fieldset {
-  padding: 0.35em 0.75em 0.625em;
+  padding: 0.5rem 0;
+  border: none;
 }
 
 /**
@@ -306,6 +307,9 @@ fieldset {
 
 input {
   overflow: visible;
+  border: solid 2px #e3e3e3;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
 }
 
 /**
@@ -336,6 +340,10 @@ progress {
 
 select {
   text-transform: none;
+  font-size: 1rem;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  padding: 0.5rem 1rem;
 }
 
 /**
@@ -347,7 +355,10 @@ select {
 textarea {
   margin: 0; /* 1 */
   overflow: auto; /* 2 */
-  resize: vertical; /* 3 */
+  resize: both; /* 3 */
+  border: solid 2px #e3e3e3;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
 }
 
 /**

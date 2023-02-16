@@ -1,5 +1,6 @@
 import '/src/scss/styles.scss'
 import '/src/scss/print.scss'
+import '/src/js/tables.js'
 import '/src/js/toggles.js'
 import '/src/js/quotes.js'
 import '/src/js/video.js'

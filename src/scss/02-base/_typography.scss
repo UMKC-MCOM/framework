@@ -35,3 +35,18 @@ ol {
   margin: 0;
   padding: 0;
 }
+
+blockquote:not([class]) {
+  border-left: solid var(--umkc-blue) mx.px-to-rem(8px);
+  margin: 0;
+  padding:1.75rem 3rem;
+  @include mx.font-size(24px);
+  background: var(--umkc-gray);
+
+  cite {
+    display: block;
+    &:before {
+      content: "- ";
+    }
+  }
+}

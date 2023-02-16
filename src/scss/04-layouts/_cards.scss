@@ -2,7 +2,8 @@
 
 .cards {
   $self: &;
-
+  container-type: inline-size;
+  container-name: cards;
   padding: 0 var(--content-padding) 2rem;
 
   &__group {
@@ -10,8 +11,8 @@
     flex-flow: column;
     justify-content: space-evenly;
 
-    @include mx.for-size("tablet-landscape-up") {
-      flex-flow: row nowrap;
+    @container cards (min-width: 600px) {
+      flex-flow: row wrap;
     }
   }
 
@@ -30,25 +31,40 @@
   &__item {
     display: flex;
     flex-direction: column;
-    flex-basis: calc( 100% / 3);
+    margin: 1rem;
+    @container cards ( min-width: 600px ) {
+      flex-basis: calc( (100% / 2) - 2rem);
+    }
+    @container cards (min-width: 900px) {
+      flex-basis: calc( (100% / 3) - 2rem);
+    }
+    @container cards ( min-width: 1200px) {
+      flex-basis: calc( (100% / 4) - 2rem);
+    }
+
     &--centered {
       text-align: center;
     }
 
     &:not(:last-child) {
       @include mx.for-size("tablet-landscape-up") {
-        margin-right: 2.5rem;
+        // margin-right: 2.5rem;
       }
     }
   }
 
   &__content {
     padding: 1.5rem;
+
+    .button {
+      margin-top: 1rem;
+    }
   }
 
   &__title {
     --heading-margin: 0;
     --heading-size: #{mx.px-to-rem(30px)};
+    --heading-color: var(--umkc-blue);
   }
 
   &__link {

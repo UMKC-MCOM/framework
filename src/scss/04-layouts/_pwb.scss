@@ -25,6 +25,7 @@
     @include mx.for-size("tablet-landscape-up") {
       align-self: flex-start;
       object-fit: cover;
+      min-width: 600px;
     }
   }
 
