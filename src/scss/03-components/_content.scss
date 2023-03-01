@@ -39,10 +39,12 @@
     mask-position: center;
     mask-mode: screen;
     mask-size: contain;
-
-    margin-left: 0.75rem;
-    margin-bottom: -0.25rem;
     width: var(--arrow-size, 1rem);
+    margin-left: 0.25rem;
+    margin-bottom: -0.25rem;
+    &:has(.button) {
+      margin-left: 0.75rem;
+    }
 
     @include mx.tr(background);
   }
