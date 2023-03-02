@@ -1,0 +1,9 @@
+@use "../01-abstracts/mixins" as mx;
+
+.teaser {
+  font-family: 'Roboto Slab', serif;
+  color: var(--umkc-dark-blue);
+  font-size: mx.px-to-rem(28px);
+  margin: var(--content-padding) var(--content-padding) 0;
+  font-weight: 300;
+}

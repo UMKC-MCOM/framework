@@ -5,9 +5,9 @@
 .calendar-date {
 	--header-color: var(--umkc-blue);
 	display: flex;
-	justify-content: flex-start;
+	justify-content: space-evenly;
 	flex-direction: column;
-	@include mx.for-size("tablet-landscape-up") {
+	@include mx.for-size("desktop-up") {
 		flex-direction: row;
 	}
 
@@ -16,7 +16,7 @@
 		justify-content: flex-start;
 		margin-top: 1rem;
 
-		@include mx.for-size("tablet-landscape-up") {
+		@include mx.for-size("desktop-up") {
 			flex-basis: calc(100% / 3);
 			&:not(:nth-child(3n)) {
 				margin-right: 1.5rem;
@@ -44,5 +44,9 @@
 
 	&__time {
 		font-weight: 500;
+	}
+
+	&__button {
+		margin-top: 3rem;
 	}
 }

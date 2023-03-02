@@ -1,0 +1,18 @@
+@use "../01-abstracts/mixins" as mx;
+
+.alert {
+  box-shadow: 0 0 mx.px-to-rem(12px) rgba(0, 0, 0, 0.25);
+  border-left: solid mx.px-to-rem(12px) var(--alert-color, var(--umkc-blue));
+  padding: 0.5rem var(--content-padding);
+  background: var(--umkc-gray);
+  margin: 2rem var(--content-padding) 0.5rem;
+  --heading-color: var(--alert-color);
+
+  &--warning {
+    --alert-color: #cc3300;
+  }
+
+  &--success {
+    --alert-color: #339900;
+  }
+}

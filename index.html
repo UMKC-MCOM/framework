@@ -11,26 +11,36 @@
 			{{> hero }}
 			<!-- Breadcrumbs -->
 			{{> breadcrumbs }}
+			<!-- Local Site Alerts -->
+			{{> ks/alert bgColor=""}}
 
+			<!-- Benefits Lists -->
 			{{> ks/blp }}
 			{{> ks/blnp }}
-			{{> ks/bg }}
+
+			<!-- Stats -->
 			{{> ks/sp }}
 			{{> ks/snp }}
+
+			<!-- Box Grid -->
+			{{> ks/bg }}
 
 			<!-- Cards -->
 			{{> ks/cp bgColor="umkc-blue" }}
 			{{> ks/cnp link="true" }}
 			{{> ks/cnp }}
 
+			<!-- Quotes -->
 			{{> ks/qm }}
 			{{> ks/qs }}
 
+			<!-- Photo + Buttons -->
 			{{> ks/pwb }}
 
+			<!-- Image + Content + Links -->
 			{{> ks/icl bgColor="umkc-blue icl--blue" buttonColor="white"}}
-			{{> ks/icl bgColor="umkc-gray" buttonColor="umkc-blue"}}
-			{{> ks/icl bgColor="" buttonColor="umkc-blue"}}
+
+			<!-- News and Calendar Feed -->
 			{{> ks/news }}
 			{{> ks/calendar }}
 		</div>
@@ -39,6 +49,9 @@
 			<div style="background: var(--umkc-blue); height: 8rem; margin: 2rem 0 0;"><h1 style="color: white; padding: var(--content-padding);">Start: Standard Page</h1></div>
 			{{> hero standard="true" }}
 			{{> breadcrumbs }}
+
+			{{> ks/teaser }}
+
 			{{> ks/standard }}
 
 			<!-- <div style="background: var(--umkc-blue); height: 8rem; margin: 2rem 0 0;"><h1 style="color: white; padding: var(--content-padding);">Start: Utilities</h1></div> -->
