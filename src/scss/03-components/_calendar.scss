@@ -5,8 +5,9 @@
 .calendar-date {
 	--header-color: var(--umkc-blue);
 	display: flex;
-	justify-content: space-evenly;
 	flex-direction: column;
+	justify-content: space-evenly;
+
 	@include mx.for-size("desktop-up") {
 		flex-direction: row;
 	}
@@ -25,16 +26,15 @@
 	}
 
 	&__square {
-		width: mx.px-to-rem(150px);
-		padding: mx.px-to-rem(16px);
-		margin-right: mx.px-to-rem(32px);
+		align-items: center;
 		border-radius: 0.5rem;
-		@include fx.flex-item;
+		display: flex;
+		flex: 0 0 mx.px-to-rem(150px);
 		@include mx.font-size(24px, 1.25);
 		font-weight: 700;
-		display: flex;
 		justify-content: center;
-		align-items: center;
+		margin-right: mx.px-to-rem(32px);
+		padding: mx.px-to-rem(16px);
 		text-align: center;
 	}
 

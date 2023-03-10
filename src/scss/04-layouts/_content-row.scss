@@ -4,11 +4,3 @@
   background-color: var(--white);
   padding: var(--content-padding);
 }
-
-.highlight {
-  @include mx.font-size(24px, 1.5);
-
-  color: var(--highlight-color, var(--font-color));
-  font-family: var(--roboto);
-  margin: 1rem 0 2rem;
-}
