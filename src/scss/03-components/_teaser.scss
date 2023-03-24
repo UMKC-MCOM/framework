@@ -1,9 +1,9 @@
 @use "../01-abstracts/mixins" as mx;
 
 .teaser {
-  font-family: 'Roboto Slab', serif;
+  font-family: var(--slab);
   color: var(--umkc-dark-blue);
-  font-size: mx.px-to-rem(28px);
-  margin: var(--content-padding) var(--content-padding) 0;
+  font-size: var(--teaser-font-size, #{mx.px-to-rem(28px)});
+  margin: var(--teaser-margin, var(--content-padding) var(--content-padding) 0);
   font-weight: 300;
 }
