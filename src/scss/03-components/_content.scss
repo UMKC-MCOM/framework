@@ -6,22 +6,49 @@
     padding: mx.px-to-rem(8px) 0 mx.px-to-rem(16px);
   }
 
-  h2, h3, h4, h5, h6 {
+  h1, h2, h3, h4, h5, h6 {
     color: var(--heading-color, var(--umkc-blue));
     margin: var(--heading-margin, 1.5rem 0 0);
     font-size: var(--heading-size, #{mx.px-to-rem(36px)});
     line-height: var(--heading-line-height, 1.25);
   }
 
-  a:not([class]){
+  a:not([class]) {
     --btn-arrow: var(--umkc-blue);
+    font-family: var(--condensed);
+    font-weight: 700;
     color: var(--btn-arrow);
-    @include mx.tr(color, 500ms);
+    padding-top: 0.25rem;
+    padding-bottom: 0.025rem;
+    position: relative;
+    text-decoration: none;
 
-    &:hover, &:focus, &:active {
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: mx.px-to-rem(2px);
+      bottom: 0;
+      left: 0;
+      background-color: var(--umkc-blue);
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: all 250ms ease-in-out;
+    }
+
+    &:hover,
+    &:focus {
       --btn-arrow: var(--umkc-dark-blue);
+      text-decoration: none;
+
+      &::after {
+        visibility: visible;
+        transform: scaleX(1);
+      }
     }
   }
+
 
   a[target="_blank"]::after {
     background: var(--btn-arrow, var(--btn-text));
@@ -49,17 +76,3 @@
     @include mx.tr(background);
   }
 }
-// .icl {
-// 	a {
-// 		text-decoration: none;
-// 	}
-// 	.flex-wrapper {
-// 		@include fx.flex-container(flex-start, flex-start);
-// 	}
-// 	.flex-wrapper-centered {
-// 		@include fx.flex-container(space-between,flex-start);
-// 	}
-// 	.flex-basis-30 {
-// 		@include fx.flex-basis(30%);
-// 	}
-// }
