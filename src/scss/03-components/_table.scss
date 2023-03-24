@@ -32,10 +32,12 @@ table {
 
 // For better responsive tables
 .resp-table {
+  cursor: ew-resize;
   overflow-x: scroll;
   white-space: nowrap;
-  @include mx.for-size("tablet-landscape-up"){
+  @container ( min-width: #{mx.px-to-rem(600px)} ) {
     overflow-x: unset;
     white-space: normal;
+    cursor: unset;
   }
 }
