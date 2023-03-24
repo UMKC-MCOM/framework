@@ -1,6 +1,7 @@
 @use "../01-abstracts/mixins" as mx;
 
 .hero {
+  --heading-color: var(--white);
   $self: &;
   background-size: cover;
   background-repeat: no-repeat;
