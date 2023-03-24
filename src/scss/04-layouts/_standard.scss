@@ -1,11 +1,22 @@
 @use "../01-abstracts/mixins" as mx;
 // Standard Page!
 .standard {
-  h2{
-    --heading-size: #{mx.px-to-rem(32px)};
+  --teaser-margin: 0;
+  container-type: inline-size;
+  // --teaser-font-size: 1.25rem;
+  h1 {
+    --heading-size: #{mx.px-to-rem(34px)};
+    --heading-margin: 0 0 0.75rem;
     @include mx.for-size("tablet-landscape-up")
     {
-      --heading-size: #{mx.px-to-rem(36px)};
+      --heading-size: #{mx.px-to-rem(38px)};
+    }
+  }
+  h2 {
+    --heading-size: #{mx.px-to-rem(30px)};
+    @include mx.for-size("tablet-landscape-up")
+    {
+      --heading-size: #{mx.px-to-rem(34px)};
     }
   }
 
@@ -13,7 +24,7 @@
     --heading-size: #{mx.px-to-rem(28px)};
     @include mx.for-size("tablet-landscape-up")
     {
-      --heading-size: #{mx.px-to-rem(34px)};
+      --heading-size: #{mx.px-to-rem(30px)};
     }
   }
 
@@ -130,6 +141,7 @@
     --link-bg: var(--umkc-gray);
     --link-color: var(--umkc-dark-blue);
     padding: 0;
+    margin: 0;
     > #{$self}__item:first-child {
       --link-bg: var(--umkc-dark-blue);
       --link-border: var(--white);
@@ -142,6 +154,7 @@
     --link-color: var(--umkc-dark-blue);
     --link-border: var(--umkc-gray);
     padding: 0;
+    margin: 0;
     display: none;
     &[aria-hidden='false']{
       display: block;
