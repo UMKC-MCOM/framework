@@ -25,8 +25,32 @@ h6 {
   margin: 0;
 }
 
+h2 {
+  --heading-size: #{mx.px-to-rem(42px)};
+  @include mx.for-size("tablet-landscape-up"){
+    --heading-size: #{mx.px-to-rem(56px)};
+  }
+}
+
 h3 {
-  font-family: var(--condensed);
+  --heading-size: #{mx.px-to-rem(32px)};
+  @include mx.for-size("tablet-landscape-up"){
+    --heading-size: #{mx.px-to-rem(36px)};
+  }
+}
+
+h4 {
+  @include mx.for-size("tablet-landscape-up"){
+    --heading-size: #{mx.px-to-rem(28px)};
+  }
+}
+
+h5 {
+    --heading-size: #{mx.px-to-rem(24px)};
+}
+
+h6 {
+  --heading-size: #{mx.px-to-rem(18px)};
 }
 
 p,
