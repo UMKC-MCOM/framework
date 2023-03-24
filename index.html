@@ -7,12 +7,12 @@
 		{{> a11y-skip }}
 		{{> header bgColor="navy" }}
 		<div id="landing-page" class="main-content">
-			<!-- {{> hero video="true" }} -->
+			{{> hero video="true" }}
 			{{> hero }}
 			<!-- Breadcrumbs -->
 			{{> breadcrumbs }}
 			<!-- Local Site Alerts -->
-			{{> ks/alert bgColor=""}}
+			<!-- {{> ks/alert bgColor=""}} -->
 
 			<!-- Benefits Lists -->
 			{{> ks/blp }}
@@ -22,26 +22,28 @@
 			{{> ks/sp }}
 			{{> ks/snp }}
 
+			<!-- Video Row -->
+			{{> ks/video }}
 			<!-- Box Grid -->
 			{{> ks/bg }}
 
 			<!-- Cards -->
-			{{> ks/cp bgColor="umkc-blue" }}
+			<!-- {{> ks/cp bgColor="umkc-blue" }}
 			{{> ks/cnp link="true" }}
-			{{> ks/cnp }}
+			{{> ks/cnp }} -->
 
 			<!-- Quotes -->
-			{{> ks/qm }}
-			{{> ks/qs }}
+			<!-- {{> ks/qm }}
+			{{> ks/qs }} -->
 
 			<!-- Photo + Buttons -->
-			{{> ks/pwb }}
+			<!-- {{> ks/pwb }} -->
 
 			<!-- Image + Content + Links -->
 			{{> ks/icl bgColor="umkc-blue icl--blue" buttonColor="white"}}
 
 			<!-- News and Calendar Feed -->
-			{{> ks/news }}
+			<!-- {{> ks/news }} -->
 			{{> ks/calendar }}
 		</div>
 		<div id="standard-page" class="main-content">
@@ -49,8 +51,6 @@
 			<div style="background: var(--umkc-blue); height: 8rem; margin: 2rem 0 0;"><h1 style="color: white; padding: var(--content-padding);">Start: Standard Page</h1></div>
 			{{> hero standard="true" }}
 			{{> breadcrumbs }}
-
-			{{> ks/teaser }}
 
 			{{> ks/standard }}
 
