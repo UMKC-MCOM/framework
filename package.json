@@ -5,9 +5,9 @@
  "description": "Starting point for all web projects",
  "type": "module",
  "scripts": {
-   "dev": "vite",
-   "build": "vite build",
-   "preview": "vite preview",
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview",
   "scss": "sass --source-map src/scss:assets/css",
   "lint:css": "stylelint \"src/**/*.scss\" -o \"stylelint.log\"; exit 0;",
   "lint:css:fix": "stylelint \"src/**/*.scss\" --quiet --fix; exit 0;"
@@ -22,6 +22,7 @@
   "vite-plugin-handlebars": "^1.6.0"
  },
  "dependencies": {
-  "@glidejs/glide": "^3.5.2"
+  "@glidejs/glide": "^3.5.2",
+  "tocbot": "^4.20.1"
  }
 }
