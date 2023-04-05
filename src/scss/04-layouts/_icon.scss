@@ -1,0 +1,40 @@
+.icons {
+  display: flex;
+  // justify-content: space-around;
+  // align-items: center;
+  margin: var(--content-padding);
+  .icon {
+    flex-basis: 50%;
+    padding: 0 var(--content-padding);
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &:has(.icon:nth-child(3)) {
+    .icon {
+      flex-basis: calc(100%/3);
+    }
+  }
+  &:has(.icon:nth-child(4)) {
+    .icon {
+      flex-basis: 25%;
+    }
+  }
+
+  .icon__image {
+    width: 150px;
+    height: 150px;
+    background: #e5eef5;
+    border-radius: 100%;
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+  .icon__icon {
+    position: absolute;
+    left: -1.5rem;
+    top: -1.5rem;
+    width: 200px;
+    height: 200px;
+  }
+}
