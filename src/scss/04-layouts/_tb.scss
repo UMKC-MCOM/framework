@@ -1,0 +1,8 @@
+@use "../01-abstracts/mixins" as mx;
+
+.tb {
+  @include mx.for-size("tablet-landscape-up") {
+    width: 65vw;
+    margin: 0 auto;
+  }
+}

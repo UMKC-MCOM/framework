@@ -1,6 +1,7 @@
 @use "../01-abstracts/mixins" as mx;
 
 .menu {
+  $self: &;
   align-items: center;
   background: var(--umkc-blue);
   border-top: solid mx.px-to-rem(4px) var(--umkc-yellow);
@@ -15,7 +16,7 @@
 
   &__list{
     margin: 0;
-    padding: 0.5rem 0;
+    padding: 0;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-evenly;
@@ -30,6 +31,20 @@
     text-decoration: none;
     display: block;
     width: 4rem;
+    padding: 0.5rem 0;
+    &:hover, &:active, &:focus {
+      background: var(--umkc-yellow);
+      color: var( --umkc-dark-blue);
+    }
+
+    &[aria-expanded='true'] {
+      #{$self}__icon {
+        display: none;
+      }
+      #{$self}__icon--close {
+        display: block;
+      }
+    }
   }
 
   &__icon{
@@ -37,10 +52,6 @@
     width: mx.px-to-rem(26px);
     display: block;
     margin: 0 auto;
-
-    &--search{
-      transform: rotate(90deg)
-    }
 
     &--close{
       display: none;

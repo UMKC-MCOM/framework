@@ -11,7 +11,7 @@
   &--blue {
     --heading-color: var(--white);
     --highlight-color: var(--white);
-
+    --link-color: var(--white);
     color: var(--white);
   }
 
@@ -64,7 +64,7 @@
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
-      align-content: flex-start;
+
     }
     > #{$self}__title {
       flex: 1 0 100%;
@@ -78,6 +78,11 @@
         padding: 1rem;
       }
     }
+
+    #{$self}__content {
+      align-self: flex-start;
+    }
+
     #{$self}__image {
       padding: 0;
     }
