@@ -44,6 +44,7 @@
     display: flex;
     flex-flow: row wrap;
     padding: 0;
+    margin: 0;
     @include mx.for-size("desktop-up"){
       flex-wrap: nowrap;
       justify-content: center;
@@ -59,9 +60,9 @@
 
     @include mx.tr(background);
     flex: 0 0 50%;
-
     @include mx.for-size("desktop-up"){
-      --link-margin: 2rem;
+      --link-margin: 1rem;
+      padding: 0.5rem var(--link-margin, 1.5rem);
       flex: none;
       &:not(:first-child)::before {
         border-right: solid mx.px-to-rem(1px) var(--nav-border, rgb(255 255 255 / 35%));
@@ -72,9 +73,8 @@
         top: 0;
       }
     }
-    @include mx.for-size("desktop-up") {
-      --link-margin: 1.5rem;
-      padding: 0.5rem var(--link-margin);
+    @include mx.for-size("big-desktop-up"){
+      --link-margin: 2rem;
     }
 
     &:hover,
@@ -96,6 +96,9 @@
     @include mx.tr("color");
 
     @include mx.for-size("desktop-up") {
+      padding: 0.5rem 0.25rem;
+    }
+    @include mx.for-size("big-desktop-up") {
       padding: 0.5rem 1rem;
     }
   }
