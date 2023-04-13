@@ -1,0 +1,49 @@
+@use "../01-abstracts/mixins" as mx;
+
+.vertical-image {
+  display: flex;
+  flex-direction: column;
+  @include mx.for-size("tablet-landscape-up"){
+    flex-direction: row;
+  }
+  &__item {
+    background-position: bottom center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-flow: column;
+    height: mx.px-to-rem(500px);
+    justify-content: end;
+    text-align: center;
+    position: relative;
+
+    @include mx.for-size("tablet-landscape-up"){
+      flex-basis: calc(100%/3);
+      height: mx.px-to-rem(700px);
+    }
+
+    &::before {
+      background: rgba(0, 0, 0, 0.22);
+      content: "";
+      height: 100%;
+      position: absolute;
+        left:0;
+        top: 0;
+      width: 100%;
+      z-index: 1;
+    }
+  }
+
+  &__title {
+    --heading-color: var(--white);
+    font-family: var(--condensed);
+    font-weight: 200;
+    padding-bottom: 1rem;
+    text-shadow: 0 0 0.5rem rgba(0,0,0,0.75);
+  }
+
+  &__content {
+    background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0.0), rgba(0,0,0,0.9));
+    padding: var(--content-padding);
+  }
+}
