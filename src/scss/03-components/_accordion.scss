@@ -1,0 +1,45 @@
+@use "../01-abstracts/mixins" as mx;
+
+.accordion {
+  width: 65%;
+  margin: 0 auto;
+  $self: &;
+  &__btn {
+    background: var(--umkc-gray);
+    color: var(--umkc-dark-blue);
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    font-size: mx.px-to-rem(18px);
+    font-weight: 700;
+    width: 100%;
+    padding: 1rem;
+    margin: 0 0 0.5rem;
+    &[aria-expanded="true"] {
+      background: var(--umkc-dark-blue);
+      color: white;
+      #{$self}__icon {
+        transform: rotate(180deg);
+      }
+    }
+
+    &:hover, &:focus, &:active {
+      background: var(--umkc-blue);
+      color: white;
+    }
+  }
+  &__icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    transition: transform 250ms ease;
+    margin-right: 1rem;
+  }
+
+  &__content {
+    display: none;
+    padding: 0.5rem 1rem;
+    &[aria-hidden=false] {
+      display: block;
+    }
+  }
+}
