@@ -1,3 +1,4 @@
+@use "../01-abstracts/mixins" as mx;
 
 .gallery {
   display: grid;
@@ -44,5 +45,69 @@
       grid-column: 5 / span 4;
       grid-row: 6 / span 3;
     }
+  }
+}
+
+.glide {
+  position: relative;
+  padding: 0 5rem;
+  &__item {
+    display: flex;
+    flex-direction: column;
+    @include mx.for-size("desktop-up"){
+      flex-direction: row;
+    }
+  }
+
+  &__img {
+    flex-shrink: 0;
+    @include mx.for-size("tablet-landscape-up"){
+      flex-basis: 45%;
+    }
+    @include mx.for-size("big-desktop-up"){
+      flex-basis: 65%;
+    }
+  }
+  &__content {
+    flex-grow: 1;
+    background: var(--umkc-dark-blue);
+    color: white;
+    padding: var(--content-padding);
+  }
+
+  &__title {
+    --heading-color: var(--white);
+    --heading-margin: 0;
+  }
+
+  &__track {
+    position: static;
+    border-top: solid mx.px-to-rem(8px) var(--umkc-blue);
+  }
+  &__arrow {
+    --icon-size: 1.75rem;
+    position: absolute;
+    top: calc( 50% - var(--icon-size));
+    border: solid mx.px-to-rem(2px) var(--umkc-dark-blue);
+    border-radius: 100%;
+    padding: 0.5rem;
+    transition: all 250ms ease;
+    color: var(--umkc-dark-blue);
+    &--left {
+      left: 0;
+    }
+    &--right {
+      right: 0;
+    }
+
+    &:hover, &:focus, &:active {
+      background-color: var(--umkc-dark-blue);
+      color: var(--white);
+    }
+  }
+
+  &__icon {
+    height: var(--icon-size);
+    width: var(--icon-size);
   }
 }
