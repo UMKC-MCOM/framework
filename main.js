@@ -10,7 +10,9 @@ import '/src/js/quotes.js'
 import '/src/js/video.js'
 
 window.addEventListener('load', function () {
-  new Glide('.glide').mount()
+  if ( document.querySelectorAll(".glide").length >= 1 ){
+    new Glide('.glide').mount()
+  }
 })
 
 // import javascriptLogo from './javascript.svg'
