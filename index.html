@@ -122,6 +122,13 @@
 		</div>
 		{{> footer }}
 		<script type="module" src="./main.js"></script>
-
+		<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+		<script>
+		window.addEventListener('load', function () {
+			if ( document.querySelectorAll(".glide").length >= 1 ){
+				new Glide('.glide').mount()
+			}
+		})
+		</script>
   </body>
 </html>

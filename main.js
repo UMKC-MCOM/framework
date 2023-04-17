@@ -1,19 +1,12 @@
 import '/src/scss/styles.scss'
 import '/src/scss/print.scss'
 // import '/src/scss/wysiwyg.scss'
-import '/src/js/tables.js'
 import '/node_modules/tocbot/dist/tocbot.min.js'
-import '/node_modules/@glidejs/glide/dist/glide.min.js'
+import '/src/js/tables.js'
 import '/src/js/toc.js'
 import '/src/js/toggles.js'
 import '/src/js/quotes.js'
 import '/src/js/video.js'
-
-window.addEventListener('load', function () {
-  if ( document.querySelectorAll(".glide").length >= 1 ){
-    new Glide('.glide').mount()
-  }
-})
 
 // import javascriptLogo from './javascript.svg'
 // import { setupCounter } from './counter.js'

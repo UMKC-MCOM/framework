@@ -61,8 +61,12 @@
 
   &__img {
     flex-shrink: 0;
+    object-fit: cover;
+    object-position: center center;
+
     @include mx.for-size("tablet-landscape-up"){
       flex-basis: 45%;
+      height: 500px;
     }
     @include mx.for-size("big-desktop-up"){
       flex-basis: 65%;
@@ -73,6 +77,10 @@
     background: var(--umkc-dark-blue);
     color: white;
     padding: var(--content-padding);
+
+    a:not([class]) {
+      color: white;
+    }
   }
 
   &__title {
