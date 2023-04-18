@@ -19,6 +19,8 @@
             width: #{mx.px-to-rem(288px)};
             object-fit: cover;
             margin-bottom: #{mx.px-to-rem(20px)};
+
+            &--image {}
         }
     }
 
@@ -61,9 +63,9 @@
         }
 
         &__title {
-            --heading-margin: 0;
+            //--heading-margin: 0;
             line-height: 1;
-            margin-bottom: #{mx.px-to-rem(8px)} !important;
+            //margin-bottom: #{mx.px-to-rem(8px)};
 
             &--heavy {
                 --heading-size: #{mx.px-to-rem(56px)};
@@ -76,8 +78,8 @@
         }
 
         &__details {
-            p {
-                margin-bottom: #{mx.px-to-rem(8px)};
+            &--copy {
+                //margin-bottom: #{mx.px-to-rem(8px)};
             }
         }
 
@@ -94,44 +96,6 @@
             #{$self}__item--stats {
                 align-items: flex-start;
                 text-align: left;
-            }
-        }
-    }
-
-    
-
-    a.icon-row-title-link {
-        --btn-arrow: var(--umkc-blue);
-        color: var(--umkc-blue);
-        text-decoration: none;
-        position: relative;
-        display: inline-block;
-        z-index:1;
-
-        h3 {
-            position: relative;
-            z-index: 1;
-        }
-
-        &::before {
-            content: '';
-            background-color: var(--umkc-yellow);
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: mx.px-to-rem(2px);
-            width: 100%;
-            height: mx.px-to-rem(4px);
-            z-index: 0;
-            transition: all .3s ease-in-out;
-        }
-
-        &:hover {
-            color: var(--umkc-dark-blue);
-
-            &::before {
-                bottom: 0;
-                height: 70%;
             }
         }
     }
