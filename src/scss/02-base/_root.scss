@@ -9,7 +9,7 @@
   --logo-ratio: 2.29;
   --logo-height: #{mx.px-to-rem(75px)};
   --logo-color: var(--white);
-
+  --footer-image: url("/src/images/footer-top__image.webp");
   @include mx.for-size("tablet-landscape-up") {
     --logo-height: #{mx.px-to-rem(88px)};
   }

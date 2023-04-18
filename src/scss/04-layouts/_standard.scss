@@ -155,10 +155,6 @@
     --link-border: var(--umkc-gray);
     padding: 0;
     margin: 0;
-    display: none;
-    &[aria-hidden='false']{
-      display: block;
-    }
   }
 
   &__item {

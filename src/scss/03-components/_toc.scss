@@ -1,0 +1,16 @@
+@use "../01-abstracts/mixins" as mx;
+
+.standard:has(.js-toc) {
+  .standard--content{
+    flex-basis: 50%;
+  }
+}
+
+.js-toc {
+  position: -webkit-sticky;
+  position: sticky;
+  top: var(--content-padding);
+  flex-basis: 25%;
+  overflow: scroll;
+  height: 100%;
+}

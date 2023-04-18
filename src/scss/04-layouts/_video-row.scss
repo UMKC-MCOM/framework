@@ -3,7 +3,7 @@
 .video,
 .video-embed {
   margin: 0 auto;
-  width: calc(100vh * 0.75);
+  width: calc(100vw * 0.75);
   @include mx.for-size("tablet-landscape-up") {
     width: 65vw;
   }
