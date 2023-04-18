@@ -1,0 +1,96 @@
+﻿@use "../01-abstracts/mixins" as mx;
+
+.icon-row {
+    $self: &;
+
+    display: flex;
+    flex-flow: column;
+    gap: 30px 10px;
+
+    @include mx.for-size("tablet-landscape-up") {
+        justify-content: space-around;
+        flex-flow: row wrap;
+        align-items: center;
+
+        &__image {
+            flex: 0 1;
+            height: #{mx.px-to-rem(250px)};
+            width: #{mx.px-to-rem(250px)};
+            object-fit: cover;
+            margin-bottom: #{mx.px-to-rem(20px)};
+        }
+    }
+
+    &--stats {
+        @include mx.for-size("tablet-landscape-up") {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    &__group {
+        @include mx.for-size("tablet-landscape-up") {
+            flex: 1 0;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: flex-start;
+
+        @include mx.for-size("tablet-portrait-up") {
+            max-width: #{mx.px-to-rem(300px)};
+        }
+
+        &--stats {
+            flex-flow: column;
+        }
+
+        img {
+            min-width: #{mx.px-to-rem(250px)};
+
+            @include mx.for-size("tablet-portrait-up") {
+                min-width: #{mx.px-to-rem(200px)};
+            }
+        }
+
+        &__cta {
+            flex-basis: 100%;
+            text-align: center;
+        }
+
+        &__title {
+            line-height: 1;
+
+            &--heavy {
+                --heading-size: #{mx.px-to-rem(56px)};
+            }
+
+            &--light {
+                --heading-color: var(--black);
+                --heading-size: #{mx.px-to-rem(24px)};
+            }
+        }
+
+        /*&__details {
+            &--copy {
+            }
+        }*/
+
+        &__stats {
+            font-weight: 700;
+            font-family: var(--roboto);
+            color: var(--umkc-blue);
+        }
+
+        &--small-stats {
+            margin-top: 0;
+            flex-wrap: wrap;
+
+            #{$self}__item--stats {
+                align-items: flex-start;
+                text-align: left;
+            }
+        }
+    }
+}
