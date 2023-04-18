@@ -27,12 +27,12 @@
             grid-template-columns: 1fr 1fr;
         }
     }
-
-    &__group {
-        @include mx.for-size("tablet-landscape-up") {
-            flex: 1 0;
-        }
-    }
+//
+//     &__group {
+//         @include mx.for-size("tablet-landscape-up") {
+//             flex: 1 0;
+//         }
+//     }
 
     &__details {
         &--copy {
