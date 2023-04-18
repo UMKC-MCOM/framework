@@ -54,9 +54,8 @@
   &__item {
     display: flex;
     flex-direction: column;
-    @include mx.for-size("desktop-up"){
+    @include mx.for-size("big-desktop-up"){
       flex-direction: row;
-      flex-wrap: nowrap;
     }
   }
 
@@ -65,7 +64,7 @@
     object-fit: cover;
     object-position: center center;
     aspect-ratio: 12 / 5;
-    @include mx.for-size("tablet-landscape-up"){
+    @include mx.for-size("tablet-portrait-up"){
       flex-basis: 45%;
       height: 500px;
     }
