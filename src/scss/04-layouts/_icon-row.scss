@@ -15,12 +15,10 @@
 
         &__image {
             flex: 0 1;
-            height: #{mx.px-to-rem(288px)};
-            width: #{mx.px-to-rem(288px)};
+            height: #{mx.px-to-rem(250px)};
+            width: #{mx.px-to-rem(250px)};
             object-fit: cover;
             margin-bottom: #{mx.px-to-rem(20px)};
-
-            &--image {}
         }
     }
 
@@ -50,7 +48,7 @@
         }
 
         img {
-            min-width: #{mx.px-to-rem(288px)};
+            min-width: #{mx.px-to-rem(250px)};
 
             @include mx.for-size("tablet-portrait-up") {
                 min-width: #{mx.px-to-rem(200px)};
@@ -63,9 +61,7 @@
         }
 
         &__title {
-            //--heading-margin: 0;
             line-height: 1;
-            //margin-bottom: #{mx.px-to-rem(8px)};
 
             &--heavy {
                 --heading-size: #{mx.px-to-rem(56px)};
@@ -77,11 +73,10 @@
             }
         }
 
-        &__details {
+        /*&__details {
             &--copy {
-                //margin-bottom: #{mx.px-to-rem(8px)};
             }
-        }
+        }*/
 
         &__stats {
             font-weight: 700;
