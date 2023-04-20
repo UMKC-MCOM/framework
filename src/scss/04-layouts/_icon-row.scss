@@ -5,53 +5,45 @@
 
     display: flex;
     flex-flow: column;
-    gap: mx.px-to-rem(30px) mx.px-to-rem(10px);
+    justify-content: space-evenly;
 
-    @include mx.for-size("tablet-landscape-up") {
+    @include mx.for-size("tablet-portrait-up") {
+        --item-width: 50%;
         justify-content: space-around;
         flex-flow: row wrap;
         align-items: center;
-
-        &__image {
-            flex: 0 1;
-            height: #{mx.px-to-rem(250px)};
-            width: #{mx.px-to-rem(250px)};
-            object-fit: cover;
-            margin-bottom: #{mx.px-to-rem(20px)};
-        }
     }
-
-    &--stats {
-        @include mx.for-size("tablet-landscape-up") {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
+    @include mx.for-size("tablet-landscape-up") {
+        --item-width: 250px;
     }
-//
-//     &__group {
-//         @include mx.for-size("tablet-landscape-up") {
-//             flex: 1 0;
-//         }
-//     }
-
-    &__details {
-        &--copy {
-            padding-bottom: 1rem;
-        }
-    }
-
     &__item {
         display: flex;
-        align-items: flex-start;
-
-        @include mx.for-size("tablet-portrait-up") {
-            max-width: #{mx.px-to-rem(300px)};
-        }
-
-        &--stats {
-            flex-flow: column;
+        flex-direction: column;
+        align-items: center;
+        flex: 0 0 calc(var(--item-width) - 2rem);
+        margin: 0 1rem 1.5rem;
+        @include mx.for-size("desktop-up"){
+            align-items: flex-start;
         }
     }
+
+    &__image {
+        align-self: center;
+        height: 250px;
+        width: 250px;
+        background: #E5EEF5;
+        border-radius: 100%;
+        margin-bottom: #{mx.px-to-rem(24px)};
+    }
+
+    &__copy {
+        padding: 0.5rem 0 1rem;
+    }
+
+    &__icon {
+        z-index: 1;
+    }
+
     &__title {
         --heading-margin: 0;
 
@@ -60,24 +52,8 @@
         }
 
         &--light {
-            // --heading-color: var(--black);
+            --heading-color: var(--black);
             --heading-size: #{mx.px-to-rem(24px)};
-        }
-    }
-
-    &__stats {
-        font-weight: 700;
-        font-family: var(--roboto);
-        color: var(--umkc-blue);
-    }
-
-    &--small-stats {
-        margin-top: 0;
-        flex-wrap: wrap;
-
-        #{$self}__item--stats {
-            align-items: flex-start;
-            text-align: left;
         }
     }
 }
