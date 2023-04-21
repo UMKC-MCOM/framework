@@ -9,18 +9,17 @@
                   method="GET" 
                   role="search">
                 <div class="module-search__group">
-                    <span class="twitter-typeahead" style="position: relative; display: inline-block;">
+                    <span class="twitter-typeahead">
                         <input aria-labelledby="fb-query"
                                aria-required="true"
                                autocomplete="off"
                                class="module-search__query tt-input"
-                               dir="auto" id="query"
+                               dir="auto" 
+                               id="query"
                                name="query"
-                               placeholder="Start your search here…"
+                               placeholder="Start your search here..."
                                spellcheck="false"
-                               type="Search query"
-                               style="position: relative;
-                           vertical-align: top;">
+                               type="Search query" />
                         <pre aria-hidden="true"
                              style="position: absolute;
                              visibility: hidden;
@@ -38,15 +37,15 @@
                         </pre>
                         <div class="tt-menu"
                              style="position: absolute;
-                         top: 100%;
-                         left: 0px;
-                         z-index: 100;
-                         display: none;">
+                             top: 100%;
+                             left: 0px;
+                             z-index: 100;
+                             display: none;">
                             <div class="tt-dataset tt-dataset-organic"></div>
                         </div>
                     </span>
                     <button class="module-search__button" type="submit">
-                        <span class="fa fa-search"></span>
+                        <svg class="icon"><use xlink:href="#search"></use></svg>
                         <span class="sr-only">Search</span>
                     </button>
                 </div>
@@ -54,11 +53,17 @@
                 <input name="collection" type="hidden" value="umkc-program-finder">
                 <input name="profile" type="hidden" value="_default">
 
-                <div class="button button--umkc-yellow button--cta" role="button" tabindex="0">
-                    <a class="text-umkc-white py-3" href="https://programs.umkc.edu/" title="All Programs">All Programs</a>
-                </div>
-                <div class="button button--umkc-yellow button--cta" role="button" tabindex="1">
-                    <a class="text-umkc-white py-3" href="https://futureroo.umkc.edu/apply/" target="_blank" title="Apply Now">Apply Now</a>
+                <div class="module-search__additional-links">
+                    <a class="module-search__additional-links--button button button--umkc-yellow" 
+                       role="button" 
+                       tabindex="0" 
+                       href="https://programs.umkc.edu/" 
+                       title="All Programs">All Programs</a>
+                    <a class="module-search__additional-links--button button button--umkc-yellow" 
+                       role="button" 
+                       tabindex="0" 
+                       href="https://futureroo.umkc.edu/apply/"  
+                       title="Apply Now">Apply Now</a>
                 </div>
             </form>
         </div>
