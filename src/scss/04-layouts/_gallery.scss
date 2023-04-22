@@ -52,9 +52,8 @@
   position: relative;
   padding: 0 5rem;
   &__item {
-    display: flex;
-    flex-direction: column;
     @include mx.for-size("big-desktop-up"){
+      display: flex;
       flex-direction: row;
     }
   }
@@ -63,21 +62,24 @@
     flex-shrink: 0;
     object-fit: cover;
     object-position: center center;
-    aspect-ratio: 12 / 5;
-    @include mx.for-size("tablet-portrait-up"){
+    // aspect-ratio: 4 / 1;
+    width: 100%;
+    height: 400px;
+    @include mx.for-size("desktop-up"){
+      aspect-ratio: 3 / 1;
       flex-basis: 45%;
-      height: 500px;
     }
-    @include mx.for-size("big-desktop-up"){
-      flex-basis: 65%;
-    }
+    // @include mx.for-size("big-desktop-up"){
+    //   flex-basis: 65%;
+    // }
   }
   &__content {
     flex-grow: 1;
     background: var(--umkc-dark-blue);
     color: white;
     padding: var(--content-padding);
-
+    height: 400px;
+    overflow-y: auto;
     a:not([class]) {
       color: white;
     }
@@ -89,7 +91,7 @@
   }
 
   &__track {
-    position: static;
+    position: relative;
     border-top: solid mx.px-to-rem(8px) var(--umkc-blue);
   }
   &__arrow {

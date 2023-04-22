@@ -91,6 +91,15 @@
     }
   }
 
+  &--hover-yellow {
+    &:hover,
+    &:focus,
+    &:active {
+      --btn-bg: var(--umkc-yellow);
+      --btn-text: var(--umkc-dark-blue);
+    }
+  }
+
   &--block {
     display: block;
     text-align: center;

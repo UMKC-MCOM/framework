@@ -14,7 +14,7 @@
         align-items: center;
     }
     @include mx.for-size("tablet-landscape-up") {
-        --item-width: 250px;
+        --item-width: #{mx.px-to-rem(250px)};
     }
     &__item {
         display: flex;
@@ -29,8 +29,8 @@
 
     &__image {
         align-self: center;
-        height: 250px;
-        width: 250px;
+        height: mx.px-to-rem(175px);
+        width: mx.px-to-rem(175px);
         background: #E5EEF5;
         border-radius: 100%;
         margin-bottom: #{mx.px-to-rem(24px)};
