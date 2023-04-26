@@ -137,28 +137,25 @@
       display: var(--down);
     }
   }
+
   &__list {
-    --link-bg: var(--umkc-gray);
-    --link-color: var(--umkc-dark-blue);
     padding: 0;
     margin: 0;
-    > #{$self}__item:first-child {
+    > :first-of-type {
       --link-bg: var(--umkc-dark-blue);
-      --link-border: var(--white);
       --link-color: var(--white);
-      text-transform: uppercase;
     }
   }
-  &__sub {
-    --link-bg: #fcfcfc;
-    --link-color: var(--umkc-dark-blue);
-    --link-border: var(--umkc-gray);
-    padding: 0;
-    margin: 0;
-  }
-
   &__item {
-    position: relative;
+    --link-bg: var(--umkc-gray);
+    --link-color: var(--black);
+    --link-border: var(--white);
+
+    &:has(> ul) #{$self}__sub {
+      padding: 0;
+      --link-bg: var(--white);
+      --link-border: var(--umkc-gray);
+    }
     &:not(:last-child)::after{
       content: "";
       height: 0.25rem;
@@ -167,30 +164,76 @@
     }
     &--active {
       > #{$self}__link {
+        font-weight: 700;
         &::before{
           content: "";
           position: absolute;
           height: 100%;
           top: 0;
-          left: 0;
+          right: 0;
           width: mx.px-to-rem(4px);
-          background: var(--umkc-dark-blue);
+          background: var(--umkc-yellow);
         }
       }
     }
   }
   &__link {
+    --link-border: var(--white);
     background-color: var(--link-bg);
     color: var(--link-color);
     display: block;
     position: relative;
-    padding: 0.5rem 2.25rem 0.5rem 0.75rem;
+    padding: 0.5rem 0.75rem 0.5rem var(--link-indention, 0.75rem);
     text-decoration: none;
-    transition: none;
+    transition: all 250ms ease-in-out;
 
     &:hover, &:active, &:focus {
       background: var(--umkc-dark-blue);
       color: var(--white);
     }
   }
+
+  &__sub {
+    margin: 0;
+
+    #{$self}__sub {
+      margin: 0.25rem 0 0 0.75rem;
+      border-left: solid 0.25rem var(--umkc-dark-blue);
+    }
+  }
+//   &__list {
+//     --link-bg: var(--umkc-gray);
+//     --link-color: var(--umkc-dark-blue);
+//     padding: 0;
+//     margin: 0;
+//     > #{$self}__item:first-child {
+//       --link-bg: var(--umkc-dark-blue);
+//       --link-border: var(--white);
+//       --link-color: var(--white);
+//       // text-transform: uppercase;
+//     }
+//   }
+//   &__sub {
+//     --link-bg: #fcfcfc;
+//     --link-color: var(--umkc-dark-blue);
+//     --link-border: var(--umkc-gray);
+//     --link-indention: 1rem;
+//     padding: 0;
+//     margin: 0;
+//   }
+//
+//   &__link {
+//     background-color: var(--link-bg);
+//     color: var(--link-color);
+//     display: block;
+//     position: relative;
+//     padding: 0.5rem 0.75rem 0.5rem var(--link-indention, 0.75rem);
+//     text-decoration: none;
+//     transition: none;
+//
+//     &:hover, &:active, &:focus {
+//       background: var(--umkc-dark-blue);
+//       color: var(--white);
+//     }
+//   }
 }
