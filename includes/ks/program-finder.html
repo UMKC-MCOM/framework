@@ -4,46 +4,44 @@
         <p class="highlight program-finder__highlight">Ignite new interests, strengthen your talents and start your path to a rewarding career at Kansas City's only public urban research university.</p>
         <div class="program-finder__form-wrapper">
             <!-- Current Program Finder -->
-            <form action="https://programs.umkc.edu/s/search.html" 
-                  class="program-finder__module-search" 
-                  method="GET" 
+            <form action="https://programs.umkc.edu/s/search.html"
+                  class="program-finder__module-search"
+                  method="GET"
                   role="search">
                 <div class="module-search__group">
-                    <span class="twitter-typeahead">
-                        <input aria-labelledby="fb-query"
-                               aria-required="true"
-                               autocomplete="off"
-                               class="module-search__query tt-input"
-                               dir="auto" 
-                               id="query"
-                               name="query"
-                               placeholder="Start your search here..."
-                               spellcheck="false"
-                               type="Search query" />
-                        <pre aria-hidden="true"
-                             style="position: absolute;
-                             visibility: hidden;
-                             white-space: pre;
-                             font-family: Roboto, serif;
-                             font-size: 22px;
-                             font-style: normal;
-                             font-variant: normal;
-                             font-weight: 300;
-                             word-spacing: 0px;
-                             letter-spacing: 0px;
-                             text-indent: 0px;
-                             text-rendering: auto;
-                             text-transform: none;">
-                        </pre>
-                        <div class="tt-menu"
-                             style="position: absolute;
-                             top: 100%;
-                             left: 0px;
-                             z-index: 100;
-                             display: none;">
-                            <div class="tt-dataset tt-dataset-organic"></div>
-                        </div>
-                    </span>
+                    <input aria-labelledby="fb-query"
+                           aria-required="true"
+                           autocomplete="off"
+                           class="module-search__query tt-input"
+                           dir="auto"
+                           id="query"
+                           name="query"
+                           placeholder="Start your search here..."
+                           spellcheck="false"
+                           type="Search query" />
+                    <pre aria-hidden="true"
+                         style="position: absolute;
+                         visibility: hidden;
+                         white-space: pre;
+                         font-family: Roboto, serif;
+                         font-size: 22px;
+                         font-style: normal;
+                         font-variant: normal;
+                         font-weight: 300;
+                         word-spacing: 0px;
+                         letter-spacing: 0px;
+                         text-indent: 0px;
+                         text-rendering: auto;
+                         text-transform: none;">
+                    </pre>
+                    <div class="tt-menu"
+                         style="position: absolute;
+                         top: 100%;
+                         left: 0px;
+                         z-index: 100;
+                         display: none;">
+                        <div class="tt-dataset tt-dataset-organic"></div>
+                    </div>
                     <button class="module-search__button" type="submit">
                         <svg class="icon"><use xlink:href="#search"></use></svg>
                         <span class="sr-only">Search</span>
@@ -54,22 +52,24 @@
                 <input name="profile" type="hidden" value="_default">
 
                 <div class="module-search__additional-links">
-                    <a class="module-search__additional-links--button button button--umkc-yellow" 
-                       role="button" 
-                       tabindex="0" 
-                       href="https://programs.umkc.edu/" 
+                    <a class="module-search__additional-links--button button button--umkc-yellow"
+                       role="button"
+                       tabindex="0"
+                       href="https://programs.umkc.edu/"
                        title="All Programs">All Programs</a>
-                    <a class="module-search__additional-links--button button button--umkc-yellow" 
-                       role="button" 
-                       tabindex="0" 
-                       href="https://futureroo.umkc.edu/apply/"  
+                    <a class="module-search__additional-links--button button button--umkc-yellow"
+                       role="button"
+                       tabindex="0"
+                       href="https://futureroo.umkc.edu/apply/"
                        title="Apply Now">Apply Now</a>
                 </div>
             </form>
         </div>
     </div>
 </div>
-
+<!--jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js" integrity="sha512-qOBWNAMfkz+vXXgbh0Wz7qYSLZp6c14R0bZeVX2TdQxWpuKr6yHjBIM69fcF8Ve4GUX6B6AKRQJqiiAmwvmUmQ==" crossorigin="anonymous"></script>
 <!-- Funnelback handlebars asset -->
 <script crossorigin="anonymous" integrity="sha512-zT3zHcFYbQwjHdKjCu6OMmETx8fJA9S7E6W7kBeFxultf75OPTYUJigEKX58qgyQMi1m1EgenfjMXlRZG8BXaw==" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
 
