@@ -25,6 +25,7 @@
   &--secondary {
     background: var(--background, var(--umkc-blue));
     display: flex;
+    flex-flow: row wrap;
     justify-content: center;
     align-items: self-end;
     padding: var(--global-padding);
@@ -50,7 +51,10 @@
 }
 
 .dept-header {
-  display: none;
+  @include mx.for-size("phone-only") {
+    padding: var(--global-padding);
+    padding-bottom: 0;
+  }
   padding-left: var(--global-padding);
 
   @include mx.for-size("tablet-landscape-up") {

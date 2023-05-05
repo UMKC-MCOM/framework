@@ -16,7 +16,7 @@ function makeIds () { // eslint-disable-line
     }
   })
 }
-if ( document.getElementById('standard-page') !== null ) {
+if ( document.querySelector('.standard--content') !== null && document.querySelector('.js-toc') !== null ) {
   makeIds()
   tocbot.init({
     tocSelector: '.js-toc',

@@ -55,9 +55,20 @@
 
   &__content {
     padding: 1.5rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: stretch;
+    height: 100%;
 
     .button {
       margin-top: 1rem;
+    }
+
+    @include mx.for-size("tablet-landscape-up") {
+      p:has(.button) {
+        align-self: end;
+      }
     }
 
     .link {

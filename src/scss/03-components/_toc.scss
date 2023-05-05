@@ -12,7 +12,6 @@
 }
 
 .toc {
-  border: solid mx.px-to-rem(1px) var(--umkc-gray);
   flex-basis: 20%;
   overflow-y: scroll;
   height: 200px;
@@ -31,6 +30,8 @@
   &__title {
     --heading-margin: 0;
     --heading-size: #{mx.px-to-rem(18px)} !important;
+    --heading-color: var(--umkc-dark-blue);
+    font-weight: 400;
     background: var(--umkc-gray);
     padding: 1rem;
   }
@@ -47,7 +48,7 @@
   }
 
   &-link {
-    border-left: solid mx.px-to-rem(3px) transparent;
+    border-left: solid mx.px-to-rem(4px) transparent;
     padding: 0 0.25rem;
   }
 
@@ -63,9 +64,8 @@
     }
   }
 
-
   .is-active-link {
-    border-left: solid mx.px-to-rem(3px) var(--umkc-dark-blue);
+    border-left-color: var(--umkc-yellow);
     padding-left: 0.25rem;
   }
 }

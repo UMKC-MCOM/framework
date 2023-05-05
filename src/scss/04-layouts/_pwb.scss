@@ -27,6 +27,8 @@
     @include mx.for-size("tablet-landscape-up") {
       align-self: flex-start;
       width: mx.px-to-rem(400px);
+    }
+    @include mx.for-size("desktop-up") {
       width: mx.px-to-rem(600px);
     }
   }
@@ -38,6 +40,13 @@
     @include mx.for-size("tablet-landscape-up") {
       text-align: left;
       padding-left: 4rem;
+    }
+  }
+
+  &__title {
+    --heading-size: #{mx.px-to-rem(28px)};
+    @include mx.for-size("tablet-landscape-up") {
+      --heading-size: #{mx.px-to-rem(42px)};
     }
   }
 }
