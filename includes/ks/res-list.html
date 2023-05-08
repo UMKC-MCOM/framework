@@ -1,0 +1,57 @@
+#set ( $block = $currentPage.getStructuredDataNode("text-area/resource-list").asset.parentFolder.children)
+#set ( $block = $_SortTool.sort($block, "name") )
+#set ( $uniqueFilters = [] )
+<div class="row py-3">
+    <div class="col-md-8 col-lg-10">
+        <div class="row">
+            #loopPages($block, false)
+        </div>
+    </div>
+    <div class="col-md-4 col-lg-2">
+        #set ( $uniqueFilters = $_SortTool.sort($uniqueFilters) )
+        #foreach ( $filter in  $uniqueFilters)
+            #set ( $group   = $_StringTool.substringBefore($filter, "-") )
+            #set ( $group   = $group.substring(0,1).toUpperCase() + $group.substring(1) )
+            #set ( $label   = $_StringTool.substringAfter($filter, "-")  )
+            #set ( $label   = $label.substring(0,1).toUpperCase() + $label.substring(1) )
+            #if ( $group != $previousGroup )
+                #if ( $foreach.index != 0 )</ul>#end
+                <h2 class="text-umkc-blue text-umkc-22px umkc-roboto">$group</h2>
+                <ul class="resource-list">
+            #end
+            <li class="resource-list__item"><label class="resource-list__label"><input type="checkbox" class="resourceFilter resource-list__checkbox" data-filter="${filter}" />$label.replace("-", " ")</label></li>
+            #if ( $foreach.last )
+                </ul>
+            #end
+            #set ( $previousGroup = $group )
+        #end
+        <p><a href="#" id="clear">Clear Filters</a></p>
+    </div>
+</div>
+
+#macro ( loopPages $block, $subFolder )
+    #foreach ( $page in $block )##
+        #if ( $page.assetType == "folder" )
+            #loopPages($page.getChildren(), true)
+        #elseif ( ( $subFolder == true && $page.name == "index" ) || ( $subFolder == false && $page.name != 'index' ) && $page.assetType == "page" )
+            #foreach ( $tag in $page.tags )
+                #if ( !$uniqueFilters.contains($tag) && $uniqueFilters.add($tag) ) #end
+            #end
+            #set ( $title  = $_EscapeTool.xml($page.label) )##
+            #set ( $teaser = $_EscapeTool.xml($page.metadata.teaser) )##
+            #set ( $link   = $page.link )##
+            #set ( $tags = $page.tags )
+            #if ( $_PropertyTool.isEmpty($teaser) )##
+                #set ( $teaser = $_EscapeTool.xml($page.metadata.description) )##
+            #end
+            <div class="col-md-4 col-lg-3 d-flex align-items-stretch pb-3" data-filters="${_DisplayTool.list($tags, ' ')}">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="text-umkc-blue resource-title umkc-roboto"><a href="${link}">$title</a></h2>
+                        <p>$teaser</p>
+                    </div>
+                </div>
+            </div>
+        #end
+    #end
+#end
