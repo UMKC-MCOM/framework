@@ -1,20 +1,50 @@
 <div class="resource">
-  <div class="resource__menu">
-    <ul class="resource-list">
-      <li class="resource-list__item">
-        <label class="resource-list__label"><input class="resourceFilter resource-list__checkbox" data-filter="audience-faculty-and-staff" type="checkbox">Faculty and staff</label>
-      </li>
-      <li class="resource-list__item">
-        <label class="resource-list__label"><input class="resourceFilter resource-list__checkbox" data-filter="audience-students" type="checkbox">Students</label>
-      </li>
+  <div class="resource__filters">
+    <h2 class="resource__title">Audience</h2>
+    <ul class="resource__filter nav--inline">
+      <li class="resource__item"><label class="resource__label"><input class="resource__checkbox" type="checkbox" data-filter="audience-test" />Test</label></li>
+      <li class="resource__item"><label class="resource__label"><input class="resource__checkbox" type="checkbox" />Test</label></li>
+      <li class="resource__item"><label class="resource__label"><input class="resource__checkbox" type="checkbox" />Test</label></li>
+    </ul>
+    <h2 class="resource__title">Another</h2>
+    <ul class="resource__filter nav--inline">
+      <li class="resource__item"><label class="resource__label"><input class="resource__checkbox" type="checkbox" data-filter="another-tag" />Tag</label></li>
     </ul>
   </div>
-  <div class="resrouce__cards">
-    <div class="resource__card">
-      <h2 class="resrouce__title">
-        <a href="#">Title</a>
-        </h2>
-       <p>I is content. Hear me rawr.</p>
+  <div class="resource__card" data-filters="">
+    <h2 class="resource__title" id="sub-section-index">
+      <a href="/entity/open.act?type=page&amp;id=331b59eeac1e04cd27194b3db7dcae58&amp;confId=c73cc616ac1e04cd58bb0af7fbfc9953" target="_parent" class="">Sub-section Index</a>
+    </h2>
+    <p class="resource__description">I am a brief teaser of the content of this page.</p>
     </div>
+  <div class="resource__card" data-filters="audience-test category-label">
+    <h2 class="resource__title" id="policy-listing">
+      <a href="/entity/open.act?type=page&amp;id=4da18353ac1e04cd27194b3d426e6945&amp;confId=4da857f5ac1e04cd27194b3d6935628d" target="_parent" class="">Policy Listing</a>
+    </h2>
+    <p class="resource__description">I am a brief teaser of the content of this page.</p>
+  </div>
+  <div class="resource__card" data-filters="another-tag">
+    <h2 class="resource__title" id="web-policy">
+      <a href="/entity/open.act?type=page&amp;id=00bb6360ac1e04cd16897cbc8abf543c&amp;confId=01dcefddac1e04cd16897cbccc1f6562" target="_parent" class="">Web Policy</a>
+  </h2>
+  <p class="resource__description">I am a brief teaser of the content of this page.</p>
+</div>
+  <div class="resource__card" data-filters="">
+    <h2 class="resource__title" id="committee-index">
+      <a href="/entity/open.act?type=page&amp;id=bef99882ac1e04cd71fdb91e30928479&amp;confId=befb8e5bac1e04cd71fdb91e33a0d40c" target="_parent" class="">Committee Index</a>
+    </h2>
+    <p class="resource__description">I am a brief teaser of the content of this page.</p>
+  </div>
+  <div class="resource__card" data-filters="Testing">
+    <h2 class="resource__title" id="sample-page">
+      <a href="/entity/open.act?type=page&amp;id=bef88f01ac1e04cd71fdb91e4b3dca00&amp;confId=befb474aac1e04cd71fdb91e98d637e8" target="_parent" class="">Sample Page</a>
+    </h2>
+    <p class="resource__description">I am a brief teaser of the content of this page.</p>
+  </div>
+  <div class="resource__card" data-filters="">
+    <h2 class="resource__title" id="standard-page">
+      <a href="/entity/open.act?type=page&amp;id=eb8a0325ac1e04cd3dfe9d7048810882&amp;confId=c73cc616ac1e04cd58bb0af7fbfc9953" target="_parent" class="">Standard Page</a>
+    </h2>
+    <p class="resource__description">I am a brief teaser of the content of this page.</p>
   </div>
 </div>

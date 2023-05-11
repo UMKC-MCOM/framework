@@ -7,7 +7,7 @@ import '/src/js/toc.js'
 import '/src/js/toggles.js'
 import '/src/js/quotes.js'
 import '/src/js/video.js'
-
+import '/src/js/resource.js'
 // import javascriptLogo from './javascript.svg'
 // import { setupCounter } from './counter.js'
 
