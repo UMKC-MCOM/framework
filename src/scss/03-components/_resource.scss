@@ -31,6 +31,10 @@
 
   }
 
+  &__checkbox {
+    margin-right: 0.5rem;
+  }
+
   &__title {
     --heading-margin: 0 0 0.5rem;
     --heading-size: #{mx.px-to-rem(18px)} !important;
