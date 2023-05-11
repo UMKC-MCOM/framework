@@ -3,10 +3,13 @@
 .teaser {
   font-family: var(--slab);
   color: var(--umkc-dark-blue);
-  margin: var(--teaser-margin, var(--content-padding) var(--content-padding) 0);
+  margin: var(--teaser-margin, var(--content-padding) var(--content-padding));
   font-weight: 300;
-  @include mx.font-size(24px, 1.5);
+  @include mx.font-size(20px, 1.5);
   @include mx.for-size("tablet-landscape-up") {
+    @include mx.font-size(24px, 1.5);
+  }
+  @include mx.for-size("desktop-up") {
     font-size: var(--teaser-font-size, #{mx.px-to-rem(28px)});
   }
 

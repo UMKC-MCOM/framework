@@ -31,9 +31,10 @@
   &__item {
     display: flex;
     flex-direction: column;
-    margin: 1rem;
+    margin: 1rem 0;
     @container cards ( min-width: 600px ) {
       flex-basis: calc( (100% / 2) - 2rem);
+      margin: 1rem;
     }
     @container cards (min-width: 900px) {
       flex-basis: calc( (100% / 3) - 2rem);
@@ -45,29 +46,22 @@
     &--centered {
       text-align: center;
     }
-
-    &:not(:last-child) {
-      @include mx.for-size("tablet-landscape-up") {
-        // margin-right: 2.5rem;
-      }
-    }
   }
 
   &__content {
     padding: 1.5rem;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-content: stretch;
-    height: 100%;
+    flex-flow: column;
+    // justify-content: center;
+    // align-content: stretch;
 
     .button {
       margin-top: 1rem;
     }
 
     @include mx.for-size("tablet-landscape-up") {
-      p:has(.button) {
-        align-self: end;
+      p:has(a) {
+        // justify-self: flex-end;
       }
     }
 

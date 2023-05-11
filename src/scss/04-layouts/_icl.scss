@@ -70,11 +70,8 @@
 
     }
     #{$self}__title {
-      --heading-size: 28px;
+      --heading-size: #{mx.px-to-rem(30px)};
       flex: 1 0 100%;
-      @include mx.for-size("desktop-up") {
-        --heading-size: 36px;
-      }
     }
 
     #{$self}__row {
