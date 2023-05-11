@@ -13,8 +13,10 @@
   }
 
   &__item {
-    &:not(:first-child) {
-      margin-left: 1rem;
+    @container (min-width: 800px) {
+      &:not(:first-child) {
+        margin-left: 1rem;
+      }
     }
   }
 
