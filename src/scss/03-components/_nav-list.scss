@@ -1,3 +1,5 @@
+@use "../01-abstracts/mixins" as mx;
+
 .nav {
   &--inline {
     margin: 0;
@@ -8,9 +10,13 @@
   }
   &--resource {
     display: flex;
-    flex-flow: row;
+    flex-flow: column;
     flex-wrap: wrap;
     justify-content: center;
+
+    @include mx.for-size("tablet-landscape-up") {
+      flex-flow: row;
+    }
     li {
       flex-basis: calc(100% / 3);
       padding: 0.5rem 1rem;
