@@ -50,7 +50,9 @@
 
 .glide {
   position: relative;
-  padding: 0 5rem;
+  @include mx.for-size("tablet-landscape-up") {
+    padding: 0 5rem;
+  }
   &__track {
     container-type: inline-size;
   }
@@ -106,13 +108,16 @@
   }
   &__arrow {
     --icon-size: 1.75rem;
-    position: absolute;
-    top: calc( 50% - var(--icon-size));
     border: solid mx.px-to-rem(2px) var(--umkc-dark-blue);
     border-radius: 100%;
     padding: 0.5rem;
     transition: all 250ms ease;
-    color: var(--umkc-dark-blue);
+    margin-top: 1rem;
+    @include mx.for-size("tablet-landscape-up"){
+      position: absolute;
+      top: calc( 50% - var(--icon-size));
+      margin-top: auto;
+    }
     &--left {
       left: 0;
     }

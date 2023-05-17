@@ -2,8 +2,6 @@
 // Standard Page!
 .standard {
   --content-width: calc(100% - 25%);
-  --teaser-margin: 0;
-  // --teaser-font-size: 1.25rem;
   container-type: inline-size;
 
   $self: &;

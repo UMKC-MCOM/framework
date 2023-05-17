@@ -64,14 +64,14 @@
         // justify-self: flex-end;
       }
     }
+  }
 
-    .link {
-      display: inline-flex;
-      flex-direction: column;
-      align-items: center;
-      a{
-        margin: 0.5rem 0 0;
-      }
+  .link {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    a{
+      margin: 0.5rem 0 0;
     }
   }
 
@@ -79,18 +79,5 @@
     --heading-margin: 0;
     --heading-size: #{mx.px-to-rem(30px)};
     --heading-color: var(--umkc-blue);
-  }
-
-  &__link {
-    font-weight: 700;
-    color: var(--umkc-blue);
-
-    @include mx.tr("background");
-
-    &:hover,
-    &:focus,
-    &:active {
-      color: var(--umkc-dark-blue);
-    }
   }
 }

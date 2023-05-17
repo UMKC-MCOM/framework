@@ -5,13 +5,14 @@
 // Setup the CSS Variables, since SASS is becoming scoped
 :root {
   --global-padding: #{mx.px-to-rem(30px)};
-  --content-padding: calc(var(--global-padding) * 1.5);
+  --content-padding: #{mx.px-to-rem(20px)};
   --logo-ratio: 2.29;
   --logo-height: #{mx.px-to-rem(75px)};
   --logo-color: var(--white);
   --footer-image: url("/src/images/footer-top__image.webp");
   @include mx.for-size("tablet-landscape-up") {
     --logo-height: #{mx.px-to-rem(88px)};
+    --content-padding: calc(var(--global-padding) * 1.5);
   }
 
   @each $name, $color in vars.$theme-colors {

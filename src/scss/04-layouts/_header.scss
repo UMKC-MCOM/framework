@@ -2,7 +2,11 @@
 @use "../01-abstracts/mixins" as mx;
 
 .header {
-  padding: 0.75rem var(--global-padding);
+  --hPadding: var(--content-padding);
+  padding: 0.75rem var(--hPadding);
+  @include mx.for-size("tablet-portrait-up") {
+    --hPadding: var(--global-padding);
+  }
 
   &--white {
     --background: var(--white);
@@ -28,7 +32,7 @@
     flex-flow: row wrap;
     justify-content: center;
     align-items: self-end;
-    padding: var(--global-padding);
+    padding: var(--global-padding) var(--hPadding);
     border-bottom: solid mx.px-to-rem(3px) var(--umkc-yellow);
 
     @include mx.for-size("tablet-landscape-up") {
@@ -52,8 +56,9 @@
 
 .dept-header {
   @include mx.for-size("phone-only") {
-    padding: var(--global-padding);
+    padding: var(--global-padding) var(--hPadding);
     padding-bottom: 0;
+    text-align: center;
   }
   padding-left: var(--global-padding);
 
