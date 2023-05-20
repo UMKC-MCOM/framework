@@ -1,0 +1,71 @@
+@use "../01-abstracts/mixins" as mx;
+
+.profile {
+  @include mx.for-size("tablet-landscape-up") {
+    max-width: 65%;
+    margin: 0 auto;
+  }
+
+  display: flex;
+  flex-flow: row wrap;
+
+  &__img {
+    margin: 0 auto;
+    @include mx.for-size("tablet-landscape-up") {
+      flex: 0;
+    }
+
+    width: mx.px-to-rem(350px);
+    height: mx.px-to-rem(350px)
+  }
+
+  &__contact {
+    @include mx.for-size("tablet-landscape-up") {
+      flex: 1;
+      padding-left: 2rem;
+    }
+
+  }
+
+  &__dept {
+    font-style: italic;
+  }
+
+  &__title {
+    @include mx.for-size("tablet-landscape-up") {
+      --heading-margin: 0;
+    }
+    &--sub {
+      --heading-size: #{mx.px-to-rem(24px)};
+    }
+    &--small {
+      --heading-size: #{mx.px-to-rem(24px)};
+      border-bottom: solid mx.px-to-rem(4px) var(--umkc-blue);
+      padding-bottom: 0.5rem;
+      background: var(--umkc-gray);
+      padding: 1rem;
+    }
+  }
+  &__bio {
+    border-top: solid mx.px-to-rem(8px) var(--umkc-blue);
+    padding: mx.px-to-rem(16px) 0;
+    margin: mx.px-to-rem(32px) 0;
+    @include mx.for-size("desktop-up") {
+      display: flex;
+    }
+  }
+
+  &__biography {
+    flex: 1;
+  }
+
+  &__lists {
+    --heading-size: 18px;
+    --heading-color: var(--font-color);
+    @include mx.for-size("desktop-up") {
+      flex-basis: #{mx.px-to-rem(350px)};
+      padding-left: 2rem;
+    }
+
+  }
+}
