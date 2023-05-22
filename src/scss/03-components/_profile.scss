@@ -36,19 +36,28 @@
       --heading-margin: 0;
     }
     &--sub {
+      --heading-color: var(--umkc-dark-blue);
       --heading-size: #{mx.px-to-rem(24px)};
     }
     &--small {
+      --heading-color: var(--umkc-dark-blue);
       --heading-size: #{mx.px-to-rem(24px)};
-      border-bottom: solid mx.px-to-rem(4px) var(--umkc-blue);
-      padding-bottom: 0.5rem;
       background: var(--umkc-gray);
-      padding: 1rem;
+      border-bottom: solid mx.px-to-rem(4px) var(--umkc-blue);
+      padding: 0.25rem 0.5rem;
+
+      &:not(:first-child) {
+        --heading-margin: 2rem 0 0;
+      }
     }
+  }
+  &__pronouns {
+    font-size: 22px;
+    color: var(--font-color);
   }
   &__bio {
     border-top: solid mx.px-to-rem(8px) var(--umkc-blue);
-    padding: mx.px-to-rem(16px) 0;
+    padding: mx.px-to-rem(32px) 0;
     margin: mx.px-to-rem(32px) 0;
     @include mx.for-size("desktop-up") {
       display: flex;
@@ -57,11 +66,14 @@
 
   &__biography {
     flex: 1;
+    @include mx.for-size("desktop-up") {
+      margin-right: 2rem;
+    }
   }
 
   &__lists {
     --heading-size: 18px;
-    --heading-color: var(--font-color);
+    --heading-color: var(--umkc-dark-blue);
     @include mx.for-size("desktop-up") {
       flex-basis: #{mx.px-to-rem(350px)};
       padding-left: 2rem;

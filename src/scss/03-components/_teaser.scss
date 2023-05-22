@@ -11,11 +11,15 @@
     @include mx.font-size(28px, 1.5);
   }
 
-  ~ .bg-umkc-gray,
-  ~ .bg-umkc-blue,
-  ~ .box-grid,
-  ~ .st,
-  ~ .vertical-image {
+  + .bg-umkc-gray,
+  + .bg-umkc-blue,
+  + .box-grid,
+  + .st,
+  + .vertical-image {
       margin-top: var(--content-padding);
+  }
+
+  +.pwb {
+    margin-top: mx.px-to-rem(80px);
   }
 }
