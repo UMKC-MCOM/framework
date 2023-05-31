@@ -1,7 +1,7 @@
 @use "../01-abstracts/mixins" as mx;
 // Standard Page!
 .standard {
-  --content-width: calc(100% - 25%);
+  --content-width: 100%;
   container-type: inline-size;
 
   $self: &;
@@ -9,6 +9,7 @@
   flex-direction: column;
 
   @include mx.for-size("tablet-landscape-up"){
+    --content-width: calc(100% - 25%);
     flex-direction: row;
   }
 
@@ -22,6 +23,7 @@
   }
   h2 {
     --heading-size: #{mx.px-to-rem(30px)};
+    font-family: var(--slab);
     @include mx.for-size("tablet-landscape-up")
     {
       --heading-size: #{mx.px-to-rem(34px)};
@@ -30,6 +32,8 @@
 
   h3 {
     --heading-size: #{mx.px-to-rem(28px)};
+    --heading-color: var(--umkc-dark-blue);
+    font-family: var(--slab);
     @include mx.for-size("tablet-landscape-up")
     {
       --heading-size: #{mx.px-to-rem(30px)};
@@ -38,6 +42,8 @@
 
   h4 {
     --heading-size: #{mx.px-to-rem(26px)};
+    --heading-color: var(--font-color);
+    font-weight: 400;
     @include mx.for-size("tablet-landscape-up")
     {
       --heading-size: #{mx.px-to-rem(28px)};
@@ -46,6 +52,7 @@
 
   h5 {
     --heading-size: #{mx.px-to-rem(22px)};
+    --heading-color: var(--font-color);
     @include mx.for-size("tablet-landscape-up")
     {
       --heading-size: #{mx.px-to-rem(24px)};
@@ -54,6 +61,7 @@
 
   h6 {
     --heading-size: #{mx.px-to-rem(18px)};
+    --heading-color: var(--font-color);
     @include mx.for-size("tablet-landscape-up")
     {
       --heading-size: #{mx.px-to-rem(20px)};
@@ -200,39 +208,26 @@
       border-left: solid 0.25rem var(--umkc-dark-blue);
     }
   }
-//   &__list {
-//     --link-bg: var(--umkc-gray);
-//     --link-color: var(--umkc-dark-blue);
-//     padding: 0;
-//     margin: 0;
-//     > #{$self}__item:first-child {
-//       --link-bg: var(--umkc-dark-blue);
-//       --link-border: var(--white);
-//       --link-color: var(--white);
-//       // text-transform: uppercase;
-//     }
-//   }
-//   &__sub {
-//     --link-bg: #fcfcfc;
-//     --link-color: var(--umkc-dark-blue);
-//     --link-border: var(--umkc-gray);
-//     --link-indention: 1rem;
-//     padding: 0;
-//     margin: 0;
-//   }
-//
-//   &__link {
-//     background-color: var(--link-bg);
-//     color: var(--link-color);
-//     display: block;
-//     position: relative;
-//     padding: 0.5rem 0.75rem 0.5rem var(--link-indention, 0.75rem);
-//     text-decoration: none;
-//     transition: none;
-//
-//     &:hover, &:active, &:focus {
-//       background: var(--umkc-dark-blue);
-//       color: var(--white);
-//     }
-//   }
+}
+
+.ss {
+  display: flex;
+  justify-content: flex-start;
+  margin: 1rem 0;
+  &__input{
+    font-size: mx.px-to-rem(16px);
+    border-radius: mx.px-to-rem(7px) 0 0 mx.px-to-rem(7px);
+    border: solid mx.px-to-rem(2px) var(--umkc-gray);
+    margin: 0;
+    height: 42px;
+  }
+  &__button{
+    height: 42px;
+    border-radius:0 mx.px-to-rem(7px) mx.px-to-rem(7px) 0;
+    padding: 0.5rem;
+  }
+  &__icon{
+    width: mx.px-to-rem(24px);
+    height:  mx.px-to-rem(24px);
+  }
 }
