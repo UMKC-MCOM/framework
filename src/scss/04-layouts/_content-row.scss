@@ -3,7 +3,7 @@
 .content-row {
   background-color: var(--white);
   padding: var(--content-padding);
-  --heading-margin: 1.5rem 0;
+  --heading-margin: 1.5rem 0 3rem;
   &:has(.highlight) {
     --heading-margin: 1.5rem 0;
   }
