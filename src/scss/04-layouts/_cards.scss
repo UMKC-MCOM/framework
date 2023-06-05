@@ -76,7 +76,7 @@
   }
 
   &__title {
-    --heading-margin: 0;
+    --heading-margin: 1.5rem 0;
     --heading-size: #{mx.px-to-rem(30px)};
     --heading-color: var(--umkc-blue);
   }

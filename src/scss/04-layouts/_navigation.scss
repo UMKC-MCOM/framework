@@ -2,21 +2,21 @@
 
 .main-navigation {
   background: var(--nav-background, var(--umkc-dark-blue));
-  position: fixed;
-  bottom: mx.px-to-rem(66px);
+  bottom: mx.px-to-rem(84px);
+  display: block;
   width: 100%;
   font-weight: 700;
   box-shadow: 0 0 25px 0px #000;
   z-index: 2;
   padding: 1rem 0;
-  display: none;
-  @include mx.font-size(14px, 1.5);
-
-  @include mx.for-size("tablet-portrait-up"){
-    @include mx.font-size(18px, 1.5);
-  }
+  position: fixed;
+  @include mx.font-size(18px, 1.5);
+  transition: 150ms linear all;
+  transform: translateY(100%);
+  visibility: hidden;
   &[aria-hidden="false"]{
-    display: block;
+    visibility: visible;
+    transform: translateY(0);
   }
 
   &--white {
@@ -34,7 +34,7 @@
   @include mx.for-size("desktop-up") {
     border-top: mx.px-to-rem(3px) solid var(--umkc-yellow);
     box-shadow: none;
-    display: block;
+    visibility: visible;
     font-family: var(--condensed);
     padding: 0 var(--global-padding);
     position: static;
@@ -42,9 +42,12 @@
 
   &__list {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     padding: 0;
     margin: 0;
+    @include mx.for-size("tablet-portrait-up"){
+      flex-flow: row wrap;
+    }
     @include mx.for-size("desktop-up"){
       flex-wrap: nowrap;
       justify-content: center;
@@ -59,7 +62,9 @@
     position: relative;
 
     @include mx.tr(background);
-    flex: 0 0 50%;
+    @include mx.for-size("tablet-portrait-up"){
+      flex: 0 0 50%;
+    }
     @include mx.for-size("desktop-up"){
       --link-margin: 1rem;
       padding: 0.5rem var(--link-margin, 1.5rem);
