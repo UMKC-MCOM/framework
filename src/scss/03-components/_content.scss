@@ -44,31 +44,33 @@
     &:not([class]) {
       --btn-arrow: var(--umkc-blue);
       color: var(--link-color, var(--umkc-blue));
-      font-family: var(--condensed);
-      text-decoration: none;
       font-weight: 700;
-      position: relative;
-      display: inline-block;
-      z-index: 0;
-      &::before{
-        content: '';
-        background-color: var(--umkc-yellow);
-        position: absolute;
-        left:0;
-        right: 0;
-        bottom: mx.px-to-rem(2px);
-        width: 100%;
-        height: mx.px-to-rem(4px);
-        z-index: -1;
-        transition: all .3s ease-in-out;
-      }
-      &:hover {
+      transition: all 150ms ease;
+
+      &:hover, &:focus, &:active {
+        // text-decoration: none;
         color: var(--umkc-dark-blue);
-        &::before {
-          bottom: 0;
-          height: 100%;
-        }
+        background: var(--umkc-yellow);
       }
+      // &::before{
+      //   content: '';
+      //   background-color: var(--umkc-yellow);
+      //   position: absolute;
+      //   left:0;
+      //   right: 0;
+      //   bottom: mx.px-to-rem(2px);
+      //   width: 100%;
+      //   height: mx.px-to-rem(4px);
+      //   z-index: -1;
+      //   transition: all .3s ease-in-out;
+      // }
+      // &:hover {
+      //   color: var(--umkc-dark-blue);
+      //   &::before {
+      //     bottom: 0;
+      //     height: 100%;
+      //   }
+      // }
     }
   }
 }
