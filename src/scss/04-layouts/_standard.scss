@@ -23,6 +23,7 @@
   }
   h2 {
     --heading-size: #{mx.px-to-rem(30px)};
+    --heading-margin: 1.5rem 0 0;
     font-family: var(--slab);
     @include mx.for-size("tablet-landscape-up")
     {
@@ -33,6 +34,7 @@
   h3 {
     --heading-size: #{mx.px-to-rem(28px)};
     --heading-color: var(--umkc-dark-blue);
+    --heading-margin: 1.5rem 0 0;
     font-family: var(--slab);
     @include mx.for-size("tablet-landscape-up")
     {
@@ -43,6 +45,7 @@
   h4 {
     --heading-size: #{mx.px-to-rem(26px)};
     --heading-color: var(--font-color);
+    --heading-margin: 1.5rem 0 0;
     font-weight: 400;
     @include mx.for-size("tablet-landscape-up")
     {
@@ -53,6 +56,7 @@
   h5 {
     --heading-size: #{mx.px-to-rem(22px)};
     --heading-color: var(--font-color);
+    --heading-margin: 1.5rem 0 0;
     @include mx.for-size("tablet-landscape-up")
     {
       --heading-size: #{mx.px-to-rem(24px)};
@@ -61,6 +65,7 @@
 
   h6 {
     --heading-size: #{mx.px-to-rem(18px)};
+    --heading-margin: 1.5rem 0 0;
     --heading-color: var(--font-color);
     @include mx.for-size("tablet-landscape-up")
     {
@@ -202,7 +207,7 @@
 
   &__sub {
     margin: 0;
-
+    padding: 0;
     #{$self}__sub {
       margin: 0.25rem 0 0 0.75rem;
       border-left: solid 0.25rem var(--umkc-dark-blue);
