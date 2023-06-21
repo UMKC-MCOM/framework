@@ -1,13 +1,16 @@
 const resourceFilters = document.querySelectorAll(".resource__checkbox");
 const resources = document.querySelectorAll("[data-filters]");
 const clear = document.getElementById("clear");
-resourceFilters.forEach((item) => {
-  item.addEventListener("change", (event) => {
-    let filters = document.querySelectorAll(".resource__checkbox:checked");
-    filterList(filters);
-    if ( filters.length == 0 ){ clearFilter(); }
+if ( resources !== null ) {
+  resourceFilters.forEach((item) => {
+    item.addEventListener("change", (event) => {
+      let filters = document.querySelectorAll(".resource__checkbox:checked");
+      filterList(filters);
+      if ( filters.length == 0 ){ clearFilter(); }
+    });
   });
-});
+}
+
 function filterList(filterValues) {
   let filters = [];
   [...filterValues].forEach((el) => {
@@ -21,9 +24,6 @@ function filterList(filterValues) {
       el.classList.add("hidden");
     }
   });
-}
-if (location.hash) {
-  filterList(location.hash);
 }
 
 function contains(target, pattern){
@@ -39,7 +39,9 @@ function clearFilter() {
   });
 }
 
-clear.addEventListener("click", (event) => {
-  event.preventDefault();
-  clearFilter();
-});
+if ( clear !== null ) {
+  clear.addEventListener("click", (event) => {
+    event.preventDefault();
+    clearFilter();
+  });
+}
