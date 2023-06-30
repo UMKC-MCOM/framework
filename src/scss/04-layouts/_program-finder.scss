@@ -1,0 +1,115 @@
+﻿@use "../01-abstracts/mixins" as mx;
+
+.program-finder {
+    $self: &;
+
+
+    &__title {
+        text-align: center;
+    }
+
+    &__highlight {
+        text-align: center;
+    }
+
+    &__form-wrapper {
+        max-width: 800px;
+        margin: 0 auto;
+
+        .module-search__group {
+            display: flex;
+            border-radius: 6px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .twitter-typeahead {
+            display: flex;
+            flex: auto;
+        }
+
+        .module-search__query {
+            border: 0;
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+            font-size: 1rem;
+            font-weight: 700;
+            outline: none;
+            padding: 1.125rem 2.6875rem 1.0625rem 1.125rem;
+            width: 100%;
+            background: var(--umkc-gray) 0% 0% no-repeat padding-box;
+            color: var(--umkc-dark-blue);
+            font-weight: 600;
+
+            @include mx.for-size("tablet-landscape-up") {
+                font-size: 1.5rem;
+            }
+        }
+
+        .tt-menu {
+            background: white;
+            z-index: 2 !important;
+            font-family: 'Roboto', Arial, Helvetica, sans-serif;
+            box-shadow: -#{mx.px-to-rem(2px)} mx.px-to-rem(2px) mx.px-to-rem(6px) var(--umkc-gray);
+            width: 100%;
+            margin: 0;
+        }
+
+        .module-search__list-item {
+            a {
+                color: var(--umkc-dark-blue);
+            }
+        }
+
+        .tt-dataset {
+            text-align: left;
+        }
+
+        .tt-category {
+            color: var(--umkc-dark-blue);
+            font-family: 'Roboto Condensed', arial, sans-serif;
+            font-weight: 600;
+            display: none;
+        }
+
+        .module-search__button {
+            border: none;
+            background-color: var(--umkc-yellow);
+            color: var(--umkc-dark-blue);
+            padding: 0.5rem 1.5rem;
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+            box-shadow: none;
+
+            .icon {
+                // Icon size variable
+                color: var(--umkc-dark-blue);
+                height: var(--search-icon, #{mx.px-to-rem(32px)});
+                width: var(--search-icon, #{mx.px-to-rem(32px)});
+
+                @include mx.for-size("tablet-landscape-up") {
+                    --search-icon: #{mx.px-to-rem(48px)};
+                }
+            }
+        }
+
+        .tt-suggestion {
+            // This is an inline-style for
+            // dynamic funnelback-generated
+            // content.
+            font-size: #{mx.px-to-rem(16px)};
+            font-weight: 300;
+            color: var(--umkc-dark-blue);
+            cursor: pointer;
+            padding: 0.5rem 0.75rem;
+            &:hover, &:focus {
+                background: var(--umkc-gray);
+            }
+        }
+
+        .module-search__additional-links {
+            text-align: center;
+            margin: 2em auto;
+        }
+    }
+}
