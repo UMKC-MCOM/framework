@@ -21,7 +21,6 @@
             border-radius: 6px;
             max-width: 800px;
             margin: 0 auto;
-            box-shadow: -2px 2px 6px #c4cace;
         }
 
         .twitter-typeahead {
@@ -33,7 +32,7 @@
             border: 0;
             border-top-left-radius: 6px;
             border-bottom-left-radius: 6px;
-            font-size: 1.5rem;
+            font-size: 1rem;
             font-weight: 700;
             outline: none;
             padding: 1.125rem 2.6875rem 1.0625rem 1.125rem;
@@ -41,40 +40,29 @@
             background: var(--umkc-gray) 0% 0% no-repeat padding-box;
             color: var(--umkc-dark-blue);
             font-weight: 600;
+
+            @include mx.for-size("tablet-landscape-up") {
+                font-size: 1.5rem;
+            }
         }
 
         .tt-menu {
-            background: white 0% 0% no-repeat padding-box;
+            background: white;
             z-index: 2 !important;
             font-family: 'Roboto', Arial, Helvetica, sans-serif;
-            box-shadow: -2px 2px 6px var(--umkc-gray);
+            box-shadow: -#{mx.px-to-rem(2px)} mx.px-to-rem(2px) mx.px-to-rem(6px) var(--umkc-gray);
             width: 100%;
+            margin: 0;
         }
 
         .module-search__list-item {
-            padding: 0.5em 0;
-
             a {
-                // Inherited from funnelback styles
                 color: var(--umkc-dark-blue);
-
-                &:hover {
-                }
-
-                span {
-                    .tt-hightlight {
-                    }
-
-                    .module-search__list-more {
-                    }
-                }
             }
         }
 
         .tt-dataset {
             text-align: left;
-            // padding: 1em 2em !important;
-            padding: 1em 2em;
         }
 
         .tt-category {
@@ -88,7 +76,6 @@
             border: none;
             background-color: var(--umkc-yellow);
             color: var(--umkc-dark-blue);
-            font-size: 2rem;
             padding: 0.5rem 1.5rem;
             border-top-right-radius: 6px;
             border-bottom-right-radius: 6px;
@@ -96,14 +83,13 @@
 
             .icon {
                 // Icon size variable
-                $search-icon: #{mx.px-to-rem(48px)};
-
                 color: var(--umkc-dark-blue);
-                height: $search-icon;
-                width: $search-icon;
-            }
+                height: var(--search-icon, #{mx.px-to-rem(32px)});
+                width: var(--search-icon, #{mx.px-to-rem(32px)});
 
-            .sr-only {
+                @include mx.for-size("tablet-landscape-up") {
+                    --search-icon: #{mx.px-to-rem(48px)};
+                }
             }
         }
 
@@ -111,11 +97,14 @@
             // This is an inline-style for
             // dynamic funnelback-generated
             // content.
-
             font-size: #{mx.px-to-rem(16px)};
             font-weight: 300;
             color: var(--umkc-dark-blue);
             cursor: pointer;
+            padding: 0.5rem 0.75rem;
+            &:hover, &:focus {
+                background: var(--umkc-gray);
+            }
         }
 
         .module-search__additional-links {
