@@ -46,11 +46,15 @@
       color: var(--link-color, var(--umkc-blue));
       font-weight: 700;
       transition: all 150ms ease;
+      text-decoration-color: var(--umkc-yellow);
+      text-decoration-thickness: mx.px-to-rem(3px);
+      text-underline-offset: mx.px-to-rem(4px);
 
       &:hover, &:focus, &:active {
         // text-decoration: none;
         color: var(--umkc-dark-blue);
         background: var(--umkc-yellow);
+        text-decoration: none;
       }
       // &::before{
       //   content: '';

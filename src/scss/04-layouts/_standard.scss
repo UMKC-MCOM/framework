@@ -16,15 +16,19 @@
   h1 {
     --heading-size: #{mx.px-to-rem(34px)};
     --heading-margin: 0 0 0.75rem;
+    --heading-color: var(--umkc-dark-blue);
+    font-family: var(--os);
+    text-transform: uppercase;
     @include mx.for-size("tablet-landscape-up")
     {
-      --heading-size: #{mx.px-to-rem(38px)};
+      --heading-size: #{mx.px-to-rem(46px)};
     }
   }
   h2 {
     --heading-size: #{mx.px-to-rem(30px)};
     --heading-margin: 1.5rem 0 0;
-    font-family: var(--slab);
+    font-family: var(--roboto);
+    font-weight: 500;
     @include mx.for-size("tablet-landscape-up")
     {
       --heading-size: #{mx.px-to-rem(34px)};
@@ -33,24 +37,19 @@
 
   h3 {
     --heading-size: #{mx.px-to-rem(28px)};
-    --heading-color: var(--umkc-dark-blue);
+    --heading-color: var(--umkc-blue);
     --heading-margin: 1.5rem 0 0;
-    font-family: var(--slab);
-    @include mx.for-size("tablet-landscape-up")
-    {
-      --heading-size: #{mx.px-to-rem(30px)};
-    }
+    font-family: var(--oswald);
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: mx.px-to-rem(3px);
   }
 
   h4 {
-    --heading-size: #{mx.px-to-rem(26px)};
-    --heading-color: var(--font-color);
+    --heading-size: #{mx.px-to-rem(24px)};
+    --heading-color: var(--umkc-dark-blue);
     --heading-margin: 1.5rem 0 0;
     font-weight: 400;
-    @include mx.for-size("tablet-landscape-up")
-    {
-      --heading-size: #{mx.px-to-rem(28px)};
-    }
   }
 
   h5 {

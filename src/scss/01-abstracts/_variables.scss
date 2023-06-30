@@ -25,9 +25,10 @@ $theme-colors: (
   "white": #fff,
   "black": #000,
   "font-color": #4d4d4d,
-  "umkc-gray": #e5ebe5,
+  "umkc-gray": #f6f6f6,
   "umkc-blue": #0066cc,
-  "umkc-dark-blue": #0d273d,
+  "umkc-dark-blue": #04487f,
+  "umkc-navy": #0d273d,
   "umkc-light-blue": #7acbf2,
   "umkc-yellow": #ffdd00,
   "umkc-orange": #faa61c,
@@ -35,5 +36,6 @@ $theme-colors: (
 
 // Font Names for the font family
 $font-names: (
-  "os": "'Oswald', sans-serif"
+  "os": "'Oswald', sans-serif",
+  "roboto": "'Roboto', Helvetica, Arial, sans-serif"
 );

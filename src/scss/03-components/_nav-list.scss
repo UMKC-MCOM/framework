@@ -10,12 +10,11 @@
   }
   &--resource {
     display: flex;
-    flex-flow: column;
-    flex-wrap: wrap;
+    flex-flow: column wrap;
     justify-content: center;
 
     @include mx.for-size("tablet-landscape-up") {
-      flex-flow: row;
+      flex-flow: row wrap;
     }
     li {
       flex-basis: calc(100% / 3);

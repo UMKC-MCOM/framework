@@ -47,4 +47,9 @@
   &__content {
 
   }
+
+  &__input {
+    padding: 0.5rem;
+    width: mx.px-to-rem(260px);
+  }
 }
