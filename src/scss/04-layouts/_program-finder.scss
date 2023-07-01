@@ -73,17 +73,10 @@
         }
 
         .module-search__button {
-            border: none;
-            background-color: var(--umkc-yellow);
-            color: var(--umkc-dark-blue);
             padding: 0.5rem 1.5rem;
-            border-top-right-radius: 6px;
-            border-bottom-right-radius: 6px;
-            box-shadow: none;
-
+            border-radius: 0 6px 6px 0;
             .icon {
                 // Icon size variable
-                color: var(--umkc-dark-blue);
                 height: var(--search-icon, #{mx.px-to-rem(32px)});
                 width: var(--search-icon, #{mx.px-to-rem(32px)});
 

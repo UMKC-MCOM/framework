@@ -42,7 +42,7 @@
                          display: none;">
                         <div class="tt-dataset tt-dataset-organic"></div>
                     </div>
-                    <button class="module-search__button" type="submit">
+                    <button class="button button--umkc-yellow module-search__button" type="submit">
                         <svg class="icon"><use xlink:href="#search"></use></svg>
                         <span class="sr-only">Search</span>
                     </button>
@@ -97,28 +97,15 @@
         sort: '0',
         length: '3',
         classes: {
-                dataset: "module-search__item",
+            dataset: "module-search__item",
         },
         datasets:{
-                organic: {
-                    name: 'Suggestions',
-                    collection: 'umkc-program-finder',
-                    profile: '_default',
-                    show: '8',
-                },
-                /* COMMENTED OUT
-
-
-                programs: {
-                    name: 'Programs',
-                    collection: 'umkc-programs-web',
-                    profile: 'auto-completion',
-                    show: '5',
-                        template: {
-                            suggestion: jQuery('#auto-completion-programs').text()
-                        }
-                },
-                END COMMENTED OUT */
+            organic: {
+                name: 'Suggestions',
+                collection: 'umkc-program-finder',
+                profile: '_default',
+                show: '8',
+            }
         }
     });
 });</script>
