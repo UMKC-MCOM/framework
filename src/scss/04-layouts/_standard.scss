@@ -28,7 +28,7 @@
     --heading-size: #{mx.px-to-rem(30px)};
     --heading-margin: 1.5rem 0 0;
     font-family: var(--roboto);
-    font-weight: 500;
+    font-weight: 700;
     @include mx.for-size("tablet-landscape-up")
     {
       --heading-size: #{mx.px-to-rem(34px)};
@@ -39,7 +39,7 @@
     --heading-size: #{mx.px-to-rem(28px)};
     --heading-color: var(--umkc-blue);
     --heading-margin: 1.5rem 0 0;
-    font-family: var(--oswald);
+    font-family: var(--os);
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: mx.px-to-rem(3px);
