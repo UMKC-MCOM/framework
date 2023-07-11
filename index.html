@@ -18,8 +18,8 @@
       /* background-image: url('/src/images/kansas-city-art-museum-lawn-shuttlecock-nelson-atkins-culture.webp'); */
     }
   </style>
-  <script type="module" crossorigin src="./assets/index.92963508.js"></script>
-  <link rel="stylesheet" href="./assets/index.63625f30.css">
+  <script type="module" crossorigin src="./assets/index.30b292af.js"></script>
+  <link rel="stylesheet" href="./assets/index.224dcafe.css">
 </head>
   <body>
 		<!-- Load SVGs first? -->
@@ -125,8 +125,14 @@
     <symbol id="chevron-right" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
     </symbol>
+    <symbol id="chevron-left" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+    </symbol>
     <symbol id="chevron-down" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+    </symbol>
+    <symbol id="chevron-up" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
     </symbol>
 </svg>
 		<nav class="skip-links" aria-label="Skip Links">
@@ -294,11 +300,125 @@
     </li>
   </ul>
 </nav>
+			<p class="teaser">I am the teaser contentI am the teaser contentI am the teaser contentI am the teaser contentI am the teaser contentI am the teaser contentI am the teaser contentI am the teaser contentI am the teaser contentI am the teaser contentI am the teaser contentI am the teaser contentI am the teaser contentI am the teaser contentI am the teaser contentI am the teaser contentI am the teaser contentI am the teaser contentI am the teaser contentI am the teaser content</p>
 			<!-- Local Site Alerts -->
 			<div class="alert ">
   <h2>Heading</h2>
   <p>Alert box content is here!</p>
 </div>
+
+			<!-- Program Finder -->
+			<div class="content-row">
+    <div class="program-finder">
+        <h2 class="program-finder__title">Find Your Program</h2>
+        <p class="highlight program-finder__highlight">Ignite new interests, strengthen your talents and start your path to a rewarding career at Kansas City's only public urban research university.</p>
+        <div class="program-finder__form-wrapper">
+            <!-- Current Program Finder -->
+            <form action="https://programs.umkc.edu/s/search.html"
+                  class="program-finder__module-search"
+                  method="GET"
+                  role="search">
+                <div class="module-search__group">
+                    <input aria-labelledby="fb-query"
+                           aria-required="true"
+                           autocomplete="off"
+                           class="module-search__query tt-input"
+                           dir="auto"
+                           id="query"
+                           name="query"
+                           placeholder="Start your search here..."
+                           spellcheck="false"
+                           type="Search query" />
+                    <pre aria-hidden="true"
+                         style="position: absolute;
+                         visibility: hidden;
+                         white-space: pre;
+                         font-family: Roboto, serif;
+                         font-size: 22px;
+                         font-style: normal;
+                         font-variant: normal;
+                         font-weight: 300;
+                         word-spacing: 0px;
+                         letter-spacing: 0px;
+                         text-indent: 0px;
+                         text-rendering: auto;
+                         text-transform: none;">
+                    </pre>
+                    <div class="tt-menu"
+                         style="position: absolute;
+                         top: 100%;
+                         left: 0px;
+                         z-index: 100;
+                         display: none;">
+                        <div class="tt-dataset tt-dataset-organic"></div>
+                    </div>
+                    <button class="button button--umkc-yellow module-search__button" type="submit">
+                        <svg class="icon"><use xlink:href="#search"></use></svg>
+                        <span class="sr-only">Search</span>
+                    </button>
+                </div>
+
+                <input name="collection" type="hidden" value="umkc-program-finder">
+                <input name="profile" type="hidden" value="_default">
+
+                <div class="module-search__additional-links">
+                    <a class="module-search__additional-links--button button button--umkc-yellow"
+                       role="button"
+                       tabindex="0"
+                       href="https://programs.umkc.edu/"
+                       title="All Programs">All Programs</a>
+                    <a class="module-search__additional-links--button button button--umkc-yellow"
+                       role="button"
+                       tabindex="0"
+                       href="https://futureroo.umkc.edu/apply/"
+                       title="Apply Now">Apply Now</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js" integrity="sha512-qOBWNAMfkz+vXXgbh0Wz7qYSLZp6c14R0bZeVX2TdQxWpuKr6yHjBIM69fcF8Ve4GUX6B6AKRQJqiiAmwvmUmQ==" crossorigin="anonymous"></script>
+<!-- Funnelback handlebars asset -->
+<script crossorigin="anonymous" integrity="sha512-zT3zHcFYbQwjHdKjCu6OMmETx8fJA9S7E6W7kBeFxultf75OPTYUJigEKX58qgyQMi1m1EgenfjMXlRZG8BXaw==" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+
+<!-- Funnelback auto-complete -->
+<script src="https://programs.umkc.edu/s/resources/umkc-program-finder/_default/js/funnelback.autocompletion-2.6.0.stencils.js"></script>
+
+<!-- programs.AutoCompleteTemplate -->
+<script id="auto-completion-programs" type="text/x-handlebar-template">
+        <div class="module-search__list-item">
+            <a class="module-search__list-link" href="" style="background-image: url('');">
+                <span class="module-search__list-text">
+                    
+                    <!-- "Learn More" Disabled -->
+                    <!--<span class="module-search__list-more">Learn More</span>-->
+                </span>
+            </a>
+        </div>
+</script>
+
+<script>window.addEventListener("DOMContentLoaded", function() {
+    jQuery('#query').autocompletion({
+        program: 'https://programs.umkc.edu/s/suggest.json',
+        alpha: '0.5',
+        show: '10',
+        sort: '0',
+        length: '3',
+        classes: {
+            dataset: "module-search__item",
+        },
+        datasets:{
+            organic: {
+                name: 'Suggestions',
+                collection: 'umkc-program-finder',
+                profile: '_default',
+                show: '8',
+            }
+        }
+    });
+});</script>
 
 			<!-- Benefits Lists -->
 			<div class="content-row">
@@ -464,7 +584,7 @@
         <div class="benefits-list__item benefits-list__item--stats">
           <div class="benefits-list__stats">
             <h2 class="benefits-list__title benefits-list__title--heavy">
-              #1
+              #10000
             </h2>
             </div>
           <div class="benefits-list__details">
@@ -475,6 +595,36 @@
           <div class="benefits-list__stats">
             <h2 class="benefits-list__title benefits-list__title--heavy">
               #2
+            </h2>
+          </div>
+          <div class="benefits-list__details">
+            <h3 class="benefits-list__title benefits-list__title--light">Signifcantly Longer Point than we should have</h3>
+          </div>
+        </div>
+        <div class="benefits-list__item benefits-list__item--stats">
+          <div class="benefits-list__stats">
+            <h2 class="benefits-list__title benefits-list__title--heavy">
+              #3
+            </h2>
+          </div>
+          <div class="benefits-list__details">
+            <h3 class="benefits-list__title benefits-list__title--light">Point</h3>
+          </div>
+        </div>
+        <div class="benefits-list__item benefits-list__item--stats">
+          <div class="benefits-list__stats">
+            <h2 class="benefits-list__title benefits-list__title--heavy">
+              #3
+            </h2>
+          </div>
+          <div class="benefits-list__details">
+            <h3 class="benefits-list__title benefits-list__title--light">Point</h3>
+          </div>
+        </div>
+        <div class="benefits-list__item benefits-list__item--stats">
+          <div class="benefits-list__stats">
+            <h2 class="benefits-list__title benefits-list__title--heavy">
+              #3
             </h2>
           </div>
           <div class="benefits-list__details">
@@ -542,73 +692,122 @@
 
 <div class="cards bg-umkc-blue cards--has-bg">
   <div class="cards__group">
-    <div class="cards__item cards__item--centered">
-        <img src="https://picsum.photos/seed/picsum/352/268" loading="lazy" />
-        <div class="cards__content">
-        <h3 class="cards__title">Headline Headline</h3>
-        <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p><p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
-        <p class="link">
-          <a href="#">Button Text</a>
-          <a href="#">Button Text</a>
-          <a href="#">Button Text</a>
-        </p>
-      </div>
+          <div class="cards__item cards__item">
+                                                  <img alt="Student wearing blue shirt sits in grass by a tree outside of a building on campus. The student has shoulder length hair and has a laptop on their lap.  " loading="lazy" src="/renderfile/c81340b3ac1e04cd16897cbc1a6defa3/images/policies-and-resources/students-on-campus-450x343.jpg">
+                              <div class="cards__content">
+                          <h3 class="cards__title">
+          Policy Library
+  </h3>
+      <p>Academic policies for curriculum management, faculty affairs, program review and assessment, and registration and records.
+                                                              </p>
+                  <p class="link">
+                                                                                                          <a href="/entity/open.act?type=page&amp;id=7b215a5cac1e04cd71fdb91ebec6d98a&amp;confId=7b27b723ac1e04cd71fdb91e2ebe52a7" class="button button--umkc-yellow" target="_parent">
+                                                      Visit the Policy Library
+                                  </a>
+                                                      </p>
+                          </div>
+                  </div>
+                      <div class="cards__item cards__item">
+                                                  <img alt="A tree with pink pedals is in frame outside the school of education." loading="lazy" src="/renderfile/c81340b3ac1e04cd16897cbc1a6defa3/images/policies-and-resources/school-of-education-450x343.jpg">
+                              <div class="cards__content">
+                          <h3 class="cards__title">
+          Program agreements
+  </h3>
+      <p>Partnership agreements create valuable collaborations between UMKC and partner institutions globally impacting society. Review our list of program agreements or learn about the types of program agreements we employ at UMKC.
+                                                              </p>
+                  <p class="link">
+                                                                                                          <a href="/entity/open.act?type=page&amp;id=cd53d862ac1e04cd16897cbc54b8ba69&amp;confId=c73cc616ac1e04cd58bb0af7fbfc9953" target="_parent">
+                                                      List of program agreements
+                                  </a>
+                                                                                      <a href="/entity/open.act?type=page&amp;id=db29d599ac1e04cd16897cbc168ba7c4&amp;confId=c73cc616ac1e04cd58bb0af7fbfc9953" target="_parent">
+                                                      Types of program agreements
+                                  </a>
+                                                      </p>
+                          </div>
+                  </div>
+                      <div class="cards__item cards__item">
+                                                  <img alt="The roo statue is lit up by the lights of the library building behind it. Students walk on the pathway to the library." loading="lazy" src="/renderfile/c81340b3ac1e04cd16897cbc1a6defa3/images/policies-and-resources/um-system-campus-logo.jpg">
+                              <div class="cards__content">
+                          <h3 class="cards__title">
+          UM System policies
+  </h3>
+      <p>We are bound by the University of Missouri System policies, rules and regulations and the Missouri Department of Higher Education.
+                                                              </p>
+                  <p class="link">
+                                                                                                              <a href="https://www.umsystem.edu/ums/rules/collected_rules" rel="nofollow noopener" target="_blank">
+                                                      Collected Rules and Regulations <span class="sr-only"> link opens in a new tab</span>
+                                  </a>
+                                                                                          <a href="https://www.umsystem.edu/ums/policies" rel="nofollow noopener" target="_blank">
+                                                      UM System policies <span class="sr-only"> link opens in a new tab</span>
+                                  </a>
+                                                                                          <a href="https://dhewd.mo.gov/policies/" rel="nofollow noopener" target="_blank">
+                                                      MDHE policies and guidelines <span class="sr-only"> link opens in a new tab</span>
+                                  </a>
+                                                      </p>
+                          </div>
+                  </div>
+                      <div class="cards__item cards__item">
+                                                  <img alt="A professor helping students with an assignment as they sit at a round table in the classroom." loading="lazy" src="/renderfile/c81340b3ac1e04cd16897cbc1a6defa3/images/faculty-success/instructor-with-students-450x343.jpg">
+                              <div class="cards__content">
+                          <h3 class="cards__title">
+          Faculty and staff FERPA information
+  </h3>
+      <p>Faculty and staff must be familiar with the Family Educational Rights and Privacy Act and complete applicable training.
+                                                              </p>
+                  <p class="link">
+                                                                                                          <a href="/entity/open.act?type=page&amp;id=00bde62bac1e0076458f982d62fd4358&amp;confId=afd5523aac1e007640f05d559fba43a6" target="_parent">
+                                                      Find out more about FERPA
+                                  </a>
+                                                      </p>
+                          </div>
+                  </div>
+              </div>
+</div>
+			<div class="content-row">
+  <h2>Cards</h2>
+</div>
+<div class="cards">
+  <div class="cards__group">
+    <div class="cards__item">
+      <h3 class="cards__title">Headline Headline</h3>
+      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
+      <p>
+        <a href="#">Button Text</a>
+      </p>
     </div>
-    <div class="cards__item cards__item--centered">
-        <img src="https://picsum.photos/seed/picsum/352/268" loading="lazy" />
-        <div class="cards__content">
-        <h3 class="cards__title">Headline Headline</h3>
-        <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
-        <p><a href="#" class="button button--cta button--umkc-yellow" target="_blank">Button Text</a></p>
-      </div>
+    <div class="cards__item">
+      <h3 class="cards__title">Headline Headline</h3>
+      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
+      <p>
+        <a href="#">Button Text</a>
+      </p>
     </div>
-    <div class="cards__item cards__item--centered">
-        <img src="https://picsum.photos/seed/picsum/352/268" loading="lazy" />
-        <div class="cards__content">
-        <h3 class="cards__title">Headline Headline</h3>
-        <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
-        <p><a href="#" class="button button--cta button--umkc-yellow" target="_blank">Button Text</a></p>
-      </div>
+    <div class="cards__item">
+      <h3 class="cards__title">Headline Headline</h3>
+      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.
+        <br /><a href="#">Button Text</a>
+      </p>
     </div>
-    <div class="cards__item cards__item--centered">
-        <img src="https://picsum.photos/seed/picsum/352/268" loading="lazy" />
-        <div class="cards__content">
-        <h3 class="cards__title">Headline Headline</h3>
-        <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
-        <p><a href="#" class="button button--cta button--umkc-yellow" target="_blank">Button Text</a></p>
-      </div>
+    <div class="cards__item">
+      <h3 class="cards__title">Headline Headline</h3>
+      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
+      <p>
+        <a href="#">Button Text</a>
+      </p>
     </div>
-    <div class="cards__item cards__item--centered">
-        <img src="https://picsum.photos/seed/picsum/352/268" loading="lazy" />
-        <div class="cards__content">
-        <h3 class="cards__title">Headline Headline</h3>
-        <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
-        <p><a href="#" class="button button--cta button--umkc-yellow" target="_blank">Button Text</a></p>
-      </div>
+    <div class="cards__item">
+      <h3 class="cards__title">Headline Headline</h3>
+      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
+      <p>
+        <a href="#">Button Text</a>
+      </p>
     </div>
-    <div class="cards__item cards__item--centered">
-        <img src="https://picsum.photos/seed/picsum/352/268" loading="lazy" />
-        <div class="cards__content">
-        <h3 class="cards__title">Headline Headline</h3>
-        <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
-        <p><a href="#" class="button button--cta button--umkc-yellow" target="_blank">Button Text</a></p>
-      </div>
-    </div>
-    <div class="cards__item cards__item--centered">
-        <img src="https://picsum.photos/seed/picsum/352/268" loading="lazy" />
-        <div class="cards__content">
-        <h3 class="cards__title">Headline Headline</h3>
-        <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
-        <p><a href="#" class="button button--cta button--umkc-yellow" target="_blank">Button Text</a></p>
-      </div>
-    </div>
-    <div class="cards__item cards__item--centered">
-        <img src="https://picsum.photos/seed/picsum/352/268" loading="lazy" />
-        <div class="cards__content">
-        <h3 class="cards__title">Headline Headline</h3>
-        <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
-        <p><a href="#" class="button button--cta button--umkc-yellow">Button Text</a></p>
-      </div>
+    <div class="cards__item">
+      <h3 class="cards__title">Headline Headline</h3>
+      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
+      <p>
+        <a href="#">Button Text</a>
+      </p>
     </div>
   </div>
 </div>
@@ -619,58 +818,44 @@
   <div class="cards__group">
     <div class="cards__item">
       <h3 class="cards__title">Headline Headline</h3>
-      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. <a href="#">Button Text</a></p>
+      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
+      <p>
+        </a>
+      </p>
     </div>
     <div class="cards__item">
       <h3 class="cards__title">Headline Headline</h3>
-      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. <a href="#">Button Text</a></p>
+      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
+      <p>
+        </a>
+      </p>
     </div>
     <div class="cards__item">
       <h3 class="cards__title">Headline Headline</h3>
-      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. <a href="#">Button Text</a></p>
+      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.
+        </a>
+      </p>
     </div>
     <div class="cards__item">
       <h3 class="cards__title">Headline Headline</h3>
-      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. <a href="#">Button Text</a></p>
+      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
+      <p>
+        </a>
+      </p>
     </div>
     <div class="cards__item">
       <h3 class="cards__title">Headline Headline</h3>
-      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. <a href="#">Button Text</a></p>
+      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
+      <p>
+        </a>
+      </p>
     </div>
     <div class="cards__item">
       <h3 class="cards__title">Headline Headline</h3>
-      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. <a href="#">Button Text</a></p>
-    </div>
-  </div>
-</div>
-			<div class="content-row">
-  <h2>Cards</h2>
-</div>
-<div class="cards">
-  <div class="cards__group">
-    <div class="cards__item">
-      <h3 class="cards__title">Headline Headline</h3>
-      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. </a></p>
-    </div>
-    <div class="cards__item">
-      <h3 class="cards__title">Headline Headline</h3>
-      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. </a></p>
-    </div>
-    <div class="cards__item">
-      <h3 class="cards__title">Headline Headline</h3>
-      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. </a></p>
-    </div>
-    <div class="cards__item">
-      <h3 class="cards__title">Headline Headline</h3>
-      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. </a></p>
-    </div>
-    <div class="cards__item">
-      <h3 class="cards__title">Headline Headline</h3>
-      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. </a></p>
-    </div>
-    <div class="cards__item">
-      <h3 class="cards__title">Headline Headline</h3>
-      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. </a></p>
+      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
+      <p>
+        </a>
+      </p>
     </div>
   </div>
 </div>
@@ -712,7 +897,8 @@
     <button class="o-btn quote__bullet" data-controls="#third"></button>
   </div>
 </div>
-			<div class="content-row bg-umkc-gray quote quote--single">
+			<div class="content-row bg-umkc-gray">
+  <div class=" quote quote--single">
   <div class="quote__item">
     <span class="quote__icon">&#8220;</span>
     <blockquote class="quote__blockquote">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</blockquote>
@@ -720,6 +906,8 @@
     <h3 class="quote__title">Full Name</h3>
     <p>Title or major</p>
   </div>
+</div>
+
 </div>
 
 			<!-- Photo + Buttons -->
@@ -922,7 +1110,7 @@
         <span class="st__title">D.D.S. '23'</span>
       </cite>
     </blockquote>
-    <p><a href="#" class="button button--white">Read Edgardo's story</a></p>
+    <p><a href="#" class="button button--white button--outline button--hover-yellow">Read Edgardo's story</a></p>
   </div>
   <div class="st__image">
     <a href="https://youtu.be/jqAEO4z8taA" class="st__btn" title="Watch the story">
@@ -934,138 +1122,329 @@
     <img src="https://picsum.photos/seed/picsum/810/434" class="st__img" />
   </div>
 </div>
-			<!-- <div class="content-row">
-  <h2 class="text-center">Section Title</h2>
-  <p class="highlight text-center">Subtitle content</p>
-</div>
-<div class="icons">
-  <div class="icon">
-    <img src="https://picsum.photos/seed/picsum/200/200" alt="" class="icon__image" />
-    <h3>Icon Title</h3>
-    <p>Icon description with content</p>
-    <p><a href="#" class="button button--umkc-yellow">Button Text</a></p>
-  </div>
-  <div class="icon">
-    <div class="icon__image"><svg class="icon__icon" id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96"><polygon points="28.73 57.67 33.62 62.57 28.69 67.5 24.24 63.29 28.73 57.67" fill="#e5eef5"/><polygon points="34.17 72.56 29.94 69.13 34.83 64.24 39.45 68.87 34.17 72.56" fill="#e5eef5"/><path d="m23.32,63.16l-6.78,6.78c-2.85,2.85-3,7.35-.32,10.02l1.15,1.15c1.29,1.29,3.04,1.97,4.91,1.92,1.91-.05,3.72-.85,5.11-2.24l6.78-6.78-10.85-10.85Z" fill="#ffd52e" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/><path d="m39.98,43.28c-.85,0-1.69-.29-2.35-.82-1.22-.97-1.71-2.56-1.26-4.05l2.4-7.84c.14-.46.36-.88.66-1.25l16.59-20.81c.59-.73,1.42-1.22,2.34-1.37l3.23-.53c.2-.03.41-.05.61-.05.85,0,1.69.29,2.35.82l1.34,1.07c.82.66,1.33,1.63,1.41,2.67l.25,3.3c.07.97-.23,1.93-.85,2.68l-16.91,20.5s-.06.07-.1.11l-.98.98c-.06.06-.12.11-.19.16-.04.03-.07.05-.11.07l-6.51,3.83c-.58.35-1.24.53-1.92.53h0Z" fill="#f6f6f6"/><path d="m62.2,8.07c.51,0,1.01.17,1.42.5l1.34,1.07c.49.39.8.98.85,1.61l.25,3.3c.04.59-.14,1.17-.51,1.62l-16.92,20.48-.85.85-.13.13h0s-6.5,3.84-6.5,3.84c-.36.21-.76.31-1.15.31-.5,0-1.01-.17-1.42-.5-.73-.58-1.03-1.55-.76-2.44l2.39-7.84c.08-.27.22-.53.4-.75l16.59-20.8c.35-.44.86-.74,1.41-.83l3.23-.53c.12-.01.24-.02.37-.02m0-3c-.28,0-.57.02-.85.07l-3.22.53c-1.29.21-2.46.89-3.27,1.92l-16.6,20.78c-.42.52-.73,1.11-.92,1.75l-2.4,7.84c-.64,2.08.05,4.31,1.76,5.66.93.74,2.1,1.15,3.29,1.15.94,0,1.87-.25,2.68-.73l6.5-3.83c.08-.05.16-.1.24-.16.13-.09.26-.2.37-.32l.13-.13.86-.86c.07-.07.13-.14.19-.21l16.91-20.49c.87-1.06,1.29-2.39,1.19-3.75l-.25-3.3c-.11-1.46-.83-2.82-1.97-3.73l-1.34-1.07c-.94-.71-2.11-1.12-3.3-1.12h0Z" fill="#06c"/><path d="m49.59,51.75c-.99,0-1.94-.37-2.66-1.05-1.2-1.11-1.58-2.87-.94-4.38l3.12-7.4c.06-.14.13-.27.21-.4.07-.12.2-.29.3-.39l.08-.07.59-.71s.06-.07.1-.11l18.29-18.29c.7-.7,1.63-1.11,2.62-1.14,0,0,3.35-.12,3.37-.12,1.04,0,2.03.41,2.77,1.15l1.13,1.13c.78.78,1.19,1.85,1.14,2.96l-.16,3.17c-.05.96-.45,1.87-1.12,2.55l-17.85,18.06c-.33.33-.7.59-1.11.79l-8.2,3.87c-.53.25-1.09.38-1.68.38Z" fill="#f6f6f6"/><path d="m74.67,19.19c.64,0,1.25.25,1.7.71l1.13,1.13c.48.48.74,1.14.7,1.82l-.16,3.17c-.03.59-.28,1.15-.69,1.57l-17.84,18.07c-.2.2-.43.37-.69.49l-8.2,3.87c-.33.15-.68.23-1.03.23-.6,0-1.18-.22-1.64-.64-.74-.69-.97-1.77-.58-2.7l3.12-7.4c.04-.09.09-.18.14-.26.07-.07.15-.14.21-.22l.59-.72,18.29-18.29c.43-.43,1.01-.68,1.61-.7l3.23-.12s.08,0,.11,0m0-3h-.2l-3.23.12c-1.37.05-2.66.61-3.62,1.58l-18.29,18.29c-.07.07-.13.14-.19.21l-.53.65c-.21.2-.41.45-.56.7-.09.15-.2.34-.31.6l-3.13,7.4c-.88,2.09-.36,4.53,1.3,6.07,1,.93,2.31,1.45,3.68,1.45.79,0,1.59-.18,2.31-.52l8.2-3.87c.58-.27,1.09-.64,1.54-1.09l17.85-18.08c.94-.95,1.49-2.2,1.55-3.53l.16-3.17c.08-1.52-.5-3.02-1.58-4.09l-1.13-1.13c-1.02-1.03-2.37-1.59-3.82-1.59h0Z" fill="#06c"/><path d="m57.92,61.24c-1.13,0-2.19-.51-2.9-1.39-.99-1.24-1.08-2.97-.23-4.31l4.62-7.25c.21-.33.46-.62.76-.86l20.18-16.69c.67-.55,1.5-.85,2.36-.85.09,0,.19,0,.28.01l3.35.25c1.02.08,1.98.58,2.62,1.38l1.1,1.38c.65.82.93,1.88.76,2.91l-.52,3.28c-.15.91-.63,1.73-1.35,2.3l-20.82,16.62c-.36.29-.78.51-1.23.65l-7.9,2.41c-.35.11-.72.16-1.08.16Z" fill="#f6f6f6"/><path d="m82.72,31.39c.05,0,.11,0,.16.01l3.35.25c.61.05,1.18.34,1.56.82l1.1,1.38c.39.49.55,1.12.45,1.73l-.53,3.28c-.09.54-.37,1.03-.8,1.37l-20.82,16.62c-.22.17-.47.3-.73.39l-7.9,2.41c-.21.07-.43.1-.65.1-.66,0-1.3-.3-1.73-.83-.59-.74-.64-1.77-.14-2.57l4.62-7.25c.12-.19.28-.37.45-.51l20.18-16.69c.42-.34.91-.51,1.43-.51m0-3h0c-1.21,0-2.39.42-3.32,1.19l-20.18,16.69c-.42.35-.78.75-1.07,1.21l-4.62,7.25c-1.2,1.88-1.07,4.31.32,6.05.99,1.25,2.48,1.96,4.07,1.96.52,0,1.03-.08,1.52-.23l7.9-2.41c.63-.19,1.21-.5,1.73-.91l20.82-16.62c1.01-.81,1.68-1.96,1.89-3.23l.53-3.28c.24-1.45-.15-2.94-1.07-4.09l-1.1-1.38c-.9-1.13-2.24-1.84-3.68-1.95l-3.36-.24c-.13-.01-.25-.01-.38-.01h0Z" fill="#06c"/><line x1="37.53" y1="42.63" x2="23.32" y2="63.16" fill="none" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/><line x1="55.19" y1="60.06" x2="34.17" y2="73.85" fill="none" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/><line x1="46.9" y1="50.64" x2="28.7" y2="68.55" fill="none" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/><line x1="28.52" y1="56.16" x2="41.18" y2="68.82" fill="none" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/></svg>
+
+			<div class="vertical-image" id="vi">
+  <div class="vertical-image__item" style="background-image: url('https://www.umkc.edu/images/student-life/UMKC-Athletics.jpg');">
+    <div class="vertical-image__content">
+      <h3 class="vertical-image__title">Title</h3>
+      <p><a href="#" class="button button--white button--outline button--hover-yellow">Button</a></p>
     </div>
-    <h3>Icon Title</h3>
-    <p>Icon description with content</p>
-    <p><a href="#" class="button button--umkc-yellow">Button Text</a></p>
   </div>
-  <div class="icon">
-    <div class="icon__image">
-      <svg class="icon__icon" id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96"><path d="m48,17.78c16.66,0,30.22,13.55,30.22,30.22s-13.56,30.22-30.22,30.22-30.22-13.56-30.22-30.22,13.56-30.22,30.22-30.22m0-3c-18.34,0-33.22,14.87-33.22,33.22s14.88,33.22,33.22,33.22,33.22-14.88,33.22-33.22S66.34,14.78,48,14.78h0Z" fill="#06c"/><circle cx="48" cy="19.61" r="13.11" fill="#f6f6f6" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/><circle cx="48.07" cy="15.12" r="4.42" fill="#f6f6f6" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/><path d="m39.82,27.76c0-4.52,3.66-8.18,8.18-8.18s8.18,3.66,8.18,8.18h-16.36Z" fill="#ffd52e" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/><circle cx="19" cy="49.61" r="13.11" fill="#f6f6f6" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/><circle cx="77" cy="47.61" r="13.11" fill="#f6f6f6" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/><path d="m84.04,42.44c-1.68-1.68-4.4-1.68-6.08,0l-.96.96-.97-.97c-1.68-1.68-4.4-1.68-6.08,0s-1.68,4.4,0,6.08l.97.97,6.08,6.08,6.08-6.08.97-.97c1.67-1.67,1.67-4.39-.01-6.07Z" fill="#ffd52e" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.74"/><polyline points="74.15 47.8 75.7 46.27 78.09 48.76 80.91 45.94 82.74 48.68 86.25 48.68" fill="none" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/><circle cx="48" cy="75.59" r="13.11" fill="#f6f6f6" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/><polygon points="55.44 79.63 48 83.15 48 73.78 55.44 70.27 55.44 79.63" fill="#ffd52e" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.74"/><polygon points="40.56 79.63 48 83.15 48 73.78 40.56 70.27 40.56 79.63" fill="#ffd52e" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.74"/><circle cx="18.87" cy="49.61" r="8.44" fill="#ffd52e"/><path d="m14.91,53.42c.48,1.31,2.07,2.28,3.96,2.28,2.27,0,4.11-1.39,4.11-3.11s-1.84-3.41-4.11-3.41h.12c-2.04,0-3.69-1.25-3.69-2.8s1.65-2.8,3.69-2.8c1.42,0,2.65.6,3.27,1.49" fill="none" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.74"/><line x1="18.87" y1="40.83" x2="18.87" y2="42.64" fill="none" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.74"/><line x1="18.87" y1="49.76" x2="18.87" y2="58.68" fill="none" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.74"/></svg>
+
+  <div class="vertical-image__item" style="background-image: url('https://www.umkc.edu/images/student-life/UMKC-Athletics.jpg');">
+    <div class="vertical-image__content">
+      <h3 class="vertical-image__title">Title</h3>
+      <p><a href="#" class="button button--white button--outline button--hover-yellow">Button</a></p>
     </div>
-    <h3>Icon Title</h3>
-    <p>Icon description with content</p>
-    <p><a href="#" class="button button--umkc-yellow">Button Text</a></p>
+  </div>
+
+  <div class="vertical-image__item" style="background-image: url('https://www.umkc.edu/images/student-life/UMKC-Athletics.jpg');">
+    <div class="vertical-image__content">
+      <h3 class="vertical-image__title">Title</h3>
+      <p><a href="#" class="button button--white button--outline button--hover-yellow">Button</a></p>
+    </div>
   </div>
 </div>
 
- -->
+			<div class="content-row">
+  <ul class="resource-list nav nav--inline nav--resource">
+    <li>
+      <a href="#" class="button button--outline button--umkc-blue">Button Text</a>
+    </li>
+    <li>
+      <a href="#" class="button button--outline button--umkc-blue">Button Text</a>
+    </li>
+
+  </ul>
+</div>
+
+			<div class="content-row">
+  <div class="accordion">
+    <button aria-label="Toggle Sub Menu" class="o-btn tabs__title accordion__btn track" data-toggle="#positive" aria-expanded="false">
+      <svg class="icon accordion__icon">
+        <use xlink:href="#chevron-up"/>
+      </svg>
+      Button thingy
+    </button>
+    <div class="accordion__content" id="positive">
+      <p>I am the content.</p>
+    </div>
+
+    <button aria-label="Toggle Sub Menu" class="o-btn tabs__title accordion__btn track" data-toggle="#positive2" aria-expanded="false">
+      <svg class="icon accordion__icon">
+        <use xlink:href="#chevron-up"/>
+      </svg>
+      Button thingy
+    </button>
+    <div class="accordion__content" id="positive2">
+      <p>I am the content.</p>
+    </div>
+  </div>
+</div>
+
+			<div class="content-row">
+				<div class="gallery">
+  <figure class="gallery__item">
+    <img src="https://picsum.photos/seed/picsum/800/800" alt="Gallery image 1" class="gallery__img">
+  </figure>
+  <figure class="gallery__item">
+    <img src="https://picsum.photos/seed/picsum/448/562" alt="Gallery image 2" class="gallery__img">
+  </figure>
+  <figure class="gallery__item">
+    <img src="https://picsum.photos/seed/picsum/448/562" alt="Gallery image 3" class="gallery__img">
+  </figure>
+  <figure class="gallery__item">
+    <img src="https://picsum.photos/seed/picsum/448/562" alt="Gallery image 4" class="gallery__img">
+  </figure>
+  <figure class="gallery__item">
+    <img src="https://picsum.photos/seed/picsum/448/562" alt="Gallery image 5" class="gallery__img">
+  </figure>
+  <figure class="gallery__item">
+    <img src="https://picsum.photos/seed/picsum/448/562" alt="Gallery image 6" class="gallery__img">
+  </figure>
+</div>
+			</div>
+
+			<div class="content-row">
+				<div class="glide">
+  <div class="glide__track" data-glide-el="track">
+    <div class="glide__slides">
+      <div class="glide__slide">
+        <div class="glide__item">
+          <img src="https://picsum.photos/id/237/1920/1080" class="glide__img" />
+          <div class="glide__content">
+            <h2 class="glide__title">I am title</h2>
+            <p>Lorem ipsum dolor amet mustache knausgaard +1, blue bottle waistcoat tbh semiotics artisan synth stumptown gastropub cornhole celiac swag. Brunch raclette vexillologist post-ironic glossier ennui XOXO mlkshk godard pour-over blog tumblr humblebrag. Blue bottle put a bird on it twee prism biodiesel brooklyn. Blue bottle ennui tbh succulents.</p>
+          </div>
+        </div>
+      </div>
+      <div class="glide__slide">
+        <div class="glide__item">
+          <img src="https://picsum.photos/id/237/1920/1080" class="glide__img" />
+            <div class="glide__content">
+              <h2 class="glide__title">I am title</h2>
+              <p>I am content. <a href="#">Link</a></p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="glide__arrows" data-glide-el="controls">
+    <button class="o-btn glide__arrow glide__arrow--left" data-glide-dir="<" aria-label="previous slide">
+      <svg class="icon glide__icon">
+        <use xlink:href="#chevron-left" />
+      </svg>
+    </button>
+    <button class="o-btn glide__arrow glide__arrow--right" data-glide-dir=">" aria-label="next slide">
+      <svg class="icon glide__icon">
+        <use xlink:href="#chevron-right" />
+      </svg>
+    </button>
+  </div>
+</div>
+			</div>
+
+			<div class="content-row">
+  <div class="text-center">
+    <h2 id="directory">Directory Row</h2>
+    <p class="highlight">I am the directory row highlight text</p>
+  </div>
+  <div class="directory__search">
+    <form>
+        <label>Search</label>
+        <input class="input directory__input" id="dirSearch" type="search" placeholder="Type three or more characters" />
+    </form>
+  </div>
+  <div class="directory">
+    <div class="directory__item">
+      <img src="https://picsum.photos/id/237/200/200" class="directory__image" />
+      <div class="directory__content">
+        <p>
+          <span class="directory__role directory__role--name"><a href="#">Ava McMullen Person</a></span>
+          <span class="directory__role directory__role--muted">
+            Sr. Web Developer
+          </span>
+          <span class="directory__role"><strong>Email:</strong> <a href="#">thing@thing.com</a></span>
+          <span class="directory__role"><strong>Phone:</strong> (xxx) xxx-xxxx</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="directory__item">
+      <img src="https://picsum.photos/id/237/200/200" class="directory__image" />
+      <div class="directory__content">
+        <p>
+          <span class="directory__role directory__role--name"><a href="#">Directory Person</a></span>
+          <span class="directory__role directory__role--muted">
+            Sr. Web Developer
+          </span>
+          <span class="directory__role"><strong>Email:</strong> <a href="#">thing@thing.com</a></span>
+          <span class="directory__role"><strong>Phone:</strong> (xxx) xxx-xxxx</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="directory__item">
+      <img src="https://picsum.photos/id/237/200/200" class="directory__image" />
+      <div class="directory__content">
+        <p>
+          <span class="directory__role directory__role--name"><a href="#" class="thing">Directory Person</a></span>
+          <span class="directory__role directory__role--muted">
+            Sr. Web Developer
+          </span>
+          <span class="directory__role"><strong>Email:</strong> <a href="#">thing@thing.com</a></span>
+          <span class="directory__role"><strong>Phone:</strong> (xxx) xxx-xxxx</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
 			<!-- Icon Row -->
-			﻿<div class="content-row bg-umkc-gray">
-    <h2>Icon Row (3 Up)</h2>
-    <div class="icon-row icon-row--small-stats jc-evenly">
-        <div class="icon-row__group">
-            <div class="icon-row icon-row--small-stats jc-evenly">
-                <div class="icon-row__item icon-row__item--stats">
-                    <div class="icon-row__image">
-                        <img src="src\images\svg\building-dormApartment.svg" class="" alt="">
-                    </div>
-                    <div class="icon-row__stats">
-                        <h2 class="icon-row__title icon-row__title--heavy">#1</h2>
-                    </div>
-                    <div class="icon-row__details">
-                        <h3 class="icon-row__title icon-row__title--light">Point</h3>
-                        <p class="icon-row__details--copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                        <a href="#" class="button button--umkc-yellow button--cta">Button Text</a>
-                    </div>
-                </div>
-                <div class="icon-row__item icon-row__item--stats">
-                    <div class="icon-row__image">
-                        <img src="src\images\svg\book-academicUnits.svg" class="" alt="">
-                    </div>
-                    <div class="icon-row__stats">
-                        <h2 class="icon-row__title icon-row__title--heavy">#2</h2>
-                    </div>
-                    <div class="icon-row__details">
-                        <h3 class="icon-row__title icon-row__title--light">Point</h3>
-                        <p class="icon-row__details--copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                        <a href="#" class="button button--umkc-yellow button--cta">Button Text</a>
-                    </div>
-                </div>
-                <div class="icon-row__item icon-row__item--stats">
-                    <div class="icon-row__image">
-                        <img src="src\images\svg\computer-arrow.svg" class="" alt="">
-                    </div>
-                    <div class="icon-row__stats">
-                        <h2 class="icon-row__title icon-row__title--heavy">#3</h2>
-                    </div>
-                    <div class="icon-row__details">
-                        <h3 class="icon-row__title icon-row__title--light">Point</h3>
-                        <p class="icon-row__details--copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                        <a href="#" class="button button--umkc-yellow button--cta">Button Text</a>
-                    </div>
-                </div>
+			﻿<div class="content-row bg-umkc-gray" id="icon">
+    <div class="text-center">
+        <h2 id="directory">Icon Row (3 Up)</h2>
+        <p class="highlight">I am the directory row highlight text</p>
+    </div>
+    <div class="icon-row">
+        <div class="icon-row__item">
+            <div class="icon-row__image">
+                <svg class="icon icon-row__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96">
+                  <path d="m58.8,23.7c-.6-1-1.6-1.6-2.7-1.7h-18.3c-1.1.1-2.1.7-2.7,1.7l-9,17.1c.7-.1,1.4-.2,2.2-.2,1.7,0,3.4.4,4.8,1.1l5-9.5.5,16.4h16.6l.5-16.8,5.9,10.9c1.8-1.3,3.9-2.2,6.3-2.2l-9.1-16.8Z" fill="#f6f6f6"/>
+                  <path d="m47,20.8c4.4,0,7.9-3.5,7.9-7.9s-3.5-7.9-7.9-7.9-7.9,3.5-7.9,7.9c-.1,4.3,3.5,7.9,7.9,7.9Z" fill="#f6f6f6"/>
+                  <path d="m42.3,21.9h-4.5c-1.1.1-2.1.7-2.7,1.7l-9,17c.7-.1,1.4-.2,2.2-.2,1.7,0,3.4.4,4.8,1.1l5-9.5.5,16.4h16.6l.5-16.8,5.9,10.9c1.8-1.3,3.9-2.2,6.3-2.2l-9.2-16.9c-.6-1-1.6-1.6-2.7-1.7h-4.9" fill="none" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.04"/>
+                  <polygon points="47 23.9 47.7 23.9 48.9 21.9 45 21.9 46.3 23.9 47 23.9" fill="#f2cd00"/>
+                  <polygon points="48.8 33.9 47.8 24.7 47 24.7 46.1 24.7 45.2 33.9 47 35.7 48.8 33.9" fill="#f2cd00"/>
+                  <path d="m47,7c3.2,0,5.9,2.7,5.9,5.9s-2.7,5.9-5.9,5.9-5.9-2.6-5.9-5.9,2.6-5.9,5.9-5.9m0-2.1c-4.4,0-7.9,3.5-7.9,7.9s3.5,7.9,7.9,7.9,7.9-3.5,7.9-7.9-3.5-7.9-7.9-7.9h0Z" fill="#06c"/>
+                  <path d="m28.3,45.2c3.4,0,6.1,2.7,6.1,6.1s-2.7,6.1-6.1,6.1-6.1-2.7-6.1-6.1c0-3.3,2.8-6.1,6.1-6.1m0-2c-4.5,0-8.1,3.6-8.1,8.1s3.6,8.1,8.1,8.1,8.1-3.6,8.1-8.1-3.6-8.1-8.1-8.1h0Z" fill="#06c"/>
+                  <path d="m68.2,45.2c3.4,0,6.1,2.7,6.1,6.1s-2.7,6.1-6.1,6.1-6.1-2.7-6.1-6.1c.1-3.3,2.8-6.1,6.1-6.1m0-2c-4.5,0-8.1,3.6-8.1,8.1s3.6,8.1,8.1,8.1,8.1-3.6,8.1-8.1c.1-4.5-3.6-8.1-8.1-8.1h0Z" fill="#06c"/>
+                  <path d="m77.2,71.8l-.5,17.2h-17l-.5-16.8-7.6,14.5c-.7,1.3-2.2,2.2-3.7,1.9-1.1-.2-2-.9-2.4-1.8,0,0,0-.1-.1-.1l-8.1-14.9-.6,17.2h-17l-.5-16.8-7.7,14.6c-.9,1.7-2.9,2.3-4.6,1.4-1.7-.9-2.3-2.9-1.4-4.6l10.6-20.2c.6-1.1,1.6-1.7,2.7-1.8h18.8c1.1.1,2.2.7,2.8,1.8l8,14.7,7.7-14.6c.6-1.1,1.6-1.7,2.7-1.8h19.1c1.1.1,2.2.7,2.8,1.8l10.8,19.9c.8,1.4.6,3.2-.6,4.2-1.7,1.5-4.2,1-5.3-.9l-8.1-14.9s-.3,0-.3,0Z" fill="none" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.04"/>
+                </svg>
+            </div>
+            <div class="icon-row__stats">
+                <h2 class="icon-row__title icon-row__title--heavy">#1</h2>
+            </div>
+            <div class="icon-row__details">
+                <h3 class="icon-row__title icon-row__title--light">Point</h3>
+                <p class="icon-row__copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+
+            </div>
+        </div>
+        <div class="icon-row__item">
+            <div class="icon-row__image">
+                <svg class="icon icon-row__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96">
+                  <path d="m83,55.9c-4.2,0-10,.2-17.5.2-8.2,0-13.8,2.1-17.4,4.7v-31.3c4.6-2.7,9.6-5.4,15.1-8,6.9-3.4,13.6-6.2,19.8-8.6-.1,14.6-.1,28.4,0,43Z" fill="#ffd52e" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                  <path d="m13.2,56.2c4.2,0,11.8.3,20.4.3,7,0,11.5,1.9,14.5,4.3v-31.3c-4.5-3-9.9-6.2-16.2-9.1-6.9-3.3-13.3-5.6-18.9-7.3.1,14.7.1,28.4.2,43.1Z" fill="#ffd52e" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                  <path d="m76.3,48.7c-3.9.6-8.6,1.6-13.8,3.5-6,2.2-10.9,4.9-14.5,7.3V23.8c3.8-2.2,7.8-4.4,12.2-6.5,5.6-2.7,11-5,16.1-6.9v38.3Z" fill="#f6f6f6" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                  <path d="m19.7,48.7h0s8.6,1.3,14.6,3.2c3.6,1.2,8.5,3.3,13.8,7.5V23.7c-3.7-2.5-8-5-13.1-7.5-5.5-2.6-10.7-4.6-15.2-5.9-.1,12.1-.1,26.5-.1,38.4Z" fill="#f6f6f6" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                  <path d="m25.9,21.7c1,.2,1.9.5,2.9.7" fill="none" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                  <path d="m32.9,23.8c2.7,1,5.5,2.3,8.2,3.9" fill="none" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                  <path d="m25.9,28.4c4,.8,11.2,3.5,15.2,5.8" fill="none" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                  <path d="m25.8,34.9c4,.8,12,3.6,15.6,5.8" fill="none" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                  <path d="m32.7,42.8c3.4,1.3,6.9,3,10.2,5.1" fill="none" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                  <path d="m25.7,40.7c1,.2,1.9.4,2.9.7" fill="none" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                  <path d="m70.6,21.5c-1,.2-1.9.5-2.9.7" fill="none" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                  <path d="m63.6,23.6c-2.7,1-5.5,2.3-8.2,3.9" fill="none" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                  <path d="m70.6,28.2c-3.9.8-11.2,3.7-15.3,6.2" fill="none" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                  <path d="m70.7,34.7c-3.9.8-11.2,4-15.3,6.5" fill="none" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                  <path d="m63.7,43.8c-3.4,1.3-6.9,3-10.2,5.1" fill="none" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                  <path d="m70.7,41.8c-1,.2-1.9.4-2.9.7" fill="none" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                  <circle cx="47.8" cy="70.3" r="15.2" fill="#fff" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                  <polygon points="56.8 78.3 38.8 78.3 38.8 65.5 47.8 60.9 56.8 65.5 56.8 78.3" fill="#ffd52e" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                  <path d="m48.6,68.1h-1.7c-.3,0-.6-.3-.6-.6v-.5c0-.3.3-.6.6-.6h1.7c.3,0,.6.3.6.6v.6c0,.3-.2.5-.6.5Z" fill="#06c"/>
+                  <path d="m44,68.1h-1.7c-.3,0-.6-.3-.6-.6v-.5c0-.3.3-.6.6-.6h1.7c.3,0,.6.3.6.6v.6c0,.3-.3.5-.6.5Z" fill="#06c"/>
+                  <path d="m53.3,68.1h-1.7c-.3,0-.6-.3-.6-.6v-.5c0-.3.3-.6.6-.6h1.7c.3,0,.6.3.6.6v.6c0,.3-.3.5-.6.5Z" fill="#06c"/>
+                  <path d="m48.6,71.6h-1.7c-.3,0-.6-.3-.6-.6v-.6c0-.3.3-.6.6-.6h1.7c.3,0,.6.3.6.6v.6c0,.3-.2.6-.6.6Z" fill="#06c"/>
+                  <path d="m44,71.6h-1.7c-.3,0-.6-.3-.6-.6v-.6c0-.3.3-.6.6-.6h1.7c.3,0,.6.3.6.6v.6c0,.3-.3.6-.6.6Z" fill="#06c"/>
+                  <path d="m53.3,71.6h-1.7c-.3,0-.6-.3-.6-.6v-.6c0-.3.3-.6.6-.6h1.7c.3,0,.6.3.6.6v.6c0,.3-.3.6-.6.6Z" fill="#06c"/>
+                  <path d="m44,75.1h-1.7c-.3,0-.6-.3-.6-.6v-.6c0-.3.3-.6.6-.6h1.7c.3,0,.6.3.6.6v.6c0,.3-.3.6-.6.6Z" fill="#06c"/>
+                  <path d="m53.3,75.1h-1.7c-.3,0-.6-.3-.6-.6v-.6c0-.3.3-.6.6-.6h1.7c.3,0,.6.3.6.6v.6c0,.3-.3.6-.6.6Z" fill="#06c"/>
+                  <path d="m48.7,77.4h-1.9c-.3,0-.5-.2-.5-.5v-3c0-.3.2-.5.5-.5h1.9c.3,0,.5.2.5.5v3c0,.3-.2.5-.5.5Z" fill="#06c"/>
+                </svg>
+            </div>
+            <div class="icon-row__stats">
+                <h2 class="icon-row__title icon-row__title--heavy">#2</h2>
+            </div>
+            <div class="icon-row__details">
+                <h3 class="icon-row__title icon-row__title--light">
+                    <a href="#">Point</a></h3>
+                <p class="icon-row__copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+
+            </div>
+        </div>
+        <div class="icon-row__item">
+            <div class="icon-row__image">
+                <svg class="icon icon-row__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96">
+                  <rect x="16.8" y="22.5" width="62.3" height="40" fill="#fff"/>
+                  <path d="m77.7,24v37H18.3V24h59.4m3-3H15.3v43h65.3l.1-43h0Z" fill="#06c"/>
+                  <rect x="33.5" y="32.5" width="29" height="21" fill="#ffd52e"/>
+                  <path d="m61,34v18h-26v-18h26m3-3h-32v24h32v-24h0Z" fill="#06c"/>
+                  <polyline points="49.2 48.1 54 43.3 49.1 38.3" fill="#ffd52e" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                  <line x1="41.5" y1="43.2" x2="50.5" y2="43.2" fill="none" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                  <polyline points="57 69 57 73 39 73 39 69" fill="#ffd52e" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                  <path d="m79,18c2.8,0,5,2.2,5,5v39c0,2.8-2.2,5-5,5H17c-2.8,0-5-2.2-5-5V23c0-2.8,2.2-5,5-5h62m0-3H17c-4.4,0-8,3.6-8,8v39c0,4.4,3.6,8,8,8h62c4.4,0,8-3.6,8-8V23c0-4.4-3.6-8-8-8h0Z" fill="#06c"/>
+                  <path d="m87.9,70.1h0m0,0c-.6,3.4-3.1,5.9-6,5.9H13.1c-2.9,0-5.4-2.5-6-5.9h80.8m0-3H7.1c-.9,0-1.7.4-2.3,1.1-.6.7-.8,1.6-.7,2.5.9,4.9,4.7,8.4,9,8.4h68.8c4.3,0,8-3.5,8.9-8.3.1-.2.1-.4.1-.7,0-1.7-1.3-3-3-3h0Zm0,6h0Z" fill="#06c"/>
+                  <line x1="48.5" y1="19.5" x2="48.5" y2="19.5" fill="none" stroke="#06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                </svg>
+            </div>
+            <div class="icon-row__stats">
+                <h2 class="icon-row__title icon-row__title--heavy">#3</h2>
+            </div>
+            <div class="icon-row__details">
+                <h3 class="icon-row__title icon-row__title--light">Point</h3>
+                <p class="icon-row__copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+
             </div>
         </div>
     </div>
 </div>
+
 <div class="content-row bg-umkc-gray">
-    <h2>Icon Row (4 Up)</h2>
-    <div class="icon-row icon-row--small-stats jc-evenly">
-        <div class="icon-row__group">
-            <div class="icon-row icon-row--small-stats jc-evenly">
-                <div class="icon-row__item icon-row__item--stats">
-                    <div class="icon-row__image">
-                        <img src="src\images\svg\computer-arrow.svg" class="icon-row__image--image" alt="">
-                    </div>
-                    <div class="icon-row__details">
-                        <a href="#" title="">
-                            <h3 class="icon-row__title icon-row__title--light">Point</h3>
-                        </a>
-                        <p class="icon-row__details--copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                    </div>
-                </div>
-                <div class="icon-row__item icon-row__item--stats">
-                    <div class="icon-row__image">
-                        <img src="src\images\svg\building-dormApartment.svg" class="icon-row__image--image" alt="">
-                    </div>
-                    <div class="icon-row__details">
-                        <a href="#" title="">
-                            <h3 class="icon-row__title icon-row__title--light">Point</h3>
-                        </a>
-                        <p class="icon-row__details--copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                    </div>
-                </div>
-                <div class="icon-row__item icon-row__item--stats">
-                    <div class="icon-row__image">
-                        <img src="src\images\svg\book-academicUnits.svg" class="icon-row__image--image" alt="">
-                    </div>
-                    <div class="icon-row__details">
-                        <a href="#" title="">
-                            <h3 class="icon-row__title icon-row__title--light">Point</h3>
-                        </a>
-                        <p class="icon-row__details--copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                    </div>
-                </div>
-                <div class="icon-row__item icon-row__item--stats">
-                    <div class="icon-row__image">
-                        <img src="src\images\svg\books-stacked.svg" class="icon-row__image--image" alt="">
-                    </div>
-                    <div class="icon-row__details">
-                        <a href="#" title="">
-                            <h3 class="icon-row__title icon-row__title--light">Point</h3>
-                        </a>
-                        <p class="icon-row__details--copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                    </div>
-                </div>
+    <div class="text-center">
+        <h2 id="directory">Icon Row (4 Up)</h2>
+        <p class="highlight">I am the directory row highlight text</p>
+    </div>
+    <div class="icon-row">
+        <div class="icon-row__item">
+            <div class="icon-row__image">
+                <img src="./assets/computer-arrow.03c173b7.svg" class="icon-row__icon" alt=""/>
+            </div>
+            <div class="icon-row__details">
+                <h3 class="icon-row__title icon-row__title--light">
+                    <a href="#" title="">Point</a>
+                </h3>
+                <p class="icon-row__copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+            </div>
+        </div>
+        <div class="icon-row__item">
+            <div class="icon-row__image">
+            <img src="./assets/building-dormApartment.561f1d6f.svg" class="icon-row__icon" alt="" /></div>
+            <div class="icon-row__details">
+                <h3 class="icon-row__title icon-row__title--light">Point</h3>
+                <p class="icon-row__copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+            </div>
+        </div>
+        <div class="icon-row__item">
+            <div class="icon-row__image">
+                <img src="./assets/book-academicUnits.e437cf9f.svg" class="icon-row__icon" alt="" />
+            </div>
+            <div class="icon-row__details">
+                <h3 class="icon-row__title icon-row__title--light">Point</h3>
+                <p class="icon-row__copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+            </div>
+        </div>
+        <div class="icon-row__item">
+            <div class="icon-row__image">
+                <img src="./assets/books-stacked.e767e393.svg" class="icon-row__icon" alt="" />
+            </div>
+            <div class="icon-row__details">
+                <h3 class="icon-row__title icon-row__title--light">Point</h3>
+                <p class="icon-row__copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
             </div>
         </div>
     </div>
-</div>		</div>
+</div>
+		</div>
 		<div id="standard-page" class="main-content">
 			<!-- Start of the Standard Page Layout -->
 			<div style="background: var(--umkc-blue); height: 8rem; margin: 2rem 0 0;"><h1 style="color: white; padding: var(--content-padding);">Start: Standard Page</h1></div>
@@ -1083,7 +1462,76 @@
     </li>
   </ul>
 </nav>
+			<div class="content-row">
+  <div class="profile">
+    <img src="https://picsum.photos/id/237/400/400" alt="" class="profile__img" />
+    <div class="profile__contact">
+      <h1 class="profile__title">Firstname Lastname <span class="profile__pronouns">(they/them)</span></h1>
+      <p>
+        <strong>Senior Job Title</strong> / <strong>Asst Other Title</strong><br />
+        <span class="profile__dept">Department of Awesomesauce / Department of Aeronautical Surgery</span>
+      </p>
+      <h2 class="profile__title profile__title--sub">Contact Details</h2>
+      <p><strong>Phone:</strong> (555) 555-5555 <br />
+      <strong>Email:</strong> lname@umkc.edu <br />
+      <strong>Office:</strong> 321 Bloch Hall</p>
+    </div>
+    <div class="profile__bio">
+      <div class="profile__biography">
+        <h2 class="profile__title profile__title--sub">About</h2>
+        <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium.</p>
+        <p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before. Many say exploration is part of our destiny, but it’s actually our duty to future generations and their quest to ensure the survival of the human species.</p>
+        <p>Bro ipsum dolor sit amet gaper backside single track, manny Bike epic clipless. Schraeder drop gondy, rail fatty slash gear jammer steeps clipless rip bowl couloir bomb hole berm. Huck cruiser crank endo, sucker hole piste ripping ACL huck greasy flow face plant pinner. Japan air Skate park big ring trucks shuttle stoked rock-ectomy.</p>
+      </div>
 
+      <div class="profile__lists">
+        <h2 class="profile__title profile__title--small">
+          Links
+        </h2>
+        <ul>
+          <li><a href="https://google.com">Google</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">GitHub</a></li>
+        </ul>
+        <h2 class="profile__title profile__title--small">
+          Expertise
+        </h2>
+        <ul>
+          <li>Internet of Things</li>
+          <li>Internet of Things</li>
+          <li>Internet of Things</li>
+        </ul>
+
+        <h2 class="profile__title profile__title--small">
+          Publications
+        </h2>
+        <ul>
+          <li>Internet of Things</li>
+          <li>Internet of Things</li>
+          <li>Internet of Things</li>
+        </ul>
+
+        <h2 class="profile__title profile__title--small">
+          Work History
+        </h2>
+        <ul>
+          <li>Internet of Things</li>
+          <li>Internet of Things</li>
+          <li>Internet of Things</li>
+        </ul>
+
+        <h2 class="profile__title profile__title--small">
+          Degrees
+        </h2>
+        <ul>
+          <li>Internet of Things</li>
+          <li>Internet of Things</li>
+          <li>Internet of Things</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 			<div class="content-row">
   <div class="standard">
     <div class="standard--nav">
@@ -1095,31 +1543,232 @@
       <nav id="site-menu" class="site-menu">
         <ul class="site-menu__list">
           <li class="site-menu__item">
-            <a class="site-menu__link" href="">Test</a>
-          </li>
-          <li class="site-menu__item site-menu__item--active">
-            <a class="site-menu__link" href="">Superlong navigation item name to try and get some wrapping</a>
-            <button class="o-btn site-menu__button" data-toggle=".site-menu__sub" aria-expanded="true">
-              <svg class="icon site-menu__icon site-menu__icon--right"><use xlink:href="#chevron-right"></use></svg>
-              <svg class="icon site-menu__icon site-menu__icon--down"><use xlink:href="#chevron-down"></use></svg>
-            </button>
-            <ul class="site-menu__sub" aria-hidden="false">
-              <li class="site-menu__item site-menu__item--active"><a class="site-menu__link" href="">Test</a></li>
-              <li class="site-menu__item"><a class="site-menu__link" href="">Test</a></li>
-              <li class="site-menu__item"><a class="site-menu__link" href="">Test</a></li>
+            <a class="site-menu__link" href="/entity/open.act?type=page&amp;id=cd2c840aac1e04cd16897cbc5ebb3d2c&amp;confId=c73cc616ac1e04cd58bb0af7fbfc9953" target="_parent">About Us</a>
+            <ul class="site-menu__sub">
+              <li class="site-menu__item">
+                <a class="site-menu__link" href="/entity/open.act?type=page&amp;id=cd432d9cac1e04cd16897cbc3419ca30&amp;confId=c73cc616ac1e04cd58bb0af7fbfc9953" target="_parent">Initiatives</a>
+                <ul class="site-menu__sub">
+                  <li class="site-menu__item">
+                    <a class="site-menu__link" href="/entity/open.act?type=page&amp;id=cd546c0bac1e04cd16897cbc6cccdf0d&amp;confId=c73cc616ac1e04cd58bb0af7fbfc9953" target="_parent">COACHE at UMKC</a>
+                    <ul class="site-menu__sub">
+                      <li class="site-menu__item">
+                        <a class="site-menu__link" href="/entity/open.act?type=page&amp;id=cd546c0bac1e04cd16897cbc6cccdf0d&amp;confId=c73cc616ac1e04cd58bb0af7fbfc9953" target="_parent">COACHE at UMKC</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="site-menu__item site-menu__item--active">
+                    <a class="site-menu__link" href="/entity/open.act?type=page&amp;id=ff6499f4ac1e04cd16897cbcc29a6412&amp;confId=c73cc616ac1e04cd58bb0af7fbfc9953" target="_parent">Archived Initiative – RooSTRONG</a>
+                  </li>
+                  <li class="site-menu__item">
+                    <a class="site-menu__link" href="/entity/open.act?type=page&amp;id=ff666490ac1e04cd16897cbc0631ba5c&amp;confId=c73cc616ac1e04cd58bb0af7fbfc9953" target="_parent">Archived Initiative – UMKC Essentials</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="site-menu__item">
+                <a class="site-menu__link" href="/entity/open.act?type=page&amp;id=cd3774f1ac1e04cd16897cbc0c637626&amp;confId=c73cc616ac1e04cd58bb0af7fbfc9953" target="_parent">Academic Affairs Leadership</a>
+              </li>
+              <li class="site-menu__item">
+                <a class="site-menu__link" href="/entity/open.act?type=page&amp;id=cd3d463aac1e04cd16897cbc05382449&amp;confId=c73cc616ac1e04cd58bb0af7fbfc9953" target="_parent">Council of Deans</a>
+              </li>
+              <li class="site-menu__item">
+                <a class="site-menu__link" href="/entity/open.act?type=page&amp;id=cd40eb3bac1e04cd16897cbc243d55cd&amp;confId=c73cc616ac1e04cd58bb0af7fbfc9953" target="_parent">Past Provosts</a>
+              </li>
+              <li class="site-menu__item">
+                <a class="site-menu__link" href="/entity/open.act?type=page&amp;id=cd48b997ac1e04cd16897cbc2ec6eb8d&amp;confId=c73cc616ac1e04cd58bb0af7fbfc9953" target="_parent">University Analytics and Institutional Effectiveness</a>
+              </li>
+              <li class="site-menu__item">
+                <a class="site-menu__link" href="/entity/open.act?type=page&amp;id=cd4bc984ac1e04cd16897cbc86b3b6d8&amp;confId=c73cc616ac1e04cd58bb0af7fbfc9953" target="_parent">Administrative Searches</a>
+              </li>
+              <li class="site-menu__item">
+                <a class="site-menu__link" href="/entity/open.act?type=page&amp;id=cd4d791eac1e04cd16897cbc198647b3&amp;confId=c73cc616ac1e04cd58bb0af7fbfc9953" target="_parent">Provost Communications</a>
+              </li>
             </ul>
-          </li>
-          <li class="site-menu__item">
-            <a class="site-menu__link" href="">Test</a>
-          </li>
-          <li class="site-menu__item">
-            <a class="site-menu__link" href="">Test</a>
           </li>
         </ul>
       </nav>
     </div>
+    <!-- <div class="toc">
+      <h2 class="toc__title">On this Page</h2>
+      <div class="js-toc">
+      </div>
+    </div> -->
     <div class="standard--content">
       <h1>I am the page title</h1>
+      <!-- <div class="glide">
+  <div class="glide__track" data-glide-el="track">
+    <div class="glide__slides">
+      <div class="glide__slide">
+        <div class="glide__item">
+          <img src="https://picsum.photos/id/237/1920/1080" class="glide__img" />
+          <div class="glide__content">
+            <h2 class="glide__title">I am title</h2>
+            <p>Lorem ipsum dolor amet mustache knausgaard +1, blue bottle waistcoat tbh semiotics artisan synth stumptown gastropub cornhole celiac swag. Brunch raclette vexillologist post-ironic glossier ennui XOXO mlkshk godard pour-over blog tumblr humblebrag. Blue bottle put a bird on it twee prism biodiesel brooklyn. Blue bottle ennui tbh succulents.</p>
+          </div>
+        </div>
+      </div>
+      <div class="glide__slide">
+        <div class="glide__item">
+          <img src="https://picsum.photos/id/237/1920/1080" class="glide__img" />
+            <div class="glide__content">
+              <h2 class="glide__title">I am title</h2>
+              <p>I am content. <a href="#">Link</a></p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="glide__arrows" data-glide-el="controls">
+    <button class="o-btn glide__arrow glide__arrow--left" data-glide-dir="<" aria-label="previous slide">
+      <svg class="icon glide__icon">
+        <use xlink:href="#chevron-left" />
+      </svg>
+    </button>
+    <button class="o-btn glide__arrow glide__arrow--right" data-glide-dir=">" aria-label="next slide">
+      <svg class="icon glide__icon">
+        <use xlink:href="#chevron-right" />
+      </svg>
+    </button>
+  </div>
+</div>
+ -->
+
+      <h2 id="search">Search</h2>
+      <form action="/search.html" class="ss">
+        <label class="ss__label sr-only" for="q">Search UMKC.edu:</label>
+        <input class="ss__input" type="search" name="q" />
+        <button class="o-btn button button--umkc-yellow ss__button">
+          <svg class="icon ss__icon">
+            <use xlink:href="#search"/>
+          </svg>
+        </button>
+      </form>
+      <script async src="https://cse.google.com/cse.js?cx=009448580219169355531:zaqt1kohfz5">
+      </script>
+      <div class="gcse-searchresults-only"></div>
+
+      <div class="resource">
+  <div class="resource__filters">
+    <h2 class="resource__title">Audience</h2>
+    <ul class="resource__filter nav--inline">
+      <li class="resource__item"><label class="resource__label"><input class="resource__checkbox" type="checkbox" data-filter="audience-test" />Test</label></li>
+      <li class="resource__item"><label class="resource__label"><input class="resource__checkbox" type="checkbox" />Test</label></li>
+      <li class="resource__item"><label class="resource__label"><input class="resource__checkbox" type="checkbox" />Test</label></li>
+    </ul>
+    <h2 class="resource__title">Another</h2>
+    <ul class="resource__filter nav--inline">
+      <li class="resource__item"><label class="resource__label"><input class="resource__checkbox" type="checkbox" data-filter="another-tag" />Tag</label></li>
+    </ul>
+  </div>
+  <div class="resource__card" data-filters="">
+    <h2 class="resource__title" id="sub-section-index">
+      <a href="/entity/open.act?type=page&amp;id=331b59eeac1e04cd27194b3db7dcae58&amp;confId=c73cc616ac1e04cd58bb0af7fbfc9953" target="_parent" class="">Sub-section Index</a>
+    </h2>
+    <p class="resource__description">I am a brief teaser of the content of this page.</p>
+    </div>
+  <div class="resource__card" data-filters="audience-test category-label">
+    <h2 class="resource__title" id="policy-listing">
+      <a href="/entity/open.act?type=page&amp;id=4da18353ac1e04cd27194b3d426e6945&amp;confId=4da857f5ac1e04cd27194b3d6935628d" target="_parent" class="">Policy Listing</a>
+    </h2>
+    <p class="resource__description">I am a brief teaser of the content of this page.</p>
+  </div>
+  <div class="resource__card" data-filters="another-tag">
+    <h2 class="resource__title" id="web-policy">
+      <a href="/entity/open.act?type=page&amp;id=00bb6360ac1e04cd16897cbc8abf543c&amp;confId=01dcefddac1e04cd16897cbccc1f6562" target="_parent" class="">Web Policy</a>
+  </h2>
+  <p class="resource__description">I am a brief teaser of the content of this page.</p>
+</div>
+  <div class="resource__card" data-filters="">
+    <h2 class="resource__title" id="committee-index">
+      <a href="/entity/open.act?type=page&amp;id=bef99882ac1e04cd71fdb91e30928479&amp;confId=befb8e5bac1e04cd71fdb91e33a0d40c" target="_parent" class="">Committee Index</a>
+    </h2>
+    <p class="resource__description">I am a brief teaser of the content of this page.</p>
+  </div>
+  <div class="resource__card" data-filters="Testing">
+    <h2 class="resource__title" id="sample-page">
+      <a href="/entity/open.act?type=page&amp;id=bef88f01ac1e04cd71fdb91e4b3dca00&amp;confId=befb474aac1e04cd71fdb91e98d637e8" target="_parent" class="">Sample Page</a>
+    </h2>
+    <p class="resource__description">I am a brief teaser of the content of this page.</p>
+  </div>
+  <div class="resource__card" data-filters="">
+    <h2 class="resource__title" id="standard-page">
+      <a href="/entity/open.act?type=page&amp;id=eb8a0325ac1e04cd3dfe9d7048810882&amp;confId=c73cc616ac1e04cd58bb0af7fbfc9953" target="_parent" class="">Standard Page</a>
+    </h2>
+    <p class="resource__description">I am a brief teaser of the content of this page.</p>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+      <div class="standard--content">
+        <hr />
+                      <h1>Academic Grievance</h1>
+      <p>The University of Missouri System’s academic grievance process outlined in Collected Rules and Regulations (CRR)&nbsp;<a href="https://www.umsystem.edu/ums/rules/collected_rules/grievance/ch370/370.010_Academic_Grievance_Procedure" rel="noopener" target="_blank" class="">370.010</a>, is the process available to members of the faculty as defined in <a href="https://www.umsystem.edu/ums/rules/collected_rules/faculty/ch310/310.020_Regulations_Governing_Application_of_Tenure" rel="noopener" target="_blank" class="">CRR 310.020.A</a>, including faculty who hold an administrative title or function for grievances relating to their status or activities as faculty members.</p>
+      <p>According to <a href="https://www.umsystem.edu/ums/rules/collected_rules/grievance/ch370/370.010_Academic_Grievance_Procedure" rel="noopener" target="_blank" class="">CRR 370.010</a>, a grievance is defined as an allegation that one or more of the following has occurred</p>
+      <ol style="list-style-type: lower-alpha;">
+      <li>There has been a violation, misinterpretation, or arbitrary application of written university rule, policy, regulation or procedure which applies personally to the faculty member, notwithstanding that it may apply to others within or without the grievant's unit, relating to the privileges, responsibilities, or terms and conditions of employment as a member of the faculty.</li>
+      <li>There has been an infringement on the academic freedom of the faculty member.</li>
+      </ol>
+      <h2><strong>Exceptions</strong></h2>
+      <ul>
+      <li>Former faculty members may only use this process to grieve the non-renewal of their employment.</li>
+      <li>This grievance procedure should not be used in connection with a matter relating to any administrative title or function which the faculty member currently holds or may also have had.</li>
+      <li>The grievance procedure should not be used in connection with a matter relating to a complaint of discrimination or harassment, including sexual harassment. Such complaints should be addressed in accordance with the applicable Title IX or Equity Resolution Process. Please contact UMKC’s <a href="https://info.umkc.edu/title9/equity/" rel="noopener" style="font-family: var(--roboto); font-size: 1rem;" target="_blank" class="">Office of Equity and Title IX</a><span style="font-family: var(--roboto); font-size: 1rem;"> for more information.</span></li>
+      </ul>
+      <h2>Academic Grievance Policy and Procedures: CRR 370.010</h2>
+      <p>Review the <a href="https://www.umsystem.edu/ums/rules/collected_rules/grievance/ch370/370.010_Academic_Grievance_Procedure" rel="noopener" target="_blank" class="">Academic Grievance policy (CRR 370.010)</a> in its entirety prior to filing your grievance. If you have questions regarding the process or policy, <a href="mailto:FacultyAffairs@umkc.edu?subject=Attn Diane Filion" rel="noopener" target="_blank" class="">email Faculty Affairs</a> attn: Diane Filion.</p>
+      <h3>Attempt to resolve</h3>
+      <p>Prior to filing a grievance, you must attempt to resolve your complaint with the parties involved. You must also provide documented evidence of your attempts at resolving the complaint with the appropriate administrators at all appropriate levels of your academic unit. This documented evidence is required in all grievance submissions. You may also contact the UMKC Faculty Ombudsperson for assistance in resolving your complaint.</p>
+      <h4>Submit grievance</h4>
+      <p>If, in your opinion, the complaint remains unresolved, download and complete the <a href="/renderfile/c81340b3ac1e04cd16897cbc1a6defa3/docs/grievance-filing-form.doc" rel="noopener" target="_blank">Grievance Filing form (doc)</a> and <a href="mailto:grp@umkc.edu" rel="noopener" target="_blank" class="">email the Grievance Resolution Panel</a> (GRP) within 180 days of the grievable offense. This form must be completed in its entirety, including policy references as required, or it will be rejected by the Grievance Resolution Panel (GRP) and returned to the grievant for completion and re-filing. <strong>All documentation relative to the grievance must be filed electronically via</strong> <a href="mailto:grp@umkc.edu" rel="noopener" target="_blank" class="">email to the GRP</a>&nbsp;(please utilize Box if the file size exceeds your email capacity).</p>
+      <p>Documentation and evidence provided to the GRP must be</p>
+      <ul>
+      <li>related directly to the complaints made in original grievance filing,</li>
+      <li>organized,</li>
+      <li>clearly identified, and</li>
+      <li>limited to relevant materials only.</li>
+      </ul>
+      <p>Documentation and evidence is shared with both parties at the discretion of the GRP, to allow for transparency of process while avoiding unnecessary escalation of the situation.</p>
+      <h3>Maintain confidentiality</h3>
+      <p>Once the grievance is filed, strict confidentiality is required of all parties and closely monitored by the GRP. Refer to <a href="https://www.umsystem.edu/ums/rules/collected_rules/grievance/ch370/370.010_Academic_Grievance_Procedure" rel="noopener" target="_blank" class="">CRR 370.010 Section C.12</a>.</p>
+      <h3>Review</h3>
+      <p>The GRP will take actions including:</p>
+      <ul>
+      <li>Review the grievance form and accompanying documentation to ensure all required components are present, and determine if the complaint is a grievable offense and appropriate for GRP involvement (on the UMKC campus the Affirmative Action Office investigates discrimination claims).</li>
+      <li>Begin its investigation of the complaint when all filing requirements have been met by the grievant.</li>
+      <li>Notify the respondent that a grievance has been filed against them, provide the respondent with the grievance filing form and accompanying documentation, and request a formal written response from the respondent to be submitted to the GRP within 15 days of notification. The response will be shared with the grievant.</li>
+      <li>Bring both the grievant and respondent together early in the process to attempt an informal resolution of the grievance.</li>
+      <li>Continue to collect evidence and interview relevant witnesses as needed to prepare their findings and recommendations to the chancellor.</li>
+      </ul>
+      <h3>New or additional complaints</h3>
+      <p>Should new offenses relative to the original complaint occur during the course of the investigation, the grievant must provide a written amendment to the GRP in compliance with all grievance filing requirements. Additional complaints may lengthen the investigation period beyond 90 days.</p>
+      <p>New accusations or complaints involving either party, which are unrelated to the originally filed complaints, will not be entertained by the GRP during the course of an active investigation. Such unrelated complaints must be submitted by the complainant as a new grievance, and will prompt a separate GRP case file and investigation if all filing requirements are met as described above.</p>
+      <h3>Preliminary findings&nbsp;</h3>
+      <p>Within 90 days of the original grievance filing date, the GRP will provide a draft of preliminary findings to the grievant and respondent for review and comment prior to submitting the final report to the chancellor.</p>
+      <h3>Report to chancellor</h3>
+      <p>The GRP will submit their final report to the chancellor and to all parties. The grievant and respondent have 15 days to appeal the GRP’s findings and recommendations to the chancellor, downloading and using the <a href="/renderfile/c81340b3ac1e04cd16897cbc1a6defa3/docs/grievance-appeal-form.doc" rel="noopener" target="_blank">Grievance Appeal form (doc)</a>.</p>
+      <p>The chancellor will inform all parties (grievant, respondent, GRP and OC representative) of the final decision within 30 days of receiving the GRP’s report, or within 30 days of receiving the most recent appeal, whichever date is later. The chancellor’s decision is final.</p>
+      <p>The grievant has 15 days to provide the chancellor with written acceptance of the final decision by downloading and using the <a href="/docs/grievance-acceptance-form.doc" rel="noopener" target="_blank">Grievance Acceptance form (doc)</a>.</p>
+      <h3>Forms</h3>
+      <p>Download and review the following forms</p>
+      <ul>
+      <li><a href="/renderfile/c81340b3ac1e04cd16897cbc1a6defa3/docs/grievance-filing-form.doc" rel="noopener" target="_blank">Grievance Filing form (doc)</a></li>
+      <li><a href="/renderfile/c81340b3ac1e04cd16897cbc1a6defa3/docs/grievance-appeal-form.doc" rel="noopener" target="_blank">Grievance Appeal form (doc)</a></li>
+      <li><a href="/renderfile/c81340b3ac1e04cd16897cbc1a6defa3/docs/grievance-acceptance-form.docx" rel="noopener" target="_blank" class="">Grievance Acceptance form (doc)</a></li>
+      </ul>
+          </div>
+
+
+
+
+
+
+
+
 
       <p class="highlight">I am a highlighted segment of content to help draw your attention.</p>
       <p>The purpose of this HTML is to help determine what default settings are with CSS and to make sure that all possible HTML Elements are included in this HTML so as to not miss any possible Elements when designing a site.</p>
@@ -1316,11 +1965,8 @@
         “This stylesheet is going to help so freaking much.”
       <cite>Blockquote</cite></blockquote>
     </div>
-    <div class="js-toc">
-    </div>
   </div>
 </div>
-
 			<div style="background: var(--umkc-blue); height: 8rem; margin: 2rem 0 0;"><h1 style="color: white; padding: var(--content-padding);">Start: Utilities</h1></div>
 			<div class="content-row">
 				<h2>Button Classes</h2>
@@ -1405,14 +2051,7 @@
 		<div class="menu">
 			<ul class="menu__list" id="menu" role="menubar" >
 				<li class="menu__item" role="menuitem" aria-haspopup="true">
-					<a href="#" class="menu__link" data-toggle="#main-navigation">
-						<svg class="icon menu__icon"><use xlink:href="#menu"></use></svg>
-						<svg class="icon menu__icon menu__icon--close"><use xlink:href="#close"></use></svg>
-						Menu
-					</a>
-				</li>
-				<li class="menu__item" role="menuitem" aria-haspopup="true">
-					<a href="#" class="menu__link" data-toggle=".search">
+					<a href="#" class="menu__link" data-toggle=".search" data-focus=".search input">
 						<svg class="icon menu__icon menu__icon--search"><use xlink:href="#search"></use></svg>
 						<svg class="icon menu__icon menu__icon--close"><use xlink:href="#close"></use></svg>
 						Search
@@ -1422,6 +2061,13 @@
 					<a href="#" class="menu__link">
 						<svg class="icon menu__icon"><use xlink:href="#apply"></use></svg>
 						Apply
+					</a>
+				</li>
+				<li class="menu__item" role="menuitem" aria-haspopup="true">
+					<a href="#" class="menu__link menu__link--large" data-toggle="#main-navigation">
+						<svg class="icon menu__icon"><use xlink:href="#menu"></use></svg>
+						<svg class="icon menu__icon menu__icon--close"><use xlink:href="#close"></use></svg>
+						<span class="sr-only">Menu</span>
 					</a>
 				</li>
 				<li class="menu__item" role="menuitem">
@@ -1675,6 +2321,13 @@
   </div>
 </footer>
 		
-
+		<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+		<script>
+		window.addEventListener('load', function () {
+			if ( document.querySelectorAll(".glide").length >= 1 ){
+				new Glide('.glide').mount()
+			}
+		})
+		</script>
   </body>
 </html>
