@@ -7,7 +7,6 @@
 @use "content";
 @use "icons";
 @use "calendar";
-@use "image";
 @use "hr";
 @use "lists";
 @use "table";
@@ -16,5 +15,10 @@
 @use "box-grid";
 @use "alert";
 @use "teaser";
-@use "../../../node_modules/tocbot/src/scss/tocbot";
 @use "toc";
+@use "vertical-image";
+@use "accordion";
+@use "directory";
+@use "image";
+@use "resource";
+@use "profile";

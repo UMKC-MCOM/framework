@@ -16,11 +16,13 @@ function makeIds () { // eslint-disable-line
     }
   })
 }
-if ( document.getElementById('standard-page') !== null ) {
+if ( document.querySelector('.standard--content') !== null && document.querySelector('.js-toc') !== null ) {
   makeIds()
   tocbot.init({
     tocSelector: '.js-toc',
     contentSelector: '.standard--content',
     headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    collapseDepth: 0
   })
 }

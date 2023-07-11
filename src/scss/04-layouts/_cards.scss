@@ -31,9 +31,10 @@
   &__item {
     display: flex;
     flex-direction: column;
-    margin: 1rem;
+    margin: 1rem 0;
     @container cards ( min-width: 600px ) {
       flex-basis: calc( (100% / 2) - 2rem);
+      margin: 1rem;
     }
     @container cards (min-width: 900px) {
       flex-basis: calc( (100% / 3) - 2rem);
@@ -43,49 +44,43 @@
     }
 
     &--centered {
-      text-align: center;
-    }
-
-    &:not(:last-child) {
-      @include mx.for-size("tablet-landscape-up") {
-        // margin-right: 2.5rem;
-      }
+      // text-align: center;
     }
   }
 
   &__content {
     padding: 1.5rem;
+    display: flex;
+    flex-flow: column;
+    // justify-content: center;
+    // align-content: stretch;
 
     .button {
       margin-top: 1rem;
     }
 
-    .link {
-      display: inline-flex;
-      flex-direction: column;
-      align-items: center;
-      a{
-        margin: 0.5rem 0 0;
+    @include mx.for-size("tablet-landscape-up") {
+      p:has(a) {
+        // justify-self: flex-end;
+      }
+    }
+  }
+
+  .link {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    a{
+      margin: 0.5rem 0 0;
+      &.button {
+        align-self: center;
       }
     }
   }
 
   &__title {
-    --heading-margin: 0;
+    --heading-margin: 1.5rem 0;
     --heading-size: #{mx.px-to-rem(30px)};
     --heading-color: var(--umkc-blue);
-  }
-
-  &__link {
-    font-weight: 700;
-    color: var(--umkc-blue);
-
-    @include mx.tr("background");
-
-    &:hover,
-    &:focus,
-    &:active {
-      color: var(--umkc-dark-blue);
-    }
   }
 }

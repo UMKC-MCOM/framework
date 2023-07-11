@@ -11,8 +11,12 @@
 			{{> hero }}
 			<!-- Breadcrumbs -->
 			{{> breadcrumbs }}
+			{{> ks/teaser }}
 			<!-- Local Site Alerts -->
 			{{> ks/alert bgColor=""}}
+
+			<!-- Program Finder -->
+			{{> ks/program-finder }}
 
 			<!-- Benefits Lists -->
 			{{> ks/blp }}
@@ -52,7 +56,22 @@
 			{{> ks/calendar }}
 
 			{{> ks/storytelling }}
-			<!-- {{> ks/icons }} -->
+
+			{{> ks/vertical-image }}
+
+			{{> ks/resource-list }}
+
+			{{> ks/accordion }}
+
+			<div class="content-row">
+				{{> ks/gallery }}
+			</div>
+
+			<div class="content-row">
+				{{> ks/gallery-slider }}
+			</div>
+
+			{{> ks/directory }}
 
 			<!-- Icon Row -->
 			{{> ks/icon-row }}
@@ -62,9 +81,8 @@
 			<div style="background: var(--umkc-blue); height: 8rem; margin: 2rem 0 0;"><h1 style="color: white; padding: var(--content-padding);">Start: Standard Page</h1></div>
 			{{> hero standard="true" }}
 			{{> breadcrumbs }}
-
+			{{> ks/profile }}
 			{{> ks/standard }}
-
 			<div style="background: var(--umkc-blue); height: 8rem; margin: 2rem 0 0;"><h1 style="color: white; padding: var(--content-padding);">Start: Utilities</h1></div>
 			<div class="content-row">
 				<h2>Button Classes</h2>
@@ -83,14 +101,7 @@
 		<div class="menu">
 			<ul class="menu__list" id="menu" role="menubar" >
 				<li class="menu__item" role="menuitem" aria-haspopup="true">
-					<a href="#" class="menu__link" data-toggle="#main-navigation">
-						<svg class="icon menu__icon"><use xlink:href="#menu"></use></svg>
-						<svg class="icon menu__icon menu__icon--close"><use xlink:href="#close"></use></svg>
-						Menu
-					</a>
-				</li>
-				<li class="menu__item" role="menuitem" aria-haspopup="true">
-					<a href="#" class="menu__link" data-toggle=".search">
+					<a href="#" class="menu__link" data-toggle=".search" data-focus=".search input">
 						<svg class="icon menu__icon menu__icon--search"><use xlink:href="#search"></use></svg>
 						<svg class="icon menu__icon menu__icon--close"><use xlink:href="#close"></use></svg>
 						Search
@@ -100,6 +111,13 @@
 					<a href="#" class="menu__link">
 						<svg class="icon menu__icon"><use xlink:href="#apply"></use></svg>
 						Apply
+					</a>
+				</li>
+				<li class="menu__item" role="menuitem" aria-haspopup="true">
+					<a href="#" class="menu__link menu__link--large" data-toggle="#main-navigation">
+						<svg class="icon menu__icon"><use xlink:href="#menu"></use></svg>
+						<svg class="icon menu__icon menu__icon--close"><use xlink:href="#close"></use></svg>
+						<span class="sr-only">Menu</span>
 					</a>
 				</li>
 				<li class="menu__item" role="menuitem">
@@ -118,6 +136,13 @@
 		</div>
 		{{> footer }}
 		<script type="module" src="./main.js"></script>
-
+		<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+		<script>
+		window.addEventListener('load', function () {
+			if ( document.querySelectorAll(".glide").length >= 1 ){
+				new Glide('.glide').mount()
+			}
+		})
+		</script>
   </body>
 </html>
