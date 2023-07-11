@@ -16,3 +16,26 @@
     --alert-color: #339900;
   }
 }
+
+.site-alert {
+  padding: 1.25rem var(--content-padding);
+  border-top: solid mx.px-to-rem(12px) var(--umkc-blue);
+  border-bottom: solid mx.px-to-rem(6px) var(--umkc-yellow);
+  background: var(--umkc-yellow);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  &__icon {
+    float: left;
+    height: mx.px-to-rem(30px);
+    width: mx.px-to-rem(30px);
+    margin-right: 1rem;
+    @include mx.for-size("tablet-landscape-up") {
+      height: mx.px-to-rem(40px);
+      width: mx.px-to-rem(40px);
+    }
+  }
+
+  &__content {
+  }
+}
