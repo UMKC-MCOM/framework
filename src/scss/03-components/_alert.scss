@@ -39,3 +39,26 @@
   &__content {
   }
 }
+
+.gdpr {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+
+  position: sticky;
+  bottom: 0;
+  background: var(--white);
+  border-top: solid mx.px-to-rem(8px) var(--umkc-blue);
+  padding: 1rem var(--content-padding);
+  box-shadow: 0 0 1rem 0 rgba(0,0,0,0.75);
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .button {
+      margin: 0.75rem;
+    }
+  }
+}
