@@ -2,10 +2,10 @@
 
 .standard:has(.js-toc) {
   .standard--content{
-    --content-width: calc(100% - ( 25% + 20% ));
     order: 3;
 
     @include mx.for-size("tablet-landscape-up") {
+      --content-width: calc(100% - ( 25% + 20% ));
       order: 2;
     }
   }
