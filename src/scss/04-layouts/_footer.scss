@@ -5,6 +5,7 @@
   --logo-height: #{mx.px-to-rem(100px)};
   color: var(--white);
   font-weight: 300;
+
   nav {
     ul {
       margin: 0;
@@ -65,6 +66,7 @@
     }
   }
   &__mid {
+    @include mx.font-size(20px);
     padding: var(--content-padding);
   }
   @include mx.for-size("tablet-portrait-up") {
@@ -201,6 +203,10 @@
       @include mx.for-size("tablet-landscape-up") {
         @include mx.font-size(20px);
       }
+
+      li {
+        margin-bottom: 0.35rem;
+      }
     }
   }
   &__curator {
@@ -247,7 +253,9 @@
     flex: 1;
   }
   &__icon {
-    height: 29px;
+    --icon-size: #{mx.px-to-rem(29px)};
+    height: var(--icon-size);
+    width: var(--icon-size);
     color: var(--umkc-light-blue);
   }
 }
