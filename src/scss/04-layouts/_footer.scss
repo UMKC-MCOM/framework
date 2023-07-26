@@ -39,7 +39,6 @@
     justify-content: center;
   }
 
-  &__mid,
   &__bottom {
     padding-bottom: 2rem;
     padding-top: 1rem;
@@ -48,8 +47,7 @@
     @include mx.for-size("tablet-portrait-up") {
       /* styleling-disable selector-class-pattern */
       .logo,
-      .footer__nav,
-      .footer__info {
+      .footer__nav {
         flex-basis: 50%;
       }
       /* stylelint-enable */
@@ -60,17 +58,20 @@
 
       /* stylelint-disable selector-class-pattern */
       .logo,
-      .footer__nav,
-      .footer__info {
+      .footer__nav {
         flex-basis: 25%;
       }
       /* stylelint-enable */
     }
   }
-
+  &__mid {
+    padding: var(--content-padding);
+  }
   @include mx.for-size("tablet-portrait-up") {
     &__mid {
+      display: flex;
       flex-flow: row wrap;
+      padding: var(--content-padding);
     }
 
     &__bottom {
@@ -79,26 +80,39 @@
   }
 
   &__info {
-    @include mx.for-size("tablet-portrait-up"){
-      align-self: flex-end;
+    @include mx.for-size("tablet-portrait-up") {
+      flex-basis: calc(100% - 16rem - var(--content-padding));
+      border-right: solid var(--umkc-light-blue) 2px;
+      padding-right: var(--content-padding);
+    }
+    @include mx.for-size("tablet-landscape-up") {
+      border-right: solid var(--umkc-light-blue) 2px;
+      flex-basis: calc(100% - 14rem - var(--content-padding));
+      padding-right: var(--content-padding);
+    }
+
+    @include mx.for-size("desktop-up") {
+      border-right: solid var(--umkc-light-blue) 2px;
+      flex-basis: calc(100% - 432px - var(--content-padding));
+      padding-right: var(--content-padding);
     }
   }
 
   &__title {
-    flex-basis: 50%;
+    font-family: var(--os);
+    text-transform: uppercase;
+    @include mx.font-size(20px, 1.25);
 
     @include mx.for-size("tablet-portrait-up"){
-      align-self: center;
+      @include mx.font-size(24px, 1.25);
     }
 
-    @include mx.for-size("desktop-up"){
-      flex-basis: 60%;
+    @include mx.for-size("tablet-landscape-up"){
+      @include mx.font-size(36px, 1.25);
     }
-
   }
 
-  &__nav,
-  &__info {
+  &__nav {
     --button-size: #{mx.px-to-rem(18px)};
     --button-weight: 400;
 
@@ -111,10 +125,15 @@
     }
 
     &--title {
+      font-family: var(--os);
+      text-transform: uppercase;
       font-weight: bold;
       margin-bottom: 0.675rem;
+      @include mx.font-size(20px);
 
-      @include mx.font-size(24px);
+      @include mx.for-size("tablet-landscape-up"){
+        @include mx.font-size(24px);
+      }
     }
 
     &--bold {
@@ -129,9 +148,27 @@
     }
 
     &--social {
-      flex-basis: 50% !important;
+      --social-icon: 3.5rem;
+      align-items: center;
+      margin: 2rem 0;
+      align-self: flex-start;
       @include mx.for-size("desktop-up"){
-        flex-basis: 40% !important;
+        align-self: flex-start;
+      }
+
+      .social__link {
+        border: solid 1px rgba(0,0,0,0.25);
+        background: rgba(0,0,0,0.25);
+        display: block;
+        @include mx.tr;
+        margin-top: 0.25rem;
+        &:hover,
+        &:focus,
+        &:active {
+          background: var(--umkc-yellow);
+          border-color: var(--umkc-yellow);
+          color: var(--umkc-dark-blue);
+        }
       }
     }
 
@@ -150,7 +187,22 @@
       }
     }
   }
+  &__links {
+    align-self: center;
+    flex: 1;
+    justify-content: center;
+    padding: calc(var(--content-padding) * 2) 0 0;
 
+    @include mx.for-size("tablet-portrait-up") {
+      padding: var(--content-padding);
+    }
+    .footer__nav {
+      padding-top: 1.5rem;
+      @include mx.for-size("tablet-landscape-up") {
+        @include mx.font-size(20px);
+      }
+    }
+  }
   &__curator {
     flex-wrap: wrap;
     padding-bottom: 6rem;
@@ -180,4 +232,34 @@
       }
     }
   }
+  &__items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+    @include mx.for-size("tablet-landscape-up"){
+      flex-direction: row;
+    }
+  }
+  &__item {
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1;
+  }
+  &__icon {
+    height: 29px;
+    color: var(--umkc-light-blue);
+  }
 }
+
+.container {
+  display: grid;
+  grid-template-columns: 29px max-content;
+  grid-template-rows: 1fr;
+  column-gap: mx.px-to-rem(32px);
+  margin-top: mx.px-to-rem(24px);
+  grid-template-areas:
+    "Icon Content";
+}
+.Icon { grid-area: Icon; }
+.Content { grid-area: Content; }
