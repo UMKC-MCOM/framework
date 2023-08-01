@@ -21,8 +21,8 @@ if ( document.querySelector('.standard--content') !== null && document.querySele
   tocbot.init({
     tocSelector: '.js-toc',
     contentSelector: '.standard--content',
-    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    headingSelector: 'h2, h3, h4, h5, h6',
     hasInnerContainers: true,
-    collapseDepth: 0
+    collapseDepth: 2
   })
 }
