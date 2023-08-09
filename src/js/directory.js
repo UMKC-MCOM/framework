@@ -14,7 +14,9 @@ const showProfiles = async() => {
 }
 showProfiles();
 
-search_input.addEventListener('input', e => {
-  search_term = e.target.value;
-  showProfiles();
-});
+if ( search_input !== null ) {
+  search_input.addEventListener('input', e => {
+    search_term = e.target.value;
+    showProfiles();
+  });
+}
