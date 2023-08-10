@@ -1,6 +1,7 @@
 @use "../01-abstracts/mixins" as mx;
 
 .form {
+  margin-bottom: 1rem;
   &__text,
   &__select {
     border: solid mx.px-to-rem(1px) #DEDEDF;
@@ -38,6 +39,19 @@
   &__label {
     display: block;
     padding: 1rem 0 0.25rem;
+  }
+
+  &__flex {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    @include mx.for-size("tablet-landscape-up") {
+      flex-direction: row;
+    }
+  }
+  &__group {
+    margin-right: 2rem;
   }
 }
 

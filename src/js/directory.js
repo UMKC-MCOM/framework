@@ -1,22 +1,31 @@
+const directory = document.querySelector(".directory");
+const search_form = document.getElementById("directory_search");
 const search_input = document.getElementById("dirSearch");
+const search_cat = document.getElementById("dirSearchCat");
 const profiles = document.querySelectorAll(".directory__item");
-const results = document.querySelectorAll(".directory");
+const errorMessage = document.createElement("div");
+    errorMessage.classList = ("alert alert--info");
+    errorMessage.innerHTML = `<p>No results for your search term(s).</p>`;
 
-let search_term = '';
-const showProfiles = async() => {
-  if ( search_term.length >= 3 ) {
+const showProfiles = async(term, category) => {
+  errorMessage.remove();
+  [...profiles].forEach( profile => profile.classList.remove('hidden'))
+  if ( term.length >= 3 || category ) {
     [...profiles]
-      .filter( profile => !profile.textContent.toLowerCase().includes(search_term.toLowerCase()) )
-      .forEach( profile => profile.classList.add('hidden') )
-  } else {
-    [...profiles].forEach( profile => profile.classList.remove('hidden'))
+      .filter(profile => !profile.dataset.filter.toLowerCase().includes(category.toLowerCase()) || !profile.textContent.toLowerCase().includes(term.toLowerCase()) )
+      .forEach( profile => {
+        profile.classList.add('hidden') } )
+    let results = document.querySelectorAll(".directory__item.hidden");
+    if ( results.length == profiles.length ){
+      directory.appendChild(errorMessage);
+    }
   }
 }
-showProfiles();
 
-if ( search_input !== null ) {
-  search_input.addEventListener('input', e => {
-    search_term = e.target.value;
-    showProfiles();
+if ( search_form !== null ) {
+  search_form.addEventListener("input", e => {
+    let search_t = search_input.value;
+    let search_c = search_cat.value;
+    showProfiles(search_t, search_c);
   });
 }
