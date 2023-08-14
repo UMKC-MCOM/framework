@@ -16,3 +16,55 @@
     --alert-color: #339900;
   }
 }
+
+.site-alert {
+  padding: 1.25rem var(--content-padding);
+  border-top: solid mx.px-to-rem(12px) var(--umkc-blue);
+  border-bottom: solid mx.px-to-rem(6px) var(--umkc-yellow);
+  background: var(--umkc-yellow);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  &__icon {
+    flex-basis: mx.px-to-rem(30px);
+    float: left;
+    height: mx.px-to-rem(30px);
+    width: mx.px-to-rem(30px);
+    margin-right: 1rem;
+    @include mx.for-size("tablet-landscape-up") {
+      flex-basis: mx.px-to-rem(40px);
+      height: mx.px-to-rem(40px);
+      width: mx.px-to-rem(40px);
+    }
+  }
+  &__title {
+    @include mx.font-size(24px,1);
+    margin: 0 0 0.5rem;
+  }
+  &__content {
+    flex: 1 1;
+  }
+}
+
+.gdpr {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+
+  position: sticky;
+  bottom: 0;
+  background: var(--white);
+  border-top: solid mx.px-to-rem(8px) var(--umkc-blue);
+  padding: 1rem var(--content-padding);
+  box-shadow: 0 0 1rem 0 rgba(0,0,0,0.75);
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .button {
+      margin: 0.75rem;
+    }
+  }
+}
