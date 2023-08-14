@@ -3,7 +3,6 @@ const search_form = document.getElementById("directory_search");
 const search_input = document.getElementById("dirSearch");
 const search_cat = document.getElementById("dirSearchCat");
 const profiles = document.querySelectorAll(".di__item:not(.di__item--header)");
-console.log(profiles);
 const errorMessage = document.createElement("div");
     errorMessage.classList = ("alert alert--info");
     errorMessage.innerHTML = `<p>No results for your search term(s).</p>`;
