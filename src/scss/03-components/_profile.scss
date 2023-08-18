@@ -1,21 +1,34 @@
 @use "../01-abstracts/mixins" as mx;
 
 .profile {
-
+  padding: 1rem 0;
   @include mx.for-size("tablet-landscape-up"){
     display: grid;
     grid-auto-columns: 1fr;
-    grid-template-columns: 1fr 350px;
-    grid-template-rows: fit-content 1fr;
-    gap: 0px 64px;
-    grid-template-areas:
-      "contact img"
-      "bio bio";
+    grid-template-columns: 2fr 1fr;
+    gap: 0 64px;
+    grid-template-areas: "contact img";
+    position: relative;
   }
 
+  @include mx.for-size("desktop-up"){
+    grid-template-columns: 1fr 1fr;
+    padding: mx.px-to-rem(125px) 0 0;
+    min-height: mx.px-to-rem(415px);
+  }
 
-
-  &__contact { grid-area: contact; align-self: center; }
+  &__contact {
+    --heading-color: var(--white);
+    --link-color: var(--white);
+    color: white;
+    grid-area: contact;
+    @include mx.for-size("tablet-portrait-up") {
+      align-self: center;
+    }
+    @include mx.for-size("desktop-up"){
+      align-self: flex-end;
+    }
+   }
 
   &__title {
     @include mx.font-size(38px);
@@ -28,6 +41,9 @@
     position: relative;
     padding-bottom: 0.5rem;
     &:not(.profile__title--sub) {
+      text-transform: uppercase;
+      letter-spacing: 1.15px;
+      font-family: var(--os);
       &::after {
         display: block;
         height: mx.px-to-rem(3px);
@@ -51,15 +67,35 @@
   }
 
   &__img {
-    margin-bottom: 2rem;
+    // margin-bottom: 2rem;
     grid-area: img;
     aspect-ratio: 1/1;
+    height: mx.px-to-rem(240px);
+    width: mx.px-to-rem(240px);
+    margin: 1rem 0 2rem;
+    z-index: 1;
+
+    @include mx.for-size("tablet-portrait-up"){
+      height: mx.px-to-rem(300px);
+      width: mx.px-to-rem(300px);
+      align-self: flex-end;
+      justify-self: center;
+    }
+    @include mx.for-size("desktop-up"){
+      height: mx.px-to-rem(415px);
+      width: mx.px-to-rem(415px);
+      position: absolute;
+      bottom: -7rem;
+    }
   }
 
   &__pronouns {
-    color: var(--font-color);
     @include mx.font-size(20px);
+    text-transform: none;
     display: block;
+    @include mx.for-size("tablet-landscape-up") {
+      display: inline-block;
+    }
   }
   &__method {
     font-family: var(--os);

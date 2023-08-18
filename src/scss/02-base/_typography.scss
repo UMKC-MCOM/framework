@@ -10,7 +10,7 @@ html {
 
 body {
   color: #333;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--body);
   font-weight: 400;
 
   @include mx.font-size(16px);
