@@ -2,7 +2,11 @@
 @use "../01-abstracts/mixins" as mx;
 
 .header {
-  padding: 0.75rem var(--global-padding);
+  --hPadding: var(--content-padding);
+  padding: 0.75rem var(--hPadding);
+  @include mx.for-size("tablet-portrait-up") {
+    --hPadding: var(--global-padding);
+  }
 
   &--white {
     --background: var(--white);
@@ -12,22 +16,29 @@
     --search-bg: #e5eef5;
   }
 
+  &--navy {
+    --background: var(--umkc-dark-blue);
+    --logo-color: var(--white);
+  }
+
   a {
-    color: var(--white);
+    color: var(--link-color, var(--white));
     text-decoration: none;
   }
 
   &--secondary {
     background: var(--background, var(--umkc-blue));
     display: flex;
+    flex-flow: row wrap;
     justify-content: center;
-    align-items: stretch;
-    padding: var(--global-padding);
+    align-items: flex-end;
+    padding: var(--global-padding) var(--hPadding);
     border-bottom: solid mx.px-to-rem(3px) var(--umkc-yellow);
 
     @include mx.for-size("tablet-landscape-up") {
       justify-content: flex-start;
     }
+
   }
 }
 
@@ -44,21 +55,42 @@
 }
 
 .dept-header {
-  display: none;
-  margin-bottom: 0.2rem;
+  @include mx.for-size("phone-only") {
+    padding: var(--global-padding) var(--hPadding);
+    padding-bottom: 0;
+    text-align: center;
+  }
   padding-left: var(--global-padding);
-  border-left: solid 2px var(--text-color, var(--white));
 
   @include mx.for-size("tablet-landscape-up") {
     display: flex;
-    margin-top: 2.25rem;
+    position: relative;
+
+    &:before {
+      display: block;
+      align-self: stretch;
+      background: var(--text-color, var(--white));
+      content: " ";
+      width: mx.px-to-rem(2px);
+      position: absolute;
+      height: mx.px-to-rem(60px);
+      left: 0;
+      bottom: 0;
+    }
   }
 
   &__title {
     align-self: flex-end;
     color: var(--text-color, var(--white));
-
-    @include mx.font-size(34px);
+    padding: 0;
+    margin: 0;
+    @include mx.font-size(34px, 1);
+    a {
+      display: inline-block;
+    }
+    &--sm {
+      @include mx.font-size(28px, 1);
+    }
   }
 
   &__sub {
@@ -70,29 +102,48 @@
 
 .search {
   margin-left: auto;
-  display: none;
-
-  @include mx.for-size("tablet-landscape-up") {
-    display: flex;
-    align-self: flex-end;
+  display: flex;
+  position: fixed;
+  bottom: mx.px-to-rem(84px);
+  left: 0;
+  box-shadow: 0 0 25px 0px #000;
+  z-index: 2;
+  padding: 1rem 0;
+  background: var(--umkc-blue);
+  width: 100%;
+  justify-content: center;
+  align-content: center;
+  visibility: hidden;
+  transition: all 150ms linear;
+  transform: translateY(100%);
+  &[aria-hidden="false"]{
+    visibility: visible;
+    transform: translateY(0%);
+  }
+  @include mx.for-size("desktop-up") {
+    background: none;
+    position: static;
+    box-shadow: none;
+    width: auto;
+    justify-content: flex-end;
+    visibility: visible;
+    transform: translateY(0);
   }
 
   input {
-    background: var(--search-bg, rgb(255 255 255 / 15%));
+    background: var(--search-bg, var(--white));
     border: none;
     border-radius: mx.px-to-rem(7px) 0  0 mx.px-to-rem(7px);
 
     @include mx.font-size(16px);
 
+    margin: 0;
     padding: 0.25rem 0.5rem;
-    height: 42px;
-
-    @include mx.tr;
-
-    &:focus,
-    &:active {
-      background: white;
+    width: 75vw;
+    @include mx.for-size("desktop-up"){
+      width: unset;
     }
+    height: 42px;
   }
 
   button {
@@ -101,10 +152,12 @@
     background: var(--umkc-yellow);
     padding: 0.5rem;
     height: 42px;
-    margin-left: -0.5rem;
-
+    @include mx.tr(all);
+    &:hover, &:focus, &:active {
+      background: var(--umkc-dark-blue);
+      color: var(--white);
+    }
     svg {
-      transform: rotate(90deg);
       height: mx.px-to-rem(24px);
       width: mx.px-to-rem(24px);
     }

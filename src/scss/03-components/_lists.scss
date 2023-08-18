@@ -1,0 +1,55 @@
+@use "../01-abstracts/mixins" as mx;
+
+ul, ol {
+  padding: mx.px-to-rem(8px) mx.px-to-rem(24px);
+  margin-left: mx.px-to-rem(24px);
+
+  &.col {
+    &--2 {
+      columns: 2;
+    }
+    &--3 {
+      @include mx.for-size("tablet-portrait-up") {
+        columns: 2;
+      }
+      @include mx.for-size("tablet-landscape-up") {
+        columns: 3;
+      }
+    }
+
+    &--4 {
+      @include mx.for-size("tablet-portrait-up") {
+        columns: 2;
+      }
+      @include mx.for-size("tablet-landscape-up") {
+        columns: 4;
+      }
+    }
+  }
+}
+
+ol{
+  ol{
+    list-style-type: lower-alpha;
+
+    ol{
+      list-style-type: lower-roman;
+    }
+  }
+}
+
+dl {
+
+  dt {
+    font-weight: bold;
+  }
+  dd {
+    margin:0 mx.px-to-rem(24px);
+    &:after {
+      content: "";
+      display: block;
+      margin: mx.px-to-rem(8px) calc(mx.px-to-rem(24px) * -1);
+      border-bottom: solid mx.px-to-rem(3px) var(--umkc-gray);
+    }
+  }
+}

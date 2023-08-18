@@ -1,31 +1,133 @@
 @use "../01-abstracts/mixins" as mx;
 
 .hero {
+  --heading-color: var(--white);
+  $self: &;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-color: black;
-  background-image: linear-gradient(0deg, rgb(0 0 0 / 75%) 0%, rgb(0 0 0 / 0%) 100%), url("/src/images/hero__admissions.webp");
   display: flex;
   align-items: flex-end;
-  padding: var(--global-padding);
   height: var(--hero-height, #{mx.px-to-rem(500px)});
-
   @include mx.for-size("tablet-landscape-up") {
-    background-image: url("/src/images/hero__admissions.webp");
+    --hero-title: #{mx.px-to-rem(60px)};
   }
-
   &__content {
+    background-image: linear-gradient(0deg, rgb(0 0 0 / 75%) 0%, rgb(0 0 0 / 0%) 100%);
+    width: 100%;
+    position: relative;
+    padding: var(--content-padding);
     color: var(--white);
+    z-index: 0;
   }
 
   &__title {
     text-shadow: 0.125rem 0.125rem 0.125rem rgb(0 0 0 / 25%);
+    font-size: var(--hero-title, #{mx.px-to-rem(48px)});
+  }
+  &--standard{
+    --hero-height: #{mx.px-to-rem(250px)};
+    --hero-title: #{mx.px-to-rem(48px)} !important;
+  }
 
-    // @include mx.font-size(35px, auto);
+  &--video {
+    --hero-height: 690px;
+    position: relative;
+  }
+
+  &__video {
+    // actual code for the video HTML5 element, buttons, etc.
+    display: none;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
 
     @include mx.for-size("tablet-landscape-up") {
-      @include mx.font-size(60px, auto);
+      display: block;
+    }
+  }
+
+  &__buttons {
+    position: absolute;
+    display: none;
+    right: 0.25rem;
+    bottom: 0.5rem;
+    @include mx.for-size("tablet-landscape-up") {
+      bottom: var(--content-padding);
+      right: var(--content-padding);
+
+      &--visible{
+        display: flex;
+      }
+    }
+  }
+
+  &__button {
+    background: #4d4d4d;
+    color: white;
+    border-radius: 100%;
+    height: 48px;
+    width: 48px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0.25rem;
+
+    &--toggle {
+      &[aria-expanded="false"] {
+        #{$self}__icon {
+          &:first-of-type{
+            display: block;
+          }
+        }
+      }
+      &[aria-expanded="true"] {
+        #{$self}__icon {
+          &:last-of-type{
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  &__description {
+    background: black;
+
+    border-radius: 0.25rem;
+    color: white;
+    padding: 0.25rem 1rem 0;
+    position: absolute;
+    margin: var(--content-padding);
+    opacity: 1;
+    bottom: 0;
+    @include mx.tr(opacity);
+    &[aria-hidden="true"] {
+      opacity: 0;
+    }
+
+    @include mx.for-size("tablet-landscape-up") {
+      margin: 0;
+      bottom: 7rem;
+      right: var(--content-padding);
+      width: 400px;
+    }
+  }
+
+  &__icon {
+    height: mx.px-to-rem(28px);
+    width:  mx.px-to-rem(28px);
+    display: none;
+    &--info {
+      height:  mx.px-to-rem(24px);
+      width:  mx.px-to-rem(24px);
+      padding:  mx.px-to-rem(4px);
+    }
+    &--active {
+      display: block;
     }
   }
 }

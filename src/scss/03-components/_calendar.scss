@@ -1,0 +1,52 @@
+@use "../01-abstracts/variables" as var;
+@use "../01-abstracts/mixins" as mx;
+@use "../01-abstracts/flexbox" as fx;
+
+.calendar-date {
+	--header-color: var(--umkc-blue);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+
+	@include mx.for-size("desktop-up") {
+		flex-direction: row;
+	}
+
+	&__container {
+		display: flex;
+		justify-content: flex-start;
+		margin-top: 1rem;
+
+		@include mx.for-size("desktop-up") {
+			flex-basis: calc(100% / 3);
+			&:not(:nth-child(3n)) {
+				margin-right: 1.5rem;
+			}
+		}
+	}
+
+	&__square {
+		align-items: center;
+		border-radius: 0.5rem;
+		display: flex;
+		flex: 0 0 mx.px-to-rem(150px);
+		@include mx.font-size(24px, 1.25);
+		font-weight: 700;
+		justify-content: center;
+		margin-right: mx.px-to-rem(32px);
+		padding: mx.px-to-rem(16px);
+		text-align: center;
+	}
+
+	&__description {
+		font-weight: 500;
+	}
+
+	&__time {
+		font-weight: 500;
+	}
+
+	&__button {
+		margin-top: 3rem;
+	}
+}

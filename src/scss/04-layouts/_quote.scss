@@ -1,0 +1,86 @@
+@use "../01-abstracts/mixins" as mx;
+
+.quote {
+  $self: &;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+
+  @include mx.for-size("tablet-landscape-up") {
+    padding: 4rem var(--content-padding);
+  }
+  &--single {
+    justify-content: center;
+    #{$self}__item {
+      display: block;
+      @include mx.for-size("tablet-landscape-up") {
+        flex: 0 1 #{mx.px-to-rem(777px)};
+      }
+    }
+    #{$self}__title {
+      --heading-color: var(--font-color);
+    }
+    #{$self}__blockquote {
+      @include mx.font-size(30px);
+
+      margin: 1.5rem 0;
+      padding: 0 1rem;
+    }
+  }
+
+  &__icon {
+    color: var(--umkc-blue);
+
+    @include mx.font-size(90px, 1);
+
+    font-family: Times, serif;
+    font-weight: 700;
+    display: block;
+  }
+
+  &__blockquote {
+    color: var(--font-color);
+
+    @include mx.font-size(18px, 1.5);
+
+    margin: 0 0 2rem;
+  }
+
+  &__item {
+    text-align: center;
+    display: none;
+
+    @include mx.for-size("tablet-landscape-up"){
+      display: block;
+      flex-basis: calc(100% / 3);
+    }
+  }
+
+  &__title {
+    --heading-size: #{mx.px-to-rem(20px)};
+  }
+
+  &__bullets {
+    text-align: center;
+    display: block;
+    @include mx.for-size("tablet-landscape-up") {
+      display: none;
+    }
+  }
+
+  &__bullet {
+    background: var(--umkc-blue);
+    height: 2.25rem;
+    width: 2.25rem;
+    border-radius: 100%;
+    margin: 0.25rem;
+
+    &--active {
+      background: var(--umkc-dark-blue);
+    }
+  }
+  img {
+    height: #{mx.px-to-rem(150px)};
+    width: #{mx.px-to-rem(150px)};
+  }
+}

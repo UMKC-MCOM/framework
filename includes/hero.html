@@ -1,7 +1,70 @@
+{{#if video }}
+<div class="hero hero--video">
+  <video id="hero-video" class="hero__video" autoplay="" muted="" loop="" playsinline="">
+    <source data-src="https://www.umkc.edu/videos/Home-hero-loops/october-2022-homepage-hero-loop.mp4" type="video/mp4">
+  </video>
+  <div class="hero__content">
+    <h1 class="hero__title">Health Equity Institute</h1>
+    <p>The UMKC Conservatory is internationally recognized as a center for artistic excellence and innovation. Learn from the best.</p>
+    <p><a href="#" class="button button--umkc-yellow">Virtual Visit Options</a></p>
+  </div>
+  <div class="hero__description" aria-hidden="true">
+    <p>Video has no audio. Scene 1: students talking on patio at Student Union; Scene 2: Blue skies outside Student Union; Scene 3: Student with goggles on in AR/VR lab; Scene 4: Snow on top of the bronze Kangaroo statue; Scene 5: Student dentist in dental simulation lab; Scene 6: Student in cap and gown walking across the stage to receive his diploma at Commencement; Scene 7: Confetti raining down on UMKC grads at Commencement inside T-Mobile Center; Mobile static image: Snow on the bronze Roo statue on Volker Campus.</p>
+  </div>
+  <div class="hero__buttons">
+    <button class="o-btn hero__button hero__button--toggle" data-toggle=".hero__description" aria-expanded="false">
+      <span class="sr-only">Text description of the video</span>
+      <svg class="icon hero__icon hero__icon--info" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+         viewBox="0 0 6.8 18.2" xml:space="preserve">
+         <path d="M0.1,16.2l1.7-0.4V7.9L0,7.5V5.4h5.2v10.3l1.6,0.4v2.1H0.1C0.1,18.2,0.1,16.2,0.1,16.2z M5.2,2.5H1.8V0h3.4V2.5z"/>
+      </svg>
+      <svg class="icon hero__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <button class="o-btn hero__button hero__video--toggle" data-video=".hero__video" aria-controls="hero-video">
+        <span class="sr-only">Pause Video</span>
+        <svg class="icon hero__icon hero__icon--pause hero__icon--active" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+          <path fill-rule="evenodd" d="M6.75 5.25a.75.75 0 01.75-.75H9a.75.75 0 01.75.75v13.5a.75.75 0 01-.75.75H7.5a.75.75 0 01-.75-.75V5.25zm7.5 0A.75.75 0 0115 4.5h1.5a.75.75 0 01.75.75v13.5a.75.75 0 01-.75.75H15a.75.75 0 01-.75-.75V5.25z" clip-rule="evenodd" />
+      </svg>
+
+      <svg class="icon hero__icon hero__icon--play" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+          <path fill-rule="evenodd" d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z" clip-rule="evenodd" />
+      </svg>
+
+      </button>
+  </div>
+</div>
+{{else if standard }}
+<div class="hero hero--standard">
+  <div class="hero__content">
+  </div>
+</div>
+{{ else if profile }}
+<div class="content-row bg-umkc-navy">
+  <div class="profile">
+    <img src="https://picsum.photos/id/237/400/400" alt="" class="profile__img img--round" />
+    <div class="profile__contact">
+      <h1 class="profile__title">Jennifer Lundgren <span class="profile__pronouns">(they/them)</span></h1>
+      <p class="profile__dept">
+        Senior Job Title / Asst Other Title<br />
+        Department of Awesomesauce / Department of Aeronautical Surgery
+      </p>
+      <ul class="profile__method">
+        <li>lname@umkc.edu
+        </li>
+        <li><a href="tel:+15555555555">(555) 555-5555</a></li>
+        <li>321 Bloch Hall</li>
+      </ul>
+    </div>
+  </div>
+</div>
+{{ else }}
 <div class="hero">
   <div class="hero__content">
     <h1 class="hero__title">Health Equity Institute</h1>
     <p>The UMKC Conservatory is internationally recognized as a center for artistic excellence and innovation. Learn from the best.</p>
-    <p><a href="#" class="button button--white button--outline button--arrow">Virtual Visit Options</a></p>
+    <p><a href="#" class="button button--umkc-yellow">Virtual Visit Options</a></p>
   </div>
 </div>
+{{/if}}

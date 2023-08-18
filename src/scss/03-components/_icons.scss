@@ -4,6 +4,7 @@ a > * {
 }
 
 .social {
+  --icon-size: var(--social-icon, 4rem);
   &__link {
     color: var(--white);
 
@@ -14,7 +15,7 @@ a > * {
   }
 
   &__icon {
-    height: 4rem;
-    width: 4rem;
+    height: var(--icon-size);
+    width:  var(--icon-size);
   }
 }

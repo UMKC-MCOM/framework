@@ -1,0 +1,8 @@
+@use "../01-abstracts/mixins" as mx;
+
+hr {
+  height: mx.px-to-rem(3px);
+  background: var(--umkc-gray);
+  border: none;
+  margin: 1.5rem 0;
+}

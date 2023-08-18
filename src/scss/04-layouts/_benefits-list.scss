@@ -1,0 +1,124 @@
+@use "../01-abstracts/mixins" as mx;
+.benefits-list {
+  $self: &;
+
+  display: flex;
+  flex-flow: column;
+  margin-top: 1.5rem;
+
+  @include mx.for-size("tablet-landscape-up") {
+    justify-content: space-around;
+    flex-flow: row wrap;
+    align-items: center;
+
+    &__image {
+      margin-right: 4rem;
+      flex: 0 1;
+      height: #{mx.px-to-rem(535px)};
+      width: #{mx.px-to-rem(448px)};
+      object-fit: cover;
+    }
+  }
+
+  &--stats {
+    @include mx.for-size("tablet-landscape-up") {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__group {
+    @include mx.for-size("tablet-landscape-up") {
+      padding-right: 1.5rem;
+      flex: 1 0;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 1.5rem;
+
+    &--stats {
+      flex-flow: column;
+      margin: 1.5rem;
+      flex: 0 0 calc(50% - 3rem);
+      @include mx.for-size("desktop-up") {
+        flex: 0 0 calc(33% - 3rem);
+      }
+    }
+  }
+
+  &__cta {
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  &__title {
+    --heading-margin: 0;
+
+    line-height: 1;
+
+    &--heavy {
+      --heading-size: #{mx.px-to-rem(90px)};
+    }
+
+    &--light {
+      --heading-color: var(--black);
+      --heading-size: #{mx.px-to-rem(24px)};
+    }
+  }
+
+  &__icon {
+    background: var(--umkc-blue);
+    content: "";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height: mx.px-to-rem(58px);
+    width: mx.px-to-rem(58px);
+    flex-shrink: 0;
+    border-radius: 100%;
+    margin-right: 2rem;
+
+    @include mx.font-size(32px, 1);
+
+    font-family: var(--roboto);
+    font-weight: 700;
+
+    &--flame {
+      color: white;
+      position: relative;
+
+      .icon {
+        // Height:Width Ratio is 1.1919
+        --width: 2.75rem;
+        --height: calc(var(--width) * 1.1919);
+
+        position: absolute;
+        bottom: -#{mx.px-to-rem(0.95px)};
+        right: 0;
+        height: var(--height);
+        width: var(--width);
+      }
+    }
+  }
+
+  &__stats {
+    @include mx.font-size(56px);
+    font-weight: 700;
+    font-family: var(--roboto);
+    color: var(--umkc-blue);
+    margin-right: 2rem;
+  }
+
+  &--small-stats {
+    margin-top: 0;
+    flex-wrap: wrap;
+    #{$self}__item--stats {
+      align-items: center;
+      text-align: center;
+    }
+  }
+}

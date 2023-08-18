@@ -1,0 +1,43 @@
+@use "../01-abstracts/mixins" as mx;
+
+table {
+  border-collapse: collapse;
+  margin: mx.px-to-rem(24px) 0;
+
+  caption {
+    caption-side: top;
+    font-weight: bold;
+    padding: 0.75rem 0;
+    text-align: center;
+  }
+
+  th {
+    background: var(--umkc-blue);
+    color: var(--white);
+    text-align: left;
+  }
+  th, td{
+    text-align: left;
+    padding: 0.675rem;
+    border: solid mx.px-to-rem(1.5px) #e8e8e8;
+  }
+  td {
+    // border: solid mx.px-to-rem(2px) #f0f0f0;
+  }
+
+  tr:nth-of-type(odd){
+    background: var(--umkc-gray);
+  }
+}
+
+// For better responsive tables
+.resp-table {
+  cursor: ew-resize;
+  overflow-x: scroll;
+  white-space: nowrap;
+  @container ( min-width: #{mx.px-to-rem(600px)} ) {
+    overflow-x: unset;
+    white-space: normal;
+    cursor: unset;
+  }
+}

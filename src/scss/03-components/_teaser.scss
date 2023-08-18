@@ -1,0 +1,25 @@
+@use "../01-abstracts/mixins" as mx;
+
+.teaser {
+  font-family: var(--slab);
+  color: var(--umkc-dark-blue);
+  margin: var(--content-padding) var(--content-padding) var(--teaser-margin, 0);
+  font-weight: 300;
+  @include mx.font-size(24px, 1.5);
+
+  @include mx.for-size("desktop-up") {
+    @include mx.font-size(28px, 1.5);
+  }
+
+  + .bg-umkc-gray,
+  + .bg-umkc-blue,
+  + .box-grid,
+  + .st,
+  + .vertical-image {
+      margin-top: var(--content-padding);
+  }
+
+  +.pwb {
+    margin-top: mx.px-to-rem(80px);
+  }
+}

@@ -1,0 +1,94 @@
+@use "../01-abstracts/mixins" as mx;
+
+.icl {
+  $self: &;
+
+  padding: var(--content-padding);
+
+  --heading-color: var(--umkc-blue);
+  --highlight-color: var(--umkc-dark-blue);
+
+  &--blue {
+    --heading-color: var(--white);
+    --highlight-color: var(--white);
+    --link-color: var(--white);
+    color: var(--white);
+  }
+
+  &__image {
+    width: #{mx.px-to-rem(577px)};
+    max-width: 100%;
+    @include mx.for-size("tablet-landscape-up"){
+      padding-right: 4rem;
+    }
+  }
+  &__content {
+    flex-grow: 1;
+  }
+  &__row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: var(--content-padding) 0;
+    text-align: center;
+    justify-content: center;
+
+    @include mx.for-size("tablet-landscape-up") {
+      justify-content: space-between;
+      text-align: left;
+      flex-wrap: nowrap;
+      margin: var(--content-padding) auto;
+      &--reverse {
+        flex-flow: row-reverse;
+
+        #{$self}__image {
+            padding-right: 0;
+            padding-left: 4rem;
+        }
+      }
+    }
+
+    @include mx.for-size("desktop-up") {
+      max-width: 80vw;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: var(--umkc-blue);
+    &:hover, &:active, &:focus{
+      color: var(--umkc-dark-blue);
+    }
+  }
+  &--stacked {
+    display: flex;
+    flex-direction: column;
+    @include mx.for-size("tablet-landscape-up") {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+
+    }
+    #{$self}__title {
+      --heading-size: #{mx.px-to-rem(24px)};
+      flex: 1 0 100%;
+    }
+
+    #{$self}__row {
+      @include mx.for-size("tablet-landscape-up"){
+        flex-basis: calc(100% / 3 - 2rem);
+        flex-direction: column;
+        margin: 0;
+        padding: 1rem;
+      }
+    }
+
+    #{$self}__content {
+      align-self: flex-start;
+    }
+
+    #{$self}__image {
+      padding: 0;
+    }
+  }
+}

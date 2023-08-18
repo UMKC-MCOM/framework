@@ -1,0 +1,48 @@
+@use "../01-abstracts/mixins" as mx;
+
+.resource {
+  display: flex;
+  flex-flow: row wrap;
+  container-type: inline-size;
+  &__filters {
+    flex: 1 0 100%;
+  }
+
+  &__filter {
+    margin-bottom: 1rem;
+  }
+
+  &__item {
+    @container (min-width: 800px) {
+      &:not(:first-child) {
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  &__card {
+    border: solid mx.px-to-rem(2px) var(--umkc-gray);
+    padding: 1.5rem;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+    flex: 0 0 calc(50% - 1rem);
+    transition: all 500ms ease;
+    @container (min-width: 800px) {
+      flex: 0 0 calc(33% - 1rem);
+    }
+
+  }
+
+  &__checkbox {
+    margin-right: 0.5rem;
+  }
+
+  &__title {
+    --heading-margin: 0 0 0.5rem;
+    --heading-size: #{mx.px-to-rem(18px)} !important;
+  }
+
+  &__description {
+
+  }
+}

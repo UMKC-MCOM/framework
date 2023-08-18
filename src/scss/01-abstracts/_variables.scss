@@ -26,15 +26,18 @@ $theme-colors: (
   "black": #000,
   "font-color": #4d4d4d,
   "umkc-gray": #f6f6f6,
-  "umkc-blue": #06c,
+  "umkc-blue": #0066cc,
   "umkc-dark-blue": #04487f,
-  "umkc-light-blue": #3f95db,
-  "umkc-yellow": #ffd52f
+  "umkc-navy": #0d273d,
+  "umkc-light-blue": #7acbf2,
+  "umkc-yellow": #ffdd00,
+  "umkc-orange": #faa61c,
 );
 
 // Font Names for the font family
 $font-names: (
-  "roboto": "'Roboto', sans-serif",
-  "condense": "'Roboto Condensed', sans-serif",
-  "slab" : "'Roboto Slab', sans-serif"
+  "os": "'Oswald', sans-serif",
+  "roboto": "'Roboto', Helvetica, Arial, sans-serif",
+  "pf": "'Playfair Display', serif",
+  "body": "'Helvetica Neue', 'Roboto', Helvetica, Arial, sans-serif"
 );

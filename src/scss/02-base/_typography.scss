@@ -2,31 +2,61 @@
 mx.$base-font-size: 16px;
 
 // Imports of Google Fonts
-@import "https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto+Slab:300,400,700|Roboto:300,400,700&display=swap";
-
+// @import "https://fonts.googleapis.com/css?|family=Roboto+Condensed:300,400,700|Roboto+Slab:300,400,700|Roboto:400,700&display=swap";
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Playfair+Display:wght@400;500&family=Roboto:wght@400;700&display=swap');
 html {
   font-size: 16px;
 }
 
 body {
   color: #333;
-  font-family: var(--roboto);
-  font-weight: 300;
+  font-family: var(--body);
+  font-weight: 400;
 
   @include mx.font-size(16px);
 }
 
-h1,
+h1{
+  font-family: var(--roboto);
+  font-weight: 700;
+}
+
 h2,
+h3,
 h4,
 h5,
 h6 {
   font-family: var(--roboto);
+  font-weight: 700;
   margin: 0;
 }
 
+h2 {
+  --heading-size: #{mx.px-to-rem(42px)};
+  @include mx.for-size("tablet-landscape-up"){
+    --heading-size: #{mx.px-to-rem(56px)};
+  }
+}
+
 h3 {
-  font-family: var(--condensed);
+  --heading-size: #{mx.px-to-rem(32px)};
+  @include mx.for-size("tablet-landscape-up"){
+    --heading-size: #{mx.px-to-rem(36px)};
+  }
+}
+
+h4 {
+  @include mx.for-size("tablet-landscape-up"){
+    --heading-size: #{mx.px-to-rem(28px)};
+  }
+}
+
+h5 {
+    --heading-size: #{mx.px-to-rem(24px)};
+}
+
+h6 {
+  --heading-size: #{mx.px-to-rem(18px)};
 }
 
 p,
@@ -36,9 +66,21 @@ ol {
   padding: 0;
 }
 
-a,
-button {
-  &:focus {
-    outline: mx.px-to-rem(2px) dotted var(--umkc-yellow);
+blockquote:not([class]) {
+  border-left: solid var(--umkc-blue) mx.px-to-rem(8px);
+  margin: 0;
+  padding:1.75rem 3rem;
+  @include mx.font-size(24px);
+  background: var(--umkc-gray);
+
+  cite {
+    display: block;
+    &:before {
+      content: "- ";
+    }
   }
+}
+
+strong {
+  font-weight: 700;
 }

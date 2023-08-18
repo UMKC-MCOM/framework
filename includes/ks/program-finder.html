@@ -1,0 +1,111 @@
+<div class="content-row">
+    <div class="program-finder">
+        <h2 class="program-finder__title">Find Your Program</h2>
+        <p class="highlight program-finder__highlight">Ignite new interests, strengthen your talents and start your path to a rewarding career at Kansas City's only public urban research university.</p>
+        <div class="program-finder__form-wrapper">
+            <!-- Current Program Finder -->
+            <form action="https://programs.umkc.edu/s/search.html"
+                  class="program-finder__module-search"
+                  method="GET"
+                  role="search">
+                <div class="module-search__group">
+                    <input aria-labelledby="fb-query"
+                           aria-required="true"
+                           autocomplete="off"
+                           class="module-search__query tt-input"
+                           dir="auto"
+                           id="query"
+                           name="query"
+                           placeholder="Start your search here..."
+                           spellcheck="false"
+                           type="Search query" />
+                    <pre aria-hidden="true"
+                         style="position: absolute;
+                         visibility: hidden;
+                         white-space: pre;
+                         font-family: Roboto, serif;
+                         font-size: 22px;
+                         font-style: normal;
+                         font-variant: normal;
+                         font-weight: 300;
+                         word-spacing: 0px;
+                         letter-spacing: 0px;
+                         text-indent: 0px;
+                         text-rendering: auto;
+                         text-transform: none;">
+                    </pre>
+                    <div class="tt-menu"
+                         style="position: absolute;
+                         top: 100%;
+                         left: 0px;
+                         z-index: 100;
+                         display: none;">
+                        <div class="tt-dataset tt-dataset-organic"></div>
+                    </div>
+                    <button class="button button--umkc-yellow module-search__button" type="submit">
+                        <svg class="icon"><use xlink:href="#search"></use></svg>
+                        <span class="sr-only">Search</span>
+                    </button>
+                </div>
+
+                <input name="collection" type="hidden" value="umkc-program-finder">
+                <input name="profile" type="hidden" value="_default">
+
+                <div class="module-search__additional-links">
+                    <a class="module-search__additional-links--button button button--umkc-yellow"
+                       role="button"
+                       tabindex="0"
+                       href="https://programs.umkc.edu/"
+                       title="All Programs">All Programs</a>
+                    <a class="module-search__additional-links--button button button--umkc-yellow"
+                       role="button"
+                       tabindex="0"
+                       href="https://futureroo.umkc.edu/apply/"
+                       title="Apply Now">Apply Now</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js" integrity="sha512-qOBWNAMfkz+vXXgbh0Wz7qYSLZp6c14R0bZeVX2TdQxWpuKr6yHjBIM69fcF8Ve4GUX6B6AKRQJqiiAmwvmUmQ==" crossorigin="anonymous"></script>
+<!-- Funnelback handlebars asset -->
+<script crossorigin="anonymous" integrity="sha512-zT3zHcFYbQwjHdKjCu6OMmETx8fJA9S7E6W7kBeFxultf75OPTYUJigEKX58qgyQMi1m1EgenfjMXlRZG8BXaw==" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+
+<!-- Funnelback auto-complete -->
+<script src="https://programs.umkc.edu/s/resources/umkc-program-finder/_default/js/funnelback.autocompletion-2.6.0.stencils.js"></script>
+
+<!-- programs.AutoCompleteTemplate -->
+<script id="auto-completion-programs" type="text/x-handlebar-template">
+        <div class="module-search__list-item">
+            <a class="module-search__list-link" href="{{indexUrl}}" style="background-image: url('{{extra.disp.metaData.programImage}}');">
+                <span class="module-search__list-text">
+                    {{extra.disp.title}}
+                    <!-- "Learn More" Disabled -->
+                    <!--<span class="module-search__list-more">Learn More</span>-->
+                </span>
+            </a>
+        </div>
+</script>
+
+<script>window.addEventListener("DOMContentLoaded", function() {
+    jQuery('#query').autocompletion({
+        program: 'https://programs.umkc.edu/s/suggest.json',
+        alpha: '0.5',
+        show: '10',
+        sort: '0',
+        length: '3',
+        classes: {
+            dataset: "module-search__item",
+        },
+        datasets:{
+            organic: {
+                name: 'Suggestions',
+                collection: 'umkc-program-finder',
+                profile: '_default',
+                show: '8',
+            }
+        }
+    });
+});</script>

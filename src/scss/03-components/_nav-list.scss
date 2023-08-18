@@ -1,7 +1,29 @@
+@use "../01-abstracts/mixins" as mx;
+
 .nav {
   &--inline {
+    margin: 0;
+    padding: 0;
     li {
       display: inline-block;
+    }
+  }
+  &--resource {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+
+    @include mx.for-size("tablet-landscape-up") {
+      flex-flow: row wrap;
+    }
+    li {
+      flex-basis: calc(100% / 3);
+      padding: 0.5rem 1rem;
+    }
+
+    .button {
+      display: block;
+      text-align: center;
     }
   }
 }

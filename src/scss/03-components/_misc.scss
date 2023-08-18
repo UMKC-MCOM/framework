@@ -1,0 +1,6 @@
+// Prevent the pre element from breaking the overall layout
+pre{
+  overflow: auto;
+  max-width: 100%;
+  white-space: pre-wrap;
+}

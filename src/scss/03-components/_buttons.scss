@@ -3,7 +3,8 @@
 
 .button {
   @include mx.button-colors(var.$theme-colors);
-
+  --btn-arrow: var(--btn--text);
+  --arrow-margin: 0.75rem;
   background: var(--btn-bg);
   color: var(--btn-text);
   border: solid mx.px-to-rem(1px) transparent;
@@ -18,16 +19,14 @@
   &:hover,
   &:focus,
   &:active {
+    --btn-arrow: var(--btn-hover-text);
     background-color: var(--btn-hover);
     color: var(--btn-hover-text);
   }
 
   &--cta {
     --arrow-size: 1.5rem;
-
     @include mx.font-size(24px);
-
-    padding: 1rem 3.75rem;
   }
 
   &--lg {
@@ -89,6 +88,15 @@
       border-color: var(--btn-bg);
       background: var(--btn-bg);
       color: var(--btn-text);
+    }
+  }
+
+  &--hover-yellow {
+    &:hover,
+    &:focus,
+    &:active {
+      --btn-bg: var(--umkc-yellow);
+      --btn-text: var(--umkc-dark-blue);
     }
   }
 
