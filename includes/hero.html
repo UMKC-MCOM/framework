@@ -40,6 +40,25 @@
   <div class="hero__content">
   </div>
 </div>
+{{ else if profile }}
+<div class="content-row bg-umkc-navy">
+  <div class="profile">
+    <img src="https://picsum.photos/id/237/400/400" alt="" class="profile__img img--round" />
+    <div class="profile__contact">
+      <h1 class="profile__title">Jennifer Lundgren <span class="profile__pronouns">(they/them)</span></h1>
+      <p class="profile__dept">
+        Senior Job Title / Asst Other Title<br />
+        Department of Awesomesauce / Department of Aeronautical Surgery
+      </p>
+      <ul class="profile__method">
+        <li>lname@umkc.edu
+        </li>
+        <li><a href="tel:+15555555555">(555) 555-5555</a></li>
+        <li>321 Bloch Hall</li>
+      </ul>
+    </div>
+  </div>
+</div>
 {{ else }}
 <div class="hero">
   <div class="hero__content">

@@ -1,0 +1,83 @@
+// OrgChart Styles
+@use "../01-abstracts/mixins" as mx;
+.oc {
+  &__item {
+      --line-height: #{mx.px-to-rem(10px)};
+      --line-width: #{mx.px-to-rem(3px)};
+
+      margin: 2.5rem 0 0 mx.px-to-rem(64px);
+      position: relative;
+    @include mx.for-size("tablet-landscape-up") {
+      --line-height: #{mx.px-to-rem(40px)};
+      --line-width: #{mx.px-to-rem(3px)};
+
+      display: grid;
+      margin: 2.5rem 0 0 mx.px-to-rem(174px);
+      grid-auto-columns: 1fr;
+      grid-template-columns: mx.px-to-rem(220px) 1fr;
+      gap: 0 mx.px-to-rem(46px);
+      grid-template-areas:
+        "image content";
+    }
+
+    &:not(.oc__item--lead) {
+      &::before {
+        content: "";
+        position: absolute;
+        top: calc(var(--line-height)* -1);
+        left: mx.px-to-rem(-64px);
+        width: mx.px-to-rem(3px);
+        height: calc(100% + mx.px-to-rem(40px));
+        background: var(--umkc-blue);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: calc(mx.px-to-rem(110px) + 1rem);
+        left: -32px;
+        transform: translate(-100%, -50%);
+        width: mx.px-to-rem(32px);
+        height: var(--line-width);
+        background: var(--umkc-blue);
+        @include mx.for-size("tablet-landscape-up"){
+          top: mx.px-to-rem(110px);
+        }
+      }
+    }
+
+    &--last {
+      &::before {
+        height: calc(110px + 1.75rem) !important;
+        @include mx.for-size("tablet-landscape-up"){
+          height: calc(110px + 2.5rem) !important;
+        }
+      }
+    }
+    &--lead {
+      margin: 0 0;
+    }
+  }
+
+  &__image {
+    grid-area: image;
+    margin-bottom: 1rem;
+    @include mx.for-size("tablet-landscape-up"){
+      margin-bottom: 0;
+    }
+
+  }
+
+  &__content {
+    grid-area: content;
+  }
+  &__name {
+    @include mx.font-size(20px);
+  }
+
+  &__title {
+    font-weight: 600;
+    display: block;
+    margin-top: 0.25rem;
+  }
+}
