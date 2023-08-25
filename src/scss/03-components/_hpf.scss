@@ -1,0 +1,70 @@
+// Homepage Feature
+@use "../01-abstracts/mixins" as mx;
+.hpf {
+  @include mx.for-size("tablet-landscape-up"){
+    display: flex;
+    margin-left: 10%;
+    margin-top: -75px;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+}
+.hpf__stat-group {
+  position: relative;
+}
+.hpf__stat {
+  color: var(--umkc-yellow);
+  display: inline-block;
+  font-family: var(--pf);
+  font-size: 100px;
+  margin-left: 1.25rem;
+  z-index: 1;
+  margin-bottom: 1rem;
+  @include mx.for-size("tablet-landscape-up"){
+    margin-bottom: 0;
+  }
+}
+.hpf__stat-icon {
+  color: var(--umkc-yellow);
+  height: 50px;
+  display: inline-block;
+  margin-top: -2.75rem;
+}
+.hpf__content {
+  color: var(--umkc-yellow);
+  font-size: 30px;
+  line-height: 1.25;
+  br {
+    display: none;
+  }
+  @include mx.for-size("tablet-landscape-up"){
+    padding: 0 0 1rem 3rem;
+    br { display: block; }
+  }
+}
+.hpf__icon {
+  position: absolute;
+  stroke-dasharray: 1740;
+  stroke-dashoffset: 1740;
+  pointer-events: none;
+  width: 227px;
+  z-index: -1;
+  left: -16px;
+}
+.hpf__icon .mask {
+  fill: none;
+  stroke: white;
+}
+.hpf #circle {
+  fill: #06c;
+}
+.hpf .aos-animate #circle-mask {
+  animation: draw 500ms linear 500ms forwards;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

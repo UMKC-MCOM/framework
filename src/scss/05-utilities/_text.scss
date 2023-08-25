@@ -2,4 +2,13 @@
   &-center {
     text-align: center;
   }
+  &--os {
+    font-family: var(--os);
+  }
+  &--pf {
+    font-family: var(--pf);
+  }
+  &--upper {
+    text-transform: uppercase;
+  }
 }

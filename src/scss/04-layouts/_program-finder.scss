@@ -103,6 +103,10 @@
         .module-search__additional-links {
             text-align: center;
             margin: 2em auto;
+
+            &--button {
+                margin: 1rem;
+            }
         }
     }
 }

@@ -8,7 +8,7 @@
   --heading-color: var(--umkc-blue);
   --highlight-color: var(--umkc-dark-blue);
 
-  &--blue {
+  &--blue, &--navy {
     --heading-color: var(--white);
     --highlight-color: var(--white);
     --link-color: var(--white);
@@ -55,11 +55,12 @@
 
   &__link {
     text-decoration: none;
-    color: var(--umkc-blue);
+    color: var(--link-color, var(--umkc-blue));
     &:hover, &:active, &:focus{
-      color: var(--umkc-dark-blue);
+      color: var(--link-hover-color, var(--umkc-dark-blue));
     }
   }
+
   &--stacked {
     display: flex;
     flex-direction: column;

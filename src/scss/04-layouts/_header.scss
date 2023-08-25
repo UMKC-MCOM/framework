@@ -26,6 +26,15 @@
     text-decoration: none;
   }
 
+  &--primary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    @include mx.for-size("tablet-landscape-up") {
+      flex-direction: row;
+    }
+  }
   &--secondary {
     background: var(--background, var(--umkc-blue));
     display: flex;
@@ -38,7 +47,31 @@
     @include mx.for-size("tablet-landscape-up") {
       justify-content: flex-start;
     }
+  }
 
+  &__cta {
+    display: none;
+    @include mx.for-size("desktop-up") {
+      display: block;
+    }
+    &-item {
+      margin: 0 0.65rem;
+      font-weight: 400;
+
+      @include mx.for-size("tablet-landscape-up"){
+        &:first-child {
+          margin-left: 0;
+        }
+        &:nth-of-type(3) {
+          padding-right: 1.3rem;
+          border-right: solid 1px var(--white);
+        }
+      }
+
+      &--bold {
+        font-weight: 600;
+      }
+    }
   }
 }
 

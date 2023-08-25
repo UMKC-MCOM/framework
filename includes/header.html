@@ -1,6 +1,15 @@
 <header>
-  <div class="bg-umkc-blue stripes header">
+  <div class="bg-umkc-blue stripes header header--primary">
     <h1 class="site-title"><a href="/">University of Missouri - Kansas City</a></h1>
+    <ul class="header__cta nav--inline">
+      <li class="header__cta-item header__cta-item--bold"><a class="header__cta-link" href="#">Apply</a></li>
+      <li class="header__cta-item header__cta-item--bold"><a class="header__cta-link" href="#">Get Info</a></li>
+      <li class="header__cta-item header__cta-item--bold"><a class="header__cta-link" href="#">Give</a></li>
+      <li class="header__cta-item"><a class="header__cta-link" href="#">Current Students</a></li>
+      <li class="header__cta-item"><a class="header__cta-link" href="#">Faculty</a></li>
+      <li class="header__cta-item"><a class="header__cta-link" href="#">Staff</a></li>
+      <li class="header__cta-item"><a class="header__cta-link" href="#">Families</a></li>
+    </ul>
   </div>
   <div class="header header--secondary header--{{ bgColor }}">
     <div class="logo">
@@ -8,6 +17,7 @@
         <svg class="logo--image" aria-label="University of Missouri. Kansas City." role="img"><use xlink:href="#umkc"></use></svg>
       </a>
     </div>
+    {{#if dept }}
     <div class="dept-header">
       <h2 class="dept-header__title">
         <a href="#">
@@ -16,6 +26,7 @@
         </a>
       </h2>
     </div>
+    {{/if }}
     <form class="search" action="https://www.umkc.edu/search.html">
       <label class="sr-only search__label" for="q">Search UMKC.edu:</label>
       <input name="q" id="q" class="search__form" />

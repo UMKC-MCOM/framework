@@ -130,4 +130,44 @@
       display: block;
     }
   }
+  &__hp{
+    min-height: 700px !important;
+    align-items: flex-start !important;
+    background-color: var(--umkc-blue) !important;
+
+    #{$self}__college {
+        width: 100%;
+        height: auto;
+        @media screen and ( min-width: 900px ) {
+            width: 797px;
+            height: 361px;
+        }
+        .mobile__hide {
+            display:none;
+            @media screen and ( min-width: 900px ) {
+                display: block;
+            }
+        }
+    }
+    #{$self}__subhead {
+        font-size: 80px;
+        font-family: var(--os);
+        @media screen and ( min-width: 900px ) {
+            font-size: 108px;
+        }
+    }
+    #{$self}__text {
+        font-size: 24px;
+        max-width: 937px;
+        @media screen and ( min-width: 900px ) {
+            font-size: 32px;
+          max-width: 937px;
+        }
+    }
+  }
+  #{$self}__content {
+      padding: 0 var(--content-padding);
+      height: 100%;
+      background: rgba(0, 102, 204, 0.80);
+  }
 }

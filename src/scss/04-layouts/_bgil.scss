@@ -1,0 +1,54 @@
+@use "../01-abstracts/mixins" as mx;
+
+.bgil {
+  --heading-color: var(--white);
+  --highlight-color: var(--white);
+  padding-bottom: 3rem;
+  &__row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 3rem 0;
+    margin: 3rem 0;
+
+    @include mx.for-size("tablet-landscape-up"){
+      flex-direction: row;
+    }
+  }
+
+  &__item {
+    width: mx.px-to-rem(337px);
+    height: mx.px-to-rem(231px);
+    font-family: var(--os);
+    text-transform: uppercase;
+    @include mx.font-size(36px);
+    transition: transform 250ms ease-in-out;
+    position: relative;
+    &--community {
+      background-image: url('https://picsum.photos/id/755/337/231');
+    }
+    &--alumni {
+      background-image: url('https://picsum.photos/id/237/337/231');
+    }
+    &--campus {
+      background-image: url('https://picsum.photos/id/1/337/231');
+    }
+
+    &:hover, &:focus, &:active {
+      transform: scale(1.10); // Zoom by 10%;
+    }
+  }
+  &__link {
+    align-items: center;
+    background: rgba(0, 102, 204, 0.80);
+    color: var(--umkc-yellow);
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    position: absolute;
+    text-decoration: none;
+    width: 100%;
+    text-shadow: 0 0 0.25rem rgba(0,0,0,0.75);
+  }
+}

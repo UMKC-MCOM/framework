@@ -23,6 +23,7 @@
  },
  "dependencies": {
   "@glidejs/glide": "^3.6.0",
+  "aos": "^2.3.4",
   "tocbot": "^4.20.1"
  }
 }
