@@ -130,7 +130,7 @@
       display: block;
     }
   }
-  &__hp{
+  &__hp {
     min-height: 700px !important;
     align-items: flex-start !important;
     background-color: var(--umkc-blue) !important;
@@ -164,10 +164,10 @@
           max-width: 937px;
         }
     }
-  }
-  #{$self}__content {
+    #{$self}__content {
       padding: 0 var(--content-padding);
       height: 100%;
       background: rgba(0, 102, 204, 0.80);
+    }
   }
 }
