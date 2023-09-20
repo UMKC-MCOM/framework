@@ -257,6 +257,22 @@
 				<p class="text-center" data-aos="fade-up" data-aos-anchor=".bgil" data-aos-offset="300"><a href="#" class="button button--umkc-yellow button--cta text--os text--upper">Roos Read</a></p>
 			</div>
 
+		{{> a11y-skip }}
+
+
+		<div id="landing-page" class="main-content">
+		<!-- <div id="landing-page" class="main-content"> -->
+			<!-- {{> hero video="true" }} -->
+			<!-- {{> hero }} -->
+			<!-- Breadcrumbs -->
+			<!-- {{> breadcrumbs }} -->
+			<!-- {{> ks/teaser }} -->
+			<!-- Local Site Alerts -->
+			<!-- {{> ks/alert bgColor=""}} -->
+
+			<!-- Program Finder -->
+
+
 			<!-- Benefits Lists -->
 			<!-- {{> ks/blp }} -->
 			<!-- {{> ks/blnp }} -->
@@ -271,7 +287,7 @@
 			<!-- {{> ks/bg }} -->
 
 			<!-- Cards -->
-			<!-- {{> ks/cp bgColor="umkc-blue" }} -->
+			{{> ks/cp bgColor="umkc-blue" }}
 			<!-- {{> ks/cnp link="true" }} -->
 			<!-- {{> ks/cnp }} -->
 
@@ -291,9 +307,14 @@
 			<!-- {{> ks/icl bgColor="white" buttonColor="umkc-yellow"}} -->
 
 			<!-- News and Calendar Feed -->
+
 			<!-- {{> ks/news }} -->
 
 
+
+
+
+			{{> ks/news }}
 
 
 			<!-- {{> ks/vertical-image }} -->
@@ -318,6 +339,7 @@
 
 
 
+
 		<!-- <div id="standard-page" class="main-content"> -->
 			<!-- Start of the Standard Page Layout -->
 			<!-- <div style="background: var(--umkc-blue); height: 8rem; margin: 2rem 0 0;"><h1 style="color: white; padding: var(--content-padding);">Start: Standard Page</h1></div>
@@ -325,15 +347,33 @@
 			{{> breadcrumbs }} -->
 
 			<!-- <div class="content-row"> -->
+
+		<div id="standard-page" class="main-content">
+			<!-- Start of the Standard Page Layout -->
+			<div style="background: var(--umkc-blue); height: 8rem; margin: 2rem 0 0;"><h1 style="color: white; padding: var(--content-padding);">Start: Standard Page</h1></div>
+			{{> hero profile="true" }}
+			{{> breadcrumbs }}
+
+			<div class="content-row">
+
 			<!-- <div class="standard"> -->
 				<!-- <div class="standard--nav"></div> -->
 				<!-- <div class="standard--content"> -->
 					<!-- {{> ks/profile }} -->
 					<!-- {{> ks/directory-index }} -->
 
+
 					<!-- {{> ks/form }} -->
 				<!-- </div> -->
 			<!-- </div></div> -->
+
+					{{> ks/directory-standard }}
+					{{> ks/profile }}
+					<!-- {{> ks/directory-index }} -->
+					<!-- {{> ks/form }} -->
+				<!-- </div> -->
+			</div></div>
+
 
 
 			<!-- {{> ks/profile }} -->
@@ -350,9 +390,15 @@
 					{{> ks/buttons type="outline button--lg" }}
 				</div>
 			</div> -->
+
 		<!-- </div> -->
 
 		<!-- <div class="menu">
+
+		</div>
+
+		<div class="menu">
+
 			<ul class="menu__list" id="menu" role="menubar" >
 				<li class="menu__item" role="menuitem" aria-haspopup="true">
 					<a href="#" class="menu__link" data-toggle=".search" data-focus=".search input">
@@ -387,18 +433,21 @@
 					</a>
 				</li>
 			</ul>
+
 		</div> -->
 
 		<script type="module" src="./main.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 		<!-- <script src="/node_modules/aos/dist/aos.js"></script> -->
+
 		<script>
 		window.addEventListener('load', function () {
 			if ( document.querySelectorAll(".glide").length >= 1 ){
 				new Glide('.glide').mount()
 			}
 		})
+
 		AOS.init({
 			offset: 200,
 			duration: 1600
@@ -407,6 +456,7 @@
 		// 	offset: 0
 		// });
 		// document.querySelector('.main-content').addEventListener('scroll', AOS.refresh());
+
 		</script>
   </body>
 </html>

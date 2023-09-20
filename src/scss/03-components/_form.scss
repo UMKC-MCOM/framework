@@ -34,6 +34,11 @@
   &__select {
     display: block;
     width: 100%;
+
+    // Remove dropdown indicator from Chrome
+    &::-webkit-calendar-picker-indicator  {
+       display: none !important;
+    }
   }
 
   &__label {
@@ -69,6 +74,7 @@
     --disabled-inner: #E1E6F9;
     -webkit-appearance: none;
     -moz-appearance: none;
+    appearance: none;
     height: 21px;
     outline: none;
     display: inline-block;

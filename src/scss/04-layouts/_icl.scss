@@ -90,6 +90,13 @@
 
     #{$self}__image {
       padding: 0;
+      aspect-ratio: 5/3;
+
+      @include mx.for-size("tablet-landscape-up") {
+        width: 100%;
+        height: auto;
+        max-height: #{mx.px-to-rem(375px)}
+      }
     }
   }
 }

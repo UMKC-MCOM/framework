@@ -2,8 +2,8 @@ import '/src/scss/styles.scss'
 import '/src/scss/print.scss'
 // import '/src/scss/wysiwyg.scss'
 import '/node_modules/tocbot/dist/tocbot.min.js'
-
 import '/src/js/tables.js'
+import '/src/js/toc.js'
 import '/src/js/toggles.js'
 import '/src/js/quotes.js'
 import '/src/js/video.js'
@@ -12,7 +12,6 @@ import '/src/js/resource.js'
 import '/src/js/alerts.js'
 import '/src/js/consent.js'
 
-import '/src/js/toc.js'
 // import javascriptLogo from './javascript.svg'
 // import { setupCounter } from './counter.js'
 
