@@ -25,6 +25,13 @@
     #{$self}__item {
       background: var(--white);
       margin-top: 1rem;
+      
+      img {
+        aspect-ratio: 88/67;
+        object-fit: fill;
+        width: 100%;
+        height: auto;
+      }
     }
   }
 
