@@ -11,13 +11,13 @@
 			<!-- {{> hero video="true" }} -->
 			{{> hero }}
 			<!-- Breadcrumbs -->
-			<!-- {{> breadcrumbs }} -->
-			<!-- {{> ks/teaser }} -->
+			{{> breadcrumbs }}
+			{{> ks/teaser }}
 			<!-- Local Site Alerts -->
-			<!-- {{> ks/alert bgColor=""}} -->
+			{{> ks/alert bgColor=""}}
 
 			<!-- Program Finder -->
-
+			{{> ks/program-finder }}
 
 			<!-- Benefits Lists -->
 			<!-- {{> ks/blp }} -->
@@ -92,7 +92,8 @@
 					<!-- {{> ks/directory-index }} -->
 					<!-- {{> ks/form }} -->
 				<!-- </div> -->
-			</div></div>
+			</div>
+		</div>
 
 
 			<!-- {{> ks/profile }} -->
@@ -109,7 +110,7 @@
 					{{> ks/buttons type="outline button--lg" }}
 				</div>
 			</div> -->
-		</div>
+		<!-- </div> -->
 
 		<div class="menu">
 			<ul class="menu__list" id="menu" role="menubar" >
@@ -156,6 +157,30 @@
 				new Glide('.glide').mount()
 			}
 		})
+		</script>
+		<script>
+			window.fwSettings={
+			'widget_id':47000005928
+			};
+			!function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}()
+		</script>
+		<script type='text/javascript' src='https://widget.freshworks.com/widgets/47000005928.js' async defer></script>
+		<script>
+			FreshworksWidget('hide', 'launcher');
+			FreshworksWidget('prefill', 'ticketForm', {
+				type: 'Report an issue',
+				custom_fields: {
+					cf_url: window.location.href
+				}
+			});
+			FreshworksWidget('disable', 'ticketForm', ['custom_fields.cf_url']);
+			FreshworksWidget('hide', 'ticketForm', ['custom_fields.cf_unit_or_department', 'group_id', 'product_id', 'custom_fields.cf_url', 'type']);
+
+			const issues = document.querySelector(".footer__curator a[href*='/submit-a-web-ticket.html']");
+			issues.addEventListener("click", function(e) {
+				e.preventDefault();
+				FreshworksWidget("open");
+			});
 		</script>
   </body>
 </html>
