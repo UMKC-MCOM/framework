@@ -19,7 +19,7 @@
     position: relative;
     padding: var(--content-padding);
     color: var(--white);
-    z-index: 0;
+    // z-index: 0;
   }
 
   &__title {
@@ -45,6 +45,7 @@
     top: 0;
     left: 0;
     width: 100%;
+    flex-basis: 100%;
 
     @include mx.for-size("tablet-landscape-up") {
       display: block;
@@ -131,43 +132,79 @@
     }
   }
   &__hp {
-    min-height: 700px !important;
-    align-items: flex-start !important;
-    background-color: var(--umkc-blue) !important;
+    background-image: none;
+    display: block;
+    height: auto;
+    position: relative;
+    // min-height: 700px !important;
+    // align-items: flex-start !important;
+
+    #{$self}__video-container {
+      padding: 0 var(--content-padding) var(--content-padding);
+      width: 100%;
+
+      z-index: 10;
+      margin-top: -25px;
+      @include mx.for-size("desktop-up"){
+        height: 600px;
+        margin-top: -100px;
+      }
+
+      background: white;
+    }
+
+    #{$self}__video {
+      position: relative;
+      display: block;
+      z-index: 2;
+    }
 
     #{$self}__college {
-        width: 100%;
-        height: auto;
-        @media screen and ( min-width: 900px ) {
-            width: 797px;
-            height: 361px;
+
+        @include mx.for-size("desktop-up") {
+          margin-top: -12.48rem;
+          height: mx.px-to-rem(275px);
+          width: auto;
+          margin: 0 var(--content-padding) 0 0;
         }
         .mobile__hide {
             display:none;
-            @media screen and ( min-width: 900px ) {
+            @include mx.for-size("desktop-up") {
                 display: block;
             }
         }
     }
     #{$self}__subhead {
-        font-size: 80px;
+        padding-top: 30px;
+        @include mx.font-size(30px, 1.25);
         font-family: var(--os);
+        padding-bottom: 1rem;
         @media screen and ( min-width: 900px ) {
-            font-size: 108px;
+          @include mx.font-size(60px, 1.25);
         }
     }
     #{$self}__text {
-        font-size: 24px;
-        max-width: 937px;
-        @media screen and ( min-width: 900px ) {
-            font-size: 32px;
-          max-width: 937px;
-        }
+      flex: 1 0 54%;
     }
     #{$self}__content {
       padding: 0 var(--content-padding);
-      height: 100%;
-      background: rgba(0, 102, 204, 0.80);
+      height: mx.px-to-rem(275px+95px);
+      background: var(--umkc-navy);
+      z-index: 2;
+      @include mx.for-size("desktop-up") {
+        display: flex;
+        align-items: flex-start;
+        // justify-content: space-evenly;
+      }
     }
+    #{$self}__description {
+      z-index: 11;
+    }
+    #{$self}__buttons {
+      z-index: 11;
+      bottom: 3.5rem;
+      right: 3.5rem;
+    }
+
   }
 }

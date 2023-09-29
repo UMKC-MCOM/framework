@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   {{> head }}
+	<link
+		rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+	/>
 	<style>
 		.icl__content {
 			font-size: 24px;
@@ -9,11 +13,16 @@
   <body class="homesuite">
 		<!-- Load SVGs first? -->
 		{{> svg-sprites }}
+		{{> a11y-skip }}
+
+		{{> header }}
+
 		<div id="landing-page" class="main-content">
-			<div class="hero hero--video hero__hp">
-				<video id="hero-video" class="hero__video" autoplay="" muted="" loop="" playsinline="">
-					<source data-src="/src/images/aug-24.mp4" type="video/mp4">
-				</video>
+
+			<!-- {{> hero video="true" }} -->
+
+
+			<div class="hero hero__hp">
 				<div class="hero__content">
 					<svg class="hero__college" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 797 361">
 						<defs>
@@ -54,12 +63,18 @@
 							</g>
 						</g>
 					</svg>
-
-					<p class="hero__subhead text--upper">Like You Mean It</p>
-					<p class="hero__text text--pf">The only thing more important than where you choose to college is how you college. At UMKC, you can college like you.</p>
+					<div class="hero__text">
+						<p class="hero__subhead text--upper replace-me">Like you mean it<span style="display:none">,Like you make the rules,Like you've got the job,Like the first in your family,Like you'll change the world</span></span></p>
+						<p><a href="#" class="button button--umkc-yellow button--cta text--upper text--os">Apply to UMKC</a></p>
+					</div>
 				</div>
-				<div class="hero__description" aria-hidden="true">
-					<p>Video has no audio. Scene 1: students talking on patio at Student Union; Scene 2: Blue skies outside Student Union; Scene 3: Student with goggles on in AR/VR lab; Scene 4: Snow on top of the bronze Kangaroo statue; Scene 5: Student dentist in dental simulation lab; Scene 6: Student in cap and gown walking across the stage to receive his diploma at Commencement; Scene 7: Confetti raining down on UMKC grads at Commencement inside T-Mobile Center; Mobile static image: Snow on the bronze Roo statue on Volker Campus.</p>
+				<div class="hero__video-container">
+					<video id="hero-video" class="hero__video" autoplay="" muted="" loop="" playsinline="" poster="/src/images/kansas-city-skyline-downtown.webp">
+						<source data-src="/src/images/aug-24.mp4" type="video/mp4">
+					</video>
+					<div class="hero__description" aria-hidden="true">
+						<p>Video has no audio. Scene 1: students talking on patio at Student Union; Scene 2: Blue skies outside Student Union; Scene 3: Student with goggles on in AR/VR lab; Scene 4: Snow on top of the bronze Kangaroo statue; Scene 5: Student dentist in dental simulation lab; Scene 6: Student in cap and gown walking across the stage to receive his diploma at Commencement; Scene 7: Confetti raining down on UMKC grads at Commencement inside T-Mobile Center; Mobile static image: Snow on the bronze Roo statue on Volker Campus.</p>
+					</div>
 				</div>
 				<div class="hero__buttons">
 					<button class="o-btn hero__button hero__button--toggle" data-toggle=".hero__description" aria-expanded="false">
@@ -85,8 +100,8 @@
 						</button>
 				</div>
 			</div>
-			<!-- {{> hero video="true" }} -->
-			<!-- {{> hero }} -->
+
+			{{> hero }}
 			<!-- Breadcrumbs -->
 			<!-- {{> breadcrumbs }} -->
 			<!-- {{> ks/teaser }} -->
@@ -257,11 +272,6 @@
 				<p class="text-center" data-aos="fade-up" data-aos-anchor=".bgil" data-aos-offset="300"><a href="#" class="button button--umkc-yellow button--cta text--os text--upper">Roos Read</a></p>
 			</div>
 
-		{{> a11y-skip }}
-
-
-		<div id="landing-page" class="main-content">
-		<!-- <div id="landing-page" class="main-content"> -->
 			<!-- {{> hero video="true" }} -->
 			<!-- {{> hero }} -->
 			<!-- Breadcrumbs -->
@@ -287,7 +297,7 @@
 			<!-- {{> ks/bg }} -->
 
 			<!-- Cards -->
-			{{> ks/cp bgColor="umkc-blue" }}
+			<!-- {{> ks/cp bgColor="umkc-blue" }} -->
 			<!-- {{> ks/cnp link="true" }} -->
 			<!-- {{> ks/cnp }} -->
 
@@ -314,7 +324,7 @@
 
 
 
-			{{> ks/news }}
+			<!-- {{> ks/news }} -->
 
 
 			<!-- {{> ks/vertical-image }} -->
@@ -335,19 +345,9 @@
 
 			<!-- Icon Row -->
 			<!-- {{> ks/icon-row }} -->
+
+
 		</div>
-
-
-
-
-		<!-- <div id="standard-page" class="main-content"> -->
-			<!-- Start of the Standard Page Layout -->
-			<!-- <div style="background: var(--umkc-blue); height: 8rem; margin: 2rem 0 0;"><h1 style="color: white; padding: var(--content-padding);">Start: Standard Page</h1></div>
-			{{> hero profile="true" }}
-			{{> breadcrumbs }} -->
-
-			<!-- <div class="content-row"> -->
-
 		<div id="standard-page" class="main-content">
 			<!-- Start of the Standard Page Layout -->
 			<div style="background: var(--umkc-blue); height: 8rem; margin: 2rem 0 0;"><h1 style="color: white; padding: var(--content-padding);">Start: Standard Page</h1></div>
@@ -372,8 +372,8 @@
 					<!-- {{> ks/directory-index }} -->
 					<!-- {{> ks/form }} -->
 				<!-- </div> -->
-			</div></div>
-
+			</div>
+		</div>
 
 
 			<!-- {{> ks/profile }} -->
@@ -392,11 +392,6 @@
 			</div> -->
 
 		<!-- </div> -->
-
-		<!-- <div class="menu">
-
-		</div>
-
 		<div class="menu">
 
 			<ul class="menu__list" id="menu" role="menubar" >
@@ -434,12 +429,10 @@
 				</li>
 			</ul>
 
-		</div> -->
-
+		</div>
 		<script type="module" src="./main.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-		<!-- <script src="/node_modules/aos/dist/aos.js"></script> -->
 
 		<script>
 		window.addEventListener('load', function () {
@@ -452,10 +445,6 @@
 			offset: 200,
 			duration: 1600
 		});
-		// AOS.init({
-		// 	offset: 0
-		// });
-		// document.querySelector('.main-content').addEventListener('scroll', AOS.refresh());
 
 		</script>
   </body>
