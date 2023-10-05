@@ -133,78 +133,134 @@
   }
   &__hp {
     background-image: none;
+    background-color: var(--umkc-navy);
     display: block;
     height: auto;
     position: relative;
-    // min-height: 700px !important;
-    // align-items: flex-start !important;
+
+    #{$self}__content {
+      padding: 0 0 1rem;
+      background: none;
+      @include mx.for-size("desktop-up"){
+        padding-bottom: 0;
+        z-index: 5;
+      }
+    }
 
     #{$self}__video-container {
-      padding: 0 var(--content-padding) var(--content-padding);
-      width: 100%;
-
-      z-index: 10;
-      margin-top: -25px;
-      @include mx.for-size("desktop-up"){
-        height: 600px;
-        margin-top: -100px;
+      background: var(--white);
+      margin: 0;
+      position: relative;
+      height: 200px;
+      @include mx.for-size("tablet-portrait-up"){
+        height: 375px;
+      }
+      @include mx.for-size("tablet-landscape-up"){
+        height: 525px;
       }
 
-      background: white;
+      @include mx.for-size("desktop-up"){
+        background: none;
+        position: absolute;
+        right: 0;
+        top: 80px;
+        z-index: 4;
+
+      }
     }
 
     #{$self}__video {
-      position: relative;
       display: block;
-      z-index: 2;
+      position: absolute;
+      padding: 0 var(--global-padding);
+      height: auto;
+      width: 100%;
+      top: -50px;
+      bottom: 0;
+      @include mx.for-size("desktop-up") {
+        aspect-ratio: 184 / 141;
+        position: static;
+        height: auto;
+        object-fit: cover;
+        width: calc(100vw * 0.638);
+        z-index: 2;
+        padding: 0;
+      }
     }
 
     #{$self}__college {
+      padding: 0 var(--global-padding);
+      z-index: 10;
+      height: auto;
+      @include mx.for-size("tablet-portrait-up") {
+        width: calc(100vw  * 0.411);
+      }
 
-        @include mx.for-size("desktop-up") {
-          margin-top: -12.48rem;
-          height: mx.px-to-rem(275px);
-          width: auto;
-          margin: 0 var(--content-padding) 0 0;
-        }
-        .mobile__hide {
-            display:none;
-            @include mx.for-size("desktop-up") {
-                display: block;
-            }
-        }
-    }
-    #{$self}__subhead {
-        padding-top: 30px;
-        @include mx.font-size(30px, 1.25);
-        font-family: var(--os);
-        padding-bottom: 1rem;
-        @media screen and ( min-width: 900px ) {
-          @include mx.font-size(60px, 1.25);
-        }
-    }
-    #{$self}__text {
-      flex: 1 0 54%;
-    }
-    #{$self}__content {
-      padding: 0 var(--content-padding);
-      height: mx.px-to-rem(275px+95px);
-      background: var(--umkc-navy);
-      z-index: 2;
       @include mx.for-size("desktop-up") {
-        display: flex;
-        align-items: flex-start;
-        // justify-content: space-evenly;
+        width: calc(100vw  * 0.55);
       }
     }
-    #{$self}__description {
-      z-index: 11;
+    #{$self}__subhead {
+      font-family: var(--os);
+      margin-bottom: 1rem;
+      @include mx.font-size(30px, 1.25);
+      @include mx.for-size("tablet-portrait-up") {
+        @include mx.font-size(50px, 1.25);
+      }
     }
-    #{$self}__buttons {
-      z-index: 11;
-      bottom: 3.5rem;
-      right: 3.5rem;
-    }
+    #{$self}__text {
+      padding: 1rem var(--global-padding) 5rem;
 
+      @include mx.for-size("desktop-up") {
+        width: calc(100vw * 0.289);
+
+      }
+    }
+//
+//     #{$self}__description {
+//       z-index: 11;
+//     }
+//     #{$self}__buttons {
+//       display: block;
+//       z-index: 12;
+//       @include mx.for-size("desktop-up") {
+//         bottom: 3.5rem;
+//         right: 3.5rem;
+//       }
+    }
   }
+
+.mask {
+  height: var(--height, 37.5px);
+  position: relative;
+  overflow: hidden;
+  @include mx.for-size("tablet-portrait-up"){
+    height: var(--height, 62.5px);
+  }
+  @include mx.for-size("desktop-up"){
+    height: var(--height, 125px);
+  }
+}
+.mask span {
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  top: var(--height, 37.5px);
+  opacity: 0;
+  @include mx.for-size("tablet-portrait-up"){
+    height: var(--height, 62.5px);
+  }
+  @include mx.for-size("desktop-up"){
+    height: var(--height, 125px);
+  }
+}
+.mask span[data-show] {
+  transform: translateY(-100%);
+  transition: .5s transform ease-in-out, opacity .5s ease;
+  opacity: 1;
+}
+.mask span[data-up] {
+  transform: translateY(-200%);
+  transition: .5s transform ease-in-out, opacity .5s ease;
+  opacity: 0;
 }
