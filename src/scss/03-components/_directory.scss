@@ -81,7 +81,10 @@
       "di__image di__dept"
       "di__image di__au";
     padding: 2rem 1rem;
-
+    &:first-child {
+      border-top: solid 1px #C3CACE;
+      border-top: solid 2rem var(--umkc-blue);
+    }
     @include mx.for-size("tablet-landscape-up"){
       align-items: center;
       border: solid 1px #C4CACE;
