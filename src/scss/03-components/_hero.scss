@@ -177,14 +177,19 @@
       width: 100%;
       top: -50px;
       bottom: 0;
+
       @include mx.for-size("desktop-up") {
         aspect-ratio: 184 / 141;
         position: static;
         height: auto;
         object-fit: cover;
         width: calc(100vw * 0.638);
+        max-height: 600px;
         z-index: 2;
         padding: 0;
+      }
+      @include mx.for-size("big-desktop-up") {
+        max-height: 725px;
       }
     }
 
@@ -203,33 +208,70 @@
     #{$self}__subhead {
       font-family: var(--os);
       margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.65);
       @include mx.font-size(30px, 1.25);
       @include mx.for-size("tablet-portrait-up") {
-        @include mx.font-size(50px, 1.25);
+        @include mx.font-size(60px, 1.25);
+      }
+      @include mx.for-size("big-desktop-up") {
+        @include mx.font-size(72px, 1.25);
       }
     }
     #{$self}__text {
       padding: 1rem var(--global-padding) 5rem;
-
       @include mx.for-size("desktop-up") {
-        width: calc(100vw * 0.289);
-
+        width: calc(100vw * 0.48);
+      }
+      @include mx.for-size("big-desktop-up") {
+        width: calc(100vw * 0.5);
       }
     }
-//
-//     #{$self}__description {
-//       z-index: 11;
-//     }
-//     #{$self}__buttons {
-//       display: block;
-//       z-index: 12;
-//       @include mx.for-size("desktop-up") {
-//         bottom: 3.5rem;
-//         right: 3.5rem;
-//       }
+
+    #{$self}__description {
+      z-index: 5;
+      @include mx.for-size("tablet-portrait-up") {
+        bottom: 5rem;
+        margin: 0 var(--global-padding);
+        padding: 1rem;
+
+      }
+      @include mx.for-size("tablet-landscape-up") {
+        bottom: 0;
+        right: var(--global-padding);
+      }
+      @include mx.for-size("desktop-up") {
+        margin: 0;
+        right: 0.5rem;
+        bottom: -1rem;
+      }
+      @include mx.for-size("big-desktop-up") {
+        top: 3rem;
+        bottom: auto
+      }
+    }
+    #{$self}__buttons {
+      z-index: 5;
+      display: none;
+      @include mx.for-size("tablet-portrait-up") {
+        display: block;
+        bottom: 2rem;
+        right: 2rem;
+      }
+      @include mx.for-size("tablet-landscape-up") {
+        bottom: 2rem;
+        right: 2rem;
+      }
+      @include mx.for-size("desktop-up") {
+        bottom: -1.25rem;
+        right: 0.5rem;
+      }
+      @include mx.for-size("big-desktop-up") {
+        top: 5.5rem;
+        bottom: auto;
+      }
     }
   }
-
+}
 .mask {
   height: var(--height, 37.5px);
   position: relative;
@@ -237,8 +279,11 @@
   @include mx.for-size("tablet-portrait-up"){
     height: var(--height, 62.5px);
   }
-  @include mx.for-size("desktop-up"){
+  @include mx.for-size("tablet-landscape-up"){
     height: var(--height, 125px);
+  }
+  @include mx.for-size("desktop-up"){
+    height: var(--height, 150px);
   }
 }
 .mask span {
@@ -248,10 +293,13 @@
   top: var(--height, 37.5px);
   opacity: 0;
   @include mx.for-size("tablet-portrait-up"){
-    height: var(--height, 62.5px);
+    top: var(--height, 62.5px);
+  }
+  @include mx.for-size("tablet-landscape-up"){
+    top: var(--height, 125px);
   }
   @include mx.for-size("desktop-up"){
-    height: var(--height, 125px);
+    top: var(--height, 150px);
   }
 }
 .mask span[data-show] {
