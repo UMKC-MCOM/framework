@@ -1,7 +1,7 @@
 @use "../01-abstracts/mixins" as mx;
 
 .teaser {
-  font-family: var(--slab);
+  font-family: var(--pf);
   color: var(--umkc-dark-blue);
   margin: var(--content-padding) var(--content-padding) var(--teaser-margin, 0);
   font-weight: 300;

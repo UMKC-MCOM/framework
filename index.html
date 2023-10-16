@@ -273,15 +273,19 @@
 				<p class="text-center" data-aos="fade-up" data-aos-anchor=".bgil" data-aos-offset="300"><a href="#" class="button button--umkc-yellow button--cta text--os text--upper">Roos Read</a></p>
 			</div>
 
+		<div id="landing-page" class="main-content">
+
 			<!-- {{> hero video="true" }} -->
-			<!-- {{> hero }} -->
+			{{> hero }}
 			<!-- Breadcrumbs -->
-			<!-- {{> breadcrumbs }} -->
-			<!-- {{> ks/teaser }} -->
+			{{> breadcrumbs }}
+			{{> ks/teaser }}
 			<!-- Local Site Alerts -->
-			<!-- {{> ks/alert bgColor=""}} -->
+			{{> ks/alert bgColor=""}}
 
 			<!-- Program Finder -->
+
+			{{> ks/program-finder }}
 
 
 			<!-- Benefits Lists -->
@@ -293,9 +297,9 @@
 			<!-- {{> ks/snp }} -->
 
 			<!-- Video Row -->
-			<!-- {{> ks/video }} -->
+			{{> ks/video }}
 			<!-- Box Grid -->
-			<!-- {{> ks/bg }} -->
+			{{> ks/bg }}
 
 			<!-- Cards -->
 			<!-- {{> ks/cp bgColor="umkc-blue" }} -->
@@ -327,6 +331,8 @@
 
 			<!-- {{> ks/news }} -->
 
+			{{> ks/news }}
+
 
 			<!-- {{> ks/vertical-image }} -->
 
@@ -347,7 +353,6 @@
 			<!-- Icon Row -->
 			<!-- {{> ks/icon-row }} -->
 
-
 		</div>
 		<div id="standard-page" class="main-content">
 			<!-- Start of the Standard Page Layout -->
@@ -356,6 +361,8 @@
 			{{> breadcrumbs }}
 
 			<div class="content-row">
+
+				{{> ks/res-list }}
 
 			<!-- <div class="standard"> -->
 				<!-- <div class="standard--nav"></div> -->
@@ -391,6 +398,9 @@
 					{{> ks/buttons type="outline button--lg" }}
 				</div>
 			</div> -->
+
+		<!-- </div> -->
+
 
 		<!-- </div> -->
 		<div class="menu">
@@ -447,6 +457,30 @@
 			duration: 1600
 		});
 
+		</script>
+		<script>
+			window.fwSettings={
+			'widget_id':47000005928
+			};
+			!function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}()
+		</script>
+		<script type='text/javascript' src='https://widget.freshworks.com/widgets/47000005928.js' async defer></script>
+		<script>
+			FreshworksWidget('hide', 'launcher');
+			FreshworksWidget('prefill', 'ticketForm', {
+				type: 'Report an issue',
+				custom_fields: {
+					cf_url: window.location.href
+				}
+			});
+			FreshworksWidget('disable', 'ticketForm', ['custom_fields.cf_url']);
+			FreshworksWidget('hide', 'ticketForm', ['custom_fields.cf_unit_or_department', 'group_id', 'product_id', 'custom_fields.cf_url', 'type']);
+
+			const issues = document.querySelector(".footer__curator a[href*='/submit-a-web-ticket.html']");
+			issues.addEventListener("click", function(e) {
+				e.preventDefault();
+				FreshworksWidget("open");
+			});
 		</script>
   </body>
 </html>

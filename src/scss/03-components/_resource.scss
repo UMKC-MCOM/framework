@@ -34,7 +34,7 @@
   }
 
   &__checkbox {
-    margin-right: 0.5rem;
+    margin-right: 0.5rem !important; // Helps override the default margin style in the reset
   }
 
   &__title {
