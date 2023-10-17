@@ -240,13 +240,9 @@
         right: var(--global-padding);
       }
       @include mx.for-size("desktop-up") {
-        margin: 0;
-        right: 0.5rem;
-        bottom: -1rem;
-      }
-      @include mx.for-size("big-desktop-up") {
-        top: 3rem;
-        bottom: auto
+        top: 3.5rem;
+        bottom: auto;
+        right: 0;
       }
     }
     #{$self}__buttons {
@@ -262,10 +258,6 @@
         right: 2rem;
       }
       @include mx.for-size("desktop-up") {
-        bottom: -1.25rem;
-        right: 0.5rem;
-      }
-      @include mx.for-size("big-desktop-up") {
         top: 5.5rem;
         bottom: auto;
       }
