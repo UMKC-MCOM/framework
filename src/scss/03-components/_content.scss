@@ -2,6 +2,8 @@
 @use "../01-abstracts/flexbox" as fx;
 
 .main-content {
+  --btn-arrow: var(--btn-text, var(--umkc-blue));
+
   p:not([class]) {
     padding: mx.px-to-rem(8px) 0 mx.px-to-rem(16px);
   }
@@ -42,7 +44,7 @@
     }
 
     &:not([class]) {
-      --btn-arrow: var(--umkc-blue);
+      --btn-arrow: var(--link-color, var(--umkc-blue));
       color: var(--link-color, var(--umkc-blue));
       font-weight: 700;
       transition: all 150ms ease;
