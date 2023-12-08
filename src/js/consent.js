@@ -1,14 +1,20 @@
 // Cookie/GDPR Consent
 const gdprBanner = document.querySelector(".gdpr");
 const cookieConsent = gdprBanner.querySelector(".banner-accept");
-const bannerClosed = localStorage.getItem("bannerClosed");
+
 cookieConsent.addEventListener("click", function(){
   localStorage.setItem("bannerClosed", true);
-  checkBanner()
+  gdprBanner.style.display = "none"
+  checkBanner(localStorage.getItem("bannerClosed"))
 });
-function checkBanner() {
+function checkBanner(bannerClosed) {
+  cookieConsent.addEventListener("click", function(){
+    localStorage.setItem("bannerClosed", true);
+    checkBanner()
+  });
+
   if ( bannerClosed ) {
     gdprBanner.style.display = "none";
   }
 }
-checkBanner();
+checkBanner(localStorage.getItem("bannerClosed"));
