@@ -10,9 +10,12 @@
   border: solid mx.px-to-rem(1px) transparent;
   border-radius: mx.px-to-rem(8px);
   display: inline-block;
+  font-family: var(--os);
+  text-transform: uppercase;
   font-weight: bold;
   padding: 1rem 2rem;
   text-decoration: none;
+  @include mx.font-size(18px);
 
   @include mx.tr;
 
