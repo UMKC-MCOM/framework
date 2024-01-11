@@ -74,6 +74,10 @@
       max-width: 1200px;
     }
 
+    #{$self}__desc {
+      flex-basis: 100%;
+    }
+
     #{$self}__row {
       @include mx.for-size("tablet-landscape-up"){
         flex: 0 1 calc(50% - 90px);
