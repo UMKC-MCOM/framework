@@ -1,0 +1,25 @@
+const button = document.getElementById('getInfoButton');
+const form = document.getElementById('getInfoForm');
+const formClose = document.getElementById('getInfoClose');
+const formScreen = document.getElementById('getInfoFormScreen');
+
+// Open the Get More Info form when the button is clicked.
+button.addEventListener('click', function() {
+    form.classList.remove('hidden');
+    formScreen.classList.remove('hidden');
+    button.classList.add('hidden');
+});
+
+// Close the Get More Info form when the X is clicked.
+formClose.addEventListener('click', function() {
+    form.classList.add('hidden');
+    formScreen.classList.add('hidden');
+    button.classList.remove('hidden');
+});
+
+// Close the Get More Info form when the smokescreen is clicked.
+formScreen.addEventListener('click', function() {
+    form.classList.add('hidden');
+    formScreen.classList.add('hidden');
+    button.classList.remove('hidden');
+});
