@@ -62,10 +62,10 @@ $base-line-height: 24px !default;
       @if floor(lightness($color)) < 50 {
         --btn-text: var(--white);
         --btn-hover: var(--umkc-yellow);
-        --btn-hover-text: var(--umkc-navy);
+        --btn-hover-text: var(--umkc-dark-blue);
       } @else {
-        --btn-text: var(--umkc-navy);
-        --btn-hover: var(--umkc-navy);
+        --btn-text: var(--umkc-dark-blue);
+        --btn-hover: var(--umkc-dark-blue);
         --btn-hover-text: var(--white);
       }
     }

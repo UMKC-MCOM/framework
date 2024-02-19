@@ -1,0 +1,71 @@
+@use "../01-abstracts/mixins" as mx;
+@use "buttons" as btn;
+.tabs {
+  display: flex;
+  gap: 1rem;
+  @include mx.for-size("tablet-landscape-up") {
+    width: 65vw;
+    margin: 0 auto;
+  }
+
+  &__nav {
+    display: none;
+    flex: 0 0 25%;
+    @include mx.for-size("desktop-up"){
+      display: block;
+    }
+  }
+  &__container {
+    border-radius: 0.5rem;
+    flex: 1;
+    @include mx.for-size("desktop-up"){
+      border: var(--umkc-gray) 0.375rem solid;
+    }
+  }
+  &__content {
+    border: var(--umkc-gray) 0.375rem solid;
+    display: none;
+    padding: 1rem;
+    &[aria-hidden=false] {
+      display: block;
+    }
+    @include mx.for-size("desktop-up"){
+      border-color: transparent;
+    }
+  }
+  &__title{
+    --heading-margin: 0 0 0.75rem;
+    --heading-size: #{mx.px-to-rem(28px)};
+  }
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-content: start;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  &__item {
+
+  }
+  &__link {
+    @extend .button;
+    display: block;
+    border-color: var(--umkc-navy);
+    &[aria-expanded=true]{
+      background: var(--umkc-navy);
+      color: white;
+    }
+    &:hover, &:focus {
+      background: var(--umkc-yellow);
+      color: var(--umkc-navy);
+      border-color: var(--umkc-yellow);
+    }
+  }
+  &--hide-desktop{
+    margin: 0;
+    @include mx.for-size("desktop-up"){
+      display: none;
+    }
+  }
+}

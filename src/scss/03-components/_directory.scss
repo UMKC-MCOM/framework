@@ -1,11 +1,32 @@
 @use "../01-abstracts/mixins" as mx;
 
 .directory {
+  $self: &;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
   // Figure out the sizing and spacing for mobile layouts.
+
+  &--vcard {
+    display: block;
+    #{$self}__item {
+      display: flex;
+      gap: 1rem;
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      flex: 1;
+    }
+
+    #{$self}__image {
+      border-radius: 0;
+      margin-right: 1rem;
+    }
+    #{$self}__content{
+      text-align: left;
+    }
+  }
+
   &__item {
     border: solid var(--umkc-gray) mx.px-to-rem(4px);
     padding: var(--content-padding);
@@ -18,11 +39,9 @@
     @include mx.for-size("tablet-landscape-up"){
       flex-basis: calc(25% - 1rem);
     }
-
     @include mx.for-size("big-desktop-up"){
       flex-basis: calc(20% - 1rem);
     }
-
   }
 
   &__image {

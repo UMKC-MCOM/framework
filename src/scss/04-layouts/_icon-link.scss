@@ -5,6 +5,7 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: mx.px-to-rem(48px) mx.px-to-rem(16px);
+  margin-bottom: 3rem;
   @include mx.for-size("tablet-portrait-up") {
     gap: mx.px-to-rem(90px) mx.px-to-rem(16px);
   }
