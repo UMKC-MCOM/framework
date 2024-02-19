@@ -1,9 +1,9 @@
 @use "../01-abstracts/mixins" as mx;
 
 .content-row {
+  --heading-margin: 1.5rem 0 2rem;
   background-color: var(--white);
   padding: 3rem var(--content-padding);
-  --heading-margin: 1.5rem 0 2rem;
   &:has(.highlight) {
     --heading-margin: 1.5rem 0;
   }

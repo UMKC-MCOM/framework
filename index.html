@@ -43,6 +43,7 @@
 			{{> ks/cnp link="true" }}
 			{{> ks/cnp }}
 
+
 			<!-- Quotes -->
 			{{> ks/qm }}
 			{{> ks/qs }}
@@ -93,6 +94,7 @@
 
 			<div class="content-row">
 				{{> ks/res-list }}
+
 			<div class="standard">
 				<div class="standard--nav"></div>
 				<div class="standard--content">
@@ -120,15 +122,10 @@
 						</div>
 					</div>
 
-					<!-- {{> ks/profile }} -->
-					<!-- {{> ks/directory-index }} -->
-					{{> ks/directory-standard }}
-					<!-- {{> ks/profile }} -->
-					<!-- {{> ks/directory-index }} -->
-					<!-- {{> ks/form }} -->
 				</div>
 			</div>
 		</div></div>
+				<!-- </div> -->
 
 
 			<!-- {{> ks/profile }} -->
@@ -183,6 +180,9 @@
 				</li>
 			</ul>
 		</div>
+
+		{{> ks/get-info-popup }}
+
 		{{> footer }}
 		<script type="module" src="./main.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
