@@ -3,6 +3,7 @@
 
 // Popup-specific variables
 $zindex: 999;
+$umkc-light-gray: #B5B5B5;
 $umkc-baby-blue: #E5EEF5;
 
 // Generated Form Style Overrides
@@ -17,7 +18,41 @@ $umkc-baby-blue: #E5EEF5;
     color: var(--umkc-navy);
 }
 
+// Input and Select fields complete override
 .form_responses input, .form_responses select {
+    outline: none;
+    border:none;
+    background-image:none;
+    background-color:transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;  
+    //all: unset;
+
+    &::placeholder {
+        color: $umkc-light-gray;
+        opacity: 1; /* Firefox */
+     }
+      
+    &::-ms-input-placeholder { /* Edge 12 -18 */
+        color: $umkc-light-gray;
+    }
+}
+// Select field menu arrow fix for various browsers
+.form_responses select {
+    listbox: auto;
+    -webkit-appearance: menulist;
+    -moz-appearance: menulist;
+    appearance: menulist;
+
+    &::-ms-expand { display: block; }
+}
+
+// Input and Select fields styles
+.form_responses input, .form_responses select {
+    border: 1px solid $umkc-light-gray;
+    border-radius: 5px;
+    background: var(--white);
 	width: 100%;
 }
 
