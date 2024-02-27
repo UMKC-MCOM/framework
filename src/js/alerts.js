@@ -78,8 +78,11 @@ async function showAlert(data){
   dn.forEach( node => {
     let current = node.structuredDataNodes;
     let active = ( current[0].text.includes("Yes") ? true : false );
-    if ( active ) {
-      let content = current[1].text;
+    // Homepage Only, if yes, mark it true.
+    let hpOnly = current[1].text == "yes" ? true : false;
+    // If active and hpOnly is true and the location is the homepage, assigned for UMKC
+    if ( active && ( hpOnly && ( window.location.href == "https://www.umkc.edu/" || window.location.href == "https://www.umkc.edu/index.html" ) ) ) {
+      let content = current[2].text;
       alertDiv.innerHTML = alertDiv.innerHTML.replace("{{content}}", content);
       mainContainer.prepend(alertDiv);
       let alertClose = document.querySelectorAll(".site-alert__close");
