@@ -3,13 +3,14 @@
 
 // Popup-specific variables
 $zindex: 999;
+$umkc-light-gray: #B5B5B5;
 $umkc-baby-blue: #E5EEF5;
 
 // Generated Form Style Overrides
 #form_page_1 {
-	display: grid;
-	grid-template-rows: 1fr 1fr;
-	grid-template-columns: 1fr 1fr 1fr;
+   display: grid;
+   grid-template-rows: 1fr 1fr;
+   grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
 }
 
@@ -17,8 +18,42 @@ $umkc-baby-blue: #E5EEF5;
     color: var(--umkc-navy);
 }
 
+// Input and Select fields complete override
 .form_responses input, .form_responses select {
-	width: 100%;
+    outline: none;
+    border:none;
+    background-image:none;
+    background-color:transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    //all: unset;
+
+    &::placeholder {
+        color: $umkc-light-gray;
+        opacity: 1; /* Firefox */
+     }
+
+    &::-ms-input-placeholder { /* Edge 12 -18 */
+        color: $umkc-light-gray;
+    }
+}
+// Select field menu arrow fix for various browsers
+.form_responses select {
+    listbox: auto;
+    -webkit-appearance: menulist;
+    -moz-appearance: menulist;
+    appearance: menulist;
+
+    &::-ms-expand { display: block; }
+}
+
+// Input and Select fields styles
+.form_responses input, .form_responses select {
+    border: 1px solid $umkc-light-gray;
+    border-radius: 5px;
+    background: var(--white);
+   width: 100%;
 }
 
 .form_button_submit {
@@ -26,12 +61,12 @@ $umkc-baby-blue: #E5EEF5;
     font-weight: bold;
     font-size: 1.25rem;
     text-transform: uppercase;
-	background-color: var(--umkc-yellow);
-	color: var(--umkc-navy);
-	border: 0;
+   background-color: var(--umkc-yellow);
+   color: var(--umkc-navy);
+   border: 0;
     border-radius: 0.5rem;
-	padding: 0.75rem 4rem;
-	margin-left: 1em;
+   padding: 0.75rem 4rem;
+   margin-left: 1em;
     @include mx.tr;
 
     &:hover {
@@ -43,13 +78,13 @@ $umkc-baby-blue: #E5EEF5;
 
 // Get Info Button and Form styles
 #getInfoButton {
-	position: fixed;
-	bottom: 80px;
-	right: 40px;
-	z-index: $zindex;
-	background: var(--umkc-yellow);
-	padding: 1rem;
-	border-radius: 100%;
+   position: fixed;
+   bottom: 80px;
+   right: 40px;
+   z-index: $zindex;
+   background: var(--umkc-yellow);
+   padding: 1rem;
+   border-radius: 100%;
     @include mx.tr;
 
     &:hover {
@@ -62,7 +97,7 @@ $umkc-baby-blue: #E5EEF5;
         text-decoration: none;
         color: var(--umkc-navy);
         text-transform: uppercase;
-        font-weight: bold; 
+        font-weight: bold;
 
         svg {
             fill: var(--umkc-navy);
@@ -70,15 +105,15 @@ $umkc-baby-blue: #E5EEF5;
     }
 }
 #getInfoForm {
-	position: fixed;
-	z-index: $zindex;
-	bottom: 0px;
-	width: 100%;
-	padding: 1.25rem 2rem;
+   position: fixed;
+   z-index: $zindex;
+   bottom: 0px;
+   width: 100%;
+   padding: 1.25rem 2rem;
     background: $umkc-baby-blue;
 }
 #getInfoClose {
-	cursor: pointer;
+   cursor: pointer;
     position: absolute;
     top: 3px;
     right: 3px;
@@ -96,33 +131,33 @@ $umkc-baby-blue: #E5EEF5;
 
 // Smokescreen for when popup is open
 #getInfoFormScreen {
-	background: rgba(0,0,0,0.5);
-	z-index: $zindex - 1;
-	position: fixed;
-	top:0; left:0; right:0; bottom: 0;
+   background: rgba(0,0,0,0.5);
+   z-index: $zindex - 1;
+   position: fixed;
+   top:0; left:0; right:0; bottom: 0;
 }
 
 // Info Form Grid Styles
 #getInfoForm { display: grid; }
 
 #getInfoForm .wrapper {
-   display: grid; 
+   display: grid;
    grid-template-rows: 1fr;
    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    
+
    .form-wrapper {
         grid-row-start: 1;
         grid-column-start: 1;
         grid-row-end: 2;
         grid-column-end: 5;
     }
-    
+
     .submit-wrapper {
         grid-row-start: 1;
         grid-column-start: 5;
         grid-row-end: 2;
         grid-column-end: 6;
-        margin: auto; /* Vertically and Horizontally centers the content */  
+        margin: auto; /* Vertically and Horizontally centers the content */
     }
 }
 // Info Form Styles
@@ -138,7 +173,7 @@ $umkc-baby-blue: #E5EEF5;
         border-right: 3px solid var(--umkc-navy);
         padding-right: 2rem;
     }
-    
+
     .submit-wrapper .button--popup {
         font-family: var(--os);
         font-size: 1.25rem;
@@ -159,30 +194,30 @@ $umkc-baby-blue: #E5EEF5;
 @media screen and (max-width:1200px) {
 
     // Mobile Grid changes
-	#getInfoForm .wrapper {
-		grid-template-rows: 1fr 1fr;
-   		grid-template-columns: 1fr 1fr 1fr;
-	}
+   #getInfoForm .wrapper {
+      grid-template-rows: 1fr 1fr;
+         grid-template-columns: 1fr 1fr 1fr;
+   }
 
-	#getInfoForm .wrapper .form-wrapper {
-		grid-row-start: 1;
-   		grid-column-start: 1;
-   		grid-row-end: 2;
-	}
+   #getInfoForm .wrapper .form-wrapper {
+      grid-row-start: 1;
+         grid-column-start: 1;
+         grid-row-end: 2;
+   }
 
-	#getInfoForm .wrapper .submit-wrapper {
-		grid-row-start: 2;
-		grid-column-start: 1;
-		grid-row-end: 2;
-		grid-column-end: 6;
-		margin:0;
-	}
+   #getInfoForm .wrapper .submit-wrapper {
+      grid-row-start: 2;
+      grid-column-start: 1;
+      grid-row-end: 2;
+      grid-column-end: 6;
+      margin:0;
+   }
 
     #form_page_1 {
-		grid-template-rows: 1fr 1fr 1fr;
-		grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
         gap: 10px;
-	}
+   }
 
     // Mobile form select override
     #getInfoForm .wrapper .form_select {
@@ -191,7 +226,7 @@ $umkc-baby-blue: #E5EEF5;
     }
 
     // Mobile form submit button overrides
-    #getInfoForm .form_action { 
+    #getInfoForm .form_action {
         width: 100%;
         text-align: center;
 
@@ -204,7 +239,7 @@ $umkc-baby-blue: #E5EEF5;
     // Mobile Style changes
     #getInfoForm {
         padding: 1.25rem;
-        
+
         .wrapper {
             margin: auto;
             align-items: center;
@@ -213,10 +248,10 @@ $umkc-baby-blue: #E5EEF5;
                 border-right: 0px solid var(--umkc-dark-blue);
                 padding-right: 0rem;
             }
-        } 
-    } 
+        }
+    }
     #getInfoButton {
         bottom: 100px;
         right: 20px;
-    }	
+    }
 }
