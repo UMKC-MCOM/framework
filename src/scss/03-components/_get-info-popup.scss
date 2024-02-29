@@ -62,7 +62,7 @@ $umkc-baby-blue: #E5EEF5;
     font-size: 1.25rem;
     text-transform: uppercase;
 	background-color: var(--umkc-yellow);
-	color: var(--umkc-navy);
+	color: var(--umkc-dark-blue);
 	border: 0;
     border-radius: 0.5rem;
 	padding: 0.75rem 4rem;
@@ -179,7 +179,7 @@ $umkc-baby-blue: #E5EEF5;
         font-size: 1.25rem;
         text-transform: uppercase;
         color: var(--umkc-yellow);
-        background: var(--umkc-navy);
+        background: var(--umkc-dark-blue);
         margin: 1rem auto;
         display: block;
         width: 100%;
@@ -239,10 +239,11 @@ $umkc-baby-blue: #E5EEF5;
     // Mobile Style changes
     #getInfoForm {
         padding: 1.25rem;
+        max-height: 80vh;
         
         .wrapper {
             margin: auto;
-            align-items: center;
+            align-items: normal;
 
             .form-wrapper {
                 border-right: 0px solid var(--umkc-dark-blue);
