@@ -39,14 +39,38 @@ $umkc-baby-blue: #E5EEF5;
     }
 }
 // Select field menu arrow fix for various browsers
-.form_responses select {
-    listbox: auto;
-    -webkit-appearance: menulist;
-    -moz-appearance: menulist;
-    appearance: menulist;
-
-    &::-ms-expand { display: block; }
+.form_select .form_responses {
+    position: relative;
+    &::after {
+      position: absolute;
+      background: white;
+      right: 16px;
+      top: 1px;
+      height: calc(100% - 2px);
+      width: 16px;
+      z-index: 1;
+      padding: 0.65rem 0.5rem;
+      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-caret-down-fill' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    }
+   select {
+      -webkit-appearance: none;
+      display: block;
+      width: 100%;
+      // Remove dropdown indicator from Chrome
+      &::-webkit-calendar-picker-indicator  {
+        display: none !important;
+      }
+   }
 }
+
+// .form_responses select {
+//     listbox: auto;
+//     -webkit-appearance: menulist-button;
+//     -moz-appearance: menulist-button;
+//     appearance: menulist-button;
+//     background-image: none;
+//     &::-ms-expand { display: block; }
+// }
 
 // Input and Select fields styles
 .form_responses input, .form_responses select {
