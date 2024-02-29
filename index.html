@@ -18,8 +18,8 @@
       /* background-image: url('/src/images/kansas-city-art-museum-lawn-shuttlecock-nelson-atkins-culture.webp'); */
     }
   </style>
-  <script type="module" crossorigin src="./assets/index.0cb54764.js"></script>
-  <link rel="stylesheet" href="./assets/index.12b6c659.css">
+  <script type="module" crossorigin src="./assets/index.97450371.js"></script>
+  <link rel="stylesheet" href="./assets/index.fd45d96a.css">
 </head>
   <body>
 		<!-- Load SVGs first? -->
@@ -170,6 +170,7 @@
     <path d="M24.1,21.7l6.2-7.2h-1.5l-5.4,6.3l-4.3-6.3h-5l6.5,9.5l-6.5,7.5h1.5l5.7-6.6l4.5,6.6h5L24.1,21.7L24.1,21.7z
        M22.1,24l-0.7-0.9l-5.2-7.5h2.3l4.2,6l0.7,0.9l5.5,7.9h-2.3L22.1,24L22.1,24z"/>
     </symbol>
+    <symbol id="calendar" viewBox="0 -960 960 960"><path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Z"/></symbol>
 </svg>
 		<nav class="skip-links" aria-label="Skip Links">
   <ul>
@@ -243,43 +244,6 @@
       </a>
     </li>
   </ul>
-<!-- <ul class="main-navigation__list">
-    <li class="main-navigation__item">
-      <a href="#" class="main-navigation__link">
-        Admissions
-      </a>
-    </li>
-    <li class="main-navigation__item">
-      <a href="#" class="main-navigation__link">
-        Academics
-      </a>
-    </li>
-    <li class="main-navigation__item">
-      <a href="#" class="main-navigation__link">
-        Student Life
-      </a>
-    </li>
-    <li class="main-navigation__item">
-      <a href="#" class="main-navigation__link">
-        Athletics
-      </a>
-    </li>
-    <li class="main-navigation__item">
-      <a href="#" class="main-navigation__link">
-        Research
-      </a>
-    </li>
-    <li class="main-navigation__item">
-      <a href="#" class="main-navigation__link">
-        Alumni and Giving
-      </a>
-    </li>
-    <li class="main-navigation__item">
-      <a href="#" class="main-navigation__link">
-        About
-      </a>
-    </li>
-  </ul> -->
 </nav>
 </header>
 		<div id="landing-page" class="main-content">
@@ -345,10 +309,64 @@
   <p>Alert box content is here!</p>
 </div>
 
+			<div class="content-row">
+  <div class="text-center">
+    <h2 id="tabs">Header text</h2>
+    <p class="highlight">I am the other text that will be here</p>
+  </div>
+  <div class="tabs">
+    <nav class="tabs__nav" role="navigation">
+      <ul class="tabs__list">
+        <li class="tabs__item"><a class="tabs__link" href="#kansas-city" aria-expanded="true">Kansas City</a></li>
+        <li class="tabs__item"><a class="tabs__link" href="#missouri" aria-expanded="false">Missouri</a></li>
+      </ul>
+    </nav>
+    <div class="tabs__container">
+      <button class="o-btn tabs--hide-desktop accordion__btn" data-toggle="#kansas-city" aria-expanded="true">
+        Kansas City
+      </button>
+      <div class="tabs__content" id="kansas-city" aria-hidden="false">
+        <h3 class="tabs__title">Kansas City</h3>
+        <ul>
+          <li>Sidney Hamilton, North Kansas City</li>
+          <li>Lorena Juanez, Jackson County, MO</li>
+        </ul>
+      </div>
+
+      <button class="o-btn tab__link tabs--hide-desktop accordion__btn" data-toggle="#missouri" aria-hidden="true">
+        Missouri
+      </button>
+      <div class="tabs__content" id="missouri">
+        <h3 class="tabs__title">Missouri</h3>
+        <ul>
+          <li>Jacob Blegen, Southwest Missouri</li>
+          <li>Emily Cay, College Counselors</li>
+          <li>Garrett Sewester, Southeast Missouri</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 			<!-- Program Finder -->
 			<div class="content-row">
     <div class="program-finder">
-        <h2 class="program-finder__title">Find Your Program</h2>
+        <h2 class="program-finder__title callout__title">Find Your Program</h2>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1285.2 53.8" class="callout callout--line" data-aos="fade-right">
+           <defs>
+             <mask class="callout__mask" id="line-mask">
+               <rect x="26.2" y="3" width="1187.5" height="45" stroke-linecap="square" stroke-linejoin="bevel" stroke-width="100" />
+             </mask>
+           </defs>
+          <path class="callout__path" mask="url(#line-mask)" d="M991.2,3c-1.5,0-3.2,0-4.8,0.1c-29.3,1.5-58.7,2.9-88.1,3.1c-68.5,0.5-137,0.2-205.5,0.2
+            c-41,0-82,0.3-123,0.1C493.5,6.2,417.3,5,341,5.1c-67.4,0.1-134.8,2-202.1,2.5c-26.2,0.2-52.5-1-78.7-1.4
+            c-10-0.2-20.9-0.2-23,6.5c-2.2,7,4.6,11.3,18.2,12.3c9.6,0.7,19.4,1,29.1,1.3c7.5,0.3,14.9,0.4,22.4,0.6
+            c-21.8,2.1-43.4,2.3-64.7,3.7C36.1,31,28,34.2,26.4,37c-1.1,2,6,6.7,11.4,7.9c8.4,1.7,17,2.3,25.6,1.9
+            c62.5-2.2,124.8-5.5,187.4-6.9c95.1-2.1,190.4-3.1,285.5-4.2c57-0.7,114-0.9,171-1.4c5.2,0,13.5,0.8,14.9-0.4
+            c9.4-8.3,17.8-1.2,26.4,0l12.3-4.5c-0.4,2-0.6,3-0.7,3.3c20.7,0,41.4-0.9,61.8,0.2c19.7,1.1,37.3-4.5,57.4-2.8
+            c18.3,1.6,37.5,0.8,56.4,0.7c45-0.1,90-1,135-0.5c39.6,0.4,79.2,1.9,118.7,3.3c10.7,0.4,21.6,0.5,23.9-5.5
+            c2.3-6-6.4-10.2-17.8-11.5c-8.7-0.9-17.4-1.2-26.1-0.9c-29.5,0.8-59,2.5-88.5,2.6c-18.6,0-37.3-2.3-57.4-3.7
+            C1016.4,6.5,1006.2,3,991.2,3"/>
+        </svg>
         <p class="highlight program-finder__highlight">Ignite new interests, strengthen your talents and start your path to a rewarding career at Kansas City's only public urban research university.</p>
         <div class="program-finder__form-wrapper">
             <!-- Current Program Finder -->
@@ -457,9 +475,120 @@
         }
     });
 });</script>
+			<div class="content-row">
+  <h2 class="text-center">Icon Link Row</h2>
+  <p class=" text-center highlight">Bro ipsum dolor sit amet gaper backside single track, manny Bike epic clipless. Schraeder drop gondy, rail fatty slash gear jammer steeps clipless rip bowl couloir bomb hole berm. Huck cruiser crank endo, sucker hole piste ripping ACL huck greasy flow face plant pinner. Japan air Skate park big ring trucks shuttle stoked rock-ectomy.</p>
 
+  <div class="il">
+    <div class="il__item">
+      <svg class="il__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M320-440v-287L217-624l-57-56 200-200 200 200-57 56-103-103v287h-80ZM600-80 400-280l57-56 103 103v-287h80v287l103-103 57 56L600-80Z"/></svg>
+      <a href="#">
+        I am content
+      </a>
+    </div>
+    <div class="il__item">
+      <svg class="il__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M320-440v-287L217-624l-57-56 200-200 200 200-57 56-103-103v287h-80ZM600-80 400-280l57-56 103 103v-287h80v287l103-103 57 56L600-80Z"/></svg>
+      <a href="#">
+        I am content
+      </a>
+    </div>
+    <div class="il__item">
+      <svg class="il__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M320-440v-287L217-624l-57-56 200-200 200 200-57 56-103-103v287h-80ZM600-80 400-280l57-56 103 103v-287h80v287l103-103 57 56L600-80Z"/></svg>
+      <a href="#">
+        I am content
+      </a>
+    </div>
+    <div class="il__item">
+      <svg class="il__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M320-440v-287L217-624l-57-56 200-200 200 200-57 56-103-103v287h-80ZM600-80 400-280l57-56 103 103v-287h80v287l103-103 57 56L600-80Z"/></svg>
+      <a href="#">
+        I am content
+      </a>
+    </div>
+    <div class="il__item">
+      <svg class="il__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M320-440v-287L217-624l-57-56 200-200 200 200-57 56-103-103v287h-80ZM600-80 400-280l57-56 103 103v-287h80v287l103-103 57 56L600-80Z"/></svg>
+      <a href="#">
+        I am content
+      </a>
+    </div>
+    <div class="il__item">
+      <svg class="il__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M320-440v-287L217-624l-57-56 200-200 200 200-57 56-103-103v287h-80ZM600-80 400-280l57-56 103 103v-287h80v287l103-103 57 56L600-80Z"/></svg>
+      <a href="#">
+        I am content
+      </a>
+    </div>
+    <div class="il__item">
+      <svg class="il__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M320-440v-287L217-624l-57-56 200-200 200 200-57 56-103-103v287h-80ZM600-80 400-280l57-56 103 103v-287h80v287l103-103 57 56L600-80Z"/></svg>
+      <a href="#">
+        I am content
+      </a>
+    </div>
+    <div class="il__item">
+      <svg class="il__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M320-440v-287L217-624l-57-56 200-200 200 200-57 56-103-103v287h-80ZM600-80 400-280l57-56 103 103v-287h80v287l103-103 57 56L600-80Z"/></svg>
+      <a href="#">
+        I am content
+      </a>
+    </div>
+    <div class="il__item">
+      <svg class="il__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M320-440v-287L217-624l-57-56 200-200 200 200-57 56-103-103v287h-80ZM600-80 400-280l57-56 103 103v-287h80v287l103-103 57 56L600-80Z"/></svg>
+      <a href="#">
+        I am content
+      </a>
+    </div>
+  </div>
+</div>
+
+			<!-- Virtual Tour -->
+			<div class="content-row vt">
+  <div class="vt__content">
+    <h2 class="vt__title">Virtual Tour</h2>
+    <p><a href="#" class="button button--ctavt button--umkc-yellow">Explore Now</a></p>
+  </div>
+</div>
+
+			<!-- Forms -->
+			<h2 id="form_elements">Forms</h2>
+<form class="form">
+<h2>Form Element</h2>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui.</p>
+
+<label for="text_field" class="form__label">Text Field:</label>
+<input type="text" id="text_field" class="form__text">
+
+<label for="text_area"  class="form__label">Text Area:</label>
+<textarea id="text_area" class="form__text form__ta"></textarea>
+
+  <label for="select_element" class="form__label">Select Element:</label>
+  <div class="form__sw">
+    <select class="form__select" id="select_element">
+        <optgroup label="Option Group 1"><option value="1">Option 1</option><option value="2">Option 2</option><option value="3">Option 3</option></optgroup>
+        <optgroup label="Option Group 2"><option value="1">Option 1</option><option value="2">Option 2</option><option value="3">Option 3</option></optgroup>
+    </select>
+  </div>
+  <fieldset>
+    <legend class="form__label">Radio Buttons</legend>
+    <label class="form__label">
+      <input type="radio" class="radio" name="radio_button" value="radio_1"> Radio 1
+    </label>
+    <label class="form__label">
+      <input type="radio" class="radio" name="radio_button" value="radio_2"> Radio 2
+    </label>
+    <label class="form__label">
+      <input type="radio" class="radio" name="radio_button" value="radio_3"> Radio 3
+    </label>
+  </fieldset>
+<p><label for="checkboxes">Checkboxes:</label></p>
+<p><input type="checkbox" class="checkbox" name="checkboxes" value="check_1"> Radio 1<br>
+<input type="checkbox" class="checkbox" name="checkboxes" value="check_2"> Radio 2<br>
+<input type="checkbox" class="checkbox" name="checkboxes" value="check_3"> Radio 3</p>
+<p><label for="password">Password:</label></p>
+<p><input id="password" type="password" class="password" name="password"></p>
+<p><label for="file">File Input:</label><br>
+<input id="file" type="file" class="file" name="file"></p>
+<p><input class="button" type="reset" value="Clear"> <input class="button" type="submit" value="Submit"></p>
+</form>
+</fieldset>
 			<!-- Benefits Lists -->
-			<!-- <div class="content-row">
+			<div class="content-row">
   <div class="benefits-list">
     <img alt="" class="benefits-list__image" src="https://picsum.photos/seed/picsum/448/535" loading="lazy" />
     <div class="benefits-list__group">
@@ -496,8 +625,7 @@
     </div>
   </div>
 </div>
- -->
-			<!-- <div class="content-row">
+			<div class="content-row">
     <h2 class="text-center">Benefits List without Photo</h2>
     <p class="highlight text-center">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
   <div class="benefits-list">
@@ -560,10 +688,9 @@
     </div>
   </div>
 </div>
- -->
 
 			<!-- Stats -->
-			<!-- <div class="content-row">
+			<div class="content-row">
   <h2>Photo and Stats</h2>
   <p class="highlight">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
   <div class="benefits-list">
@@ -617,8 +744,7 @@
     </div>
   </div>
 </div>
- -->
-			<!-- <div class="content-row bg-umkc-gray">
+			<div class="content-row bg-umkc-gray">
   <div class="benefits-list benefits-list--small-stats jc-evenly">
     <div class="benefits-list__group">
       <div class="benefits-list benefits-list--small-stats jc-evenly">
@@ -686,10 +812,25 @@
     </div>
   </div>
 </div>
- -->
 
+			<div class="content-row" style="background-image: url('https://www.umkc.edu/news/posts/2024/february/february-pics/meghan-jaben-chiefs-super-bowl-rings-at-arrowhead.jpg'); padding: 0;">
+  <div class="quote quote--single st__quote">
+    <div class="quote quote--single quote--hp">
+      <div class="quote__item aos-init aos-animate" data-aos="fade-up" data-aos-anchor=".quote__blockquote" data-aos-delay="5000">
+        <span class="quote__icon">“</span>
+        <blockquote class="quote__blockquote text--pf">
+            There’s huge value in being a student in the city where there are so many opportunities. There are existing relationships with organizations that help a student who might not have those connections be able to branch out.
+        </blockquote>
+        <img alt="" class="img--round" src="https://www.umkc.edu/images/Storytelling/meghan-jaben-chiefs-umkc-at-arrowhead.jpg" style="display: block; margin: 1rem auto;">
+        <h3 class="quote__title">Meghan Jaben, IPh.D. student in art history</h3>
+        <p class="text-center"><a class="text--os button button--umkc-yellow button--cta text--upper" href="https://www.umkc.edu/news/posts/2024/february/two-super-bowl-rings-before-umkc-graduation.html">Read Meghan's story</a></p>
+      </div>
+    </div>
+
+  </div>
+</div>
 			<!-- Video Row -->
-			<!-- <div class="content-row">
+			<div class="content-row">
   <h2 class="text-center">Video #1</h2>
   <p class="highlight text-center">I am the subhead</p>
   <div class="video">
@@ -698,9 +839,8 @@
     </div>
   </div>
 </div>
- -->
 			<!-- Box Grid -->
-			<!-- <div class="box-grid box-grid--top">
+			<div class="box-grid box-grid--top">
   <div class="block">
     <div class="">
       <h3 class="box-grid__title">First</h3>
@@ -726,10 +866,9 @@
     </div>
   </div>
 </div>
- -->
 
 			<!-- Cards -->
-			<!-- <div class="content-row">
+			<div class="content-row">
   <h2 class="text-center">Cards - Photos and links</h2>
   <p class="highlight text-center">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak.</p>
 </div>
@@ -807,8 +946,7 @@
                   </div>
               </div>
 </div>
- -->
-			<!-- <div class="content-row">
+			<div class="content-row">
   <h2>Cards</h2>
 </div>
 <div class="cards">
@@ -856,8 +994,7 @@
     </div>
   </div>
 </div>
- -->
-			<!-- <div class="content-row">
+			<div class="content-row">
   <h2>Cards</h2>
 </div>
 <div class="cards">
@@ -905,10 +1042,10 @@
     </div>
   </div>
 </div>
- -->
+
 
 			<!-- Quotes -->
-			<!-- <div class="content-row bg-umkc-gray">
+			<div class="content-row bg-umkc-gray">
   <div class="quote">
     <div class="quote__item is-visible" id="first">
       <span class="quote__icon">&#8220;</span>
@@ -944,8 +1081,7 @@
     <button class="o-btn quote__bullet" data-controls="#third"></button>
   </div>
 </div>
- -->
-			<!-- <div class="content-row bg-umkc-gray">
+			<div class="content-row bg-umkc-gray">
   <div class=" quote quote--single">
   <div class="quote__item">
     <span class="quote__icon">&#8220;</span>
@@ -957,22 +1093,73 @@
 </div>
 
 </div>
- -->
 
 			<!-- Photo + Buttons -->
-			<!-- <div class="pwb bg-umkc-gray">
+			<div class="pwb bg-umkc-gray">
   <img src="https://picsum.photos/seed/picsum/600/600" class="img--round pwb__img" alt="" />
   <div class="pwb__content">
     <h2 class="pwb__title">Photo with Buttons (PWB)</h2>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1285.2 53.8" class="callout callout--line" data-aos="fade-right">
+       <defs>
+         <mask class="callout__mask" id="line-mask">
+           <rect x="26.2" y="3" width="1187.5" height="45" stroke-linecap="square" stroke-linejoin="bevel" stroke-width="100" />
+         </mask>
+       </defs>
+      <path class="callout__path" mask="url(#line-mask)" d="M991.2,3c-1.5,0-3.2,0-4.8,0.1c-29.3,1.5-58.7,2.9-88.1,3.1c-68.5,0.5-137,0.2-205.5,0.2
+        c-41,0-82,0.3-123,0.1C493.5,6.2,417.3,5,341,5.1c-67.4,0.1-134.8,2-202.1,2.5c-26.2,0.2-52.5-1-78.7-1.4
+        c-10-0.2-20.9-0.2-23,6.5c-2.2,7,4.6,11.3,18.2,12.3c9.6,0.7,19.4,1,29.1,1.3c7.5,0.3,14.9,0.4,22.4,0.6
+        c-21.8,2.1-43.4,2.3-64.7,3.7C36.1,31,28,34.2,26.4,37c-1.1,2,6,6.7,11.4,7.9c8.4,1.7,17,2.3,25.6,1.9
+        c62.5-2.2,124.8-5.5,187.4-6.9c95.1-2.1,190.4-3.1,285.5-4.2c57-0.7,114-0.9,171-1.4c5.2,0,13.5,0.8,14.9-0.4
+        c9.4-8.3,17.8-1.2,26.4,0l12.3-4.5c-0.4,2-0.6,3-0.7,3.3c20.7,0,41.4-0.9,61.8,0.2c19.7,1.1,37.3-4.5,57.4-2.8
+        c18.3,1.6,37.5,0.8,56.4,0.7c45-0.1,90-1,135-0.5c39.6,0.4,79.2,1.9,118.7,3.3c10.7,0.4,21.6,0.5,23.9-5.5
+        c2.3-6-6.4-10.2-17.8-11.5c-8.7-0.9-17.4-1.2-26.1-0.9c-29.5,0.8-59,2.5-88.5,2.6c-18.6,0-37.3-2.3-57.4-3.7
+        C1016.4,6.5,1006.2,3,991.2,3"/>
+    </svg>
+
     <p class="highlight"><strong>I'm content</strong> super short.</p>
-  <p><a href="#" class="button button--umkc-yellow button--cta">Button Text</a></p>
+
+    <p>
+      <a href="#" class="button button--umkc-yellow button--cta">Button Text</a>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 563.93 465.57" class="callout callout--arrow" data-aos="fade-left"><defs><mask class="callout__mask" id="arrow-mask"><path d="M140.8,442.19l-25.96-104.2 l-42.67-99.91l224.39-88.87L120.87,258c0,0,115.86,71.17,201.18,31.45S544.4,164.44,492.9,26.84" stroke-linecap="square" stroke-linejoin="bevel" stroke-width="50" /></mask></defs><path class="callout__path" mask="url(#arrow-mask)" d="M512.32,63.12c-26.74-48.71-35.75,18.5-38.17,40.62 c-4.81,44.18-31.36,81.7-65.56,109.31c-32.07,25.9-72.99,39.97-113.76,45.95c-14.44,2.1-130.45-10.43-127.32-14.96 c7.01-10.21,63.7-19.84,76.3-25.23c20.31-8.66,71.15-35.75,56.37-66.44c-11.78-24.41-38.94-10.93-56.79-4.04 c-35.59,13.69-71.26,21.78-107.45,33.19c-24.81,7.84-62.04,7.98-80.21,27.16c-20.51,21.65-3.08,32.82,10.95,51.27 c15.83,20.79,27.03,39.74,34.21,64.71c4.19,14.57,8.17,30.21,9.61,45.4c1.4,14.79-6.19,34.55-4.03,47.53 c4.06,24.13,18.46,26.09,35.98,2.59c19.43-26.1,13.89-65.86,10.69-95.21c-4.17-38.62,12.75-17.55,42.12-7.66 c35.91,12.1,69.85,16.18,107.61,12.3C417.65,317.76,584.96,195.44,512.32,63.12"/></svg>
+    </p>
   <p><a href="#" class="button button--umkc-yellow button--cta">Button Text</a></p>
   <p><a href="#" class="button button--umkc-yellow button--cta">Button Text</a></p>
   </div>
 </div>
- -->
+			<!-- Lighter Blue -->
+			<div class="pwb bg-umkc-lighter-blue">
+  <img src="https://picsum.photos/seed/picsum/600/600" class="img--round pwb__img" alt="" />
+  <div class="pwb__content">
+    <h2 class="pwb__title">Photo with Buttons (PWB)</h2>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1285.2 53.8" class="callout callout--line" data-aos="fade-right">
+       <defs>
+         <mask class="callout__mask" id="line-mask">
+           <rect x="26.2" y="3" width="1187.5" height="45" stroke-linecap="square" stroke-linejoin="bevel" stroke-width="100" />
+         </mask>
+       </defs>
+      <path class="callout__path" mask="url(#line-mask)" d="M991.2,3c-1.5,0-3.2,0-4.8,0.1c-29.3,1.5-58.7,2.9-88.1,3.1c-68.5,0.5-137,0.2-205.5,0.2
+        c-41,0-82,0.3-123,0.1C493.5,6.2,417.3,5,341,5.1c-67.4,0.1-134.8,2-202.1,2.5c-26.2,0.2-52.5-1-78.7-1.4
+        c-10-0.2-20.9-0.2-23,6.5c-2.2,7,4.6,11.3,18.2,12.3c9.6,0.7,19.4,1,29.1,1.3c7.5,0.3,14.9,0.4,22.4,0.6
+        c-21.8,2.1-43.4,2.3-64.7,3.7C36.1,31,28,34.2,26.4,37c-1.1,2,6,6.7,11.4,7.9c8.4,1.7,17,2.3,25.6,1.9
+        c62.5-2.2,124.8-5.5,187.4-6.9c95.1-2.1,190.4-3.1,285.5-4.2c57-0.7,114-0.9,171-1.4c5.2,0,13.5,0.8,14.9-0.4
+        c9.4-8.3,17.8-1.2,26.4,0l12.3-4.5c-0.4,2-0.6,3-0.7,3.3c20.7,0,41.4-0.9,61.8,0.2c19.7,1.1,37.3-4.5,57.4-2.8
+        c18.3,1.6,37.5,0.8,56.4,0.7c45-0.1,90-1,135-0.5c39.6,0.4,79.2,1.9,118.7,3.3c10.7,0.4,21.6,0.5,23.9-5.5
+        c2.3-6-6.4-10.2-17.8-11.5c-8.7-0.9-17.4-1.2-26.1-0.9c-29.5,0.8-59,2.5-88.5,2.6c-18.6,0-37.3-2.3-57.4-3.7
+        C1016.4,6.5,1006.2,3,991.2,3"/>
+    </svg>
 
-			<!-- <div class="content-row tb">
+    <p class="highlight"><strong>I'm content</strong> super short.</p>
+
+    <p>
+      <a href="#" class="button button--umkc-yellow button--cta">Button Text</a>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 563.93 465.57" class="callout callout--arrow" data-aos="fade-left"><defs><mask class="callout__mask" id="arrow-mask"><path d="M140.8,442.19l-25.96-104.2 l-42.67-99.91l224.39-88.87L120.87,258c0,0,115.86,71.17,201.18,31.45S544.4,164.44,492.9,26.84" stroke-linecap="square" stroke-linejoin="bevel" stroke-width="50" /></mask></defs><path class="callout__path" mask="url(#arrow-mask)" d="M512.32,63.12c-26.74-48.71-35.75,18.5-38.17,40.62 c-4.81,44.18-31.36,81.7-65.56,109.31c-32.07,25.9-72.99,39.97-113.76,45.95c-14.44,2.1-130.45-10.43-127.32-14.96 c7.01-10.21,63.7-19.84,76.3-25.23c20.31-8.66,71.15-35.75,56.37-66.44c-11.78-24.41-38.94-10.93-56.79-4.04 c-35.59,13.69-71.26,21.78-107.45,33.19c-24.81,7.84-62.04,7.98-80.21,27.16c-20.51,21.65-3.08,32.82,10.95,51.27 c15.83,20.79,27.03,39.74,34.21,64.71c4.19,14.57,8.17,30.21,9.61,45.4c1.4,14.79-6.19,34.55-4.03,47.53 c4.06,24.13,18.46,26.09,35.98,2.59c19.43-26.1,13.89-65.86,10.69-95.21c-4.17-38.62,12.75-17.55,42.12-7.66 c35.91,12.1,69.85,16.18,107.61,12.3C417.65,317.76,584.96,195.44,512.32,63.12"/></svg>
+    </p>
+  <p><a href="#" class="button button--umkc-yellow button--cta">Button Text</a></p>
+  <p><a href="#" class="button button--umkc-yellow button--cta">Button Text</a></p>
+  </div>
+</div>
+
+			<div class="content-row tb">
   <div class="text-center">
     <h2 class="">Text Block Title</h2>
     <p class="highlight">Text Block description</p>
@@ -984,9 +1171,53 @@
     <li>Vestibulum auctor dapibus neque.</li>
   </ul>
 </div>
- -->
 			<!-- Image + Content + Links -->
-			<!-- <div class="icl bg-umkc-blue icl--blue">
+			<div class="icl icl--50">
+
+  <div class="icl__desc text-center">
+    <h2 class="icl__title">ICL 50/50</h2>
+    <p class="highlight">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+  </div>
+
+  <div class="icl__row">
+    <img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
+    <div class="icl__content">
+      <h3 class="icl__title">Photo with Buttons (PWB)</h3>
+      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. <a href="#" target="_blank">Cow pastrami burgdoggen spare</a> ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+      <p><a href="#" class="button button--umkc-yellow button--cta">Button Text</a></p>
+    </div>
+  </div>
+
+<div class="icl__row">
+    <img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
+    <div class="icl__content">
+      <h3 class="icl__title">Photo with Buttons (PWB)</h3>
+      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. <a href="#" target="_blank">Cow pastrami burgdoggen spare</a> ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+      <p><a href="#" class="button button--umkc-yellow button--cta">Button Text</a></p>
+    </div>
+  </div>
+
+<div class="icl__row">
+    <img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
+    <div class="icl__content">
+      <h3 class="icl__title">Photo with Buttons (PWB)</h3>
+      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. <a href="#" target="_blank">Cow pastrami burgdoggen spare</a> ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+      <p><a href="#" class="button button--umkc-yellow button--cta">Button Text</a></p>
+    </div>
+  </div>
+
+  <div class="icl__row">
+    <img src="https://picsum.photos/seed/picsum/500/400" class="icl__image" alt="" />
+    <div class="icl__content">
+      <h3 class="icl__title">Photo with Buttons (PWB)</h3>
+      <p>Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
+      <p><a href="#" class="button button--umkc-yellow button--cta">Button Text</a></p>
+    </div>
+  </div>
+
+</div>
+
+			<div class="icl bg-umkc-blue icl--blue">
   <div class="text-center">
     <h2 class="icl__title">Heading Heading Heading</h2>
     <p class="highlight">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
@@ -1018,9 +1249,8 @@
     </div>
   </div>
 </div>
- -->
 
-			<!-- <div class="icl bg-umkc-gray icl--umkc-grey">
+			<div class="icl bg-umkc-gray icl--umkc-grey">
   <div class="text-center">
     <h2 class="icl__title">Heading Heading Heading</h2>
     <p class="highlight">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
@@ -1052,9 +1282,8 @@
     </div>
   </div>
 </div>
- -->
 
-			<!-- <div class="icl bg-white">
+			<div class="icl bg-white">
   <div class="text-center">
     <h2 class="icl__title">Heading Heading Heading</h2>
     <p class="highlight">Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo. Cow pastrami burgdoggen spare ribs strip steak. Bacon ipsum dolor amet meatball jowl kielbasa pork belly buffalo.</p>
@@ -1086,7 +1315,6 @@
     </div>
   </div>
 </div>
- -->
 
 			<!-- News and Calendar Feed -->
 			<div class="content-row">
@@ -1145,7 +1373,7 @@
   </p>
 </div>
 
-			<!-- <div class="vertical-image" id="vi">
+			<div class="vertical-image" id="vi">
   <div class="vertical-image__item" style="background-image: url('https://www.umkc.edu/images/student-life/UMKC-Athletics.jpg');">
     <div class="vertical-image__content">
       <h3 class="vertical-image__title">Title</h3>
@@ -1167,9 +1395,8 @@
     </div>
   </div>
 </div>
- -->
 
-			<!-- <div class="content-row">
+			<div class="content-row">
   <ul class="resource-list nav nav--inline nav--resource">
     <li>
       <a href="#" class="button button--outline button--umkc-blue">Button Text</a>
@@ -1180,9 +1407,8 @@
 
   </ul>
 </div>
- -->
 
-			<!-- <div class="content-row">
+			<div class="content-row">
   <div class="accordion">
     <button aria-label="Toggle Sub Menu" class="o-btn tabs__title accordion__btn track" data-toggle="#positive" aria-expanded="false">
       <svg class="icon accordion__icon">
@@ -1205,10 +1431,9 @@
     </div>
   </div>
 </div>
- -->
 
-			<!-- <div class="content-row"> -->
-				<!-- <div class="gallery">
+			<div class="content-row">
+				<div class="gallery">
   <figure class="gallery__item">
     <img src="https://picsum.photos/seed/picsum/800/800" alt="Gallery image 1" class="gallery__img">
   </figure>
@@ -1228,11 +1453,10 @@
     <img src="https://picsum.photos/seed/picsum/448/562" alt="Gallery image 6" class="gallery__img">
   </figure>
 </div>
- -->
-			<!-- </div> -->
+			</div>
 
-			<!-- <div class="content-row"> -->
-				<!-- <div class="glide">
+			<div class="content-row">
+				<div class="glide">
   <div class="glide__track" data-glide-el="track">
     <div class="glide__slides">
       <div class="glide__slide">
@@ -1268,10 +1492,9 @@
     </button>
   </div>
 </div>
- -->
-			<!-- </div> -->
+			</div>
 
-			<!-- <div class="content-row">
+			<div class="content-row">
   <div class="text-center">
     <h2 id="directory">Directory Row</h2>
     <p class="highlight">I am the directory row highlight text</p>
@@ -1326,10 +1549,9 @@
     </div>
   </div>
 </div>
- -->
 
 			<!-- Icon Row -->
-			<!-- ﻿<div class="content-row bg-umkc-gray" id="icon">
+			﻿<div class="content-row" id="icon">
     <div class="text-center">
         <h2 id="directory">Icon Row (3 Up)</h2>
         <p class="highlight">I am the directory row highlight text</p>
@@ -1435,7 +1657,7 @@
     <div class="icon-row">
         <div class="icon-row__item">
             <div class="icon-row__image">
-                <img src="src/images/svg/computer-arrow.svg" class="icon-row__icon" alt=""/>
+                <img src="./assets/computer-arrow.03c173b7.svg" class="icon-row__icon" alt=""/>
             </div>
             <div class="icon-row__details">
                 <h3 class="icon-row__title icon-row__title--light">
@@ -1446,7 +1668,7 @@
         </div>
         <div class="icon-row__item">
             <div class="icon-row__image">
-            <img src="src/images/svg/building-dormApartment.svg" class="icon-row__icon" alt="" /></div>
+            <img src="./assets/building-dormApartment.561f1d6f.svg" class="icon-row__icon" alt="" /></div>
             <div class="icon-row__details">
                 <h3 class="icon-row__title icon-row__title--light">Point</h3>
                 <p class="icon-row__copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
@@ -1454,7 +1676,7 @@
         </div>
         <div class="icon-row__item">
             <div class="icon-row__image">
-                <img src="src/images/svg/book-academicUnits.svg" class="icon-row__icon" alt="" />
+                <img src="./assets/book-academicUnits.e437cf9f.svg" class="icon-row__icon" alt="" />
             </div>
             <div class="icon-row__details">
                 <h3 class="icon-row__title icon-row__title--light">Point</h3>
@@ -1463,7 +1685,7 @@
         </div>
         <div class="icon-row__item">
             <div class="icon-row__image">
-                <img src="src/images/svg/books-stacked.svg" class="icon-row__icon" alt="" />
+                <img src="./assets/books-stacked.e767e393.svg" class="icon-row__icon" alt="" />
             </div>
             <div class="icon-row__details">
                 <h3 class="icon-row__title icon-row__title--light">Point</h3>
@@ -1472,7 +1694,6 @@
         </div>
     </div>
 </div>
- -->
 		</div>
 		<div id="standard-page" class="main-content">
 			<!-- Start of the Standard Page Layout -->
@@ -1557,311 +1778,38 @@
     <p class="resource__description">I am a brief teaser of the content of this page.</p>
   </div>
 </div>
-			<!-- <div class="standard"> -->
-				<!-- <div class="standard--nav"></div> -->
-				<!-- <div class="standard--content"> -->
-					<!-- 
-  <div class="profile__bio">
-    <div class="profile__biography">
-      <h2 class="profile__title profile__title--sub">Biography</h2>
-      <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium.</p>
-      <p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before. Many say exploration is part of our destiny, but it’s actually our duty to future generations and their quest to ensure the survival of the human species.</p>
-      <p>Bro ipsum dolor sit amet gaper backside single track, manny Bike epic clipless. Schraeder drop gondy, rail fatty slash gear jammer steeps clipless rip bowl couloir bomb hole berm. Huck cruiser crank endo, sucker hole piste ripping ACL huck greasy flow face plant pinner. Japan air Skate park big ring trucks shuttle stoked rock-ectomy.</p>
-    </div>
 
-    <div class="profile__lists">
-      <h2 class="profile__title profile__title--sub">
-        Links
-      </h2>
-      <ul class="">
-        <li><a href="https://google.com">Google</a></li>
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">GitHub</a></li>
-      </ul>
-      <h2 class="profile__title profile__title--sub">
-        Expertise
-      </h2>
-      <ul>
-        <li>Internet of Things</li>
-        <li>Internet of Things</li>
-        <li>Internet of Things</li>
-      </ul>
+			<div class="standard">
+				<div class="standard--nav"></div>
+				<div class="standard--content">
 
-      <h2 class="profile__title profile__title--sub">
-        Publications
-      </h2>
-      <ul>
-        <li>Internet of Things</li>
-        <li>Internet of Things</li>
-        <li>Internet of Things</li>
-      </ul>
-
-      <h2 class="profile__title profile__title--sub">
-        Work History
-      </h2>
-      <ul>
-        <li>Internet of Things</li>
-        <li>Internet of Things</li>
-        <li>Internet of Things</li>
-      </ul>
-
-      <h2 class="profile__title profile__title--sub">
-        Degrees
-      </h2>
-      <ul>
-        <li>Internet of Things</li>
-        <li>Internet of Things</li>
-        <li>Internet of Things</li>
-      </ul>
-    </div>
-  </div>
- -->
-					<!-- <div class="oc">
-  <div class="oc__item oc__item--lead">
-    <img src="https://picsum.photos/220/220?grayscale" alt="" class="oc__image img--round" />
-    <div class="oc__content">
-      <p><a href="#"><span class="oc__name">First Last</span></a><br />
-      <span class="oc__title">I am the title</span></p>
-      <p>Lorem Ipsum is the single greatest threat. We are not - we are not keeping up with other websites. Lorem Ipsum best not make any more threats to your website. It will be met with fire and fury like the world has never seen. Does everybody know that pig named Lorem Ipsum? An ‘extremely credible source’ has called my office and told me that Barack Obama’s placeholder text is a fraud.</p>
-    </div>
-  </div>
-  <div class="oc__item">
-    <img src="https://picsum.photos/220/220?grayscale" alt="" class="oc__image img--round" />
-    <div class="oc__content">
-      <p><a href="#"><span class="oc__name">First Last</span></a><br />
-      <span class="oc__title">I am the title</span></p>
-      <p>Lorem Ipsum is the single greatest threat. We are not - we are not keeping up with other websites. Lorem Ipsum best not make any more threats to your website. It will be met with fire and fury like the world has never seen. Does everybody know that pig named Lorem Ipsum? An ‘extremely credible source’ has called my office and told me that Barack Obama’s placeholder text is a fraud.</p>
-    </div>
-  </div>
-  <div class="oc__item">
-    <img src="https://picsum.photos/220/220?grayscale" alt="" class="oc__image img--round" />
-    <div class="oc__content">
-      <p><a href="#"><span class="oc__name">First Last</span></a><br />
-      <span class="oc__title">I am the title</span></p>
-      <p>The Division of Student Affairs is dedicated to offering a wide range of programs and services that enhance the student experience. Led by passionate professionals, the focus is on promoting student engagement and delivering services that nurture their personal and intellectual growth. Dr. Smith, as the Vice Provost for Student Affairs and Dean of Students, works collaboratively and hand-in-hand with the provost, guiding Student Affairs staff in their mission to bolster university-level activities and academic initiatives. Their efforts aim to cultivate an environment marked by a deep sense of care and belonging that propels student learning, paves the way for academic achievement and champions the holistic development of every student.</p>
-      <p>The division's portfolio includes Residential Life, Student Auxiliaries featuring Dining Services, the Bookstore, and the Student Union; the Office of Student Conduct and Civility; Student Engagement; Campus Recreation; the Counseling Center; Student Health and Wellness; Student Accessibility Services; Multicultural Student Affairs; Veteran Student Services; the Women’s Center; and Student Involvement Services, including Basic Needs, Food Pantry, Greek Life, LGBTQIA+ programs, New Student/Family and Parent programs, and over 300 Student Organizations, including the Student Government Association.</p>
-      <p>Lorem Ipsum is the single greatest threat. We are not - we are not keeping up with other websites. Lorem Ipsum best not make any more threats to your website. It will be met with fire and fury like the world has never seen. Does everybody know that pig named Lorem Ipsum? An ‘extremely credible source’ has called my office and told me that Barack Obama’s placeholder text is a fraud.</p>
-    </div>
-  </div>
-  <div class="oc__item oc__item--last">
-    <img src="https://picsum.photos/220/220?grayscale" alt="" class="oc__image img--round" />
-    <div class="oc__content">
-      <p><a href="#"><span class="oc__name">First Last</span></a><br />
-      <span class="oc__title">I am the title</span></p>
-      <p>Lorem Ipsum is the single greatest threat. We are not - we are not keeping up with other websites. Lorem Ipsum best not make any more threats to your website. It will be met with fire and fury like the world has never seen. Does everybody know that pig named Lorem Ipsum? An ‘extremely credible source’ has called my office and told me that Barack Obama’s placeholder text is a fraud.</p>
-      <p>Lorem Ipsum is the single greatest threat. We are not - we are not keeping up with other websites. Lorem Ipsum best not make any more threats to your website. It will be met with fire and fury like the world has never seen. Does everybody know that pig named Lorem Ipsum? An ‘extremely credible source’ has called my office and told me that Barack Obama’s placeholder text is a fraud.</p>
-    </div>
-  </div>
-</div>
- -->
-					<h1>Leadership</h1>
-<p>Learn more about our leadership team, their roles and backgrounds, or download our full organizational chart.</p>
-<p><a class="button button--umkc-blue" href="/renderfile/c81340b3ac1e04cd16897cbc1a6defa3/docs/about-us/provost-org-chart-8-9-23.pdf" rel="noopener" target="_blank">Organizational chart</a></p>
-<div class="ds bg-umkc-gray">
-  <form class="form" id="directory_search">
-    <div class="form__flex">
-      <div class="form__group">
-        <label class="form__label">Search</label>
-        <input name="s" class="form__text" id="dirSearch" type="search">
-      </div>
-      <div class="form__group">
-        <label class="form__label">Categories</label>
-        <div class="form__sw">
-          <input name="c" id="dirSearchCat" class="form__select" list="categories">
-          <datalist id="categories">
-            <option></option>
-            <option value="Test">Test</option>
-            <option value="Thing">Thing</option>
-            <option value="Another">Another</option>
-          </datalist>
-        </div>
-      </div>
-    </div>
-  </form>
-</div>
-
-<div class="di">
-  <div class="di__item" data-filter=""> <!-- Grid layout -->
-    <img src="https://picsum.photos/90/90" class="di__image" alt="" />
-    <p class="di__name"><a href="#">First Name</a></p>
-    <p class="di__title">Faculty Member<br /></p>
-    <p class="di__dept">Social Sciences</p>
-    <p class="di__au">SHSS</p>
-  </div>
-  <div class="di__item" data-filter=""> <!-- Grid layout -->
-    <img src="https://picsum.photos/90/90" class="di__image" alt="" />
-    <p class="di__name"><a href="#">First</a></p>
-    <p class="di__title">Title</p>
-    <p class="di__dept">Depart the unversity</p>
-    <p class="di__au">computer science and even more departments!</p>
-  </div>
-  <div class="di__item" data-filter=""> <!-- Grid layout -->
-    <img src="https://picsum.photos/90/90" class="di__image" alt="" />
-    <p class="di__name"><a href="#">First Last;fdsal;khfdsl;kjfdsal;jfdsa</a></p>
-    <p class="di__title">Title<br />Title 2fdsafdsafdsafdsa</p>
-    <p class="di__dept">Department of the longest name at the unversity</p>
-    <p class="di__au">s!</p>
-  </div>
-  <div class="di__item" data-filter=""> <!-- Grid layout -->
-    <img src="https://picsum.photos/90/90" class="di__image" alt="" />
-    <p class="di__name"><a href="#">First</a></p>
-    <p class="di__title">Title</p>
-    <p class="di__dept">Depart the unversity</p>
-    <p class="di__au">computer science and even more departments!</p>
-  </div>
-  <div class="di__item" data-filter=""> <!-- Grid layout -->
-    <img src="https://picsum.photos/90/90" class="di__image" alt="" />
-    <p class="di__name"><a href="#">First Last;fdsal;khfdsl;kjfdsal;jfdsa</a></p>
-    <p class="di__title">Title<br />Title 2fdsafdsafdsafdsa</p>
-    <p class="di__dept">Department of the longest name at the unversity</p>
-    <p class="di__au">s!</p>
-  </div>
-  <div class="di__item" data-filter="test"> <!-- Grid layout -->
-    <img src="https://picsum.photos/90/90" class="di__image" alt="" />
-    <p class="di__name"><a href="#">First</a></p>
-    <p class="di__title">Title</p>
-    <p class="di__dept">Depart the unversity</p>
-    <p class="di__au">computer science and even more departments!</p>
-  </div>
-</div>
-					
-  <div class="profile__bio">
-    <div class="profile__biography">
-      <h2 class="profile__title profile__title--sub">Biography</h2>
-      <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium.</p>
-      <p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before. Many say exploration is part of our destiny, but it’s actually our duty to future generations and their quest to ensure the survival of the human species.</p>
-      <p>Bro ipsum dolor sit amet gaper backside single track, manny Bike epic clipless. Schraeder drop gondy, rail fatty slash gear jammer steeps clipless rip bowl couloir bomb hole berm. Huck cruiser crank endo, sucker hole piste ripping ACL huck greasy flow face plant pinner. Japan air Skate park big ring trucks shuttle stoked rock-ectomy.</p>
-    </div>
-
-    <div class="profile__lists">
-      <h2 class="profile__title profile__title--sub">
-        Links
-      </h2>
-      <ul class="">
-        <li><a href="https://google.com">Google</a></li>
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">GitHub</a></li>
-      </ul>
-      <h2 class="profile__title profile__title--sub">
-        Expertise
-      </h2>
-      <ul>
-        <li>Internet of Things</li>
-        <li>Internet of Things</li>
-        <li>Internet of Things</li>
-      </ul>
-
-      <h2 class="profile__title profile__title--sub">
-        Publications
-      </h2>
-      <ul>
-        <li>Internet of Things</li>
-        <li>Internet of Things</li>
-        <li>Internet of Things</li>
-      </ul>
-
-      <h2 class="profile__title profile__title--sub">
-        Work History
-      </h2>
-      <ul>
-        <li>Internet of Things</li>
-        <li>Internet of Things</li>
-        <li>Internet of Things</li>
-      </ul>
-
-      <h2 class="profile__title profile__title--sub">
-        Degrees
-      </h2>
-      <ul>
-        <li>Internet of Things</li>
-        <li>Internet of Things</li>
-        <li>Internet of Things</li>
-      </ul>
-    </div>
-  </div>
-					<!-- <div class="oc">
-  <div class="oc__item oc__item--lead">
-    <img src="https://picsum.photos/220/220?grayscale" alt="" class="oc__image img--round" />
-    <div class="oc__content">
-      <p><a href="#"><span class="oc__name">First Last</span></a><br />
-      <span class="oc__title">I am the title</span></p>
-      <p>Lorem Ipsum is the single greatest threat. We are not - we are not keeping up with other websites. Lorem Ipsum best not make any more threats to your website. It will be met with fire and fury like the world has never seen. Does everybody know that pig named Lorem Ipsum? An ‘extremely credible source’ has called my office and told me that Barack Obama’s placeholder text is a fraud.</p>
-    </div>
-  </div>
-  <div class="oc__item">
-    <img src="https://picsum.photos/220/220?grayscale" alt="" class="oc__image img--round" />
-    <div class="oc__content">
-      <p><a href="#"><span class="oc__name">First Last</span></a><br />
-      <span class="oc__title">I am the title</span></p>
-      <p>Lorem Ipsum is the single greatest threat. We are not - we are not keeping up with other websites. Lorem Ipsum best not make any more threats to your website. It will be met with fire and fury like the world has never seen. Does everybody know that pig named Lorem Ipsum? An ‘extremely credible source’ has called my office and told me that Barack Obama’s placeholder text is a fraud.</p>
-    </div>
-  </div>
-  <div class="oc__item">
-    <img src="https://picsum.photos/220/220?grayscale" alt="" class="oc__image img--round" />
-    <div class="oc__content">
-      <p><a href="#"><span class="oc__name">First Last</span></a><br />
-      <span class="oc__title">I am the title</span></p>
-      <p>The Division of Student Affairs is dedicated to offering a wide range of programs and services that enhance the student experience. Led by passionate professionals, the focus is on promoting student engagement and delivering services that nurture their personal and intellectual growth. Dr. Smith, as the Vice Provost for Student Affairs and Dean of Students, works collaboratively and hand-in-hand with the provost, guiding Student Affairs staff in their mission to bolster university-level activities and academic initiatives. Their efforts aim to cultivate an environment marked by a deep sense of care and belonging that propels student learning, paves the way for academic achievement and champions the holistic development of every student.</p>
-      <p>The division's portfolio includes Residential Life, Student Auxiliaries featuring Dining Services, the Bookstore, and the Student Union; the Office of Student Conduct and Civility; Student Engagement; Campus Recreation; the Counseling Center; Student Health and Wellness; Student Accessibility Services; Multicultural Student Affairs; Veteran Student Services; the Women’s Center; and Student Involvement Services, including Basic Needs, Food Pantry, Greek Life, LGBTQIA+ programs, New Student/Family and Parent programs, and over 300 Student Organizations, including the Student Government Association.</p>
-      <p>Lorem Ipsum is the single greatest threat. We are not - we are not keeping up with other websites. Lorem Ipsum best not make any more threats to your website. It will be met with fire and fury like the world has never seen. Does everybody know that pig named Lorem Ipsum? An ‘extremely credible source’ has called my office and told me that Barack Obama’s placeholder text is a fraud.</p>
-    </div>
-  </div>
-  <div class="oc__item oc__item--last">
-    <img src="https://picsum.photos/220/220?grayscale" alt="" class="oc__image img--round" />
-    <div class="oc__content">
-      <p><a href="#"><span class="oc__name">First Last</span></a><br />
-      <span class="oc__title">I am the title</span></p>
-      <p>Lorem Ipsum is the single greatest threat. We are not - we are not keeping up with other websites. Lorem Ipsum best not make any more threats to your website. It will be met with fire and fury like the world has never seen. Does everybody know that pig named Lorem Ipsum? An ‘extremely credible source’ has called my office and told me that Barack Obama’s placeholder text is a fraud.</p>
-      <p>Lorem Ipsum is the single greatest threat. We are not - we are not keeping up with other websites. Lorem Ipsum best not make any more threats to your website. It will be met with fire and fury like the world has never seen. Does everybody know that pig named Lorem Ipsum? An ‘extremely credible source’ has called my office and told me that Barack Obama’s placeholder text is a fraud.</p>
-    </div>
-  </div>
-</div>
- -->
-					<!-- <h2 id="form_elements">Forms</h2>
-<form class="form">
-<h2>Form Element</h2>
-<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui.</p>
-
-<label for="text_field" class="form__label">Text Field:</label>
-<input type="text" id="text_field" class="form__text">
-
-<label for="text_area"  class="form__label">Text Area:</label>
-<textarea id="text_area" class="form__text form__ta"></textarea>
-
-  <label for="select_element" class="form__label">Select Element:</label>
-  <div class="form__sw">
-    <select class="form__select" id="select_element">
-        <optgroup label="Option Group 1"><option value="1">Option 1</option><option value="2">Option 2</option><option value="3">Option 3</option></optgroup>
-        <optgroup label="Option Group 2"><option value="1">Option 1</option><option value="2">Option 2</option><option value="3">Option 3</option></optgroup>
-    </select>
-  </div>
-  <fieldset>
-    <legend class="form__label">Radio Buttons</legend>
-    <label class="form__label">
-      <input type="radio" class="radio" name="radio_button" value="radio_1"> Radio 1
-    </label>
-    <label class="form__label">
-      <input type="radio" class="radio" name="radio_button" value="radio_2"> Radio 2
-    </label>
-    <label class="form__label">
-      <input type="radio" class="radio" name="radio_button" value="radio_3"> Radio 3
-    </label>
-  </fieldset>
-<p><label for="checkboxes">Checkboxes:</label></p>
-<p><input type="checkbox" class="checkbox" name="checkboxes" value="check_1"> Radio 1<br>
-<input type="checkbox" class="checkbox" name="checkboxes" value="check_2"> Radio 2<br>
-<input type="checkbox" class="checkbox" name="checkboxes" value="check_3"> Radio 3</p>
-<p><label for="password">Password:</label></p>
-<p><input id="password" type="password" class="password" name="password"></p>
-<p><label for="file">File Input:</label><br>
-<input id="file" type="file" class="file" name="file"></p>
-<p><input class="button" type="reset" value="Clear"> <input class="button" type="submit" value="Submit"></p>
-</form>
-</fieldset>
- -->
-				<!-- </div> -->
+					<div class="deadlines">
+						<div class="deadlines__item">
+							<div class="deadlines__header">
+								<h2>January 1 - December 25</h2>
+							</div>
+							<div class="deadlines__sep"></div>
+							<div class="deadlines__content">
+								<h3 class="deadlines__title">FAFSA Available</h3>
+								<p>Bro ipsum dolor sit amet gaper backside single track, manny Bike epic clipless. Schraeder drop gondy, rail fatty slash gear jammer steeps clipless rip bowl couloir bomb hole berm. Huck cruiser crank endo, sucker hole piste ripping ACL huck greasy flow face plant pinner. Japan air Skate park big ring trucks shuttle stoked rock-ectomy.</p>
+							</div>
+						</div>
+						<div class="deadlines__item">
+							<div class="deadlines__header">
+								Dec - Mar
+							</div>
+							<div class="deadlines__sep"></div>
+							<div class="deadlines__content">
+								<h3 class="deadlines__title">FAFSA Available</h3>
+								<p>Bro ipsum dolor sit amet gaper backside single track, manny Bike epic clipless. sucker hole piste ripping ACL. <a href="#">File FAFSA</a>.</p>
+							</div>
+						</div>
+					</div>
+					<p class="deadlines__link"><a href="#" class="button button--umkc-yellow">All Calendar Events</a></p>
+				</div>
 			</div>
-		</div>
+		</div></div>
+				<!-- </div> -->
 
 
 			<!-- 
@@ -2037,6 +1985,31 @@
 				</li>
 			</ul>
 		</div>
+
+		<div id="getInfoButton">
+	<a href="#" class="">
+		<svg class="icon menu__icon"><use xlink:href="#envelope"></use></svg>
+		Get Info
+	</a>
+</div>
+<div id="getInfoFormScreen" class="hidden"></div>
+<div id="getInfoForm" class="hidden">
+	<div id="getInfoClose">
+		<svg class="icon menu__icon"><use xlink:href="#close"></use></svg>
+	</div>
+	<div class="wrapper">
+		<div class="form-wrapper">
+			<h2>Request More Info</h2>
+				<!-- Updated Version -->
+				<div id="form_0576a7b2-e2c6-4479-9713-af300ac1ba72">Loading...</div><script async="async" src="https://futureroo.umkc.edu/register/?id=0576a7b2-e2c6-4479-9713-af300ac1ba72&amp;output=embed&amp;div=form_0576a7b2-e2c6-4479-9713-af300ac1ba72">/**/</script>
+		</div>
+		<div class="submit-wrapper">
+			<a href="#" class="button button--umkc-dark-blue button--popup">Apply to UMKC</a>
+			<a href="#" class="button button--umkc-dark-blue button--popup">Contact Us</a>
+		</div>
+	</div>
+</div>
+
 		<footer class="footer">
   <div class="hero-img footer__top">
     <nav class="footer__nav footer__nav--buttons" aria-label="Actionable links">
@@ -2059,7 +2032,7 @@
       </ul>
     </nav>
   </div>
-  <div class="bg-umkc-dark-blue" id="footer-mid">
+  <div class="bg-umkc-navy" id="footer-mid">
     <div class="footer__mid">
       <div class="footer__info">
         <h2 class="footer__title">University of Missouri-Kansas City</h2>
