@@ -1,0 +1,38 @@
+<div class="content-row">
+  <div class="text-center">
+    <h2 id="tabs">Header text</h2>
+    <p class="highlight">I am the other text that will be here</p>
+  </div>
+  <div class="tabs">
+    <nav class="tabs__nav" role="navigation">
+      <ul class="tabs__list">
+        <li class="tabs__item"><a class="tabs__link" href="#kansas-city" aria-expanded="true">Kansas City</a></li>
+        <li class="tabs__item"><a class="tabs__link" href="#missouri" aria-expanded="false">Missouri</a></li>
+      </ul>
+    </nav>
+    <div class="tabs__container">
+      <button class="o-btn tabs--hide-desktop accordion__btn" data-toggle="#kansas-city" aria-expanded="true">
+        Kansas City
+      </button>
+      <div class="tabs__content" id="kansas-city" aria-hidden="false">
+        <h3 class="tabs__title">Kansas City</h3>
+        <ul>
+          <li>Sidney Hamilton, North Kansas City</li>
+          <li>Lorena Juanez, Jackson County, MO</li>
+        </ul>
+      </div>
+
+      <button class="o-btn tab__link tabs--hide-desktop accordion__btn" data-toggle="#missouri" aria-hidden="true">
+        Missouri
+      </button>
+      <div class="tabs__content" id="missouri">
+        <h3 class="tabs__title">Missouri</h3>
+        <ul>
+          <li>Jacob Blegen, Southwest Missouri</li>
+          <li>Emily Cay, College Counselors</li>
+          <li>Garrett Sewester, Southeast Missouri</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

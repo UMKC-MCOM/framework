@@ -16,64 +16,77 @@
 			<!-- Local Site Alerts -->
 			{{> ks/alert bgColor=""}}
 
+			{{> ks/tabs }}
 			<!-- Program Finder -->
 			{{> ks/program-finder }}
+			{{> ks/icon-link }}
 
+			<!-- Virtual Tour -->
+			{{> ks/vt }}
+
+			<!-- Forms -->
+			{{> ks/form }}
 			<!-- Benefits Lists -->
-			<!-- {{> ks/blp }} -->
-			<!-- {{> ks/blnp }} -->
+			{{> ks/blp }}
+			{{> ks/blnp }}
 
 			<!-- Stats -->
-			<!-- {{> ks/sp }} -->
-			<!-- {{> ks/snp }} -->
+			{{> ks/sp }}
+			{{> ks/snp }}
 
+			{{> ks/storytelling }}
 			<!-- Video Row -->
-			<!-- {{> ks/video }} -->
+			{{> ks/video }}
 			<!-- Box Grid -->
-			<!-- {{> ks/bg }} -->
+			{{> ks/bg }}
 
 			<!-- Cards -->
-			<!-- {{> ks/cp bgColor="umkc-blue" }} -->
-			<!-- {{> ks/cnp link="true" }} -->
-			<!-- {{> ks/cnp }} -->
+			{{> ks/cp bgColor="umkc-blue" }}
+			{{> ks/cnp link="true" }}
+			{{> ks/cnp }}
+
 
 			<!-- Quotes -->
-			<!-- {{> ks/qm }} -->
-			<!-- {{> ks/qs }} -->
+			{{> ks/qm }}
+			{{> ks/qs }}
 
 			<!-- Photo + Buttons -->
-			<!-- {{> ks/pwb }} -->
+			{{> ks/pwb bgColor="umkc-gray" }}
+			<!-- Lighter Blue -->
+			{{> ks/pwb bgColor="umkc-lighter-blue" }}
 
-			<!-- {{> ks/tb }} -->
+			{{> ks/tb }}
 			<!-- Image + Content + Links -->
-			<!-- {{> ks/icl bgColor="umkc-blue icl--blue" buttonColor="white"}} -->
+			{{> ks/icl50 buttonColor="umkc-yellow" }}
 
-			<!-- {{> ks/icl bgColor="umkc-gray icl--umkc-grey" buttonColor="umkc-yellow"}} -->
+			{{> ks/icl bgColor="umkc-blue icl--blue" buttonColor="white"}}
 
-			<!-- {{> ks/icl bgColor="white" buttonColor="umkc-yellow"}} -->
+			{{> ks/icl bgColor="umkc-gray icl--umkc-grey" buttonColor="umkc-yellow"}}
+
+			{{> ks/icl bgColor="white" buttonColor="umkc-yellow"}}
 
 			<!-- News and Calendar Feed -->
 			{{> ks/calendar }}
 			{{> ks/news }}
 
-			<!-- {{> ks/vertical-image }} -->
+			{{> ks/vertical-image }}
 
-			<!-- {{> ks/resource-list }} -->
+			{{> ks/resource-list }}
 
-			<!-- {{> ks/accordion }} -->
+			{{> ks/accordion }}
 
-			<!-- <div class="content-row"> -->
-				<!-- {{> ks/gallery }} -->
-			<!-- </div> -->
+			<div class="content-row">
+				{{> ks/gallery }}
+			</div>
 
-			<!-- <div class="content-row"> -->
-				<!-- {{> ks/gallery-slider }} -->
-			<!-- </div> -->
+			<div class="content-row">
+				{{> ks/gallery-slider }}
+			</div>
 
-			<!-- {{> ks/directory }} -->
+			{{> ks/directory }}
 
 			<!-- Icon Row -->
-			<!-- {{> ks/icon-row }} -->
+			{{> ks/icon-row }}
 		</div>
 		<div id="standard-page" class="main-content">
 			<!-- Start of the Standard Page Layout -->
@@ -83,18 +96,38 @@
 
 			<div class="content-row">
 				{{> ks/res-list }}
-			<!-- <div class="standard"> -->
-				<!-- <div class="standard--nav"></div> -->
-				<!-- <div class="standard--content"> -->
-					<!-- {{> ks/profile }} -->
-					<!-- {{> ks/directory-index }} -->
-					{{> ks/directory-standard }}
-					{{> ks/profile }}
-					<!-- {{> ks/directory-index }} -->
-					<!-- {{> ks/form }} -->
-				<!-- </div> -->
+
+			<div class="standard">
+				<div class="standard--nav"></div>
+				<div class="standard--content">
+
+					<div class="deadlines">
+						<div class="deadlines__item">
+							<div class="deadlines__header">
+								<h2>January 1 - December 25</h2>
+							</div>
+							<div class="deadlines__sep"></div>
+							<div class="deadlines__content">
+								<h3 class="deadlines__title">FAFSA Available</h3>
+								<p>Bro ipsum dolor sit amet gaper backside single track, manny Bike epic clipless. Schraeder drop gondy, rail fatty slash gear jammer steeps clipless rip bowl couloir bomb hole berm. Huck cruiser crank endo, sucker hole piste ripping ACL huck greasy flow face plant pinner. Japan air Skate park big ring trucks shuttle stoked rock-ectomy.</p>
+							</div>
+						</div>
+						<div class="deadlines__item">
+							<div class="deadlines__header">
+								Dec - Mar
+							</div>
+							<div class="deadlines__sep"></div>
+							<div class="deadlines__content">
+								<h3 class="deadlines__title">FAFSA Available</h3>
+								<p>Bro ipsum dolor sit amet gaper backside single track, manny Bike epic clipless. sucker hole piste ripping ACL. <a href="#">File FAFSA</a>.</p>
+							</div>
+						</div>
+					</div>
+					<p class="deadlines__link"><a href="#" class="button button--umkc-yellow">All Calendar Events</a></p>
+				</div>
 			</div>
-		</div>
+		</div></div>
+				<!-- </div> -->
 
 
 			<!-- {{> ks/profile }} -->
@@ -149,6 +182,9 @@
 				</li>
 			</ul>
 		</div>
+
+		{{> ks/get-info-popup }}
+
 		{{> footer }}
 		<script type="module" src="./main.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>

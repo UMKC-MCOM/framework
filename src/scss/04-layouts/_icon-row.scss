@@ -7,7 +7,7 @@
     flex-flow: column;
     justify-content: space-evenly;
     align-items: center;
-    margin: var(--content-padding) 0;
+    margin: var(--content-padding) 0 1.4rem;
 
     @include mx.for-size("tablet-portrait-up") {
         --item-width: 50%;
