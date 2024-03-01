@@ -109,23 +109,16 @@ $umkc-baby-blue: #E5EEF5;
    background: var(--umkc-yellow);
    padding: 1rem;
    border-radius: 100%;
+   font-family: var(--os);
+   text-decoration: none;
+   color: var(--umkc-dark-blue);
+   text-transform: uppercase;
+   font-weight: bold;
     @include mx.tr;
 
     &:hover {
         transform: translate(0px, -1px);
         @include mx.tr;
-    }
-
-    a {
-        font-family: var(--os);
-        text-decoration: none;
-        color: var(--umkc-navy);
-        text-transform: uppercase;
-        font-weight: bold;
-
-        svg {
-            fill: var(--umkc-navy);
-        }
     }
 }
 #getInfoForm {

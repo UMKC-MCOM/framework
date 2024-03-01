@@ -25,6 +25,12 @@
       align-self: center;
       text-align: right;
     }
+    br {
+      display: none;
+      @include mx.for-size("tablet-landscape-up"){
+        display: inline-block;
+      }
+    }
   }
   &__sep{
     background: var(--umkc-yellow);
