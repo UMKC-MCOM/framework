@@ -1,0 +1,61 @@
+@use "../01-abstracts/mixins" as mx;
+
+.deadlines {
+  @include mx.for-size("desktop-up"){
+    width: 900px;
+  }
+  &__item{
+    margin: mx.px-to-rem(60px) 0;
+    @include mx.for-size("tablet-landscape-up"){
+      display: flex;
+      gap: mx.px-to-rem(32px);
+      justify-content: flex-start;
+      align-items: stretch;
+    }
+  }
+  &__header{
+    h2{
+      --heading-margin: 0;
+    }
+    flex: 0 mx.px-to-rem(215px);
+    @include mx.font-size(32px);
+    color: var(--umkc-blue);
+    font-weight: 600;
+    @include mx.for-size("tablet-landscape-up"){
+      align-self: center;
+      text-align: right;
+    }
+    br {
+      display: none;
+      @include mx.for-size("tablet-landscape-up"){
+        display: inline-block;
+      }
+    }
+  }
+  &__sep{
+    background: var(--umkc-yellow);
+    content: "";
+    display: inline-block;
+    width: mx.px-to-rem(200px);
+    height: 4px;
+    @include mx.for-size("tablet-landscape-up") {
+      align-self: center;
+      display: inline-flex;
+      flex:0 0 mx.px-to-rem(4px);
+      height: mx.px-to-rem(83px);
+    }
+  }
+  &__link {
+    @include mx.for-size("tablet-landscape-up"){
+      margin-left: mx.px-to-rem(215px);
+    }
+  }
+  &__content {
+    flex: 1 0;
+  }
+  &__title {
+    --heading-margin: 0 !important;
+    --heading-size: #{mx.px-to-rem(24px)} !important;
+    --heading-color: var(--umkc-navy) !important;
+  }
+}

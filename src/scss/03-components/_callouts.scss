@@ -1,0 +1,58 @@
+@use "../01-abstracts/mixins" as mx;
+
+.callout {
+  $self: &;
+  height: var(--height);
+  stroke-dasharray:  var(--length);
+  stroke-dashoffset: var(--length);
+
+  &__title {
+    --heading-margin: 0;
+    --heading-line-height: 1;
+  }
+
+  &--line {
+    --svg-color: var(--umkc-yellow);
+    --length: 2546;
+    --end: 0;
+    width: 550px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  &--arrow{
+    display: inline;
+    --height: #{mx.px-to-rem(75px)};
+    $length: 1275;
+    --length: #{$length};
+    --end: #{$length * 2};
+    --time: 1.25s;
+  }
+
+  &__mask {
+    fill: none;
+    stroke: white;
+  }
+
+  &__path {
+    fill: var(--svg-color, var(--umkc-blue));
+  }
+  // If we have an animation property
+  &.aos-animate {
+    #{$self}__mask {
+      animation: animateSVG var(--time, 2s) linear 0.5s forwards;
+    }
+  }
+  // If there is not an animate property
+  &:not(.aos-animate){
+    #{$self}__mask {
+      stroke-dashoffset: var(--end);
+    }
+  }
+}
+
+@keyframes animateSVG {
+  to {
+    stroke-dashoffset: var(--end);
+  }
+}
