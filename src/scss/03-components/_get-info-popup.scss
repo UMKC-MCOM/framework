@@ -8,10 +8,10 @@ $umkc-baby-blue: #E5EEF5;
 
 // Generated Form Style Overrides
 #form_page_1 {
-   display: grid;
-   grid-template-rows: 1fr 1fr;
-   grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
 }
 
 .form_responses, .form_label {
@@ -91,6 +91,7 @@ $umkc-baby-blue: #E5EEF5;
     border-radius: 0.5rem;
    padding: 0.75rem 4rem;
    margin-left: 1em;
+  
     @include mx.tr;
 
     &:hover {
@@ -152,6 +153,7 @@ $umkc-baby-blue: #E5EEF5;
    z-index: $zindex - 1;
    position: fixed;
    top:0; left:0; right:0; bottom: 0;
+
 }
 
 // Info Form Grid Styles
@@ -161,14 +163,13 @@ $umkc-baby-blue: #E5EEF5;
    display: grid;
    grid-template-rows: 1fr;
    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-
    .form-wrapper {
         grid-row-start: 1;
         grid-column-start: 1;
         grid-row-end: 2;
         grid-column-end: 5;
     }
-
+  
     .submit-wrapper {
         grid-row-start: 1;
         grid-column-start: 5;
@@ -243,7 +244,8 @@ $umkc-baby-blue: #E5EEF5;
     }
 
     // Mobile form submit button overrides
-    #getInfoForm .form_action {
+
+    #getInfoForm .form_action { 
         width: 100%;
         text-align: center;
 
