@@ -13,6 +13,7 @@
       align-items: stretch;
     }
   }
+
   &__header{
     h2{
       --heading-margin: 0;
@@ -58,4 +59,12 @@
     --heading-size: #{mx.px-to-rem(24px)} !important;
     --heading-color: var(--umkc-navy) !important;
   }
+  // For the categorization aspect of the grouping
+  &__subhead {
+    color: var(--umkc-blue);
+    text-transform: uppercase;
+    font-weight: 300;
+    font-family: var(--os);
+  }
+
 }
