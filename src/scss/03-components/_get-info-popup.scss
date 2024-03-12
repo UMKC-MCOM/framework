@@ -63,15 +63,6 @@ $umkc-baby-blue: #E5EEF5;
    }
 }
 
-// .form_responses select {
-//     listbox: auto;
-//     -webkit-appearance: menulist-button;
-//     -moz-appearance: menulist-button;
-//     appearance: menulist-button;
-//     background-image: none;
-//     &::-ms-expand { display: block; }
-// }
-
 // Input and Select fields styles
 .form_responses input, .form_responses select {
     border: 1px solid $umkc-light-gray;
@@ -89,15 +80,19 @@ $umkc-baby-blue: #E5EEF5;
 	color: var(--umkc-dark-blue);
 	border: 0;
     border-radius: 0.5rem;
-   padding: 0.75rem 4rem;
-   margin-left: 1em;
-  
+    padding: 0.75rem 4rem;
     @include mx.tr;
 
     &:hover {
         background-color: var(--umkc-dark-blue);
         color: var(--white);
         @include mx.tr;
+    }
+}
+
+@media screen and (min-width: 1201px) {
+    div.action.form_action {
+        text-align: right;
     }
 }
 
@@ -124,15 +119,15 @@ $umkc-baby-blue: #E5EEF5;
 
 }
 #getInfoForm {
-   position: fixed;
-   z-index: $zindex;
-   bottom: 0px;
-   width: 100%;
-   padding: 1.25rem 2rem;
+    position: fixed;
+    z-index: $zindex;
+    bottom: 0px;
+    width: 100%;
+    padding: 1.25rem 2rem;
     background: $umkc-baby-blue;
 }
 #getInfoClose {
-   cursor: pointer;
+    cursor: pointer;
     position: absolute;
     top: 3px;
     right: 3px;
@@ -150,16 +145,21 @@ $umkc-baby-blue: #E5EEF5;
 
 // Smokescreen for when popup is open
 #getInfoFormScreen {
-   background: rgba(0,0,0,0.5);
-   z-index: $zindex - 1;
-   position: fixed;
-   top:0; left:0; right:0; bottom: 0;
+    &[aria-hidden="false"]{
+      background: rgba(0,0,0,0.5);
+      z-index: $zindex - 1;
+      position: fixed;
+      top:0; left:0; right:0; bottom: 0;
+    }
+  }
 
-}
-
-// Info Form Grid Styles
-#getInfoForm { display: grid; }
-
+  // Info Form Grid Styles
+  #getInfoForm {
+    display: none;
+    &[aria-hidden="false"]{
+      display: grid;
+    }
+  }
 #getInfoForm .wrapper {
    display: grid;
    grid-template-rows: 1fr;
@@ -170,7 +170,7 @@ $umkc-baby-blue: #E5EEF5;
         grid-row-end: 2;
         grid-column-end: 5;
     }
-  
+
     .submit-wrapper {
         grid-row-start: 1;
         grid-column-start: 5;
@@ -197,6 +197,7 @@ $umkc-baby-blue: #E5EEF5;
         font-family: var(--os);
         font-size: 1.25rem;
         text-transform: uppercase;
+        text-align: center;
         color: var(--umkc-yellow);
         background: var(--umkc-dark-blue);
         margin: 1rem auto;
@@ -213,40 +214,82 @@ $umkc-baby-blue: #E5EEF5;
 @media screen and (max-width:1200px) {
 
     // Mobile Grid changes
-   #getInfoForm .wrapper {
-      grid-template-rows: 1fr 1fr;
-         grid-template-columns: 1fr 1fr 1fr;
-   }
+    #getInfoForm .wrapper {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 
-   #getInfoForm .wrapper .form-wrapper {
-      grid-row-start: 1;
-         grid-column-start: 1;
-         grid-row-end: 2;
-   }
+    #getInfoForm .form_container {
+        padding-bottom: 2em;
+    }
 
-   #getInfoForm .wrapper .submit-wrapper {
-      grid-row-start: 2;
-      grid-column-start: 1;
-      grid-row-end: 2;
-      grid-column-end: 6;
-      margin:0;
-   }
+    #getInfoForm .wrapper .form-wrapper {
+        grid-row-start: 1;
+        grid-column-start: 1;
+        grid-row-end: 2;
+
+        .form_button_submit {
+            width: 100%;
+        }
+    }
+
+    #getInfoForm .wrapper .submit-wrapper {
+        display: grid;
+        grid-row-start: 2;
+        grid-column-start: 1;
+        grid-row-end: 2;
+        grid-column-end: 4;
+        margin: 0;
+        column-gap: 10px;
+        align-items: normal;
+
+        .button--popup {
+            height: min-content;
+            grid-column-start: 2;
+            grid-column-end: 2;
+
+            &:first-child {
+                grid-column-start: 1;
+                grid-column-end: 2;
+
+            }
+        }
+    }
 
     #form_page_1 {
-      grid-template-rows: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 10px;
-   }
+    }
 
-    // Mobile form select override
-    #getInfoForm .wrapper .form_select {
+
+    // Mobile form specific field overrides
+    /* Email Address full-width*/
+    .form_question_01923e3d-497e-4e39-b4bd-1a8456c41ed8 {
         grid-column-start: 1;
         grid-column-end: 3;
     }
 
-    // Mobile form submit button overrides
+    /* Student Type */
+    div.form_question_547b005a-4151-455d-a576-dc225453f5c9 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    /* Entry Term */
+    .form_question_abae3e01-757b-4c18-8ee0-b9b46e26a735 {
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
 
-    #getInfoForm .form_action { 
+    /* Major of Interest */
+    .form_question_ad09e69a-55ac-4111-a247-47cda6df0079 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+
+    // Mobile form submit button overrides
+    #getInfoForm .form_action {
         width: 100%;
         text-align: center;
 
@@ -262,7 +305,7 @@ $umkc-baby-blue: #E5EEF5;
         max-height: 80vh;
 
         .wrapper {
-            margin: auto;
+            margin: 0;
             align-items: normal;
 
             .form-wrapper {
