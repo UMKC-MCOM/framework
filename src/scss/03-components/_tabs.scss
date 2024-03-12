@@ -24,15 +24,19 @@
   }
   &__content {
     border: var(--umkc-gray) 0.375rem solid;
-    visibility: hidden;
-    overflow: hidden;
-    max-height: 0;
+//     visibility: hidden;
+//     overflow: hidden;
+//     max-height: 0;
+//     padding: 1rem;
+//
+//     @include mx.tr();
+//     &[aria-hidden=false] {
+//       visibility: visible;
+//       max-height: 100vh;
+    display: none;
     padding: 1rem;
-
-    @include mx.tr();
     &[aria-hidden=false] {
-      visibility: visible;
-      max-height: 100vh;
+      display: block;
     }
     @include mx.for-size("desktop-up"){
       border-color: transparent;

@@ -46,19 +46,23 @@
       height: mx.px-to-rem(83px);
     }
   }
+
   &__link {
     @include mx.for-size("tablet-landscape-up"){
       margin-left: mx.px-to-rem(215px);
     }
   }
+
   &__content {
     flex: 1 0;
   }
+
   &__title {
     --heading-margin: 0 !important;
     --heading-size: #{mx.px-to-rem(24px)} !important;
     --heading-color: var(--umkc-navy) !important;
   }
+
   // For the categorization aspect of the grouping
   &__subhead {
     color: var(--umkc-blue);
@@ -66,5 +70,4 @@
     font-weight: 300;
     font-family: var(--os);
   }
-
 }
