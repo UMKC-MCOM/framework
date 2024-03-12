@@ -19,15 +19,16 @@
   }
 
   &__img {
-    margin-top: -3rem;
-    aspect-ratio: 1 / 1;
-
     align-self: center;
+    aspect-ratio: 1 / 1;
+    margin-top: -3rem;
+    max-width: mx.px-to-rem(400px);
     object-fit: cover;
 
     @include mx.for-size("desktop-up") {
       align-self: flex-start;
       width: mx.px-to-rem(600px);
+      max-width: mx.px-to-rem(600px);
     }
   }
 
