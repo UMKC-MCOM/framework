@@ -68,7 +68,7 @@ $umkc-baby-blue: #E5EEF5;
     border: 1px solid $umkc-light-gray;
     border-radius: 5px;
     background: var(--white);
-    width: 100%;
+   width: 100%;
 }
 
 .form_button_submit {
@@ -81,7 +81,6 @@ $umkc-baby-blue: #E5EEF5;
 	border: 0;
     border-radius: 0.5rem;
     padding: 0.75rem 4rem;
-
     @include mx.tr;
 
     &:hover {
@@ -117,6 +116,7 @@ $umkc-baby-blue: #E5EEF5;
         transform: translate(0px, -1px);
         @include mx.tr;
     }
+
 }
 #getInfoForm {
     position: fixed;
@@ -261,6 +261,7 @@ $umkc-baby-blue: #E5EEF5;
         grid-template-columns: 1fr 1fr;
         gap: 10px;
     }
+
 
     // Mobile form specific field overrides
     /* Email Address full-width*/
