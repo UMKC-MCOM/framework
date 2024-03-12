@@ -13,7 +13,7 @@ import '/src/js/resource.js'
 import '/src/js/alerts.js'
 import '/src/js/infopopup.js'
 import '/src/js/consent.js'
-import '/src/js/infopopup.js'
+
 // import javascriptLogo from './javascript.svg'
 // import { setupCounter } from './counter.js'
 
