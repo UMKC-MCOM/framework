@@ -114,9 +114,9 @@ $umkc-baby-blue: #E5EEF5;
    font-weight: bold;
     @include mx.tr;
 
-    &:hover {
-        transform: translate(0px, -1px);
-        @include mx.tr;
+    &:hover, &:focus {
+      background: var(--umkc-navy);
+      color: var(--umkc-yellow);
     }
 
 }
@@ -129,19 +129,22 @@ $umkc-baby-blue: #E5EEF5;
     background: $umkc-baby-blue;
 }
 #getInfoClose {
+    border: solid var(--umkc-navy) 2px;
+    border-radius: 100%;
     cursor: pointer;
     position: absolute;
-    top: 3px;
-    right: 3px;
+    top: mx.px-to-rem(6px);
+    right: mx.px-to-rem(8px);
+    @include mx.tr();
 
-    svg {
-        fill: var(--umkc-navy);
-        @include mx.tr;
+    &:hover, &:focus {
+      color: var(--white);
+      background: var(--umkc-navy);
+    }
 
-        &:hover {
-            fill: var(--umkc-dark-blue);
-            @include mx.tr;
-        }
+    .icon {
+      height: mx.px-to-rem(32px);
+      width: mx.px-to-rem(32px);
     }
 }
 
