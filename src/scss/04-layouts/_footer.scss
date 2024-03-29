@@ -264,7 +264,7 @@
 
 .container {
   display: grid;
-  grid-template-columns: 29px max-content;
+  grid-template-columns: 29px auto;
   grid-template-rows: 1fr;
   column-gap: mx.px-to-rem(32px);
   margin-top: mx.px-to-rem(24px);
