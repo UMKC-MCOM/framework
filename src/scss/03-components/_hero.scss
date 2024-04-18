@@ -110,9 +110,11 @@
     margin: var(--content-padding);
     opacity: 1;
     bottom: 0;
+    visibility: visible;
     @include mx.tr(opacity);
     &[aria-hidden="true"] {
       opacity: 0;
+      visibility: hidden;
     }
 
     @include mx.for-size("tablet-landscape-up") {

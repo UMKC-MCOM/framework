@@ -49,7 +49,7 @@
     &[aria-hidden=false] {
       opacity: 1;
       visibility: visible;
-      max-height: 100vh;
+      max-height: fit-content;
     }
   }
 
