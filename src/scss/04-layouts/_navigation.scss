@@ -1,7 +1,7 @@
 @use "../01-abstracts/mixins" as mx;
 
 .main-navigation {
-  background: var(--nav-background, var(--umkc-dark-blue));
+  background: var(--nav-background, var(--umkc-navy));
   bottom: mx.px-to-rem(84px);
   display: block;
   width: 100%;

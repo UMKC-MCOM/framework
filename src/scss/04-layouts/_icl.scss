@@ -4,11 +4,10 @@
   $self: &;
 
   padding: var(--content-padding);
-
   --heading-color: var(--umkc-blue);
-  --highlight-color: var(--umkc-dark-blue);
 
-  &--blue, &--navy {
+  &--blue {
+    --btn-arrow: white;
     --heading-color: var(--white);
     --highlight-color: var(--white);
     --link-color: var(--white);
@@ -58,6 +57,48 @@
     color: var(--link-color, var(--umkc-blue));
     &:hover, &:active, &:focus{
       color: var(--link-hover-color, var(--umkc-dark-blue));
+    }
+  }
+
+  &--50 {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    @include mx.for-size("tablet-landscape-up") {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 90px;
+      max-width: 1200px;
+    }
+
+    #{$self}__desc {
+      flex-basis: 100%;
+    }
+
+    #{$self}__row {
+      @include mx.for-size("tablet-landscape-up"){
+        flex: 0 1 calc(50% - 90px);
+        flex-direction: column;
+        margin: 0;
+      }
+    }
+    #{$self}__image {
+      padding: 0;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+
+      @include mx.for-size("tablet-landscape-up") {
+        width: 100%;
+        height: auto;
+        max-height: #{mx.px-to-rem(535px)}
+      }
+    }
+
+    #{$self}__content {
+      @include mx.font-size(24px, 1.5);
+      font-weight: 300;
+      text-align: left;
     }
   }
 

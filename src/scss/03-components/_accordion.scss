@@ -38,10 +38,18 @@
   }
 
   &__content {
-    display: none;
-    padding: 0.5rem 1rem;
+    visibility: hidden;
+    max-height: 0;
+    opacity: 0;
+    @include mx.tr();
+    > div {
+      padding: 0.5rem 1rem;
+    }
+
     &[aria-hidden=false] {
-      display: block;
+      opacity: 1;
+      visibility: visible;
+      max-height: fit-content;
     }
   }
 

@@ -1,0 +1,82 @@
+@use "../01-abstracts/mixins" as mx;
+
+.video-shorts{
+  $self: &;
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  @include mx.for-size("tablet-landscape-up"){
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  &__item {
+    justify-content: center;
+    aspect-ratio: 22/27;
+    max-height: mx.px-to-rem(432px);
+    max-width: mx.px-to-rem(352px);
+    position: relative;
+  }
+
+  &__img {
+    aspect-ratio: 22/27;
+    object-fit: cover;
+  }
+
+  &__button {
+    position: absolute;
+    left: 37.5%;
+    bottom: 1rem;
+    background: var(--white);
+    color: var(--umkc-light-blue);
+    height: 100px;
+    width: 100px;
+
+    border-radius: 100%;
+    padding: 2rem;
+    @include mx.tr();
+
+    opacity: 1;
+
+    &--hidden{
+      opacity: 0;
+    }
+    &:hover {
+      background: var(--umkc-dark-blue);
+    }
+  }
+
+  &__icon {
+    height: mx.px-to-rem(42px);
+    width: mx.px-to-rem(42px);
+  }
+
+  &__embed {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    @include mx.tr(opacity);
+    visibility: hidden;
+    &--visible{
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__content {
+    color: var(--umkc-blue);
+  }
+
+  &__title {
+    --heading-margin: 1rem 0 0;
+    --heading-size: #{mx.px-to-rem(30px)};
+  }
+
+  &__desc {
+    @include mx.font-size(24px);
+  }
+}

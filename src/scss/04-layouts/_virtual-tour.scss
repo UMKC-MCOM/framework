@@ -1,0 +1,28 @@
+@use "../01-abstracts/mixins" as mx;
+
+.vt {
+  --heading-color: var(--white);
+  --heading-margin: 0;
+  align-items: flex-end;
+  background-color: var(--black);
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  // justify-content: center;
+  height: mx.px-to-rem(496px);
+  justify-content: stretch;
+
+  &__title {
+    text-shadow: .125rem .125rem .125rem rgba(0,0,0,.25);
+  }
+  .button {
+    display: block;
+    text-align: center;
+  }
+
+  @include mx.for-size("tablet-landscape-up"){
+    align-items: center;
+    height: mx.px-to-rem(567px);
+    justify-content: flex-start;
+  }
+}

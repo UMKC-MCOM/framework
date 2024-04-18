@@ -19,7 +19,13 @@
     position: relative;
     padding: var(--content-padding);
     color: var(--white);
-    // z-index: 0;
+    z-index: 0;
+
+    p{
+      @include mx.for-size("tablet-landscape-up"){
+        max-width: 50vw;
+      }
+    }
   }
 
   &__title {
@@ -105,16 +111,18 @@
     margin: var(--content-padding);
     opacity: 1;
     bottom: 0;
+    visibility: visible;
     @include mx.tr(opacity);
     &[aria-hidden="true"] {
       opacity: 0;
+      visibility: hidden;
     }
 
     @include mx.for-size("tablet-landscape-up") {
       margin: 0;
       bottom: 7rem;
       right: var(--content-padding);
-      width: 400px;
+      width: 550px;
     }
   }
 
