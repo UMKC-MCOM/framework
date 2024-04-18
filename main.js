@@ -18,7 +18,6 @@ import '/src/js/video-shorts.js'
 import '/src/js/street-car.js'
 import '/src/js/consent.js'
 
-
 // import javascriptLogo from './javascript.svg'
 // import { setupCounter } from './counter.js'
 

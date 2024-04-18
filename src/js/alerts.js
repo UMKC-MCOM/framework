@@ -81,6 +81,7 @@ async function showAlert(data){
     // Homepage Only, if yes, mark it true.
     let hpOnly = current[1].text == "yes" ? true : false;
     // If active and hpOnly is true and the location is the homepage, assigned for UMKC
+
     let matches = /http(s)?:\/\/(www\.)?umkc\.edu\/(index\.html)?/
     if ( active && ( hpOnly && matches.test(window.location.href) ) ) {
       let content = current[2].text;
