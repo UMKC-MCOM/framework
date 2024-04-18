@@ -217,10 +217,12 @@
       padding-bottom: 2rem;
     }
     .nav {
+      flex: 1;
       margin-bottom: 0.5rem;
 
       li {
         display: block;
+        text-wrap: nowrap;
 
         @include mx.for-size("tablet-landscape-up") {
           display: inline-block;
@@ -262,7 +264,7 @@
 
 .container {
   display: grid;
-  grid-template-columns: 29px max-content;
+  grid-template-columns: 29px auto;
   grid-template-rows: 1fr;
   column-gap: mx.px-to-rem(32px);
   margin-top: mx.px-to-rem(24px);

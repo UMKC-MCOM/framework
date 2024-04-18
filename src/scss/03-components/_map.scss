@@ -1,0 +1,50 @@
+@use "../01-abstracts/mixins" as mx;
+
+.map {
+  display: flex;
+  align-items: stretch;
+  gap: mx.px-to-rem(62px);
+  flex-direction: column-reverse;
+
+  @include mx.for-size("tablet-landscape-up"){
+    flex-direction: row;
+  }
+  &__map {
+    position: relative;
+    overflow: hidden;
+    height: mx.px-to-rem(768px);
+    @include mx.for-size("tablet-landscape-up") {
+      flex: 1 1 50%;
+    }
+  }
+
+  &__controls {
+    flex: 1;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__checkbox {
+    margin-right: 0.5rem !important;
+  }
+  &__icon {
+    height: 37px;
+    width: 37px;
+    color: var(--umkc-blue);
+  }
+  &__info {
+    padding: 1rem;
+  }
+  &__title {
+    --heading-size: 24px;
+    --heading-margin: 0;
+  }
+
+  &__content {
+    @include mx.font-size(18px);
+  }
+}
