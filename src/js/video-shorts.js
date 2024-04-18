@@ -5,7 +5,6 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 const video_shorts = document.querySelectorAll('.video-shorts__embed[data-src]');
 const video_shorts_btns = document.querySelectorAll('.video-shorts__button');
-var player;
 
 video_shorts_btns.forEach(function(item, idx) {
    item.addEventListener('click', function(e){
@@ -31,6 +30,11 @@ function createVideos(video_shorts) {
         height: '432',
         width: '352',
         videoId: vi,
+        playerVars: {
+          'rel': 0,
+          'color': 'white',
+          'controls' : 1
+        },
         events: {
           'onStateChange': onStateChange,
         }
