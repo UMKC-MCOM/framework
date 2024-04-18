@@ -7,7 +7,9 @@
   background: var(--umkc-gray);
   margin: 2rem var(--content-padding) 0.5rem;
   --heading-color: var(--alert-color);
-
+  h2 {
+    --heading-size: #{mx.px-to-rem(32px)};
+  }
   &--warning {
     --alert-color: #cc3300;
   }

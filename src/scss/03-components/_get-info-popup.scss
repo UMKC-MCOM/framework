@@ -50,6 +50,7 @@ $umkc-baby-blue: #E5EEF5;
       width: 16px;
       z-index: 1;
       padding: 0.65rem 0.5rem;
+      pointer-events: none;
       content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-caret-down-fill' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
     }
    select {
@@ -68,7 +69,7 @@ $umkc-baby-blue: #E5EEF5;
     border: 1px solid $umkc-light-gray;
     border-radius: 5px;
     background: var(--white);
-   width: 100%;
+    width: 100%;
 }
 
 .form_button_submit {
@@ -81,6 +82,7 @@ $umkc-baby-blue: #E5EEF5;
 	border: 0;
     border-radius: 0.5rem;
     padding: 0.75rem 4rem;
+
     @include mx.tr;
 
     &:hover {
@@ -112,9 +114,9 @@ $umkc-baby-blue: #E5EEF5;
    font-weight: bold;
     @include mx.tr;
 
-    &:hover {
-        transform: translate(0px, -1px);
-        @include mx.tr;
+    &:hover, &:focus {
+      background: var(--umkc-navy);
+      color: var(--umkc-yellow);
     }
 
 }
@@ -127,19 +129,22 @@ $umkc-baby-blue: #E5EEF5;
     background: $umkc-baby-blue;
 }
 #getInfoClose {
+    border: solid var(--umkc-navy) 2px;
+    border-radius: 100%;
     cursor: pointer;
     position: absolute;
-    top: 3px;
-    right: 3px;
+    top: mx.px-to-rem(6px);
+    right: mx.px-to-rem(8px);
+    @include mx.tr();
 
-    svg {
-        fill: var(--umkc-navy);
-        @include mx.tr;
+    &:hover, &:focus {
+      color: var(--white);
+      background: var(--umkc-navy);
+    }
 
-        &:hover {
-            fill: var(--umkc-dark-blue);
-            @include mx.tr;
-        }
+    .icon {
+      height: mx.px-to-rem(32px);
+      width: mx.px-to-rem(32px);
     }
 }
 
@@ -261,7 +266,6 @@ $umkc-baby-blue: #E5EEF5;
         grid-template-columns: 1fr 1fr;
         gap: 10px;
     }
-
 
     // Mobile form specific field overrides
     /* Email Address full-width*/
