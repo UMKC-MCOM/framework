@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   {{> head }}
-	<style>
-		.icl__content {
-			font-size: 24px;
-		}
-	</style>
   <body class="homesuite">
 		<!-- Load SVGs first? -->
 		{{> svg-sprites }}
@@ -18,33 +13,32 @@
 
 			<!-- Breadcrumbs -->
 			{{> breadcrumbs }}
-			{{> ks/teaser }}
+
+			{{> ks/timeline}}
+
+			<!-- {{> ks/teaser }} -->
 			<!-- Local Site Alerts -->
-			{{> ks/alert bgColor=""}}
+			<!-- {{> ks/alert bgColor=""}} -->
 
-			{{> ks/tabs }}
+			<!-- {{> ks/tabs }} -->
 
-			{{> ks/accordion }}
+			<!-- {{> ks/accordion }} -->
 
-			{{> ks/map }}
+			<!-- {{> ks/map }} -->
 
 			<!-- Program Finder -->
-			{{> ks/program-finder homesuite=""}}
-
-
-
-		<div id="landing-page" class="main-content">
+			<!-- {{> ks/program-finder homesuite=""}} -->
 
 			<!-- {{> hero video="true" }} -->
-			{{> hero }}
+			<!-- {{> hero }} -->
 			<!-- Breadcrumbs -->
-			{{> breadcrumbs }}
-			{{> ks/teaser }}
+			<!-- {{> breadcrumbs }} -->
+			<!-- {{> ks/teaser }} -->
 			<!-- Local Site Alerts -->
-			{{> ks/alert bgColor=""}}
+			<!-- {{> ks/alert bgColor=""}} -->
 
 			<!-- Program Finder -->
-			{{> ks/program-finder }}
+			<!-- {{> ks/program-finder }} -->
 
 			<!-- {{> ks/icon-link }} -->
 			<!-- {{> ks/video-shorts }} -->
@@ -60,20 +54,20 @@
 
 			<!-- Stats -->
 			<!-- {{> ks/sp }} -->
-			{{> ks/snp }}
+			<!-- {{> ks/snp }} -->
 
 			<!-- {{> ks/storytelling }} -->
 			<!-- Video Row -->
-			{{> ks/video }}
+			<!-- {{> ks/video }} -->
 			<!-- Box Grid -->
-			{{> ks/bg }}
+			<!-- {{> ks/bg }} -->
 
 			<!-- Cards -->
 
 			<!-- {{> ks/cp bgColor="umkc-blue" }} -->
 			<!-- {{> ks/cnp link="true" }} -->
 
-			{{> ks/sc }}
+			<!-- {{> ks/sc }} -->
 
 			<!-- {{> ks/cnp }} -->
 
@@ -96,20 +90,11 @@
 			<!-- {{> ks/icl bgColor="umkc-gray icl--umkc-grey" buttonColor="umkc-yellow"}} -->
 
 			<!-- {{> ks/icl bgColor="white" buttonColor="umkc-yellow"}} -->
-			{{> ks/icl bgColor="white" buttonColor="umkc-yellow"}}
+			<!-- {{> ks/icl bgColor="white" buttonColor="umkc-yellow"}} -->
 
 			<!-- News and Calendar Feed -->
-
 			<!-- {{> ks/news }} -->
-
-
-
-
-
-			<!-- {{> ks/news }} -->
-
-			{{> ks/news }}
-			{{> ks/calendar }}
+			<!-- {{> ks/calendar }} -->
 			<!-- {{> ks/news }} -->
 
 
@@ -131,7 +116,7 @@
 
 			<!-- Icon Row -->
 			<!-- {{> ks/icon-row }} -->
-
+		</div>
 		</div>
 		<div id="standard-page" class="main-content">
 			<!-- Start of the Standard Page Layout -->
@@ -139,38 +124,12 @@
 			{{> hero profile="true" }}
 			{{> breadcrumbs }}
 
-				{{> ks/res-list }}
 
 			<div class="standard">
 				<div class="standard--nav"></div>
 				<div class="standard--content">
-
-					<div class="deadlines">
-						<div class="deadlines__item">
-							<div class="deadlines__header">
-								<h2>January 1 - December 25</h2>
-							</div>
-							<div class="deadlines__sep"></div>
-							<div class="deadlines__content">
-
-								<p class="deadlines__subhead">Undergraduates</p>
-
-								<h3 class="deadlines__title">FAFSA Available</h3>
-								<p>Bro ipsum dolor sit amet gaper backside single track, manny Bike epic clipless. Schraeder drop gondy, rail fatty slash gear jammer steeps clipless rip bowl couloir bomb hole berm. Huck cruiser crank endo, sucker hole piste ripping ACL huck greasy flow face plant pinner. Japan air Skate park big ring trucks shuttle stoked rock-ectomy.</p>
-							</div>
-						</div>
-						<div class="deadlines__item">
-							<div class="deadlines__header">
-								Dec - Mar
-							</div>
-							<div class="deadlines__sep"></div>
-							<div class="deadlines__content">
-								<h3 class="deadlines__title">FAFSA Available</h3>
-								<p>Bro ipsum dolor sit amet gaper backside single track, manny Bike epic clipless. sucker hole piste ripping ACL. <a href="#">File FAFSA</a>.</p>
-							</div>
-						</div>
-					</div>
-					<p class="deadlines__link"><a href="#" class="button button--umkc-yellow">All Calendar Events</a></p>
+					{{> ks/res-list }}
+					{{> ks/deadlines }}
 				</div>
 			</div>
 		</div></div>
@@ -196,94 +155,11 @@
 
 
 		<!-- </div> -->
-		<div class="menu">
-
-			<ul class="menu__list" id="menu" role="menubar" >
-				<li class="menu__item" role="menuitem" aria-haspopup="true">
-					<a href="#" class="menu__link" data-toggle=".search" data-focus=".search input">
-						<svg class="icon menu__icon menu__icon--search"><use xlink:href="#search"></use></svg>
-						<svg class="icon menu__icon menu__icon--close"><use xlink:href="#close"></use></svg>
-						Search
-					</a>
-				</li>
-				<li class="menu__item" role="menuitem">
-					<a href="#" class="menu__link">
-						<svg class="icon menu__icon"><use xlink:href="#apply"></use></svg>
-						Apply
-					</a>
-				</li>
-				<li class="menu__item" role="menuitem" aria-haspopup="true">
-					<a href="#" class="menu__link menu__link--large" data-toggle="#main-navigation">
-						<svg class="icon menu__icon"><use xlink:href="#menu"></use></svg>
-						<svg class="icon menu__icon menu__icon--close"><use xlink:href="#close"></use></svg>
-						<span class="sr-only">Menu</span>
-					</a>
-				</li>
-				<li class="menu__item" role="menuitem">
-					<a href="#" class="menu__link">
-						<svg class="icon menu__icon"><use xlink:href="#get-info"></use></svg>
-						Get Info
-					</a>
-				</li>
-				<li class="menu__item" role="menuitem">
-					<a href="#" class="menu__link">
-						<svg class="icon menu__icon"><use xlink:href="#give"></use></svg>
-						Give
-					</a>
-				</li>
-			</ul>
-
-		</div>
+		{{> mobile-menu }}
 
 		{{> ks/get-info-popup }}
 
 		{{> footer }}
-		<script type="module" src="./main.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
-		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-		<script>
-		window.addEventListener('load', function () {
-			if ( document.querySelectorAll(".glide").length >= 1 ){
-				new Glide('.glide').mount()
-			}
-		})
-
-		AOS.init({
-			offset: 100,
-			duration: 1600
-		});
-
-		</script>
-		<script>
-			window.fwSettings={
-			'widget_id':47000005928
-			};
-			!function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}()
-		</script>
-		<script type='text/javascript' src='https://widget.freshworks.com/widgets/47000005928.js' async defer></script>
-		<script>
-			FreshworksWidget('hide', 'launcher');
-			FreshworksWidget('prefill', 'ticketForm', {
-				type: 'Report an issue',
-				custom_fields: {
-					cf_url: window.location.href
-				}
-			});
-			FreshworksWidget('disable', 'ticketForm', ['custom_fields.cf_url']);
-			FreshworksWidget('hide', 'ticketForm', ['custom_fields.cf_unit_or_department', 'group_id', 'product_id', 'custom_fields.cf_url', 'type']);
-
-			const issues = document.querySelector(".footer__curator a[href*='/submit-a-web-ticket.html']");
-			issues.addEventListener("click", function(e) {
-				e.preventDefault();
-				FreshworksWidget("open");
-			});
-		</script>
-		<script>
-			window.fwSettings={
-			'widget_id':47000005928
-			};
-			!function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}()
-		</script>
+		{{> scripts }}
   </body>
 </html>

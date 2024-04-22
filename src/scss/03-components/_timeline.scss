@@ -1,0 +1,54 @@
+@use "../01-abstracts/mixins" as mx;
+
+.timeline {
+  --heading-margin: 0;
+  &__wrapper {
+    padding: 0 var(--content-padding);
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+
+    &:first-child {
+      --top: 0;
+    }
+
+    &:nth-child(even){
+      background: var(--umkc-lighter-blue);
+    }
+  }
+  &__svg {
+    flex: 0 0 mx.px-to-rem(340px);
+
+  }
+  &__year, &__title {
+    font-family: var(--os);
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+  &__year {
+    @include mx.font-size(15px);
+    color: var(--umkc-blue);
+  }
+  &__title {
+    --heading-color: var(--umkc-dark-blue);
+    --heading-size: #{mx.px-to-rem(24px)};
+  }
+  &__card {
+    border-left: 5px solid var(--umkc-dark-blue);
+    padding: var(--content-padding);
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: mx.px-to-rem(28px);
+      width: mx.px-to-rem(28px);
+      background: white;
+      border-radius: 100%;
+      top: var(--top, 2rem);
+      border: mx.px-to-rem(5px) solid var(--umkc-dark-blue);
+      // top: 0;
+      left: calc((mx.px-to-rem(28px + 5px) / 2) * -1);
+    }
+  }
+}

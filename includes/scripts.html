@@ -1,0 +1,47 @@
+<script type="module" src="./main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+window.addEventListener('load', function () {
+  if ( document.querySelectorAll(".glide").length >= 1 ){
+    new Glide('.glide').mount()
+  }
+})
+
+AOS.init({
+  offset: 100,
+  duration: 1600
+});
+
+</script>
+<script>
+  window.fwSettings={
+  'widget_id':47000005928
+  };
+  !function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}()
+</script>
+<script type='text/javascript' src='https://widget.freshworks.com/widgets/47000005928.js' async defer></script>
+<script>
+  FreshworksWidget('hide', 'launcher');
+  FreshworksWidget('prefill', 'ticketForm', {
+    type: 'Report an issue',
+    custom_fields: {
+      cf_url: window.location.href
+    }
+  });
+  FreshworksWidget('disable', 'ticketForm', ['custom_fields.cf_url']);
+  FreshworksWidget('hide', 'ticketForm', ['custom_fields.cf_unit_or_department', 'group_id', 'product_id', 'custom_fields.cf_url', 'type']);
+
+  const issues = document.querySelector(".footer__curator a[href*='/submit-a-web-ticket.html']");
+  issues.addEventListener("click", function(e) {
+    e.preventDefault();
+    FreshworksWidget("open");
+  });
+</script>
+<script>
+  window.fwSettings={
+  'widget_id':47000005928
+  };
+  !function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}()
+</script>
