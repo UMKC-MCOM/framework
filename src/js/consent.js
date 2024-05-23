@@ -1,8 +1,8 @@
 // Cookie/GDPR Consent
-const gdprBanner = document.querySelector(".gdpr");
-const cookieConsent = gdprBanner.querySelector(".banner-accept");
+const gdprBanner = document.querySelector(".gdpr") !== null ? document.querySelector(".gdpr") : false;
+const cookieConsent = gdprBanner && gdprBanner.querySelector('.banner-accept') !== null ? gdprBanner.querySelector(".banner-accept") : false;
 
-if ( gdprBanner !== null || cookieConsent !== null ) {
+if ( gdprBanner && cookieConsent ) {
   cookieConsent.addEventListener("click", function(){
     localStorage.setItem("bannerClosed", true);
     gdprBanner.style.display = "none"
