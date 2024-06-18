@@ -1,16 +1,10 @@
 @use "../01-abstracts/mixins" as mx;
-:root {
-  --qf-width: #{ mx.px-to-rem(850px) };
-}
 
 .quick-facts {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
-  @include mx.for-size("tablet-landscape-up"){
-    max-width: var(--qf-width);
-    margin: 0 auto;
-  }
+
   &__title {
     --heading-margin: 1.25rem 0 0.25rem;
     --heading-size: #{ mx.px-to-rem(24px) };
@@ -23,8 +17,11 @@
     padding-left: 45px;
 
     p {
-      @include mx.font-size(32px);
+      @include mx.font-size(28px);
       @include mx.for-size("tablet-landscape-up"){
+        @include mx.font-size(32px);
+      }
+      @include mx.for-size("desktop-up"){
         @include mx.font-size(42px);
       }
     }
@@ -41,7 +38,7 @@
 }
 
 .prog {
-  &__campus, &__type, &__college, &__delivery, &__summary, &__hours, &__cost {
+  &__campus, &__type, &__length, &__delivery, &__summary, &__hours, &__cost, &__load {
     &::before {
       color: var(--umkc-blue);
       font-family: "Material Symbols Outlined";
@@ -59,11 +56,11 @@
   &__type{
     --prog-icon: '\e866';
   }
-  &__college{
-    --prog-icon: '\e80c';
+  &__length{
+    --prog-icon: '\ebcc';
   }
   &__delivery{
-    --prog-icon: '\e865';
+    --prog-icon: '\e30a';
   }
   &__summary{
     --prog-icon: '\e838';
@@ -73,5 +70,8 @@
   }
   &__cost{
     --prog-icon: '\e734';
+  }
+  &__load {
+    --prog-icon: '\ea19';
   }
 }

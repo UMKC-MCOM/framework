@@ -13,7 +13,22 @@
 
 			<!-- Breadcrumbs -->
 			<!-- {{> breadcrumbs }} -->
-			{{> ks/quick-facts }}
+			<div class="content-row online-intro bg-umkc-lighter-blue">
+				<div class="online-intro__facts">
+					{{> ks/quick-facts }}
+				</div>
+				<div class="online-intro__form">
+					<h2 class="">Request Information</h3>
+					<div id="form_f7263aa4-738e-44ac-b9bc-d69434b2c140" class="slateForm form form--online">Loading...</div>
+					<script>
+					var script = document.createElement('script');
+					script.async = 1;
+					script.src = 'https://connect.umsystem.edu/register/?id=f7263aa4-738e-44ac-b9bc-d69434b2c140&sys:entity:field:inquiry_program_name=618344d2-4472-4588-9cec-7ac9e7f83649&output=embed&div=form_f7263aa4-738e-44ac-b9bc-d69434b2c140' + ((location.search.length > 1) ? '&' + location.search.substring(1) : '');
+					var s = document.getElementsByTagName('script')[0];
+							s.parentNode.insertBefore(script, s);
+					</script>
+			</div>
+		</div>
 			{{> ks/timeline}}
 
 			<!-- {{> ks/teaser }} -->
