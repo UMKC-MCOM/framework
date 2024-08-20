@@ -17,12 +17,12 @@
     padding-left: 45px;
 
     p {
-      @include mx.font-size(28px);
+      @include mx.font-size(26px);
       @include mx.for-size("tablet-landscape-up"){
-        @include mx.font-size(32px);
+        @include mx.font-size(28px);
       }
       @include mx.for-size("desktop-up"){
-        @include mx.font-size(42px);
+        @include mx.font-size(32px);
       }
     }
   }

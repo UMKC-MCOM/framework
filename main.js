@@ -18,6 +18,9 @@ import '/src/js/video-shorts.js'
 import '/src/js/count-up.js'
 import '/src/js/consent.js'
 
+// Timline SVGs
+import '/src/js/timeline-svg.js'
+
 // These files are not loaded in Cascade, but are needed for testing here.
 // import '/src/js/map.js'
 // import '/src/js/street-car.js'

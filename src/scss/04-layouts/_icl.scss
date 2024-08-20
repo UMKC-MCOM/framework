@@ -21,6 +21,15 @@
       padding-right: 4rem;
     }
   }
+
+  &__title {
+    --heading-size: 2rem;
+    @include mx.for-size("tablet-landscape-up"){
+      --heading-size: 2.25rem;
+    }
+
+  }
+
   &__content {
     flex-grow: 1;
   }

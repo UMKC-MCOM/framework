@@ -8,6 +8,7 @@
 
   @include mx.for-size("tablet-landscape-up") {
     padding: 0 var(--content-padding);
+    gap: 2rem;
   }
   &--single {
     justify-content: center;

@@ -5,7 +5,7 @@
  "description": "Starting point for all web projects",
  "type": "module",
  "scripts": {
-  "dev": "vite",
+  "dev": "vite --host",
   "build": "vite build",
   "preview": "vite preview",
   "scss": "sass --source-map src/scss:assets/css",

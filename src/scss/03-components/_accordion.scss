@@ -42,8 +42,9 @@
     max-height: 0;
     opacity: 0;
     @include mx.tr();
+    padding: 0.5rem 3.25rem 0;
     > div {
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 0;
     }
 
     &[aria-hidden=false] {

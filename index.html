@@ -12,8 +12,8 @@
 			{{> hero }}
 
 			<!-- Breadcrumbs -->
-			<!-- {{> breadcrumbs }} -->
-			<div class="content-row online-intro bg-umkc-lighter-blue">
+			{{> breadcrumbs }}
+			<!-- <div class="content-row online-intro bg-umkc-lighter-blue">
 				<div class="online-intro__facts">
 					{{> ks/quick-facts }}
 				</div>
@@ -28,7 +28,151 @@
 							s.parentNode.insertBefore(script, s);
 					</script>
 			</div>
-		</div>
+		</div> -->
+		<!--
+			<div class="content-row">
+				<div class="bg-umkc-gray">
+				<div class="tb">
+					<h3 class="app_dates__title">Standard Student</h3>
+					<p class="highlight">Lorem ipsum dolor sit amet</p>
+				</div>
+				<div class="tb app_dates">
+					<p class="app_dates__container">
+							<span class="app_dates__intro">120</span><br/>
+							<span class="app_dates__dates">Credit Hours</span><br/>
+					</p>
+					<p class="app_dates__container">
+							<span class="app_dates__intro">$448.45</span><br/>
+							<span class="app_dates__dates">Per Credit Hour</span><br/>
+					</p>
+				</div>
+				</div>
+				<div class="tb">
+					<p>These estimates are for illustrative purposes only and are based on academic year 2024-2025 information. They include:</p>
+					<ul>
+					<li>General Education Program Rate of $391.65 per credit hour for 60 credit hours</li>
+					<li>Academic Program Rate of $391.65 per credit hour for 60 credit hours</li>
+					<li>Online course fee of $56.80 per credit hour for 120 credit hours</li>
+				</ul>
+				</div>
+
+
+				<div class="bg-umkc-gray">
+					<div class="tb app_dates">
+						<h3 class="app_dates__title">Application Dates</h3>
+						<p class="app_dates__container">
+								<span class="app_dates__intro">To start classes in fall</span><br/>
+								<span class="app_dates__dates">Apply By: June 15</span><br/>
+								<span class="app_dates__classes">(Classes begin in August)</span><br/>
+						</p>
+						<p class="app_dates__container">
+								<span class="app_dates__intro">To start classes in fall</span><br/>
+								<span class="app_dates__dates">Apply By: June 15</span><br/>
+								<span class="app_dates__classes">(Classes begin in August)</span><br/>
+						</p>
+						<p class="app_dates__container">
+								<span class="app_dates__intro">To start classes in fall</span><br/>
+								<span class="app_dates__dates">Apply By: June 15</span><br/>
+								<span class="app_dates__classes">(Classes begin in August)</span><br/>
+						</p>
+						<p class="app_dates__container">
+								<span class="app_dates__intro">To start classes in fall</span><br/>
+								<span class="app_dates__dates">Apply By: June 15</span><br/>
+								<span class="app_dates__classes">(Classes begin in August)</span><br/>
+						</p>
+					</div>
+				</div>
+
+				<div class="tabs tabs--online">
+					<nav class="tabs__nav" role="navigation">
+						<ul class="tabs__list">
+							<li class="tabs__item">
+								<a href="#overview" class="tabs__link" aria-expanded="true">Overview</a>
+							</li>
+							<li>
+								<a href="#courses" class="tabs__link" aria-expanded="false">Courses</a>
+							</li>
+							<li>
+								<a href="#oiapply" class="tabs__link" aria-expanded="false">How to Apply</a>
+							</li>
+							<li>
+								<a href="#tuition" class="tabs__link" aria-expanded="false">Tuition</a>
+							</li>
+						</ul>
+					</nav>
+					<div class="tabs__container">
+						<button class="o-btn tabs--hide-desktop accordion__btn" data-toggle="#overview" aria-expanded="true">
+							Kansas City
+						</button>
+						<div class="tabs__content" id="overview" aria-hidden="false">
+							<h3 class="tabs__title">Overview</h3>
+							{{> ks/snp }}
+
+							<div class="content-row">
+								<div class="benefits-list">
+									 <img alt="" class="benefits-list__image aos-init aos-animate" data-aos="fade-right" src="https://placehold.co/600x400">
+									<div class="benefits-list__group">
+										<h2 class="">The Future Is in Your Hands</h2>
+										<p>Professional communication students find employment in many fields within media, communications and beyond. Graduates can create their own paths applicable to many industries.</p>
+										<p>Potential job titles include:</p>
+										<ul>
+											<li>Recruiter</li>
+											<li>Event planner</li>
+											<li>Client service or client support</li>
+											<li>Community engagement</li>
+											<li>Campaign manager</li>
+											<li>Program manager</li>
+											<li>Fundraiser</li>
+										</ul>
+										<p class="highlight">As the population ages, the Bureau of Labor Statistics predicts 45% more positions for nurse practitioners, nurse anesthetists and nurse midwives between 2020 and 2030.</p>
+										<p class="highlight">Upon completing your degree, you’ll sit through the ANCC or AANP exam to obtain your certification and then apply for state licensure.</p>
+										<p class="highlight">As the next stage of your nursing career, UMKC’s MSN AGNP program helps you commit to providing compassionate, knowledgeable care to older adults.</p>
+										<div class="benefits-list--stats">
+											<div class="benefits-list__item benefits-list__item--stats">
+												<div class="benefits-list__stats">$74,000</div>
+														<div class="benefits-list__details">
+																<h3 class="benefits-list__title benefits-list__title--light">Median Salary</h3>
+														</div>
+													</div>
+													<div class="benefits-list__item benefits-list__item--stats">
+														<div class="benefits-list__stats">13.64%</div>
+														<div class="benefits-list__details">
+															<h3 class="benefits-list__title benefits-list__title--light">Employment Growth</h3>
+														</div>
+													</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+						<button class="o-btn tabs--hide-desktop accordion__btn" data-toggle="#courses" aria-expanded="false">
+							Kansas City
+						</button>
+						<div class="tabs__content" id="courses" aria-hidden="true">
+							<h3 class="tabs__title">Courses</h3>
+						</div>
+
+						<button class="o-btn tabs--hide-desktop accordion__btn" data-toggle="#oiapply" aria-expanded="false">
+							Kansas City
+						</button>
+						<div class="tabs__content" id="oiapply" aria-hidden="true">
+							<h3 class="tabs__title">How to Apply</h3>
+							{{> ks/pwb }}
+						</div>
+
+						<button class="o-btn tabs--hide-desktop accordion__btn" data-toggle="#tuition" aria-expanded="false">
+							Kansas City
+						</button>
+						<div class="tabs__content" id="tuition" aria-hidden="true">
+							<h3 class="tabs__title">Tuition and Fees</h3>
+							<p>I am the feeeeeeeees</p>
+						</div>
+					</div>
+				</div>
+			</div>-->
 			{{> ks/timeline}}
 
 			<!-- {{> ks/teaser }} -->
@@ -37,7 +181,7 @@
 
 			<!-- {{> ks/tabs }} -->
 
-			<!-- {{> ks/accordion }} -->
+			{{> ks/accordion }}
 
 			{{> ks/map }}
 
@@ -180,7 +324,7 @@
 		{{> mobile-menu }}
 
 		{{> ks/get-info-popup }}
-
+		{{> ks/spacer }}
 		{{> footer }}
 		{{> scripts }}
   </body>

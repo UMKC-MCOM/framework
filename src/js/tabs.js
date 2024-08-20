@@ -10,6 +10,10 @@ var Tabs = {
       tab.addEventListener('click', function(event){
         if ( !event.target.classList.contains("visible") ) {
           Tabs.changeTab(event.target.hash);
+          document.querySelector(event.target.hash).scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
         }
         event.preventDefault();
       })

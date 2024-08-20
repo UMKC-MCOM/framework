@@ -1,0 +1,44 @@
+@use "../01-abstracts/mixins" as mx;
+
+.app_dates{
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  @include mx.for-size("tablet-landscape-up"){
+    gap: 1rem 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+
+  &__title {
+    --heading-color: var(--font-color);
+    --heading-margin: 0;
+    font-family: var(--os);
+    text-transform: uppercase;
+    flex: 1 100%;
+
+  }
+
+  &__container {
+    flex: 0 0 calc(50% - 1rem);
+  }
+  &__intro {
+    color: var(--umkc-blue);
+    font-family: var(--os);
+    @include mx.font-size(28px);
+    text-transform: uppercase;
+  }
+
+  &__dates {
+    font-weight: 400;
+    @include mx.font-size(22px);
+  }
+
+  &__classes {
+    font-style: italic;
+    font-weight: 200;
+  }
+}

@@ -1,6 +1,7 @@
 @use "../01-abstracts/mixins" as mx;
 @use "buttons" as btn;
 .tabs {
+  $self: &;
   display: flex;
   gap: 1rem;
   @include mx.for-size("tablet-landscape-up") {
@@ -77,4 +78,75 @@
       display: none;
     }
   }
+  &--online {
+    display: block;
+    width: unset;
+    margin: 2rem calc( (var(--content-padding) + 1.5rem) * -1 );
+
+    #{$self}__nav {
+      display: block;
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      background: white;
+      z-index: 1
+    }
+
+    #{$self}__content {
+      border: none;
+      padding-bottom: 0;
+      scroll-margin-top: 6.5rem;
+    }
+
+    #{$self}__list {
+      display: flex;
+      flex-flow: row;
+      justify-content: center;
+      border-bottom: 0.5rem solid var(--umkc-blue);
+      gap: 0.25rem;
+
+      @include mx.for-size("tablet-landscape-up"){
+        gap: 1rem;
+      }
+    }
+
+    #{$self}__container {
+      border: none;
+
+      button {
+        display: none !important;
+      }
+    }
+
+    #{$self}__link {
+      display: inline-block;
+      background: none;
+      border: transparent 0.25rem solid;
+      border-bottom: none;
+      color: var(--umkc-blue);
+      @include mx.font-size(18px);
+      border-radius: unset;
+      padding: 1rem 0.5rem;
+
+      @include mx.for-size("tablet-landscape-up"){
+        @include mx.font-size(24px);
+        padding: 1rem 1rem;
+      }
+
+      @include mx.for-size("desktop-up"){
+        @include mx.font-size(28px);
+        padding: 1.25rem 1rem;
+      }
+
+
+      &:hover {
+        border-color: var(--umkc-blue);
+      }
+      &[aria-expanded=true]{
+        background: var(--umkc-blue);
+        color: var(--white);
+      }
+    }
+  }
+
 }
