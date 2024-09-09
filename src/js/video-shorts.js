@@ -25,7 +25,7 @@ function createVideos(video_shorts) {
     video_shorts.forEach(function(item) {
       let parent = item.parentNode;
       let vi = item.dataset.src;
-      let vs = parent.querySelector(`[data-src=${vi}]`);
+      let vs = parent.querySelector(`[data-src='${vi}']`);
 
       let player = new YT.Player(vs, {
         height: '432',
