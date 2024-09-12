@@ -45,7 +45,7 @@
       flex-basis: calc( (100% / 2) - 1rem);
     }
     @container cards (min-width: 900px) {
-      flex-basis: calc( (100% / 3) - 1rem);
+      flex-basis: calc( (100% / 2) - 1rem);
     }
     @container cards ( min-width: 1200px) {
       flex-basis: calc( (100% / 4) - 1rem);

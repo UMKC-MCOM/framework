@@ -3,28 +3,29 @@ const tag = document.createElement('script');
 const firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-const video_shorts = document.querySelectorAll('.video-shorts__embed[data-src]');
-const video_shorts_btns = document.querySelectorAll('.video-shorts__button');
+const video_shorts = document.querySelectorAll('.video-shorts__embed[data-src]') !== null ? document.querySelectorAll('.video-shorts__embed[data-src]') : null;
+const video_shorts_btns = document.querySelectorAll('.video-shorts__button') !== null ? document.querySelectorAll('.video-shorts__button') : null;
 
-video_shorts_btns.forEach(function(item, idx) {
-   item.addEventListener('click', function(e){
-     e.preventDefault();
-     e.target.classList.add("video-shorts__button--hidden");
-     let parent = e.target.parentNode;
-     let video = parent.querySelector(`.video-shorts__embed`);
-     let vid = video.getAttribute('id');
-     // Show the video
-     video.classList.add("video-shorts__embed--visible");
-     showVideo(YT.get(vid));
-   });
-});
-
+if ( video_shorts !== null && video_shorts_btns !== null ) {
+  video_shorts_btns.forEach(function(item, idx) {
+     item.addEventListener('click', function(e){
+       e.preventDefault();
+       e.target.classList.add("video-shorts__button--hidden");
+       let parent = e.target.parentNode;
+       let video = parent.querySelector(`.video-shorts__embed`);
+       let vid = video.getAttribute('id');
+       // Show the video
+       video.classList.add("video-shorts__embed--visible");
+       showVideo(YT.get(vid));
+     });
+  });
+}
 function createVideos(video_shorts) {
   window.onYouTubeIframeAPIReady = function(){
     video_shorts.forEach(function(item) {
       let parent = item.parentNode;
       let vi = item.dataset.src;
-      let vs = parent.querySelector(`[data-src=${vi}]`);
+      let vs = parent.querySelector(`[data-src='${vi}']`);
 
       let player = new YT.Player(vs, {
         height: '432',

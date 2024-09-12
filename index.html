@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   {{> head }}
-  <body>
+  <body class="homesuite">
 		<!-- Load SVGs first? -->
 		{{> svg-sprites }}
 		{{> a11y-skip }}
@@ -10,23 +10,204 @@
 		<div id="landing-page" class="main-content">
 			<!-- {{> hero video="true" }} -->
 			{{> hero }}
+
 			<!-- Breadcrumbs -->
 			{{> breadcrumbs }}
-			{{> ks/teaser }}
-			<!-- Local Site Alerts -->
-			{{> ks/alert bgColor=""}}
+			<!-- <div class="content-row online-intro bg-umkc-lighter-blue">
+				<div class="online-intro__facts">
+					{{> ks/quick-facts }}
+				</div>
+				<div class="online-intro__form">
+					<h2 class="">Request Information</h3>
+					<div id="form_f7263aa4-738e-44ac-b9bc-d69434b2c140" class="slateForm form form--online">Loading...</div>
+					<script>
+					var script = document.createElement('script');
+					script.async = 1;
+					script.src = 'https://connect.umsystem.edu/register/?id=f7263aa4-738e-44ac-b9bc-d69434b2c140&sys:entity:field:inquiry_program_name=618344d2-4472-4588-9cec-7ac9e7f83649&output=embed&div=form_f7263aa4-738e-44ac-b9bc-d69434b2c140' + ((location.search.length > 1) ? '&' + location.search.substring(1) : '');
+					var s = document.getElementsByTagName('script')[0];
+							s.parentNode.insertBefore(script, s);
+					</script>
+			</div>
+		</div> -->
+		<!--
+			<div class="content-row">
+				<div class="bg-umkc-gray">
+				<div class="tb">
+					<h3 class="app_dates__title">Standard Student</h3>
+					<p class="highlight">Lorem ipsum dolor sit amet</p>
+				</div>
+				<div class="tb app_dates">
+					<p class="app_dates__container">
+							<span class="app_dates__intro">120</span><br/>
+							<span class="app_dates__dates">Credit Hours</span><br/>
+					</p>
+					<p class="app_dates__container">
+							<span class="app_dates__intro">$448.45</span><br/>
+							<span class="app_dates__dates">Per Credit Hour</span><br/>
+					</p>
+				</div>
+				</div>
+				<div class="tb">
+					<p>These estimates are for illustrative purposes only and are based on academic year 2024-2025 information. They include:</p>
+					<ul>
+					<li>General Education Program Rate of $391.65 per credit hour for 60 credit hours</li>
+					<li>Academic Program Rate of $391.65 per credit hour for 60 credit hours</li>
+					<li>Online course fee of $56.80 per credit hour for 120 credit hours</li>
+				</ul>
+				</div>
 
-			{{> ks/tabs }}
+
+				<div class="bg-umkc-gray">
+					<div class="tb app_dates">
+						<h3 class="app_dates__title">Application Dates</h3>
+						<p class="app_dates__container">
+								<span class="app_dates__intro">To start classes in fall</span><br/>
+								<span class="app_dates__dates">Apply By: June 15</span><br/>
+								<span class="app_dates__classes">(Classes begin in August)</span><br/>
+						</p>
+						<p class="app_dates__container">
+								<span class="app_dates__intro">To start classes in fall</span><br/>
+								<span class="app_dates__dates">Apply By: June 15</span><br/>
+								<span class="app_dates__classes">(Classes begin in August)</span><br/>
+						</p>
+						<p class="app_dates__container">
+								<span class="app_dates__intro">To start classes in fall</span><br/>
+								<span class="app_dates__dates">Apply By: June 15</span><br/>
+								<span class="app_dates__classes">(Classes begin in August)</span><br/>
+						</p>
+						<p class="app_dates__container">
+								<span class="app_dates__intro">To start classes in fall</span><br/>
+								<span class="app_dates__dates">Apply By: June 15</span><br/>
+								<span class="app_dates__classes">(Classes begin in August)</span><br/>
+						</p>
+					</div>
+				</div>
+
+				<div class="tabs tabs--online">
+					<nav class="tabs__nav" role="navigation">
+						<ul class="tabs__list">
+							<li class="tabs__item">
+								<a href="#overview" class="tabs__link" aria-expanded="true">Overview</a>
+							</li>
+							<li>
+								<a href="#courses" class="tabs__link" aria-expanded="false">Courses</a>
+							</li>
+							<li>
+								<a href="#oiapply" class="tabs__link" aria-expanded="false">How to Apply</a>
+							</li>
+							<li>
+								<a href="#tuition" class="tabs__link" aria-expanded="false">Tuition</a>
+							</li>
+						</ul>
+					</nav>
+					<div class="tabs__container">
+						<button class="o-btn tabs--hide-desktop accordion__btn" data-toggle="#overview" aria-expanded="true">
+							Kansas City
+						</button>
+						<div class="tabs__content" id="overview" aria-hidden="false">
+							<h3 class="tabs__title">Overview</h3>
+							{{> ks/snp }}
+
+							<div class="content-row">
+								<div class="benefits-list">
+									 <img alt="" class="benefits-list__image aos-init aos-animate" data-aos="fade-right" src="https://placehold.co/600x400">
+									<div class="benefits-list__group">
+										<h2 class="">The Future Is in Your Hands</h2>
+										<p>Professional communication students find employment in many fields within media, communications and beyond. Graduates can create their own paths applicable to many industries.</p>
+										<p>Potential job titles include:</p>
+										<ul>
+											<li>Recruiter</li>
+											<li>Event planner</li>
+											<li>Client service or client support</li>
+											<li>Community engagement</li>
+											<li>Campaign manager</li>
+											<li>Program manager</li>
+											<li>Fundraiser</li>
+										</ul>
+										<p class="highlight">As the population ages, the Bureau of Labor Statistics predicts 45% more positions for nurse practitioners, nurse anesthetists and nurse midwives between 2020 and 2030.</p>
+										<p class="highlight">Upon completing your degree, you’ll sit through the ANCC or AANP exam to obtain your certification and then apply for state licensure.</p>
+										<p class="highlight">As the next stage of your nursing career, UMKC’s MSN AGNP program helps you commit to providing compassionate, knowledgeable care to older adults.</p>
+										<div class="benefits-list--stats">
+											<div class="benefits-list__item benefits-list__item--stats">
+												<div class="benefits-list__stats">$74,000</div>
+														<div class="benefits-list__details">
+																<h3 class="benefits-list__title benefits-list__title--light">Median Salary</h3>
+														</div>
+													</div>
+													<div class="benefits-list__item benefits-list__item--stats">
+														<div class="benefits-list__stats">13.64%</div>
+														<div class="benefits-list__details">
+															<h3 class="benefits-list__title benefits-list__title--light">Employment Growth</h3>
+														</div>
+													</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+						<button class="o-btn tabs--hide-desktop accordion__btn" data-toggle="#courses" aria-expanded="false">
+							Kansas City
+						</button>
+						<div class="tabs__content" id="courses" aria-hidden="true">
+							<h3 class="tabs__title">Courses</h3>
+						</div>
+
+						<button class="o-btn tabs--hide-desktop accordion__btn" data-toggle="#oiapply" aria-expanded="false">
+							Kansas City
+						</button>
+						<div class="tabs__content" id="oiapply" aria-hidden="true">
+							<h3 class="tabs__title">How to Apply</h3>
+							{{> ks/pwb }}
+						</div>
+
+						<button class="o-btn tabs--hide-desktop accordion__btn" data-toggle="#tuition" aria-expanded="false">
+							Kansas City
+						</button>
+						<div class="tabs__content" id="tuition" aria-hidden="true">
+							<h3 class="tabs__title">Tuition and Fees</h3>
+							<p>I am the feeeeeeeees</p>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			{{> ks/timeline}}
+
+			<!-- {{> ks/teaser }} -->
+			<!-- Local Site Alerts -->
+			<!-- {{> ks/alert bgColor=""}} -->
+
+			<!-- {{> ks/tabs }} -->
 
 			{{> ks/accordion }}
 
 			{{> ks/map }}
 
+			<div data-module="count-up">
+				<h1>
+					<span class=""></span>
+					<span class="" data-countup-number="200">200</span>
+				</h1>
+			</div>
+
 			<!-- Program Finder -->
-			{{> ks/program-finder }}
+			{{> ks/program-finder homesuite=""}}
+
+			<!-- {{> hero video="true" }} -->
+			<!-- {{> hero }} -->
+			<!-- Breadcrumbs -->
+			<!-- {{> breadcrumbs }} -->
+			<!-- {{> ks/teaser }} -->
+			<!-- Local Site Alerts -->
+			<!-- {{> ks/alert bgColor=""}} -->
+
+			<!-- Program Finder -->
+			<!-- {{> ks/program-finder }} -->
 
 			<!-- {{> ks/icon-link }} -->
-			<!-- {{> ks/video-shorts }} -->
+			{{> ks/video-shorts }}
 			<!-- Virtual Tour -->
 			<!-- {{> ks/vt }} -->
 
@@ -39,7 +220,7 @@
 
 			<!-- Stats -->
 			<!-- {{> ks/sp }} -->
-			{{> ks/snp }}
+			<!-- {{> ks/snp }} -->
 
 			<!-- {{> ks/storytelling }} -->
 			<!-- Video Row -->
@@ -49,16 +230,16 @@
 
 			<!-- Cards -->
 
-			<!-- {{> ks/cp bgColor="umkc-blue" }} -->
+			{{> ks/cp bgColor="umkc-blue" }}
 			<!-- {{> ks/cnp link="true" }} -->
 
-			{{> ks/sc }}
+			<!-- {{> ks/sc }} -->
 
 			<!-- {{> ks/cnp }} -->
 
 
 			<!-- Quotes -->
-			<!-- {{> ks/qm }} -->
+			{{> ks/qm }}
 			<!-- {{> ks/qs }} -->
 
 			<!-- Photo + Buttons -->
@@ -75,11 +256,13 @@
 			<!-- {{> ks/icl bgColor="umkc-gray icl--umkc-grey" buttonColor="umkc-yellow"}} -->
 
 			<!-- {{> ks/icl bgColor="white" buttonColor="umkc-yellow"}} -->
-			{{> ks/icl bgColor="white" buttonColor="umkc-yellow"}}
+			<!-- {{> ks/icl bgColor="white" buttonColor="umkc-yellow"}} -->
 
 			<!-- News and Calendar Feed -->
-			{{> ks/calendar }}
 			<!-- {{> ks/news }} -->
+			<!-- {{> ks/calendar }} -->
+			<!-- {{> ks/news }} -->
+
 
 			<!-- {{> ks/vertical-image }} -->
 
@@ -100,50 +283,23 @@
 			<!-- Icon Row -->
 			<!-- {{> ks/icon-row }} -->
 		</div>
+		</div>
 		<div id="standard-page" class="main-content">
 			<!-- Start of the Standard Page Layout -->
 			<div style="background: var(--umkc-blue); height: 8rem; margin: 2rem 0 0;"><h1 style="color: white; padding: var(--content-padding);">Start: Standard Page</h1></div>
 			{{> hero profile="true" }}
 			{{> breadcrumbs }}
 
-			<div class="content-row">
-				{{> ks/res-list }}
 
 			<div class="standard">
 				<div class="standard--nav"></div>
 				<div class="standard--content">
-
-					<div class="deadlines">
-						<div class="deadlines__item">
-							<div class="deadlines__header">
-								<h2>January 1 - December 25</h2>
-							</div>
-							<div class="deadlines__sep"></div>
-							<div class="deadlines__content">
-
-								<p class="deadlines__subhead">Undergraduates</p>
-
-								<h3 class="deadlines__title">FAFSA Available</h3>
-								<p>Bro ipsum dolor sit amet gaper backside single track, manny Bike epic clipless. Schraeder drop gondy, rail fatty slash gear jammer steeps clipless rip bowl couloir bomb hole berm. Huck cruiser crank endo, sucker hole piste ripping ACL huck greasy flow face plant pinner. Japan air Skate park big ring trucks shuttle stoked rock-ectomy.</p>
-							</div>
-						</div>
-						<div class="deadlines__item">
-							<div class="deadlines__header">
-								Dec - Mar
-							</div>
-							<div class="deadlines__sep"></div>
-							<div class="deadlines__content">
-								<h3 class="deadlines__title">FAFSA Available</h3>
-								<p>Bro ipsum dolor sit amet gaper backside single track, manny Bike epic clipless. sucker hole piste ripping ACL. <a href="#">File FAFSA</a>.</p>
-							</div>
-						</div>
-					</div>
-					<p class="deadlines__link"><a href="#" class="button button--umkc-yellow">All Calendar Events</a></p>
+					{{> ks/res-list }}
+					{{> ks/deadlines }}
 				</div>
 			</div>
 		</div></div>
 				<!-- </div> -->
-
 
 
 			<!-- {{> ks/profile }} -->
@@ -160,80 +316,16 @@
 					{{> ks/buttons type="outline button--lg" }}
 				</div>
 			</div>
+
 		<!-- </div> -->
 
-		<div class="menu">
-			<ul class="menu__list" id="menu" role="menubar" >
-				<li class="menu__item" role="menuitem" aria-haspopup="true">
-					<a href="#" class="menu__link" data-toggle=".search" data-focus=".search input">
-						<svg class="icon menu__icon menu__icon--search"><use xlink:href="#search"></use></svg>
-						<svg class="icon menu__icon menu__icon--close"><use xlink:href="#close"></use></svg>
-						Search
-					</a>
-				</li>
-				<li class="menu__item" role="menuitem">
-					<a href="#" class="menu__link">
-						<svg class="icon menu__icon"><use xlink:href="#apply"></use></svg>
-						Apply
-					</a>
-				</li>
-				<li class="menu__item" role="menuitem" aria-haspopup="true">
-					<a href="#" class="menu__link menu__link--large" data-toggle="#main-navigation">
-						<svg class="icon menu__icon"><use xlink:href="#menu"></use></svg>
-						<svg class="icon menu__icon menu__icon--close"><use xlink:href="#close"></use></svg>
-						<span class="sr-only">Menu</span>
-					</a>
-				</li>
-				<li class="menu__item" role="menuitem">
-					<a href="#" class="menu__link">
-						<svg class="icon menu__icon"><use xlink:href="#get-info"></use></svg>
-						Get Info
-					</a>
-				</li>
-				<li class="menu__item" role="menuitem">
-					<a href="#" class="menu__link">
-						<svg class="icon menu__icon"><use xlink:href="#give"></use></svg>
-						Give
-					</a>
-				</li>
-			</ul>
-		</div>
+
+		<!-- </div> -->
+		{{> mobile-menu }}
 
 		{{> ks/get-info-popup }}
-
+		{{> ks/spacer }}
 		{{> footer }}
-		<script type="module" src="./main.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
-		<script>
-		window.addEventListener('load', function () {
-			if ( document.querySelectorAll(".glide").length >= 1 ){
-				new Glide('.glide').mount()
-			}
-		})
-		</script>
-		<script>
-			window.fwSettings={
-			'widget_id':47000005928
-			};
-			!function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}()
-		</script>
-		<script type='text/javascript' src='https://widget.freshworks.com/widgets/47000005928.js' async defer></script>
-		<script>
-			FreshworksWidget('hide', 'launcher');
-			FreshworksWidget('prefill', 'ticketForm', {
-				type: 'Report an issue',
-				custom_fields: {
-					cf_url: window.location.href
-				}
-			});
-			FreshworksWidget('disable', 'ticketForm', ['custom_fields.cf_url']);
-			FreshworksWidget('hide', 'ticketForm', ['custom_fields.cf_unit_or_department', 'group_id', 'product_id', 'custom_fields.cf_url', 'type']);
-
-			const issues = document.querySelector(".footer__curator a[href*='/submit-a-web-ticket.html']");
-			issues.addEventListener("click", function(e) {
-				e.preventDefault();
-				FreshworksWidget("open");
-			});
-		</script>
+		{{> scripts }}
   </body>
 </html>

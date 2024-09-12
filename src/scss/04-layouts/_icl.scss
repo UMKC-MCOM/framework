@@ -21,6 +21,15 @@
       padding-right: 4rem;
     }
   }
+
+  &__title {
+    --heading-size: 2rem;
+    @include mx.for-size("tablet-landscape-up"){
+      --heading-size: 2.25rem;
+    }
+
+  }
+
   &__content {
     flex-grow: 1;
   }
@@ -54,9 +63,9 @@
 
   &__link {
     text-decoration: none;
-    color: var(--umkc-blue);
+    color: var(--link-color, var(--umkc-blue));
     &:hover, &:active, &:focus{
-      color: var(--umkc-dark-blue);
+      color: var(--link-hover-color, var(--umkc-dark-blue));
     }
   }
 

@@ -13,6 +13,9 @@
     align-items: flex-start;
   }
 
+  &__wrap {
+    max-width: mx.px-to-rem(352px);
+  }
   &__item {
     justify-content: center;
     aspect-ratio: 22/27;

@@ -37,7 +37,7 @@
             outline: none;
             padding: 1.125rem 2.6875rem 1.0625rem 1.125rem;
             width: 100%;
-            background: var(--umkc-gray) 0% 0% no-repeat padding-box;
+            background: var(--umkc-lighter-blue) 0% 0% no-repeat padding-box;
             color: var(--umkc-dark-blue);
             font-weight: 600;
 
@@ -103,6 +103,10 @@
         .module-search__additional-links {
             text-align: center;
             margin: 2em auto;
+
+            &--button {
+                margin: 1rem;
+            }
         }
     }
 }

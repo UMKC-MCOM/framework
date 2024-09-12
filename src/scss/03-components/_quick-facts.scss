@@ -1,0 +1,77 @@
+@use "../01-abstracts/mixins" as mx;
+
+.quick-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+
+  &__title {
+    --heading-margin: 1.25rem 0 0.25rem;
+    --heading-size: #{ mx.px-to-rem(24px) };
+    font-family: var(--roboto);
+    text-transform: uppercase;
+  }
+  &__item {
+    flex:1 1 calc(50% - 1.5rem);
+    position: relative;
+    padding-left: 45px;
+
+    p {
+      @include mx.font-size(26px);
+      @include mx.for-size("tablet-landscape-up"){
+        @include mx.font-size(28px);
+      }
+      @include mx.for-size("desktop-up"){
+        @include mx.font-size(32px);
+      }
+    }
+  }
+
+  &__footnote {
+    margin-top: 2rem;
+    @include mx.font-size(14px);
+    @include mx.for-size("tablet-landscape-up"){
+      max-width: var(--qf-width);
+      margin: 0 auto;
+    }
+  }
+}
+
+.prog {
+  &__campus, &__type, &__length, &__delivery, &__summary, &__hours, &__cost, &__load {
+    &::before {
+      color: var(--umkc-blue);
+      font-family: "Material Symbols Outlined";
+      position: absolute;
+      display: block;
+      @include mx.font-size(32px, 1);
+      top: 1.25rem;
+      left: 0;
+      content: var(--prog-icon);
+    }
+  }
+  &__campus {
+    --prog-icon: '\ea40';
+  }
+  &__type{
+    --prog-icon: '\e866';
+  }
+  &__length{
+    --prog-icon: '\ebcc';
+  }
+  &__delivery{
+    --prog-icon: '\e30a';
+  }
+  &__summary{
+    --prog-icon: '\e838';
+  }
+  &__hours{
+    --prog-icon: '\e8b5';
+  }
+  &__cost{
+    --prog-icon: '\e734';
+  }
+  &__load {
+    --prog-icon: '\ea19';
+  }
+}

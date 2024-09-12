@@ -1,6 +1,7 @@
 @use "skip-links";
 @use "logo";
 @use "stripes";
+@use "hpf"; // Homepage Feature
 @use "buttons";
 @use "nav-list";
 @use "hero";
@@ -28,3 +29,5 @@
 @use "get-info-popup";
 @use "sc";
 @use "map";
+@use "timeline";
+@use "quick-facts";

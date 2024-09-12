@@ -32,8 +32,8 @@
     margin-right: 0.5rem !important;
   }
   &__icon {
-    height: 37px;
-    width: 37px;
+    height: mx.px-to-rem(42px);
+    width: mx.px-to-rem(42px);
     color: var(--umkc-blue);
   }
   &__info {

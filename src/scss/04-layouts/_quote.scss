@@ -7,7 +7,8 @@
   justify-content: space-evenly;
 
   @include mx.for-size("tablet-landscape-up") {
-    padding: 4rem var(--content-padding);
+    padding: 0 var(--content-padding);
+    gap: 2rem;
   }
   &--single {
     justify-content: center;
@@ -58,6 +59,7 @@
 
   &__title {
     --heading-size: #{mx.px-to-rem(20px)};
+    --heading-margin: 1rem 0 0;
   }
 
   &__bullets {
@@ -83,4 +85,30 @@
     height: #{mx.px-to-rem(150px)};
     width: #{mx.px-to-rem(150px)};
   }
+
+  &--hp {
+    --font-color: var(--white);
+    color: var(--font-color);
+    background: rgba(0, 102, 204, 0.80);
+    padding: var(--content-padding);
+    #{$self}__icon {
+      color: var(--font-color);
+    }
+    #{$self}__blockquote {
+      @include mx.for-size("tablet-landscape-up") {
+        @include mx.font-size(30px);
+      }
+    }
+  }
+}
+
+.content-row:has(.quote--hp){
+  background-image: url('https://picsum.photos/seed/picsum/1920/800');
+  background-attachment: fixed;
+  background-image: url('https://picsum.photos/seed/picsum/1920/800');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 0;
 }

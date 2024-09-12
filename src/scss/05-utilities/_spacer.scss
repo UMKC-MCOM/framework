@@ -1,0 +1,26 @@
+@use "../01-abstracts/variables" as var;
+@use "../01-abstracts/mixins" as mx;
+@use "sass:math";
+
+$sizes: 8, 16, 24, 32, 48, 64;
+@mixin spacer-height {
+  @each $size in $sizes {
+    $height: #{$size}px;
+    &--#{$size}{
+      height: $height;
+    }
+  }
+}
+@mixin spacer-color {
+  @each $name, $color in var.$theme-colors {
+    &--#{$name} {
+      background-color: $color;
+    }
+  }
+}
+
+.spacer {
+  display: block;
+  @include spacer-height;
+  @include spacer-color;
+}

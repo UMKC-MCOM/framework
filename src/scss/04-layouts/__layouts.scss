@@ -7,19 +7,22 @@
 @use "benefits-list";
 @use "highlight";
 @use "cards";
-@use "icl";
-@use "pwb";
-@use "quote";
+@use "icl"; // Image, content and link
+@use "pwb"; // Photo with Benefits
+@use "quote"; // Quotes
 @use "standard";
 @use "video-row";
-@use "tb";
-@use "st";
-@use "footer";
-@use "/node_modules/@glidejs/glide/src/assets/sass/glide.core";
+@use "tb"; // Text Block
+@use "st"; // Storytelling
 @use "gallery";
 @use "icon-row";
 @use "program-finder";
+@use "bgil"; // Background Image with Link
+@use "/node_modules/@glidejs/glide/src/assets/sass/glide.core";
+@use "footer";
 @use "oc";
 @use "icon-link";
 @use "virtual-tour";
 @use "deadlines";
+@use "online-intro";
+@use "app_dates";

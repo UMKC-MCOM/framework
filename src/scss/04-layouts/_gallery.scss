@@ -98,7 +98,7 @@
   }
 
   &__title {
-    --heading-color: var(--white);
+    --heading-color: var(--white) !important;
     --heading-margin: 0;
   }
 
