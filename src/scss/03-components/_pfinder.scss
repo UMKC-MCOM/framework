@@ -1,0 +1,182 @@
+@use "../01-abstracts/variables" as var;
+@use "../01-abstracts/mixins" as mx;
+
+// Nav
+.pfinder-nav {
+    @media screen and (min-width: 1200px) {
+        ul.main-navigation__list {
+            justify-content: start;
+
+            li {
+                --link-margin: 2rem;
+            }
+        }
+    }
+}
+.pfinder-nav.sticky-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+}
+
+// Header
+.hero--pfinder {
+    h1 {
+        text-transform: uppercase;
+    }
+}
+
+//@TODO Determine max-width for content row content
+.content-row.pfinder, .content-row.after-grad {
+    padding: 5rem 20rem;
+
+    .disclaimer {
+        font-size: 14px;
+    }
+}
+
+// Learn More
+.content-row.pfinder {
+    background-color: #E5EEF5;
+}
+.more-info-row {
+    form#requestMoreInfo {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+
+        .input-wrapper {
+            label {
+                display: block;
+            }
+        }
+
+    }
+}
+
+.program-information {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+// After Graduation
+.content-row.after-grad, .after-grad_stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        grid-column-gap: 60px;
+        grid-row-gap: 10px;
+
+    .after-grad_copy {
+        h2 {
+            color: var(--font-color);
+        }
+        ul {
+            list-style: circle;
+            padding-left: 0px;
+            margin-left: 0px;
+
+            p { font-weight: bold; }
+
+            li {
+                list-style-position: inside;
+            }
+
+        }
+    }
+
+    .after-grad_image {}
+
+    .after-grad_stats {
+        margin-bottom: 3rem;
+        div {
+            p {
+                font-weight: bold;
+                font-weight: 24px;
+                padding: 0rem;
+            }
+            p:first-child {
+                font-size: 56px;
+            }
+        }
+    }
+
+}
+
+
+//Explore Programs 
+
+.eprog {
+    .explore-programs {
+        .search-area {
+            .search-wrapper {
+                #searchByKeyword {
+                    h3 {}
+                    input[type="text"] {}
+                    input[type="submit"] {}
+                }
+            }
+            .area-wrapper {
+                h3 {}
+                form#areaOfInterest {
+                    .input-wrapper {
+                        input[type="checkbox"]{}
+                        label {}
+                    }
+                }
+            }
+        }
+        .results-and-filter {
+            .filter {}
+            .results {
+                .results-top-bar {
+                    .results-display {
+                        //@TODO Add Icons instead of p tags
+                        p {}
+                    }
+                }
+                .results-list {
+                    ul.results-list-wrapper {
+                        li.results-program {
+                            .results-program_image {
+                                .results-program_button {}
+                            }
+                            .results-program_title-type {}
+                            .results-program_title {}
+                            ul.results-program_interest-list {
+                                li {}
+                            }
+                            .results-program_footer {
+                                .results-program_footer-view-program {
+                                    a {}
+                                }
+                                .results-program_footer-compare {
+                                    #addToCompare {
+                                        input[type="checkbox"] {}
+                                        label {}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }    
+            }
+        }
+    }
+}
+
+// Compare Programs Flyout Elements
+
+.compare-tab {
+    p {
+        span#comparedMajors {}
+    }
+}
+.compare-flyout {}
