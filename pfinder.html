@@ -6,7 +6,7 @@
 		{{> svg-sprites }}
 		{{> a11y-skip }}
 
-		{{> header }}
+		{{> ks/program-finder-v2-header }}
 		<div id="landing-page" class="main-content">
 			
 			<!-- {{> hero }} -->
@@ -16,7 +16,9 @@
 			{{> breadcrumbs }}
 
 			<!-- Program Finder -->
-			{{> ks/program-finder-v2 homesuite=""}}
+			{{> ks/program-finder-v2-more-info homesuite=""}}
+            <!-- Icon Row -->
+			{{> ks/icon-row }}
 
 		</div>
 
@@ -35,9 +37,8 @@
 				</div>
 			</div>
 		</div>
-		{{> mobile-menu }}
 
-		{{> ks/get-info-popup }}
+		{{> ks/program-finder-v2-mobile-menu }}
 		{{> ks/spacer }}
 		{{> footer }}
 		{{> scripts }}

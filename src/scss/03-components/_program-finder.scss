@@ -1,6 +1,26 @@
 @use "../01-abstracts/variables" as var;
 @use "../01-abstracts/mixins" as mx;
 
+// Simple breakpoint media query. Uses basic sizes to determin the upper limit and useful names to
+// determine the upper boundary.
+@mixin for-size($range) {
+    $phone-upper-boundary: 600px !default;
+    $tablet-portrait-upper-boundary: 900px !default;
+    $tablet-landscape-upper-boundary: 1200px !default;
+    $desktop-upper-boundary: 1800px !default;
+  
+    @if $range == phone-only {
+      @media (max-width: #{$phone-upper-boundary - 1}) { @content; }
+    } @else if $range == desktop-down {
+      @media (max-width: $tablet-landscape-upper-boundary) { @content; }
+    } @else if $range == tablet-down {
+        @media (max-width: $tablet-portrait-upper-boundary) { @content; }
+      }
+        @else {
+      @warn "You selected a MQ size that doesn't exist. Try again.";
+    }
+  }
+
 $filter-gray: #707070;
 
 // Nav
@@ -40,175 +60,203 @@ $filter-gray: #707070;
     }
 }
 
-//@TODO Determine max-width for content row content
-.content-row.pfinder, .content-row.after-grad {
-    //padding: 5rem;
-    padding: 0;
+.pfinder {
 
-    .disclaimer {
-        font-size: 16px;
-    }
-}
+    &__more-info {
+        background-color: var(--umkc-lighter-blue);
+        //@TODO Determine max-width in v2 (using padding here for style approvals
+        padding: 2rem;
+        margin-bottom: 2rem;
 
-// Learn More
-.content-row.pfinder {
-}
-.more-info-row {
-    background-color: var(--umkc-lighter-blue);
-    //@TODO Determine max-width in v2 (using padding here for style approvals
-    padding: 2rem 5rem 4rem;
-
-    &.sticky-area {
-        position: fixed;
-        top:2rem;
-        left:0;
-        right:0;
-        //@TODO Find proper z-index
-        z-index: 998;
-    }
-
-    h3 {
-        font-family: var(--os);
-        font-weight: bold;
-        font-size: 24px;
-        text-transform: uppercase;
-        color: var(--font-color);
-    }
-    form#requestMoreInfo {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        grid-column-gap: 30px;
-        grid-row-gap: 30px;
-
-        .input-wrapper {
-            label {
-                display: block;
-                font-weight: bold;
-                font-size: 13px;
-                margin-bottom: 0.25rem;
-            }
-            input, button {
-                width: 100%;
-            }
-            
-            &.submit-button {
-                align-self: end;
-            }
+        &.sticky-area {
+            position: fixed;
+            top:2rem;
+            left:0;
+            right:0;
+            //@TODO Find proper z-index
+            z-index: 998;
         }
-        .text-message-choice-wrapper {
-            label {
-                display: inline;
-            }
-            input[type="radio"] {
-                display: inline;
-                width: 20px;
-            }
-            br {
-                clear:both;
-            }
+
+        h3 {
+            font-family: var(--os);
+            font-weight: bold;
+            font-size: 24px;
+            text-transform: uppercase;
+            color: var(--font-color);
         }
-    }
-}
+        form#requestMoreInfo {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-column-gap: 30px;
+            grid-row-gap: 30px;
 
-.program-information {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    //grid-template-columns: 60% 40%;
-    grid-template-rows: 1fr;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
+            @include for-size(tablet-down){
+                grid-template-rows: 1fr 1fr 1fr 1fr;
+                grid-template-columns: 1fr;
+                grid-column-gap: 30px;
+                grid-row-gap: 30px;
+            }
 
-    //@TODO Figure out proper spacing around elements
-    padding: 5rem;
-
-    .overview {
-        font-size: 24px;
-    }
-
-    .highlights {
-        ul {
-            list-style: none;
-            margin-bottom: 3rem;
-
-            li {
-                font-size: 18px;
-                margin-bottom: 1rem;
-
-                .icon {
+            .input-wrapper {
+                label {
+                    display: block;
+                    font-weight: bold;
+                    font-size: 13px;
+                    margin-bottom: 0.25rem;
+                }
+                input, button {
+                    width: 100%;
+                }
+                
+                &.submit-button {
+                    align-self: end;
+                }
+            }
+            .text-message-choice-wrapper {
+                @include for-size(tablet-down){
+                    grid-column: 1/4;
+                }
+                label {
                     display: inline;
-                    svg {
-                        --icon-size: 1.8125rem;
-                        height: var(--icon-size);
-                        width: var(--icon-size);
-                        color: var(--font-color);
-                    }
+                }
+                input[type="radio"] {
+                    display: inline;
+                    width: 20px;
+                }
+                br {
+                    clear:both;
                 }
             }
         }
     }
+    &__program-information {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+
+        @include for-size(tablet-down){
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: 2fr;
+        }
+    
+        .overview {
+            font-size: 24px;
+            @include for-size(tablet-down){
+                order: 2;
+            }
+        }
+    
+        .highlights {
+            @include for-size(tablet-down){
+                order: 1;
+            }
+            ul {
+                list-style: none;
+                margin-bottom: 3rem;
+    
+                li {
+                    font-size: 18px;
+                    margin-bottom: 2rem;
+    
+                    .icon {
+                        display: inline;
+                        svg {
+                            --icon-size: 1.8125rem;
+                            height: var(--icon-size);
+                            width: var(--icon-size);
+                            color: var(--font-color);
+                        }
+                    }
+                    &.disclaimer {
+                        padding: 2rem;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+        
+    }
 }
 
 // After Graduation
-//@TODO Another proper width issue below
+
 .content-row.after-grad {
-    padding: 5rem;
-    background-color: var(--umkc-lighter-blue);
-}
-.after-grad_stats {
-    margin: 2rem;
-}
-.content-row.after-grad {
+        background-color: var(--umkc-lighter-blue);
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(1, 1fr);
-        grid-column-gap: 60px;
-        grid-row-gap: 10px;
+        grid-template-columns: 1fr 1fr; 
+        grid-template-rows: 1fr 1fr; 
+        gap: 20px 20px; 
+        grid-template-areas: 
+            "a b"
+            "c d"; 
+        
+        @include for-size('desktop-down'){
+            gap: 10px 10px;
+            grid-template-columns: 1fr; 
+            grid-template-rows: 1fr; 
+            grid-template-areas: 
+            "b"
+            "a"
+            "c"
+            "d";
+        }
+    
+        .disclaimer {
+            font-size: 16px;
+        }
 
     .after-grad_copy {
-        h2 {
-            color: var(--font-color);
-        }
+        grid-area: a;
         ul {
             list-style: circle;
             padding-left: 0px;
             margin-left: 0px;
-
+            margin-bottom: 1rem;
             p { font-weight: bold; }
-
-            li {
-                list-style-position: inside;
-            }
-
+            li { list-style-position: inside; }
         }
+        .disclaimer {}
     }
 
-    .after-grad_image {}
+    .after-grad_image {
+        grid-area: b;
+
+        img {
+            margin:0 auto;
+            display: block;
+            width: 100%;
+        }
+    }
 
     .after-grad_stats {
-        grid-column: 2/-1;
-        
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: center;
-        margin-bottom: 0rem;
+        grid-area: d;
 
-        div {
-            text-align: center;
-            display: block;
-            margin:0 auto;
-            p {
-                font-weight: bold;
-                font-weight: 24px;
-                padding: 0rem;
-            }
-            p:first-child {
-                font-size: 56px;
+        .after-grad_stats-wrapper {
+            grid-column: 2/-1;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 2rem;
+    
+            div {
+                text-align: center;
+                display: block;
+                margin:0 auto;
+                p {
+                    font-weight: bold;
+                    font-weight: 24px;
+                    padding: 0rem;
+                }
+                p:first-child {
+                    font-size: 56px;
+                }
             }
         }
     }
-
 }
 
 
@@ -218,12 +266,29 @@ $filter-gray: #707070;
     .explore-programs {
         .search-area {
             background-color: var(--umkc-lighter-blue);
-            padding: 2rem;
+            padding: 0rem;
             margin-bottom: 2rem;
             display: grid;
             grid-template-columns: 40% 60%;
             column-gap: 60px;
             grid-template-rows: repeat(1, 1fr);
+            
+
+            @include for-size(desktop-down){
+                grid-template-columns: 1fr;
+                column-gap: 0px;
+                grid-template-rows: repeat(2, 1fr);
+            }
+
+            //TODO Possibly turn this into a class
+            @include for-size(desktop-down){
+                position: fixed;
+                top: 180px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index:2;
+            }
 
             h3 {
                 font-size: 24px;
@@ -233,12 +298,13 @@ $filter-gray: #707070;
                 text-transform: uppercase;
             }
             .search-wrapper {
+                margin: 2rem;
                 #searchByKeyword {
                     
                     .search-by-keyboard-wrapper {
                         display: flex;
                         border-radius: 6px;
-                        max-width: 800px;
+                        //max-width: 800px;
                         margin: 0 auto;
                         margin-bottom: 2rem;
                         input[type="text"] {
@@ -259,8 +325,14 @@ $filter-gray: #707070;
                 }
             }
             .area-wrapper {
+                margin: 2rem;
                 padding-left: 2rem;
                 border-left: 1px solid var(--font-color);
+                @include for-size(desktop-down){
+                    border-left: 0px;
+                    padding-left: 0px;
+                    overflow:scroll;
+                }
                 form#areaOfInterest {
                     .input-wrapper {
                         margin-bottom: 1rem;
@@ -272,13 +344,33 @@ $filter-gray: #707070;
         }
         .results-and-filter {
             display: grid;
-            grid-template-columns: 30% 70%;
+            grid-template-columns: 20% 80%;
             grid-template-rows: repeat(1, 1fr);
+
+            @include for-size(desktop-down){
+                display: grid;
+                grid-template-columns: repeat(1, 1fr); //Changed columns
+                grid-template-rows: repeat(1, 1fr); //Changed rows
+            }
+            
+            
             .filter, .results {
-                padding: 2rem;
+                padding: 1rem;
+                @include for-size(desktop-down){
+                    padding: 0rem;
+                }
             }
             .filter {
                 background: var(--umkc-lighter-blue);
+                padding-left: 2rem;
+                // @include for-size(desktop-down){
+                //     position: fixed;
+                //     top: 180px;
+                //     left: 0;
+                //     right: 0;
+                //     bottom: 0;
+                //     z-index:2;
+                // }
                 h4 {
                     font-size: 24px;
                     font-weight: bold;
@@ -304,10 +396,17 @@ $filter-gray: #707070;
             }
             .results {
 
+                // Not currently used on mobile
                 .results-top-bar {
                     display: grid;
                     grid-template-columns: 90% 10%;
                     grid-template-rows: repeat(auto-fill, 1fr);
+                    margin-bottom: 2rem;
+
+                    @include for-size(desktop-down){
+                        grid-template-columns: repeat(1, 1fr); //changed
+                        grid-template-rows: repeat(1, 1fr); // changed
+                    }
 
                     .results-filter-tabs {
                         display: flex;
@@ -315,8 +414,6 @@ $filter-gray: #707070;
                         flex-direction: row;
                         flex-wrap: wrap;
                         justify-content: flex-start;
-                        align-items: center;
-                        align-content: normal;
 
                         .results-filter-tabs_title, .results-filter-tabs_tab {
                             text-transform: uppercase;
@@ -344,14 +441,15 @@ $filter-gray: #707070;
                         flex-wrap: nowrap;
                         justify-content: flex-start;
                         align-items: center;
-                        align-content: normal;
+
                         button {
                             display: block;
                             padding: 0;
                             border-radius: 0;
+                            background-color: transparent;
                             svg {
-                                width: 30px;
-                                height: 30px;
+                                width: 40px;
+                                height: 40px;
                             }
                         }
                     }
@@ -366,10 +464,17 @@ $filter-gray: #707070;
                         justify-content: normal;
                         align-items: normal;
                         align-content: normal;
+                        margin-left: 0;
+
+                        
                         li.results-program {
                             display: block;
                             flex-basis: auto;
                             align-self: auto;
+                            @include for-size(tablet-down){
+                                width: 100%;
+                                justify-content: center;
+                            }
                             .results-program_image {
                                 background-repeat: no-repeat;
                                 background-position: center;
@@ -499,14 +604,17 @@ $filter-gray: #707070;
 .compare-tab {
     position: fixed;
     right: -6rem;
-    top: 50vh;
+    top: 60vh;
     background: var(--umkc-yellow);
     font-weight: bold;
     cursor: pointer;
     transform: rotate(-90deg);
     padding: 1rem 2rem;
+    z-index:3;
 
-    z-index:9999;
+    @include for-size(desktop-down){
+        display: none;
+    }
     
     transition: 0.1s ease background-color;
     
@@ -548,23 +656,22 @@ $filter-gray: #707070;
     background: var(--umkc-lighter-blue);
     padding: 3rem;
     //margin: 5rem;
-
-    //Undeployed stylings
     position: fixed;
     top: 0rem;
     //left:0;
     right:0;
     bottom:0;
     //@TODO z-index appropriateness
-    z-index: 9998;
+    z-index: 2;
     display: none;
 
-    &.compare-flyout-show {
+    &[aria-hidden="false"] {
         display: block;
         
-        &::backdrop {
-            background-color: red;
-        }
+    }
+    &[aria-hidden="true"] {
+        display: none;
+        
     }
 
     h3 {
@@ -596,11 +703,12 @@ $filter-gray: #707070;
         }
     }
     .compare-flyout-list {
+        overflow: scroll;
         ul.compare-flyout-list-wrapper {
             display: flex;
             gap: 20px;
             flex-direction: row;
-            flex-wrap: nowrap;
+            flex-wrap: wrap;
             justify-content: normal;
             align-items: normal;
             align-content: normal;
@@ -707,351 +815,22 @@ $filter-gray: #707070;
 }
 
 
-// Mobile Styles
+// 4 Different "Screens" on the Search/Results page
+// The are some lazy fill-ins until further planning
+
+
+
 
 @media screen and (max-width: 1200px) {
-    .more-info-row {
-        form#requestMoreInfo {
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(5, 1fr);
-            grid-column-gap: 15px;
-            grid-row-gap: 15px;
-        }
-    
-        .text-message-choice-wrapper {
-            grid-column: 1/-1;
-        }
-        .submit-button {
-            grid-column: 1/-1;
-            align-self: center;
-            width: 450px;
-            margin: 0 auto;
-        }
+    // Toggles
+    #search-toggle[aria-hidden="true"] {
+        display: none;
     }
-
-    .program-information {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: 2fr;
-        grid-row-gap: 30px;
-        padding: 3rem;
-        .overview {
-            order: 2;
-        }
-        .highlights {
-            order: 1;
-        }
+    #filter-toggle[aria-hidden="true"] {
+        display: none;
     }
-
-    .content-row.after-grad {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        grid-column-gap: 0px;
-        grid-row-gap: 10px;
-
-        .after-grad_copy { 
-            order: 2;
-            .disclaimer {
-                margin-top: 2rem;
-            }
-        }
-        .after-grad_image { 
-            order: 1;
-            margin: 0 auto;
-            
-            img {
-                margin-bottom: 2rem;
-            }
-        }
-        .after-grad_stats {
-            order: 3;
-            grid-column: 1/-1;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            justify-content: center;
-            margin: 0rem;
-        }
+    #compare-toggle[aria-hidden="true"] {
+        display: none;
     }
-    .eprog {
-        .explore-programs {
-            .results-and-filter {
-                display: grid;
-                grid-template-columns: repeat(1, 1fr); //Changed columns
-                grid-template-rows: repeat(1, 1fr); //Changed rows
-                .filter, .results {
-                    padding: 2rem;
-                }
-                .filter {
-
-                    &.hide-filter-area {
-                        display: none;
-                    }
-                    
-                    h4 {
-                        font-size: 24px;
-                        font-weight: bold;
-                        font-family: var(--os);
-                        color: var(--font-color);
-                        text-transform: uppercase;
-                    }
-                    h5 {
-                        font-size: 16px;
-                        font-weight: bold;
-                        color: $filter-gray;
-                    }
-    
-                    .filter-input-wrapper {
-                        display: block;
-                        margin-bottom: 1rem;
-    
-                        input {}
-                        select {
-                            width: 100%;
-                        }
-                    }
-                }
-                
-                //Results Section
-                .results {
-
-                    .results-top-bar {
-                        display: grid;
-                        grid-template-columns: repeat(1, 1fr); //changed
-                        grid-template-rows: repeat(1, 1fr); // changed
-    
-                        .results-filter-tabs {
-                            display: flex;
-                            gap: 15px;
-                            flex-direction: row;
-                            flex-wrap: wrap;
-                            justify-content: flex-start;
-                            align-items: center;
-                            align-content: normal;
-
-                            order: 2; //changed to give more room for selected major tabs
-    
-                            .results-filter-tabs_title, .results-filter-tabs_tab {
-                                text-transform: uppercase;
-                                display: block;
-                                flex-basis: auto;
-                                align-self: center;
-                                padding: 0.75rem 1rem;
-                            }
-                            .results-filter-tabs_title {
-                                font-family: var(--os);
-                                font-size: 24px;
-                                font-weight: bold;
-                                color: var(--font-color);
-                            }
-                            .results-filter-tabs_tab {
-                                background-color: var(--umkc-blue);
-                                color: var(--white);
-                            }
-                        }
-    
-                        .results-display {
-                            justify-content: flex-end; // changed
-                            button {
-                                svg {}
-                            }
-                        }
-                    }
-                    // Results Grid
-                    .results-grid {
-                        padding-top: 3rem;
-                        ul.results-grid-wrapper {
-                            display: flex;
-                            gap: 20px;
-                            flex-direction: row;
-                            flex-wrap: wrap;
-                            justify-content: center; //changed
-                            align-items: normal;
-                            align-content: normal;
-                            li.results-program {
-                                display: block;
-                                flex-basis: auto;
-                                align-self: auto;
-                                .results-program_image {
-                                    background-repeat: no-repeat;
-                                    background-position: center;
-                                    background-size: cover;
-                                    //@TODO: Determine proper sizing for these images
-                                    min-height:200px;
-    
-                                    display: flex;
-                                    gap: 20px;
-                                    flex-direction: row;
-                                    flex-wrap: nowrap;
-                                    justify-content: flex-end;
-                                    align-items: normal;
-                                    align-content: normal;
-                                    text-align: right;
-                                    margin-bottom: 1.5rem;
-                                    
-                                    .results-program_button {
-                                        margin: 5px;
-                                        padding: 10px;
-                                        border-radius: 50%;
-                                        color: white;
-                                        width: 20px;
-                                        height: 20px;
-    
-                                        //@TODO Add real Colors and implement icons
-                                        background: red;
-                                        &:nth-child(2) {
-                                            background: blue;
-                                        }
-                                        &:nth-child(3) {
-                                            background: yellow;
-                                        }
-                                    }
-                                }
-                                .results-program_title-type {
-                                    font-size: 16px;
-                                    font-weight: bold;
-                                    color: var(--umkc-dark-blue);
-                                }
-                                .results-program_title {
-                                    font-family: var(--os);
-                                    font-size: 24px;
-                                    font-weight: 600;
-                                    text-transform: uppercase;
-                                    color: var(--umkc-blue);
-                                    margin: 0.25rem auto 0.5rem auto;
-                                }
-                                ul.results-program_interest-list {
-                                    margin-bottom: 3rem;
-                                    li {}
-                                }
-                                .results-program_footer {
-                                    display: grid;
-                                    grid-template-columns: repeat(2, 1fr);
-                                    grid-template-rows: repeat(1, 1fr);
-                                    .results-program_footer-view-program {
-                                        a {}
-                                    }
-                                    .results-program_footer-compare {
-                                        #addToCompare {
-                                            input[type="checkbox"] {}
-                                            label {}
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    // Attempting to use the exact same HTML that the grid view uses, but change out the classes using javascript
-                    // Results List
-                    .results-grid.results-list {
-                        ul.results-grid-wrapper {
-                            flex-direction: column; //Changed to column
-                            li.results-program {
-                                display: flex;
-                                flex-direction: column;
-                                padding: 2rem;
-                                background-color: #f6f6f6;
-    
-                                &:nth-child(even){
-                                    background-color: white;
-                                }
-    
-                                .results-program_image {
-                                    background-size: 0%; // Background-size to zero                                
-                                    min-height:0px;
-                                    max-height:0px;
-                                    order: 3;
-                                    justify-content: flex-start; //changed to flex-start
-                                    margin-bottom: 2.5rem; // Increased margin
-                                }
-                                .results-program_title-type {
-                                    order: 1; // Changed flexbox order
-                                }
-                                .results-program_title {
-                                    margin: 0.25rem 0 0.25rem 0;
-                                    order: 2; // Changed flexbox order
-                                    text-align: left; // text alignment
-                                }
-                                ul.results-program_interest-list { display: none; }
-                                .results-program_footer {
-                                    // order: 4; If the grid footer needs to be added to the list view, can be configured here.
-                                    //display: grid;
-                                    display: none;
-                                    .results-program_footer-view-program {
-                                        display: none;
-                                        a {}
-                                    }
-                                    .results-program_footer-compare {
-                                        #addToCompare {
-                                            input[type="checkbox"] {}
-                                            label {}
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    } 
-                }
-            }
-        }
-    }
-    .menu {
-        background-color: var(--umkc-dark-blue) !important;
-        border-top: 0px solid transparent !important;
-        &__list {
-            justify-content: flex-start !important;
-        }
-        &__item {
-        }
-        &__title {
-            font-size: 24px;
-            margin-left: 0px;
-            font-family: var(--os);
-            text-transform: uppercase;
-            color: var(--white);
-        }
-    }
-    .main-navigation {
-        background: var(--umkc-lighter-blue) !important;
-        bottom: 5.25rem;
-        top:0;
-        display: block;
-        width: 100%;
-        font-weight: 600 !important;
-        font-family: var(--os) !important;
-        text-transform: uppercase;
-        box-shadow: 0 0 0px 0px #000 !important;
-        z-index: 2;
-        padding: 1rem 0;
-        position: fixed;
-        font-size: 18px;
-        font-size: 1.125rem;
-        line-height: 1.5;
-        transition: 150ms linear all;
-        &__list {
-            flex-direction: column !important;
-        }
-        &__item {
-            border-bottom: 1px solid var(--white) !important;
-            width: 100% !important;
-            text-align: left !important;
-            padding: 1rem 0 1rem 3rem !important;
-        }
-        &__link {
-            color: var(--umkc-dark-blue) !important;
-            &:hover {
-                color: var(--umkc-white) !important;
-            }
-        }
-    }
-    .pfinder-nav {
-        &.sticky-nav {
-            bottom:0;
-            z-index: 2;
-        }
-    }
+    #resultsTopBar { display: none; }
 }
-
-// 10/10 Pfinder CSS
-

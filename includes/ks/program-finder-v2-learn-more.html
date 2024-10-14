@@ -1,0 +1,273 @@
+<!-- Explore Programs -->
+<div class="content-row eprog">
+    <div class="explore-programs">
+        <div class="search-area" id="search-toggle" aria-hidden="true">
+            <!-- Toggle for Search -->
+            <div class="search-wrapper">
+                <form id="searchByKeyword">
+                    <h3>Search By Keyword</h3>
+                    <div class="search-by-keyboard-wrapper">
+                        <input type="text" name="keyword" />
+                        <button type="submit" class="button button--umkc-yellow ">
+                            <svg class="icon"><use xlink:href="#search"></use></svg>
+                        </button>
+                    </div>
+                </form>
+                <button class="button button--umkc-navy button--outline" href="#" target="_blank">View All Programs</button>
+            </div>
+            <div class="area-wrapper">
+                <h3>Choose Your Area of Interest</h3>
+                <form id="areaOfInterest">
+                    <div class="input-wrapper">
+                        <input type="checkbox" name="area" />
+                        <label for="area">Business, Management and Entrepreneurship</label>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="checkbox" name="area" />
+                        <label for="area">Performing Arts</label>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="checkbox" name="area" />
+                        <label for="area">Health Sciences</label>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="results-and-filter">
+            <!-- Toggle for Filter -->
+            <div class="filter hide-filter-area" id="filter-toggle" aria-hidden="true">
+                <h4>Filter By:</h4>
+                <form id="filterSort">
+                    <h5>Program Type</h5>
+                    <div class="filter-input-wrapper">
+                        <input type="checkbox" name="undergrad"/>
+                        <label for="undergrad">Undergraduate</label>
+                    </div>
+                    <div class="filter-input-wrapper">
+                        <input type="checkbox" name="undergrad"/>
+                        <label for="undergrad">Graduate</label>
+                    </div>
+
+                    <h5>Format</h5>
+                    <div class="filter-input-wrapper">
+                        <input type="checkbox" name="undergrad"/>
+                        <label for="undergrad">In Person</label>
+                    </div>
+                    <div class="filter-input-wrapper">
+                        <input type="checkbox" name="undergrad"/>
+                        <label for="undergrad">Hybrid</label>
+                    </div>
+                    <div class="filter-input-wrapper">
+                        <input type="checkbox" name="undergrad"/>
+                        <label for="undergrad">Online</label>
+                    </div>
+
+                    <h5>Colleges</h5>
+                    <div class="filter-input-wrapper">
+                        <select>
+                            <option>One</option>
+                            <option>Two</option>
+                            <option>Three</option>
+                        </select>
+                    </div>
+                    <button class="button button--umkc-yellow">Submit</button>
+
+                    <p><span>X</span> Clear all filters</p>
+                </form>
+            </div>
+            
+            <!-- Results - Grid & List view use the same HTML -->
+            <div class="results" id="results-toggle" aria-hidden="false">
+                <div class="results-top-bar" id="resultsTopBar">
+                    <div class="results-filter-tabs">
+                        <div class="results-filter-tabs_title">All Majors</div>
+                        <div class="results-filter-tabs_tab">Biology <span>X</span></div>
+                        <div class="results-filter-tabs_tab">Biology <span>X</span></div>
+                        <div class="results-filter-tabs_tab">Biology <span>X</span></div>
+                    </div>
+                    <div class="results-display">
+                        <button type="submit" class="button button--umkc-yellow" id="listView">
+                            <svg class="icon"><use xlink:href="#menu"></use></svg>
+                        </button>
+                        <button type="submit" class="button button--umkc-yellow" id="filterView">
+                            <svg class="icon"><use xlink:href="#flame"></use></svg>
+                        </button>
+                    </div>
+                </div>
+                <div id="listArea" class="results-grid">
+                    <ul class="results-grid-wrapper">
+                        <li class="results-program">
+                            <div class="results-program_image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSifrKWDBJhD48OnlQgTQoC2cJsT7IaVIoCquTOaKZaSJRXemY');">
+                                <div class="results-program_button">A</div>
+                                <div class="results-program_button">B</div>
+                                <div class="results-program_button">C</div>
+                            </div>
+                            <p class="results-program_title-type">Program Type</p>
+                            <h3 class="results-program_title">Very long name of a program</h3>
+                            <ul class="results-program_interest-list">
+                                <li>One</li>
+                                <li>Two</li>
+                                <li>Three</li>
+                            </ul>
+                            <div class="results-program_footer">
+                                <div class="results-program_footer-view-program">
+                                    <a href="#" title="">View Program</a>
+                                </div>
+                                <div class="results-program_footer-compare">
+                                    <form id="addToCompare">
+                                        <input type="checkbox" name="compare">
+                                        <label for="compare">Compare</label>
+                                    </form>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="results-program">
+                            <div class="results-program_image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSifrKWDBJhD48OnlQgTQoC2cJsT7IaVIoCquTOaKZaSJRXemY');">
+                                <div class="results-program_button">A</div>
+                                <div class="results-program_button">B</div>
+                                <div class="results-program_button">C</div>
+                            </div>
+                            <p class="results-program_title-type">Program Type</p>
+                            <h3 class="results-program_title">Very long name of a program</h3>
+                            <ul class="results-program_interest-list">
+                                <li>One</li>
+                                <li>Two</li>
+                                <li>Three</li>
+                            </ul>
+                            <div class="results-program_footer">
+                                <div class="results-program_footer-view-program">
+                                    <a href="#" title="">View Program</a>
+                                </div>
+                                <div class="results-program_footer-compare">
+                                    <form id="addToCompare">
+                                        <input type="checkbox" name="compare">
+                                        <label for="compare">Compare</label>
+                                    </form>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="results-program">
+                            <div class="results-program_image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSifrKWDBJhD48OnlQgTQoC2cJsT7IaVIoCquTOaKZaSJRXemY');">
+                                <div class="results-program_button">A</div>
+                                <div class="results-program_button">B</div>
+                                <div class="results-program_button">C</div>
+                            </div>
+                            <p class="results-program_title-type">Program Type</p>
+                            <h3 class="results-program_title">Very long name of a program</h3>
+                            <ul class="results-program_interest-list">
+                                <li>One</li>
+                                <li>Two</li>
+                                <li>Three</li>
+                            </ul>
+                            <div class="results-program_footer">
+                                <div class="results-program_footer-view-program">
+                                    <a href="#" title="">View Program</a>
+                                </div>
+                                <div class="results-program_footer-compare">
+                                    <form id="addToCompare">
+                                        <input type="checkbox" name="compare">
+                                        <label for="compare">Compare</label>
+                                    </form>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="results-program">
+                            <div class="results-program_image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSifrKWDBJhD48OnlQgTQoC2cJsT7IaVIoCquTOaKZaSJRXemY');">
+                                <div class="results-program_button">A</div>
+                                <div class="results-program_button">B</div>
+                                <div class="results-program_button">C</div>
+                            </div>
+                            <p class="results-program_title-type">Program Type</p>
+                            <h3 class="results-program_title">Very long name of a program</h3>
+                            <ul class="results-program_interest-list">
+                                <li>One</li>
+                                <li>Two</li>
+                                <li>Three</li>
+                            </ul>
+                            <div class="results-program_footer">
+                                <div class="results-program_footer-view-program">
+                                    <a href="#" title="">View Program</a>
+                                </div>
+                                <div class="results-program_footer-compare">
+                                    <form id="addToCompare">
+                                        <input type="checkbox" name="compare">
+                                        <label for="compare">Compare</label>
+                                    </form>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Explore Programs - Compare -->
+ <!-- Toggle for Compare -->
+<div class="compare-tab" data-toggle="#compare-toggle">
+    <p>Compare Programs (<span id="comparedMajors">0</span>)</p>
+</div>
+<div class="smokescreen" id="compare-flyout-smokescreen"></div> 
+<div id="compare-toggle" class="compare-flyout" aria-hidden="true">
+    <h3>Comparing <span>3</span> Programs</h3>
+    <a class="compare-flyout__close" id="compare-tab-close">
+        <svg class="icon"><use xlink:href="#close"></use></svg>
+    </a>
+    <div class="compare-flyout-wrapper">
+        <div class="compare-flyout-list">
+            <ul class="compare-flyout-list-wrapper">
+                <li class="compare-flyout-program">
+                    <div class="compare-flyout-program_image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSifrKWDBJhD48OnlQgTQoC2cJsT7IaVIoCquTOaKZaSJRXemY');">
+                        <div class="compare-flyout-program_button">A</div>
+                        <div class="compare-flyout-program_button">B</div>
+                        <div class="compare-flyout-program_button">C</div>
+                    </div>
+                    <div class="compare-flyout-program_text">
+                        <p class="compare-flyout-program_title-type">Program Type</p>
+                        <h3 class="compare-flyout-program_title">Very long name of a program</h3>
+                        <ul class="compare-flyout-program_interest-list">
+                            <li><strong>Estimated Time</strong> One</li>
+                            <li><strong>Estimated Time</strong> One</li>
+                            <li><strong>Estimated Time</strong> One</li>
+                            <li><strong>Estimated Time</strong> One</li>
+                            <li><strong>Estimated Time</strong> One</li>
+                        </ul>
+                        <div class="compare-flyout-program_footer">
+                            <div class="compare-flyout-program_footer-view-program">
+                                <a href="#" title="">View Program</a>
+                            </div>
+                            <div class="compare-flyout-program_footer-compare">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="compare-flyout-program">
+                    <div class="compare-flyout-program_image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSifrKWDBJhD48OnlQgTQoC2cJsT7IaVIoCquTOaKZaSJRXemY');">
+                        <div class="compare-flyout-program_button">A</div>
+                        <div class="compare-flyout-program_button">B</div>
+                        <div class="compare-flyout-program_button">C</div>
+                    </div>
+                    <div class="compare-flyout-program_text">
+                        <p class="compare-flyout-program_title-type">Program Type</p>
+                        <h3 class="compare-flyout-program_title">Very long name of a program</h3>
+                        <ul class="compare-flyout-program_interest-list">
+                            <li><strong>Estimated Time</strong> One</li>
+                            <li><strong>Estimated Time</strong> One</li>
+                            <li><strong>Estimated Time</strong> One</li>
+                            <li><strong>Estimated Time</strong> One</li>
+                            <li><strong>Estimated Time</strong> One</li>
+                        </ul>
+                        <div class="compare-flyout-program_footer">
+                            <div class="compare-flyout-program_footer-view-program">
+                                <a href="#" title="">View Program</a>
+                            </div>
+                            <div class="compare-flyout-program_footer-compare">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

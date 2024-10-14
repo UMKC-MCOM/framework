@@ -1,40 +1,63 @@
-<nav aria-label="Site Navigation" class="main-navigation main-navigation--blue pfinder-nav" id="pfinder-navigation">
-    <ul class="main-navigation__list">
-      <li class="main-navigation__item">
-        <a class="main-navigation__link" href="#">
-          Nav 1
-        </a>
-      </li>
-      <li class="main-navigation__item">
-        <a class="main-navigation__link" href="#">
-          Nav 2
-        </a>
-      </li>
-      <li class="main-navigation__item">
-        <a class="main-navigation__link" href="#">
-          Nav 3
-        </a>
-      </li>
-      <li class="main-navigation__item">
-        <a class="main-navigation__link" href="#">
-          Nav 4
-        </a>
-      </li>
-      <li class="main-navigation__item">
-        <a class="main-navigation__link" href="#">
-          Nav 5
-        </a>
-      </li>
-      <li class="main-navigation__item">
-        <a class="main-navigation__link" href="#">
-          Nav 6
-        </a>
-      </li>
-    </ul>
-  </nav>
-  
 <div class="hero hero--standard hero--pfinder">
     <div class="hero__content">
         <h1>Program Name</h1>
     </div>
 </div>
+
+<!-- Request More Info -->
+<div id="moreInfoRow" class="more-info-row more-info-row__hidden">
+    <h3>Request More Info</h3>
+    <form id="requestMoreInfo">
+        
+        <!-- First Row -->
+        <div class="input-wrapper">
+            <label for="firstname">First Name</label>
+            <input name="firstname" class="" />
+        </div>
+        <div class="input-wrapper">
+            <label for="lastname">Last Name</label>
+            <input name="lastname" class="" />
+        </div>
+        <div class="input-wrapper">
+            <label for="email">Email</label>
+            <input name="email" class="" />
+        </div>
+        <div class="input-wrapper">
+            <label for="phone">Phone</label>
+            <input name="phone" class="" />
+        </div>
+        <!-- Second Row -->
+        <div class="input-wrapper">
+            <label for="zipcode">Zip Code</label>
+            <input name="zipcode" class="" />
+        </div>
+        <div class="input-wrapper dobmonth-wrapper">
+            <label for="dobmonth">Date of birth</label>
+            <input name="dobmonth" type="date" class="" />
+            
+        </div>
+        <div class="input-wrapper">
+            <label for="text">I would like to receive text messages</label>
+            <div class="text-message-choice-wrapper">
+                <input type="radio" name="" class="" checked />
+                <label for="">Yes</label>
+                <br />
+                <input type="radio" name="" class="" />
+                <label for="">No</label>
+            </div>
+        </div>
+        <div class="input-wrapper submit-button">
+            <button type="submit" class="button button--umkc-yellow button--" id="pfinder-submit">Button Text</button>
+        </div>
+    </form>
+</div>
+
+<!-- <script type="text/javascript">
+    
+    const moreInfoButton = document.getElementById("moreInfoButton");
+    const moreInfoRow = document.getElementById("moreInfoRow");
+moreInfoButton.addEventListener("click", (e) => {
+  moreInfoRow.classList.toggle("more-info-row__shown");
+});
+</script> -->
+  
