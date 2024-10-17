@@ -1,12 +1,12 @@
-<nav aria-label="Site Navigation" class="main-navigation main-navigation--white" id="main-navigation">
+<nav aria-label="Site Navigation" class="main-navigation pfinder-navigation main-navigation--white" id="pfinder-main-navigation">
   <ul class="main-navigation__list">
     <li class="main-navigation__item">
-      <a class="main-navigation__link" href="#">
+      <a class="main-navigation__link" href="pfinder.html">
         Career Prospects
       </a>
     </li>
     <li class="main-navigation__item">
-      <a class="main-navigation__link" href="#">
+      <a class="main-navigation__link" href="pfinder-search.html">
         Courses
       </a>
     </li>
@@ -25,10 +25,57 @@
         Cost and Aid
       </a>
     </li>
-    <li class="main-navigation__item">
-      <a class="main-navigation__link" href="#">
+    <!-- @TODO This Button needs to also work on mobile -->
+    <li class="main-navigation__item pfinder__request-more-info">
+      <div data-toggle="#more-info-row" aria-expanded="false">Request More Info</div>
+      <!-- <button class="main-navigation__link button button--umkc-yellow pfinder__request-more-info-button" aria-expanded="false" data-toggle="#moreInfoRow">
         Request More Info
-      </a>
+      </button> -->
     </li>
   </ul>
 </nav>
+<!-- @TODO Figure out why data-toggles isn't working on this dropdown -->
+ <!-- Temporarily disabled until I find where best to place it. -->
+<!-- <div id="requestMoreInfoDropdown" class="pfinder__more-info pfinder__more-info-dropdown" aria-hidden="true">
+  <h3>Request More Info</h3>
+  <form id="requestMoreInfo">
+      <div class="input-wrapper">
+          <label for="firstname">First Name</label>
+          <input name="firstname" class="" />
+      </div>
+      <div class="input-wrapper">
+          <label for="lastname">Last Name</label>
+          <input name="lastname" class="" />
+      </div>
+      <div class="input-wrapper">
+          <label for="email">Email</label>
+          <input name="email" class="" />
+      </div>
+      <div class="input-wrapper">
+          <label for="phone">Phone</label>
+          <input name="phone" class="" />
+      </div>
+      <div class="input-wrapper">
+          <label for="zipcode">Zip Code</label>
+          <input name="zipcode" class="" />
+      </div>
+      <div class="input-wrapper dobmonth-wrapper">
+          <label for="dobmonth">Date of birth</label>
+          <input name="dobmonth" type="date" class="" />
+          
+      </div>
+      <div class="input-wrapper text-message-choice ">
+          <label for="text">I would like to receive text messages</label>
+          <div class="text-message-choice-wrapper">
+              <input type="radio" name="" class="" checked />
+              <label for="">Yes</label>
+              <br />
+              <input type="radio" name="" class="" />
+              <label for="">No</label>
+          </div>
+      </div>
+      <div class="input-wrapper submit-button">
+          <button type="submit" class="button button--umkc-yellow button--" id="pfinder-submit">Button Text</button>
+      </div>
+  </form>
+</div> -->

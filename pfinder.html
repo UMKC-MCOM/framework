@@ -42,5 +42,23 @@
 		{{> ks/spacer }}
 		{{> footer }}
 		{{> scripts }}
+
+		<!-- Request More Info Scripts -->
+ <!-- Sticky Header and Submit Button -->
+ <script type="text/javascript">
+	let scrollpos = window.scrollY
+	  const header = document.getElementById("pfinder-main-navigation")
+	  const header_height = header.offsetHeight;
+	
+	  const add_header_class_on_scroll = () => header.classList.add("sticky-nav");
+	  const remove_header_class_on_scroll = () => header.classList.remove("sticky-nav");
+	
+	  window.addEventListener('scroll', function() { 
+		scrollpos = window.scrollY;
+	
+		if (scrollpos >= header_height) { add_header_class_on_scroll() }
+		else { remove_header_class_on_scroll() }
+	  })
+	 </script>
   </body>
 </html>

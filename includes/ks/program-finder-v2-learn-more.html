@@ -1,36 +1,38 @@
 <!-- Explore Programs -->
-<div class="content-row eprog">
+<div class="eprog">
     <div class="explore-programs">
         <div class="search-area" id="search-toggle" aria-hidden="true">
-            <!-- Toggle for Search -->
-            <div class="search-wrapper">
-                <form id="searchByKeyword">
-                    <h3>Search By Keyword</h3>
-                    <div class="search-by-keyboard-wrapper">
-                        <input type="text" name="keyword" />
-                        <button type="submit" class="button button--umkc-yellow ">
-                            <svg class="icon"><use xlink:href="#search"></use></svg>
-                        </button>
-                    </div>
-                </form>
-                <button class="button button--umkc-navy button--outline" href="#" target="_blank">View All Programs</button>
-            </div>
-            <div class="area-wrapper">
-                <h3>Choose Your Area of Interest</h3>
-                <form id="areaOfInterest">
-                    <div class="input-wrapper">
-                        <input type="checkbox" name="area" />
-                        <label for="area">Business, Management and Entrepreneurship</label>
-                    </div>
-                    <div class="input-wrapper">
-                        <input type="checkbox" name="area" />
-                        <label for="area">Performing Arts</label>
-                    </div>
-                    <div class="input-wrapper">
-                        <input type="checkbox" name="area" />
-                        <label for="area">Health Sciences</label>
-                    </div>
-                </form>
+            <div class="search-area-wrapper">
+                <!-- Toggle for Search -->
+                <div class="search-wrapper">
+                    <form id="searchByKeyword">
+                        <h3>Search By Keyword</h3>
+                        <div class="search-by-keyboard-wrapper">
+                            <input type="text" name="keyword" />
+                            <button type="submit" class="button button--umkc-yellow ">
+                                <svg class="icon"><use xlink:href="#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    <button class="button button--umkc-navy button--outline" href="#" target="_blank">View All Programs</button>
+                </div>
+                <div class="area-wrapper">
+                    <h3>Choose Your Area of Interest</h3>
+                    <form id="areaOfInterest">
+                        <div class="input-wrapper">
+                            <input type="checkbox" name="area" />
+                            <label for="area">Business, Management and Entrepreneurship</label>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="checkbox" name="area" />
+                            <label for="area">Performing Arts</label>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="checkbox" name="area" />
+                            <label for="area">Health Sciences</label>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
         <div class="results-and-filter">
@@ -70,9 +72,15 @@
                             <option>Three</option>
                         </select>
                     </div>
-                    <button class="button button--umkc-yellow">Submit</button>
+                    <button class="button button--umkc-navy">Apply Filters <span>(3)</span></button>
 
-                    <p><span>X</span> Clear all filters</p>
+                    <div class="clear-filters" id="myButton">
+                        <div class="icon">
+                            <svg class="">
+                                <use xlink:href="#close"></use>
+                            </svg>
+                        </div> Clear all filters
+                    </div>
                 </form>
             </div>
             
@@ -81,9 +89,27 @@
                 <div class="results-top-bar" id="resultsTopBar">
                     <div class="results-filter-tabs">
                         <div class="results-filter-tabs_title">All Majors</div>
-                        <div class="results-filter-tabs_tab">Biology <span>X</span></div>
-                        <div class="results-filter-tabs_tab">Biology <span>X</span></div>
-                        <div class="results-filter-tabs_tab">Biology <span>X</span></div>
+                        <div class="results-filter-tabs_tab">Biology 
+                            <div class="icon">
+                                <svg class="">
+                                    <use xlink:href="#close"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="results-filter-tabs_tab">Biology 
+                            <div class="icon">
+                                <svg class="">
+                                    <use xlink:href="#close"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="results-filter-tabs_tab">Biology 
+                            <div class="icon">
+                                <svg class="">
+                                    <use xlink:href="#close"></use>
+                                </svg>
+                            </div>
+                        </div>
                     </div>
                     <div class="results-display">
                         <button type="submit" class="button button--umkc-yellow" id="listView">
@@ -94,20 +120,26 @@
                         </button>
                     </div>
                 </div>
-                <div id="listArea" class="results-grid">
-                    <ul class="results-grid-wrapper">
+                <div id="listArea" class="results-grid" aria-hidden="false">
+                    <ul id="resultsWrapper" class="results-grid-wrapper">
                         <li class="results-program">
                             <div class="results-program_image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSifrKWDBJhD48OnlQgTQoC2cJsT7IaVIoCquTOaKZaSJRXemY');">
-                                <div class="results-program_button">A</div>
-                                <div class="results-program_button">B</div>
-                                <div class="results-program_button">C</div>
+                                <div class="results-program_button results-program_button__remote">
+                                    <svg class="icon"><use xlink:href="#calendar"></use></svg>
+                                </div>
+                                <div class="results-program_button results-program_button__hybrid">
+                                    <svg class="icon"><use xlink:href="#map-pin"></use></svg>
+                                </div>
+                                <div class="results-program_button results-program_button__on-campus">
+                                    <svg class="icon"><use xlink:href="#envelope"></use></svg>
+                                </div>
                             </div>
                             <p class="results-program_title-type">Program Type</p>
                             <h3 class="results-program_title">Very long name of a program</h3>
                             <ul class="results-program_interest-list">
-                                <li>One</li>
-                                <li>Two</li>
-                                <li>Three</li>
+                                <li>What will</li>
+                                <li>This area actually</li>
+                                <li>Look like?</li>
                             </ul>
                             <div class="results-program_footer">
                                 <div class="results-program_footer-view-program">
@@ -121,81 +153,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="results-program">
-                            <div class="results-program_image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSifrKWDBJhD48OnlQgTQoC2cJsT7IaVIoCquTOaKZaSJRXemY');">
-                                <div class="results-program_button">A</div>
-                                <div class="results-program_button">B</div>
-                                <div class="results-program_button">C</div>
-                            </div>
-                            <p class="results-program_title-type">Program Type</p>
-                            <h3 class="results-program_title">Very long name of a program</h3>
-                            <ul class="results-program_interest-list">
-                                <li>One</li>
-                                <li>Two</li>
-                                <li>Three</li>
-                            </ul>
-                            <div class="results-program_footer">
-                                <div class="results-program_footer-view-program">
-                                    <a href="#" title="">View Program</a>
-                                </div>
-                                <div class="results-program_footer-compare">
-                                    <form id="addToCompare">
-                                        <input type="checkbox" name="compare">
-                                        <label for="compare">Compare</label>
-                                    </form>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="results-program">
-                            <div class="results-program_image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSifrKWDBJhD48OnlQgTQoC2cJsT7IaVIoCquTOaKZaSJRXemY');">
-                                <div class="results-program_button">A</div>
-                                <div class="results-program_button">B</div>
-                                <div class="results-program_button">C</div>
-                            </div>
-                            <p class="results-program_title-type">Program Type</p>
-                            <h3 class="results-program_title">Very long name of a program</h3>
-                            <ul class="results-program_interest-list">
-                                <li>One</li>
-                                <li>Two</li>
-                                <li>Three</li>
-                            </ul>
-                            <div class="results-program_footer">
-                                <div class="results-program_footer-view-program">
-                                    <a href="#" title="">View Program</a>
-                                </div>
-                                <div class="results-program_footer-compare">
-                                    <form id="addToCompare">
-                                        <input type="checkbox" name="compare">
-                                        <label for="compare">Compare</label>
-                                    </form>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="results-program">
-                            <div class="results-program_image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSifrKWDBJhD48OnlQgTQoC2cJsT7IaVIoCquTOaKZaSJRXemY');">
-                                <div class="results-program_button">A</div>
-                                <div class="results-program_button">B</div>
-                                <div class="results-program_button">C</div>
-                            </div>
-                            <p class="results-program_title-type">Program Type</p>
-                            <h3 class="results-program_title">Very long name of a program</h3>
-                            <ul class="results-program_interest-list">
-                                <li>One</li>
-                                <li>Two</li>
-                                <li>Three</li>
-                            </ul>
-                            <div class="results-program_footer">
-                                <div class="results-program_footer-view-program">
-                                    <a href="#" title="">View Program</a>
-                                </div>
-                                <div class="results-program_footer-compare">
-                                    <form id="addToCompare">
-                                        <input type="checkbox" name="compare">
-                                        <label for="compare">Compare</label>
-                                    </form>
-                                </div>
-                            </div>
-                        </li>
+                        
                     </ul>
                 </div>
             </div>
@@ -271,3 +229,26 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    
+    const listViewButton = document.getElementById("listView");
+    const listAreaRow = document.getElementById("listArea");
+listViewButton.addEventListener("click", (e) => {
+  listAreaRow.classList.toggle("results-list");
+});
+</script>
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+    const myButton = document.getElementById("myButton");
+    const resultsWrapper = document.getElementById("resultsWrapper");
+
+    function cloneElement() {
+        const elementToClone = document.querySelector(".results-program");
+        const clonedElement = elementToClone.cloneNode(true);
+        resultsWrapper.appendChild(clonedElement);
+    }
+    myButton.addEventListener("click", cloneElement);
+    });
+</script>
