@@ -45,9 +45,12 @@ var Tabs = {
   },
   // If the page has a hash on load, go to that tab
   pageLoadCorrectTab: function() {
-    if ( document.location.hash != "" && document.querySelectorAll('.tabs').length > 0 && document.querySelectorAll('[id="'+document.location.hash+'"]').length > 0){
+    if ( document.location.hash != "" && document.querySelectorAll('.tabs').length > 0 && document.querySelectorAll('[id="'+document.location.hash.substring(1)+'"]').length > 0){
+      console.log(document.location.hash)
       this.changeTab(document.location.hash);
     }
   }
 }
+
 Tabs.init();
+console.log(Tabs)
