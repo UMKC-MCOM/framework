@@ -1,12 +1,10 @@
-const tag = document.createElement('script');
-      tag.src = 'https://www.youtube.com/iframe_api';
-const firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+import { loadScript } from './load-script.js';
+const video_shorts = document.querySelectorAll('.video-shorts__embed[data-src]').length > 0 ? document.querySelectorAll('.video-shorts__embed[data-src]') : false;
+const video_shorts_btns = document.querySelectorAll('.video-shorts__button').length > 0 ? document.querySelectorAll('.video-shorts__button') : false;
 
-const video_shorts = document.querySelectorAll('.video-shorts__embed[data-src]') !== null ? document.querySelectorAll('.video-shorts__embed[data-src]') : null;
-const video_shorts_btns = document.querySelectorAll('.video-shorts__button') !== null ? document.querySelectorAll('.video-shorts__button') : null;
+if ( video_shorts && video_shorts_btns ) {
+  loadScript('https://www.youtube.com/iframe_api', false);
 
-if ( video_shorts !== null && video_shorts_btns !== null ) {
   video_shorts_btns.forEach(function(item, idx) {
      item.addEventListener('click', function(e){
        e.preventDefault();
@@ -20,6 +18,7 @@ if ( video_shorts !== null && video_shorts_btns !== null ) {
      });
   });
 }
+
 function createVideos(video_shorts) {
   window.onYouTubeIframeAPIReady = function(){
     video_shorts.forEach(function(item) {
@@ -57,7 +56,7 @@ function onStateChange(event) {
   }
 }
 
-if ( video_shorts !== null && video_shorts_btns !== null ) {
+if ( video_shorts && video_shorts_btns ) {
   video_shorts_btns.forEach(function(item, idx) {
      item.addEventListener('click', function(e){
        e.preventDefault();
