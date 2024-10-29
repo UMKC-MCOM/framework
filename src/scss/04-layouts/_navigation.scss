@@ -1,6 +1,7 @@
 @use "../01-abstracts/mixins" as mx;
 
 .main-navigation {
+  $self: &;
   background: var(--nav-background, var(--umkc-navy));
   bottom: mx.px-to-rem(84px);
   display: block;
@@ -14,6 +15,7 @@
   transition: 150ms linear all;
   transform: translateY(100%);
   visibility: hidden;
+
   &[aria-hidden="false"]{
     visibility: visible;
     transform: translateY(0);
@@ -29,6 +31,24 @@
   &--blue {
     --nav-background: var(--umkc-blue);
     --hover-color: var(--umkc-dark-blue);
+  }
+
+  &--pfinder {
+    // .main-navigation--pfinder
+    // TO DO: Add sticky components
+    // TO DO: Remove hover states from LI
+    // TO DO: Add CE's active/hover states
+    --nav-border: transparent;
+
+    #{$self}__list {
+      justify-content: flex-start;
+      position: relative;
+    }
+
+    #{$self}__item:last-child {
+      position: absolute;
+      right: 0;
+    }
   }
 
   @include mx.for-size("desktop-up") {
