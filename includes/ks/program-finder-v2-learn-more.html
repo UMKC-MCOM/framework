@@ -134,26 +134,27 @@
                                     <svg class="icon"><use xlink:href="#envelope"></use></svg>
                                 </div>
                             </div>
-                            <p class="results-program_title-type">Program Type</p>
-                            <h3 class="results-program_title">Very long name of a program</h3>
-                            <ul class="results-program_interest-list">
-                                <li>What will</li>
-                                <li>This area actually</li>
-                                <li>Look like?</li>
-                            </ul>
-                            <div class="results-program_footer">
-                                <div class="results-program_footer-view-program">
-                                    <a href="#" title="">View Program</a>
-                                </div>
-                                <div class="results-program_footer-compare">
-                                    <form id="addToCompare">
-                                        <input type="checkbox" name="compare">
-                                        <label for="compare">Compare</label>
-                                    </form>
+                            <div class="results-program_text-wrapper">
+                                <p class="results-program_title-type">Program Type</p>
+                                <h3 class="results-program_title">Very long name of a program</h3>
+                                <ul class="results-program_interest-list">
+                                    <li>What will</li>
+                                    <li>This area actually</li>
+                                    <li>Look like?</li>
+                                </ul>
+                                <div class="results-program_footer">
+                                    <div class="results-program_footer-view-program">
+                                        <a href="#" title="">View Program</a>
+                                    </div>
+                                    <div class="results-program_footer-compare">
+                                        <form id="addToCompare">
+                                            <input type="checkbox" name="compare" class="add-to-compare">
+                                            <label for="compare">Compare</label>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </li>
-                        
                     </ul>
                 </div>
             </div>
@@ -162,9 +163,9 @@
 </div>
 
 <!-- Explore Programs - Compare -->
- <!-- Toggle for Compare -->
+ <!-- Toggle tab for Compare -->
 <div class="compare-tab" data-toggle="#compare-toggle">
-    <p>Compare Programs (<span id="comparedMajors">0</span>)</p>
+    <p>Compare Programs (<span id="comparedProgramsCounter">0</span>)</p>
 </div>
 <div class="smokescreen" id="compare-flyout-smokescreen"></div> 
 <div id="compare-toggle" class="compare-flyout" aria-hidden="true">
@@ -174,53 +175,36 @@
     </a>
     <div class="compare-flyout-wrapper">
         <div class="compare-flyout-list">
-            <ul class="compare-flyout-list-wrapper">
-                <li class="compare-flyout-program">
-                    <div class="compare-flyout-program_image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSifrKWDBJhD48OnlQgTQoC2cJsT7IaVIoCquTOaKZaSJRXemY');">
-                        <div class="compare-flyout-program_button">A</div>
-                        <div class="compare-flyout-program_button">B</div>
-                        <div class="compare-flyout-program_button">C</div>
-                    </div>
-                    <div class="compare-flyout-program_text">
-                        <p class="compare-flyout-program_title-type">Program Type</p>
-                        <h3 class="compare-flyout-program_title">Very long name of a program</h3>
-                        <ul class="compare-flyout-program_interest-list">
-                            <li><strong>Estimated Time</strong> One</li>
-                            <li><strong>Estimated Time</strong> One</li>
-                            <li><strong>Estimated Time</strong> One</li>
-                            <li><strong>Estimated Time</strong> One</li>
-                            <li><strong>Estimated Time</strong> One</li>
-                        </ul>
-                        <div class="compare-flyout-program_footer">
-                            <div class="compare-flyout-program_footer-view-program">
-                                <a href="#" title="">View Program</a>
-                            </div>
-                            <div class="compare-flyout-program_footer-compare">
-                            </div>
+            <ul id="compareListFlyout" class="compare-flyout-list-wrapper">
+                <li class="results-program">
+                    <div class="results-program_image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSifrKWDBJhD48OnlQgTQoC2cJsT7IaVIoCquTOaKZaSJRXemY');">
+                        <div class="results-program_button results-program_button__remote">
+                            <svg class="icon"><use xlink:href="#calendar"></use></svg>
+                        </div>
+                        <div class="results-program_button results-program_button__hybrid">
+                            <svg class="icon"><use xlink:href="#map-pin"></use></svg>
+                        </div>
+                        <div class="results-program_button results-program_button__on-campus">
+                            <svg class="icon"><use xlink:href="#envelope"></use></svg>
                         </div>
                     </div>
-                </li>
-                <li class="compare-flyout-program">
-                    <div class="compare-flyout-program_image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSifrKWDBJhD48OnlQgTQoC2cJsT7IaVIoCquTOaKZaSJRXemY');">
-                        <div class="compare-flyout-program_button">A</div>
-                        <div class="compare-flyout-program_button">B</div>
-                        <div class="compare-flyout-program_button">C</div>
-                    </div>
-                    <div class="compare-flyout-program_text">
-                        <p class="compare-flyout-program_title-type">Program Type</p>
-                        <h3 class="compare-flyout-program_title">Very long name of a program</h3>
-                        <ul class="compare-flyout-program_interest-list">
-                            <li><strong>Estimated Time</strong> One</li>
-                            <li><strong>Estimated Time</strong> One</li>
-                            <li><strong>Estimated Time</strong> One</li>
-                            <li><strong>Estimated Time</strong> One</li>
-                            <li><strong>Estimated Time</strong> One</li>
+                    <div class="results-program_text-wrapper">
+                        <p class="results-program_title-type">Program Type</p>
+                        <h3 class="results-program_title">Very long name of a program</h3>
+                        <ul class="results-program_interest-list">
+                            <li>What will</li>
+                            <li>This area actually</li>
+                            <li>Look like?</li>
                         </ul>
-                        <div class="compare-flyout-program_footer">
-                            <div class="compare-flyout-program_footer-view-program">
+                        <div class="results-program_footer">
+                            <div class="results-program_footer-view-program">
                                 <a href="#" title="">View Program</a>
                             </div>
-                            <div class="compare-flyout-program_footer-compare">
+                            <div class="results-program_footer-compare">
+                                <form id="addToCompare">
+                                    <input type="checkbox" name="compare" class="add-to-compare">
+                                    <label for="compare">Compare</label>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -230,15 +214,16 @@
     </div>
 </div>
 
+<!-- Throwaway script for switching from list to grid view -->
 <script type="text/javascript">
-    
     const listViewButton = document.getElementById("listView");
     const listAreaRow = document.getElementById("listArea");
-listViewButton.addEventListener("click", (e) => {
-  listAreaRow.classList.toggle("results-list");
-});
+    listViewButton.addEventListener("click", (e) => {
+        listAreaRow.classList.toggle("results-list");
+    });
 </script>
 
+<!-- Throwaway script for duplicating grid elements for demonstration -->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function () {
     const myButton = document.getElementById("myButton");
