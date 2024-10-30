@@ -457,15 +457,16 @@ $filter-dark-blue:#04487F;
 
             .search-area-wrapper {
                 display: grid;
-                grid-template-columns: 1fr 1fr;
-                column-gap: 60px;
-                grid-template-rows: repeat(1, 1fr);
+                grid-template-columns: 1fr;
+                column-gap: 0px;
+                grid-template-rows: repeat(3, 1fr);
+                
                 @include pfinder-margins;
 
-                @include for-size(desktop-down){
-                    grid-template-columns: 1fr;
-                    column-gap: 0px;
-                    grid-template-rows: repeat(2, 1fr);
+                @include mx.for-size(desktop-up){
+                    grid-template-columns: 1fr 1fr;
+                    column-gap: 60px;
+                    grid-template-rows: repeat(1, 1fr);
                 }
                 h3 {
                     @include pfinder-font(22px,--umkc-font-color);
@@ -522,7 +523,7 @@ $filter-dark-blue:#04487F;
             grid-template-rows: repeat(1, 1fr); //Changed rows
             margin: 3rem auto;
 
-            @include mx.for-size(tablet-landscape-up){
+            @include mx.for-size(desktop-up){
                 grid-template-columns: 20% 80%;
                 grid-template-rows: repeat(1, 1fr);
                 margin: auto;
@@ -579,7 +580,7 @@ $filter-dark-blue:#04487F;
             .results {
                 margin-bottom: 4rem;
 
-                // Not currently used on mobile
+                // @TODO: Not currently used on mobile
                 .results-top-bar {
                     display: grid;
                     grid-template-columns: 90% 10%;
@@ -857,6 +858,7 @@ $filter-dark-blue:#04487F;
     padding: 3rem;
     //margin: 5rem;
     position: fixed;
+    left: 0;
     top: 0rem;
     right:0;
     bottom:0;
@@ -868,8 +870,13 @@ $filter-dark-blue:#04487F;
         
     }
     &[aria-hidden="true"] {
-        display: none;
-        
+        display: none;  
+    }
+
+
+    //@TODO Make this section full-screen even on desktop re: Courtney's designs
+    @include mx.for-size("desktop-up"){
+        //left: auto;
     }
 
     h3 {
@@ -877,44 +884,53 @@ $filter-dark-blue:#04487F;
         margin: 0 0 2rem;
         @include pfinder-font(24px,--umkc-dark-blue);
     }
+
+    //@TODO: Repair the compare flyout close button to match Courtney design 10/30
     a.compare-flyout__close {
-        text-align: right;
-        position: absolute;
-        top: 1.5rem;
-        right: 1.5rem;
+        // text-align: right;
+        // position: absolute;
+        // top: 1.5rem;
+        // right: 1.5rem;
+        display: none; 
 
-        svg {
-            width: 2rem;
-            height: 2rem;
-            fill: var(--umkc-blue);
-            transition: 0.1s ease fill;
-        }
+        // svg {
+        //     width: 2rem;
+        //     height: 2rem;
+        //     fill: var(--umkc-blue);
+        //     transition: 0.1s ease fill;
+        // }
 
-        &:hover {
-            svg {
-                fill: var(--umkc-dark-blue);
-                transition: 0.1s ease fill;
-            }
-        }
+        // &:hover {
+        //     svg {
+        //         fill: var(--umkc-dark-blue);
+        //         transition: 0.1s ease fill;
+        //     }
+        // }
     }
     .compare-flyout-list {
         overflow: scroll;
         ul.compare-flyout-list-wrapper {
             display: flex;
-            gap: 40px;
+            gap: 20px;
             flex-direction: row;
             flex-wrap: wrap;
-            justify-content: normal;
+            justify-content: center;
             align-items: normal;
             align-content: normal;
-            margin-left: 0;
+            margin-left: 0; // Overrride base ul, li tag stylings
+            padding: 0; // Overrride base ul, li tag stylings
             list-style: none;
-            li.compare-flyout-program {
+
+            @include mx.for-size("desktop-up"){
+                justify-content: normal;
+            }
+            // li.compare-flyout-program {
+            li.results-program {
                 display: block;
                 flex-basis: auto;
                 align-self: auto;
                 background: var(--white);
-                .compare-flyout-program_image {
+                .results-program_image {
                     background-repeat: no-repeat;
                     background-position: center;
                     background-size: cover;
@@ -1129,8 +1145,6 @@ $filter-dark-blue:#04487F;
 // The are some lazy fill-ins until further planning
 
 
-
-
 @media screen and (max-width: 1200px) {
     // Toggles
     #search-toggle[aria-hidden="true"] {
@@ -1150,13 +1164,17 @@ $filter-dark-blue:#04487F;
         display: none;
     }
     #filter-toggle[aria-hidden="false"] {
-        display: grid;
+        display: flex;
+        flex-direction: column;
         position: fixed;
         top:0;left:0;right:0;bottom:0;
         z-index:2;
     }
     #compare-toggle[aria-hidden="true"] {
         display: none;
+    }
+    #compare-toggle[aria-hidden="false"] {
+        
     }
     #resultsTopBar { display: none; }
 }
