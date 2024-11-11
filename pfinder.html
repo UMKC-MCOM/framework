@@ -27,18 +27,33 @@
  <!-- Sticky Header and Submit Button -->
  <script type="text/javascript">
 	let scrollpos = window.scrollY
-	  const header = document.getElementById("pfinder-main-navigation")
-	  const header_height = header.offsetHeight;
+	
+	const moreInfoRow = document.getElementById("more-info-row")  
+	const header = document.getElementById("pfinder-main-navigation")
+	const header_height = header.offsetHeight;
 	
 	  const add_header_class_on_scroll = () => header.classList.add("sticky-nav");
 	  const remove_header_class_on_scroll = () => header.classList.remove("sticky-nav");
+	  const add_moreInfoRow_class_on_scroll = () => moreInfoRow.classList.add("sticky-form");
+	  const remove_moreInfoRow_class_on_scroll = () => moreInfoRow.classList.remove("sticky-form");
 	
 	  window.addEventListener('scroll', function() { 
 		scrollpos = window.scrollY;
 	
 		if (scrollpos >= header_height) { add_header_class_on_scroll() }
 		else { remove_header_class_on_scroll() }
+
+		if (scrollpos >= header_height) { add_moreInfoRow_class_on_scroll() }
+		else { remove_moreInfoRow_class_on_scroll() }
 	  })
 	 </script>
+	 <!-- Throwaway Code for triggering the REQUEST MORE INFO BUTTON until I can figure out how data-toggles works (You can see my attempt to wrap the element in a div in program-finder-v2-navigation) -->
+ <script type="text/javascript">
+    const requestMoreInfoViewButton = document.getElementById("requestMoreInfoButton");
+    const requestMoreInfoAreaRow = document.getElementById("more-info-row");
+    requestMoreInfoViewButton.addEventListener("click", (e) => {
+        requestMoreInfoAreaRow.classList.toggle("more-info-row-hidden");
+    });
+</script>
   </body>
 </html>

@@ -26,15 +26,18 @@
       </a>
     </li>
     <li class="main-navigation__item pfinder__request-more-info">
-      <button class="main-navigation__link button button--umkc-yellow pfinder__request-more-info-button" aria-expanded="false" data-toggle="#more-info-row">
+      <!-- @TODO Temporary solution until I can figure out how to make #data-toggles work on this specific element, or if we will need a new selection entirely with the use of two Slate forms -->
+      <!-- <button class="main-navigation__link button button--umkc-yellow pfinder__request-more-info-button" aria-expanded="false" data-toggle="#more-info-row"> -->
+        <button id="requestMoreInfoButton" class="main-navigation__link button button--umkc-yellow pfinder__request-more-info-button" aria-expanded="false">
         Request More Info
       </button>
     </li>
   </ul>
 </nav>
 <!-- Request More Info Dropdown Row -->
- <!-- @TODO - this does not currently work properly. -->
-  <div id="more-info-row" class="pfinder__more-info" aria-hidden="true">
+<!-- @TODO - this does not currently work properly. -->
+
+  <div id="more-info-row" class="pfinder__more-info more-info-row-hidden" aria-hidden="true">
     <h3>Request More Info</h3>
     <form id="droppedDownMoreInfoRow">
 
@@ -79,4 +82,4 @@
             <button type="submit" class="button button--umkc-yellow button--" id="pfinder-submit">Button Text</button>
         </div>
     </form>
-</div>
+  </div>

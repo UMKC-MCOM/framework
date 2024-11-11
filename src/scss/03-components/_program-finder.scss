@@ -83,28 +83,36 @@ $filter-dark-blue:#04487F;
 }
 
 // Nav
-.main-navigation.pfinder-navigation {
-    background-color: var(--umkc-lighter-blue);
+// .main-navigation.pfinder-navigation { // Removed this after Greg's renaming edits
+// @TODO: Place this code properly in the navigation SCSS file
+.main-navigation.main-navigation--pfinder {
+    background-color: var(--umkc-lighter-blue) !important; //@TODO Destroy these disgusting !important tags by incorporating the code properly into nav.scss
     border-top: 0px solid transparent;
-    display: none;
+    // display: none;
 
-    @include mx.for-size("tablet-landscape-up"){
-        background-color: var(--umkc-blue);
+    @include mx.for-size("desktop-up"){
+        background-color: var(--umkc-blue) !important; //@TODO Destroy these disgusting !important tags by incorporating the code properly into nav.scss
+        display: none;
     }
     & .main-navigation__list {
         align-content: flex-start;
-        flex-flow: row wrap;
+        flex-flow: column;
+        width: 100%;
         
-        @include mx.for-size("tablet-landscape-up"){
+        @include mx.for-size("desktop-up"){
             justify-content: flex-start;
+            flex-flow: row;
         }
         
     }
     & .main-navigation__item {
+        background-color: none;
         border-bottom: 1px solid var(--white);
+        width: 100%;
         padding: 1.5rem 3rem;
 
-        @include mx.for-size("tablet-landscape-up"){
+        @include mx.for-size("desktop-up"){
+            width: auto;
             border-bottom: 0px solid transparent;
             padding: 0.5rem var(--link-margin, 1.5rem);
         }
@@ -112,7 +120,7 @@ $filter-dark-blue:#04487F;
     & .main-navigation__link {
         @include pfinder-font(22px,--umkc-dark-blue);
 
-        @include mx.for-size("tablet-landscape-up"){
+        @include mx.for-size("desktop-up"){
             color: var(--white);
             text-transform: none;
             font-weight: 400;
@@ -138,18 +146,22 @@ $filter-dark-blue:#04487F;
         left:0;
         right:0;
 
-        @include mx.for-size("tablet-landscape-up"){
+        @include mx.for-size("desktop-up"){
             background: transparent;
-            top: -22px;
+            top: -16px;
             right: 20px;
             bottom: auto;
             left: auto;
+        }
+
+        &:hover, &:focus {
+            background-color: inherit;
         }
     }
     & .pfinder__request-more-info-button {
         margin: 0 auto;
         font-size: 28px;
-        @include mx.for-size("tablet-landscape-up"){
+        @include mx.for-size("desktop-up"){
             @include pfinder-button();
             border-top-left-radius: 0;
             border-top-right-radius: 0;
@@ -163,7 +175,7 @@ $filter-dark-blue:#04487F;
 
         top: 0;
 
-        @include mx.for-size("tablet-landscape-up"){
+        @include mx.for-size("desktop-up"){
             top: 0;
             left: 0;
             right: 0;
@@ -171,8 +183,8 @@ $filter-dark-blue:#04487F;
         }
         
         .main-navigation__item {
-            flex: 0 0 100%;
-            @include mx.for-size("tablet-landscape-up"){
+            flex: 0;
+            @include mx.for-size("desktop-up"){
                 flex: none;
             }
         }
@@ -233,6 +245,21 @@ $filter-dark-blue:#04487F;
 //at closeOpenToggles (toggles.js:22:31)
 //at HTMLButtonElement.<anonymous> (toggles.js:9:7)
 
+//Update 10/30 - Added a simple JS function to activate the REQUEST MORE INFO button.  The button is located in program-finder-v2-navigation, as is the hidden REQUEST MORE INFO row and form.  This ideally should be changed to use #data-toggle in the future.
+.pfinder__more-info {
+    display: block;
+}
+.more-info-row-hidden {
+    display: none;
+}
+.sticky-form {
+    top: 4rem;
+    left:0;
+    right:0;
+    position: fixed;
+    z-index: 2;
+}
+
 
 
 .pfinder {
@@ -256,7 +283,7 @@ $filter-dark-blue:#04487F;
             grid-column-gap: 30px;
             grid-row-gap: 30px;
 
-            @include mx.for-size(tablet-landscape-up){
+            @include mx.for-size(desktop-up){
                 grid-template-columns: repeat(4, 1fr);
                 grid-template-rows: repeat(2, 1fr);
             }
@@ -308,7 +335,7 @@ $filter-dark-blue:#04487F;
         @include pfinder-margins;
         margin: 4rem auto 0rem auto;
 
-        @include mx.for-size(tablet-landscape-up){
+        @include mx.for-size(desktop-up){
             grid-template-columns: 60% 40%;
             grid-template-rows: 1fr;
         }
@@ -318,7 +345,7 @@ $filter-dark-blue:#04487F;
             order: 2;
             margin-bottom: 2rem;
 
-            @include mx.for-size(tablet-landscape-up){
+            @include mx.for-size(desktop-up){
                 order: 1;
                 margin-bottom: 0;
             }
@@ -326,7 +353,7 @@ $filter-dark-blue:#04487F;
     
         .highlights {
             order: 1;
-            @include mx.for-size(tablet-landscape-up){
+            @include mx.for-size(desktop-up){
                 order: 2;
             }
             ul {
@@ -540,7 +567,7 @@ $filter-dark-blue:#04487F;
             .filter {
                 background: var(--umkc-lighter-blue);
                 padding: 2rem 0rem 3rem 3rem;
-                @include mx.for-size("tablet-landscape-up"){
+                @include mx.for-size("desktop-up"){
                     max-height: fit-content;
                 }
                 h4 {
@@ -1179,9 +1206,11 @@ $filter-dark-blue:#04487F;
     #resultsTopBar { display: none; }
 }
 
-#more-info-row[aria-hidden="true"]{
-    display: none;
-}
-#more-info-row[aria-hidden="false"]{
-    display: grid;
-}
+
+// Leftover code from my previous attempt to use #data-toggles on the more-info-row
+// #more-info-row[aria-hidden="true"]{
+//     display: none;
+// }
+// #more-info-row[aria-hidden="false"]{
+//     display: grid;
+// }
