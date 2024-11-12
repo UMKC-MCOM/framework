@@ -8,6 +8,33 @@
   justify-content: center;
   // Figure out the sizing and spacing for mobile layouts.
 
+//   &--v2 {
+//     @include mx.for-size("tablet-portrait-up"){
+//       justify-content: flex-start;
+//     }
+//
+//     #{$self}__image {
+//       width: var(--image-size);
+//       height: var(--image-size);
+//     }
+//     #{$self}__item {
+//       gap: 2rem;
+//       @include mx.for-size("tablet-portrait-up"){
+//         --image-size: #{mx.px-to-rem(100px)};
+//         display: flex;
+//         text-align: left;
+//         flex-basis: 100%;
+//       }
+//       @include mx.for-size("tablet-landscape-up"){
+//         --image-size: #{mx.px-to-rem(150px)};
+//         flex-basis: calc(50% - 2rem);
+//       }
+//       @include mx.for-size("desktop-up"){
+//         flex-basis: calc(33% - 2rem);
+//       }
+//     }
+//   }
+
   &--vcard {
     display: block;
     #{$self}__item {
@@ -49,8 +76,8 @@
     border-radius: 100%;
     margin-bottom: 0.75rem;
     object-fit: cover;
-    width: mx.px-to-rem(150px);
-    height: mx.px-to-rem(150px);
+    width: var(--image-size, #{mx-to-px(150px)});
+    height: var(--image-size, #{mx-to-px(150px)});
   }
 
   &__role {

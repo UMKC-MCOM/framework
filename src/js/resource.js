@@ -1,7 +1,7 @@
-const resourceFilters = document.querySelectorAll(".resource__checkbox");
-const resources = document.querySelectorAll("[data-filters]");
-const clear = document.getElementById("clear");
-if ( resources !== null ) {
+const resourceFilters = document.querySelectorAll(".resource__checkbox") !== null ? document.querySelectorAll(".resource__checkbox") : false;
+const resources = document.querySelectorAll("[data-filters]") !== null ? document.querySelectorAll("[data-filters]") : false;
+const clear = document.getElementById("clear") !== null ? document.getElementById("clear") : false;
+if ( resources ) {
   resourceFilters.forEach((item) => {
     item.addEventListener("change", (event) => {
       let filters = document.querySelectorAll(".resource__checkbox:checked");
@@ -39,7 +39,7 @@ function clearFilter() {
   });
 }
 
-if ( clear !== null ) {
+if ( clear ) {
   clear.addEventListener("click", (event) => {
     event.preventDefault();
     clearFilter();

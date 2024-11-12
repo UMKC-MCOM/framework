@@ -1,11 +1,11 @@
 // Get the heroVideo
-const heroVideo = document.querySelector("#hero-video");
+const heroVideo = document.querySelector("#hero-video") !== null ? document.querySelector("#hero-video") : false;
 // Get the sources for the video
-if ( heroVideo !== null) {
+if ( heroVideo ) {
   var sources   = heroVideo.querySelectorAll("source");
 }
 // If there is a video, run the code!
-if ( heroVideo && sources.length != 0 ){
+if ( heroVideo && sources.length > 0 ){
   if ( !/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
     [...sources].forEach((video) => {
       video.setAttribute('src', video.dataset.src);
@@ -15,25 +15,27 @@ if ( heroVideo && sources.length != 0 ){
   }
 }
 // Code for the video controls (play/pause)
-const videoButton = document.querySelectorAll("[data-video]");
-[...videoButton].forEach((button) => {
-  button.addEventListener('click', function(e){
-    e.preventDefault();
-    let video = document.querySelector(button.dataset.video);
-    let icons = document.querySelectorAll(".hero__video--toggle .hero__icon");
-    let srO = document.querySelector(".hero__video--toggle .sr-only");
-    if ( video.paused ){
-      video.play();
-      srO.innerText = "Pause Video";
-    } else {
-      video.pause();
-      srO.innerText = "Play Video";
-    }
-    [...icons].forEach((icon) => {
-      icon.classList.toggle("hero__icon--active");
-    })
+const videoButton = document.querySelectorAll("[data-video]") > 0 ? document.querySelectorAll("[data-video") : false ;
+if ( videoButton ) {
+  [...videoButton].forEach((button) => {
+    button.addEventListener('click', function(e){
+      e.preventDefault();
+      let video = document.querySelector(button.dataset.video);
+      let icons = document.querySelectorAll(".hero__video--toggle .hero__icon");
+      let srO = document.querySelector(".hero__video--toggle .sr-only");
+      if ( video.paused ){
+        video.play();
+        srO.innerText = "Pause Video";
+      } else {
+        video.pause();
+        srO.innerText = "Play Video";
+      }
+      [...icons].forEach((icon) => {
+        icon.classList.toggle("hero__icon--active");
+      })
+    });
   });
-});
+}
 
 // Code for overlayed videos within the HTML code.
 // Only works with the "SHARE" links from YouTube (e.g. youtu.be/[link_id])
@@ -56,15 +58,17 @@ const voc = document.createElement("div");
       document.body.appendChild(vo);
 // Searches the page for any youtu.be links
 const videoLinks = document.querySelectorAll(`a[href*="youtu.be"]`);
-[...videoLinks].forEach((videoLink) => {
-  videoLink.addEventListener('click', function(e) {
-    e.preventDefault();
-    vo.classList.add("is-visible--flex");
-    let video = e.target.getAttribute("href");
-    let iframe = document.querySelector("#player iframe");
-    iframe.setAttribute("src", "//www.youtube.com/embed/"+getId(video));
-  })
-});
+if ( videoLinks !== null ) {
+  [...videoLinks].forEach((videoLink) => {
+    videoLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      vo.classList.add("is-visible--flex");
+      let video = e.target.getAttribute("href");
+      let iframe = document.querySelector("#player iframe");
+      iframe.setAttribute("src", "//www.youtube.com/embed/"+getId(video));
+    })
+  });
+}
 // Click Event for using the video overlay to close
 vo.addEventListener("click", function(e) {
   e.preventDefault();
