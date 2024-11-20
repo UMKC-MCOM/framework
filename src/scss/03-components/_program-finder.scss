@@ -276,6 +276,54 @@ $filter-dark-blue:#04487F;
             @include pfinder-margins;
             margin-bottom: 2rem;
         }
+        // form {
+        //     display: grid;
+        //     grid-template-rows: 1fr 1fr 1fr 1fr;
+        //     grid-template-columns: 1fr;
+        //     grid-column-gap: 30px;
+        //     grid-row-gap: 30px;
+
+        //     @include mx.for-size(desktop-up){
+        //         grid-template-columns: repeat(4, 1fr);
+        //         grid-template-rows: repeat(2, 1fr);
+        //     }
+        //     @include pfinder-margins;
+
+        //     .input-wrapper {
+        //         label {
+        //             display: block;
+        //             font-weight: bold;
+        //             font-size: 13px;
+        //             margin-bottom: 0.25rem;
+        //         }
+        //         input, button {
+        //             width: 100%;
+        //         }
+                
+        //         &.submit-button {
+        //             align-self: end;
+
+        //             button {
+        //                 @include pfinder-button;
+        //             }
+        //         }
+        //     }
+        //     .text-message-choice-wrapper {
+        //         @include for-size(tablet-down){
+        //             grid-column: 1/4;
+        //         }
+        //         label {
+        //             display: inline;
+        //         }
+        //         input[type="radio"] {
+        //             display: inline;
+        //             width: 20px;
+        //         }
+        //         br {
+        //             clear:both;
+        //         }
+        //     }
+        // }
         form {
             display: grid;
             grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -284,10 +332,25 @@ $filter-dark-blue:#04487F;
             grid-row-gap: 30px;
 
             @include mx.for-size(desktop-up){
-                grid-template-columns: repeat(4, 1fr);
-                grid-template-rows: repeat(2, 1fr);
+                grid-template-columns: repeat(1, 1fr);
+                grid-template-rows: repeat(1, 1fr);
             }
             @include pfinder-margins;
+
+            
+            #form_page_1 {
+                display: grid;
+                grid-template-rows: 1fr 1fr;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 10px;
+
+                label {
+                    display: block;
+                    font-weight: bold;
+                    font-size: 13px;
+                    margin-bottom: 0.25rem;
+                }
+            }
 
             .input-wrapper {
                 label {
