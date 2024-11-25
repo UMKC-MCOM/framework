@@ -56,22 +56,35 @@ $filter-dark-blue:#04487F;
     }
 }
 
+$pad: 4rem;
+$pad2: 2rem;
+$pad3: 2rem;
 @mixin pfinder-margins {
     margin: 0 auto;
     @include mx.for-size(phone-only){
-        max-width: 500px;
+        // max-width: 500px;
+        padding-left: $pad3;
+        padding-right: $pad3;
     };
     @include mx.for-size(tablet-portrait-up){
-        max-width: 600px;
+        // max-width: 600px;
+        padding-left: $pad3;
+        padding-right: $pad3;
     };
     @include mx.for-size(tablet-landscape-up){
-        max-width: 1000px;
+        // max-width: 1000px;
+        padding-left: $pad2;
+        padding-right: $pad2;
     };
     @include mx.for-size(desktop-up){
-        max-width: 1200px;
+        // max-width: 1200px;
+        padding-left: $pad2;
+        padding-right: $pad2;
     };
     @include mx.for-size(big-desktop-up){
-        max-width: 1600px;
+        // max-width: 1600px;
+        padding-left: $pad;
+        padding-right: $pad;
     };
 }
 
@@ -219,7 +232,7 @@ $filter-dark-blue:#04487F;
 
 // Header
 .pfinder-primary-header.header--primary {
-    background: linear-gradient(0deg, rgba(209,209,209,1) 0%, rgba(246,246,246,1) 100%);
+    background: var(--umkc-lighter-blue);
     align-items: flex-start;
 
     a {
@@ -409,6 +422,7 @@ $filter-dark-blue:#04487F;
         grid-template-rows: 2fr;
         grid-column-gap: 10px;
         grid-row-gap: 10px;
+        gap: 30px;
 
         @include pfinder-margins;
         margin: 4rem auto 0rem auto;
@@ -437,16 +451,21 @@ $filter-dark-blue:#04487F;
             ul {
                 list-style: none;
                 margin-bottom: 0rem;
+                margin-left:0;
+                padding:0;
+                padding-left:0;
     
                 li {
                     font-size: 18px;
-                    margin-bottom: 2rem;
+                    margin-bottom: 1.5rem;
+                    display: flex;
     
                     .icon {
                         display: inline;
-                        padding-right: 1rem;
+                        padding-right: 0.5rem;
                         svg {
-                            --icon-size: 1.8125rem;
+                            // --icon-size: 1.8125rem;
+                            --icon-size: 1.5rem;
                             height: var(--icon-size);
                             width: var(--icon-size);
                             color: var(--umkc-blue);
@@ -456,7 +475,7 @@ $filter-dark-blue:#04487F;
                         text-transform: uppercase;
                     }
                     &.disclaimer {
-                        padding: 2rem;
+                        padding: 1rem;
                         font-size: 16px;
                     }
                 }
@@ -470,7 +489,8 @@ $filter-dark-blue:#04487F;
 
 .after-grad {
         background-color: var(--umkc-lighter-blue);
-        padding: 3rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
     
         .disclaimer {
             font-size: 16px;
@@ -517,7 +537,7 @@ $filter-dark-blue:#04487F;
             img {
                 margin:0 auto;
                 display: block;
-                width: 100%;
+                // width: 100%;
             }
         }
     
