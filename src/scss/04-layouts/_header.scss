@@ -2,6 +2,7 @@
 @use "../01-abstracts/mixins" as mx;
 
 .header {
+  $self: &;
   --hPadding: var(--content-padding);
   padding: 0.75rem var(--hPadding);
   @include mx.for-size("tablet-portrait-up") {
@@ -27,6 +28,7 @@
   }
 
   &--primary {
+    background: var(--background, var(--umkc-blue));
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -49,6 +51,27 @@
     }
 
   }
+  
+  &__pfinder {
+    &#{$self}--primary {
+      --background: var(--umkc-navy);
+      a {
+        font-weight: 600;
+        @include mx.font-size(22px);
+        text-transform: uppercase;
+        font-family: var(--os);
+      }
+    }
+    &#{$self}--secondary {
+      --background: var(--umkc-blue);
+    }
+  }
+    // .pfinder-secondary-header.header--secondary {
+    //     background-color: var(--umkc-navy);
+    //     border-bottom: 0px solid transparent;
+    //     justify-content: flex-start;
+    // }
+  // }
 
   &__cta {
     display: none;
