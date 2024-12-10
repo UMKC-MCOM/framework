@@ -51,13 +51,13 @@
     }
 
   }
-  
+
   &__pfinder {
     &#{$self}--primary {
       --background: var(--umkc-navy);
       a {
         font-weight: 600;
-        @include mx.font-size(22px);
+        @include mx.font-size(18px);
         text-transform: uppercase;
         font-family: var(--os);
       }
