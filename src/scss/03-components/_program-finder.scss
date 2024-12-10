@@ -637,11 +637,46 @@ $pad3: 2rem;
                 margin-bottom: 4rem;
 
                 // @TODO: Not currently used on mobile
+
                 .results-top-bar {
                     display: grid;
                     grid-template-columns: 90% 10%;
                     grid-template-rows: repeat(auto-fill, 1fr);
                     margin-bottom: 2rem;
+
+                    .ais-CurrentRefinements {
+                        &-list {
+                            display: flex;
+                            gap: 15px;
+                            flex-direction: row;
+                            flex-wrap: wrap;
+                            justify-content: flex-start;
+                            list-style: none;
+                            margin-left:0;
+                        }
+                        &-item {
+                            padding: 15px;
+                            background-color: var(--umkc-blue);
+                            color: var(--white);
+
+                            &:hover, &:active {
+                                background-color: var(--umkc-dark-blue);
+                                @include mx.tr(background-color, 100ms);
+                            }
+                        }
+                        &-label {}
+                        &-category {}
+                        &-categoryLabel {}
+                        &-delete {
+                            background: transparent;
+                            color: white;
+                            border: 0px;
+
+                            &:hover, &:active {
+                                font-weight: bold;
+                            }
+                        }
+                    }
 
                     .results-filter-tabs {
                         display: flex;

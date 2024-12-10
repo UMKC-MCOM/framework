@@ -89,7 +89,8 @@
             <!-- Results - Grid & List view use the same HTML -->
             <div class="results" id="results-toggle" aria-hidden="false">
                 <div class="results-top-bar" id="resultsTopBar">
-                    <div class="results-filter-tabs">
+                    <!-- Old version of category tabs -->
+                    <!-- <div class="results-filter-tabs">
                         <div class="results-filter-tabs_title">All Majors</div>
                         <div class="results-filter-tabs_tab">Biology
                             <div class="icon">
@@ -112,7 +113,34 @@
                                 </svg>
                             </div>
                         </div>
+                    </div> -->
+                    <!-- New version of category tabs -->
+                    <div class="ais-CurrentRefinements">
+                        <ul class="ais-CurrentRefinements-list">    
+                            <li class="ais-CurrentRefinements-item">      
+                                <span class="ais-CurrentRefinements-label">Category:</span>
+                                <span class="ais-CurrentRefinements-category">
+                                    <span class="ais-CurrentRefinements-categoryLabel">Movies & TV Shows</span>
+                                    <button class="ais-CurrentRefinements-delete">✕</button>
+                                </span>    
+                            </li>
+                            <li class="ais-CurrentRefinements-item">      
+                                <span class="ais-CurrentRefinements-label">Category:</span>
+                                <span class="ais-CurrentRefinements-category">
+                                    <span class="ais-CurrentRefinements-categoryLabel">Movies & TV Shows</span>
+                                    <button class="ais-CurrentRefinements-delete">✕</button>
+                                </span>    
+                            </li>
+                            <li class="ais-CurrentRefinements-item">      
+                                <span class="ais-CurrentRefinements-label">Category:</span>
+                                <span class="ais-CurrentRefinements-category">
+                                    <span class="ais-CurrentRefinements-categoryLabel">Movies & TV Shows</span>
+                                    <button class="ais-CurrentRefinements-delete">✕</button>
+                                </span>    
+                            </li>  
+                        </ul>
                     </div>
+
                     <div class="results-display">
                         <button type="submit" class="button button--umkc-yellow" id="listView">
                             <svg class="icon"><use xlink:href="#menu"></use></svg>
