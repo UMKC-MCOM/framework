@@ -230,22 +230,6 @@ $pad3: 2rem;
     .menu__icon {}
 }
 
-// Header
-.pfinder-primary-header.header--primary {
-    background: var(--umkc-lighter-blue);
-    align-items: flex-start;
-
-    a {
-        font-weight: 600;
-        @include pfinder-font(22px,--umkc-navy);
-
-    }
-}
-.pfinder-secondary-header.header--secondary {
-    background-color: var(--umkc-navy);
-    border-bottom: 0px solid transparent;
-    justify-content: flex-start;
-}
 .hero--pfinder {
     h1 {
         text-transform: uppercase;
