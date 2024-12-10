@@ -57,7 +57,7 @@
       --background: var(--umkc-navy);
       a {
         font-weight: 600;
-        @include mx.font-size(18px);
+        @include mx.font-size(16px);
         text-transform: uppercase;
         font-family: var(--os);
       }
