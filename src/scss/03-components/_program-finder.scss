@@ -8,7 +8,7 @@
     $tablet-portrait-upper-boundary: 900px !default;
     $tablet-landscape-upper-boundary: 1200px !default;
     $desktop-upper-boundary: 1800px !default;
-  
+
     @if $range == phone-only {
       @media (max-width: #{$phone-upper-boundary - 1}) { @content; }
     } @else if $range == desktop-down {
@@ -38,7 +38,7 @@ $filter-dark-blue:#04487F;
 
     &:hover, &:active {
         background-color: var(--umkc-navy);
-        color: var(--umkc-yellow); 
+        color: var(--umkc-yellow);
         text-decoration: none;
     }
 }
@@ -51,7 +51,7 @@ $filter-dark-blue:#04487F;
 
     &:hover, &:active {
         background-color: var(--umkc-navy);
-        color: var(--umkc-yellow); 
+        color: var(--umkc-yellow);
         text-decoration: none;
     }
 }
@@ -111,12 +111,12 @@ $pad3: 2rem;
         align-content: flex-start;
         flex-flow: column;
         width: 100%;
-        
+
         @include mx.for-size("desktop-up"){
             justify-content: flex-start;
             flex-flow: row;
         }
-        
+
     }
     & .main-navigation__item {
         background-color: none;
@@ -137,7 +137,7 @@ $pad3: 2rem;
             color: var(--white);
             text-transform: none;
             font-weight: 400;
-            
+
         }
 
         &:active, &.active {
@@ -146,7 +146,7 @@ $pad3: 2rem;
         }
         &:hover {
             text-decoration: underline;
-            text-underline-offset: 10px;            
+            text-underline-offset: 10px;
             text-decoration-thickness: 3px;
         }
     }
@@ -178,7 +178,7 @@ $pad3: 2rem;
             @include pfinder-button();
             border-top-left-radius: 0;
             border-top-right-radius: 0;
-        }        
+        }
     }
 
     &.sticky-nav {
@@ -194,7 +194,7 @@ $pad3: 2rem;
             right: 0;
             bottom: auto;
         }
-        
+
         .main-navigation__item {
             flex: 0;
             @include mx.for-size("desktop-up"){
@@ -312,7 +312,7 @@ $pad3: 2rem;
         //         input, button {
         //             width: 100%;
         //         }
-                
+
         //         &.submit-button {
         //             align-self: end;
 
@@ -390,7 +390,7 @@ $pad3: 2rem;
                 input, button {
                     width: 100%;
                 }
-                
+
                 &.submit-button {
                     align-self: end;
 
@@ -431,7 +431,7 @@ $pad3: 2rem;
             grid-template-columns: 60% 40%;
             grid-template-rows: 1fr;
         }
-    
+
         .overview {
             font-size: 24px;
             order: 2;
@@ -442,7 +442,7 @@ $pad3: 2rem;
                 margin-bottom: 0;
             }
         }
-    
+
         .highlights {
             order: 1;
             @include mx.for-size(desktop-up){
@@ -454,12 +454,12 @@ $pad3: 2rem;
                 margin-left:0;
                 padding:0;
                 padding-left:0;
-    
+
                 li {
                     font-size: 18px;
                     margin-bottom: 1.5rem;
                     display: flex;
-    
+
                     .icon {
                         display: inline;
                         padding-right: 0.5rem;
@@ -481,7 +481,7 @@ $pad3: 2rem;
                 }
             }
         }
-        
+
     }
 }
 
@@ -491,27 +491,27 @@ $pad3: 2rem;
         background-color: var(--umkc-lighter-blue);
         padding-top: 2rem;
         padding-bottom: 2rem;
-    
+
         .disclaimer {
             font-size: 16px;
         }
 
     &__wrapper {
         display: grid;
-        grid-template-columns: 1fr 1fr; 
-        grid-template-rows: 1fr; 
-        gap: 20px 20px; 
-        grid-template-areas: 
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 20px 20px;
+        grid-template-areas:
             "a b"
-            "a d"; 
-        
+            "a d";
+
         @include pfinder-margins;
-        
+
         @include for-size('desktop-down'){
             gap: 10px 10px;
-            grid-template-columns: 1fr; 
-            grid-template-rows: 1fr; 
-            grid-template-areas: 
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            grid-template-areas:
             "b"
             "a"
             "c"
@@ -529,21 +529,21 @@ $pad3: 2rem;
             }
             .disclaimer {}
         }
-    
+
         .after-grad_image {
             grid-area: b;
             align-self: center;
-    
+
             img {
                 margin:0 auto;
                 display: block;
                 // width: 100%;
             }
         }
-    
+
         .after-grad_stats {
             grid-area: d;
-    
+
             .after-grad_stats-wrapper {
                 grid-column: 2/-1;
                 display: flex;
@@ -551,7 +551,7 @@ $pad3: 2rem;
                 flex-wrap: wrap;
                 justify-content: center;
                 margin-bottom: 2rem;
-        
+
                 div {
                     text-align: center;
                     display: block;
@@ -572,7 +572,7 @@ $pad3: 2rem;
 }
 
 
-//Explore Programs 
+//Explore Programs
 
 .eprog {
     .explore-programs {
@@ -585,7 +585,7 @@ $pad3: 2rem;
                 grid-template-columns: 1fr;
                 column-gap: 0px;
                 grid-template-rows: repeat(3, 1fr);
-                
+
                 @include pfinder-margins;
 
                 @include mx.for-size(desktop-up){
@@ -600,7 +600,7 @@ $pad3: 2rem;
                 .search-wrapper {
                     margin: 2rem;
                     #searchByKeyword {
-                        
+
                         .search-by-keyboard-wrapper {
                             display: flex;
                             border-radius: 6px;
@@ -652,10 +652,10 @@ $pad3: 2rem;
                 grid-template-columns: 20% 80%;
                 grid-template-rows: repeat(1, 1fr);
                 margin: auto;
-                
+
             }
-            
-            
+
+
             .filter, .results {
                 padding: 1rem;
                 @include for-size(desktop-down){
@@ -688,10 +688,10 @@ $pad3: 2rem;
                         width: 90%;
                     }
                 }
-                button {
-                    margin-bottom: 1rem;
-                    @include pfinder-button-secondary;
-                }
+                // button {
+                //     margin-bottom: 1rem;
+                //     @include pfinder-button-secondary;
+                // }
                 .clear-filters {
                     .icon {
                         display: inline;
@@ -775,7 +775,7 @@ $pad3: 2rem;
                 }
                 // Results Grid
                 .results-grid {
-                    ul.results-grid-wrapper {
+                    .results-grid-wrapper {
                         display: flex;
                         gap: 40px;
                         flex-direction: row;
@@ -785,7 +785,7 @@ $pad3: 2rem;
                         align-content: normal;
                         margin-left: 0;
 
-                        
+
                         li.results-program {
                             display: block;
                             flex-basis: auto;
@@ -810,7 +810,7 @@ $pad3: 2rem;
                                 align-content: normal;
                                 text-align: right;
                                 margin-bottom: 1.5rem;
-                                
+
                                 .results-program_button {
                                     margin: 5px;
                                     border-radius: 50%;
@@ -845,7 +845,7 @@ $pad3: 2rem;
                                     margin: 0.5rem auto;
                                     @include pfinder-font(24px,--umkc-blue);
                                 }
-                                ul.results-program_interest-list {
+                                .results-program_interest-list {
                                     margin-bottom: 2rem;
                                     li {}
                                 }
@@ -859,7 +859,7 @@ $pad3: 2rem;
                                     .results-program_footer-compare {
                                         #addToCompare {
                                             text-align: right;
-    
+
                                             input[type="checkbox"] {}
                                             label {}
                                         }
@@ -872,7 +872,7 @@ $pad3: 2rem;
                 // Attempting to use the exact same HTML that the grid view uses, but change out the classes using javascript
                 // Results List
                 .results-grid.results-list {
-                    ul.results-grid-wrapper {
+                    .results-grid-wrapper {
                         flex-direction: column; //Changed to column
                         li.results-program {
                             display: flex;
@@ -885,7 +885,7 @@ $pad3: 2rem;
                             }
 
                             .results-program_image {
-                                background-size: 0%; // Background-size to zero                                
+                                background-size: 0%; // Background-size to zero
                                 min-height:0px;
                                 max-height:0px;
                                 order: 3;
@@ -901,7 +901,7 @@ $pad3: 2rem;
                                     order: 2; // Changed flexbox order
                                     text-align: left; // text alignment
                                 }
-                                ul.results-program_interest-list { display: none; }
+                                .results-program_interest-list { display: none; }
                                 //@TODO reconfigure the grid logic so the program-footer can be included.
                                 .results-program_footer {
                                     display: none;
@@ -919,7 +919,7 @@ $pad3: 2rem;
                             }
                         }
                     }
-                } 
+                }
             }
         }
     }
@@ -941,9 +941,9 @@ $pad3: 2rem;
     @include for-size(desktop-down){
         display: none;
     }
-    
+
     transition: 0.1s ease background-color;
-    
+
     &:hover {
         background-color: var(--umkc-dark-blue);
         right: -5rem;
@@ -992,10 +992,10 @@ $pad3: 2rem;
 
     &[aria-hidden="false"] {
         display: block;
-        
+
     }
     &[aria-hidden="true"] {
-        display: none;  
+        display: none;
     }
 
 
@@ -1016,7 +1016,7 @@ $pad3: 2rem;
         // position: absolute;
         // top: 1.5rem;
         // right: 1.5rem;
-        display: none; 
+        display: none;
 
         // svg {
         //     width: 2rem;
@@ -1034,7 +1034,7 @@ $pad3: 2rem;
     }
     .compare-flyout-list {
         overflow: scroll;
-        ul.compare-flyout-list-wrapper {
+        .compare-flyout-list-wrapper {
             display: flex;
             gap: 20px;
             flex-direction: row;
@@ -1071,7 +1071,7 @@ $pad3: 2rem;
                     align-content: normal;
                     text-align: right;
                     margin-bottom: 1.5rem;
-                    
+
                     .results-program_button {
                         margin: 5px;
                         border-radius: 50%;
@@ -1106,7 +1106,7 @@ $pad3: 2rem;
                     margin: 0.5rem auto;
                     @include pfinder-font(24px,--umkc-blue);
                 }
-                ul.results-program_interest-list {
+                .results-program_interest-list {
                     margin-bottom: 2rem;
                     li {}
                 }
@@ -1139,7 +1139,7 @@ $pad3: 2rem;
                     margin: 0.25rem auto 0.5rem auto;
                     @include pfinder-font(24px,--umkc-blue);
                 }
-                ul.compare-flyout-program_interest-list {
+                .compare-flyout-program_interest-list {
                     margin-bottom: 3rem;
                     li {}
                 }
@@ -1179,7 +1179,7 @@ $pad3: 2rem;
                     align-content: normal;
                     text-align: right;
                     margin-bottom: 1.5rem;
-                    
+
                     .results-program_button {
                         margin: 5px;
                         border-radius: 50%;
@@ -1216,7 +1216,7 @@ $pad3: 2rem;
                         margin: 0.5rem auto;
                         @include pfinder-font(24px,--umkc-blue);
                     }
-                    ul.results-program_interest-list {
+                    .results-program_interest-list {
                         margin-bottom: 2rem;
                         li {}
                     }
@@ -1230,7 +1230,7 @@ $pad3: 2rem;
                         .results-program_footer-compare {
                             #addToCompare {
                                 text-align: right;
-    
+
                                 input[type="checkbox"] {}
                                 label {}
                             }
@@ -1239,12 +1239,12 @@ $pad3: 2rem;
                 }
             }
         }
-    }    
+    }
 }
 
 
 // Program Finder Learn More Nav Element
-// This should all be depreciated 
+// This should all be depreciated
 // .more-info-row__hidden {
 //     position: fixed;
 //     top: 3rem;
@@ -1299,7 +1299,7 @@ $pad3: 2rem;
         display: none;
     }
     #compare-toggle[aria-hidden="false"] {
-        
+
     }
     #resultsTopBar { display: none; }
 }
