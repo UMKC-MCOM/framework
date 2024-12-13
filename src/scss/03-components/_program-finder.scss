@@ -468,6 +468,69 @@ $pad3: 2rem;
   }
 }
 
+// Instant Search default classes
+.ais {
+  &-SearchBox{
+    &-form{
+      display: flex;
+      justify-items: flex-end;
+    }
+    &-input{
+      height: 42px;
+      margin:0;
+      width: 100%;
+      border-radius: 10px;
+    }
+    &-submit{
+      background: var(--umkc-yellow);
+      appearance: none;
+      height: 42px;
+      border: solid 1px var(--umkc-yellow);
+      border-radius: 0 10px 10px 0;
+      margin-left:-38px;
+    }
+    &-reset{}
+    &-loadingIndicator{}
+  }
+  &-RefinementList{
+    &-list{
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      margin: 0;
+      padding:0;
+      gap: 1rem;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    &-item{
+      padding: 0;
+      flex-basis: calc( ( 100% / 3) - 1rem);
+      label {
+        display: flex;
+        align-items: center;
+      }
+      input[type="checkbox"]{
+        margin-right: 1rem;
+        flex: none;
+      }
+    }
+  }
+
+  &-ClearRefinements-button{
+    appearance: none;
+    display: block;
+    color: #707070;
+    margin: 0 auto;
+    background: none;
+    border: none;
+    .icon {
+      height: 18px;
+      width: 18px;
+    }
+  }
+}
+
 //Explore Programs
 .pf-search {
   $self: &;
@@ -510,58 +573,43 @@ $pad3: 2rem;
     width: 24px;
     color: var(--umkc-blue);
   }
-  // Instant Search classes
-  .ais-SearchBox{
-    &-form{
-      display: flex;
-      justify-items: flex-end;
-    }
-    &-input{
-      height: 42px;
-      margin:0;
-      width: 100%;
-      border-radius: 10px;
-    }
-    &-submit{
-      background: var(--umkc-yellow);
-      appearance: none;
-      height: 42px;
-      border: solid 1px var(--umkc-yellow);
-      border-radius: 0 10px 10px 0;
-      margin-left:-38px;
-    }
-    &-reset{}
-    &-loadingIndicator{}
-  }
-
-  // Instant Search Classes
-  .ais-RefinementList{
-    &-list{
-      display: flex;
-      flex-wrap: wrap;
-      list-style: none;
-      margin: 0;
-      padding:0;
-      gap: 1rem;
-      justify-content: flex-start;
-      align-items: center;
-    }
-    &-item{
-      padding: 0;
-      flex-basis: calc( ( 100% / 3) - 1rem);
-      label {
-        display: flex;
-        align-items: center;
-      }
-      input[type="checkbox"]{
-        margin-right: 1rem;
-        flex: none;
-      }
-    }
-  }
 }
 
+.pf-results {
+  display: flex;
+  margin-top: mx.px-to-rem(30px);
 
+  &__filter{
+    background: var(--umkc-lighter-blue);
+    padding: var(--content-padding);
+    .ais-RefinementList {
+      &-list {
+        display: block;
+      }
+      &-item {
+        padding: 0.5rem 0;
+        &:first-child {
+          padding-top: 0;
+        }
+      }
+    }
+  }
+  &__title {
+    --heading-color: var(--font-color);
+    --heading-size: #{mx.px-to-rem(24px)};
+    font-family: var(--os);
+    text-transform: uppercase;
+  }
+  &__heading {
+    font-weight: bold;
+    color: #707070;
+    margin: 1rem 0;
+  }
+
+  &__clear {
+    margin-top: 1rem;
+  }
+}
 
 
 // Compare Programs Flyout Elements
