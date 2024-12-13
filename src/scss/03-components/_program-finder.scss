@@ -565,9 +565,9 @@ $pad3: 2rem;
                         overflow:scroll;
                     }
                     form#areaOfInterest {
-                        display:flex;    
-                        flex-flow: wrap;    
-                        flex-direcion: row;    
+                        display:flex;
+                        flex-flow: wrap;
+                        flex-direction: row;
                         list-style:none;
                         gap: 10px;
                         .input-wrapper {
@@ -608,7 +608,7 @@ $pad3: 2rem;
                 }
                 * {
 
-                } 
+                }
                 h4 {
                     @include pfinder-font(24px,--umkc-font-color);
                     text-transform: uppercase;
