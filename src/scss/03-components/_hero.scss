@@ -36,7 +36,13 @@
     --hero-height: #{mx.px-to-rem(250px)};
     --hero-title: #{mx.px-to-rem(48px)} !important;
   }
-
+  &--pfinder {
+    --hero-height: #{mx.px-to-rem(550px)};
+    #{$self}__title {
+      --hero-title: #{mx.px-to-rem(42px)};
+      font-family: var(--os);
+    }
+  }
   &--video {
     --hero-height: 690px;
     position: relative;

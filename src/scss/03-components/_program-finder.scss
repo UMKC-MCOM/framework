@@ -98,111 +98,111 @@ $pad3: 2rem;
 // Nav
 // .main-navigation.pfinder-navigation { // Removed this after Greg's renaming edits
 // @TODO: Place this code properly in the navigation SCSS file
-.main-navigation.main-navigation--pfinder {
-    background-color: var(--umkc-lighter-blue) !important; //@TODO Destroy these disgusting !important tags by incorporating the code properly into nav.scss
-    border-top: 0px solid transparent;
-    // display: none;
-
-    @include mx.for-size("desktop-up"){
-        background-color: var(--umkc-blue) !important; //@TODO Destroy these disgusting !important tags by incorporating the code properly into nav.scss
-        display: none;
-    }
-    & .main-navigation__list {
-        align-content: flex-start;
-        flex-flow: column;
-        width: 100%;
-
-        @include mx.for-size("desktop-up"){
-            justify-content: flex-start;
-            flex-flow: row;
-        }
-
-    }
-    & .main-navigation__item {
-        background-color: none;
-        border-bottom: 1px solid var(--white);
-        width: 100%;
-        padding: 1.5rem 3rem;
-
-        @include mx.for-size("desktop-up"){
-            width: auto;
-            border-bottom: 0px solid transparent;
-            padding: 0.5rem var(--link-margin, 1.5rem);
-        }
-    }
-    & .main-navigation__link {
-        @include pfinder-font(22px,--umkc-dark-blue);
-
-        @include mx.for-size("desktop-up"){
-            color: var(--white);
-            text-transform: none;
-            font-weight: 400;
-
-        }
-
-        &:active, &.active {
-            text-decoration: underline;
-            text-underline-offset: 5px;
-        }
-        &:hover {
-            text-decoration: underline;
-            text-underline-offset: 10px;
-            text-decoration-thickness: 3px;
-        }
-    }
-    & .pfinder__request-more-info {
-        background: var(--umkc-yellow);
-        padding: 1rem;
-        position:absolute;
-        top: auto;
-        bottom:0;
-        left:0;
-        right:0;
-
-        @include mx.for-size("desktop-up"){
-            background: transparent;
-            top: -16px;
-            right: 20px;
-            bottom: auto;
-            left: auto;
-        }
-
-        &:hover, &:focus {
-            background-color: inherit;
-        }
-    }
-    & .pfinder__request-more-info-button {
-        margin: 0 auto;
-        font-size: 28px;
-        @include mx.for-size("desktop-up"){
-            @include pfinder-button();
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
-        }
-    }
-
-    &.sticky-nav {
-        display: flex;
-        position: fixed;
-        z-index: 2;
-
-        top: 0;
-
-        @include mx.for-size("desktop-up"){
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: auto;
-        }
-
-        .main-navigation__item {
-            flex: 0;
-            @include mx.for-size("desktop-up"){
-                flex: none;
-            }
-        }
-    }
-}
+// .main-navigation.main-navigation--pfinder {
+//     background-color: var(--umkc-lighter-blue) !important; //@TODO Destroy these disgusting !important tags by incorporating the code properly into nav.scss
+//     border-top: 0px solid transparent;
+//     // display: none;
+//
+//     @include mx.for-size("desktop-up"){
+//         background-color: var(--umkc-blue) !important; //@TODO Destroy these disgusting !important tags by incorporating the code properly into nav.scss
+//         display: none;
+//     }
+//     & .main-navigation__list {
+//         align-content: flex-start;
+//         flex-flow: column;
+//         width: 100%;
+//
+//         @include mx.for-size("desktop-up"){
+//             justify-content: flex-start;
+//             flex-flow: row;
+//         }
+//
+//     }
+//     & .main-navigation__item {
+//         background-color: none;
+//         border-bottom: 1px solid var(--white);
+//         width: 100%;
+//         padding: 1.5rem 3rem;
+//
+//         @include mx.for-size("desktop-up"){
+//             width: auto;
+//             border-bottom: 0px solid transparent;
+//             padding: 0.5rem var(--link-margin, 1.5rem);
+//         }
+//     }
+//     & .main-navigation__link {
+//         @include pfinder-font(22px,--umkc-dark-blue);
+//
+//         @include mx.for-size("desktop-up"){
+//             color: var(--white);
+//             text-transform: none;
+//             font-weight: 400;
+//
+//         }
+//
+//         &:active, &.active {
+//             text-decoration: underline;
+//             text-underline-offset: 5px;
+//         }
+//         &:hover {
+//             text-decoration: underline;
+//             text-underline-offset: 10px;
+//             text-decoration-thickness: 3px;
+//         }
+//     }
+//     & .pfinder__request-more-info {
+//         background: var(--umkc-yellow);
+//         padding: 1rem;
+//         position:absolute;
+//         top: auto;
+//         bottom:0;
+//         left:0;
+//         right:0;
+//
+//         @include mx.for-size("desktop-up"){
+//             background: transparent;
+//             top: -16px;
+//             right: 20px;
+//             bottom: auto;
+//             left: auto;
+//         }
+//
+//         &:hover, &:focus {
+//             background-color: inherit;
+//         }
+//     }
+//     & .pfinder__request-more-info-button {
+//         margin: 0 auto;
+//         font-size: 28px;
+//         @include mx.for-size("desktop-up"){
+//             @include pfinder-button();
+//             border-top-left-radius: 0;
+//             border-top-right-radius: 0;
+//         }
+//     }
+//
+//     &.sticky-nav {
+//         display: flex;
+//         position: fixed;
+//         z-index: 2;
+//
+//         top: 0;
+//
+//         @include mx.for-size("desktop-up"){
+//             top: 0;
+//             left: 0;
+//             right: 0;
+//             bottom: auto;
+//         }
+//
+//         .main-navigation__item {
+//             flex: 0;
+//             @include mx.for-size("desktop-up"){
+//                 flex: none;
+//             }
+//         }
+//     }
+// }
 
 // Mobile Nav
 .menu.pfinder-mobile-menu {
@@ -230,12 +230,6 @@ $pad3: 2rem;
     .menu__icon {}
 }
 
-.hero--pfinder {
-    h1 {
-        text-transform: uppercase;
-    }
-}
-
 // Request More Info Dropdown
 //@TODO Figure out why Javascript is throwing this error when using toggles
 //toggles.js:22 Uncaught TypeError: Cannot read properties of null (reading 'querySelectorAll')
@@ -257,110 +251,113 @@ $pad3: 2rem;
     z-index: 2;
 }
 
+.pf-request_info {
+  &__wrapper {
+    @include mx.for-size("desktop-up") {
+      max-width: 85vw;
+      margin: 0 auto;
+    }
+  }
+  &__title {
+    --heading-color: var(--umkc-dark-blue);
+    --heading-size: #{mx.px-to-rem(24px)};
+    --heading-margin:0 0 2rem;
+    font-family: var(--os);
+    text-transform: uppercase;
+  }
+  form {
+      display: grid;
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr;
+      grid-column-gap: 30px;
+      grid-row-gap: 30px;
 
-
-.pfinder {
-  &__more-info {
-      background-color: var(--umkc-lighter-blue);
-      //@TODO Determine max-width in v2 (using padding here for style approvals
-      padding: 2rem;
-
-      h3 {
-          font-weight: bold;
-
-          @include pfinder-font(24px,--umkc-dark-blue);
-          @include pfinder-margins;
-          margin-bottom: 2rem;
+      @include mx.for-size(desktop-up){
+          // grid-template-columns: repeat(1, 1fr);
+          grid-template-columns: 80% 20%;
+          grid-template-rows: repeat(1, 1fr);
       }
-      form {
-          display: grid;
-          grid-template-rows: 1fr;
-          grid-template-columns: 1fr;
-          grid-column-gap: 30px;
-          grid-row-gap: 30px;
+
+      #form_start {
+          display: none;
+      }
+      .form_action {
+          text-align: center;
+          padding-top:0px;
 
           @include mx.for-size(desktop-up){
-              // grid-template-columns: repeat(1, 1fr);
-              grid-template-columns: 80% 20%;
-              grid-template-rows: repeat(1, 1fr);
+              padding-top: 25%;
           }
-          @include pfinder-margins;
-
-          #form_start {
-              display: none;
-          }
-          .form_action {
-              text-align: center;
-              padding-top:0px;
-
-              @include mx.for-size(desktop-up){
-                  padding-top: 25%;
-              }
-          }
-          #form_page_1 {
-              display: grid;
-              gap: 10px;
-              grid-template-rows: 1fr;
-              grid-template-columns: 1fr 1fr;
-              @include mx.for-size(desktop-up){
-                  grid-template-rows: 1fr 1fr;
-                  grid-template-columns: 1fr 1fr 1fr;
-              }
-
-              label {
-                  display: block;
-                  font-weight: bold;
-                  font-size: 13px;
-                  margin-bottom: 0.25rem;
-              }
+      }
+      #form_page_1 {
+          display: grid;
+          gap: 10px;
+          grid-template-rows: 1fr;
+          grid-template-columns: 1fr 1fr;
+          @include mx.for-size(desktop-up){
+              grid-template-rows: 1fr 1fr;
+              grid-template-columns: 1fr 1fr 1fr;
           }
 
-          .input-wrapper {
-              label {
-                  display: block;
-                  font-weight: bold;
-                  font-size: 13px;
-                  margin-bottom: 0.25rem;
-              }
-              input, button {
-                  width: 100%;
-              }
+          label {
+              display: block;
+              font-weight: bold;
+              font-size: 13px;
+              margin-bottom: 0.25rem;
+          }
+      }
 
-              &.submit-button {
-                  align-self: end;
+      .input-wrapper {
+          label {
+              display: block;
+              font-weight: bold;
+              font-size: 13px;
+              margin-bottom: 0.25rem;
+          }
+          input, button {
+              width: 100%;
+          }
 
-                  button {
-                      @include pfinder-button;
-                  }
+          &.submit-button {
+              align-self: end;
+
+              button {
+                  @include pfinder-button;
               }
           }
-          .text-message-choice-wrapper {
-              @include for-size(tablet-down){
-                  grid-column: 1/4;
-              }
-              label {
-                  display: inline;
-              }
-              input[type="radio"] {
-                  display: inline;
-                  width: 20px;
-              }
-              br {
-                  clear:both;
-              }
+      }
+      .text-message-choice-wrapper {
+          @include for-size(tablet-down){
+              grid-column: 1/4;
+          }
+          label {
+              display: inline;
+          }
+          input[type="radio"] {
+              display: inline;
+              width: 20px;
+          }
+          br {
+              clear:both;
           }
       }
   }
-  &__program-information {
+}
+
+
+.overview {
     padding: var(--content-padding);
     display: flex;
     flex-flow: column;
+    margin: auto;
     @include mx.for-size(desktop-up){
-      gap: 75px;
+      max-width: 85vw;
+      gap: mx.px-to-rem(80px);
       flex-flow: row;
+      padding: var(--content-padding) 0;
     }
 
-    .overview {
+    &__content {
       @include mx.font-size(20px, 1.25);
       order: 2;
       margin-bottom: 2rem;
@@ -369,540 +366,203 @@ $pad3: 2rem;
         @include mx.font-size(24px, 1.25);
         order: 1;
         margin-bottom: 0;
-        flex: 1 0 calc(60% - 37.5px);
+        flex: 0 calc(60% - 40px);
       }
     }
 
-    .highlights {
+    &__highlights {
       order: 1;
+      @include mx.font-size(18px);
       @include mx.for-size(desktop-up){
           order: 2;
-          flex: 1 0  calc(40% - 37.5px);
+          flex: 0 1  calc(40% - 40px);
       }
-      ul {
-        list-style: none;
-        margin-bottom: 0rem;
-        margin-left:0;
-        padding:0;
-        padding-left:0;
 
-        li {
-          align-items: center;
-          display: flex;
-          font-size: 18px;
-          margin-bottom: 1.5rem;
+      strong {
+        text-transform: uppercase;
+      }
 
-          .icon {
-            display: inline;
-            padding-right: 0.5rem;
+    }
+    &__list {
+      list-style: none;
+      margin-bottom: 0rem;
+      margin-left:0;
+      padding:0;
+      padding-left:0;
+    }
+    &__item {
+      display: flex;
 
-            svg {
-              --icon-size: 1.5rem;
-              height: var(--icon-size);
-              width: var(--icon-size);
-              color: var(--umkc-blue);
-            }
-          }
-          strong {
-            text-transform: uppercase;
-          }
-          &.disclaimer {
-            padding: 1rem 0;
-            font-size: 16px;
-          }
-        }
+      margin-bottom: 1.5rem;
+
+      &--disclaimer {
+        padding: 1rem 0;
+        font-size: 16px;
+      }
+    }
+  .icon {
+    --icon-size: #{mx.px-to-rem(24px)};
+    margin-right: 0.675rem;
+    height: var(--icon-size);
+    width: var(--icon-size);
+    color: var(--umkc-blue);
+  }
+}
+
+// After Graduation
+.after-grad {
+  padding: var(--content-padding);
+  @include mx.for-size("desktop-up"){
+    display: flex;
+    max-width: 85vw;
+    margin: 0 auto;
+    gap: mx.px-to-rem(48px);
+    padding: var(--content) 0;
+  }
+
+  .disclaimer {
+    font-size: 16px;
+    flex-basis: 100%;
+  }
+  &__copy {
+    flex: 1 0;
+    h3 {
+      --heading-margin: 0;
+      --heading-color: var(--font-color);
+      @include mx.font-size(20px);
+    }
+    ul {
+      @include mx.font-size(20px);
+      padding: 0.5rem 0;
+    }
+  }
+  &__stats {
+    flex: 0 1 mx.px-to-rem(448px);
+  }
+
+  &__image {
+    display: block;
+    margin: 1rem auto;
+  }
+
+  &__items {
+    display: flex;
+    gap: 2rem;
+    flex-flow: column;
+    @include mx.for-size("desktop-up"){
+      flex-flow: row;
+      flex-flow: wrap;
+    }
+  }
+  &__item {
+    font-weight: bold;
+    flex-basis: calc(50% - 1rem);
+  }
+  &__title {
+    @include mx.font-size(48px, 1.5);
+    color: var(--umkc-blue);
+
+  }
+  &__content {
+    @include mx.font-size(24px);
+  }
+}
+
+//Explore Programs
+.pf-search {
+  $self: &;
+  display: flex;
+  gap: 2.5rem;
+  @include for-size("desktop-up") {
+    max-width: 85vw;
+    margin: 0 auto;
+  }
+
+  &__title{
+    --heading-size: #{mx.px-to-rem(24px)};
+    --heading-color: var(--font-color);
+    --heading-margin: 0 0 #{mx.px-to-rem(25px)};
+    font-family: var(--os);
+    text-transform: uppercase;
+  }
+  &__form {
+    padding: 2rem 1rem;
+    @include mx.for-size("tablet-landscape-up"){
+      flex: 1 0 35%;
+    }
+    @include mx.for-size("desktop-up"){
+      flex: 1 0 30%;
+    }
+
+  }
+  &__view-all{
+    margin-top: 2rem;
+  }
+
+  &__interests{
+    border-left: 1px solid var(--font-color);
+    padding: 2rem;
+    #{$self}__title{}
+  }
+
+  .icon {
+    height: 24px;
+    width: 24px;
+    color: var(--umkc-blue);
+  }
+  // Instant Search classes
+  .ais-SearchBox{
+    &-form{
+      display: flex;
+      justify-items: flex-end;
+    }
+    &-input{
+      height: 42px;
+      margin:0;
+      width: 100%;
+      border-radius: 10px;
+    }
+    &-submit{
+      background: var(--umkc-yellow);
+      appearance: none;
+      height: 42px;
+      border: solid 1px var(--umkc-yellow);
+      border-radius: 0 10px 10px 0;
+      margin-left:-38px;
+    }
+    &-reset{}
+    &-loadingIndicator{}
+  }
+
+  // Instant Search Classes
+  .ais-RefinementList{
+    &-list{
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      margin: 0;
+      padding:0;
+      gap: 1rem;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    &-item{
+      padding: 0;
+      flex-basis: calc( ( 100% / 3) - 1rem);
+      label {
+        display: flex;
+        align-items: center;
+      }
+      input[type="checkbox"]{
+        margin-right: 1rem;
+        flex: none;
       }
     }
   }
 }
 
-// After Graduation
-
-.after-grad {
-        background-color: var(--umkc-lighter-blue);
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-
-        .disclaimer {
-            font-size: 16px;
-        }
-
-    &__wrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
-        gap: 20px 20px;
-        grid-template-areas:
-            "a b"
-            "a d";
-
-        @include pfinder-margins;
-
-        @include for-size('desktop-down'){
-            gap: 10px 10px;
-            grid-template-columns: 1fr;
-            grid-template-rows: 1fr;
-            grid-template-areas:
-            "b"
-            "a"
-            "c"
-            "d";
-        }
-        .after-grad_copy {
-            grid-area: a;
-            ul {
-                list-style: circle;
-                padding-left: 0px;
-                margin-left: 0px;
-                margin-bottom: 1rem;
-                p { font-weight: bold; }
-                li { list-style-position: inside; }
-            }
-            .disclaimer {}
-        }
-
-        .after-grad_image {
-            grid-area: b;
-            align-self: center;
-
-            img {
-                margin:0 auto;
-                display: block;
-                // width: 100%;
-            }
-        }
-
-        .after-grad_stats {
-            grid-area: d;
-
-            .after-grad_stats-wrapper {
-                grid-column: 2/-1;
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-                margin-bottom: 2rem;
-
-                div {
-                    text-align: center;
-                    display: block;
-                    margin:0 auto;
-                    p {
-                        font-weight: bold;
-                        font-weight: 24px;
-                        padding: 0rem;
-                    }
-                    p:first-child {
-                        font-size: 56px;
-                        color: var(--umkc-blue);
-                    }
-                }
-            }
-        }
-    }
-}
 
 
-//Explore Programs
-
-.eprog {
-    .explore-programs {
-        .search-area {
-            background-color: var(--umkc-lighter-blue);
-            margin-bottom: 2rem;
-
-            .search-area-wrapper {
-                list-style: none;
-                display: grid;
-                grid-template-columns: 1fr;
-                column-gap: 0px;
-                grid-template-rows: repeat(3, 1fr);
-
-                @include pfinder-margins;
-
-                @include mx.for-size(desktop-up){
-                    grid-template-columns: 1fr 1fr;
-                    column-gap: 60px;
-                    grid-template-rows: repeat(1, 1fr);
-                }
-                h3 {
-                    @include pfinder-font(22px,--umkc-font-color);
-                    margin-bottom: 2rem;
-                }
-                .search-wrapper {
-                    margin: 2rem;
-                    #searchByKeyword {
-
-                        .search-by-keyboard-wrapper {
-                            display: flex;
-                            border-radius: 6px;
-                            margin: 0 auto;
-                            margin-bottom: 2rem;
-                            input[type="text"] {
-                                width: 100%;
-                                padding: 0.5rem 1rem;
-                            }
-                            .button {
-                                padding: 0.5rem;
-                                border-radius: 0 6px 6px 0px;
-                                line-height: 1rem;
-                                svg {
-                                    font-size: 1rem;
-                                    width: 30px;
-                                    height: 30px;
-                                }
-                            }
-                        }
-                    }
-                }
-                .area-wrapper {
-                    margin: 2rem;
-                    padding-left: 2rem;
-                    border-left: 1px solid var(--font-color);
-                    @include for-size(desktop-down){
-                        border-left: 0px;
-                        padding-left: 0px;
-                        overflow:scroll;
-                    }
-                    form#areaOfInterest {
-                        display:flex;
-                        flex-flow: wrap;
-                        flex-direction: row;
-                        list-style:none;
-                        gap: 10px;
-                        .input-wrapper {
-                            margin-bottom: 1rem;
-                            flex-basis: 0 calc((100% / 4) - 10px);
-                            input[type="checkbox"]{}
-                            label {}
-                        }
-                    }
-                }
-            }
-        }
-        .results-and-filter {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr); //Changed columns
-            grid-template-rows: repeat(1, 1fr); //Changed rows
-            margin: 3rem auto;
-
-            @include mx.for-size(desktop-up){
-                grid-template-columns: 20% 80%;
-                grid-template-rows: repeat(1, 1fr);
-                margin: auto;
-
-            }
-
-
-            .filter, .results {
-                padding: 1rem;
-                @include for-size(desktop-down){
-                    padding: 0rem;
-                }
-            }
-            .filter {
-                background: var(--umkc-lighter-blue);
-                padding: 2rem 0rem 3rem 3rem;
-                @include mx.for-size("desktop-up"){
-                    max-height: fit-content;
-                }
-                * {
-
-                }
-                h4 {
-                    @include pfinder-font(24px,--umkc-font-color);
-                    text-transform: uppercase;
-                }
-                h5 {
-                    font-size: 16px;
-                    font-weight: bold;
-                    color: $filter-gray;
-                    margin-bottom: 1rem;
-                }
-
-                .filter-input-wrapper {
-                    display: block;
-                    margin-bottom: 1rem;
-
-                    input {}
-                    select {
-                        width: 90%;
-                    }
-                }
-                // button {
-                //     margin-bottom: 1rem;
-                //     @include pfinder-button-secondary;
-                // }
-                .clear-filters {
-                    .icon {
-                        display: inline;
-                    }
-                    svg {
-                        height: 16px;
-                        width: 16px;
-                    }
-                }
-            }
-            .results {
-                margin-bottom: 4rem;
-
-                // @TODO: Not currently used on mobile
-
-                .results-top-bar {
-                    display: grid;
-                    grid-template-columns: 90% 10%;
-                    grid-template-rows: repeat(auto-fill, 1fr);
-                    margin-bottom: 2rem;
-
-                    .ais-CurrentRefinements {
-                        &-list {
-                            display: flex;
-                            gap: 15px;
-                            flex-direction: row;
-                            flex-wrap: wrap;
-                            justify-content: flex-start;
-                            list-style: none;
-                            margin-left:0;
-                        }
-                        &-item {
-                            padding: 15px;
-                            background-color: var(--umkc-blue);
-                            color: var(--white);
-
-                            &:hover, &:active {
-                                background-color: var(--umkc-dark-blue);
-                                @include mx.tr(background-color, 100ms);
-                            }
-                        }
-                        &-label {}
-                        &-category {}
-                        &-categoryLabel {}
-                        &-delete {
-                            background: transparent;
-                            color: white;
-                            border: 0px;
-
-                            &:hover, &:active {
-                                font-weight: bold;
-                            }
-                        }
-                    }
-
-                    .results-filter-tabs {
-                        display: flex;
-                        gap: 15px;
-                        flex-direction: row;
-                        flex-wrap: wrap;
-                        justify-content: flex-start;
-
-                        .results-filter-tabs_title, .results-filter-tabs_tab {
-                            text-transform: uppercase;
-                            display: block;
-                            flex-basis: auto;
-                            align-self: center;
-                            padding: 0.75rem 1rem 0.75rem 1.25rem;
-                        }
-                        .results-filter-tabs_title {
-                            font-weight: bold;
-                            @include pfinder-font(24px,--umkc-font-color);
-
-                        }
-                        .results-filter-tabs_tab {
-                            background-color: var(--umkc-blue);
-                            color: var(--white);
-
-                            &:hover, &:active {
-                                background-color: var(--umkc-dark-blue);
-                                @include mx.tr(background-color, 100ms);
-                            }
-
-                            .icon {
-                                display: inline;
-                                svg {
-                                    height: 18px;
-                                    width: 18px;
-                                }
-                            }
-                        }
-                    }
-
-
-                    //Switch between Grid and List in Desktop mode
-                    .results-display {
-                        display: flex;
-                        gap: 15px;
-                        flex-direction: row;
-                        flex-wrap: nowrap;
-                        justify-content: flex-start;
-                        align-items: center;
-
-                        button {
-                            display: block;
-                            padding: 0;
-                            border-radius: 0;
-                            background-color: transparent;
-                            color: var(--umkc-blue);
-                            svg {
-                                width: 40px;
-                                height: 40px;
-                            }
-                        }
-                    }
-                }
-                // Results Grid
-                .results-grid {
-                    .results-grid-wrapper {
-                        display: flex;
-                        gap: 40px;
-                        flex-direction: row;
-                        flex-wrap: wrap;
-                        justify-content: normal;
-                        align-items: normal;
-                        align-content: normal;
-                        margin-left: 0;
-
-
-                        li.results-program {
-                            display: block;
-                            flex-basis: auto;
-                            align-self: auto;
-                            background: white; // 12-12-24 added background color
-                            @include for-size(tablet-down){
-                                width: 100%;
-                                justify-content: center;
-                            }
-                            .results-program_image {
-                                background-repeat: no-repeat;
-                                background-position: center;
-                                background-size: cover;
-                                //@TODO: Determine proper sizing for these images
-                                min-height:200px;
-
-                                display: flex;
-                                gap: 0px;
-                                flex-direction: row;
-                                flex-wrap: nowrap;
-                                justify-content: flex-end;
-                                align-items: normal;
-                                align-content: normal;
-                                text-align: right;
-                                margin-bottom: 1.5rem;
-
-                                .results-program_button {
-                                    margin: 5px;
-                                    border-radius: 50%;
-                                    text-align: center;
-                                    line-height: 28px;
-                                    color: var(--white);
-                                    width: 30px;
-                                    height: 30px;
-                                    svg {
-                                        height: 20px;
-                                        width: 20px;
-                                    }
-                                }
-                                .results-program_button__remote {
-                                    background: $filter-light-blue;
-                                }
-                                .results-program_button__hybrid {
-                                    background: $filter-yellow;
-                                }
-                                .results-program_button__on-campus {
-                                    background: $filter-dark-blue;
-                                }
-                            }
-                            .results-program_text-wrapper {
-                                padding: 10px;
-                                .results-program_title-type {
-                                    font-size: 16px;
-                                    font-weight: bold;
-                                    text-transform: capitalize;
-                                    color: var(--umkc-dark-blue);
-                                }
-                                .results-program_title {
-                                    font-weight: 600;
-                                    margin: 0.5rem auto;
-                                    @include pfinder-font(24px,--umkc-blue);
-                                }
-                                .results-program_interest-list {
-                                    margin-bottom: 2rem;
-                                    li {}
-                                }
-                                .results-program_footer {
-                                    display: grid;
-                                    grid-template-columns: repeat(2, 1fr);
-                                    grid-template-rows: repeat(1, 1fr);
-                                    .results-program_footer-view-program {
-                                        a {}
-                                    }
-                                    .results-program_footer-compare {
-                                        #addToCompare {
-                                            text-align: right;
-
-                                            input[type="checkbox"] {}
-                                            label {}
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                // Attempting to use the exact same HTML that the grid view uses, but change out the classes using javascript
-                // Results List
-                .results-grid.results-list {
-                    .results-grid-wrapper {
-                        flex-direction: column; //Changed to column
-                        li.results-program {
-                            display: flex;
-                            flex-direction: column;
-                            padding: 2rem;
-                            background-color: #f6f6f6;
-
-                            &:nth-child(even){
-                                background-color: white;
-                            }
-
-                            .results-program_image {
-                                background-size: 0%; // Background-size to zero
-                                min-height:0px;
-                                max-height:0px;
-                                order: 3;
-                                justify-content: flex-start; //changed to flex-start
-                                margin-bottom: 2.5rem; // Increased margin
-                            }
-                            .results-program_text-wrapper {
-                                .results-program_title-type {
-                                    order: 1; // Changed flexbox order
-                                }
-                                .results-program_title {
-                                    margin: 0.25rem 0 0.25rem 0;
-                                    order: 2; // Changed flexbox order
-                                    text-align: left; // text alignment
-                                }
-                                .results-program_interest-list { display: none; }
-                                //@TODO reconfigure the grid logic so the program-footer can be included.
-                                .results-program_footer {
-                                    display: none;
-                                    .results-program_footer-view-program {
-                                        display: none;
-                                        a {}
-                                    }
-                                    .results-program_footer-compare {
-                                        #addToCompare {
-                                            input[type="checkbox"] {}
-                                            label {}
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
 
 // Compare Programs Flyout Elements
 

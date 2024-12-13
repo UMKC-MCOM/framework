@@ -6,14 +6,13 @@
 		{{> svg-sprites }}
 		{{> a11y-skip }}
 
-		{{> ks/program-finder-v2-learn-more-header }}
+		{{> pf/header }}
 		<div id="landing-page" class="main-content">
-			
-			<!-- {{> hero }} -->
-            {{> ks/program-finder-v2-learn-more-hero }}
-
+			{{> hero pf="true" }}
+      <!-- Meilisearch, form and interests list -->
+      {{> pf/ms_search }}
 			<!-- Program Finder -->
-			{{> ks/program-finder-v2-learn-more homesuite=""}}
+
 
 		</div>
 

@@ -6,20 +6,16 @@
 		{{> svg-sprites }}
 		{{> a11y-skip }}
 
-		{{> ks/program-finder-v2-header }}
+		{{> pf/header }}
 		<div id="landing-page" class="main-content">
-
-            {{> ks/program-finder-v2-hero }}
-
-			<!-- Breadcrumbs -->
-			<!-- {{> breadcrumbs }} -->
-
-			<!-- Program Finder -->
-			{{> ks/program-finder-v2-more-info homesuite=""}}
-
+      {{> hero pf="true" }}
+			{{> breadcrumbs }}
+			{{> pf/slate }}
+			{{> pf/overview }}
+			{{> pf/graduation-stats }}
 		</div>
 
-		{{> ks/program-finder-v2-mobile-menu }}
+		{{> pf/program-finder-v2-mobile-menu }}
 		{{> footer }}
 		{{> scripts }}
 
@@ -27,20 +23,20 @@
  <!-- Sticky Header and Submit Button -->
  <script type="text/javascript">
 	let scrollpos = window.scrollY
-	
-	const moreInfoRow = document.getElementById("more-info-row")  
+
+	const moreInfoRow = document.getElementById("more-info-row")
 	const header = document.getElementById("pfinder-main-navigation")
 	const afterGrad = document.getElementById("afterGrad")
 	const header_height = afterGrad.offsetHeight;
-	
+
 	  const add_header_class_on_scroll = () => header.classList.add("sticky-nav");
 	  const remove_header_class_on_scroll = () => header.classList.remove("sticky-nav");
 	  const add_moreInfoRow_class_on_scroll = () => moreInfoRow.classList.add("sticky-form");
 	  const remove_moreInfoRow_class_on_scroll = () => moreInfoRow.classList.remove("sticky-form");
-	
-	  window.addEventListener('scroll', function() { 
+
+	  window.addEventListener('scroll', function() {
 		scrollpos = window.scrollY;
-	
+
 		if (scrollpos >= header_height) { add_header_class_on_scroll() }
 		else { remove_header_class_on_scroll() }
 
