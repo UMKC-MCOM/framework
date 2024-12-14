@@ -530,25 +530,165 @@ $pad3: 2rem;
     }
   }
 
-  &-InfiniteHits {
-    padding: var(--content-padding);
-    &-list{
-      list-style: none;
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-between;
-      gap: 1rem;
-      margin: 0;
-      padding: 0;
-    }
-    &-item{
-      flex-basis: 340px;
-      background: var(--umkc-gray);
-      margin: 0;
+  // &-InfiniteHits {
+  //   padding: var(--content-padding);
+  //   &-list{
+  //     list-style: none;
+  //     display: flex;
+  //     flex-flow: row wrap;
+  //     justify-content: space-between;
+  //     gap: 1rem;
+  //     margin: 0;
+  //     padding: 0;
+  //   }
+  //   &-item{
+  //     flex-basis: 340px;
+  //     background: var(--umkc-gray);
+  //     margin: 0;
+  //   }
+  // }
+}
+
+.results {
+  .ais {
+    &-InfiniteHits {
+      padding: var(--content-padding);
+      &-list{
+        list-style: none;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        gap: 1rem;
+        margin: 0;
+        padding: 0;
+      }
+      &-item{
+        flex-basis: 340px;
+        background: var(--umkc-gray);
+        margin: 0;
+      }
+
+      &-loadMore {
+        background: var(--umkc-yellow);
+        color: var(--umkc-blue);
+        border-radius: 8px;
+        border: none;
+        padding: 1rem;
+        display: block;
+        text-align: center;
+        margin: 2rem auto;
+        font-family: var(--os);
+        font-weight: bold;
+        text-transform: uppercase;
+        @include mx.font-size(18px);
+
+        &:hover, &:focus {
+          background: var(--umkc-blue);
+          color: var(--white);
+        }
+      }
     }
   }
+  &__list{
+    &--listing{
+      .ais {
+        &-InfiniteHits {
+          &-list {
+            flex-flow: column;
+          }
+          &-item {
+            flex-basis: unset;
+          }
+        }
+      }
+      .result {
+        height: mx.px-to-rem(142px);
+        &__image, &__interest {
+          display: none;
+        }
+        &__content {
+          padding: 1rem 2rem;
+        }
+        &__title {
+          --heading-margin: 0.5rem 0 3rem;
+        }
+        &__footer {
+          display: inline-block;
+          position: absolute;
+          right: 2rem;
+          top: 2.75rem;
+          white-space: nowrap;
+          p {
+            padding: 0 0 0.5rem;
+          }
 
+        }
+        .icon {
+          top: unset;
+          bottom: 1rem;
+          left: 2rem;
+        }
+      }
+    }
+  }
 }
+
+.filter-views {
+  position: relative;
+  margin: 0 var(--content-padding);
+  min-height: 66px;
+  &__active {
+    display: none;
+    .ais {
+      &-CurrentRefinements{
+        display: flex;
+        &-list {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          text-transform: capitalize;
+        }
+        &-label {
+          font-weight: bold;
+        }
+        &-item {
+          height: 66px;
+          background: var(--umkc-blue);
+          color: white;
+          padding: 1rem;
+        }
+        &-delete {
+          background: none;
+          border: none;
+          color: white;
+        }
+      }
+    }
+  }
+  &__buttons {
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: right;
+    button {
+      padding: 1rem;
+      color: var(--umkc-blue);
+      background: var(--umkc-gray);
+      &.active {
+        background: var(--umkc-yellow);
+      }
+      &:hover, &:focus {
+        background: var(--umkc-blue);
+        color: white;
+      }
+    }
+    .icon {
+      height: 32px;
+      width: 32px;
+    }
+  }
+}
+
 
 //Explore Programs
 .pf-search {
@@ -628,6 +768,10 @@ $pad3: 2rem;
   &__clear {
     margin-top: 1rem;
   }
+
+  &__list {
+    flex-grow: 1;
+  }
 }
 
 .result {
@@ -638,16 +782,59 @@ $pad3: 2rem;
     object-fit: cover;
     object-position: center center;
    }
-
-   .icon {
-     position: absolute;
-     top: 1rem;
-     right: 1rem;
-     height: 10px;
-     width: 10px;
-     color: red;
-     z-index: 2;
+   &__content{
+     padding: 1rem;
    }
+   &__type {
+     text-transform: capitalize;
+     font-weight: bold;
+     color: var(--umkc-blue);
+   }
+   &__title {
+     --heading-size: #{mx.px-to-rem(24px)};
+     font-family: var(--os);
+     text-transform: uppercase;
+   }
+   &__footer{
+     display: flex;
+
+     p {
+       flex-basis: 50%;
+
+       &:last-child{
+         // display: none;
+         text-align: right;
+         justify-self: end;
+       }
+     }
+
+     .form__label {
+       padding: 0;
+       input[type='checkbox'] {
+         margin-right: 0.675rem;
+       }
+     }
+   }
+   .icon {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    height: 32px;
+    width: 32px;
+    padding:0.25rem;
+    color: white;
+    z-index: 2;
+    border-radius: 100%;
+    &--online {
+      background: var(--umkc-yellow);
+    }
+    &--in-person {
+      background: var(--umkc-dark-blue);
+    }
+    &--hybrid {
+      background: var(--umkc-light-blue);
+    }
+  }
 }
 
 // Compare Programs Flyout Elements

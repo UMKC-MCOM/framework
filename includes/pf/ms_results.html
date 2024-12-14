@@ -1,76 +1,43 @@
-<div class="results" id="results-toggle" aria-hidden="false">
-    <div class="results-top-bar">
-        <div class="results-filter-tabs">
-          <div class="results-filter-tabs_title">Active Filters</div>
-          <div id="active-ref"><div class="ais-CurrentRefinements ais-CurrentRefinements--noRefinement"><ul class="ais-CurrentRefinements-list results-filter-tabs"></ul></div></div>
-        </div>
-        <div class="results-display">
-            <button type="submit" class="button button--umkc-yellow" id="listView">
-                <svg class="icon"><use xlink:href="#menu-icon"></use></svg>
-            </button>
-            <button type="submit" class="button button--umkc-yellow" id="filterView">
-                <svg class="icon"><use xlink:href="#flame"></use></svg>
-            </button>
-        </div>
+<div class="filter-views">
+  <div id="active-ref" class="filter-views__active">
+    <div class="ais-CurrentRefinements">
+      <ul class="ais-CurrentRefinements-list">
+        <li class="ais-CurrentRefinements-item">
+          <span class="ais-CurrentRefinements-label">Level: </span>
+          <span class="ais-CurrentRefinements-category">
+            <span class="ais-CurrentRefinements-categoryLabel">graduate</span>
+            <button class="ais-CurrentRefinements-delete icon" type="button">✕</button>
+          </span>
+        </li>
+      </ul>
     </div>
-    <div id="listArea" aria-hidden="false">
+  </div>
+  <div class="filter-views__buttons">
+    <button class="button o-btn active" id="listView" data-view="listing">
+        <svg class="icon"><use xlink:href="#list"></use></svg>
+    </button>
+    <button class="button o-btn" id="filterView" data-view="grid">
+        <svg class="icon"><use xlink:href="#grid"></use></svg>
+    </button>
+  </div>
+</div>
+<div class="results" id="results-toggle" aria-hidden="false">
+    <div id="listArea" aria-hidden="false" class="results__list results__list--listing">
       <div class="ais-InfiniteHits">
         <ol class="ais-InfiniteHits-list">
           <li class="ais-InfiniteHits-item">
             <div class="result">
               <img src="https://programsdev.umkc.edu/program-pages/images/thumbnails/legal-studies-thumb-500x333.webp" alt="" class="result__image" />
-              <svg class="icon"><use href="#computer"></use></svg>
+              <svg class="icon icon--hybrid"><use href="#hybrid"></use></svg>
               <div class="result__content">
                 <p class="result__type">graduate</p>
                 <h3 class="result__title">Legal Studies</h3>
-                <p><strong>Interests:</strong> Law, Public Safety, Corrections and Security</p>
+                <p class="result__interest"><strong>Interests:</strong> Law, Public Safety, Corrections and Security</p>
                 <div class="result__footer">
                   <p>
                     <a href="/pf-v2-test/graduate/school-of-law/legal-studies.php">View Program <span class="sr-only">for Legal Studies&gt;</span></a></p>
                   <p><label class="form__label"><input type="checkbox" />Compare</label></p>
                 </div>
-              </div>
-            </div>
-          </li>
-          <li class="ais-InfiniteHits-item">
-            <div class="" style="background-image: url('https://programsdev.umkc.edu/program-pages/images/thumbnails/legal-studies-thumb-500x333.webp');">
-              <div class="results-program_button results-program_button__remote"><svg class="icon"><use href="#computer"></use></svg>
-              </div>
-            </div>
-            <div class="results-program_text-wrapper">
-              <p class="results-program_title-type">graduate</p>
-              <h3 class="results-program_title">Legal Studies</h3>
-              <p><strong>Interests:</strong> Law, Public Safety, Corrections and Security</p>
-              <div class="results-program_footer">
-                <p><a href="/pf-v2-test/graduate/school-of-law/legal-studies.php">View Program <span class="sr-only">for Legal Studies&gt;</span></a></p>
-              </div>
-            </div>
-          </li>
-          <li class="ais-InfiniteHits-item results-program">
-            <div class="results-program_image" style="background-image: url('https://programsdev.umkc.edu/program-pages/images/thumbnails/legal-studies-thumb-500x333.webp');">
-              <div class="results-program_button results-program_button__remote"><svg class="icon"><use href="#computer"></use></svg>
-              </div>
-            </div>
-            <div class="results-program_text-wrapper">
-              <p class="results-program_title-type">graduate</p>
-              <h3 class="results-program_title">Legal Studies</h3>
-              <p><strong>Interests:</strong> Law, Public Safety, Corrections and Security</p>
-              <div class="results-program_footer">
-                <p><a href="/pf-v2-test/graduate/school-of-law/legal-studies.php">View Program <span class="sr-only">for Legal Studies&gt;</span></a></p>
-              </div>
-            </div>
-          </li>
-          <li class="ais-InfiniteHits-item results-program">
-            <div class="results-program_image" style="background-image: url('https://programsdev.umkc.edu/program-pages/images/thumbnails/legal-studies-thumb-500x333.webp');">
-              <div class="results-program_button results-program_button__remote"><svg class="icon"><use href="#computer"></use></svg>
-              </div>
-            </div>
-            <div class="results-program_text-wrapper">
-              <p class="results-program_title-type">graduate</p>
-              <h3 class="results-program_title">Legal Studies</h3>
-              <p><strong>Interests:</strong> Law, Public Safety, Corrections and Security</p>
-              <div class="results-program_footer">
-                <p><a href="/pf-v2-test/graduate/school-of-law/legal-studies.php">View Program <span class="sr-only">for Legal Studies&gt;</span></a></p>
               </div>
             </div>
           </li>
