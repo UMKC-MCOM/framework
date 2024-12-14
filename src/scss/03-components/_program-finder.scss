@@ -1,60 +1,8 @@
 @use "../01-abstracts/variables" as var;
 @use "../01-abstracts/mixins" as mx;
 
-// Simple breakpoint media query. Uses basic sizes to determin the upper limit and useful names to
-// determine the upper boundary.
-@mixin for-size($range) {
-    $phone-upper-boundary: 600px !default;
-    $tablet-portrait-upper-boundary: 900px !default;
-    $tablet-landscape-upper-boundary: 1200px !default;
-    $desktop-upper-boundary: 1800px !default;
-
-    @if $range == phone-only {
-      @media (max-width: #{$phone-upper-boundary - 1}) { @content; }
-    } @else if $range == desktop-down {
-      @media (max-width: $tablet-landscape-upper-boundary) { @content; }
-    } @else if $range == tablet-down {
-        @media (max-width: $tablet-portrait-upper-boundary) { @content; }
-      }
-        @else {
-      @warn "You selected a MQ size that doesn't exist. Try again.";
-    }
-  }
-
-//Colors
-$filter-gray: #707070;
-$filter-light-blue: #7ACBF2;
-$filter-yellow:#FFD52E;
-$filter-dark-blue:#04487F;
-
 //Sizing
 
-@mixin pfinder-button {
-    font-weight: bold;
-    background-color: var(--umkc-yellow);
-    padding: 0.75rem 2rem;
-    text-decoration: none;
-    @include pfinder-font(24px,--umkc-dark-blue);
-
-    &:hover, &:active {
-        background-color: var(--umkc-navy);
-        color: var(--umkc-yellow);
-        text-decoration: none;
-    }
-}
-@mixin pfinder-button-secondary {
-    font-weight: bold;
-    background-color: var(--umkc-yellow);
-    padding: 0.5rem 1.75rem;
-    text-decoration: none;
-    @include pfinder-font(16px,--umkc-dark-blue);
-
-    &:hover, &:active {
-        background-color: var(--umkc-navy);
-        color: var(--umkc-yellow);
-        text-decoration: none;
-    }
-}
 
 $pad: 6rem;
 $pad2: 4rem;
@@ -175,7 +123,7 @@ $pad3: 2rem;
 //         margin: 0 auto;
 //         font-size: 28px;
 //         @include mx.for-size("desktop-up"){
-//             @include pfinder-button();
+
 //             border-top-left-radius: 0;
 //             border-top-right-radius: 0;
 //         }
@@ -322,13 +270,13 @@ $pad3: 2rem;
               align-self: end;
 
               button {
-                  @include pfinder-button;
+                  
               }
           }
       }
       .text-message-choice-wrapper {
-          @include for-size(tablet-down){
-              grid-column: 1/4;
+          grid-column: 1/4;
+          @include mx.for-size(tablet-portrait-up){
           }
           label {
               display: inline;
@@ -343,7 +291,6 @@ $pad3: 2rem;
       }
   }
 }
-
 
 .overview {
     padding: var(--content-padding);
@@ -636,40 +583,53 @@ $pad3: 2rem;
 .filter-views {
   position: relative;
   margin: 0 var(--content-padding);
-  min-height: 66px;
+  // height: 66px;
+  display: flex;
+  gap: 2rem;
   &__active {
-    display: none;
+    flex: 1;
     .ais {
       &-CurrentRefinements{
-        display: flex;
         &-list {
           list-style: none;
           margin: 0;
           padding: 0;
-          text-transform: capitalize;
         }
         &-label {
+          font-family: var(--os);
+          text-transform: uppercase;
           font-weight: bold;
         }
         &-item {
-          height: 66px;
-          background: var(--umkc-blue);
-          color: white;
-          padding: 1rem;
+          
+          
+        }
+        &-category {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          text-transform: capitalize;
+        }
+        &-categoryLabel{
         }
         &-delete {
+          border: solid 1px var(--umkc-dark-blue);
           background: none;
-          border: none;
-          color: white;
+          border-radius: 100%;
+          font-size: 10px;
+          margin-left: 0.5rem;
+          
+          &:hover, &:focus {
+            background: var(--umkc-dark-blue);
+            color: white;
+          }
         }
       }
     }
   }
   &__buttons {
-    position: absolute;
-    top: 0;
-    right: 0;
-    text-align: right;
+    flex-basis: 0 136px;
+    justify-self: flex-end;
     button {
       padding: 1rem;
       color: var(--umkc-blue);
@@ -695,7 +655,7 @@ $pad3: 2rem;
   $self: &;
   display: flex;
   gap: 2.5rem;
-  @include for-size("desktop-up") {
+  @include mx.for-size("desktop-up") {
     max-width: 85vw;
     margin: 0 auto;
   }
@@ -849,9 +809,9 @@ $pad3: 2rem;
     transform: rotate(-90deg);
     padding: 1rem 2rem;
     z-index:3;
-
-    @include for-size(desktop-down){
-        display: none;
+    display: none;
+    @include mx.for-size(desktop-up){
+        display: block
     }
 
     transition: 0.1s ease background-color;
@@ -998,13 +958,13 @@ $pad3: 2rem;
                         }
                     }
                     .results-program_button__remote {
-                        background: $filter-light-blue;
+                        background: var(--umkc-lighter-blue);
                     }
                     .results-program_button__hybrid {
-                        background: $filter-yellow;
+                        background: var(--umkc-yellow);
                     }
                     .results-program_button__on-campus {
-                        background: $filter-dark-blue;
+                        background: var(--umkc-dark-blue);
                     }
                 }
                 .results-program_title-type {
@@ -1106,13 +1066,13 @@ $pad3: 2rem;
                         }
                     }
                     .results-program_button__remote {
-                        background: $filter-light-blue;
+                        background: var(--umkc-lighter-blue);
                     }
                     .results-program_button__hybrid {
-                        background: $filter-yellow;
+                        background: var(--umkc-yellow);
                     }
                     .results-program_button__on-campus {
-                        background: $filter-dark-blue;
+                        background: var(--umkc-dark-blue);
                     }
                 }
                 .results-program_text-wrapper {
@@ -1153,74 +1113,3 @@ $pad3: 2rem;
         }
     }
 }
-
-
-// Program Finder Learn More Nav Element
-// This should all be depreciated
-// .more-info-row__hidden {
-//     position: fixed;
-//     top: 3rem;
-//     left: 0;
-//     right: 0;
-//     overflow: hidden;
-//     z-index: -1;
-//     display: none;
-//     height: 0px;
-
-//     transition: 1s ease height;
-// }
-// .more-info-row__shown {
-//     z-index: 998;
-//     display: block;
-//     height: auto;
-
-//     transition: 1s ease height;
-// }
-
-
-// 4 Different "Screens" on the Search/Results page
-// The are some lazy fill-ins until further planning
-
-
-@media screen and (max-width: 1200px) {
-    // Toggles
-    #search-toggle[aria-hidden="true"] {
-        display: none;
-    }
-    #search-toggle[aria-hidden="false"] {
-        display: flex;
-        position: fixed;
-        top:0;left:0;right:0;bottom:0;
-        z-index:2;
-
-        .search-wrapper, .area-wrapper {
-            margin:0;
-        }
-    }
-    #filter-toggle[aria-hidden="true"] {
-        display: none;
-    }
-    #filter-toggle[aria-hidden="false"] {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top:0;left:0;right:0;bottom:0;
-        z-index:2;
-    }
-    #compare-toggle[aria-hidden="true"] {
-        display: none;
-    }
-    #compare-toggle[aria-hidden="false"] {
-
-    }
-    #resultsTopBar { display: none; }
-}
-
-
-// Leftover code from my previous attempt to use #data-toggles on the more-info-row
-// #more-info-row[aria-hidden="true"]{
-//     display: none;
-// }
-// #more-info-row[aria-hidden="false"]{
-//     display: grid;
-// }
