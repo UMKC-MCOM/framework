@@ -43,7 +43,7 @@
     position: static;
     transform: translateY(0);
   }
-  
+
   &--pfinder {
     // .main-navigation--pfinder
     // TO DO: Add sticky components
@@ -51,19 +51,24 @@
     // TO DO: Add CE's active/hover states
     border-top: transparent;
     --nav-background: var(--umkc-blue);
-    
+    display: none;
     @include mx.for-size("desktop-up"){
+      z-index: 5;
+    }
+
+    &.is-sticky {
       position: fixed;
       top: 0;
       bottom: unset;
+      display: block;
     }
-    
-  
+
+
     #{$self}__list {
       justify-content: flex-start;
       position: relative;
     }
-  
+
     #{$self}__item {
       font-family: var(--os);
       font-weight: 400;
@@ -83,13 +88,13 @@
           text-transform: uppercase;
         }
         &::before {
-          
-        }  
+
+        }
       }
-      
+
     }
   }
-  
+
   &__list {
     display: flex;
     flex-flow: column wrap;

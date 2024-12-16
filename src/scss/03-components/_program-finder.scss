@@ -138,6 +138,17 @@
           }
       }
   }
+  &--copy {
+    position: fixed;
+    top: -360px;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    @include mx.tr();
+    &--active{
+      top: 59px;
+    }
+  }
 }
 
 .overview {
@@ -300,7 +311,11 @@
     }
     &-item{
       padding: 0;
-      flex-basis: calc( ( 100% / 3) - 1rem);
+      flex-basis: calc( ( 100% / 2) - 1rem);
+      @include mx.for-size("desktop-up"){
+        flex-basis: calc( ( 100% / 3) - 1rem);
+      }
+
       label {
         display: flex;
         align-items: center;
@@ -507,9 +522,11 @@
   $self: &;
   display: flex;
   gap: 2.5rem;
+  flex-flow: column;
   @include mx.for-size("desktop-up") {
     max-width: 85vw;
     margin: 0 auto;
+    flex-flow: row;
   }
 
   &__title{
@@ -522,10 +539,10 @@
   &__form {
     padding: 2rem 1rem;
     @include mx.for-size("tablet-landscape-up"){
-      flex: 1 0 35%;
+      flex: 0 0 35%;
     }
     @include mx.for-size("desktop-up"){
-      flex: 1 0 30%;
+      flex: 0 0 30%;
     }
 
   }
@@ -534,8 +551,12 @@
   }
 
   &__interests{
-    border-left: 1px solid var(--font-color);
+    border-top: 1px solid var(--font-color);
     padding: 2rem;
+    @include mx.for-size("tablet-landscape-up"){
+      border-top: none;
+      border-left: 1px solid var(--font-color);
+    }
     #{$self}__title{}
   }
 
