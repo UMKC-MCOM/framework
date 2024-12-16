@@ -1,209 +1,6 @@
 @use "../01-abstracts/variables" as var;
 @use "../01-abstracts/mixins" as mx;
 
-// Simple breakpoint media query. Uses basic sizes to determin the upper limit and useful names to
-// determine the upper boundary.
-@mixin for-size($range) {
-    $phone-upper-boundary: 600px !default;
-    $tablet-portrait-upper-boundary: 900px !default;
-    $tablet-landscape-upper-boundary: 1200px !default;
-    $desktop-upper-boundary: 1800px !default;
-
-    @if $range == phone-only {
-      @media (max-width: #{$phone-upper-boundary - 1}) { @content; }
-    } @else if $range == desktop-down {
-      @media (max-width: $tablet-landscape-upper-boundary) { @content; }
-    } @else if $range == tablet-down {
-        @media (max-width: $tablet-portrait-upper-boundary) { @content; }
-      }
-        @else {
-      @warn "You selected a MQ size that doesn't exist. Try again.";
-    }
-  }
-
-//Colors
-$filter-gray: #707070;
-$filter-light-blue: #7ACBF2;
-$filter-yellow:#FFD52E;
-$filter-dark-blue:#04487F;
-
-//Sizing
-
-@mixin pfinder-button {
-    font-weight: bold;
-    background-color: var(--umkc-yellow);
-    padding: 0.75rem 2rem;
-    text-decoration: none;
-    @include pfinder-font(24px,--umkc-dark-blue);
-
-    &:hover, &:active {
-        background-color: var(--umkc-navy);
-        color: var(--umkc-yellow);
-        text-decoration: none;
-    }
-}
-@mixin pfinder-button-secondary {
-    font-weight: bold;
-    background-color: var(--umkc-yellow);
-    padding: 0.5rem 1.75rem;
-    text-decoration: none;
-    @include pfinder-font(16px,--umkc-dark-blue);
-
-    &:hover, &:active {
-        background-color: var(--umkc-navy);
-        color: var(--umkc-yellow);
-        text-decoration: none;
-    }
-}
-
-$pad: 6rem;
-$pad2: 4rem;
-$pad3: 2rem;
-@mixin pfinder-margins {
-    margin: 0 auto;
-    @include mx.for-size(phone-only){
-        // max-width: 500px;
-        padding-left: $pad3;
-        padding-right: $pad3;
-    };
-    @include mx.for-size(tablet-portrait-up){
-        // max-width: 600px;
-        padding-left: $pad3;
-        padding-right: $pad3;
-    };
-    @include mx.for-size(tablet-landscape-up){
-        // max-width: 1000px;
-        padding-left: $pad2;
-        padding-right: $pad2;
-    };
-    @include mx.for-size(desktop-up){
-        // max-width: 1200px;
-        padding-left: $pad2;
-        padding-right: $pad2;
-    };
-    @include mx.for-size(big-desktop-up){
-        // max-width: 1600px;
-        padding-left: $pad;
-        padding-right: $pad;
-    };
-}
-
-@mixin pfinder-font($s, $c){
-    color: var($c);
-    font-family: var(--os);
-    font-size: $s;
-    text-transform: uppercase;
-}
-
-// Nav
-// .main-navigation.pfinder-navigation { // Removed this after Greg's renaming edits
-// @TODO: Place this code properly in the navigation SCSS file
-// .main-navigation.main-navigation--pfinder {
-//     background-color: var(--umkc-lighter-blue) !important; //@TODO Destroy these disgusting !important tags by incorporating the code properly into nav.scss
-//     border-top: 0px solid transparent;
-//     // display: none;
-//
-//     @include mx.for-size("desktop-up"){
-//         background-color: var(--umkc-blue) !important; //@TODO Destroy these disgusting !important tags by incorporating the code properly into nav.scss
-//         display: none;
-//     }
-//     & .main-navigation__list {
-//         align-content: flex-start;
-//         flex-flow: column;
-//         width: 100%;
-//
-//         @include mx.for-size("desktop-up"){
-//             justify-content: flex-start;
-//             flex-flow: row;
-//         }
-//
-//     }
-//     & .main-navigation__item {
-//         background-color: none;
-//         border-bottom: 1px solid var(--white);
-//         width: 100%;
-//         padding: 1.5rem 3rem;
-//
-//         @include mx.for-size("desktop-up"){
-//             width: auto;
-//             border-bottom: 0px solid transparent;
-//             padding: 0.5rem var(--link-margin, 1.5rem);
-//         }
-//     }
-//     & .main-navigation__link {
-//         @include pfinder-font(22px,--umkc-dark-blue);
-//
-//         @include mx.for-size("desktop-up"){
-//             color: var(--white);
-//             text-transform: none;
-//             font-weight: 400;
-//
-//         }
-//
-//         &:active, &.active {
-//             text-decoration: underline;
-//             text-underline-offset: 5px;
-//         }
-//         &:hover {
-//             text-decoration: underline;
-//             text-underline-offset: 10px;
-//             text-decoration-thickness: 3px;
-//         }
-//     }
-//     & .pfinder__request-more-info {
-//         background: var(--umkc-yellow);
-//         padding: 1rem;
-//         position:absolute;
-//         top: auto;
-//         bottom:0;
-//         left:0;
-//         right:0;
-//
-//         @include mx.for-size("desktop-up"){
-//             background: transparent;
-//             top: -16px;
-//             right: 20px;
-//             bottom: auto;
-//             left: auto;
-//         }
-//
-//         &:hover, &:focus {
-//             background-color: inherit;
-//         }
-//     }
-//     & .pfinder__request-more-info-button {
-//         margin: 0 auto;
-//         font-size: 28px;
-//         @include mx.for-size("desktop-up"){
-//             @include pfinder-button();
-//             border-top-left-radius: 0;
-//             border-top-right-radius: 0;
-//         }
-//     }
-//
-//     &.sticky-nav {
-//         display: flex;
-//         position: fixed;
-//         z-index: 2;
-//
-//         top: 0;
-//
-//         @include mx.for-size("desktop-up"){
-//             top: 0;
-//             left: 0;
-//             right: 0;
-//             bottom: auto;
-//         }
-//
-//         .main-navigation__item {
-//             flex: 0;
-//             @include mx.for-size("desktop-up"){
-//                 flex: none;
-//             }
-//         }
-//     }
-// }
-
 // Mobile Nav
 .menu.pfinder-mobile-menu {
     background-color: var(--umkc-dark-blue);
@@ -216,7 +13,7 @@ $pad3: 2rem;
         background: transparent;
     }
     .menu__item-menu-label span {
-        @include pfinder-font(22px,--white);
+
     }
     .menu__link {
         background: transparent;
@@ -283,10 +80,9 @@ $pad3: 2rem;
       }
       .form_action {
           text-align: center;
-          padding-top:0px;
 
           @include mx.for-size(desktop-up){
-              padding-top: 25%;
+              align-content: center;
           }
       }
       #form_page_1 {
@@ -322,13 +118,14 @@ $pad3: 2rem;
               align-self: end;
 
               button {
-                  @include pfinder-button;
+                  // @include pfinder-button;
               }
           }
       }
       .text-message-choice-wrapper {
-          @include for-size(tablet-down){
-              grid-column: 1/4;
+        grid-column: 1/4;
+          @include mx.for-size(tablet-portrait-up){
+              // grid-column: 1/4;
           }
           label {
               display: inline;
@@ -695,7 +492,7 @@ $pad3: 2rem;
   $self: &;
   display: flex;
   gap: 2.5rem;
-  @include for-size("desktop-up") {
+  @include mx.for-size("desktop-up") {
     max-width: 85vw;
     margin: 0 auto;
   }
@@ -849,9 +646,9 @@ $pad3: 2rem;
     transform: rotate(-90deg);
     padding: 1rem 2rem;
     z-index:3;
-
-    @include for-size(desktop-down){
-        display: none;
+    display: none;
+    @include mx.for-size("desktop-up"){
+        display: block;
     }
 
     transition: 0.1s ease background-color;
@@ -917,9 +714,12 @@ $pad3: 2rem;
     }
 
     h3 {
+      --heading-size: #{mx.px-to-rem(24px)};
+      --heading-color: var(--umkc-dark-blue);
+      font-family: var(--os);
+      text-transform: uppercase;
         font-weight: bold;
         margin: 0 0 2rem;
-        @include pfinder-font(24px,--umkc-dark-blue);
     }
 
     //@TODO: Repair the compare flyout close button to match Courtney design 10/30
@@ -998,13 +798,13 @@ $pad3: 2rem;
                         }
                     }
                     .results-program_button__remote {
-                        background: $filter-light-blue;
+                        background: var(--umkc-lighter-blue);
                     }
                     .results-program_button__hybrid {
-                        background: $filter-yellow;
+                        background: var(--umkc-yellow);
                     }
                     .results-program_button__on-campus {
-                        background: $filter-dark-blue;
+                        background: var(--umkc-dark-blue);
                     }
                 }
                 .results-program_title-type {
@@ -1013,10 +813,11 @@ $pad3: 2rem;
                     color: var(--umkc-dark-blue);
                 }
                 .results-program_title {
-
+                  --heading-size: #{mx.px-to-rem(24px)};
+                  --heading-color: var(--umkc-blue);
+                  font-family: var(--os);
                     font-weight: 600;
                     margin: 0.5rem auto;
-                    @include pfinder-font(24px,--umkc-blue);
                 }
                 .results-program_interest-list {
                     margin-bottom: 2rem;
@@ -1049,7 +850,9 @@ $pad3: 2rem;
                 .compare-flyout-program_title {
                     font-weight: 600;
                     margin: 0.25rem auto 0.5rem auto;
-                    @include pfinder-font(24px,--umkc-blue);
+                    --heading-size: #{mx.px-to-rem(24px)};
+                    --heading-color: var(--umkc-blue);
+                    font-family: var(--os);
                 }
                 .compare-flyout-program_interest-list {
                     margin-bottom: 3rem;
@@ -1106,13 +909,13 @@ $pad3: 2rem;
                         }
                     }
                     .results-program_button__remote {
-                        background: $filter-light-blue;
+                        background: var(--umkc-lighter-blue);
                     }
                     .results-program_button__hybrid {
-                        background: $filter-yellow;
+                        background: var(--umkc-yellow);
                     }
                     .results-program_button__on-campus {
-                        background: $filter-dark-blue;
+                        background: var(--umkc-dark-blue);
                     }
                 }
                 .results-program_text-wrapper {
@@ -1124,9 +927,12 @@ $pad3: 2rem;
                         color: var(--umkc-dark-blue);
                     }
                     .results-program_title {
+                      --heading-size: #{mx.px-to-rem(24px)};
+                      --heading-color: var(--umkc-blue);
+                      font-family: var(--os);
                         font-weight: 600;
                         margin: 0.5rem auto;
-                        @include pfinder-font(24px,--umkc-blue);
+
                     }
                     .results-program_interest-list {
                         margin-bottom: 2rem;
