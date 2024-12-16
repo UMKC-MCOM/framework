@@ -46,6 +46,7 @@ function createMenu(){
   reqInfoButtons.forEach( (btn) => {
     btn.addEventListener('click', (item) => {
       item.preventDefault();
+      item.target.classList.toggle("active");
       formClone.classList.toggle("pf-request_info--copy--active");
     });
   });

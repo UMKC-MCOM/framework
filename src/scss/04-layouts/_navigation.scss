@@ -86,9 +86,22 @@
           padding: 0.75rem 2rem;
           font-weight: bold;
           text-transform: uppercase;
-        }
-        &::before {
-
+          @include mx.tr();
+          &:hover, &:focus {
+            background: var(--umkc-dark-blue);
+            color: var(--white);
+          }
+          .close {
+            display: none;
+          }
+          &.active {
+            .close {
+              display: block;
+            }
+            .req {
+              display: none;
+            }
+          }
         }
       }
 

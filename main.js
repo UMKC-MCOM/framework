@@ -18,7 +18,7 @@ import '/src/js/video-shorts.js'
 import '/src/js/count-up.js'
 import '/src/js/consent.js'
 import '/src/js/program-finder.js'
-import '/src/js/pfinder-compare.js'
+// import '/src/js/pfinder-compare.js'
 
 // Timline SVGs
 // These files are not loaded in Cascade, but are needed for testing here.
