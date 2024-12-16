@@ -118,7 +118,6 @@
               align-self: end;
 
               button {
-                  // @include pfinder-button;
               }
           }
       }
@@ -140,7 +139,6 @@
       }
   }
 }
-
 
 .overview {
     padding: var(--content-padding);
@@ -354,7 +352,7 @@
         list-style: none;
         display: flex;
         flex-flow: row wrap;
-        justify-content: space-between;
+        justify-content: flex-start;
         gap: 1rem;
         margin: 0;
         padding: 0;
@@ -433,40 +431,57 @@
 .filter-views {
   position: relative;
   margin: 0 var(--content-padding);
-  min-height: 66px;
+  // height: 66px;
+  display: flex;
+  gap: 2rem;
   &__active {
-    display: none;
+    flex: 1;
     .ais {
       &-CurrentRefinements{
-        display: flex;
         &-list {
           list-style: none;
           margin: 0;
           padding: 0;
-          text-transform: capitalize;
         }
         &-label {
+          font-family: var(--os);
+          text-transform: uppercase;
           font-weight: bold;
         }
-        &-item {
-          height: 66px;
-          background: var(--umkc-blue);
-          color: white;
-          padding: 1rem;
+        &-item {}
+        &-category {
+          text-transform: capitalize;
+          display: inline-block;
+          padding: 0.25rem;
+          margin: 0.25rem;
+          &:not(:last-child){
+            margin-right: 0.5rem;
+            &:after {
+              content: " / ";
+              margin-left: 1rem;
+            }
+          }
+        }
+        &-categoryLabel{
         }
         &-delete {
-          background: none;
-          border: none;
-          color: white;
+          background: var(--umkc-gray);
+          border:none;
+          appearance: none;
+          line-height: 1.5;
+          margin: 0 0 0 0.5rem ;
+
+          &:hover, &:focus {
+            background: var(--umkc-dark-blue);
+            color: white;
+          }
         }
       }
     }
   }
   &__buttons {
-    position: absolute;
-    top: 0;
-    right: 0;
-    text-align: right;
+    flex-basis: 0 136px;
+    justify-self: flex-end;
     button {
       padding: 1rem;
       color: var(--umkc-blue);
@@ -959,74 +974,3 @@
         }
     }
 }
-
-
-// Program Finder Learn More Nav Element
-// This should all be depreciated
-// .more-info-row__hidden {
-//     position: fixed;
-//     top: 3rem;
-//     left: 0;
-//     right: 0;
-//     overflow: hidden;
-//     z-index: -1;
-//     display: none;
-//     height: 0px;
-
-//     transition: 1s ease height;
-// }
-// .more-info-row__shown {
-//     z-index: 998;
-//     display: block;
-//     height: auto;
-
-//     transition: 1s ease height;
-// }
-
-
-// 4 Different "Screens" on the Search/Results page
-// The are some lazy fill-ins until further planning
-
-
-@media screen and (max-width: 1200px) {
-    // Toggles
-    #search-toggle[aria-hidden="true"] {
-        display: none;
-    }
-    #search-toggle[aria-hidden="false"] {
-        display: flex;
-        position: fixed;
-        top:0;left:0;right:0;bottom:0;
-        z-index:2;
-
-        .search-wrapper, .area-wrapper {
-            margin:0;
-        }
-    }
-    #filter-toggle[aria-hidden="true"] {
-        display: none;
-    }
-    #filter-toggle[aria-hidden="false"] {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top:0;left:0;right:0;bottom:0;
-        z-index:2;
-    }
-    #compare-toggle[aria-hidden="true"] {
-        display: none;
-    }
-    #compare-toggle[aria-hidden="false"] {
-
-    }
-    #resultsTopBar { display: none; }
-}
-
-
-// Leftover code from my previous attempt to use #data-toggles on the more-info-row
-// #more-info-row[aria-hidden="true"]{
-//     display: none;
-// }
-// #more-info-row[aria-hidden="false"]{
-//     display: grid;
-// }

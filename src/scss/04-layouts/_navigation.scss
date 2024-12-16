@@ -33,23 +33,6 @@
     --hover-color: var(--umkc-dark-blue);
   }
 
-  &--pfinder {
-    // .main-navigation--pfinder
-    // TO DO: Add sticky components
-    // TO DO: Remove hover states from LI
-    // TO DO: Add CE's active/hover states
-    --nav-border: transparent;
-
-    #{$self}__list {
-      justify-content: flex-start;
-      position: relative;
-    }
-
-    #{$self}__item:last-child {
-      position: absolute;
-      right: 0;
-    }
-  }
 
   @include mx.for-size("desktop-up") {
     border-top: mx.px-to-rem(3px) solid var(--umkc-yellow);
@@ -60,7 +43,53 @@
     position: static;
     transform: translateY(0);
   }
-
+  
+  &--pfinder {
+    // .main-navigation--pfinder
+    // TO DO: Add sticky components
+    // TO DO: Remove hover states from LI
+    // TO DO: Add CE's active/hover states
+    border-top: transparent;
+    --nav-background: var(--umkc-blue);
+    
+    @include mx.for-size("desktop-up"){
+      position: fixed;
+      top: 0;
+      bottom: unset;
+    }
+    
+  
+    #{$self}__list {
+      justify-content: flex-start;
+      position: relative;
+    }
+  
+    #{$self}__item {
+      font-family: var(--os);
+      font-weight: 400;
+      &::before {
+        border: none !important;
+      }
+      &--info{
+        position: absolute;
+        right: 0;
+        a{
+          margin-top: -1rem;
+          background: var(--umkc-yellow);
+          color: var(--umkc-dark-blue);
+          border-radius: 0 0 1rem 1rem;
+          padding: 0.75rem 2rem;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+        &::before {
+          
+        }  
+      }
+      
+    }
+  }
+  
   &__list {
     display: flex;
     flex-flow: column wrap;
