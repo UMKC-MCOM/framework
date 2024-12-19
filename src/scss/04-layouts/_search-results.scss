@@ -1,14 +1,19 @@
 @use "../01-abstracts/mixins" as mx;
 
 table{
-  &.gsc-search-box, &.gsc-above-wrapper-area-container {
+  &.gsc-search-box, &.gsc-above-wrapper-area-container, &.gstl_50, &.gssb_c {
     margin: 0;
     table.gsc-input {
       margin: 0;
     }
+    .gsib_a{
+      padding: 0;
+    }
     input.gsc-input {
       @include mx.font-size(18px, 1.5);
-      padding: 1.5rem 1rem !important;
+      height: 56px !important;
+      padding: 0.5rem 1rem !important;
+      margin: 0 !important;
     }
     td, th {
       padding: none;
@@ -16,6 +21,19 @@ table{
     }
     tr, tr:nth-of-type(odd), th {
       background: none;
+    }
+  }
+  &.gstl_50, &.gssb_c{
+    td {
+      padding: 0.25rem .5rem;
+    }
+    tr {
+      &:hover {
+        background: var(--umkc-gray);
+      }
+      &:not(:last-child){
+        border-bottom: solid 1px var(--umkc-gray);
+      }
     }
   }
   button.gsc-search-button {
@@ -43,15 +61,18 @@ table{
     }
   }
 }
-
+.gstl_50.gssb_c{
+  margin: 0;
+}
 .gsc-refinementsArea {
   @include mx.font-size(18px);
 }
 .gsc-selected-option-container {
-  min-width: 100px;
+  min-width: 100px !important;
 }
 
 .gsc-control-cse {
+  font-size: 18px !important;
   .gs-result {
     padding: 0.5rem 0;
     .gs-title, .gs-title * {
@@ -80,3 +101,21 @@ table{
   }
 }
 
+.gsc-results {
+  .gsc-cursor-box {
+    margin-bottom: 1rem !important;
+    .gsc-cursor-page{
+      padding: 1rem;
+      background-color: var(--umkc-gray) !important;
+
+      &:hover, &:focus {
+        background-color: var(--umkc-dark-blue) !important;
+        color: white !important;
+      }
+    }
+    .gsc-cursor-current-page {
+      background-color: var(--umkc-blue) !important;
+      color: white !important;
+    }
+  }
+}
