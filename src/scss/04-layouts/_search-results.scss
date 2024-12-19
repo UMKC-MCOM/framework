@@ -1,0 +1,82 @@
+@use "../01-abstracts/mixins" as mx;
+
+table{
+  &.gsc-search-box, &.gsc-above-wrapper-area-container {
+    margin: 0;
+    table.gsc-input {
+      margin: 0;
+    }
+    input.gsc-input {
+      @include mx.font-size(18px, 1.5);
+      padding: 1.5rem 1rem !important;
+    }
+    td, th {
+      padding: none;
+      border: none;
+    }
+    tr, tr:nth-of-type(odd), th {
+      background: none;
+    }
+  }
+  button.gsc-search-button {
+    background: var(--umkc-yellow);
+    height: 56px;
+    width: 56px;
+    padding: 0;
+    border-color: var(--umkc-yellow);
+    @include mx.tr();
+    &:hover, &:focus {
+      background: var(--umkc-blue);
+
+      svg {
+        fill: var(--white);
+      }
+    }
+    svg {
+      @include mx.tr();
+      fill: var(--umkc-blue);
+      height: 32px;
+      width: 32px;
+      margin: 0;
+      padding: 0;
+      transform: scaleX(-1)
+    }
+  }
+}
+
+.gsc-refinementsArea {
+  @include mx.font-size(18px);
+}
+.gsc-selected-option-container {
+  min-width: 100px;
+}
+
+.gsc-control-cse {
+  .gs-result {
+    padding: 0.5rem 0;
+    .gs-title, .gs-title * {
+      color: var(--umkc-blue);
+      font-size: 22px !important;
+
+      &:visited {
+        color: var(--umkc-dark-blue) !important;
+      }
+    }
+
+    .gs-image-box {
+      display: block;
+      width: 120px;
+      margin-right: 1rem;
+    }
+
+    .gs-image {
+      max-width: mx.px-to-rem(120px);
+      width: 100%;
+      height: auto;
+    }
+  }
+  .gsc-table-result {
+    font-size: 1rem !important;
+  }
+}
+
