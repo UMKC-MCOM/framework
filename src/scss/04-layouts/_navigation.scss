@@ -1,26 +1,37 @@
 @use "../01-abstracts/mixins" as mx;
 
-.main-navigation {
-  $self: &;
-  background: var(--nav-background, var(--umkc-navy));
-  bottom: mx.px-to-rem(84px);
-  display: block;
-  width: 100%;
-  font-weight: 700;
-  box-shadow: 0 0 25px 0px #000;
-  z-index: 2;
-  padding: 1rem 0;
+#main-navigation {
   position: fixed;
-  @include mx.font-size(18px, 1.5);
   transition: 150ms linear all;
   transform: translateY(100%);
   visibility: hidden;
-
+  bottom: mx.px-to-rem(84px);
+  z-index: 2;
+  background: var(--nav-background, var(--umkc-navy));
+  box-shadow: 0 0 25px 0px #000;
   &[aria-hidden="false"]{
     visibility: visible;
     transform: translateY(0);
   }
-
+  @include mx.for-size("desktop-up") {
+    box-shadow: none;
+    position: static;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+.main-navigation {
+  $self: &;
+  display: block;
+  width: 100%;
+  font-weight: 700;
+  padding: 1rem 0;
+  @include mx.font-size(18px, 1.5);
+  @include mx.for-size("desktop-up") {
+    border-top: mx.px-to-rem(3px) solid var(--umkc-yellow);
+    font-family: var(--condensed);
+    padding: 0 var(--global-padding);
+  }
   &--white {
     --nav-background: white;
     --nav-text: var(--umkc-blue);
@@ -32,18 +43,14 @@
     --nav-background: var(--umkc-blue);
     --hover-color: var(--umkc-dark-blue);
   }
-
-
-  @include mx.for-size("desktop-up") {
-    border-top: mx.px-to-rem(3px) solid var(--umkc-yellow);
-    box-shadow: none;
-    visibility: visible;
-    font-family: var(--condensed);
-    padding: 0 var(--global-padding);
-    position: static;
-    transform: translateY(0);
+  &--cta {
+    border-top: solid 2px var(--umkc-blue);
+    margin: 1rem 0;
+    padding: 1rem 0;
+    @include mx.for-size("desktop-up"){
+      display: none;
+    }
   }
-
   &--pfinder {
     // .main-navigation--pfinder
     // TO DO: Add sticky components

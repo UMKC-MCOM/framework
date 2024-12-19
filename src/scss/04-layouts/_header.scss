@@ -4,7 +4,7 @@
 .header {
   $self: &;
   --hPadding: var(--content-padding);
-  padding: 0.75rem var(--hPadding);
+  padding: 0.25rem var(--hPadding);
   @include mx.for-size("tablet-portrait-up") {
     --hPadding: var(--global-padding);
   }
@@ -28,7 +28,7 @@
   }
 
   &--primary {
-    background: var(--background, var(--umkc-blue));
+    background-color: var(--background, var(--umkc-blue));
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -89,6 +89,10 @@
       &--bold {
         font-weight: 600;
       }
+    }
+
+    &--mobile {
+      display: block;
     }
   }
 }

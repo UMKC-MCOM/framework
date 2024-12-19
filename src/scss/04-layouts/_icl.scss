@@ -6,6 +6,11 @@
   padding: var(--content-padding);
   --heading-color: var(--umkc-blue);
 
+  @include mx.for-size("desktop-up"){
+    max-width: 85vw;
+    margin: 0 auto;
+  }
+
   &--blue {
     --btn-arrow: white;
     --heading-color: var(--white);

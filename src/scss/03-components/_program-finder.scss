@@ -27,6 +27,29 @@
     .menu__icon {}
 }
 
+.search-content, .pf-results__filter {
+  display: none;
+  &[aria-hidden="false"] {
+    display: block;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    height: 100vh;
+    overflow-y: scroll;
+    width: 100%;
+  }
+
+  @include mx.for-size("desktop-up"){
+    display: block;
+    &[aria-hidden="false"]{
+      display: block;
+      position: unset;
+      height: unset;
+      top: unset;
+    }
+  }
+}
+
 // Request More Info Dropdown
 //@TODO Figure out why Javascript is throwing this error when using toggles
 //toggles.js:22 Uncaught TypeError: Cannot read properties of null (reading 'querySelectorAll')
@@ -291,23 +314,34 @@
       background: var(--umkc-yellow);
       appearance: none;
       height: 42px;
-      border: solid 1px var(--umkc-yellow);
+      border: none;
       border-radius: 0 10px 10px 0;
       margin-left:-38px;
     }
-    &-reset{}
+    &-reset{
+      background: var(--umkc-dark-blue);
+      border: none;
+      border-radius: 10px;
+      color: white;
+      height: 42px;
+      margin-left: 0.5rem;
+      width: 42px;
+    }
     &-loadingIndicator{}
   }
   &-RefinementList{
     &-list{
       display: flex;
-      flex-wrap: wrap;
+      flex-flow: column wrap;
       list-style: none;
       margin: 0;
       padding:0;
       gap: 1rem;
       justify-content: flex-start;
-      align-items: center;
+      @include mx.for-size("tablet-landscape-up"){
+        flex-flow: row wrap;
+        align-items: center;
+      }
     }
     &-item{
       padding: 0;
@@ -331,9 +365,9 @@
     appearance: none;
     display: block;
     color: #707070;
-    margin: 0 auto;
     background: none;
     border: none;
+
     .icon {
       height: 18px;
       width: 18px;
@@ -373,7 +407,9 @@
         padding: 0;
       }
       &-item{
-        flex-basis: 340px;
+        @include mx.for-size("tablet-landscape-up"){
+          flex-basis: 340px;
+        }
         background: var(--umkc-gray);
         margin: 0;
       }
@@ -450,6 +486,7 @@
   display: flex;
   gap: 2rem;
   &__active {
+
     flex: 1;
     .ais {
       &-CurrentRefinements{
@@ -495,8 +532,12 @@
     }
   }
   &__buttons {
-    flex-basis: 0 136px;
-    justify-self: flex-end;
+    flex: 1;
+    text-align: right;
+
+    @include mx.for-size("tablet-landscape-up"){
+      flex: 0 0 140px;
+    }
     button {
       padding: 1rem;
       color: var(--umkc-blue);
@@ -553,9 +594,11 @@
   &__interests{
     border-top: 1px solid var(--font-color);
     padding: 2rem;
+    margin-bottom: 4rem;
     @include mx.for-size("tablet-landscape-up"){
       border-top: none;
       border-left: 1px solid var(--font-color);
+      margin-bottom: unset;
     }
     #{$self}__title{}
   }
@@ -634,7 +677,7 @@
        flex-basis: 50%;
 
        &:last-child{
-         // display: none;
+         display: none;
          text-align: right;
          justify-self: end;
        }

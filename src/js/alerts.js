@@ -83,7 +83,7 @@ async function showAlert(data){
     // If active and hpOnly is true and the location is the homepage, assigned for UMKC
 
     let matches = /http(s)?:\/\/(www\.)?umkc\.edu\/(index\.html)?/
-    if ( active && ( hpOnly && matches.test(window.location.href) ) ) {
+    if ( active || ( active && hpOnly && matches.test(window.location.href) ) ) {
       let content = current[2].text;
       alertDiv.innerHTML = alertDiv.innerHTML.replace("{{content}}", content);
       mainContainer.prepend(alertDiv);
