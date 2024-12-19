@@ -6,11 +6,6 @@
   padding: var(--content-padding);
   --heading-color: var(--umkc-blue);
 
-  @include mx.for-size("desktop-up"){
-    max-width: 85vw;
-    margin: 0 auto;
-  }
-
   &--blue {
     --btn-arrow: white;
     --heading-color: var(--white);
@@ -62,7 +57,7 @@
     }
 
     @include mx.for-size("desktop-up") {
-      max-width: 80vw;
+      max-width: 75vw;
     }
   }
 
@@ -124,10 +119,7 @@
       flex-wrap: wrap;
       justify-content: center;
     }
-    @include mx.for-size("desktop-up"){
-      max-width: unset;
-      margin: unset;
-    }
+
     #{$self}__title {
       --heading-size: #{mx.px-to-rem(24px)};
       flex: 1 0 100%;
