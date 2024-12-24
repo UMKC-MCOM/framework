@@ -52,28 +52,50 @@
     }
   }
   &--pfinder {
-    // .main-navigation--pfinder
-    // TO DO: Add sticky components
-    // TO DO: Remove hover states from LI
-    // TO DO: Add CE's active/hover states
     border-top: transparent;
     --nav-background: var(--umkc-blue);
     display: none;
+    position: fixed !important;
     @include mx.for-size("desktop-up"){
       z-index: 5;
     }
-
     &.is-sticky {
-      position: fixed !important;
       top: 0;
       bottom: unset !important;
       display: block;
     }
 
+    &[aria-hidden=false]{
+      display: block;
+      top: 0;
+      bottom: 59px !important;
+      #{$self}__list {
+        display: block;
+      }
+
+      #{$self}__item {
+        padding: 1rem;
+        &:not(:last-child) {
+          border-bottom: solid 1px white;
+        }
+        &--info {
+          bottom: 0;
+          right: unset;
+          padding: 0 0 0.5rem;
+          display: block;
+          width: 100%;
+          text-align: center;
+          a {
+            border-radius: 0;
+          }
+        }
+      }
+    }
 
     #{$self}__list {
       justify-content: flex-start;
       position: relative;
+      height: 100%;
     }
 
     #{$self}__item {

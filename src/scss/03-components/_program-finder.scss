@@ -1,32 +1,6 @@
 @use "../01-abstracts/variables" as var;
 @use "../01-abstracts/mixins" as mx;
 
-// Mobile Nav
-.menu.pfinder-mobile-menu {
-    background-color: var(--umkc-dark-blue);
-    border-top: 0px solid transparent;
-
-    .menu__list {
-        justify-content: flex-start;
-    }
-    .menu__item {
-        background: transparent;
-    }
-    .menu__item-menu-label span {
-
-    }
-    .menu__link {
-        background: transparent;
-        color: var(--white);
-
-        &:hover, &:active, &:focus {
-            background: transparent;
-            color: var(--white);
-        }
-    }
-    .menu__icon {}
-}
-
 .search-content, .pf-results__filter {
   display: none;
   &[aria-hidden="false"] {
@@ -48,27 +22,6 @@
       top: unset;
     }
   }
-}
-
-// Request More Info Dropdown
-//@TODO Figure out why Javascript is throwing this error when using toggles
-//toggles.js:22 Uncaught TypeError: Cannot read properties of null (reading 'querySelectorAll')
-//at closeOpenToggles (toggles.js:22:31)
-//at HTMLButtonElement.<anonymous> (toggles.js:9:7)
-
-//Update 10/30 - Added a simple JS function to activate the REQUEST MORE INFO button.  The button is located in program-finder-v2-navigation, as is the hidden REQUEST MORE INFO row and form.  This ideally should be changed to use #data-toggle in the future.
-.pfinder__more-info {
-    display: block;
-}
-.more-info-row-hidden {
-    display: none;
-}
-.sticky-form {
-    top: 4rem;
-    left:0;
-    right:0;
-    position: fixed;
-    z-index: 2;
 }
 
 .pf-request_info {
@@ -713,7 +666,6 @@
 }
 
 // Compare Programs Flyout Elements
-
 .compare-tab {
     position: fixed;
     right: -6rem;

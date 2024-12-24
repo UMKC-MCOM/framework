@@ -15,26 +15,21 @@
 			{{> breadcrumbs }}
 
       {{ ks/icl }}
+
+      <div class="content-row">
+        <div id="autocomplete"></div>
+      </div>
+
 <!-- <div id="form_0576a7b2-e2c6-4479-9713-af300ac1ba72">Loading...</div><script async="async" src="https://futureroo.umkc.edu/register/?id=0576a7b2-e2c6-4479-9713-af300ac1ba72&output=embed&div=form_0576a7b2-e2c6-4479-9713-af300ac1ba72"></script> -->
 
 
-  <div class="content-row">
-    <!-- Search Box -->
-    <div class="text-block">
-      <script async="" src="https://cse.google.com/cse.js?cx=009448580219169355531:zaqt1kohfz5"></script>
-      <div class="gcse-searchbox-only" data-resultsUrl="/"></div>
-    </div>
-    <!-- /.Search Box -->
-    <!-- Search Results -->
-
+  <!--<div class="content-row">
     <div id="gcse:searchresults-only" class="text-block"></div>
     <script>// <![CDATA[
     var gcseDivPage = document.getElementById('gcse:searchresults-only');
                                         gcseDivPage.innerHTML = '<gcse:searchresults-only></gcse:searchresults-only>'
     // ]]></script>
-    <!-- Search Results -->
-
-  </div>
+  </div> -->
 
 			<!-- <div class="content-row online-intro bg-umkc-lighter-blue">
 				<div class="online-intro__facts">
@@ -106,7 +101,7 @@
 					</div>
 				</div>
 -->
-				<div class="tabs tabs--online">
+				<!-- <div class="tabs tabs--online">
 					<nav class="tabs__nav" role="navigation">
 						<ul class="tabs__list">
 							<li class="tabs__item">
@@ -122,9 +117,9 @@
 								<a href="#tuition" class="tabs__link" aria-expanded="false">Tuition</a>
 							</li>
 						</ul>
-					</nav>
+					</nav> -->
 
-					<div class="tabs__container">
+					<!-- <div class="tabs__container">
 						<button class="o-btn tabs--hide-desktop accordion__btn" data-toggle="#overview" aria-expanded="true">
 							Kansas City
 						</button>
@@ -196,7 +191,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 
 			{{> ks/timeline}}
 
@@ -219,7 +214,7 @@
 
 
 			<!-- Program Finder -->
-			{{> ks/program-finder homesuite=""}}
+			<!-- {{> ks/program-finder homesuite=""}} -->
 
 			<!-- {{> hero video="true" }} -->
 			<!-- {{> hero }} -->
@@ -353,5 +348,6 @@
 		{{> ks/spacer }}
 		{{> footer }}
 		{{> scripts }}
+    <script type="module" src="./pf.js"></script>
   </body>
 </html>

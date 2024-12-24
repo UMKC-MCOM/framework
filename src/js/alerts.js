@@ -76,6 +76,7 @@ async function showAlert(data){
   <button class="o-btn site-alert__close"><svg class="icon site-alert__icon" viewBox="0 0 24 24" style="height: 1.75rem; flex-basis: 1.75rem; width: 1.75rem;">
   <path d="M18.4,16.5l3.9-3.8c0.5-0.5,0.6-1.3,0.1-1.9c-0.4-0.6-1.2-0.8-1.8-0.4c-0.1,0.1-0.2,0.1-0.3,0.2 l-3.9,3.9l-3.9-3.9c-0.5-0.5-1.3-0.6-1.9-0.1c-0.1,0.1-0.2,0.2-0.2,0.3c-0.4,0.6-0.4,1.4,0.1,1.9l3.9,3.8l-3.9,3.8 c-0.5,0.5-0.6,1.3-0.1,1.9c0.4,0.6,1.2,0.8,1.8,0.4c0.1-0.1,0.2-0.1,0.3-0.2l3.9-3.9l3.9,3.9c0.5,0.5,1.3,0.6,1.9,0.1 c0.1-0.1,0.2-0.2,0.2-0.3c0.4-0.6,0.4-1.4-0.1-1.9L18.4,16.5z"></path></svg></button>`;
   dn.forEach( node => {
+    let sessionAlertHide = ( sessionStorage.getItem("hideSiteAlert") !== null ? sessionStorage.getItem("hideSiteAlert") : false );
     let current = node.structuredDataNodes;
     let active = ( current[0].text.includes("Yes") ? true : false );
     // Homepage Only, if yes, mark it true.
@@ -83,7 +84,7 @@ async function showAlert(data){
     // If active and hpOnly is true and the location is the homepage, assigned for UMKC
 
     let matches = /http(s)?:\/\/(www\.)?umkc\.edu\/(index\.html)?/
-    if ( active || ( active && hpOnly && matches.test(window.location.href) ) ) {
+    if ( !sessionAlertHide && ( active || ( active && hpOnly && matches.test(window.location.href) ) ) ) {
       let content = current[2].text;
       alertDiv.innerHTML = alertDiv.innerHTML.replace("{{content}}", content);
       mainContainer.prepend(alertDiv);
