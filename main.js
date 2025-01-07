@@ -17,7 +17,7 @@ import '/src/js/infopopup.js'
 import '/src/js/video-shorts.js'
 import '/src/js/count-up.js'
 import '/src/js/consent.js'
-// import '/src/js/program-finder.js'
+import '/src/js/program-finder.js'
 // import '/src/js/pfinder-compare.js'
 
 // Timline SVGs

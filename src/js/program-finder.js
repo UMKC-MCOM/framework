@@ -42,14 +42,13 @@ const reqInfoButtons = document.querySelectorAll("a[href='#request-info']");
 var clone = null;
 
 function createMenu(){
-  let formClone = document.querySelector(".pf-request_info--copy");
-  reqInfoButtons.forEach( (btn) => {
-    btn.addEventListener('click', (item) => {
-      item.preventDefault();
-      item.target.classList.toggle("active");
-      formClone.classList.toggle("pf-request_info--copy--active");
-    });
-  });
+  // reqInfoButtons.forEach( (btn) => {
+  //   btn.addEventListener('click', (item) => {
+  //     item.preventDefault();
+  //     item.target.classList.toggle("active");
+  //     formWrapper.classList.toggle("pf-request_info--active");
+  //   });
+  // });
 
   if ( navigation && overview ){
     let ovPos = overview.getBoundingClientRect();
@@ -61,18 +60,26 @@ function createMenu(){
         navigation.classList.remove(classToAdd);
         formClone.classList.remove('pf-request_info--copy--active');
       }
-    }, 50));
+    }, 10));
+
+    const navlinks = navigation.querySelectorAll("a");
+    navlinks.forEach( (link) => {
+      link.addEventListener('click', (item) => {
+        setTimeout(function(){
+          document.querySelector(`[data-toggle="#main-navigation"]`).click();
+        }, 150);
+      });
+    });
+
   }
 }
-    loadScript(`https://futureroo.umkc.edu/register/?id=e715abf2-f054-4194-8b63-85873a957361&output=embed&div=${formId}` + ((location.search.length > 1) ? '&' + location.search.substring(1) : ''), false, loadForm(formWrapper));
+
+loadScript(`https://futureroo.umkc.edu/register/?id=e715abf2-f054-4194-8b63-85873a957361&output=embed&div=${formId}` + ((location.search.length > 1) ? '&' + location.search.substring(1) : ''), false, loadForm(formWrapper));
 
 function loadForm(formWrapper){
   setTimeout(function(){
-    clone = formWrapper.cloneNode(true);
-    clone.classList.add("pf-request_info--copy");
-    let bodyDom = document.querySelector("body");
-    bodyDom.appendChild(clone);
+    let formPos = formWrapper.getBoundingClientRect();
     createMenu();
-  }, 500);
+  }, 1000);
 
 }

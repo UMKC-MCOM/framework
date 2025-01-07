@@ -25,8 +25,22 @@
 }
 
 .pf-request_info {
+  // position: absolute;
+  // top: 0;
+  // bottom: calc(5.25rem + (45px));
+  // z-index: 3;
+  // right: 0;
+  // width: 100%;
+  // transform: translateX(100%);
+  // left: unset;
+  // transition: all 250ms ease;
+
+  // @include mx.for-size("desktop-up") {
+    // position: static;
+    // transform: unset;
+  // }
   &__wrapper {
-    @include mx.for-size("desktop-up") {
+      @include mx.for-size("desktop-up") {
       max-width: 85vw;
       margin: 0 auto;
     }
@@ -39,91 +53,80 @@
     text-transform: uppercase;
   }
   form {
-      display: grid;
-      grid-template-rows: 1fr;
-      grid-template-columns: 1fr;
-      grid-column-gap: 30px;
-      grid-row-gap: 30px;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+
+    @include mx.for-size(desktop-up){
+      grid-template-columns: 80% 20%;
+      grid-template-rows: repeat(1, 1fr);
+    }
+
+    #form_start {
+      display: none;
+    }
+    .form_action {
+      text-align: center;
 
       @include mx.for-size(desktop-up){
-          // grid-template-columns: repeat(1, 1fr);
-          grid-template-columns: 80% 20%;
-          grid-template-rows: repeat(1, 1fr);
+        align-content: center;
       }
-
-      #form_start {
-          display: none;
-      }
-      .form_action {
-          text-align: center;
-
-          @include mx.for-size(desktop-up){
-              align-content: center;
-          }
-      }
-      #form_page_1 {
-          display: grid;
-          gap: 10px;
-          grid-template-rows: 1fr;
-          grid-template-columns: 1fr 1fr;
-          @include mx.for-size(desktop-up){
-              grid-template-rows: 1fr 1fr;
-              grid-template-columns: 1fr 1fr 1fr;
-          }
-
-          label {
-              display: block;
-              font-weight: bold;
-              font-size: 13px;
-              margin-bottom: 0.25rem;
-          }
-      }
-
-      .input-wrapper {
-          label {
-              display: block;
-              font-weight: bold;
-              font-size: 13px;
-              margin-bottom: 0.25rem;
-          }
-          input, button {
-              width: 100%;
-          }
-
-          &.submit-button {
-              align-self: end;
-
-              button {
-              }
-          }
-      }
-      .text-message-choice-wrapper {
-        grid-column: 1/4;
-          @include mx.for-size(tablet-portrait-up){
-              // grid-column: 1/4;
-          }
-          label {
-              display: inline;
-          }
-          input[type="radio"] {
-              display: inline;
-              width: 20px;
-          }
-          br {
-              clear:both;
-          }
-      }
-  }
-  &--copy {
-    position: fixed;
-    top: -360px;
-    right: 0;
-    left: 0;
-    z-index: 1;
-    @include mx.tr();
-    &--active{
-      top: 59px;
     }
+    #form_page_1 {
+      display: grid;
+      gap: 10px;
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr 1fr;
+      @include mx.for-size(desktop-up){
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      label {
+        display: block;
+        font-weight: bold;
+        font-size: 13px;
+        margin-bottom: 0.25rem;
+      }
+    }
+    .input-wrapper {
+      label {
+        display: block;
+        font-weight: bold;
+        font-size: 13px;
+        margin-bottom: 0.25rem;
+      }
+      input, button {
+        width: 100%;
+      }
+
+      &.submit-button {
+        align-self: end;
+
+        button {}
+      }
+    }
+    .text-message-choice-wrapper {
+      grid-column: 1/4;
+      @include mx.for-size(tablet-portrait-up){
+        // grid-column: 1/4;
+      }
+      label {
+        display: inline;
+      }
+      input[type="radio"] {
+        display: inline;
+        width: 20px;
+      }
+      br {
+        clear:both;
+      }
+    }
+  }
+  &--active{
+    transform: translateX(0);
   }
 }
 
@@ -194,6 +197,7 @@
 // After Graduation
 .after-grad {
   padding: var(--content-padding);
+
   @include mx.for-size("desktop-up"){
     display: flex;
     max-width: 85vw;
@@ -208,13 +212,14 @@
   }
   &__copy {
     flex: 1 0;
+    @include mx.font-size(20px);
     h3 {
       --heading-margin: 0;
       --heading-color: var(--font-color);
       @include mx.font-size(20px);
     }
     ul {
-      @include mx.font-size(20px);
+
       padding: 0.5rem 0;
     }
   }
@@ -306,6 +311,10 @@
       label {
         display: flex;
         align-items: center;
+
+        .icon {
+          margin-left: 1rem;
+        }
       }
       input[type="checkbox"]{
         margin-right: 1rem;
@@ -443,6 +452,9 @@
     flex: 1;
     .ais {
       &-CurrentRefinements{
+        .icon {
+          color: var(--umkc-dark-blue);
+        }
         &-list {
           list-style: none;
           margin: 0;
@@ -493,19 +505,20 @@
     }
     button {
       padding: 1rem;
-      color: var(--umkc-blue);
       background: var(--umkc-gray);
+      .icon {
+        color: var(--umkc-blue);
+      }
       &.active {
         background: var(--umkc-yellow);
+
       }
       &:hover, &:focus {
         background: var(--umkc-blue);
-        color: white;
+        .icon {
+          color: var(--white);
+        }
       }
-    }
-    .icon {
-      height: 32px;
-      width: 32px;
     }
   }
 }
@@ -567,6 +580,24 @@
   display: flex;
   margin-top: mx.px-to-rem(30px);
 
+  .icon {
+    border-radius: 100%;
+    color: white;
+    height: 32px;
+    padding:0.25rem;
+    width: 32px;
+
+    &--online {
+      background: var(--umkc-yellow);
+    }
+    &--in-person {
+      background: var(--umkc-dark-blue);
+    }
+    &--hybrid {
+      background: var(--umkc-light-blue);
+    }
+  }
+
   &__filter{
     background: var(--umkc-lighter-blue);
     padding: var(--content-padding);
@@ -620,6 +651,7 @@
    }
    &__title {
      --heading-size: #{mx.px-to-rem(24px)};
+     --heading-margin: 0.675rem 0 0;
      font-family: var(--os);
      text-transform: uppercase;
    }
@@ -647,21 +679,7 @@
     position: absolute;
     top: 0.5rem;
     right: 1rem;
-    height: 32px;
-    width: 32px;
-    padding:0.25rem;
-    color: white;
     z-index: 2;
-    border-radius: 100%;
-    &--online {
-      background: var(--umkc-yellow);
-    }
-    &--in-person {
-      background: var(--umkc-dark-blue);
-    }
-    &--hybrid {
-      background: var(--umkc-light-blue);
-    }
   }
 }
 

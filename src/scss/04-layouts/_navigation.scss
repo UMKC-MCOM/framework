@@ -62,7 +62,6 @@
     &.is-sticky {
       top: 0;
       bottom: unset !important;
-      display: block;
     }
 
     &[aria-hidden=false]{
