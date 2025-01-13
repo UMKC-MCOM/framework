@@ -281,7 +281,7 @@
       background: var(--umkc-dark-blue);
       border: none;
       border-radius: mx.px-to-rem(10px);
-      color: white;
+      color: var(--white);
       height: 42px;
       margin-left: 0.5rem;
       width: 42px;
@@ -506,7 +506,7 @@
 
           &:hover, &:focus {
             background: var(--umkc-dark-blue);
-            color: white;
+            color: var(--white);
           }
         }
       }
@@ -699,11 +699,10 @@
 .pf-results, .result{
   .icon{
     border-radius: 100%;
-    color: white;
+    color: var(--white);
     height: 32px;
     padding:0.25rem;
     width: 32px;
-    color: white !important;
 
     &--online {
       background: var(--umkc-yellow);
