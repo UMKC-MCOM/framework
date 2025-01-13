@@ -6,6 +6,10 @@ if ( viewButtons ) {
   viewButtons.forEach( (btn) => {
     btn.addEventListener("click", function(e){
       e.preventDefault();
+      let parent = btn.parentNode;
+      let activeButton = parent.querySelector(".active");
+      activeButton.classList.remove("active");
+      btn.classList.add('active');
       if ( btn.getAttribute("data-view") == "grid" ) {
         if ( listArea.classList.contains("results__list--listing") ){
           listArea.classList.remove("results__list--listing")
@@ -37,9 +41,11 @@ const overview = document.querySelector(".overview") ? document.querySelector(".
 const classToAdd = "is-sticky";
 // Form details
 const formWrapper = document.querySelector(".pf-request_info") ? document.querySelector(".pf-request_info") : false;
-const formId = formWrapper.querySelector("div[id]").getAttribute('id');
-const reqInfoButtons = document.querySelectorAll("a[href='#request-info']");
-var clone = null;
+if ( formWrapper ) {
+  const formId = formWrapper.querySelector("div[id]").getAttribute('id');
+  const reqInfoButtons = document.querySelectorAll("a[href='#request-info']");
+  loadScript(`https://futureroo.umkc.edu/register/?id=e715abf2-f054-4194-8b63-85873a957361&output=embed&div=${formId}` + ((location.search.length > 1) ? '&' + location.search.substring(1) : ''), false, loadForm(formWrapper));
+}
 
 function createMenu(){
   // reqInfoButtons.forEach( (btn) => {
@@ -58,23 +64,23 @@ function createMenu(){
         navigation.classList.add(classToAdd);
       } else {
         navigation.classList.remove(classToAdd);
-        formClone.classList.remove('pf-request_info--copy--active');
       }
     }, 10));
 
     const navlinks = navigation.querySelectorAll("a");
     navlinks.forEach( (link) => {
       link.addEventListener('click', (item) => {
+        let status = navigation.getAttribute("aria-hidden");
         setTimeout(function(){
-          document.querySelector(`[data-toggle="#main-navigation"]`).click();
+          if ( status == 'false' ){
+            document.querySelector(`[data-toggle="#main-navigation"]`).click();
+          }
         }, 150);
       });
     });
 
   }
 }
-
-loadScript(`https://futureroo.umkc.edu/register/?id=e715abf2-f054-4194-8b63-85873a957361&output=embed&div=${formId}` + ((location.search.length > 1) ? '&' + location.search.substring(1) : ''), false, loadForm(formWrapper));
 
 function loadForm(formWrapper){
   setTimeout(function(){

@@ -60,8 +60,9 @@
       z-index: 5;
     }
     &.is-sticky {
-      top: 0;
       bottom: unset !important;
+      display: block;
+      top: 0;
     }
 
     &[aria-hidden=false]{

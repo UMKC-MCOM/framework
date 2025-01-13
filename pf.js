@@ -13,6 +13,7 @@ const searchClient = meilisearchAutocompleteClient({
 autocomplete({
   container: "#autocomplete",
   openOnFocus: false,
+  detachedMediaQuery: 'none',
   getSources({ query }) {
     return [
       {
@@ -57,7 +58,7 @@ autocomplete({
             let url = "https://programs.umkc.edu"+hit.url;
                 url = url+"?queryparams";
 
-            return html`<div class="result" id="${programID}">
+            return html`<div class="result result--ac" id="${programID}">
               <a href="${url}">
                 <svg class="icon icon--${format}"><use href="#${icon}"></use></svg>
                 <div class="result__content">

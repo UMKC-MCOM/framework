@@ -76,7 +76,7 @@
     }
     #form_page_1 {
       display: grid;
-      gap: 10px;
+      gap: mx.px-to-rem(10px);
       grid-template-rows: 1fr;
       grid-template-columns: 1fr 1fr;
       @include mx.for-size(desktop-up){
@@ -264,22 +264,23 @@
     }
     &-input{
       height: 42px;
-      margin:0;
-      width: 100%;
-      border-radius: 10px;
+      margin: 0;
+      width: calc(100% - (42px + 0.5rem));
+      border-radius: mx.px-to-rem(10px);
     }
     &-submit{
-      background: var(--umkc-yellow);
+      background: transparent;
       appearance: none;
       height: 42px;
       border: none;
-      border-radius: 0 10px 10px 0;
-      margin-left:-38px;
+      border-radius: 0 mx.px-to-rem(10px) mx.px-to-rem(10px) 0;
+      margin-left: -2.5rem;
     }
     &-reset{
+      appearance: none;
       background: var(--umkc-dark-blue);
       border: none;
-      border-radius: 10px;
+      border-radius: mx.px-to-rem(10px);
       color: white;
       height: 42px;
       margin-left: 0.5rem;
@@ -303,9 +304,9 @@
     }
     &-item{
       padding: 0;
-      flex-basis: calc( ( 100% / 2) - 1rem);
+      flex: 1 calc( ( 100% / 2) - 1rem);
       @include mx.for-size("desktop-up"){
-        flex-basis: calc( ( 100% / 3) - 1rem);
+        flex: 1 calc( ( 100% / 3) - 1rem);
       }
 
       label {
@@ -370,6 +371,10 @@
         padding: 0;
       }
       &-item{
+        width: 100%;
+        @include mx.for-size("tablet-portrait-up"){
+          flex-basis: 300px;
+        }
         @include mx.for-size("tablet-landscape-up"){
           flex-basis: 340px;
         }
@@ -411,7 +416,7 @@
         }
       }
       .result {
-        height: mx.px-to-rem(142px);
+        // height: mx.px-to-rem(142px);
         &__image, &__interest {
           display: none;
         }
@@ -419,20 +424,30 @@
           padding: 1rem 2rem;
         }
         &__title {
-          --heading-margin: 0.5rem 0 3rem;
+          --heading-margin: 0.5rem 0 1rem;
+          @include mx.for-size("tablet-landscape-up"){
+            --heading-margin: 0.5rem 0 3rem;
+          }
         }
         &__footer {
-          display: inline-block;
-          position: absolute;
-          right: 2rem;
-          top: 2.75rem;
-          white-space: nowrap;
+          margin-bottom: 2.5rem;
+          @include mx.for-size("tablet-landscape-up"){
+            display: inline-block;
+            position: absolute;
+            right: 2rem;
+            top: 2.75rem;
+            white-space: nowrap;
+            margin-bottom: unset;
+          }
+
           p {
             padding: 0 0 0.5rem;
+            margin: 0;
           }
 
         }
         .icon {
+          --icon-size: #{mx.px-to-rem(32px)};
           top: unset;
           bottom: 1rem;
           left: 2rem;
@@ -581,24 +596,6 @@
   display: flex;
   margin-top: mx.px-to-rem(30px);
 
-  .icon {
-    border-radius: 100%;
-    color: white;
-    height: 32px;
-    padding:0.25rem;
-    width: 32px;
-
-    &--online {
-      background: var(--umkc-yellow);
-    }
-    &--in-person {
-      background: var(--umkc-dark-blue);
-    }
-    &--hybrid {
-      background: var(--umkc-light-blue);
-    }
-  }
-
   &__filter{
     background: var(--umkc-lighter-blue);
     padding: var(--content-padding);
@@ -636,6 +633,7 @@
 }
 
 .result {
+  $self: &;
   position: relative;
   &__image{
     width: 100%;
@@ -681,6 +679,41 @@
     top: 0.5rem;
     right: 1rem;
     z-index: 2;
+    height: var(--icon-size, #{mx.px-to-rem(32px)});
+    width: var(--icon-size, #{mx.px-to-rem(32px)});
+  }
+
+  &--ac {
+    a{
+      text-decoration: none;
+    }
+    #{$self}__type{
+      margin-bottom: 0.5rem;
+    }
+    #{$self}__title{
+
+    }
+  }
+}
+
+.pf-results, .result{
+  .icon{
+    border-radius: 100%;
+    color: white;
+    height: 32px;
+    padding:0.25rem;
+    width: 32px;
+    color: white !important;
+
+    &--online {
+      background: var(--umkc-yellow);
+    }
+    &--in-person {
+      background: var(--umkc-dark-blue);
+    }
+    &--hybrid {
+      background: var(--umkc-light-blue);
+    }
   }
 }
 
