@@ -14,6 +14,7 @@ autocomplete({
   container: "#autocomplete",
   openOnFocus: false,
   detachedMediaQuery: 'none',
+  placeholder: "Find your programs",
   getSources({ query }) {
     return [
       {

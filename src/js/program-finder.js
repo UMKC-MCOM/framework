@@ -42,9 +42,11 @@ const classToAdd = "is-sticky";
 // Form details
 const formWrapper = document.querySelector(".pf-request_info") ? document.querySelector(".pf-request_info") : false;
 if ( formWrapper ) {
-  const formId = formWrapper.querySelector("div[id]").getAttribute('id');
+  const form = formWrapper.querySelector("div[id]");
+  const formId = form.getAttribute('id');
   const reqInfoButtons = document.querySelectorAll("a[href='#request-info']");
-  loadScript(`https://futureroo.umkc.edu/register/?id=e715abf2-f054-4194-8b63-85873a957361&output=embed&div=${formId}` + ((location.search.length > 1) ? '&' + location.search.substring(1) : ''), false, loadForm(formWrapper));
+  const formQuery = form.dataset.slatequery != "" ? form.dataset.slatequery : '' ;
+  loadScript(`https://futureroo.umkc.edu/register/?id=e715abf2-f054-4194-8b63-85873a957361&output=embed&div=${formId}${formQuery}` + ((location.search.length > 1) ? '&' + location.search.substring(1) : ''), false, loadForm(formWrapper));
 }
 
 function createMenu(){
