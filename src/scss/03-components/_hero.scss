@@ -219,6 +219,22 @@
         width: calc(100vw  * 0.55);
       }
     }
+    
+    #{$self}__title{
+      padding: 0 var(--global-padding) 0; 
+      &--r1{
+        padding: 7rem 0 0;
+        display: block;
+        @include mx.font-size(64px, 1);
+        font-family: var(--os);
+        text-transform: uppercase;
+        font-weight: 700;
+        color: var(--umkc-yellow);
+        @include mx.for-size("desktop-up"){
+          @include mx.font-size(200px, 1);  
+        }
+      }
+    }
     #{$self}__subhead {
       font-family: var(--os);
       margin-bottom: 1rem;
