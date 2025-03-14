@@ -1,7 +1,7 @@
 @use "../01-abstracts/variables" as var;
 @use "../01-abstracts/mixins" as mx;
 
-.search-content, .pf-results__filter {
+.pf-results__filter {
   display: none;
   &[aria-hidden="false"] {
     display: block;
@@ -468,6 +468,11 @@
     flex: 1;
     .ais {
       &-CurrentRefinements{
+        display: none;
+
+        @include mx.for-size("tablet-landscape-up"){
+          display: block;
+        }
         .icon {
           color: var(--umkc-dark-blue);
         }
@@ -539,17 +544,17 @@
   }
 }
 
-
 //Explore Programs
 .pf-search {
   $self: &;
   display: flex;
-  gap: 2.5rem;
+
   flex-flow: column;
   @include mx.for-size("desktop-up") {
     max-width: 85vw;
     margin: 0 auto;
     flex-flow: row;
+    gap: 2.5rem;
   }
 
   &__title{
@@ -571,16 +576,42 @@
   }
   &__view-all{
     margin-top: 2rem;
+
+    @include mx.for-size("desktop-up"){
+      display: none;
+    }
+    .button{
+      .show {
+        display: inline;
+      }
+      .hide {
+        display: none;
+      }
+      &[aria-expanded="true"]{
+        .show {
+          display: none;
+        }
+        .hide {
+          display: inline;
+        }
+      }
+    }
   }
 
   &__interests{
     border-top: 1px solid var(--font-color);
     padding: 2rem;
     margin-bottom: 4rem;
+    display: none;
     @include mx.for-size("tablet-landscape-up"){
       border-top: none;
       border-left: 1px solid var(--font-color);
       margin-bottom: unset;
+      display: block;
+    }
+
+    &[aria-hidden="false"]{
+      display: block;
     }
     #{$self}__title{}
   }

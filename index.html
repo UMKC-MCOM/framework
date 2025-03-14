@@ -15,7 +15,6 @@
 			{{> breadcrumbs }}
 
       {{ ks/icl }}
-
       <div class="content-row stripes--dark">
         <div class="program-finder aos-init aos-animate" data-aos="fade-up">
           <div class="text-center">
@@ -27,8 +26,8 @@
               <div id="autocomplete"></div>
 
               <div class="program-finder__buttons">
-                <a class="module-search__additional-links--button button button--umkc-yellow text--upper text--os button--cta" href="https://programs.umkc.edu/">All Programs</a>
-                <a class="module-search__additional-links--button button button--umkc-yellow text--upper text--os button--cta" href="https://www.umkc.edu/apply/">How to Apply</a>
+                <a class="button button--umkc-yellow text--upper text--os button--cta" href="https://programs.umkc.edu/">All Programs</a>
+                <a class="button button--umkc-yellow text--upper text--os button--cta" href="https://www.umkc.edu/apply/">How to Apply</a>
               </div>
             </div>
           </div>
@@ -331,6 +330,8 @@
 				<div class="standard--content">
 					{{> ks/res-list }}
 					{{> ks/deadlines }}
+
+          {{> ks/directory-standard }}
 				</div>
 			</div>
 		</div></div>
@@ -362,6 +363,5 @@
 		{{> ks/spacer }}
 		{{> footer }}
 		{{> scripts }}
-    <script type="module" src="./pf.js"></script>
   </body>
 </html>
