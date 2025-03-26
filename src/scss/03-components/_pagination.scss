@@ -15,7 +15,7 @@
     font-size: 1.25rem;
 
     &:hover, &:focus, &:active {
-      color: var(--umkc-blue);
+      background: var(--umkc-yellow);
     }
     &.active{
       background: var(--umkc-blue);
