@@ -1,0 +1,26 @@
+.pagination{
+  &__list{
+    display: inline-flex;
+    margin: 1.5rem 0;
+    padding: 0;
+    list-style: none;
+  }
+  &__item{
+    margin-right: 0.5rem;
+  }
+  &__link{
+    color: var(--umkc-blue);
+    padding: 0.5rem 0.725rem;
+    text-decoration: none;
+    font-size: 1.25rem;
+
+    &:hover, &:focus, &:active {
+      color: var(--umkc-blue);
+    }
+    &.active{
+      background: var(--umkc-blue);
+      color: var(--white);
+      font-weight: 700;
+    }
+  }
+}
