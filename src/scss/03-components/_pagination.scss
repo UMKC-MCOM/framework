@@ -1,21 +1,25 @@
 .pagination{
   &__list{
-    display: inline-flex;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    gap: 0.75rem 0.25rem;
     margin: 1.5rem 0;
     padding: 0;
     list-style: none;
   }
   &__item{
-    margin-right: 0.5rem;
+    margin: 0;
+    padding: 0;
   }
   &__link{
     color: var(--umkc-blue);
-    padding: 0.5rem 0.725rem;
     text-decoration: none;
     font-size: 1.25rem;
-
+    padding: 0.5rem 0.5rem;
     &:hover, &:focus, &:active {
       background: var(--umkc-yellow);
+      font-weight: 700;
     }
     &.active{
       background: var(--umkc-blue);

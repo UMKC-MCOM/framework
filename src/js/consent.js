@@ -15,8 +15,8 @@ function checkBanner(bannerClosed) {
 if ( gdprBanner && cookieConsent ) {
   cookieConsent.addEventListener("click", function(){
     localStorage.setItem("bannerClosed", true);
-    gdprBanner.style.display = "none"
-    checkBanner(localStorage.getItem("bannerClosed"))
+    gdprBanner.style.display = "none";
+    checkBanner(localStorage.getItem("bannerClosed"));
   });
 
   checkBanner(localStorage.getItem("bannerClosed"));

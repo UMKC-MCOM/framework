@@ -8,7 +8,7 @@ if ( document.querySelector("#autocomplete") !== null ) {
   const searchClient = meilisearchAutocompleteClient({
     url: 'https://edge.meilisearch.com',
     apiKey: '85a8215bb2f86b7ce57dc674cc918431e24479ec9c7383f40c029705181f17eb'
-  })
+  });
 
   autocomplete({
     container: "#autocomplete",

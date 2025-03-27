@@ -32,7 +32,7 @@ function debounce(func, delay) {
     timer = setTimeout(function() {
       func.apply(context, args);
     }, delay);
-  }
+  };
 }
 
 // Sticky Header navigation and form activation
@@ -89,5 +89,4 @@ function loadForm(formWrapper){
     let formPos = formWrapper.getBoundingClientRect();
     createMenu();
   }, 1000);
-
 }

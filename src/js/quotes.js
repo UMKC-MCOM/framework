@@ -13,5 +13,5 @@ const quote = document.querySelectorAll(".quote__item");
     let content = document.querySelector(button.dataset.controls);
     content.classList.add("is-visible");
     button.classList.add("quote__bullet--active");
-  })
+  });
 });

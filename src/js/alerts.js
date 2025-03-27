@@ -25,11 +25,11 @@ function checkAlerts() {
         || title.toLowerCase() == "remove web banner"
         || desc.toLowerCase() == "remove web banner"
       ) {
-        return false
+        return false;
       }
       let alertContent = `<h1 class="site-alert__title">${title}</h1><p>${desc}</p>`;
       if ( link ) {
-        alertContent += `<p><a href="${link}">Alert details</a>.</p>`
+        alertContent += `<p><a href="${link}">Alert details</a>.</p>`;
       }
       alertDiv.innerHTML = alertDiv.innerHTML.replace(`{{content}}`, alertContent);
       header.insertAdjacentElement('beforebegin', alertDiv);
@@ -43,9 +43,9 @@ function checkAlerts() {
       });
     });
   })
-  .catch((error) => {})
+  .catch((error) => {});
 }
-checkAlerts()
+checkAlerts();
 
 fetch('https://www.umkc.edu/global-assets/api/campus-alert.aspx?assetId=84fe7bf3ac1e04cd75402c87af2d0f19&assetType=block')
   .then( response => {
@@ -56,7 +56,7 @@ fetch('https://www.umkc.edu/global-assets/api/campus-alert.aspx?assetId=84fe7bf3
   })
   .catch( function (err) {
     console.log(err);
-  })
+  });
 
 async function showAlert(data){
   var mainContainer = document.querySelector("body");

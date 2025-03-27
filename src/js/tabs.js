@@ -28,7 +28,7 @@ var Tabs = {
     let btn = parentDiv.querySelector('[data-toggle="' + hash + '"]');
     let activeBtn = parentDiv.querySelector('[data-toggle][aria-expanded=true]');
     // deactivate previously active
-    activeAnchor.setAttribute("aria-expanded", false)
+    activeAnchor.setAttribute("aria-expanded", false);
     activeBtn.setAttribute("aria-expanded", false);
     activeDiv.setAttribute("aria-hidden", true);
     // active.classList.remove("visible", "on");
@@ -36,7 +36,7 @@ var Tabs = {
     // activeDiv.classList.remove("visible");
 
     // activate current (visually)
-    anchor.setAttribute("aria-expanded", true)
+    anchor.setAttribute("aria-expanded", true);
     btn.setAttribute("aria-expanded", true);
     div.setAttribute("aria-hidden", false);
 
