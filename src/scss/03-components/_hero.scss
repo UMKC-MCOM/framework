@@ -33,8 +33,12 @@
     font-size: var(--hero-title, #{mx.px-to-rem(48px)});
   }
   &--standard{
-    --hero-height: #{mx.px-to-rem(250px)};
+    --hero-height: #{mx.px-to-rem(120px)};
     --hero-title: #{mx.px-to-rem(48px)} !important;
+
+    #{$self}__content{
+      background-image: none;
+    }
   }
   &--pfinder {
     --hero-height: #{mx.px-to-rem(550px)};
@@ -219,9 +223,9 @@
         width: calc(100vw  * 0.55);
       }
     }
-    
+
     #{$self}__title{
-      padding: 0 var(--global-padding) 0; 
+      padding: 0 var(--global-padding) 0;
       &--r1{
         padding: 7rem 0 0;
         display: block;
@@ -231,7 +235,7 @@
         font-weight: 700;
         color: var(--umkc-yellow);
         @include mx.for-size("desktop-up"){
-          @include mx.font-size(200px, 1);  
+          @include mx.font-size(200px, 1);
         }
       }
     }

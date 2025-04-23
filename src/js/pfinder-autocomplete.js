@@ -1,3 +1,4 @@
+/* START AUTOCOMPLETE CODE */
 import { autocomplete } from '@algolia/autocomplete-js';
 import {
   meilisearchAutocompleteClient,
@@ -75,3 +76,4 @@ if ( document.querySelector("#autocomplete") !== null ) {
     },
   });
 }
+/* END AUTOCOMPLETE CODE */
