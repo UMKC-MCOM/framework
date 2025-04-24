@@ -7,4 +7,11 @@
   &:has(.highlight) {
     --heading-margin: 1.5rem 0;
   }
+  
+  &.search-content {
+    @include mx.for-size("phone-only"){
+      padding: #{mx.px-to-rem(28px)} #{mx.px-to-rem(20px)};  
+    }
+    
+  }
 }

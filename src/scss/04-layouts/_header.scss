@@ -53,8 +53,15 @@
   }
 
   &__pfinder {
+    --logo-height: #{mx.px-to-rem(48px)};
+    --dept-title: #{mx.px-to-rem(20px)};
+    @include mx.for-size("tablet-landscape-up"){
+      --logo-height: 4.6875rem;
+      --dept-title: #{mx.px-to-rem(34px)};
+    }
     &#{$self}--primary {
       --background: var(--umkc-navy);
+      align-items: flex-start;
       a {
         font-weight: 600;
         @include mx.font-size(16px);
@@ -64,7 +71,18 @@
     }
     &#{$self}--secondary {
       --background: var(--umkc-blue);
+      @include mx.for-size("phone-only"){
+        padding: 20px;
+        display: block;
+        text-align: center;  
+      }
     }
+    
+    .dept-header{
+      padding-top: 0.5rem;
+    }
+    
+    
   }
 
   &__cta {
@@ -139,7 +157,9 @@
     color: var(--text-color, var(--white));
     padding: 0;
     margin: 0;
-    @include mx.font-size(34px, 1);
+    font-size: var(--dept-title, #{mx.px-to-rem(34px)});
+    line-height: 1;
+    // @include mx.font-size(34px, 1);
     a {
       display: inline-block;
     }

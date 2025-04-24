@@ -25,20 +25,6 @@
 }
 
 .pf-request_info {
-  // position: absolute;
-  // top: 0;
-  // bottom: calc(5.25rem + (45px));
-  // z-index: 3;
-  // right: 0;
-  // width: 100%;
-  // transform: translateX(100%);
-  // left: unset;
-  // transition: all 250ms ease;
-
-  // @include mx.for-size("desktop-up") {
-    // position: static;
-    // transform: unset;
-  // }
   &__wrapper {
       @include mx.for-size("desktop-up") {
       max-width: 85vw;
@@ -548,12 +534,12 @@
 .pf-search {
   $self: &;
   display: flex;
-
-  flex-flow: column;
+  flex-flow: row;
+  margin: 0 auto;
+  gap: 1rem;
   @include mx.for-size("desktop-up") {
     max-width: 85vw;
     margin: 0 auto;
-    flex-flow: row;
     gap: 2.5rem;
   }
 
@@ -561,6 +547,7 @@
     --heading-size: #{mx.px-to-rem(24px)};
     --heading-color: var(--font-color);
     --heading-margin: 0 0 #{mx.px-to-rem(25px)};
+    display: none;
     font-family: var(--os);
     text-transform: uppercase;
   }
@@ -575,25 +562,24 @@
 
   }
   &__view-all{
-    margin-top: 2rem;
-
+    // margin-top: 2rem;
     @include mx.for-size("desktop-up"){
       display: none;
     }
     .button{
-      .show {
-        display: inline;
+      font-weight: 300;
+      text-transform: capitalize;
+      @include mx.font-size(13px, 1);
+      font-family: var(--roboto);
+      padding: 1rem;
+      margin: 0;
+      svg {
+        height: 25px;
+        width: 25px;
       }
-      .hide {
-        display: none;
-      }
-      &[aria-expanded="true"]{
-        .show {
-          display: none;
-        }
-        .hide {
-          display: inline;
-        }
+      
+      span{
+        display: block;
       }
     }
   }
