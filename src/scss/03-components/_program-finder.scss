@@ -7,7 +7,7 @@
     display: block;
     position: fixed;
     top: 0;
-    z-index: 5;
+    z-index: 110;
     height: 100vh;
     overflow-y: scroll;
     width: 100%;
@@ -249,18 +249,21 @@
       justify-items: flex-end;
     }
     &-input{
+      appearance: none;
+      background: var(--white);
       height: 42px;
       margin: 0;
-      width: calc(100% - (42px + 0.5rem));
-      border-radius: mx.px-to-rem(10px);
+      width: 100%;
+      border-radius: mx.px-to-rem(4px);
+      border: 1rem var(--umkc-grey);
     }
     &-submit{
-      background: transparent;
       appearance: none;
+      background: transparent;
       height: 42px;
       border: none;
       border-radius: 0 mx.px-to-rem(10px) mx.px-to-rem(10px) 0;
-      margin-left: -2.5rem;
+      margin-left: -3rem;
     }
     &-reset{
       appearance: none;
@@ -323,24 +326,9 @@
       width: 18px;
     }
   }
-
-  // &-InfiniteHits {
-  //   padding: var(--content-padding);
-  //   &-list{
-  //     list-style: none;
-  //     display: flex;
-  //     flex-flow: row wrap;
-  //     justify-content: space-between;
-  //     gap: 1rem;
-  //     margin: 0;
-  //     padding: 0;
-  //   }
-  //   &-item{
-  //     flex-basis: 340px;
-  //     background: var(--umkc-gray);
-  //     margin: 0;
-  //   }
-  // }
+  &-Stats{
+    display: inline;
+  }
 }
 
 .results {
@@ -443,22 +431,25 @@
   }
 }
 
+/* Gives us access to position the results button */
+#filter-toggle {
+  position: relative;
+  height: 100%;
+}
+
 .filter-views {
   position: relative;
   margin: 0 var(--content-padding);
   // height: 66px;
   display: flex;
   gap: 2rem;
+
   &__active {
 
     flex: 1;
     .ais {
       &-CurrentRefinements{
-        display: none;
-
-        @include mx.for-size("tablet-landscape-up"){
-          display: block;
-        }
+        display: block;
         .icon {
           color: var(--umkc-dark-blue);
         }
@@ -504,10 +495,12 @@
     }
   }
   &__buttons {
+    display: none;
     flex: 1;
     text-align: right;
 
-    @include mx.for-size("tablet-landscape-up"){
+    @include mx.for-size("desktop-up"){
+      display: block;
       flex: 0 0 140px;
     }
     button {
@@ -534,32 +527,104 @@
 .pf-search {
   $self: &;
   display: flex;
-  flex-flow: row;
-  margin: 0 auto;
-  gap: 1rem;
-  @include mx.for-size("desktop-up") {
-    max-width: 85vw;
-    margin: 0 auto;
+
+  &__takeover {
+    background: var(--umkc-lighter-blue);
+    position: fixed;
+      top: 0;
+      left: 0;
+    height: 100%;
+    margin-bottom: 4rem;
+    overflow-y: auto;
+    padding: 0 var(--content-padding);
+    width: 100vw;
+    display: none;
+    z-index: 101;
+    &[aria-hidden=false]{
+      display: block;
+    }
+
+    @include mx.for-size("desktop-up") {
+      position: relative;
+      height: unset;
+      display: block;
+    }
+  }
+  &__wrapper {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     gap: 2.5rem;
+
+    @include mx.for-size("desktop-up") {
+      display: flex;
+      flex-direction: row;
+      max-width: 85vw;
+      position: initial;
+      justify-content: flex-start;
+    }
+  }
+
+  &__results{
+    display: block;
+    border-radius: 0;
+    position: absolute;
+    bottom: 0;
+    left: calc(var(--content-padding) * -1);
+    right: calc(var(--content-padding) * -1);
+    @include mx.for-size("desktop-up"){
+      display: none;
+    }
+  }
+
+  &__toggle{
+    font-weight: 300;
+    @include mx.font-size(16px);
+    justify-self: center;
+    align-self: center;
+
+    &--search{
+      flex: 0 1 70%;
+      text-align: left;
+      background: white;
+      padding: 0.5rem;
+      &:hover, &:active, &:focus {
+        background: white;
+      }
+    }
+    &--filter{
+      flex: 1 1 fit-content;
+      span {
+        display: block;
+        text-wrap: nowrap;
+      }
+      .icon {
+      }
+    }
+
+    @include mx.for-size("desktop-up") {
+      display: none;
+    }
   }
 
   &__title{
     --heading-size: #{mx.px-to-rem(24px)};
     --heading-color: var(--font-color);
     --heading-margin: 0 0 #{mx.px-to-rem(25px)};
-    display: none;
     font-family: var(--os);
     text-transform: uppercase;
   }
   &__form {
-    padding: 2rem 1rem;
+    padding: 2rem 0;
+
     @include mx.for-size("tablet-landscape-up"){
       flex: 0 0 35%;
     }
     @include mx.for-size("desktop-up"){
       flex: 0 0 30%;
+      display: block;
     }
-
   }
   &__view-all{
     // margin-top: 2rem;
@@ -577,7 +642,7 @@
         height: 25px;
         width: 25px;
       }
-      
+
       span{
         display: block;
       }
@@ -585,15 +650,11 @@
   }
 
   &__interests{
-    border-top: 1px solid var(--font-color);
-    padding: 2rem;
-    margin-bottom: 4rem;
-    display: none;
-    @include mx.for-size("tablet-landscape-up"){
+    @include mx.for-size("desktop-up"){
       border-top: none;
       border-left: 1px solid var(--font-color);
-      margin-bottom: unset;
       display: block;
+      padding: 2rem;
     }
 
     &[aria-hidden="false"]{
@@ -636,7 +697,7 @@
   }
   &__heading {
     font-weight: bold;
-    color: #707070;
+    color: #6b6b6b; // Meets minimum accessibility standard
     margin: 1rem 0;
   }
 

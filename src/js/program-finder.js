@@ -1,12 +1,12 @@
 import { loadScript } from './load-script.js';
 // Change the view.
-const viewButtons = document.querySelectorAll(".filter-views__buttons button").length > 0 ? document.querySelectorAll('.filter-views__buttons button') : false;
+const viewButtons = document.querySelectorAll("button[data-view]").length > 0 ? document.querySelectorAll('button[data-view]') : false;
 if ( viewButtons ) {
   const listArea = document.querySelector("#listArea");
   viewButtons.forEach( (btn) => {
     btn.addEventListener("click", function(e){
       e.preventDefault();
-      let parent = btn.parentNode;
+      let parent = btn.closest("div");
       let activeButton = parent.querySelector(".active");
       activeButton.classList.remove("active");
       btn.classList.add('active');

@@ -1,25 +1,23 @@
 <div class="menu">
   <ul class="menu__list" id="menu" role="menubar" >
     <li class="menu__item" role="menuitem" aria-haspopup="true">
-      <a href="#" class="menu__link" data-toggle=".search-content" data-focus=".search input">
-        <svg class="icon menu__icon menu__icon--search"><use xlink:href="#search"></use></svg>
-        <svg class="icon menu__icon menu__icon--close"><use xlink:href="#close"></use></svg>
-        Search
-      </a>
-    </li>
-    <li class="menu__item" role="menuitem">
-      <a href="#" class="menu__link" data-toggle=".pf-results__filter">
-        <svg class="icon menu__icon menu__icon--filter"><use xlink:href="#filter"></use></svg>
-        <svg class="icon menu__icon menu__icon--close"><use xlink:href="#close"></use></svg>
-        Filter
-      </a>
-    </li>
-    <li class="menu__item" role="menuitem" aria-haspopup="true">
-      <a href="#" class="menu__link" data-toggle="#main-navigation">
-        <svg class="icon menu__icon menu__icon--compare"><use xlink:href="#compare"></use></svg>
+      <button href="#" class="o-btn menu__link" data-toggle=".search-content" data-focus=".search input">
+        <svg class="icon menu__icon menu__icon--search"><use xlink:href="#compare"></use></svg>
         <svg class="icon menu__icon menu__icon--close"><use xlink:href="#close"></use></svg>
         Compare
-      </a>
+      </button>
+    </li>
+    <li class="menu__item" role="menuitem" aria-haspopup="true">
+      <button class="o-btn menu__link" data-view="listing">
+        <svg class="icon menu__icon"><use xlink:href="#list"></use></svg>
+        List View
+      </button>
+    </li>
+    <li class="menu__item" role="menuitem">
+      <button class="o-btn menu__link active" data-view="grid">
+        <svg class="icon menu__icon"><use xlink:href="#grid"></use></svg>
+        Card View
+      </button>
     </li>
     <li class="menu__item" role="menuitem">
       <a href="#" class="menu__link">
