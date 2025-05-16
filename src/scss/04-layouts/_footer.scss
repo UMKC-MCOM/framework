@@ -27,14 +27,16 @@
 
   &__top {
     align-items: center;
-    height: 44.5vh;
-    background-image: var(--footer-image);
     background-color: var(--black);
+    background-image: var(--footer-image);
     background-position: center bottom;
     background-size: cover;
-
+    height: 44.5vh;
     justify-content: center;
-    @media (orientation: landscape) {
+
+    @media screen and (min-device-width: 480px)
+    and (max-device-width: 640px)
+    and (orientation: landscape) {
       height: unset;
     }
 
