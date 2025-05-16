@@ -50,14 +50,6 @@ if ( formWrapper ) {
 }
 
 function createMenu(){
-  // reqInfoButtons.forEach( (btn) => {
-  //   btn.addEventListener('click', (item) => {
-  //     item.preventDefault();
-  //     item.target.classList.toggle("active");
-  //     formWrapper.classList.toggle("pf-request_info--active");
-  //   });
-  // });
-
   if ( navigation && overview ){
     let ovPos = overview.getBoundingClientRect();
     window.addEventListener('scroll', debounce(function(){
@@ -80,7 +72,6 @@ function createMenu(){
         }, 150);
       });
     });
-
   }
 }
 
