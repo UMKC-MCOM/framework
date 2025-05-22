@@ -1,0 +1,121 @@
+@use "../01-abstracts/mixins" as mx;
+
+table{
+  &.gsc-search-box, &.gsc-above-wrapper-area-container, &.gstl_50, &.gssb_c {
+    margin: 0;
+    table.gsc-input {
+      margin: 0;
+    }
+    .gsib_a{
+      padding: 0;
+    }
+    input.gsc-input {
+      @include mx.font-size(18px, 1.5);
+      height: 56px !important;
+      padding: 0.5rem 1rem !important;
+      margin: 0 !important;
+    }
+    td, th {
+      padding: none;
+      border: none;
+    }
+    tr, tr:nth-of-type(odd), th {
+      background: none;
+    }
+  }
+  &.gstl_50, &.gssb_c{
+    td {
+      padding: 0.25rem .5rem;
+    }
+    tr {
+      &:hover {
+        background: var(--umkc-gray);
+      }
+      &:not(:last-child){
+        border-bottom: solid 1px var(--umkc-gray);
+      }
+    }
+  }
+  button.gsc-search-button {
+    background: var(--umkc-yellow);
+    height: 56px;
+    width: 56px;
+    padding: 0;
+    border-color: var(--umkc-yellow);
+    @include mx.tr();
+    &:hover, &:focus {
+      background: var(--umkc-blue);
+
+      svg {
+        fill: var(--white);
+      }
+    }
+    svg {
+      @include mx.tr();
+      fill: var(--umkc-blue);
+      height: 32px;
+      width: 32px;
+      margin: 0;
+      padding: 0;
+      transform: scaleX(-1)
+    }
+  }
+}
+.gstl_50.gssb_c{
+  margin: 0;
+}
+.gsc-refinementsArea {
+  @include mx.font-size(18px);
+}
+.gsc-selected-option-container {
+  min-width: 100px !important;
+}
+
+.gsc-control-cse {
+  font-size: 18px !important;
+  .gs-result {
+    padding: 0.5rem 0;
+    .gs-title, .gs-title * {
+      color: var(--umkc-blue);
+      font-size: 22px !important;
+
+      &:visited {
+        color: var(--umkc-dark-blue) !important;
+      }
+    }
+
+    .gs-image-box {
+      display: block;
+      width: 120px;
+      margin-right: 1rem;
+    }
+
+    .gs-image {
+      max-width: mx.px-to-rem(120px);
+      width: 100%;
+      height: auto;
+    }
+  }
+  .gsc-table-result {
+    font-size: 1rem !important;
+  }
+}
+
+.gsc-results {
+  .gsc-cursor-box {
+    margin-bottom: 1rem !important;
+    .gsc-cursor-page{
+      padding: 1rem;
+      background-color: var(--umkc-gray) !important;
+
+      &:hover, &:focus {
+        background-color: var(--umkc-dark-blue) !important;
+        color: white !important;
+      }
+    }
+    .gsc-cursor-current-page {
+      background-color: var(--umkc-blue) !important;
+      color: white !important;
+    }
+  }
+}

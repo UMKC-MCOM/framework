@@ -1,9 +1,25 @@
 ﻿@use "../01-abstracts/mixins" as mx;
+#autocomplete{
+  // Algolia Autocomplete Variable overrides
+  --aa-base-unit: 16px;
+  --aa-font-size: 1.5rem;
+  --aa-input-border-color-rgb: 0,102,204;
+  --aa-input-border-color-alpha: 1;
+  --aa-primary-color-rgb: var(--aa-input-border-color-rgb);
+  --aa-selected-color-rgb: 0,102,204;
+  --aa-selected-color-alpha: 1;
+  --aa-search-input-height: 72px;
+  --aa-input-icon-size: 24px;
+}
+
+.aa-Panel {
+  .aa-Item[aria-selected=true] {
+    background-color: #dff2f7;
+  }
+}
 
 .program-finder {
     $self: &;
-
-
     &__title {
         text-align: center;
     }
@@ -12,6 +28,15 @@
         text-align: center;
     }
 
+    &__wrapper{
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    &__buttons{
+      margin-top: 2rem;
+      text-align: center;
+    }
     &__form-wrapper {
         max-width: 800px;
         margin: 0 auto;

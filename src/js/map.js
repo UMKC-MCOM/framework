@@ -49,7 +49,7 @@ window.initMap = function() {
       <div class="map__info">
       <h2 class="map__title">${item.title}</h2>
       <p class="map__content">${item.text}</p>
-    `
+    `;
     const pin = new google.maps.marker.PinElement ({
       glyph: parser.parseFromString(icons[item.category], "image/svg+xml").documentElement,
     });

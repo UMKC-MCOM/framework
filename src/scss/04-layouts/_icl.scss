@@ -57,7 +57,7 @@
     }
 
     @include mx.for-size("desktop-up") {
-      max-width: 80vw;
+      max-width: 75vw;
     }
   }
 
@@ -118,8 +118,8 @@
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
-
     }
+
     #{$self}__title {
       --heading-size: #{mx.px-to-rem(24px)};
       flex: 1 0 100%;

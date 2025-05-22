@@ -84,6 +84,7 @@
   img {
     height: #{mx.px-to-rem(150px)};
     width: #{mx.px-to-rem(150px)};
+    object-fit: cover;
   }
 
   &--hp {

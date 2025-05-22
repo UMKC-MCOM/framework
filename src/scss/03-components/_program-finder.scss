@@ -1,0 +1,1120 @@
+@use "../01-abstracts/variables" as var;
+@use "../01-abstracts/mixins" as mx;
+
+.pf-results__filter {
+  display: none;
+  &[aria-hidden="false"] {
+    display: block;
+    position: fixed;
+    top: 0;
+    z-index: 110;
+    height: 100vh;
+    overflow-y: scroll;
+    width: 100%;
+  }
+
+  @include mx.for-size("desktop-up"){
+    display: block;
+    &[aria-hidden="false"]{
+      display: block;
+      position: unset;
+      height: unset;
+      top: unset;
+    }
+  }
+}
+
+.pf-request_info {
+  &__wrapper {
+      @include mx.for-size("desktop-up") {
+      max-width: 85vw;
+      margin: 0 auto;
+    }
+  }
+  &__title {
+    --heading-color: var(--umkc-dark-blue);
+    --heading-size: #{mx.px-to-rem(24px)};
+    --heading-margin:0 0 2rem;
+    font-family: var(--os);
+    text-transform: uppercase;
+  }
+  form {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+
+    @include mx.for-size(desktop-up){
+      grid-template-columns: 80% 20%;
+      grid-template-rows: repeat(1, 1fr);
+    }
+
+    #form_start {
+      display: none;
+    }
+    .form_action {
+      text-align: center;
+
+      @include mx.for-size(desktop-up){
+        align-content: center;
+      }
+    }
+    #form_page_1 {
+      display: grid;
+      gap: mx.px-to-rem(10px);
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr 1fr;
+      @include mx.for-size(desktop-up){
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      label {
+        display: block;
+        font-weight: bold;
+        font-size: 13px;
+        margin-bottom: 0.25rem;
+      }
+    }
+    .input-wrapper {
+      label {
+        display: block;
+        font-weight: bold;
+        font-size: 13px;
+        margin-bottom: 0.25rem;
+      }
+      input, button {
+        width: 100%;
+      }
+
+      &.submit-button {
+        align-self: end;
+
+        button {}
+      }
+    }
+    .text-message-choice-wrapper {
+      grid-column: 1/4;
+      @include mx.for-size(tablet-portrait-up){
+        // grid-column: 1/4;
+      }
+      label {
+        display: inline;
+      }
+      input[type="radio"] {
+        display: inline;
+        width: 20px;
+      }
+      br {
+        clear:both;
+      }
+    }
+  }
+  &--active{
+    transform: translateX(0);
+  }
+}
+
+.overview {
+    padding: var(--content-padding);
+    display: flex;
+    flex-flow: column;
+    margin: auto;
+    @include mx.for-size(desktop-up){
+      max-width: 85vw;
+      gap: mx.px-to-rem(80px);
+      flex-flow: row;
+      padding: var(--content-padding) 0;
+    }
+
+    &__content {
+      @include mx.font-size(20px, 1.25);
+      order: 2;
+      margin-bottom: 2rem;
+
+      @include mx.for-size(desktop-up){
+        @include mx.font-size(24px, 1.25);
+        order: 1;
+        margin-bottom: 0;
+        flex: 0 calc(60% - 40px);
+      }
+    }
+
+    &__highlights {
+      order: 1;
+      @include mx.font-size(18px);
+      @include mx.for-size(desktop-up){
+          order: 2;
+          flex: 0 1  calc(40% - 40px);
+      }
+
+      strong {
+        text-transform: uppercase;
+      }
+
+    }
+    &__list {
+      list-style: none;
+      margin-bottom: 0rem;
+      margin-left:0;
+      padding:0;
+      padding-left:0;
+    }
+    &__item {
+      display: flex;
+
+      margin-bottom: 1.5rem;
+
+      &--disclaimer {
+        padding: 1rem 0;
+        font-size: 16px;
+      }
+    }
+  .icon {
+    --icon-size: #{mx.px-to-rem(24px)};
+    margin-right: 0.675rem;
+    height: var(--icon-size);
+    width: var(--icon-size);
+    color: var(--umkc-blue);
+  }
+}
+
+// After Graduation
+.after-grad {
+  padding: var(--content-padding);
+
+  @include mx.for-size("desktop-up"){
+    display: flex;
+    max-width: 85vw;
+    margin: 0 auto;
+    gap: mx.px-to-rem(48px);
+    padding: var(--content) 0;
+  }
+
+  .disclaimer {
+    font-size: 16px;
+    flex-basis: 100%;
+  }
+  &__copy {
+    flex: 1 0;
+    @include mx.font-size(20px);
+    h3 {
+      --heading-margin: 0;
+      --heading-color: var(--font-color);
+      @include mx.font-size(20px);
+    }
+    ul {
+
+      padding: 0.5rem 0;
+    }
+  }
+  &__stats {
+    flex: 0 1 mx.px-to-rem(448px);
+  }
+
+  &__image {
+    display: block;
+    margin: 1rem auto;
+  }
+
+  &__items {
+    display: flex;
+    gap: 2rem;
+    flex-flow: column;
+    @include mx.for-size("desktop-up"){
+      flex-flow: row;
+      flex-flow: wrap;
+    }
+  }
+  &__item {
+    font-weight: bold;
+    flex-basis: calc(50% - 1rem);
+  }
+  &__title {
+    @include mx.font-size(48px, 1.5);
+    color: var(--umkc-blue);
+
+  }
+  &__content {
+    @include mx.font-size(24px);
+  }
+}
+
+// Instant Search default classes
+.ais {
+  &-SearchBox{
+    &-form{
+      display: flex;
+      justify-items: flex-end;
+    }
+    &-input{
+      appearance: none;
+      background: var(--white);
+      height: 42px;
+      margin: 0;
+      width: 100%;
+      border-radius: mx.px-to-rem(4px);
+      border: 1rem var(--umkc-grey);
+    }
+    &-submit{
+      appearance: none;
+      background: transparent;
+      height: 42px;
+      border: none;
+      border-radius: 0 mx.px-to-rem(10px) mx.px-to-rem(10px) 0;
+      margin-left: -3rem;
+    }
+    &-reset{
+      appearance: none;
+      background: var(--umkc-dark-blue);
+      border: none;
+      border-radius: mx.px-to-rem(10px);
+      color: var(--white);
+      height: 42px;
+      margin-left: 0.5rem;
+      width: 42px;
+    }
+    &-loadingIndicator{}
+  }
+  &-RefinementList{
+    &-list{
+      display: flex;
+      flex-flow: column wrap;
+      list-style: none;
+      margin: 0;
+      padding:0;
+      gap: 1rem;
+      justify-content: flex-start;
+      @include mx.for-size("tablet-landscape-up"){
+        flex-flow: row wrap;
+        align-items: center;
+      }
+    }
+    &-item{
+      padding: 0;
+      flex: 1 calc( ( 100% / 2) - 1rem);
+      @include mx.for-size("desktop-up"){
+        flex: 1 calc( ( 100% / 3) - 1rem);
+      }
+
+      label {
+        display: flex;
+        align-items: center;
+
+        .icon {
+          margin-left: 1rem;
+        }
+      }
+      input[type="checkbox"]{
+        margin-right: 1rem;
+        flex: none;
+      }
+    }
+  }
+
+  &-ClearRefinements-button{
+    appearance: none;
+    display: block;
+    color: #707070;
+    background: none;
+    border: none;
+
+    .icon {
+      color: #707070 !important;
+      height: 18px;
+      width: 18px;
+    }
+  }
+  &-Stats{
+    display: inline;
+  }
+}
+
+.results {
+  .ais {
+    &-InfiniteHits {
+      padding: var(--content-padding);
+      &-list{
+        list-style: none;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        gap: 1rem;
+        margin: 0;
+        padding: 0;
+      }
+      &-item{
+        width: 100%;
+        @include mx.for-size("tablet-portrait-up"){
+          flex-basis: 300px;
+        }
+        @include mx.for-size("tablet-landscape-up"){
+          flex-basis: 340px;
+        }
+        background: var(--umkc-gray);
+        margin: 0;
+      }
+
+      &-loadMore {
+        background: var(--umkc-yellow);
+        color: var(--umkc-blue);
+        border-radius: 8px;
+        border: none;
+        padding: 1rem;
+        display: block;
+        text-align: center;
+        margin: 2rem auto;
+        font-family: var(--os);
+        font-weight: bold;
+        text-transform: uppercase;
+        @include mx.font-size(18px);
+
+        &:hover, &:focus {
+          background: var(--umkc-blue);
+          color: var(--white);
+        }
+      }
+    }
+  }
+  &__list{
+    &--listing{
+      .ais {
+        &-InfiniteHits {
+          &-list {
+            flex-flow: column;
+          }
+          &-item {
+            flex-basis: unset;
+          }
+        }
+      }
+      .result {
+        // height: mx.px-to-rem(142px);
+        &__image, &__interest {
+          display: none;
+        }
+        &__content {
+          padding: 1rem 2rem;
+        }
+        &__title {
+          --heading-margin: 0.5rem 0 1rem;
+          @include mx.for-size("tablet-landscape-up"){
+            --heading-margin: 0.5rem 0 3rem;
+          }
+        }
+        &__footer {
+          margin-bottom: 2.5rem;
+          @include mx.for-size("tablet-landscape-up"){
+            display: inline-block;
+            position: absolute;
+            right: 2rem;
+            top: 2.75rem;
+            white-space: nowrap;
+            margin-bottom: unset;
+          }
+
+          p {
+            padding: 0 0 0.5rem;
+            margin: 0;
+          }
+
+        }
+        .icon {
+          --icon-size: #{mx.px-to-rem(32px)};
+          top: unset;
+          bottom: 1rem;
+          left: 2rem;
+        }
+      }
+    }
+  }
+}
+
+/* Gives us access to position the results button */
+#filter-toggle {
+  position: relative;
+  height: 100%;
+}
+
+.filter-views {
+  position: relative;
+  margin: 0 var(--content-padding);
+  // height: 66px;
+  display: flex;
+  gap: 2rem;
+
+  &__active {
+
+    flex: 1;
+    .ais {
+      &-CurrentRefinements{
+        display: block;
+        .icon {
+          color: var(--umkc-dark-blue);
+        }
+        &-list {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+        &-label {
+          font-family: var(--os);
+          text-transform: uppercase;
+          font-weight: bold;
+        }
+        &-item {}
+        &-category {
+          text-transform: capitalize;
+          display: inline-block;
+          padding: 0.25rem;
+          margin: 0.25rem;
+          &:not(:last-child){
+            margin-right: 0.5rem;
+            &:after {
+              content: " / ";
+              margin-left: 1rem;
+            }
+          }
+        }
+        &-categoryLabel{
+        }
+        &-delete {
+          background: var(--umkc-gray);
+          border:none;
+          appearance: none;
+          line-height: 1.5;
+          margin: 0 0 0 0.5rem ;
+
+          &:hover, &:focus {
+            background: var(--umkc-dark-blue);
+            color: var(--white);
+          }
+        }
+      }
+    }
+  }
+  &__buttons {
+    display: none;
+    flex: 1;
+    text-align: right;
+
+    @include mx.for-size("desktop-up"){
+      display: block;
+      flex: 0 0 140px;
+    }
+    button {
+      padding: 1rem;
+      background: var(--umkc-gray);
+      .icon {
+        color: var(--umkc-blue);
+      }
+      &.active {
+        background: var(--umkc-yellow);
+
+      }
+      &:hover, &:focus {
+        background: var(--umkc-blue);
+        .icon {
+          color: var(--white);
+        }
+      }
+    }
+  }
+}
+
+//Explore Programs
+.pf-search {
+  $self: &;
+  display: flex;
+
+  &__takeover {
+    background: var(--umkc-lighter-blue);
+    position: fixed;
+      top: 0;
+      left: 0;
+    height: 100%;
+    margin-bottom: 4rem;
+    overflow-y: auto;
+    padding: 0 var(--content-padding);
+    width: 100vw;
+    display: none;
+    z-index: 101;
+    &[aria-hidden=false]{
+      display: block;
+    }
+
+    @include mx.for-size("desktop-up") {
+      position: relative;
+      height: unset;
+      display: block;
+    }
+  }
+  &__wrapper {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+
+    @include mx.for-size("desktop-up") {
+      display: flex;
+      flex-direction: row;
+      max-width: 85vw;
+      position: initial;
+      justify-content: flex-start;
+    }
+  }
+
+  &__results{
+    display: block;
+    border-radius: 0;
+    position: absolute;
+    bottom: 0;
+    left: calc(var(--content-padding) * -1);
+    right: calc(var(--content-padding) * -1);
+    @include mx.for-size("desktop-up"){
+      display: none;
+    }
+  }
+
+  &__toggle{
+    font-weight: 300;
+    @include mx.font-size(16px);
+    justify-self: center;
+    align-self: center;
+
+    &--search{
+      flex: 0 1 70%;
+      text-align: left;
+      background: white;
+      padding: 0.5rem;
+      &:hover, &:active, &:focus {
+        background: white;
+      }
+    }
+    &--filter{
+      flex: 1 1 fit-content;
+      span {
+        display: block;
+        text-wrap: nowrap;
+      }
+      .icon {
+      }
+    }
+
+    @include mx.for-size("desktop-up") {
+      display: none;
+    }
+  }
+
+  &__title{
+    --heading-size: #{mx.px-to-rem(24px)};
+    --heading-color: var(--font-color);
+    --heading-margin: 0 0 #{mx.px-to-rem(25px)};
+    font-family: var(--os);
+    text-transform: uppercase;
+  }
+  &__form {
+    padding: 2rem 0;
+
+    // @include mx.for-size("tablet-landscape-up"){
+      // flex: 0 0 35%;
+    // }
+    @include mx.for-size("desktop-up"){
+      flex: 0 0 30%;
+      display: block;
+    }
+  }
+  &__view-all{
+    // margin-top: 2rem;
+    @include mx.for-size("desktop-up"){
+      display: none;
+    }
+    .button{
+      font-weight: 300;
+      text-transform: capitalize;
+      @include mx.font-size(13px, 1);
+      font-family: var(--roboto);
+      padding: 1rem;
+      margin: 0;
+      svg {
+        height: 25px;
+        width: 25px;
+      }
+
+      span{
+        display: block;
+      }
+    }
+  }
+
+  &__interests{
+    @include mx.for-size("desktop-up"){
+      border-top: none;
+      border-left: 1px solid var(--font-color);
+      display: block;
+      padding: 2rem;
+    }
+
+    &[aria-hidden="false"]{
+      display: block;
+    }
+    #{$self}__title{}
+  }
+
+  .icon {
+    height: 24px;
+    width: 24px;
+    color: var(--umkc-blue);
+  }
+}
+
+.pf-results {
+  display: flex;
+  margin-top: mx.px-to-rem(30px);
+
+  &__filter{
+    background: var(--umkc-lighter-blue);
+    padding: var(--content-padding);
+    .ais-RefinementList {
+      &-list {
+        display: block;
+      }
+      &-item {
+        padding: 0.5rem 0;
+        &:first-child {
+          padding-top: 0;
+        }
+      }
+    }
+  }
+  &__title {
+    --heading-color: var(--font-color);
+    --heading-size: #{mx.px-to-rem(24px)};
+    font-family: var(--os);
+    text-transform: uppercase;
+  }
+  &__heading {
+    font-weight: bold;
+    color: #6b6b6b; // Meets minimum accessibility standard
+    margin: 1rem 0;
+  }
+
+  &__clear {
+    margin-top: 1rem;
+  }
+
+  &__list {
+    flex-grow: 1;
+  }
+}
+
+.result {
+  $self: &;
+  position: relative;
+  &__image{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position: center center;
+   }
+   &__content{
+     padding: 1rem;
+   }
+   &__type {
+     font-weight: bold;
+     color: var(--umkc-blue);
+   }
+   &__title {
+     --heading-size: #{mx.px-to-rem(24px)};
+     --heading-margin: 0.675rem 0 0;
+     font-family: var(--os);
+     text-transform: uppercase;
+   }
+   &__footer{
+     display: flex;
+
+     p {
+       flex-basis: 50%;
+
+       &:last-child{
+         display: none;
+         text-align: right;
+         justify-self: end;
+       }
+     }
+
+     .form__label {
+       padding: 0;
+       input[type='checkbox'] {
+         margin-right: 0.675rem;
+       }
+     }
+   }
+   .icon {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    z-index: 2;
+    height: var(--icon-size, #{mx.px-to-rem(32px)});
+    width: var(--icon-size, #{mx.px-to-rem(32px)});
+  }
+
+  &--ac {
+    a{
+      text-decoration: none;
+    }
+    #{$self}__type{
+      margin-bottom: 0.5rem;
+    }
+    #{$self}__title{
+
+    }
+  }
+}
+
+.pf-results, .result{
+  .icon{
+    border-radius: 100%;
+    color: var(--white);
+    height: 32px;
+    padding:0.25rem;
+    width: 32px;
+
+    &--online {
+      background: var(--umkc-yellow);
+    }
+    &--in-person {
+      background: var(--umkc-dark-blue);
+    }
+    &--hybrid {
+      background: var(--umkc-light-blue);
+    }
+  }
+}
+
+// Compare Programs Flyout Elements
+.compare-tab {
+    position: fixed;
+    right: -6rem;
+    top: 60vh;
+    background: var(--umkc-yellow);
+    font-weight: bold;
+    cursor: pointer;
+    transform: rotate(-90deg);
+    padding: 1rem 2rem;
+    z-index:3;
+    display: none;
+    @include mx.for-size("desktop-up"){
+        display: block;
+    }
+
+    transition: 0.1s ease background-color;
+
+    &:hover {
+        background-color: var(--umkc-dark-blue);
+        right: -5rem;
+        transition: 0.1s ease background-color;
+        transition: 0.1s ease right;
+        p {
+            color: var(--umkc-yellow);
+            transition: 0.1s ease color;
+        }
+    }
+    &.compare-tab-open {
+        display: none;
+    }
+    p {
+        color: var(--umkc-dark-blue);
+        transition: 0.1s ease color;
+
+        span#comparedMajors {}
+    }
+}
+.smokescreen {
+    position: fixed;
+    top: 0;
+    left:0;
+    right:0;
+    bottom:0;
+    background: rgba(0,0,0,0.5);
+    z-index: 9997;
+    display: none;
+
+    &.smokescreen-shown {
+        display: block !important;
+    }
+}
+.compare-flyout {
+    background: var(--umkc-lighter-blue);
+    padding: 3rem;
+    //margin: 5rem;
+    position: fixed;
+    left: 0;
+    top: 0rem;
+    right:0;
+    bottom:0;
+    z-index: 2;
+    display: none;
+
+    &[aria-hidden="false"] {
+        display: block;
+
+    }
+    &[aria-hidden="true"] {
+        display: none;
+    }
+
+
+    //@TODO Make this section full-screen even on desktop re: Courtney's designs
+    @include mx.for-size("desktop-up"){
+        //left: auto;
+    }
+
+    h3 {
+      --heading-size: #{mx.px-to-rem(24px)};
+      --heading-color: var(--umkc-dark-blue);
+      font-family: var(--os);
+      text-transform: uppercase;
+        font-weight: bold;
+        margin: 0 0 2rem;
+    }
+
+    //@TODO: Repair the compare flyout close button to match Courtney design 10/30
+    a.compare-flyout__close {
+        // text-align: right;
+        // position: absolute;
+        // top: 1.5rem;
+        // right: 1.5rem;
+        display: none;
+
+        // svg {
+        //     width: 2rem;
+        //     height: 2rem;
+        //     fill: var(--umkc-blue);
+        //     transition: 0.1s ease fill;
+        // }
+
+        // &:hover {
+        //     svg {
+        //         fill: var(--umkc-dark-blue);
+        //         transition: 0.1s ease fill;
+        //     }
+        // }
+    }
+    .compare-flyout-list {
+        overflow: scroll;
+        .compare-flyout-list-wrapper {
+            display: flex;
+            gap: 20px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: normal;
+            align-content: normal;
+            margin-left: 0; // Overrride base ul, li tag stylings
+            padding: 0; // Overrride base ul, li tag stylings
+            list-style: none;
+
+            @include mx.for-size("desktop-up"){
+                justify-content: normal;
+            }
+            // li.compare-flyout-program {
+            li.results-program {
+                display: block;
+                flex-basis: auto;
+                align-self: auto;
+                background: var(--white);
+                .results-program_image {
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                    //@TODO: Determine proper sizing for these images
+                    min-height:200px;
+
+                    display: flex;
+                    gap: 0px;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    justify-content: flex-end;
+                    align-items: normal;
+                    align-content: normal;
+                    text-align: right;
+                    margin-bottom: 1.5rem;
+
+                    .results-program_button {
+                        margin: 5px;
+                        border-radius: 50%;
+                        text-align: center;
+                        line-height: 28px;
+                        color: var(--white);
+                        width: 30px;
+                        height: 30px;
+                        svg {
+                            height: 20px;
+                            width: 20px;
+                        }
+                    }
+                    .results-program_button__remote {
+                        background: var(--umkc-lighter-blue);
+                    }
+                    .results-program_button__hybrid {
+                        background: var(--umkc-yellow);
+                    }
+                    .results-program_button__on-campus {
+                        background: var(--umkc-dark-blue);
+                    }
+                }
+                .results-program_title-type {
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: var(--umkc-dark-blue);
+                }
+                .results-program_title {
+                  --heading-size: #{mx.px-to-rem(24px)};
+                  --heading-color: var(--umkc-blue);
+                  font-family: var(--os);
+                    font-weight: 600;
+                    margin: 0.5rem auto;
+                }
+                .results-program_interest-list {
+                    margin-bottom: 2rem;
+                    li {}
+                }
+                .results-program_footer {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: repeat(1, 1fr);
+                    .results-program_footer-view-program {
+                        a {}
+                    }
+                    .results-program_footer-compare {
+                        #addToCompare {
+                            text-align: right;
+
+                            input[type="checkbox"] {}
+                            label {}
+                        }
+                    }
+                }
+                .compare-flyout-program_text {
+                    margin: 1.5rem;
+                }
+                .compare-flyout-program_title-type {
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: var(--umkc-dark-blue);
+                }
+                .compare-flyout-program_title {
+                    font-weight: 600;
+                    margin: 0.25rem auto 0.5rem auto;
+                    --heading-size: #{mx.px-to-rem(24px)};
+                    --heading-color: var(--umkc-blue);
+                    font-family: var(--os);
+                }
+                .compare-flyout-program_interest-list {
+                    margin-bottom: 3rem;
+                    li {}
+                }
+                .compare-flyout-program_footer {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: repeat(1, 1fr);
+                    .compare-flyout-program_footer-view-program {
+                        a {}
+                    }
+                    .compare-flyout-program_footer-compare {
+                        #addToCompare {
+                            input[type="checkbox"] {}
+                            label {}
+                        }
+                    }
+                }
+            }
+            li.results-program {
+                display: block;
+                flex-basis: auto;
+                align-self: auto;
+                background: var(--white);
+                .results-program_image {
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                    //@TODO: Determine proper sizing for these images
+                    min-height:200px;
+
+                    display: flex;
+                    gap: 0px;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    justify-content: flex-end;
+                    align-items: normal;
+                    align-content: normal;
+                    text-align: right;
+                    margin-bottom: 1.5rem;
+
+                    .results-program_button {
+                        margin: 5px;
+                        border-radius: 50%;
+                        text-align: center;
+                        line-height: 28px;
+                        color: var(--white);
+                        width: 30px;
+                        height: 30px;
+                        svg {
+                            height: 20px;
+                            width: 20px;
+                        }
+                    }
+                    .results-program_button__remote {
+                        background: var(--umkc-lighter-blue);
+                    }
+                    .results-program_button__hybrid {
+                        background: var(--umkc-yellow);
+                    }
+                    .results-program_button__on-campus {
+                        background: var(--umkc-dark-blue);
+                    }
+                }
+                .results-program_text-wrapper {
+                    margin: 1.5rem;
+
+                    .results-program_title-type {
+                        font-size: 16px;
+                        font-weight: bold;
+                        color: var(--umkc-dark-blue);
+                    }
+                    .results-program_title {
+                      --heading-size: #{mx.px-to-rem(24px)};
+                      --heading-color: var(--umkc-blue);
+                      font-family: var(--os);
+                        font-weight: 600;
+                        margin: 0.5rem auto;
+
+                    }
+                    .results-program_interest-list {
+                        margin-bottom: 2rem;
+                        li {}
+                    }
+                    .results-program_footer {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        grid-template-rows: repeat(1, 1fr);
+                        .results-program_footer-view-program {
+                            a {}
+                        }
+                        .results-program_footer-compare {
+                            #addToCompare {
+                                text-align: right;
+
+                                input[type="checkbox"] {}
+                                label {}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

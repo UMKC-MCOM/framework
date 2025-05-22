@@ -1,24 +1,37 @@
 @use "../01-abstracts/mixins" as mx;
 
-.main-navigation {
-  background: var(--nav-background, var(--umkc-navy));
-  bottom: mx.px-to-rem(84px);
-  display: block;
-  width: 100%;
-  font-weight: 700;
-  box-shadow: 0 0 25px 0px #000;
-  z-index: 2;
-  padding: 1rem 0;
+#main-navigation {
   position: fixed;
-  @include mx.font-size(18px, 1.5);
   transition: 150ms linear all;
   transform: translateY(100%);
   visibility: hidden;
+  bottom: mx.px-to-rem(84px);
+  z-index: 2;
+  background: var(--nav-background, var(--umkc-navy));
+  box-shadow: 0 0 25px 0px #000;
   &[aria-hidden="false"]{
     visibility: visible;
     transform: translateY(0);
   }
-
+  @include mx.for-size("desktop-up") {
+    box-shadow: none;
+    position: static;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+.main-navigation {
+  $self: &;
+  display: block;
+  width: 100%;
+  font-weight: 700;
+  padding: 1rem 0;
+  @include mx.font-size(18px, 1.5);
+  @include mx.for-size("desktop-up") {
+    border-top: mx.px-to-rem(3px) solid var(--umkc-yellow);
+    font-family: var(--condensed);
+    padding: 0 var(--global-padding);
+  }
   &--white {
     --nav-background: white;
     --nav-text: var(--umkc-blue);
@@ -30,15 +43,98 @@
     --nav-background: var(--umkc-blue);
     --hover-color: var(--umkc-dark-blue);
   }
+  &--cta {
+    border-top: solid 2px var(--umkc-blue);
+    margin: 1rem 0;
+    padding: 1rem 0;
+    @include mx.for-size("desktop-up"){
+      display: none;
+    }
+  }
+  &--pfinder {
+    border-top: transparent;
+    --nav-background: var(--umkc-blue);
+    display: none;
+    position: fixed !important;
+    @include mx.for-size("desktop-up"){
+      z-index: 5;
+    }
+    &.is-sticky {
+      bottom: unset !important;
+      display: block;
+      top: 0;
+    }
 
-  @include mx.for-size("desktop-up") {
-    border-top: mx.px-to-rem(3px) solid var(--umkc-yellow);
-    box-shadow: none;
-    visibility: visible;
-    font-family: var(--condensed);
-    padding: 0 var(--global-padding);
-    position: static;
-    transform: translateY(0);
+    &[aria-hidden=false]{
+      display: block;
+      top: 0;
+      bottom: 59px !important;
+      #{$self}__list {
+        display: block;
+      }
+
+      #{$self}__item {
+        padding: 1rem;
+        &:not(:last-child) {
+          border-bottom: solid 1px white;
+        }
+        &--info {
+          bottom: 0;
+          right: unset;
+          padding: 0 0 0.5rem;
+          display: block;
+          width: 100%;
+          text-align: center;
+          a {
+            border-radius: 0;
+          }
+        }
+      }
+    }
+
+    #{$self}__list {
+      justify-content: flex-start;
+      position: relative;
+      height: 100%;
+    }
+
+    #{$self}__item {
+      font-family: var(--os);
+      font-weight: 400;
+      &::before {
+        border: none !important;
+      }
+      &--info{
+        position: absolute;
+        right: 0;
+        a{
+          margin-top: -1rem;
+          background: var(--umkc-yellow);
+          color: var(--umkc-dark-blue);
+          border-radius: 0 0 1rem 1rem;
+          padding: 0.75rem 2rem;
+          font-weight: bold;
+          text-transform: uppercase;
+          @include mx.tr();
+          &:hover, &:focus {
+            background: var(--umkc-dark-blue);
+            color: var(--white);
+          }
+          .close {
+            display: none;
+          }
+          &.active {
+            .close {
+              display: block;
+            }
+            .req {
+              display: none;
+            }
+          }
+        }
+      }
+
+    }
   }
 
   &__list {

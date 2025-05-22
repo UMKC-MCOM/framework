@@ -33,10 +33,20 @@
     font-size: var(--hero-title, #{mx.px-to-rem(48px)});
   }
   &--standard{
-    --hero-height: #{mx.px-to-rem(250px)};
+    --hero-height: #{mx.px-to-rem(120px)};
     --hero-title: #{mx.px-to-rem(48px)} !important;
-  }
 
+    #{$self}__content{
+      background-image: none;
+    }
+  }
+  &--pfinder {
+    --hero-height: #{mx.px-to-rem(550px)};
+    #{$self}__title {
+      --hero-title: #{mx.px-to-rem(42px)};
+      font-family: var(--os);
+    }
+  }
   &--video {
     --hero-height: 690px;
     position: relative;
@@ -211,6 +221,22 @@
 
       @include mx.for-size("desktop-up") {
         width: calc(100vw  * 0.55);
+      }
+    }
+
+    #{$self}__title{
+      padding: 0 var(--global-padding) 0;
+      &--r1{
+        padding: 7rem 0 0;
+        display: block;
+        @include mx.font-size(64px, 1);
+        font-family: var(--os);
+        text-transform: uppercase;
+        font-weight: 700;
+        color: var(--umkc-yellow);
+        @include mx.for-size("desktop-up"){
+          @include mx.font-size(200px, 1);
+        }
       }
     }
     #{$self}__subhead {

@@ -36,8 +36,14 @@
   </div>
 </div>
 {{else if standard }}
-<div class="hero hero--standard">
+<div class="hero {{heroclass}} hero--standard">
   <div class="hero__content">
+  </div>
+</div>
+{{else if pf }}
+<div class="hero hero--pfinder">
+  <div class="hero__content">
+    <h1 class="hero__title">Program Name</h1>
   </div>
 </div>
 {{ else if profile }}

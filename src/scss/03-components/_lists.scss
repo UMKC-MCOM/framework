@@ -4,6 +4,10 @@ ul, ol {
   padding: mx.px-to-rem(8px) mx.px-to-rem(24px);
   margin-left: mx.px-to-rem(24px);
 
+  &--no-type {
+    list-style: none;
+    margin-left: 0;
+  }
   &.col {
     &--2 {
       columns: 2;

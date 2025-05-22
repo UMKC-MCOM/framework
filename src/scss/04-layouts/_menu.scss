@@ -55,6 +55,39 @@
     }
   }
 
+  &--pfinder {
+    #{$self}__list{
+      padding: 0 var(--content-padding);
+      justify-content: flex-start;
+    }
+    #{$self}__link {
+      width: unset;
+      background: none;
+      color: white;
+      @include mx.font-size(18px, 1);
+      padding: 0;
+      font-family: var(--os);
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    #{$self}__icon {
+      display: inline-block;
+      margin-top: -0.5rem;
+      margin-right: 0.675rem;
+      &--close {
+        display: none;
+      }
+    }
+    [aria-expanded='true'] {
+      #{$self}__icon {
+        display: none;
+      }
+      #{$self}__icon--close {
+        display: inline-block;
+      }
+    }
+  }
+
   &__icon{
     height: mx.px-to-rem(32px);
     width: mx.px-to-rem(32px);

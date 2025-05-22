@@ -4,11 +4,11 @@
 .stripes {
   background-image:
     repeating-linear-gradient(
-      125deg,
+      145deg,
       rgb(0 0 0 / 0%),
-      rgb(0 0 0 / 0%) #{mx.px-to-rem(16px)},
-      rgb(255 255 255 / 10%) #{mx.px-to-rem(2px)},
-      rgb(255 255 255 / 10%) #{mx.px-to-rem(18px)}
+      rgb(0 0 0 / 0%) #{mx.px-to-rem(8px)},
+      rgb(255 255 255 / 8%) #{mx.px-to-rem(2px)},
+      rgb(255 255 255 / 8%) #{mx.px-to-rem(10px)}
     );
 
   &--dark {

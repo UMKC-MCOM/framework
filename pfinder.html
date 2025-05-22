@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{> head }}
+  <body class="homesuite">
+		<!-- Load SVGs first? -->
+		{{> svg-sprites }}
+		{{> a11y-skip }}
+
+		{{> pf/header }}
+		<div id="landing-page" class="main-content">
+      {{> hero pf="true" }}
+			{{> breadcrumbs }}
+			{{> pf/slate }}
+			{{> pf/overview }}
+			{{> pf/graduation-stats }}
+		</div>
+
+		{{> pf/mobile-menu }}
+		{{> footer }}
+		{{> scripts }}
+
+		<!-- Request More Info Scripts -->
+ <!-- Sticky Header and Submit Button -->
+ <script type="text/javascript">
+
+	 </script>
+	 <!-- Throwaway Code for triggering the REQUEST MORE INFO BUTTON until I can figure out how data-toggles works (You can see my attempt to wrap the element in a div in program-finder-v2-navigation) -->
+ <script type="text/javascript">
+    // const requestMoreInfoViewButton = document.getElementById("requestMoreInfoButton");
+    // const requestMoreInfoAreaRow = document.getElementById("more-info-row");
+    // requestMoreInfoViewButton.addEventListener("click", (e) => {
+    //     requestMoreInfoAreaRow.classList.toggle("more-info-row-hidden");
+    // });
+</script>
+  </body>
+</html>

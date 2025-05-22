@@ -6,14 +6,81 @@
 		{{> svg-sprites }}
 		{{> a11y-skip }}
 
-		{{> header }}
+		{{> header bgColor="white" }}
+    <div id="standard-page" class="main-content">
+      <!-- Start of the Standard Page Layout -->
+      <!-- <div style="background: var(--umkc-blue); height: 8rem; margin: 2rem 0 0;"><h1 style="color: white; padding: var(--content-padding);">Start: Standard Page</h1></div> -->
+      {{> hero standard="true" heroclass="hero4" }}
+      <!-- {{> hero standard="true" heroclass="hero5" }} -->
+      <!-- {{> hero standard="true" heroclass="hero3" }} -->
+      <!-- {{> hero standard="true" heroclass="hero4" }} -->
+
+
+      <!-- <div class="standard">
+        <div class="standard--nav"></div>
+        <div class="standard--content">
+          <br />
+          <h1>Class I am a title</h1>
+          <p>
+          {{> ks/res-list }}
+          {{> ks/deadlines }}
+
+          {{> ks/directory-standard }}
+        </div>
+      </div>
+    </div> -->
+
+    {{> hero standard="true" heroclass="hero2" }}
+    <!-- {{> hero standard="true" heroclass="hero3" }} -->
+    {{> hero standard="true" heroclass="hero3" }}
+    {{> breadcrumbs }}
 		<div id="landing-page" class="main-content">
 			<!-- {{> hero video="true" }} -->
-			{{> hero }}
+			{{> ks/hero-hp }}
+			<!-- {{> hero }} -->
 
 			<!-- Breadcrumbs -->
 			{{> breadcrumbs }}
-<div id="form_0576a7b2-e2c6-4479-9713-af300ac1ba72">Loading...</div><script async="async" src="https://futureroo.umkc.edu/register/?id=0576a7b2-e2c6-4479-9713-af300ac1ba72&output=embed&div=form_0576a7b2-e2c6-4479-9713-af300ac1ba72"></script>
+
+      {{ ks/icl }}
+      <div class="content-row tb">
+          <script async="" src="https://cse.google.com/cse.js?cx=009448580219169355531:zaqt1kohfz5">
+          // <![CDATA[
+
+          // ]]>
+          </script>
+          <div class="gcse-search"></div>
+      </div>
+
+      <div class="content-row stripes--dark">
+        <div class="program-finder aos-init aos-animate" data-aos="fade-up">
+          <div class="text-center">
+            <h2 class="">
+              Blaze New Trails
+            </h2>
+            <p class="highlight">We offer more than 125 academic areas to ignite your interests. So, go ahead, set the world on fire. We'll light the spark.</p>
+            <div class="program-finder__wrapper">
+
+              <div id="autocomplete"></div>
+
+              <div class="program-finder__buttons">
+                <a class="button button--umkc-yellow text--upper text--os button--cta" href="https://programs.umkc.edu/">All Programs</a>
+                <a class="button button--umkc-yellow text--upper text--os button--cta" href="https://www.umkc.edu/apply/">How to Apply</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- <div id="form_0576a7b2-e2c6-4479-9713-af300ac1ba72">Loading...</div><script async="async" src="https://futureroo.umkc.edu/register/?id=0576a7b2-e2c6-4479-9713-af300ac1ba72&output=embed&div=form_0576a7b2-e2c6-4479-9713-af300ac1ba72"></script> -->
+
+
+  <!--<div class="content-row">
+    <div id="gcse:searchresults-only" class="text-block"></div>
+    <script>// <![CDATA[
+    var gcseDivPage = document.getElementById('gcse:searchresults-only');
+                                        gcseDivPage.innerHTML = '<gcse:searchresults-only></gcse:searchresults-only>'
+    // ]]></script>
+  </div> -->
 
 			<!-- <div class="content-row online-intro bg-umkc-lighter-blue">
 				<div class="online-intro__facts">
@@ -85,7 +152,7 @@
 					</div>
 				</div>
 -->
-				<div class="tabs tabs--online">
+				<!-- <div class="tabs tabs--online">
 					<nav class="tabs__nav" role="navigation">
 						<ul class="tabs__list">
 							<li class="tabs__item">
@@ -101,9 +168,9 @@
 								<a href="#tuition" class="tabs__link" aria-expanded="false">Tuition</a>
 							</li>
 						</ul>
-					</nav>
+					</nav> -->
 
-					<div class="tabs__container">
+					<!-- <div class="tabs__container">
 						<button class="o-btn tabs--hide-desktop accordion__btn" data-toggle="#overview" aria-expanded="true">
 							Kansas City
 						</button>
@@ -175,7 +242,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 
 			{{> ks/timeline}}
 
@@ -198,7 +265,7 @@
 
 
 			<!-- Program Finder -->
-			{{> ks/program-finder homesuite=""}}
+			<!-- {{> ks/program-finder homesuite=""}} -->
 
 			<!-- {{> hero video="true" }} -->
 			<!-- {{> hero }} -->
@@ -288,22 +355,7 @@
 			<!-- Icon Row -->
 			<!-- {{> ks/icon-row }} -->
 		</div>
-		</div>
-		<div id="standard-page" class="main-content">
-			<!-- Start of the Standard Page Layout -->
-			<div style="background: var(--umkc-blue); height: 8rem; margin: 2rem 0 0;"><h1 style="color: white; padding: var(--content-padding);">Start: Standard Page</h1></div>
-			{{> hero profile="true" }}
-			{{> breadcrumbs }}
 
-
-			<div class="standard">
-				<div class="standard--nav"></div>
-				<div class="standard--content">
-					{{> ks/res-list }}
-					{{> ks/deadlines }}
-				</div>
-			</div>
-		</div></div>
 				<!-- </div> -->
 
 

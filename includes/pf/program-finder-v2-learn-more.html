@@ -1,0 +1,269 @@
+<!-- Explore Programs -->
+<div class="eprog">
+    <div class="explore-programs">
+        <div class="search-area" id="search-toggle" aria-hidden="true">
+            <div class="search-area-wrapper">
+                <!-- Toggle for Search -->
+                <div class="search-wrapper">
+                    <form id="searchByKeyword">
+                        <h3>Search By Keyword</h3>
+                        <div class="search-by-keyboard-wrapper">
+                            <input type="text" name="keyword" />
+                            <button type="submit" class="button button--umkc-yellow ">
+                                <svg class="icon"><use xlink:href="#search"></use></svg>
+                            </button>
+                        </div>
+                    </form>
+                    <button class="button button--umkc-navy button--outline" href="#" target="_blank">View All Programs</button>
+                </div>
+                <div class="area-wrapper">
+                    <h3>Choose Your Area of Interest</h3>
+                    <form id="areaOfInterest">
+                        <div class="input-wrapper">
+                            <input type="checkbox" name="area" />
+                            <label for="area">Business, Management and Entrepreneurship</label>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="checkbox" name="area" />
+                            <label for="area">Performing Arts</label>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="checkbox" name="area" />
+                            <label for="area">Health Sciences</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="results-and-filter">
+            <!-- Toggle for Filter -->
+            <!-- TO DO: Sticky the filters
+                 TO DO: Fix the color to only surround the form filters -->
+            <div class="filter hide-filter-area" id="filter-toggle" aria-hidden="true">
+                <h4>Filter By:</h4>
+                <form id="filterSort">
+                    <h5>Program Type</h5>
+                    <div class="filter-input-wrapper">
+                        <input type="checkbox" name="undergrad"/>
+                        <label for="undergrad">Undergraduate</label>
+                    </div>
+                    <div class="filter-input-wrapper">
+                        <input type="checkbox" name="undergrad"/>
+                        <label for="undergrad">Graduate</label>
+                    </div>
+
+                    <h5>Format</h5>
+                    <div class="filter-input-wrapper">
+                        <input type="checkbox" name="undergrad"/>
+                        <label for="undergrad">In Person</label>
+                    </div>
+                    <div class="filter-input-wrapper">
+                        <input type="checkbox" name="undergrad"/>
+                        <label for="undergrad">Hybrid</label>
+                    </div>
+                    <div class="filter-input-wrapper">
+                        <input type="checkbox" name="undergrad"/>
+                        <label for="undergrad">Online</label>
+                    </div>
+
+                    <h5>Colleges</h5>
+                    <div class="filter-input-wrapper">
+                        <select>
+                            <option>One</option>
+                            <option>Two</option>
+                            <option>Three</option>
+                        </select>
+                    </div>
+                    <button class="button button--umkc-navy">Apply Filters <span>(3)</span></button>
+
+                    <div class="clear-filters" id="myButton">
+                        <div class="icon">
+                            <svg class="">
+                                <use xlink:href="#close"></use>
+                            </svg>
+                        </div> Clear all filters
+                    </div>
+                </form>
+            </div>
+
+            <!-- Results - Grid & List view use the same HTML -->
+            <div class="results" id="results-toggle" aria-hidden="false">
+                <div class="results-top-bar" id="resultsTopBar">
+                    <!-- Old version of category tabs -->
+                    <!-- <div class="results-filter-tabs">
+                        <div class="results-filter-tabs_title">All Majors</div>
+                        <div class="results-filter-tabs_tab">Biology
+                            <div class="icon">
+                                <svg class="">
+                                    <use xlink:href="#close"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="results-filter-tabs_tab">Biology
+                            <div class="icon">
+                                <svg class="">
+                                    <use xlink:href="#close"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="results-filter-tabs_tab">Biology
+                            <div class="icon">
+                                <svg class="">
+                                    <use xlink:href="#close"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- New version of category tabs -->
+                    <div class="ais-CurrentRefinements">
+                        <ul class="ais-CurrentRefinements-list">    
+                            <li class="ais-CurrentRefinements-item">      
+                                <span class="ais-CurrentRefinements-label">Category:</span>
+                                <span class="ais-CurrentRefinements-category">
+                                    <span class="ais-CurrentRefinements-categoryLabel">Movies & TV Shows</span>
+                                    <button class="ais-CurrentRefinements-delete">✕</button>
+                                </span>    
+                            </li>
+                            <li class="ais-CurrentRefinements-item">      
+                                <span class="ais-CurrentRefinements-label">Category:</span>
+                                <span class="ais-CurrentRefinements-category">
+                                    <span class="ais-CurrentRefinements-categoryLabel">Movies & TV Shows</span>
+                                    <button class="ais-CurrentRefinements-delete">✕</button>
+                                </span>    
+                            </li>
+                            <li class="ais-CurrentRefinements-item">      
+                                <span class="ais-CurrentRefinements-label">Category:</span>
+                                <span class="ais-CurrentRefinements-category">
+                                    <span class="ais-CurrentRefinements-categoryLabel">Movies & TV Shows</span>
+                                    <button class="ais-CurrentRefinements-delete">✕</button>
+                                </span>    
+                            </li>  
+                        </ul>
+                    </div>
+
+                    <div class="results-display">
+                        <button type="submit" class="button button--umkc-yellow" id="listView">
+                            <svg class="icon"><use xlink:href="#menu"></use></svg>
+                        </button>
+                        <button type="submit" class="button button--umkc-yellow" id="filterView">
+                            <svg class="icon"><use xlink:href="#flame"></use></svg>
+                        </button>
+                    </div>
+                </div>
+                <div id="listArea" class="results-grid" aria-hidden="false">
+                    <ul id="resultsWrapper" class="results-grid-wrapper">
+                        <li class="results-program">
+                            <div class="results-program_image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSifrKWDBJhD48OnlQgTQoC2cJsT7IaVIoCquTOaKZaSJRXemY');">
+                                <div class="results-program_button results-program_button__remote">
+                                    <svg class="icon"><use xlink:href="#calendar"></use></svg>
+                                </div>
+                                <div class="results-program_button results-program_button__hybrid">
+                                    <svg class="icon"><use xlink:href="#map-pin"></use></svg>
+                                </div>
+                                <div class="results-program_button results-program_button__on-campus">
+                                    <svg class="icon"><use xlink:href="#envelope"></use></svg>
+                                </div>
+                            </div>
+                            <div class="results-program_text-wrapper">
+                                <p class="results-program_title-type">Program Type</p>
+                                <h3 class="results-program_title">Very long name of a program</h3>
+                                <ul class="results-program_interest-list">
+                                    <li>What will</li>
+                                    <li>This area actually</li>
+                                    <li>Look like?</li>
+                                </ul>
+                                <div class="results-program_footer">
+                                    <div class="results-program_footer-view-program">
+                                        <a href="#" title="">View Program</a>
+                                    </div>
+                                    <div class="results-program_footer-compare">
+                                        <form id="addToCompare">
+                                            <input type="checkbox" name="compare" class="add-to-compare">
+                                            <label for="compare">Compare</label>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Explore Programs - Compare -->
+ <!-- Toggle tab for Compare -->
+<div class="compare-tab" data-toggle="#compare-toggle">
+    <p>Compare Programs (<span id="comparedProgramsCounter">0</span>)</p>
+</div>
+<div class="smokescreen" id="compare-flyout-smokescreen"></div>
+<div id="compare-toggle" class="compare-flyout" aria-hidden="true">
+    <h3>Comparing <span>3</span> Programs</h3>
+    <a class="compare-flyout__close" id="compare-tab-close">
+        <svg class="icon"><use xlink:href="#close"></use></svg>
+    </a>
+    <div class="compare-flyout-wrapper">
+        <div class="compare-flyout-list">
+            <ul id="compareListFlyout" class="compare-flyout-list-wrapper">
+                <li class="results-program">
+                    <div class="results-program_image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSifrKWDBJhD48OnlQgTQoC2cJsT7IaVIoCquTOaKZaSJRXemY');">
+                        <div class="results-program_button results-program_button__remote">
+                            <svg class="icon"><use xlink:href="#calendar"></use></svg>
+                        </div>
+                        <div class="results-program_button results-program_button__hybrid">
+                            <svg class="icon"><use xlink:href="#map-pin"></use></svg>
+                        </div>
+                        <div class="results-program_button results-program_button__on-campus">
+                            <svg class="icon"><use xlink:href="#envelope"></use></svg>
+                        </div>
+                    </div>
+                    <div class="results-program_text-wrapper">
+                        <p class="results-program_title-type">Program Type</p>
+                        <h3 class="results-program_title">Very long name of a program</h3>
+                        <ul class="results-program_interest-list">
+                            <li>What will</li>
+                            <li>This area actually</li>
+                            <li>Look like?</li>
+                        </ul>
+                        <div class="results-program_footer">
+                            <div class="results-program_footer-view-program">
+                                <a href="#" title="">View Program</a>
+                            </div>
+                            <div class="results-program_footer-compare">
+                                <form id="addToCompare">
+                                    <input type="checkbox" name="compare" class="add-to-compare">
+                                    <label for="compare">Compare</label>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Throwaway script for switching from list to grid view -->
+<script type="text/javascript">
+    const listViewButton = document.getElementById("listView");
+    const listAreaRow = document.getElementById("listArea");
+    listViewButton.addEventListener("click", (e) => {
+        listAreaRow.classList.toggle("results-list");
+    });
+</script>
+
+<!-- Throwaway script for duplicating grid elements for demonstration -->
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+    const myButton = document.getElementById("myButton");
+    const resultsWrapper = document.getElementById("resultsWrapper");
+
+    function cloneElement() {
+        const elementToClone = document.querySelector(".results-program");
+        const clonedElement = elementToClone.cloneNode(true);
+        resultsWrapper.appendChild(clonedElement);
+    }
+    myButton.addEventListener("click", cloneElement);
+    });
+</script>

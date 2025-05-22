@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{> head }}
+  <body class="homesuite">
+		<!-- Load SVGs first? -->
+		{{> svg-sprites }}
+		{{> a11y-skip }}
+
+		{{> pf/header }}
+		<div id="landing-page" class="main-content">
+			<!-- {{> hero standard="true" }} -->
+      <!-- Meilisearch, form and interests list -->
+      {{> pf/ms_search }}
+
+      <div class="pf-results">
+        <div class="pf-results__filter">
+          {{> pf/ms_filter }}
+        </div>
+        <div class="pf-results__list">
+          {{> pf/ms_results }}
+        </div>
+      </div>
+		</div>
+
+    {{> pf/mobile_filter }}
+
+		{{> footer }}
+		{{> scripts }}
+  </body>
+</html>

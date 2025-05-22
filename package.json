@@ -22,7 +22,10 @@
   "vite-plugin-handlebars": "^1.6.0"
  },
  "dependencies": {
+  "@algolia/autocomplete-js": "^1.17.8",
+  "@algolia/autocomplete-theme-classic": "^1.17.8",
   "@glidejs/glide": "^3.6.0",
+  "@meilisearch/autocomplete-client": "^0.4.1",
   "aos": "^2.3.4",
   "tocbot": "^4.20.1"
  }
