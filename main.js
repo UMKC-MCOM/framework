@@ -23,7 +23,7 @@ import '/src/js/pfinder-autocomplete.js'
 // import '/src/js/program-finder.js'
 // import '/src/js/pfinder-compare.js'
 
-// Timline SVGs
+// Timleine SVGs
 // These files are not loaded in Cascade, but are needed for testing here.
 // import '/src/js/timeline-svg.js'
 // import '/src/js/map.js'
