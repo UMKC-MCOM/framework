@@ -372,7 +372,7 @@
         @include mx.font-size(18px);
 
         &:hover, &:focus {
-          background: var(--umkc-blue);
+          background: var(--umkc-dark-blue);
           color: var(--white);
         }
       }
