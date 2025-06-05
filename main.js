@@ -20,11 +20,14 @@ import '/src/js/count-up.js'
 import '/src/js/consent.js'
 import '/src/js/track.js'
 import '/src/js/pfinder-autocomplete.js'
+// import '/src/js/pfinder-compare.js' // Needs developed!
+
+// These files are not loaded in Cascade, but are needed for testing here.
+
+// Program finder code.
 // import '/src/js/program-finder.js'
-// import '/src/js/pfinder-compare.js'
 
 // Timleine SVGs
-// These files are not loaded in Cascade, but are needed for testing here.
 // import '/src/js/timeline-svg.js'
 // import '/src/js/map.js'
 // import '/src/js/street-car.js'
