@@ -508,14 +508,14 @@
       padding: 1rem;
       background: var(--umkc-gray);
       .icon {
-        color: var(--umkc-blue);
+        color: var(--umkc-dark-blue);
       }
       &.active {
         background: var(--umkc-yellow);
 
       }
       &:hover, &:focus {
-        background: var(--umkc-blue);
+        background: var(--umkc-dark-blue);
         .icon {
           color: var(--white);
         }
