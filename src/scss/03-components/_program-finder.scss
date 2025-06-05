@@ -14,9 +14,10 @@
   }
 
   @include mx.for-size("desktop-up"){
-    display: block;
+    display: flex;
+    flex: 1 0 mx.px-to-rem(350px);
     &[aria-hidden="false"]{
-      display: block;
+      display: flex;
       position: unset;
       height: unset;
       top: unset;
@@ -316,12 +317,12 @@
   &-ClearRefinements-button{
     appearance: none;
     display: block;
-    color: #6b6b6b;
+    color: #707070;
     background: none;
     border: none;
 
     .icon {
-      color: #6b6b6b !important;
+      color: #707070 !important;
       height: 18px;
       width: 18px;
     }
@@ -358,7 +359,7 @@
 
       &-loadMore {
         background: var(--umkc-yellow);
-        color: var(--umkc-blue);
+        color: var(--umkc-dark-blue);
         border-radius: 8px;
         border: none;
         padding: 1rem;
