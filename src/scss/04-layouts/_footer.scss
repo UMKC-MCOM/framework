@@ -219,7 +219,7 @@
     padding-bottom: 6rem;
 
     @include mx.for-size("tablet-landscape-up") {
-      padding-bottom: 2rem;
+      // padding-bottom: 2rem;
     }
     .nav {
       flex: 1;

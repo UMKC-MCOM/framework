@@ -4,13 +4,16 @@ const toggles = document.querySelectorAll('[data-toggle]');
     e.preventDefault();
     let parent = toggle.dataset.parent !== undefined ? toggle.dataset.parent : toggle.parentNode.closest("div");
     let content = document.querySelector(toggle.dataset.toggle);
-    let focus = ( toggle.dataset.focus !== null ? toggle.dataset.focus : '' )
+    let focus = ( toggle.dataset.focus !== null ? toggle.dataset.focus : content.focus )
     if ( content.getAttribute('aria-hidden') === null || content.getAttribute('aria-hidden') === "true" ) {
       closeOpenToggles(parent);
       toggle.setAttribute('aria-expanded', true);
       content.setAttribute('aria-hidden', false);
       if ( focus ) {
-        document.querySelector(focus).focus();
+        let elem = document.querySelector(focus);
+        setTimeout(() => {
+          elem.focus(true, true);
+        }, 3000);
       }
     } else {
       closeOpenToggles(parent);
