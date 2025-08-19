@@ -51,7 +51,7 @@ if ( heroVideo ) {
         vw.classList.add("video");
   const voc = document.createElement("div");
         voc.classList.add("embed-container");
-        voc.innerHTML = `<div class="video-embed" id="player"><iframe frameborder="0" src="" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe></div>`;
+        voc.innerHTML = `<div class="video-embed" id="player"><iframe frameborder="0" src="" allow="web-share"></iframe></div>`;
         vw.appendChild(voc);
         vo.appendChild(vw);
         document.body.appendChild(vo);
