@@ -6,6 +6,10 @@ import {
 } from '@meilisearch/autocomplete-client';
 import '@algolia/autocomplete-theme-classic';
 if ( document.querySelector("#autocomplete") !== null ) {
+  let school = document.querySelector("#autocomplete").dataset.school !== null ? document.querySelector("#autocomplete").dataset.school : false;
+  if ( school ) {
+    school = { filters: `college IN ${school}` };
+  }
   const searchClient = meilisearchAutocompleteClient({
     url: 'https://edge.meilisearch.com',
     apiKey: '85a8215bb2f86b7ce57dc674cc918431e24479ec9c7383f40c029705181f17eb'
@@ -16,6 +20,7 @@ if ( document.querySelector("#autocomplete") !== null ) {
     openOnFocus: false,
     detachedMediaQuery: 'none',
     placeholder: "Find your program",
+    debug: true,
     getSources({ query }) {
       return [
         {
@@ -26,40 +31,40 @@ if ( document.querySelector("#autocomplete") !== null ) {
               queries: [
                 {
                   indexName: 'programs',
-                  query
+                  query,
+                  params: school
                 },
               ],
             })
           },
           templates: {
             item({ item, components, html }) {
-              let hit = item;
-              let programID = hit.programID;
-              let title = hit.title;
-              let image = hit.image;
-              let level = hit.level;
-                  level = level.charAt(0).toUpperCase() + level.slice(1);
-              let format = ( hit.format.length == 1 ) ? hit.format[0].toLowerCase() : "hybrid";
-              let interests = hit.interest;
-              switch ( format ) {
-                case "in-person":
-                  var icon = "building";
-                  var iconClass = "on-campus";
-                  break;
-                case "online":
-                  var icon = "computer";
-                  var iconClass = "remote";
-                  break;
-                default:
-                  var icon = "hybrid";
-                  var iconClass = "hybrid";
-              }
-              let type = ( hit.degree.length > 0 ? hit.degree : hit.type );
-                  type = type.join(", ");
-                  type = type.replace("Certificate", `${level} Certificate`);
-              let url = "https://programs.umkc.edu"+hit.url;
-                  url = url;
-
+                let hit = item;
+                let programID = hit.programID;
+                let title = hit.title;
+                let image = hit.image;
+                let level = hit.level;
+                    level = level.charAt(0).toUpperCase() + level.slice(1);
+                let format = ( hit.format.length == 1 ) ? hit.format[0].toLowerCase() : "hybrid";
+                let interests = hit.interest;
+                switch ( format ) {
+                  case "in-person":
+                    var icon = "building";
+                    var iconClass = "on-campus";
+                    break;
+                  case "online":
+                    var icon = "computer";
+                    var iconClass = "remote";
+                    break;
+                  default:
+                    var icon = "hybrid";
+                    var iconClass = "hybrid";
+                }
+                let type = ( hit.degree.length > 0 ? hit.degree : hit.type );
+                    type = type.join(", ");
+                    type = type.replace("Certificate", `${level} Certificate`);
+                let url = "https://programs.umkc.edu"+hit.url;
+                    url = url;
               return html`<div class="result result--ac" id="${programID}">
                 <a href="${url}">
                   <svg class="icon icon--${format}"><use href="#${icon}"></use></svg>

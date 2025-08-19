@@ -5,7 +5,7 @@
 		<!-- Load SVGs first? -->
 		{{> svg-sprites }}
 		{{> a11y-skip }}
-
+    {{> mobile-menu }}
 		{{> header bgColor="white" }}
     <div id="standard-page" class="main-content">
       <!-- Start of the Standard Page Layout -->
@@ -16,8 +16,8 @@
       <!-- {{> hero standard="true" heroclass="hero4" }} -->
 
 
-      <!-- <div class="standard">
-        <div class="standard--nav"></div>
+      <!-- <div class="standard"> -->
+        <!-- <div class="standard--nav"></div> -->
         <div class="standard--content">
           <br />
           <h1>Class I am a title</h1>
@@ -27,8 +27,8 @@
 
           {{> ks/directory-standard }}
         </div>
-      </div>
-    </div> -->
+      <!-- </div> -->
+    <!-- </div> -->
 
     {{> hero standard="true" heroclass="hero2" }}
     <!-- {{> hero standard="true" heroclass="hero3" }} -->
@@ -61,7 +61,7 @@
             <p class="highlight">We offer more than 125 academic areas to ignite your interests. So, go ahead, set the world on fire. We'll light the spark.</p>
             <div class="program-finder__wrapper">
 
-              <div id="autocomplete"></div>
+              <div id="autocomplete" data-school=""></div>
 
               <div class="program-finder__buttons">
                 <a class="button button--umkc-yellow text--upper text--os button--cta" href="https://programs.umkc.edu/">All Programs</a>
@@ -355,7 +355,7 @@
 			<!-- Icon Row -->
 			<!-- {{> ks/icon-row }} -->
 		</div>
-
+    </div>
 				<!-- </div> -->
 
 
@@ -378,7 +378,7 @@
 
 
 		<!-- </div> -->
-		{{> mobile-menu }}
+
 
 		{{> ks/get-info-popup }}
 		{{> ks/spacer }}
