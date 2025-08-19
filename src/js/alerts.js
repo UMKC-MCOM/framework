@@ -47,7 +47,7 @@ function checkAlerts() {
 }
 checkAlerts();
 
-fetch('https://www.umkc.edu/global-assets/api/campus-alert.aspx?assetId=84fe7bf3ac1e04cd75402c87af2d0f19&assetType=block')
+fetch('https://www.umkc.edu/global-assets/api/campus-alert.php?assetId=84fe7bf3ac1e04cd75402c87af2d0f19&assetType=block')
   .then( response => {
     return response.json();
   })
