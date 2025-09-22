@@ -7,10 +7,11 @@
 		{{> a11y-skip }}
     {{> mobile-menu }}
 		{{> header bgColor="white" }}
+    {{> hero peel="true" }}
     <div id="standard-page" class="main-content">
       <!-- Start of the Standard Page Layout -->
       <!-- <div style="background: var(--umkc-blue); height: 8rem; margin: 2rem 0 0;"><h1 style="color: white; padding: var(--content-padding);">Start: Standard Page</h1></div> -->
-      {{> hero standard="true" heroclass="hero4" }}
+      <!-- {{> hero standard="true" heroclass="hero4" }} -->
       <!-- {{> hero standard="true" heroclass="hero5" }} -->
       <!-- {{> hero standard="true" heroclass="hero3" }} -->
       <!-- {{> hero standard="true" heroclass="hero4" }} -->
@@ -285,7 +286,7 @@
 
 
 			<!-- Forms -->
-			<!-- {{> ks/form }} -->
+			{{> ks/form }}
 			<!-- Benefits Lists -->
 			<!-- {{> ks/blp }} -->
 			{{> ks/blnp }}
@@ -298,7 +299,7 @@
 			<!-- Video Row -->
 			<!-- {{> ks/video }} -->
 			<!-- Box Grid -->
-			<!-- {{> ks/bg }} -->
+			{{> ks/bg }}
 
 			<!-- Cards -->
 
@@ -384,5 +385,8 @@
 		{{> ks/spacer }}
 		{{> footer }}
 		{{> scripts }}
+    <script>
+
+    </script>
   </body>
 </html>

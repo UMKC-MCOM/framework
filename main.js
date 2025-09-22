@@ -20,6 +20,7 @@ import '/src/js/count-up.js'
 import '/src/js/consent.js'
 import '/src/js/track.js'
 import '/src/js/pfinder-autocomplete.js'
+import '/src/js/peel.js'
 // import '/src/js/program-finder.js'
 // import '/src/js/pfinder-compare.js'
 

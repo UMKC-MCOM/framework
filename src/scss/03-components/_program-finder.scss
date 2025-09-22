@@ -677,6 +677,9 @@
   &__filter{
     background: var(--umkc-lighter-blue);
     padding: var(--content-padding);
+    flex: 1 0 350px;
+    width: 350px;
+
     .ais-RefinementList {
       &-list {
         display: block;
