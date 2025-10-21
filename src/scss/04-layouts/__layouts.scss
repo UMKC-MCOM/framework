@@ -1,7 +1,3 @@
-@use "header";
-@use "hf-links";
-@use "navigation";
-@use "menu";
 @use "breadcrumbs";
 @use "content-row";
 @use "benefits-list";
@@ -19,7 +15,7 @@
 @use "program-finder";
 @use "bgil"; // Background Image with Link
 @use "/node_modules/@glidejs/glide/src/assets/sass/glide.core";
-@use "footer";
+
 @use "oc";
 @use "icon-link";
 @use "virtual-tour";

@@ -5,7 +5,7 @@ import handlebars from 'vite-plugin-handlebars';
 export default defineConfig({
   base: './',
   build: {
-    sourcemap: true,
+    sourcemap: false,
   },
   plugins: [
     handlebars({

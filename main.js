@@ -1,5 +1,6 @@
+import '/src/scss/headfoot.scss'
 import '/src/scss/styles.scss'
-import '/src/scss/print.scss'
+// import '/src/scss/print.scss'
 // import '/src/scss/wysiwyg.scss'
 import '/node_modules/tocbot/dist/tocbot.min.js'
 // import '/src/js/load-script.js'
