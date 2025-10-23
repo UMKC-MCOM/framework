@@ -7,10 +7,11 @@
 		{{> a11y-skip }}
     {{> mobile-menu }}
 		{{> header bgColor="white" }}
+    {{> hero peel="true" }}
     <div id="standard-page" class="main-content">
       <!-- Start of the Standard Page Layout -->
       <!-- <div style="background: var(--umkc-blue); height: 8rem; margin: 2rem 0 0;"><h1 style="color: white; padding: var(--content-padding);">Start: Standard Page</h1></div> -->
-      {{> hero standard="true" heroclass="hero4" }}
+      <!-- {{> hero standard="true" heroclass="hero4" }} -->
       <!-- {{> hero standard="true" heroclass="hero5" }} -->
       <!-- {{> hero standard="true" heroclass="hero3" }} -->
       <!-- {{> hero standard="true" heroclass="hero4" }} -->
@@ -42,7 +43,7 @@
 			<!-- Breadcrumbs -->
 			{{> breadcrumbs }}
 
-      {{ ks/icl }}
+      <!-- {{ ks/icl }}
       <div class="content-row tb">
           <script async="" src="https://cse.google.com/cse.js?cx=009448580219169355531:zaqt1kohfz5">
           // <![CDATA[
@@ -50,9 +51,9 @@
           // ]]>
           </script>
           <div class="gcse-search"></div>
-      </div>
+      </div> -->
 
-      <div class="content-row stripes--dark">
+      <!-- <div class="content-row stripes--dark">
         <div class="program-finder aos-init aos-animate" data-aos="fade-up">
           <div class="text-center">
             <h2 class="">
@@ -70,7 +71,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 <!-- <div id="form_0576a7b2-e2c6-4479-9713-af300ac1ba72">Loading...</div><script async="async" src="https://futureroo.umkc.edu/register/?id=0576a7b2-e2c6-4479-9713-af300ac1ba72&output=embed&div=form_0576a7b2-e2c6-4479-9713-af300ac1ba72"></script> -->
 
 
@@ -244,7 +245,7 @@
 				</div>
 			</div> -->
 
-			{{> ks/timeline}}
+
 
 			<!-- {{> ks/teaser }} -->
 			<!-- Local Site Alerts -->
@@ -252,9 +253,9 @@
 
 			<!-- {{> ks/tabs }} -->
 
-			{{> ks/accordion }}
+			<!-- {{> ks/accordion }} -->
 
-			{{> ks/map }}
+			<!-- {{> ks/map }} -->
 
 			<div data-module="count-up">
 				<h1>
@@ -279,7 +280,7 @@
 			<!-- {{> ks/program-finder }} -->
 
 			<!-- {{> ks/icon-link }} -->
-			{{> ks/video-shorts }}
+			<!-- {{> ks/video-shorts }} -->
 			<!-- Virtual Tour -->
 			<!-- {{> ks/vt }} -->
 
@@ -288,7 +289,7 @@
 			<!-- {{> ks/form }} -->
 			<!-- Benefits Lists -->
 			<!-- {{> ks/blp }} -->
-			{{> ks/blnp }}
+			<!-- {{> ks/blnp }} -->
 
 			<!-- Stats -->
 			<!-- {{> ks/sp }} -->
@@ -302,7 +303,7 @@
 
 			<!-- Cards -->
 
-			{{> ks/cp bgColor="umkc-blue" }}
+			<!-- {{> ks/cp bgColor="umkc-blue" }} -->
 			<!-- {{> ks/cnp link="true" }} -->
 
 			<!-- {{> ks/sc }} -->
@@ -311,7 +312,7 @@
 
 
 			<!-- Quotes -->
-			{{> ks/qm }}
+			<!-- {{> ks/qm }} -->
 			<!-- {{> ks/qs }} -->
 
 			<!-- Photo + Buttons -->
@@ -350,7 +351,7 @@
 				<!-- {{> ks/gallery-slider }} -->
 			<!-- </div> -->
 
-			{{> ks/directory }}
+			<!-- {{> ks/directory }} -->
 
 			<!-- Icon Row -->
 			<!-- {{> ks/icon-row }} -->
@@ -384,5 +385,28 @@
 		{{> ks/spacer }}
 		{{> footer }}
 		{{> scripts }}
+    <script>
+      const peel = document.querySelector(".peel__button");
+      const hero = document.querySelector(".hero");
+      peel.addEventListener("click", e => {
+        e.preventDefault();
+
+        let peel = hero.querySelector(".peel");
+        let video = hero.querySelector(".hero__video");
+        let content = hero.querySelector(".hero__content");
+        let secondaryVideo = hero.querySelector(".hero__video.secondary");
+        let secondaryContent = hero.querySelector(".hero__content.secondary");
+        hero.classList.add('secondary');
+        peel.style.display = "none";
+        content.style.display = "none";
+        video.style.display = "none";
+        video.pause();
+
+        secondaryVideo.play();
+        secondaryVideo.style.display = "block";
+        secondaryContent.style.display = "flex";
+
+      });
+    </script>
   </body>
 </html>
