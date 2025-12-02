@@ -20,14 +20,15 @@
 
   &__img {
     align-self: center;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: var(--square);
     margin-top: -3rem;
-    max-width: mx.px-to-rem(400px);
+    max-width: mx.px-to-rem(200px);
     object-fit: cover;
-
+    @include mx.for-size("tablet-landscape-up"){
+      max-width: mx.px-to-rem(400px);
+    }
     @include mx.for-size("desktop-up") {
       align-self: flex-start;
-      width: mx.px-to-rem(600px);
       max-width: mx.px-to-rem(600px);
     }
   }

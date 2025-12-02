@@ -13,8 +13,9 @@
     &__image {
       margin-right: 4rem;
       flex: 0 1;
+      aspect-ratio: var(--portrait);
       height: #{mx.px-to-rem(535px)};
-      width: #{mx.px-to-rem(448px)};
+      width: auto;
       object-fit: cover;
     }
   }

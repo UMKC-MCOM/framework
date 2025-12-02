@@ -82,9 +82,11 @@
     }
   }
   img {
+    aspect-ratio: var(--square);
     height: #{mx.px-to-rem(150px)};
-    width: #{mx.px-to-rem(150px)};
+    margin: 0 0 0.5rem;
     object-fit: cover;
+    width: #{mx.px-to-rem(150px)};
   }
 
   &--hp {

@@ -15,6 +15,8 @@
   }
 
   &__image {
+    aspect-ratio: var(--landscape);
+    object-fit: cover;
     width: #{mx.px-to-rem(577px)};
     max-width: 100%;
     @include mx.for-size("tablet-landscape-up"){
@@ -90,11 +92,12 @@
         flex: 0 1 calc(50% - 90px);
         flex-direction: column;
         margin: 0;
+        gap: 0.5rem 0;
       }
     }
     #{$self}__image {
       padding: 0;
-      aspect-ratio: 1/1;
+      aspect-ratio: var(--square);
       object-fit: cover;
 
       @include mx.for-size("tablet-landscape-up") {
@@ -126,6 +129,7 @@
     }
 
     #{$self}__row {
+      gap: 0.5rem 0;
       @include mx.for-size("tablet-landscape-up"){
         flex-basis: calc(100% / 3 - 2rem);
         flex-direction: column;
@@ -140,12 +144,12 @@
 
     #{$self}__image {
       padding: 0;
-      aspect-ratio: 5/3;
+      aspect-ratio: var(--landscape);
 
       @include mx.for-size("tablet-landscape-up") {
         width: 100%;
         height: auto;
-        max-height: #{mx.px-to-rem(375px)}
+        max-height: #{mx.px-to-rem(275px)}
       }
     }
   }

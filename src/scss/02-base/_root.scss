@@ -22,6 +22,10 @@
   @each $name, $font in vars.$font-names {
     --#{$name}: #{$font};
   }
+
+  @each $name, $shape in vars.$images {
+    --#{$name}: #{$shape}
+  }
 }
 
 .bloch {

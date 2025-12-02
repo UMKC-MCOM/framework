@@ -69,9 +69,11 @@
   &__img {
     // margin-bottom: 2rem;
     grid-area: img;
-    aspect-ratio: 1/1;
+    aspect-ratio: var(--square);
     height: mx.px-to-rem(240px);
     width: mx.px-to-rem(240px);
+    object-fit: cover;
+    object-position: center center;
     margin: 1rem 0 2rem;
     z-index: 1;
 

@@ -28,10 +28,11 @@
       margin-top: 1rem;
 
       img {
-        aspect-ratio: 88/67;
-        object-fit: fill;
+        aspect-ratio: var(--landscape);
+        height: #{mx.px-to-rem(250px)};
+        object-fit: cover;
+        object-position: center;
         width: 100%;
-        height: auto;
       }
     }
   }
