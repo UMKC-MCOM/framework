@@ -163,6 +163,8 @@
     aspect-ratio: 1/1;
     grid-area: di__image;
     border-radius: 100%;
+    object-fit: cover;
+    object-position: center center;
   }
   &__name { grid-area: di__name; }
   &__title { grid-area: di__title; }

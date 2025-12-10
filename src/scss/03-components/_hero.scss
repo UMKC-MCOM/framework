@@ -506,3 +506,38 @@
     top: calc(-1 * (var(--mask-size) * 2));
   }
 }
+
+.law-library{
+  display: flex;
+  max-width: 60%;
+  position: relative;
+  margin: 0 auto;
+  flex-direction: column;
+
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 100%;
+    text-align: center;
+    input {
+      width: 100%;
+      height: 64px;
+      border-radius: 0.25rem 0 0 0.25rem;
+    }
+    button {
+      margin: 0 0 0 -0.5rem;
+      height: 64px;
+      border-radius: 0 0.25rem 0.25rem 0;
+    }
+    .icon {
+      height: 1.25rem;
+      width: 1.25rem;
+    }
+  }
+
+  .nav {
+    align-self: end;
+    margin-bottom: 1rem;
+  }
+}
