@@ -3,13 +3,14 @@
 .hero {
   --heading-color: var(--white);
   $self: &;
+  align-items: flex-end;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-color: black;
   display: flex;
-  align-items: flex-end;
   height: var(--hero-height, #{mx.px-to-rem(500px)});
+  position: relative;
   @include mx.for-size("tablet-landscape-up") {
     --hero-title: #{mx.px-to-rem(60px)};
   }
@@ -149,6 +150,13 @@
       display: block;
     }
   }
+
+  &__bloch-img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
   &__hp {
     background-image: none;
     background-color: var(--umkc-navy);
@@ -509,10 +517,12 @@
 
 .law-library{
   display: flex;
-  max-width: 60%;
   position: relative;
   margin: 0 auto;
   flex-direction: column;
+  @include mx.for-size("tablet-landscape-up"){
+    max-width: 60%;
+  }
 
   form {
     display: flex;
@@ -537,7 +547,11 @@
   }
 
   .nav {
-    align-self: end;
-    margin-bottom: 1rem;
+    li {
+      margin: 0 0 0.5rem 0;
+    }
+    @include mx.for-size("desktop-up"){
+      align-self: end;
+    }
   }
 }

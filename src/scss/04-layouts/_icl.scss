@@ -40,12 +40,10 @@
     align-items: center;
     flex-wrap: wrap;
     margin: var(--content-padding) 0;
-    text-align: center;
     justify-content: center;
 
     @include mx.for-size("tablet-landscape-up") {
       justify-content: space-between;
-      text-align: left;
       flex-wrap: nowrap;
       margin: var(--content-padding) auto;
       &--reverse {

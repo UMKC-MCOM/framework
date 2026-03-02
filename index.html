@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   {{> head }}
-  <body class="homesuite">
+  <body class="bloch">
 		<!-- Load SVGs first? -->
 		{{> svg-sprites }}
 		{{> a11y-skip }}
     {{> mobile-menu }}
-		{{> header bgColor="white" }}
-    {{> hero law="true" }}
-    {{> ks/cp }}
-    {{> ks/video-shorts }}
+		{{> header bgColor="white" dept="true" }}
+    {{> hero }}
+    <!-- {{> ks/snp }} -->
+    <!-- {{> ks/cp }} -->
+    <!-- {{> ks/video-shorts }} -->
     <div id="standard-page" class="main-content">
       <!-- Start of the Standard Page Layout -->
       <!-- <div style="background: var(--umkc-blue); height: 8rem; margin: 2rem 0 0;"><h1 style="color: white; padding: var(--content-padding);">Start: Standard Page</h1></div> -->
@@ -19,11 +20,22 @@
       <!-- {{> hero standard="true" heroclass="hero4" }} -->
 
 
-      <!-- <div class="standard"> -->
-        <!-- <div class="standard--nav"></div> -->
+      <div class="standard">
+        <div class="standard--nav"></div>
         <div class="standard--content">
+
           <br />
           <h1>Class I am a title</h1>
+          <label for="stop" class="form__label">Select a stop</label>
+          <div class="form__sw">
+            <select id="stop" class="form__select"></select>
+          </div>
+          <div id="stop-meta"></div>
+
+          <h2>Departures</h2>
+          <div id="results" aria-live="polite" aria-atomic="true">
+            <p>Select a stop to see departures.</p>
+          </div>
           <p>
           {{> ks/res-list }}
           {{> ks/deadlines }}
@@ -31,8 +43,8 @@
           {{> ks/directory-index }}
 
         </div>
-      <!-- </div> -->
-    <!-- </div> -->
+      </div>
+    </div>
 
     {{> hero standard="true" heroclass="hero2" }}
     <!-- {{> hero standard="true" heroclass="hero3" }} -->
@@ -288,7 +300,7 @@
 
 
 			<!-- Forms -->
-			<!-- {{> ks/form }} -->
+			{{> ks/form }}
 			<!-- Benefits Lists -->
 			<!-- {{> ks/blp }} -->
 			<!-- {{> ks/blnp }} -->
@@ -353,7 +365,7 @@
 				<!-- {{> ks/gallery-slider }} -->
 			<!-- </div> -->
 
-			<!-- {{> ks/directory }} -->
+			{{> ks/directory-standard }}
 
 			<!-- Icon Row -->
 			<!-- {{> ks/icon-row }} -->
@@ -388,6 +400,132 @@
 		{{> footer }}
 		{{> scripts }}
     <script>
+      const STOPS_CSV_URL = "https://www.umkc.edu/global-assets/test/umkc-shuttle-stops-fall-2025.csv";
+      const SCHEDULE_CSV_URL = "https://www.umkc.edu/global-assets/test/umkc-shuttle-schedule-fall-2025.csv";
+
+      const stopEl = document.getElementById("stop");
+      const stopMetaEl = document.getElementById("stop-meta");
+      const resultsEl = document.getElementById("results");
+
+      // Robust CSV parsing for quoted fields + commas (still lightweight, no libs)
+      function parseCSV(text) {
+        const rows = [];
+        let row = [];
+        let field = "";
+        let inQuotes = false;
+
+        for (let i = 0; i < text.length; i++) {
+          const c = text[i];
+          const next = text[i + 1];
+
+          if (c === '"' ) {
+            if (inQuotes && next === '"') { field += '"'; i++; }
+            else { inQuotes = !inQuotes; }
+          } else if (c === "," && !inQuotes) {
+            row.push(field); field = "";
+          } else if ((c === "\n" || c === "\r") && !inQuotes) {
+            if (c === "\r" && next === "\n") i++;
+            row.push(field); field = "";
+
+            // avoid pushing empty trailing lines
+            if (row.some(v => v.trim() !== "")) rows.push(row);
+            row = [];
+          } else {
+            field += c;
+          }
+        }
+
+        // last field
+        if (field.length || row.length) {
+          row.push(field);
+          if (row.some(v => v.trim() !== "")) rows.push(row);
+        }
+
+        const headers = rows.shift().map(h => h.trim());
+        return rows.map(cols => {
+          const obj = {};
+          headers.forEach((h, idx) => obj[h] = (cols[idx] ?? "").trim());
+          return obj;
+        });
+      }
+
+      async function fetchCSV(url) {
+        const resp = await fetch(url, { cache: "no-store" });
+        if (!resp.ok) throw new Error(`CSV fetch failed (${resp.status}) for ${url}`);
+        const text = await resp.text();
+        return parseCSV(text);
+      }
+
+      function escapeHtml(str) {
+        return String(str).replace(/[&<>"']/g, s => ({
+          "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+        }[s]));
+      }
+
+      function populateStops(stops) {
+        stopEl.innerHTML = "";
+
+        // Sort numerically by stop_id if present
+        stops.sort((a, b) => Number(a.stop_id) - Number(b.stop_id));
+
+        for (const s of stops) {
+          const opt = document.createElement("option");
+          opt.value = s.stop_id;
+          opt.textContent = `#${s.stop_id} — ${s.stop_name}`;
+          stopEl.appendChild(opt);
+        }
+      }
+
+      function renderForStop(stopId, stopsById, scheduleRows) {
+        const stop = stopsById.get(stopId);
+
+        stopMetaEl.innerHTML = stop
+          ? `<p><strong>${escapeHtml(stop.stop_name)}</strong><br>${escapeHtml(stop.stop_location)}</p>`
+          : "";
+
+        const rows = scheduleRows
+          .filter(r => r.stop_id === stopId)
+          // sort by trip_id numerically (keeps departures in order)
+          .sort((a, b) => Number(a.trip_id) - Number(b.trip_id));
+
+        if (!rows.length) {
+          resultsEl.innerHTML = `<p>No departures found for this stop.</p>`;
+          return;
+        }
+
+        resultsEl.innerHTML = `
+          <ul>
+            ${rows.map(r => `<li>${escapeHtml(r.time)}</li>`).join("")}
+          </ul>
+        `;
+      }
+
+      (async function init() {
+        try {
+          const [stops, schedule] = await Promise.all([
+            fetchCSV(STOPS_CSV_URL),
+            fetchCSV(SCHEDULE_CSV_URL)
+          ]);
+
+          // Build a quick lookup map for stop metadata
+          const stopsById = new Map(stops.map(s => [s.stop_id, s]));
+
+          populateStops(stops);
+
+          // initial render
+          renderForStop(stopEl.value, stopsById, schedule);
+
+          stopEl.addEventListener("change", () => {
+            renderForStop(stopEl.value, stopsById, schedule);
+          });
+
+        } catch (err) {
+          resultsEl.innerHTML = `<p>Sorry — schedule failed to load.</p>`;
+          console.error(err);
+        }
+      })();
+    </script>
+    <!-- <script>
       const peel = document.querySelector(".peel__button");
       const hero = document.querySelector(".hero");
       peel.addEventListener("click", e => {
@@ -409,6 +547,6 @@
         secondaryContent.style.display = "flex";
 
       });
-    </script>
+    </script> -->
   </body>
 </html>

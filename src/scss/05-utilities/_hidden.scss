@@ -30,3 +30,10 @@
     display: none;
   }
 }
+
+.mobile-hide{
+  display: none;
+  @include mx.for-size("tablet-landscape-up"){
+    display: block;
+  }
+}

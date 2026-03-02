@@ -47,7 +47,7 @@ const displayItems = ( dataSet, page = 1, perPage = 2 ) => {
   `<div class="di__item">
       <img class="di__image" src="${item.image}" loading="lazy" alt="${ !item.image.includes("/images/profile/headshot.png") ? "Headshot of " + item.name : ""}" />
       <p class="di__name"><a href="${item.link}">${item.name}</a></p>
-      <p class="di__title">${item.title.toString()}</p>
+      <p class="di__title">${item.title.join(", ")}</p>
       <p class="di__dept">${item.email}</p>
     </div>`);
 

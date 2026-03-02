@@ -74,15 +74,15 @@
       @include mx.for-size("phone-only"){
         padding: 20px;
         display: block;
-        text-align: center;  
+        text-align: center;
       }
     }
-    
+
     .dept-header{
       padding-top: 0.5rem;
     }
-    
-    
+
+
   }
 
   &__cta {
@@ -118,16 +118,18 @@
 // Header site title
 .site-title {
   @include mx.font-size(18px);
-
+  font-weight: 700;
   text-align: center;
   text-transform: uppercase;
-
+  margin: 0.7rem 0;
+  font-family: var(--roboto);
   @include mx.for-size("tablet-landscape-up") {
     text-align: left;
   }
 }
 
 .dept-header {
+  font-family: var(--roboto);
   @include mx.for-size("phone-only") {
     padding: var(--global-padding) var(--hPadding);
     padding-bottom: 0;
@@ -155,11 +157,12 @@
   &__title {
     align-self: flex-end;
     color: var(--text-color, var(--white));
-    padding: 0;
-    margin: 0;
     font-size: var(--dept-title, #{mx.px-to-rem(34px)});
+    font-weight: 700;
     line-height: 1;
-    // @include mx.font-size(34px, 1);
+    margin: 0;
+    padding: 0;
+
     a {
       display: inline-block;
     }

@@ -3,7 +3,7 @@ function checkAlerts() {
   let alertDiv = document.createElement("div");
       alertDiv.className = "site-alert";
       alertDiv.innerHTML = `<svg class="icon site-alert__icon"><use xlink:href="#info"></use></svg><div class="site-alert__content">{{content}}</div>
-      <button class="o-btn site-alert__close"><svg class="icon site-alert__icon"><use xlink:href="#close"></use></svg></button>`;
+      <button class="o-btn site-alert__close"><svg class="icon site-alert__icon"><use xlink:href="#close"></use></svg> <span class="sr-only">Close Campus Message</span></button>`;
   fetch("https://content.getrave.com/rss/umkc/channel1")
   .then((response) => {
     if (response.ok) {
@@ -64,7 +64,7 @@ async function showAlert(data){
   let alertDiv = document.createElement("div");
   alertDiv.className = "site-alert";
   alertDiv.innerHTML = `<svg class="icon site-alert__icon"><use xlink:href="#info"></use></svg><div class="site-alert__content">{{content}}</div>
-  <button class="o-btn site-alert__close"><svg class="icon site-alert__icon"><use xlink:href="#close"></use></svg></button>`;
+  <button class="o-btn site-alert__close"><svg class="icon site-alert__icon"><use xlink:href="#close"></use></svg> <span class="sr-only">Close Campus Message</span></button>`;
   dn.forEach( node => {
     let sessionAlertHide = ( sessionStorage.getItem("hideSiteAlert") !== null ? JSON.parse(sessionStorage.getItem("hideSiteAlert")) : false );
     let current = node.structuredDataNodes;
@@ -73,8 +73,10 @@ async function showAlert(data){
     let hpOnly = current[1].text == "yes" ? true : false;
     // If active and hpOnly is true and the location is the homepage, assigned for UMKC
 
-    let matches = /http(s)?:\/\/(www\.)?umkc\.edu\/(index\.html)?/
-    if ( !sessionAlertHide && ( active && hpOnly && matches.test(window.location.href) || ( !hpOnly && active) ) ) {
+    const matches = /^https?:\/\/(www\.)?umkc\.edu(?:\/(?:index\.html)?)?(?:[?#].*)?$/;
+    const isHomepage = matches.test(window.location.href);
+
+    if ( !sessionAlertHide && active && (!hpOnly || isHomepage) ) {
       let content = current[2].text;
       alertDiv.innerHTML = alertDiv.innerHTML.replace("{{content}}", content);
       mainContainer.prepend(alertDiv);

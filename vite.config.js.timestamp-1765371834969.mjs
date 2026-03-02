@@ -1,0 +1,23 @@
+// vite.config.js
+import { defineConfig } from "vite";
+import { resolve } from "path";
+import handlebars from "vite-plugin-handlebars";
+var __vite_injected_original_dirname = "/Users/gamnbd/Sites/umkc";
+var vite_config_default = defineConfig({
+  base: "./",
+  build: {
+    sourcemap: false
+  },
+  plugins: [
+    handlebars({
+      compileOptions: {
+        preventIndent: true
+      },
+      partialDirectory: resolve(__vite_injected_original_dirname, "includes")
+    })
+  ]
+});
+export {
+  vite_config_default as default
+};
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsidml0ZS5jb25maWcuanMiXSwKICAic291cmNlc0NvbnRlbnQiOiBbImNvbnN0IF9fdml0ZV9pbmplY3RlZF9vcmlnaW5hbF9kaXJuYW1lID0gXCIvVXNlcnMvZ2FtbmJkL1NpdGVzL3Vta2NcIjtjb25zdCBfX3ZpdGVfaW5qZWN0ZWRfb3JpZ2luYWxfZmlsZW5hbWUgPSBcIi9Vc2Vycy9nYW1uYmQvU2l0ZXMvdW1rYy92aXRlLmNvbmZpZy5qc1wiO2NvbnN0IF9fdml0ZV9pbmplY3RlZF9vcmlnaW5hbF9pbXBvcnRfbWV0YV91cmwgPSBcImZpbGU6Ly8vVXNlcnMvZ2FtbmJkL1NpdGVzL3Vta2Mvdml0ZS5jb25maWcuanNcIjtpbXBvcnQgeyBkZWZpbmVDb25maWcgfSBmcm9tICd2aXRlJztcbmltcG9ydCB7IHJlc29sdmUgfSBmcm9tICdwYXRoJztcbmltcG9ydCBoYW5kbGViYXJzIGZyb20gJ3ZpdGUtcGx1Z2luLWhhbmRsZWJhcnMnO1xuXG5leHBvcnQgZGVmYXVsdCBkZWZpbmVDb25maWcoe1xuICBiYXNlOiAnLi8nLFxuICBidWlsZDoge1xuICAgIHNvdXJjZW1hcDogZmFsc2UsXG4gIH0sXG4gIHBsdWdpbnM6IFtcbiAgICBoYW5kbGViYXJzKHtcbiAgICAgIGNvbXBpbGVPcHRpb25zOiB7XG4gICAgICAgIHByZXZlbnRJbmRlbnQ6IHRydWUsXG4gICAgICB9LFxuICAgICAgcGFydGlhbERpcmVjdG9yeTogcmVzb2x2ZShfX2Rpcm5hbWUsICdpbmNsdWRlcycpLFxuICAgIH0pXG4gIF0sXG59KTtcbiJdLAogICJtYXBwaW5ncyI6ICI7QUFBMFAsU0FBUyxvQkFBb0I7QUFDdlIsU0FBUyxlQUFlO0FBQ3hCLE9BQU8sZ0JBQWdCO0FBRnZCLElBQU0sbUNBQW1DO0FBSXpDLElBQU8sc0JBQVEsYUFBYTtBQUFBLEVBQzFCLE1BQU07QUFBQSxFQUNOLE9BQU87QUFBQSxJQUNMLFdBQVc7QUFBQSxFQUNiO0FBQUEsRUFDQSxTQUFTO0FBQUEsSUFDUCxXQUFXO0FBQUEsTUFDVCxnQkFBZ0I7QUFBQSxRQUNkLGVBQWU7QUFBQSxNQUNqQjtBQUFBLE1BQ0Esa0JBQWtCLFFBQVEsa0NBQVcsVUFBVTtBQUFBLElBQ2pELENBQUM7QUFBQSxFQUNIO0FBQ0YsQ0FBQzsiLAogICJuYW1lcyI6IFtdCn0K

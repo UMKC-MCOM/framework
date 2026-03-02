@@ -5,6 +5,7 @@
   display: flex;
   flex-flow: column;
   margin-top: 1.5rem;
+  gap: 1.5rem;
 
   @include mx.for-size("tablet-landscape-up") {
     justify-content: space-around;
@@ -29,7 +30,7 @@
 
   &__group {
     @include mx.for-size("tablet-landscape-up") {
-      padding-right: 1.5rem;
+      // padding-right: 1.5rem; // Removed 12.11, may be needed?
       flex: 1 0;
     }
   }
@@ -62,11 +63,6 @@
 
     &--heavy {
       --heading-size: #{mx.px-to-rem(90px)};
-    }
-
-    &--light {
-      --heading-color: var(--black);
-      --heading-size: #{mx.px-to-rem(24px)};
     }
   }
 
@@ -111,7 +107,13 @@
     font-weight: 700;
     font-family: var(--roboto);
     color: var(--umkc-blue);
-    margin-right: 2rem;
+    // margin-right: 2rem; // Removed to adjust the spacing, might be necessary?
+  }
+  &__details {
+    p:first-child{
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
   }
 
   &--small-stats {

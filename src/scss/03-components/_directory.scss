@@ -6,34 +6,6 @@
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
-  // Figure out the sizing and spacing for mobile layouts.
-
-//   &--v2 {
-//     @include mx.for-size("tablet-portrait-up"){
-//       justify-content: flex-start;
-//     }
-//
-//     #{$self}__image {
-//       width: var(--image-size);
-//       height: var(--image-size);
-//     }
-//     #{$self}__item {
-//       gap: 2rem;
-//       @include mx.for-size("tablet-portrait-up"){
-//         --image-size: #{mx.px-to-rem(100px)};
-//         display: flex;
-//         text-align: left;
-//         flex-basis: 100%;
-//       }
-//       @include mx.for-size("tablet-landscape-up"){
-//         --image-size: #{mx.px-to-rem(150px)};
-//         flex-basis: calc(50% - 2rem);
-//       }
-//       @include mx.for-size("desktop-up"){
-//         flex-basis: calc(33% - 2rem);
-//       }
-//     }
-//   }
 
   &--vcard {
     display: block;
@@ -121,28 +93,27 @@
     display: grid;
     grid-auto-columns: 1fr;
     grid-template-columns: 90px 1fr;
-    grid-template-rows: min-content min-content min-content min-content;
+    grid-template-rows: min-content min-content min-content;
     gap: 0.25rem 2rem;
     grid-template-areas:
       "di__image di__name"
       "di__image di__title"
-      "di__image di__dept"
-      "di__image di__au";
+      "di__image di__dept";
     padding: 2rem 1rem;
     &:first-child {
       border-top: solid 1px #C3CACE;
       border-top: solid 2rem var(--umkc-blue);
     }
-    @include mx.for-size("tablet-landscape-up"){
+    @include mx.for-size("desktop-up"){
       align-items: center;
       border: solid 1px #C4CACE;
       border-top: none;
       gap: 0px 46px;
       grid-auto-columns: 1fr;
-      grid-template-columns: 90px 1fr 1fr 1fr 1fr;
+      grid-template-columns: 90px 1fr 1fr 1fr;
       grid-template-rows: 1fr;
       grid-template-areas:
-        "di__image di__name di__title di__dept di__au";
+        "di__image di__name di__title di__dept";
       // padding: 1rem;
     }
     &--header {
@@ -164,10 +135,13 @@
     grid-area: di__image;
     border-radius: 100%;
     object-fit: cover;
+    width: mx.px-to-rem(90px);
+    height: mx.px-to-rem(90px);
+
     object-position: center center;
   }
   &__name { grid-area: di__name; }
   &__title { grid-area: di__title; }
   &__dept { grid-area: di__dept; }
-  &__au { grid-area: di__au; }
+  // &__au { grid-area: di__au; } // Removed on 12.17.2025
 }

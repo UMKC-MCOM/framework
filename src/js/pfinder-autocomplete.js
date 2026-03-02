@@ -11,7 +11,7 @@ if ( document.querySelector("#autocomplete") !== null ) {
     school = { filters: `college IN ${school}` };
   }
   const searchClient = meilisearchAutocompleteClient({
-    url: 'https://edge.meilisearch.com',
+    url: 'https://ms-7fa7128af456-11715.sfo.meilisearch.io',
     apiKey: '85a8215bb2f86b7ce57dc674cc918431e24479ec9c7383f40c029705181f17eb'
   });
 
