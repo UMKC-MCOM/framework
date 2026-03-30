@@ -28,6 +28,14 @@ table {
   tr:nth-of-type(odd){
     background: var(--umkc-gray);
   }
+
+  &.fixed {
+    table-layout: fixed;
+    width: 100%;
+    th, td {
+
+    }
+  }
 }
 
 // For better responsive tables
