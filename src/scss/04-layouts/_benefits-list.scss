@@ -25,12 +25,12 @@
     @include mx.for-size("tablet-landscape-up") {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
     }
   }
 
   &__group {
     @include mx.for-size("tablet-landscape-up") {
-      // padding-right: 1.5rem; // Removed 12.11, may be needed?
       flex: 1 0;
     }
   }
@@ -42,7 +42,7 @@
 
     &--stats {
       flex-flow: column;
-      margin: 1.5rem;
+      gap: 1.5rem;
       flex: 0 0 calc(50% - 3rem);
       @include mx.for-size("desktop-up") {
         flex: 0 0 calc(33% - 3rem);
