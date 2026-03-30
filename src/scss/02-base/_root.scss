@@ -31,6 +31,16 @@
 .bloch {
   --umkc-yellow: var(--umkc-orange);
 
+  // h2, h3, h4 {
+  //   --heading-color: var(--umkc-orange);
+  // }
+
+  .standard {
+    h1 {
+      --heading-color: var(--umkc-orange);
+    }
+  }
+
   #getInfoButton, .button--umkc-yellow, .search button{
     color: var(--umkc-navy);
   }
