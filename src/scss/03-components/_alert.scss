@@ -33,11 +33,6 @@
     height: mx.px-to-rem(30px);
     width: mx.px-to-rem(11.43px);
     margin-right: 1rem;
-    // @include mx.for-size("tablet-landscape-up") {
-    //   flex-basis: mx.px-to-rem(40px);
-    //   height: mx.px-to-rem(40px);
-    //   width: mx.px-to-rem(40px);
-    // }
   }
   &__close {
     .icon{
