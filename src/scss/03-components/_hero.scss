@@ -555,3 +555,25 @@
     }
   }
 }
+
+.bloch {
+  .hero {
+    position: relative;
+    &__content{
+      --heading-size: 32px;
+      background: var(--umkc-orange);
+      aspect-ratio: 1/1;
+      width: 250px;
+      position: absolute;
+      top: 2vh;
+      left: 4vw;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      p{
+        display: none;
+      }
+    }
+  }
+}
