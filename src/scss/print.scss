@@ -3,10 +3,18 @@
 
 @media print {
   .header {
+    background: none;
     --logo-color: var(--umkc-blue);
-
+    --logo-height: 4rem;
+    --dept-title: 1rem;
     .search {
       display: none;
+    }
+    .site-title {
+      font-size: 1rem;
+    }
+    .header__cta a {
+      font-size: 1rem;
     }
   }
 
@@ -14,53 +22,134 @@
     display: none;
   }
 
-  .hero {
+  .hero, .vt {
     height: auto;
-
+    background: transparent;
     &__title {
-      @include mx.font-size(24px);
+      @include mx.font-size(18px);
+      --heading-color: var(--font-color);
+      text-shadow: none;
     }
 
     &__content {
       color: var(--font-color);
       text-shadow: none;
+      background-image: none;
+      max-width: 75vw;
     }
   }
 
   a {
-    page-break-inside: avoid;
+    page-break-inside: avoid !important;
 
     &:link,
     &:visited {
-      background: transparent;
-      border: none;
-      color: #520;
-      font-weight: bold;
-      text-align: left;
-      text-decoration: underline;
+      background: transparent !important;
+      border: none !important;
+      color: #06c !important;
+      font-weight: bold !important;
+      text-align: left !important;
+      text-decoration: underline !important;
 
-      @include mx.font-size(16pt);
+      @include mx.font-size(16px);
     }
 
     &[href^="http"]::after {
-      content: " <" attr(href) "> ";
+      content: " <" attr(href) "> " !important;
     }
 
     &[href^="#"]::after {
-      content: "";
+      content: "" !important;
     }
     /* styleling-disable selector-pseudo-class-no-unknown */
     &:not(:local-link)::after {
-      content: " <" attr(href) "> ";
+      content: " <" attr(href) "> " !important;
     }
     /* stylelint-enable */
   }
 
-  .site-title {
-    @include mx.font-size(32px);
+  #getInfoButton {
+    display: none;
+  }
 
-    a {
+  h2 {
+    --heading-size: 2rem !important;
+  }
+  h3 {
+    --heading-size: 1.8rem !important;
+  }
+  h4 {
+    --heading-size: 1.7rem !important;
+  }
+  h5 {
+    --heading-size: 1.6rem !important;
+  }
+
+  .accordion, .tabs {
+    &__btn {
+      background: var(--umkc-gray);
+      display: block;
+    }
+    &__icon {
+      display: none;
+    }
+    &__content{
+      visibility: visible;
+      opacity: 1;
+      display: block;
+      max-height: fit-content;
+    }
+  }
+
+  .sc {
+    display: none;
+  }
+
+  .pwb {
+    background: none;
+    &__img {
+      max-height: 150px;
+    }
+  }
+  .footer {
+    color: var(--text-color) !important;
+    font-size: 1.2rem !important;
+    a{
+      font-size: 1.2rem !important;
+    }
+    &__top, &__bottom {
+      display: none !important;
+    }
+    #footer-mid {
+      background: none;
+      display: none;
       color: var(--font-color);
+      a{
+        color: initial;
+      }
+    }
+    &__info {
+      border: none;
+    }
+    &__mid {
+      display: block;
+      background: none;
+    }
+    &__curator {
+      background: none;
+      border-top: solid var(--umkc-gray) 2px;
+      padding-top: 1rem;
+      .nav {
+        list-style: outside !important;
+        li{
+          margin: initial;
+          padding: initial;
+          display: block;
+          list-style: initial;
+        }
+      }
+
+
     }
   }
 }

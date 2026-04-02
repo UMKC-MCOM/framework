@@ -58,8 +58,15 @@ $base-line-height: 24px !default;
   @each $item, $color in $themeColors {
     &--#{$item} {
       --btn-bg: var(--#{$item});
-
-      @if floor(lightness($color)) < 50 {
+      @if $item == "bloch-orange" {
+        --btn-bg: var(--bloch-orange);
+        --btn-text: var(--white);
+        --btn-hover: var(--white);
+        --btn-hover-text: var(--umkc-dark-blue);
+        border-color: var(--bloch-orange);
+        border-width: 4px;
+        border-radius: 0;
+      } @else if floor(lightness($color)) < 50 {
         --btn-text: var(--white);
         --btn-hover: var(--umkc-yellow);
         --btn-hover-text: var(--umkc-dark-blue);
