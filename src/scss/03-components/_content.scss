@@ -3,7 +3,6 @@
 
 .main-content {
   --btn-arrow: var(--btn-text, var(--umkc-blue));
-
   p:not([class]) {
     padding: mx.px-to-rem(8px) 0 mx.px-to-rem(16px);
   }
@@ -48,14 +47,14 @@
       color: var(--link-color, var(--umkc-blue));
       font-weight: 700;
       transition: all 150ms ease;
-      text-decoration-color: var(--umkc-yellow);
+      text-decoration-color: var(--link-dec, var(--umkc-yellow));
       text-decoration-thickness: mx.px-to-rem(3px);
       text-underline-offset: mx.px-to-rem(4px);
 
       &:hover, &:focus, &:active {
-        color: var(--umkc-dark-blue);
-        background: var(--umkc-yellow);
-        text-decoration: none;
+        color: var(--link-hover-color, var(--umkc-dark-blue));
+        background: var(--link-dec-hover, var(--umkc-yellow));
+        text-decoration-color: var(--link-dec-hover, var(--umkc-yellow));
       }
     }
   }

@@ -2,21 +2,26 @@
 
 .form {
   margin-bottom: 1rem;
+
   &__text,
-  &__select {
+  &__select,
+  input:not([type='checkbox']):not([type='radio']),
+  select {
     border: solid mx.px-to-rem(1px) #DEDEDF;
     border-radius: mx.px-to-rem(4px);
     @include mx.font-size(16px, 1.25);
     min-width: 260px;
+    width: 300px;
     padding: 0.5rem 0.75rem;
     background: var(--white);
+  }
+  .form_select{
+    width: 300px;
   }
   &__ta {
     height: 260px;
     width: 360px;
   }
-  // input[type="checkbox"]{}
-  // input[type="radio"]{}
   &__sw {
     position: relative;
     width: 260px;
@@ -45,7 +50,8 @@
     }
   }
 
-  &__label {
+  &__label,
+  label {
     display: block;
     padding: 1rem 0 0.25rem;
   }
@@ -63,12 +69,22 @@
     margin-right: 2rem;
   }
 
+  &--stacked{
+    .form_pages > div {
+      grid-template-rows: 1fr;
+      grid-template-columns: 350px;
+    }
+    .form_action {
+      text-align: left;
+    }
+  }
+
   &--online {
     .form_h1 {
       display: none;
     }
 
-    #form_page_1{
+    .form-pages > div {
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
@@ -77,25 +93,65 @@
     .form_question {
       flex: 1 1 calc(50% - 1rem);
     }
+    .form_birthdate {
+      width: auto;
+    }
+  }
 
-    .form_select, .form_birthdate{
-      .form_responses {
-        display: flex;
-        flex-wrap: nowrap;
-        gap: 0.25rem;
-        justify-content: space-around;
+  .form_select, .form_birthdate{
+    .form_responses {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 0.25rem;
+      justify-content: space-around;
 
-        select {
-          -webkit-appearance: none;
-          display: block;
-          width: 100%;
-          flex: 1 0 calc((100%/3) - 0.25rem);
-          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-caret-down-fill' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
-          background-repeat: no-repeat;
-          background-position: center right 4px;
-          background-size: 16px;
-        }
+      select {
+        -webkit-appearance: none;
+        display: block;
+        width: 100%;
+        flex: 1 0 calc((100%/3) - 0.25rem);
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-caret-down-fill' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center right 4px;
+        background-size: 16px;
       }
+    }
+  }
+  // Fix the birthdate month/day/year lengths
+  .form_birthdate {
+    width: 300px;
+    .form_responses {
+      select{
+        min-width: fit-content;
+      }
+    }
+  }
+  button,
+  .form_button_submit {
+    --btn-bg: var(--umkc-yellow);
+    --btn-text: var(--umkc-navy);
+    --btn-hover: var(--umkc-navy);
+    --btn-hover-text: var(--white);
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    border: solid mx.px-to-rem(1px) transparent;
+    border-radius: mx.px-to-rem(8px);
+    display: inline-block;
+    font-family: var(--os);
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    @include mx.font-size(18px);
+
+    @include mx.tr;
+
+    &:hover,
+    &:focus,
+    &:active {
+      --btn-arrow: var(--btn-hover-text);
+      background-color: var(--btn-hover);
+      color: var(--btn-hover-text);
     }
   }
 }

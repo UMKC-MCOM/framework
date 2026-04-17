@@ -226,14 +226,14 @@
 
   button {
     border-radius: 0 mx.px-to-rem(7px) mx.px-to-rem(7px) 0;
-    color: var(--umkc-blue);
-    background: var(--umkc-yellow);
+    color: var(--btn-text, var(--umkc-blue));
+    background: var(--btn-bg, var(--umkc-yellow));
     padding: 0.5rem;
     height: 42px;
     @include mx.tr(all);
     &:hover, &:focus, &:active {
-      background: var(--umkc-dark-blue);
-      color: var(--white);
+      background: var(--btn-hover, var(--umkc-dark-blue));
+      color: var(--btn-hover-text, var(--white));
     }
     svg {
       height: mx.px-to-rem(24px);

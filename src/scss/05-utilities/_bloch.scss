@@ -1,0 +1,56 @@
+@use "../01-abstracts/mixins" as mx;
+
+.bloch {
+  --nav-background: var(--bloch-orange);
+  --link-dec: var(--bloch-orange);
+  --link-dec-hover: var(--umkc-yellow);
+  --btn-bg: var(--bloch-orange);
+  --btn-text: var(--white);
+  --btn-hover: var(--btn-text);
+  --btn-hover-text: var(--umkc-blue);
+  .hero {
+    position: relative;
+
+    &__title {
+      font-family: var(--os);
+      text-transform: uppercase;
+    }
+
+    &__content{
+      --heading-size: #{mx.px-to-rem(48px)};
+      background: var(--bloch-orange);
+      aspect-ratio: 1/1;
+      width: mx.px-to-rem(370px);
+      position: absolute;
+      top: 2vh;
+      left: 4vw;
+      padding: mx.px-to-rem(40px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      p{
+        display: none;
+      }
+    }
+  }
+
+  .standard {
+    h1 {
+      --heading-color: var(--bloch-orange);
+    }
+  }
+
+  .button.button--umkc-yellow {
+    --btn-bg: var(--bloch-orange);
+    --btn-text: var(--white);
+    --btn-hover: var(--btn-text);
+    --btn-hover-text: var(--umkc-blue);
+    border: solid 3px var(--btn-bg);
+    color: var(--btn-text);
+    border-radius: 5px;
+
+    &:hover, &:active, &:focus {
+      color: var(--btn-hover-text);
+    }
+  }
+}

@@ -25,6 +25,7 @@
 }
 
 .pf-request_info {
+  $self: &;
   &__wrapper {
       @include mx.for-size("desktop-up") {
       max-width: 85vw;
@@ -38,6 +39,17 @@
     font-family: var(--os);
     text-transform: uppercase;
   }
+  &:not(#{$self}--lp){
+    form {
+      @include mx.for-size("desktop-up"){
+        grid-template-columns: 80% 20%;
+        grid-template-rows: repeat(1, 1fr);
+      }
+      .form_action {
+        text-align: center;
+      }
+    }
+  }
   form {
     display: grid;
     grid-template-rows: 1fr;
@@ -45,22 +57,17 @@
     grid-column-gap: 30px;
     grid-row-gap: 30px;
 
-    @include mx.for-size(desktop-up){
-      grid-template-columns: 80% 20%;
-      grid-template-rows: repeat(1, 1fr);
-    }
-
     #form_start {
       display: none;
     }
     .form_action {
-      text-align: center;
+      text-align: left;
 
       @include mx.for-size(desktop-up){
         align-content: center;
       }
     }
-    #form_page_1 {
+    .form_pages > div {
       display: grid;
       gap: mx.px-to-rem(10px);
       grid-template-rows: 1fr;

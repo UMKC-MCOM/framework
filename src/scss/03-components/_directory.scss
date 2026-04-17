@@ -48,8 +48,8 @@
     border-radius: 100%;
     margin-bottom: 0.75rem;
     object-fit: cover;
-    width: var(--image-size, #{mx-to-px(150px)});
-    height: var(--image-size, #{mx-to-px(150px)});
+    width: var(--image-size, #{mx.px-to-rem(150px)});
+    height: var(--image-size, #{mx.px-to-rem(150px)});
   }
 
   &__role {

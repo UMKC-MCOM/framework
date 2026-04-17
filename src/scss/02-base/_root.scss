@@ -27,27 +27,3 @@
     --#{$name}: #{$shape}
   }
 }
-
-.bloch {
-  --umkc-yellow: var(--umkc-orange);
-
-  // h2, h3, h4 {
-  //   --heading-color: var(--umkc-orange);
-  // }
-
-  .standard {
-    h1 {
-      --heading-color: var(--umkc-orange);
-    }
-  }
-
-  #getInfoButton, .button--umkc-yellow, .search button{
-    color: var(--umkc-navy);
-  }
-  .header--secondary {
-    border-bottom-color: var(--umkc-orange);
-  }
-  #main-navigation{
-    border-top-color: var(--umkc-orange);
-  }
-}
