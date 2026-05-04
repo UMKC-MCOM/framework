@@ -37,7 +37,10 @@
         border-radius: 100%;
         margin-bottom: #{mx.px-to-rem(24px)};
     }
-
+    &__details, &__stats {
+      width: 100%;
+      text-align: center;
+    }
     &__copy {
         padding: 0.5rem 0 1rem;
     }

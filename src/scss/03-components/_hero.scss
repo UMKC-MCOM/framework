@@ -243,7 +243,7 @@
         font-weight: 700;
         color: var(--umkc-yellow);
         @include mx.for-size("desktop-up"){
-          @include mx.font-size(200px, 1);
+          @include mx.font-size(168px, 1);
         }
       }
     }
