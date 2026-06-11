@@ -431,6 +431,30 @@
       display: block;
     }
   }
+
+  &--news {
+    --hero-height: #{px-to-rem(400px)};
+    --heading-color: var(--umkc-dark-blue);
+    background: white;
+    background-image: url('/src/images/skyline-sketch.png');
+    background-position-x: 95%;
+    background-position-y: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    #{$self}__title {
+      --heading-size: 54px;
+      text-shadow: none;
+      font-family: var(--os);
+    }
+    #{$self}__content {
+      color: var(--text-color);
+      background: none;
+      max-width: 600px;
+      @include mx.font-size(20px)
+    }
+  }
+
 } // .hero
 
 .mask {
