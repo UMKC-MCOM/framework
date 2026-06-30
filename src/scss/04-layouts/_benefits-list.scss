@@ -1,127 +1,135 @@
 @use "../01-abstracts/mixins" as mx;
-.benefits-list {
-  $self: &;
 
-  display: flex;
-  flex-flow: column;
+.benefits-list {
+  --benefits-gap: clamp(1.5rem, 4vw, 4rem);
+  --benefits-item-gap: 1.5rem;
+  --benefits-media-width: #{mx.px-to-rem(448px)};
+
+  display: grid;
+  gap: var(--benefits-gap);
   margin-top: 1.5rem;
-  gap: 1.5rem;
 
   @include mx.for-size("tablet-landscape-up") {
-    justify-content: space-around;
-    flex-flow: row wrap;
+    &--with-media {
+      grid-template-columns: minmax(14rem, var(--benefits-media-width)) minmax(0, 1fr);
+      align-items: start;
+    }
+  }
 
-    &__image {
-      margin-right: 4rem;
-      flex: 0 1;
+  &__media {
+    img {
+      display: block;
+      width: 100%;
+      max-width: var(--benefits-media-width);
       aspect-ratio: var(--portrait);
-      height: #{mx.px-to-rem(535px)};
-      width: auto;
       object-fit: cover;
     }
   }
 
-  &--stats {
-    @include mx.for-size("tablet-landscape-up") {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
+  &__body {
+    display: grid;
+    gap: clamp(1.5rem, 3vw, 2.5rem);
   }
 
-  &__group {
+  &__header {
+    max-width: 65ch;
+  }
+
+  &__items {
+    display: grid;
+    gap: var(--benefits-item-gap);
+
     @include mx.for-size("tablet-landscape-up") {
-      flex: 1 0;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 
   &__item {
     display: flex;
     align-items: flex-start;
-    margin-top: 1.5rem;
-
-    &--stats {
-      flex-flow: column;
-      gap: 1.5rem;
-      flex: 0 0 calc(50% - 3rem);
-      @include mx.for-size("desktop-up") {
-        flex: 0 0 calc(33% - 3rem);
-      }
-    }
-  }
-
-  &__cta {
-    flex-basis: 100%;
-    text-align: center;
-    padding-top: 2rem;
-  }
-
-  &__title {
-    --heading-margin: 0;
-
-    line-height: 1;
-
-    &--heavy {
-      --heading-size: #{mx.px-to-rem(90px)};
-    }
+    gap: 1.5rem;
   }
 
   &__icon {
     background: var(--umkc-blue);
-    content: "";
-    display: flex;
-    align-items: center;
-    justify-content: center;
     color: white;
-    height: mx.px-to-rem(58px);
+    display: grid;
+    place-items: center;
     width: mx.px-to-rem(58px);
-    flex-shrink: 0;
-    border-radius: 100%;
-    margin-right: 2rem;
+    height: mx.px-to-rem(58px);
+    flex: 0 0 mx.px-to-rem(58px);
+    border-radius: 50%;
 
     @include mx.font-size(32px, 1);
 
     font-family: var(--roboto);
     font-weight: 700;
+  }
 
-    &--flame {
-      color: white;
-      position: relative;
+  &__icon--flame {
+    position: relative;
 
-      .icon {
-        // Height:Width Ratio is 1.1919
-        --width: 2.75rem;
-        --height: calc(var(--width) * 1.1919);
+    .icon {
+      --width: 2.75rem;
+      --height: calc(var(--width) * 1.1919);
 
-        position: absolute;
-        bottom: -#{mx.px-to-rem(0.95px)};
-        right: 0;
-        height: var(--height);
-        width: var(--width);
-      }
+      position: absolute;
+      right: 0;
+      bottom: -#{mx.px-to-rem(0.95px)};
+      width: var(--width);
+      height: var(--height);
     }
   }
 
-  &__stats {
-    @include mx.font-size(56px);
-    font-weight: 700;
-    font-family: var(--roboto);
-    color: var(--umkc-blue);
-    // margin-right: 2rem; // Removed to adjust the spacing, might be necessary?
+  &__title {
+    --heading-margin: 0;
+    line-height: 1;
   }
+
   &__details {
-    p:first-child{
+    max-width: 60ch;
+
+    p:first-child {
       font-weight: 700;
       font-size: 1.25rem;
     }
   }
 
+  &__cta {
+    text-align: center;
+  }
+
+  &__stat {
+    @include mx.font-size(56px, 1);
+
+    font-family: var(--roboto);
+    font-weight: 700;
+    color: var(--umkc-blue);
+  }
+
+  &--stats {
+    .benefits-list__items {
+      @include mx.for-size("tablet-landscape-up") {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .benefits-list__item {
+      display: grid;
+      gap: 1rem;
+    }
+  }
+
   &--small-stats {
     margin-top: 0;
-    flex-wrap: wrap;
-    #{$self}__item--stats {
-      align-items: center;
+
+    .benefits-list__items {
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+    }
+
+    .benefits-list__item {
       text-align: center;
+      justify-items: center;
     }
   }
 }
