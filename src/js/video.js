@@ -14,7 +14,7 @@ if ( heroVideo ) {
     }
   }
   // Code for the video controls (play/pause)
-  const videoButton = document.querySelectorAll("[data-video]") > 0 ? document.querySelectorAll("[data-video") : false ;
+  const videoButton = document.querySelectorAll("[data-video]") > 0 ? document.querySelectorAll("[data-video]") : false ;
   if ( videoButton ) {
     [...videoButton].forEach((button) => {
       button.addEventListener('click', function(e){

@@ -7,7 +7,7 @@
 	--header-color: var(--umkc-blue);
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-start;
+	justify-content: center;
 	gap: 2rem;
 
 	@include mx.for-size("desktop-up") {
