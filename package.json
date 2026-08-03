@@ -7,10 +7,12 @@
  "scripts": {
   "dev": "vite --host",
   "build": "vite build",
+  "check": "npm run build && npm run lint:css",
   "preview": "vite preview",
   "scss": "sass --source-map src/scss:assets/css",
-  "lint:css": "stylelint \"src/**/*.scss\" -o \"stylelint.log\"; exit 0;",
-  "lint:css:fix": "stylelint \"src/**/*.scss\" --quiet --fix; exit 0;"
+  "lint:css": "stylelint src/scss/04-layouts/_news-article.scss",
+  "lint:css:all": "stylelint \"src/**/*.scss\"",
+  "lint:css:fix": "stylelint src/scss/04-layouts/_news-article.scss --quiet --fix"
  },
  "author": "Greg McMullen @ UMKC",
  "license": "ISC",

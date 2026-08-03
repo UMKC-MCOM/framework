@@ -1,0 +1,399 @@
+@use "../01-abstracts/mixins" as mx;
+
+$news-border-color: #d5d9dc;
+$news-muted-color: #5f6368;
+$news-notice-background: var(--umkc-yellow);
+
+@mixin responsive-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@mixin focus-ring {
+  outline: 0;
+  box-shadow: var(--focus-ring);
+}
+
+@mixin fluid-heading($size, $line-height, $max-width) {
+  max-width: $max-width;
+  font-size: $size;
+  line-height: $line-height;
+  text-wrap: balance;
+}
+
+@mixin side-alignment($side) {
+  @include mx.for-size("tablet-portrait-up") {
+    float: $side;
+    clear: both;
+    width: min(48%, 28rem);
+
+    @if $side == left {
+      margin-right: var(--space-8);
+    } @else {
+      margin-left: var(--space-8);
+    }
+  }
+
+  @include mx.for-size("desktop-up") {
+    @if $side == left {
+      margin-left: calc(var(--news-side-breakout) * -1);
+    } @else {
+      margin-right: calc(var(--news-side-breakout) * -1);
+    }
+  }
+}
+
+/* stylelint-disable no-descending-specificity -- module states intentionally follow base links */
+.news-article {
+  --news-body-size: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --news-lead-size: clamp(1.2rem, 1.05rem + 0.65vw, 1.55rem);
+  --news-title-size: clamp(2.25rem, 1.55rem + 3vw, 4.5rem);
+  --news-side-breakout: clamp(3rem, 6vw, 6rem);
+
+  padding-block: clamp(var(--space-8), 6vw, var(--space-16));
+  color: var(--font-color);
+  font-size: var(--news-body-size);
+  line-height: 1.7;
+
+  &__container {
+    width: min(calc(100% - (var(--layout-gutter) * 2)), var(--layout-wide));
+    margin-inline: auto;
+  }
+
+  &__header {
+    margin-bottom: clamp(var(--space-8), 6vw, var(--space-16));
+  }
+
+  &__title {
+    @include fluid-heading(var(--news-title-size), 1.08, auto);
+
+    margin: 0 0 clamp(var(--space-8), 5vw, var(--space-16));
+    color: var(--umkc-navy);
+    letter-spacing: -0.035em;
+    text-align: center;
+  }
+
+  &__lead {
+    display: grid;
+    gap: clamp(var(--space-6), 4vw, var(--space-12));
+    align-items: center;
+
+    @include mx.for-size("desktop-up") {
+      grid-template-columns: minmax(0, 1.7fr) minmax(18rem, 0.8fr);
+    }
+  }
+
+  &__hero {
+    margin: 0;
+
+    img {
+      @include responsive-image;
+
+      aspect-ratio: 3 / 2;
+    }
+  }
+
+  &__hero figcaption,
+  &__body figcaption {
+    margin-top: var(--space-2);
+    color: $news-muted-color;
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  &__deck {
+    margin: 0 0 var(--space-6);
+    color: var(--umkc-navy);
+    font-size: var(--news-lead-size);
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin: 0 0 var(--space-8);
+    padding: 0;
+    list-style: none;
+
+    a {
+      display: inline-block;
+      padding: var(--space-1) var(--space-3);
+      border-radius: 999px;
+      background: var(--umkc-lighter-blue);
+      color: var(--umkc-dark-blue);
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:focus-visible {
+        @include focus-ring;
+      }
+    }
+  }
+
+  &__byline {
+    display: flex;
+    gap: var(--space-3);
+    align-items: center;
+  }
+
+  &__author-image {
+    width: 3rem;
+    height: 3rem;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: var(--umkc-lighter-blue);
+  }
+
+  &__author,
+  &__meta {
+    margin: 0;
+  }
+
+  &__author {
+    color: var(--umkc-navy);
+    font-weight: 700;
+  }
+
+  &__meta {
+    color: $news-muted-color;
+    font-size: 0.875rem;
+  }
+
+  &__notice {
+    max-width: var(--layout-reading);
+    margin: 0 auto clamp(var(--space-8), 6vw, var(--space-16));
+    padding: var(--space-4) var(--space-6);
+    border-left: 0.25rem solid var(--umkc-yellow);
+    background: $news-notice-background;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &__body {
+    max-width: var(--layout-reading);
+    margin-inline: auto;
+    display: flow-root;
+
+    > * {
+      margin-block: 0;
+
+      + * {
+        margin-top: 1.5em;
+      }
+    }
+
+    h2 {
+      @include fluid-heading(clamp(1.75rem, 1.45rem + 1.25vw, 2.5rem), 1.15, 28ch);
+
+      clear: both;
+      margin-top: 2.5em;
+      color: var(--umkc-navy);
+      letter-spacing: -0.02em;
+    }
+
+    h3 {
+      @include fluid-heading(clamp(1.4rem, 1.25rem + 0.65vw, 1.85rem), 1.2, 32ch);
+
+      clear: both;
+      margin-top: 2em;
+    }
+
+    figure {
+      width: min(calc(100vw - (var(--layout-gutter) * 2)), 78ch);
+      margin-left: 50%;
+      transform: translateX(-50%);
+
+      img {
+        @include responsive-image;
+      }
+
+      &.align-center {
+        width: min(100%, 78ch);
+        margin-inline: auto;
+        transform: none;
+      }
+
+      &.align-left,
+      &.align-right {
+        width: 100%;
+        margin-inline: 0;
+        transform: none;
+      }
+
+      &.align-left {
+        @include side-alignment(left);
+      }
+
+      &.align-right {
+        @include side-alignment(right);
+      }
+
+      &.media-portrait {
+        width: min(100%, 30rem);
+
+        &.align-left,
+        &.align-right {
+          @include mx.for-size("tablet-portrait-up") {
+            width: min(38%, 20rem);
+          }
+        }
+      }
+    }
+
+    blockquote {
+      max-width: 54ch;
+      margin: var(--space-4) auto;
+      padding: var(--space-6) clamp(var(--space-4), 3vw, var(--space-8));
+      border-left: 0.25rem solid var(--umkc-blue);
+      background: var(--umkc-gray);
+      color: var(--umkc-navy);
+      font-size: clamp(1.25rem, 1.1rem + 0.75vw, 1.75rem);
+      font-style: italic;
+      line-height: 1.45;
+
+      footer {
+        margin-top: var(--space-4);
+        color: $news-muted-color;
+        font-family: var(--body);
+        font-size: 0.875rem;
+        font-style: normal;
+        line-height: 1.45;
+      }
+
+      cite {
+        color: var(--umkc-navy);
+        font-style: normal;
+        font-weight: 700;
+      }
+
+      &.align-center {
+        text-align: center;
+      }
+
+      &.align-left,
+      &.align-right {
+        width: 100%;
+        margin-block: var(--space-2) var(--space-6);
+        margin-inline: 0;
+        padding: var(--space-6);
+        border-top: 0.25rem solid var(--umkc-blue);
+        border-left: 0;
+        background: var(--umkc-gray);
+        font-family: var(--pf);
+        font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+        font-style: normal;
+        line-height: 1.4;
+
+        footer {
+          padding-top: var(--space-3);
+          border-top: 1px solid $news-border-color;
+        }
+      }
+
+      &.align-left {
+        @include side-alignment(left);
+      }
+
+      &.align-right {
+        @include side-alignment(right);
+      }
+    }
+  }
+
+  &__intro {
+    max-width: 54ch;
+    color: var(--umkc-navy);
+    font-size: var(--news-lead-size);
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  &__related {
+    margin-top: clamp(var(--space-12), 8vw, 6rem);
+    padding-top: clamp(var(--space-8), 5vw, var(--space-12));
+    border-top: 1px solid $news-border-color;
+
+    > h2 {
+      margin: 0 0 var(--space-8);
+      color: var(--umkc-navy);
+      font-size: clamp(1.75rem, 1.45rem + 1.25vw, 2.5rem);
+    }
+  }
+}
+
+.news-card-grid {
+  display: grid;
+  gap: var(--space-8);
+
+  @include mx.for-size("tablet-portrait-up") {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.news-card {
+  min-width: 0;
+
+  a:focus-visible {
+    @include focus-ring;
+  }
+
+  &__image {
+    display: block;
+    margin-bottom: var(--space-4);
+    overflow: hidden;
+    background: var(--umkc-gray);
+
+    img {
+      @include responsive-image;
+
+      aspect-ratio: 8 / 5;
+      transition: transform var(--motion-standard) ease;
+    }
+  }
+
+  &:hover &__image img {
+    transform: scale(1.025);
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-4);
+    margin-bottom: var(--space-2);
+    color: $news-muted-color;
+    font-size: 0.875rem;
+  }
+
+  &__title {
+    margin: 0 0 var(--space-2);
+    font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+    line-height: 1.25;
+
+    a {
+      color: var(--umkc-dark-blue);
+      text-decoration-thickness: 0.08em;
+      text-underline-offset: 0.15em;
+    }
+  }
+
+  > p {
+    margin: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .news-card__image img {
+    transition: none;
+  }
+}
